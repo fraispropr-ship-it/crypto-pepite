@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V4.8 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V4.9 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -17,6 +17,7 @@
 #  NOUVEAU V4.7 : lien TradingView + ligne PEPITE à coller dans l'indicateur Pine.
 #  NOUVEAU V4.8 : journal des TRADE NOW (journal_signaux.csv) + suivi TP/SL automatique
 #           + statistiques (journal_stats.md) + message Telegram à la clôture de chaque signal.
+#  NOUVEAU V4.9 : alerte Telegram aussi pour les PREPARE à partir d'un score de 90.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
@@ -64,6 +65,10 @@ DEDUP_HEURES     = 6                     # un même signal n'est pas renvoyé av
 # ---- NOUVEAU V4.7 : TradingView ----
 TV_PREFIXE = "ZOOMEX:"   # place de marché TradingView (ex. "BYBIT:" si Zoomex introuvable)
 TV_SUFFIXE = ".P"        # suffixe des perpétuels sur TradingView
+
+# ---- NOUVEAU V4.9 : alertes PREPARE ----
+PREPARE_ALERTE    = True     # False pour couper les alertes PREPARE
+PREPARE_SCORE_MIN = 90       # score mini pour recevoir un PREPARE sur Telegram
 
 # ---- NOUVEAU V4.8 : journal ----
 JOURNAL          = "journal_signaux.csv"
@@ -667,7 +672,7 @@ def ecrire_stats(j):
 
 # ---------------- MAIN ----------------
 def scan():
-    print(f"CRYPTO PÉPITE V4.8 — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
+    print(f"CRYPTO PÉPITE V4.9 — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
     choisir_source_oi()
     df, info = tickers(), instruments()
     n0 = len(df)
@@ -743,6 +748,23 @@ def scan():
         etat[cle_signal(r)] = maintenant
     sauver_etat(etat)
     print(f"Telegram : {len(nouveaux)} nouveau(x) TRADE NOW envoyé(s)")
+
+    # V4.9 : PREPARE à fort score (clé distincte, pour ne pas bloquer le futur TRADE NOW)
+    n_prep = 0
+    if PREPARE_ALERTE:
+        prepares = [r for r in ok if r["decision"] == "PREPARE" and r["score"] >= PREPARE_SCORE_MIN
+                    and maintenant - etat.get("PREPARE|" + cle_signal(r), 0) > DEDUP_HEURES * 3600]
+        for r in prepares:
+            entete = (f"🟡 CRYPTO PÉPITE — PREPARE (score {r['score']}) — {datetime.now(timezone.utc):%H:%M} UTC\n"
+                      "Pas encore déclenché : ordre conditionnel possible, ou attendre le TRADE NOW.\n"
+                      + resume_btc())
+            if alerte: entete += "\n" + alerte
+            telegram(entete + "\n" + rapport(r) + f"\n📈 Graphique TradingView (M15) : {lien_tv(r)}")
+            telegram(ligne_pepite(r))
+            etat["PREPARE|" + cle_signal(r)] = maintenant
+            n_prep += 1
+        sauver_etat(etat)
+    print(f"Telegram : {n_prep} nouveau(x) PREPARE (score ≥ {PREPARE_SCORE_MIN}) envoyé(s)")
 
 def main():
     try:
