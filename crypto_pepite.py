@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V4.5 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V4.6 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -12,7 +12,8 @@
 #              et si H4 ET H1 neutres : score mini relevé + 1 seul TRADE NOW.
 #  NOUVEAU V4.5 : envoi Telegram des NOUVEAUX TRADE NOW uniquement
 #           (anti-doublon via etat_signaux.json) + alerte si le scan plante.
-#           Lancement auto toutes les 30 min via GitHub Actions.
+#           Lancement auto via cron-job.org -> GitHub Actions.
+#  NOUVEAU V4.6 : tendance BTC (H4 / H1 / variation 1h) dans le message Telegram.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
@@ -266,6 +267,16 @@ def alerte_btc_neutre():
     return (f"⚠️ BTC neutre en {ut} : direction partielle, réduis l'exposition "
             f"(malus -{BTC_NEUTRE_1UT} pondéré par la corrélation).")
 
+def resume_btc():
+    """Ligne courte sur la tendance BTC pour le message Telegram."""
+    if BTC_CTX is None:
+        return "₿ BTC : tendance indisponible"
+    fl = {"HAUSSIÈRE": "↗️", "BAISSIÈRE": "↘️", NEUTRE: "➡️"}
+    t4, t1, choc = BTC_CTX["t4"], BTC_CTX["t1"], BTC_CTX["choc"]
+    ligne = f"₿ BTC : H4 {t4} {fl.get(t4, '')} | H1 {t1} {fl.get(t1, '')} | 1h {choc*100:+.2f} %"
+    if abs(choc) >= BTC_CHOC: ligne += " ⚡ CHOC"
+    return ligne
+
 def correlation_btc(h1):
     """Corrélation des rendements H1 alt/BTC sur les 48 dernières heures communes."""
     if BTC_CTX is None: return np.nan
@@ -518,7 +529,7 @@ def cle_signal(r):
 
 # ---------------- MAIN ----------------
 def scan():
-    print(f"CRYPTO PÉPITE V4.5 — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
+    print(f"CRYPTO PÉPITE V4.6 — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
     choisir_source_oi()
     df, info = tickers(), instruments()
     n0 = len(df)
@@ -576,6 +587,7 @@ def scan():
                 and maintenant - etat.get(cle_signal(r), 0) > DEDUP_HEURES * 3600]
     for r in nouveaux:
         entete = f"🚨 CRYPTO PÉPITE — TRADE NOW — {datetime.now(timezone.utc):%H:%M} UTC"
+        entete += "\n" + resume_btc()
         if alerte: entete += "\n" + alerte
         telegram(entete + "\n" + rapport(r))
         etat[cle_signal(r)] = maintenant
