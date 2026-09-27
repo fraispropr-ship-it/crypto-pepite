@@ -3,6 +3,9 @@ name: Crypto Pepite scan
 on:
   workflow_dispatch:            # lancé par cron-job.org (h26 / h56, 7h-23h Paris)
 
+permissions:
+  contents: write               # autorise l'enregistrement du journal dans le dépôt
+
 concurrency:
   group: pepite-scan
   cancel-in-progress: false     # jamais deux scans en même temps
@@ -41,3 +44,18 @@ jobs:
         with:
           path: etat_signaux.json
           key: etat-signaux-${{ github.run_id }}
+
+      # Journal : enregistré dans le dépôt seulement s'il a changé
+      - name: Enregistrer le journal
+        if: always()
+        run: |
+          git config user.name "pepite-bot"
+          git config user.email "pepite-bot@users.noreply.github.com"
+          git add journal_signaux.csv journal_stats.md 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Journal inchangé"
+          else
+            git commit -m "Journal $(date -u '+%Y-%m-%d %H:%M') UTC"
+            git pull --rebase
+            git push
+          fi
