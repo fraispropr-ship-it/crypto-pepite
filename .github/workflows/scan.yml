@@ -1,9 +1,7 @@
 name: Crypto Pepite scan
 
 on:
-  schedule:
-    - cron: "2,32 * * * *"      # toutes les 30 min, 2 min après la clôture M15 (heure UTC)
-  workflow_dispatch:            # bouton "Run workflow" pour lancer à la main
+  workflow_dispatch:            # lancé par cron-job.org (h26 / h56, 7h-23h Paris)
 
 concurrency:
   group: pepite-scan
