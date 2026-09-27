@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V4.7 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V4.8 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -15,6 +15,8 @@
 #           Lancement auto via cron-job.org -> GitHub Actions.
 #  NOUVEAU V4.6 : tendance BTC (H4 / H1 / variation 1h) dans le message Telegram.
 #  NOUVEAU V4.7 : lien TradingView + ligne PEPITE à coller dans l'indicateur Pine.
+#  NOUVEAU V4.8 : journal des TRADE NOW (journal_signaux.csv) + suivi TP/SL automatique
+#           + statistiques (journal_stats.md) + message Telegram à la clôture de chaque signal.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
@@ -62,6 +64,11 @@ DEDUP_HEURES     = 6                     # un même signal n'est pas renvoyé av
 # ---- NOUVEAU V4.7 : TradingView ----
 TV_PREFIXE = "ZOOMEX:"   # place de marché TradingView (ex. "BYBIT:" si Zoomex introuvable)
 TV_SUFFIXE = ".P"        # suffixe des perpétuels sur TradingView
+
+# ---- NOUVEAU V4.8 : journal ----
+JOURNAL          = "journal_signaux.csv"
+STATS            = "journal_stats.md"
+JOURNAL_EXPIRE_H = 48        # un signal ni TP ni SL après 48 h est clôturé au prix du moment
 
 NEUTRE = "NEUTRE/RANGE"
 
@@ -540,9 +547,127 @@ def cle_signal(r):
     t = r["inf"].get("tick")
     return f"{r['symbol']}|{r['sens']}|{r['type']}|{arrondi(r['entry'], t)}"
 
+# ---------------- JOURNAL (V4.8) ----------------
+COLS_JOURNAL = ["id", "date_utc", "ts", "symbol", "sens", "setup", "score", "entree", "sl", "tp", "rr",
+                "btc_h4", "btc_h1", "btc_ctx", "corr_btc", "btc_pts",
+                "statut", "date_sortie", "resultat_R", "duree_h"]
+
+def charger_journal():
+    try:
+        j = pd.read_csv(JOURNAL)
+        for c in COLS_JOURNAL:
+            if c not in j: j[c] = np.nan
+        j["statut"] = j["statut"].astype(str)
+        j["date_sortie"] = j["date_sortie"].astype(object)
+        return j[COLS_JOURNAL]
+    except Exception:
+        return pd.DataFrame(columns=COLS_JOURNAL)
+
+def contexte_btc_label(sens):
+    """Résumé simple du contexte BTC au moment du signal : sens / contre / neutre."""
+    if BTC_CTX is None: return "n/d"
+    pour = "HAUSSIÈRE" if sens == "LONG" else "BAISSIÈRE"
+    contre = "BAISSIÈRE" if sens == "LONG" else "HAUSSIÈRE"
+    tfs = (BTC_CTX["t4"], BTC_CTX["t1"])
+    if contre in tfs: return "contre"
+    if pour in tfs: return "sens"
+    return "neutre"
+
+def ajouter_au_journal(j, signaux, maintenant):
+    lignes = []
+    for r in signaux:
+        t = r["inf"].get("tick")
+        e, sl, tp = arrondi(r["entry"], t), arrondi(r["sl"], t), arrondi(r["tp"], t)
+        lignes.append(dict(
+            id=cle_signal(r), date_utc=datetime.fromtimestamp(maintenant, timezone.utc).strftime("%Y-%m-%d %H:%M"),
+            ts=int(maintenant * 1000), symbol=r["symbol"], sens=r["sens"], setup=r["type"],
+            score=r["score"], entree=e, sl=sl, tp=tp, rr=round(r["rr"], 2),
+            btc_h4=BTC_CTX["t4"] if BTC_CTX else "", btc_h1=BTC_CTX["t1"] if BTC_CTX else "",
+            btc_ctx=contexte_btc_label(r["sens"]),
+            corr_btc=None if pd.isna(r["corr_btc"]) else round(float(r["corr_btc"]), 2),
+            btc_pts=r["btc_pts"], statut="EN_COURS", date_sortie="", resultat_R=np.nan, duree_h=np.nan))
+    if lignes:
+        j = pd.concat([j, pd.DataFrame(lignes, columns=COLS_JOURNAL)], ignore_index=True)
+    return j
+
+def evaluer_journal(j):
+    """Vérifie sur les bougies M15 si chaque signal EN_COURS a touché son TP ou son SL.
+    Hypothèse : entrée au niveau d'entrée au moment du signal ; si TP et SL sont touchés
+    dans la même bougie, on compte le SL (prudent)."""
+    msgs = []
+    maintenant_ms = time.time() * 1000
+    for i, row in j[j.statut == "EN_COURS"].iterrows():
+        m15 = klines(row.symbol, "15")
+        time.sleep(0.15)
+        if m15 is None: continue
+        bars = m15[m15.t >= row.ts]
+        d = 1 if row.sens == "LONG" else -1
+        risque = abs(row.entree - row.sl)
+        if risque <= 0: continue
+        res = None
+        for _, b in bars.iterrows():
+            touche_sl = (b.l <= row.sl) if d == 1 else (b.h >= row.sl)
+            touche_tp = (b.h >= row.tp) if d == 1 else (b.l <= row.tp)
+            if touche_sl: res = ("SL", -1.0, b.t + 900_000); break
+            if touche_tp: res = ("TP", abs(row.tp - row.entree) / risque, b.t + 900_000); break
+        if res is None and len(bars) and maintenant_ms - row.ts > JOURNAL_EXPIRE_H * 3_600_000:
+            dernier = bars.c.iloc[-1]
+            res = ("EXPIRE", d * (dernier - row.entree) / risque, bars.t.iloc[-1] + 900_000)
+        if res:
+            statut, r_mult, t_sortie = res
+            duree = (t_sortie - row.ts) / 3_600_000
+            j.loc[i, "statut"] = statut
+            j.loc[i, "resultat_R"] = round(r_mult, 2)
+            j.loc[i, "duree_h"] = round(duree, 1)
+            j.loc[i, "date_sortie"] = datetime.fromtimestamp(t_sortie / 1000, timezone.utc).strftime("%Y-%m-%d %H:%M")
+            icone = {"TP": "✅", "SL": "❌", "EXPIRE": "⌛"}[statut]
+            libelle = {"TP": "TP touché", "SL": "SL touché", "EXPIRE": f"expiré après {JOURNAL_EXPIRE_H} h"}[statut]
+            msgs.append(f"{icone} {row.symbol} {row.sens} (signal du {row.date_utc} UTC, score {int(row.score)}) — "
+                        f"{libelle} : {r_mult:+.2f} R en {duree:.1f} h")
+    return j, msgs
+
+def _bloc_stats(df, titre, colonne, ordre=None):
+    lignes = [f"\n### {titre}\n", "| | Trades | Gagnants | Taux | R moyen | R total |", "|---|---|---|---|---|---|"]
+    groupes = df.groupby(colonne, observed=True)
+    cles = ordre if ordre else sorted(groupes.groups.keys(), key=str)
+    for k in cles:
+        if k not in groupes.groups: continue
+        g = groupes.get_group(k)
+        n = len(g); w = int((g.resultat_R > 0).sum())
+        lignes.append(f"| {k} | {n} | {w} | {100*w/n:.0f} % | {g.resultat_R.mean():+.2f} | {g.resultat_R.sum():+.2f} |")
+    return "\n".join(lignes)
+
+def ecrire_stats(j):
+    clos = j[j.statut.isin(["TP", "SL", "EXPIRE"])].copy()
+    en_cours = int((j.statut == "EN_COURS").sum())
+    out = ["# 📒 Journal Crypto Pépite — statistiques\n",
+           f"Signaux enregistrés : **{len(j)}** — clôturés : **{len(clos)}** — en cours : **{en_cours}**\n",
+           "_Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés "
+           f"dans la même bougie M15 ; clôture au prix du moment après {JOURNAL_EXPIRE_H} h. "
+           "Résultats en R bruts (1 R = distance entrée–SL), hors frais._\n"]
+    if len(clos):
+        clos["resultat_R"] = clos.resultat_R.astype(float)
+        n = len(clos); w = int((clos.resultat_R > 0).sum())
+        out.append("## Global\n")
+        out.append(f"- Taux de réussite : **{100*w/n:.0f} %** ({w}/{n})")
+        out.append(f"- Espérance : **{clos.resultat_R.mean():+.2f} R** par trade")
+        out.append(f"- Total : **{clos.resultat_R.sum():+.2f} R** (≈ {clos.resultat_R.sum()*RISQUE:+.2f} USDT avec {RISQUE} USDT de risque)")
+        out.append(f"- Durée moyenne : {clos.duree_h.astype(float).mean():.1f} h")
+        clos["tranche_score"] = pd.cut(clos.score.astype(float), [0, 79.5, 89.5, 100], labels=["60-79", "80-89", "90-100"])
+        out.append(_bloc_stats(clos, "Par tranche de score", "tranche_score", ["60-79", "80-89", "90-100"]))
+        out.append(_bloc_stats(clos, "Par setup", "setup"))
+        out.append(_bloc_stats(clos, "Par contexte BTC", "btc_ctx", ["sens", "neutre", "contre", "n/d"]))
+        out.append(_bloc_stats(clos, "Par sens", "sens", ["LONG", "SHORT"]))
+        if n < 30:
+            out.append(f"\n⚠️ Seulement {n} trades clôturés : trop peu pour conclure (vise au moins 30 à 50).")
+    else:
+        out.append("Aucun signal clôturé pour l'instant.")
+    with open(STATS, "w", encoding="utf-8") as f:
+        f.write("\n".join(out) + "\n")
+
 # ---------------- MAIN ----------------
 def scan():
-    print(f"CRYPTO PÉPITE V4.7 — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
+    print(f"CRYPTO PÉPITE V4.8 — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
     choisir_source_oi()
     df, info = tickers(), instruments()
     n0 = len(df)
@@ -598,6 +723,17 @@ def scan():
     etat, maintenant = charger_etat(), time.time()
     nouveaux = [r for r in top if r["decision"] == "TRADE NOW"
                 and maintenant - etat.get(cle_signal(r), 0) > DEDUP_HEURES * 3600]
+    # V4.8 : journal — suivi des signaux en cours, puis ajout des nouveaux
+    journal = charger_journal()
+    journal, clotures = evaluer_journal(journal)
+    for m in clotures:
+        print(m); telegram(m)
+    journal = ajouter_au_journal(journal, nouveaux, maintenant)
+    journal.to_csv(JOURNAL, index=False)
+    ecrire_stats(journal)
+    print(f"Journal : {len(nouveaux)} ajouté(s), {len(clotures)} clôturé(s), "
+          f"{int((journal.statut == 'EN_COURS').sum())} en cours")
+
     for r in nouveaux:
         entete = f"🚨 CRYPTO PÉPITE — TRADE NOW — {datetime.now(timezone.utc):%H:%M} UTC"
         entete += "\n" + resume_btc()
