@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V4.6 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V4.7 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -14,6 +14,7 @@
 #           (anti-doublon via etat_signaux.json) + alerte si le scan plante.
 #           Lancement auto via cron-job.org -> GitHub Actions.
 #  NOUVEAU V4.6 : tendance BTC (H4 / H1 / variation 1h) dans le message Telegram.
+#  NOUVEAU V4.7 : lien TradingView + ligne PEPITE à coller dans l'indicateur Pine.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
@@ -57,6 +58,10 @@ TELEGRAM_TOKEN   = os.environ.get("TELEGRAM_TOKEN", "")    # secret GitHub (ou �
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 ETAT_FICHIER     = "etat_signaux.json"   # mémoire des signaux déjà envoyés
 DEDUP_HEURES     = 6                     # un même signal n'est pas renvoyé avant 6 h
+
+# ---- NOUVEAU V4.7 : TradingView ----
+TV_PREFIXE = "ZOOMEX:"   # place de marché TradingView (ex. "BYBIT:" si Zoomex introuvable)
+TV_SUFFIXE = ".P"        # suffixe des perpétuels sur TradingView
 
 NEUTRE = "NEUTRE/RANGE"
 
@@ -522,6 +527,14 @@ def sauver_etat(etat):
     etat = {k: v for k, v in etat.items() if v >= limite}
     with open(ETAT_FICHIER, "w", encoding="utf-8") as f: json.dump(etat, f)
 
+def lien_tv(r):
+    return f"https://www.tradingview.com/chart/?symbol={TV_PREFIXE}{r['symbol']}{TV_SUFFIXE}&interval=15"
+
+def ligne_pepite(r):
+    """Ligne à coller dans l'indicateur TradingView « Crypto Pépite »."""
+    t = r["inf"].get("tick")
+    return f"PEPITE;{r['symbol']};{r['sens']};{arrondi(r['entry'], t)};{arrondi(r['sl'], t)};{arrondi(r['tp'], t)}"
+
 def cle_signal(r):
     """Même paire + même sens + même setup + même niveau d'entrée = même signal."""
     t = r["inf"].get("tick")
@@ -529,7 +542,7 @@ def cle_signal(r):
 
 # ---------------- MAIN ----------------
 def scan():
-    print(f"CRYPTO PÉPITE V4.6 — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
+    print(f"CRYPTO PÉPITE V4.7 — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
     choisir_source_oi()
     df, info = tickers(), instruments()
     n0 = len(df)
@@ -589,7 +602,8 @@ def scan():
         entete = f"🚨 CRYPTO PÉPITE — TRADE NOW — {datetime.now(timezone.utc):%H:%M} UTC"
         entete += "\n" + resume_btc()
         if alerte: entete += "\n" + alerte
-        telegram(entete + "\n" + rapport(r))
+        telegram(entete + "\n" + rapport(r) + f"\n📈 Graphique TradingView (M15) : {lien_tv(r)}")
+        telegram(ligne_pepite(r))       # message séparé : appui long -> Copier
         etat[cle_signal(r)] = maintenant
     sauver_etat(etat)
     print(f"Telegram : {len(nouveaux)} nouveau(x) TRADE NOW envoyé(s)")
