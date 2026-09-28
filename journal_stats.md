@@ -1,22 +1,22 @@
 # 📒 Journal Crypto Pépite — statistiques
 
-Signaux enregistrés : **28** — clôturés : **22** — en cours : **6**
+Signaux enregistrés : **29** — clôturés : **24** — en cours : **5**
 
 _Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés dans la même bougie M15 ; clôture au prix du moment après 48 h. Résultats en R bruts (1 R = distance entrée–SL), hors frais._
 
 ## Global
 
-- Taux de réussite : **27 %** (6/22)
-- Espérance : **-0.03 R** par trade
-- Total : **-0.59 R** (≈ -0.59 USDT avec 1.0 USDT de risque)
-- Durée moyenne : 2.5 h
+- Taux de réussite : **29 %** (7/24)
+- Espérance : **+0.06 R** par trade
+- Total : **+1.55 R** (≈ +1.55 USDT avec 1.0 USDT de risque)
+- Durée moyenne : 2.7 h
 
 ### Par tranche de score
 
 | | Trades | Gagnants | Taux | R moyen | R total |
 |---|---|---|---|---|---|
-| 60-79 | 16 | 5 | 31 % | +0.15 | +2.42 |
-| 80-89 | 5 | 1 | 20 % | -0.40 | -2.01 |
+| 60-79 | 17 | 6 | 35 % | +0.33 | +5.56 |
+| 80-89 | 6 | 1 | 17 % | -0.50 | -3.01 |
 | 90-100 | 1 | 0 | 0 % | -1.00 | -1.00 |
 
 ### Par setup
@@ -24,22 +24,22 @@ _Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL so
 | | Trades | Gagnants | Taux | R moyen | R total |
 |---|---|---|---|---|---|
 | Cassure baissière (clôture M15) + retest | 3 | 1 | 33 % | -0.00 | -0.01 |
-| Cassure confirmée (clôture M15) + retest | 3 | 0 | 0 % | -1.00 | -3.00 |
+| Cassure confirmée (clôture M15) + retest | 4 | 0 | 0 % | -1.00 | -4.00 |
 | Rebond sur support H1 | 9 | 2 | 22 % | +0.00 | +0.04 |
-| Rejet de résistance H1 | 7 | 3 | 43 % | +0.34 | +2.38 |
+| Rejet de résistance H1 | 8 | 4 | 50 % | +0.69 | +5.52 |
 
 ### Par contexte BTC
 
 | | Trades | Gagnants | Taux | R moyen | R total |
 |---|---|---|---|---|---|
-| sens | 11 | 4 | 36 % | +0.12 | +1.37 |
-| contre | 11 | 2 | 18 % | -0.18 | -1.96 |
+| sens | 12 | 5 | 42 % | +0.38 | +4.51 |
+| contre | 12 | 2 | 17 % | -0.25 | -2.96 |
 
 ### Par sens
 
 | | Trades | Gagnants | Taux | R moyen | R total |
 |---|---|---|---|---|---|
-| LONG | 12 | 2 | 17 % | -0.25 | -2.96 |
-| SHORT | 10 | 4 | 40 % | +0.24 | +2.37 |
+| LONG | 13 | 2 | 15 % | -0.30 | -3.96 |
+| SHORT | 11 | 5 | 45 % | +0.50 | +5.51 |
 
-⚠️ Seulement 22 trades clôturés : trop peu pour conclure (vise au moins 30 à 50).
+⚠️ Seulement 24 trades clôturés : trop peu pour conclure (vise au moins 30 à 50).
