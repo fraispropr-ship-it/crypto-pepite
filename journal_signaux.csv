@@ -2,3 +2,4 @@ id,date_utc,ts,symbol,sens,setup,score,entree,sl,tp,rr,btc_h4,btc_h1,btc_ctx,cor
 NEARUSDT|LONG|Rebond sur support H1|5.516,2026-09-27 21:20,1790544025031,NEARUSDT,LONG,Rebond sur support H1,85,5.516,5.443,5.663,2.0,HAUSSIÈRE,HAUSSIÈRE,sens,0.36,2,SL,2026-09-27 22:15,-1.0,0.9
 NEARUSDT|LONG|Rebond sur support H1|5.152,2026-09-28 05:53,1790574824337,NEARUSDT,LONG,Rebond sur support H1,79,5.152,5.063,5.479,3.67,NEUTRE/RANGE,BAISSIÈRE,contre,0.36,-6,EN_COURS,,,
 INJUSDT|SHORT|Cassure baissière (clôture M15) + retest|7.437,2026-09-28 06:57,1790578667922,INJUSDT,SHORT,Cassure baissière (clôture M15) + retest,80,7.437,7.508,7.296,2.0,NEUTRE/RANGE,BAISSIÈRE,sens,0.48,-4,EN_COURS,,,
+HBARUSDT|LONG|Cassure confirmée (clôture M15) + retest|0.09792,2026-09-28 07:24,1790580254258,HBARUSDT,LONG,Cassure confirmée (clôture M15) + retest,90,0.09792,0.09701,0.10066,3.0,NEUTRE/RANGE,BAISSIÈRE,contre,0.53,-7,EN_COURS,,,
