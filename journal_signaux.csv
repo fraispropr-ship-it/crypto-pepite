@@ -1,2 +1,2 @@
 id,date_utc,ts,symbol,sens,setup,score,entree,sl,tp,rr,btc_h4,btc_h1,btc_ctx,corr_btc,btc_pts,statut,date_sortie,resultat_R,duree_h
-NEARUSDT|LONG|Rebond sur support H1|5.516,2026-09-27 21:20,1790544025031,NEARUSDT,LONG,Rebond sur support H1,85,5.516,5.443,5.663,2.0,HAUSSIÈRE,HAUSSIÈRE,sens,0.36,2,EN_COURS,,,
+NEARUSDT|LONG|Rebond sur support H1|5.516,2026-09-27 21:20,1790544025031,NEARUSDT,LONG,Rebond sur support H1,85,5.516,5.443,5.663,2.0,HAUSSIÈRE,HAUSSIÈRE,sens,0.36,2,SL,2026-09-27 22:15,-1.0,0.9
