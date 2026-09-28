@@ -1,7 +1,7 @@
 id,date_utc,ts,symbol,sens,setup,score,entree,sl,tp,rr,btc_h4,btc_h1,btc_ctx,corr_btc,btc_pts,statut,date_sortie,resultat_R,duree_h
 NEARUSDT|LONG|Rebond sur support H1|5.516,2026-09-27 21:20,1790544025031,NEARUSDT,LONG,Rebond sur support H1,85,5.516,5.443,5.663,2.0,HAUSSIÈRE,HAUSSIÈRE,sens,0.36,2,SL,2026-09-27 22:15,-1.0,0.9
 NEARUSDT|LONG|Rebond sur support H1|5.152,2026-09-28 05:53,1790574824337,NEARUSDT,LONG,Rebond sur support H1,79,5.152,5.063,5.479,3.67,NEUTRE/RANGE,BAISSIÈRE,contre,0.36,-6,SL,2026-09-28 08:00,-1.0,2.1
-INJUSDT|SHORT|Cassure baissière (clôture M15) + retest|7.437,2026-09-28 06:57,1790578667922,INJUSDT,SHORT,Cassure baissière (clôture M15) + retest,80,7.437,7.508,7.296,2.0,NEUTRE/RANGE,BAISSIÈRE,sens,0.48,-4,EN_COURS,,,
+INJUSDT|SHORT|Cassure baissière (clôture M15) + retest|7.437,2026-09-28 06:57,1790578667922,INJUSDT,SHORT,Cassure baissière (clôture M15) + retest,80,7.437,7.508,7.296,2.0,NEUTRE/RANGE,BAISSIÈRE,sens,0.48,-4,TP,2026-09-28 09:15,1.99,2.3
 HBARUSDT|LONG|Cassure confirmée (clôture M15) + retest|0.09792,2026-09-28 07:24,1790580254258,HBARUSDT,LONG,Cassure confirmée (clôture M15) + retest,90,0.09792,0.09701,0.10066,3.0,NEUTRE/RANGE,BAISSIÈRE,contre,0.53,-7,SL,2026-09-28 08:00,-1.0,0.6
 ASTERUSDT|SHORT|Rejet de résistance H1|0.7022,2026-09-28 08:07,1790582850105,ASTERUSDT,SHORT,Rejet de résistance H1,80,0.7022,0.707,0.6885,2.87,NEUTRE/RANGE,BAISSIÈRE,sens,0.65,-4,EN_COURS,,,
 ONDOUSDT|LONG|Rebond sur support H1|0.5188,2026-09-28 08:07,1790582850105,ONDOUSDT,LONG,Rebond sur support H1,79,0.5188,0.5064,0.5759,4.58,NEUTRE/RANGE,BAISSIÈRE,contre,0.47,-6,EN_COURS,,,
