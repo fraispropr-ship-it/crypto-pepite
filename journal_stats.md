@@ -42,4 +42,32 @@ _Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL so
 | LONG | 11 | 2 | 18 % | -0.18 | -1.96 |
 | SHORT | 7 | 2 | 29 % | -0.15 | -1.05 |
 
+## 🔍 Diagnostic entrée / SL / TP
+
+_Basé sur 18 trades clôturés avec données complètes._
+
+- Pertes en bougie ambiguë (TP et SL dans la même M15, comptées SL) : **0/14**
+- Perdants passés par **+0.5 R** avant le SL : 8/14
+- Perdants passés par **+1.0 R** avant le SL : 4/14
+- Perdants passés par **+1.5 R** avant le SL : 3/14
+- Perdants dont le TP a été touché **après** le SL (≤ 48 h) : **3/3** → élevé = SL trop serré
+- Gagnants : recul moyen avant de gagner (MAE) **-0.60 R**, pire -0.76 R → proche de 0 = SL resserrable
+- RR visé moyen : 3.41 | MFE moyen : +1.38 R | MFE médian : +0.90 R → MFE médian très inférieur au RR = TP trop loin
+
+### Simulation : et si le TP était fixe ?
+
+_Approximation : un trade gagne X R si son MFE a atteint X R avant le SL ; sinon résultat inchangé._
+
+| TP | Gagnants | Taux | R moyen | R total |
+|---|---|---|---|---|
+| Actuel | 4/18 | 22 % | -0.17 | -3.01 |
+| 1.0 R | 8/18 | 44 % | -0.11 | -2.00 |
+| 1.5 R | 7/18 | 39 % | -0.03 | -0.50 |
+| 2.0 R | 6/18 | 33 % | +0.00 | +0.00 |
+
 ⚠️ Seulement 18 trades clôturés : trop peu pour conclure (vise au moins 30 à 50).
+
+## 👻 Signaux filtrés (contre BTC, NON tradés)
+
+Enregistrés : **0** — clôturés : **0** — en cours : **0**
+
