@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V5.2 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V5.3 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -35,6 +35,9 @@
 #           - en attente de rejet = PREPARE (pas d'ordre conditionnel)
 #           - TP sur la 1re zone adverse (plus de TP qui saute une résistance proche)
 #           - anti-doublon basé sur le niveau de zone (le prix d'entrée bouge à chaque scan)
+#  NOUVEAU V5.3 : univers élargi (120 paires, volume 24h >= 3 M USDT)
+#           + alerte 🐜 PETITE PAIRE (volume 24h < 15 M USDT) dans le rapport et sur Telegram
+#           + volume 24h enregistré dans le journal + statistiques « Par liquidité »
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
@@ -46,10 +49,10 @@ BASE          = "https://openapi.zoomex.com"
 CAPITAL       = 100.0        # USDT
 RISQUE        = 1.0          # USDT max perdus au SL (frais inclus)
 FRAIS_TAKER   = 0.0006       # 0,06 % par côté -> vérifie ton palier Zoomex
-MIN_TURNOVER  = 5_000_000    # volume 24h minimum (USDT)
+MIN_TURNOVER  = 3_000_000    # volume 24h minimum (USDT) — V5.3 : 5 M -> 3 M
 MAX_SPREAD    = 0.0015       # 0,15 % max
 MAX_MOVE_24H  = 0.15         # anti-FOMO : > 15 % sur 24h = mouvement passé
-SHORTLIST     = 60           # nb de paires analysées en détail
+SHORTLIST     = 120          # nb de paires analysées en détail — V5.3 : 60 -> 120
 MARGE_CIBLE   = 20.0         # marge max souhaitée par trade (USDT)
 RR_MIN        = 1.5
 SCORE_MIN     = 60
@@ -114,6 +117,9 @@ SL_MARGE_ATR     = 0.25   # marge du SL au-delà de la zone / de la mèche (ATR 
 DIST_MAX_NOW     = 0.25   # TRADE NOW si le prix est à moins de 0,25 ATR de la clôture de rejet
 H1_ALIGNE        = True   # False pour ne plus bloquer les trades contre la tendance H1
 TP_PREMIER_OBSTACLE = True  # TP sur la 1re zone adverse ; si elle est trop proche -> RR insuffisant
+
+# ---- NOUVEAU V5.3 : petites paires ----
+PETITE_PAIRE = 15_000_000   # en dessous de ce volume 24h (USDT) : alerte 🐜 PETITE PAIRE
 
 NEUTRE = "NEUTRE/RANGE"
 
@@ -589,6 +595,13 @@ def analyse(row, inf):
     return best
 
 # ---------------- RAPPORT ----------------
+def alerte_petite_paire(c):
+    """V5.3 : texte d'alerte si le volume 24h est faible, sinon ''."""
+    if c["turnover"] >= PETITE_PAIRE: return ""
+    return (f"🐜 PETITE PAIRE (volume 24h {c['turnover']/1e6:.1f} M USDT < {PETITE_PAIRE/1e6:.0f} M) : "
+            "fausses mèches plus fréquentes, supports/résistances moins fiables, OI souvent n/d. "
+            "Vérifie le graphique avant d'entrer.")
+
 def fz(z, t): return f"{arrondi(z['lo'], t)} – {arrondi(z['hi'], t)} ({z['touches']} tests)"
 
 def rapport(c):
@@ -609,11 +622,13 @@ def rapport(c):
     else:
         ordre = "Conditional (déclenchement au niveau d'entrée)"
     z = c["zone"]
+    petite = alerte_petite_paire(c)
+    petite = f"{petite}\n" if petite else ""
     return f"""
 ══════════════════════════════════════════════
 {c['symbol']}  |  Prix {c['px']}  |  Score {c['score']}/100  |  {c['decision']}
 ══════════════════════════════════════════════
-Tendance H4 : {c['t4']} | H1 : {c['t1']} | M15 : {c['t15']}
+{petite}Tendance H4 : {c['t4']} | H1 : {c['t1']} | M15 : {c['t15']}
 Supports    : {' | '.join(fz(z, t) for z in c['sup']) or 'aucun identifié'}
 Résistances : {' | '.join(fz(z, t) for z in c['res']) or 'aucune identifiée'}{rng}
 VWAP jour : {arrondi(c['vwap'], t)} | RSI H1 : {c['rsi_h1']:.0f} | ATR H1 : {c['atr_h1']:.6g}
@@ -697,7 +712,7 @@ def cle_signal(r):
 COLS_JOURNAL = ["id", "date_utc", "ts", "symbol", "sens", "setup", "score", "entree", "px_signal",
                 "sl", "tp", "rr", "btc_h4", "btc_h1", "btc_ctx", "corr_btc", "btc_pts",
                 "statut", "date_sortie", "resultat_R", "duree_h", "filtre",
-                "mfe_R", "mae_R", "ambigu", "tp_apres_sl"]
+                "mfe_R", "mae_R", "ambigu", "tp_apres_sl", "volume_24h_M"]
 CLOS = ["TP", "SL", "EXPIRE"]
 
 def charger_journal():
@@ -709,7 +724,7 @@ def charger_journal():
         j["date_sortie"] = j["date_sortie"].astype(object)
         for c in ("filtre", "ambigu", "tp_apres_sl"):               # "" = pas encore renseigné
             j[c] = j[c].fillna("").astype(str).replace("nan", "")
-        for c in ("mfe_R", "mae_R", "px_signal"):
+        for c in ("mfe_R", "mae_R", "px_signal", "volume_24h_M"):
             j[c] = pd.to_numeric(j[c], errors="coerce")
         return j[COLS_JOURNAL]
     except Exception:
@@ -738,7 +753,8 @@ def ajouter_au_journal(j, signaux, maintenant, filtre=""):
             btc_ctx=contexte_btc_label(r["sens"]),
             corr_btc=None if pd.isna(r["corr_btc"]) else round(float(r["corr_btc"]), 2),
             btc_pts=r["btc_pts"], statut="EN_COURS", date_sortie="", resultat_R=np.nan, duree_h=np.nan,
-            filtre=filtre, mfe_R=np.nan, mae_R=np.nan, ambigu="", tp_apres_sl=""))
+            filtre=filtre, mfe_R=np.nan, mae_R=np.nan, ambigu="", tp_apres_sl="",
+            volume_24h_M=round(float(r["turnover"]) / 1e6, 1)))
     if lignes:
         j = pd.concat([j, pd.DataFrame(lignes, columns=COLS_JOURNAL)], ignore_index=True)
     return j
@@ -923,6 +939,11 @@ def ecrire_stats(j):
         out.append(_bloc_stats(clos, "Par setup", "setup"))
         out.append(_bloc_stats(clos, "Par contexte BTC", "btc_ctx", ["sens", "neutre", "contre", "n/d"]))
         out.append(_bloc_stats(clos, "Par sens", "sens", ["LONG", "SHORT"]))
+        # V5.3 : liquidité (les anciens signaux sans volume enregistré sont en « n/d »)
+        tr = pd.cut(pd.to_numeric(clos.volume_24h_M, errors="coerce"), [0, PETITE_PAIRE / 1e6, 50, float("inf")],
+                    labels=["🐜 < 15 M", "15-50 M", "> 50 M"])
+        clos["liquidite"] = tr.astype(object).where(tr.notna(), "n/d")
+        out.append(_bloc_stats(clos, "Par liquidité (volume 24h USDT)", "liquidite", ["> 50 M", "15-50 M", "🐜 < 15 M", "n/d"]))
         out += _diagnostic(clos)                                             # V5.1
         if n < 30:
             out.append(f"\n⚠️ Seulement {n} trades clôturés : trop peu pour conclure (vise au moins 30 à 50).")
@@ -945,7 +966,7 @@ def ecrire_stats(j):
 # ---------------- MAIN ----------------
 def scan():
     FANTOMES.clear()                                        # V5.0
-    print(f"CRYPTO PÉPITE V5.2 — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
+    print(f"CRYPTO PÉPITE V5.3 — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
     choisir_source_oi()
     df, info = tickers(), instruments()
     n0 = len(df)
@@ -1022,6 +1043,7 @@ def scan():
 
     for r in nouveaux:
         entete = f"🚨 CRYPTO PÉPITE — TRADE NOW — {datetime.now(timezone.utc):%H:%M} UTC"
+        if alerte_petite_paire(r): entete += f"\n🐜 PETITE PAIRE — {r['symbol']}"
         entete += "\n" + resume_btc()
         if alerte: entete += "\n" + alerte
         telegram(entete + "\n" + rapport(r) + f"\n📈 Graphique TradingView (M15) : {lien_tv(r)}")
@@ -1037,7 +1059,8 @@ def scan():
                     and maintenant - etat.get("PREPARE|" + cle_signal(r), 0) > DEDUP_HEURES * 3600]
         for r in prepares:
             entete = (f"🟡 CRYPTO PÉPITE — PREPARE (score {r['score']}) — {datetime.now(timezone.utc):%H:%M} UTC\n"
-                      "Pas encore déclenché : ordre conditionnel possible, ou attendre le TRADE NOW.\n"
+                      + (f"🐜 PETITE PAIRE — {r['symbol']}\n" if alerte_petite_paire(r) else "")
+                      + "Pas encore déclenché : attendre la bougie de rejet M15 (alerte TRADE NOW).\n"
                       + resume_btc())
             if alerte: entete += "\n" + alerte
             telegram(entete + "\n" + rapport(r) + f"\n📈 Graphique TradingView (M15) : {lien_tv(r)}")
