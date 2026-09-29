@@ -223,10 +223,10 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 63 | RR visé moyen : 2.78 | MFE médian : **+0.92 R**
-- Ont atteint +1 R : 49 % | +1,5 R : 38 % | +2 R : 27 %
-- **MFE des perdants** (47 SL) : avaient atteint +0,5 R : 62 % | +1 R : 34 % | +1,5 R : 21 % avant de toucher le SL
-- **MAE des gagnants** (15) : moyen -0.33 R | médian -0.30 R | pire -0.91 R | 40 % sont descendus au-delà de -0,5 R
+- Trades mesurés : 66 | RR visé moyen : 2.76 | MFE médian : **+0.90 R**
+- Ont atteint +1 R : 48 % | +1,5 R : 38 % | +2 R : 26 %
+- **MFE des perdants** (49 SL) : avaient atteint +0,5 R : 59 % | +1 R : 33 % | +1,5 R : 20 % avant de toucher le SL
+- **MAE des gagnants** (16) : moyen -0.32 R | médian -0.27 R | pire -0.91 R | 38 % sont descendus au-delà de -0,5 R
 
 ### Sorties — ensemble
 Pas encore de trade simulé (il faut 48 h après l'entrée).
@@ -240,6 +240,7 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
+| 6.1 | 1 | 1 | 100 % | +1.51 | +1.42 | +1.42 |
 | avant V6 | 50 | 12 | 24 % | -0.19 | -0.33 | -16.62 |
 
 ### Par setup (toutes versions précédentes)
@@ -248,12 +249,12 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 |---|---|---|---|---|---|---|
 | Cassure baissière (clôture M15) + retest | 10 | 1 | 10 % | -0.62 | -0.80 | -8.03 |
 | Cassure confirmée (clôture M15) + retest | 5 | 0 | 0 % | -1.00 | -1.16 | -5.79 |
-| Rebond sur support H1 | 16 | 7 | 44 % | +0.45 | +0.39 | +6.19 |
+| Rebond sur support H1 | 17 | 8 | 47 % | +0.51 | +0.45 | +7.61 |
 | Rejet de résistance H1 | 19 | 4 | 21 % | -0.29 | -0.47 | -8.99 |
 
 ### Par sens (toutes versions précédentes)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| LONG | 21 | 7 | 33 % | +0.10 | +0.02 | +0.40 |
+| LONG | 22 | 8 | 36 % | +0.17 | +0.08 | +1.82 |
 | SHORT | 29 | 5 | 17 % | -0.40 | -0.59 | -17.02 |
