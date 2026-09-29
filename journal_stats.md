@@ -1,5 +1,7 @@
 # 📒 Journal Crypto Pépite V6.3 — statistiques
 
+_Mis à jour le 29/09/2026 13:42 UTC — 184 lignes dans le journal, 61 signaux ouverts, 101 trades clôturés en attente de simulation (48 h)._
+
 Signaux réels V6.3 : **7** — clôturés : **3** — en cours : **4** — SHORT suivis en fantôme uniquement
 
 _Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés dans la même bougie M15 ; clôture au prix du moment après 48 h. 1 R = distance entrée–SL. R brut = hors frais ; R net = frais taker aller-retour déduits._
@@ -251,6 +253,36 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ### Sorties — ensemble
 Pas encore de trade simulé (il faut 48 h après l'entrée).
+
+## Famille V6 (toutes sous-versions 6.x cumulées, trades réels)
+
+- Taux de réussite : **60 %** (3/5)
+- Espérance : **+0.61 R brut** / **+0.53 R net** par trade
+- Frais moyens : 0.08 R par trade
+- Total : +3.04 R brut / **+2.63 R net** (≈ +2.63 USDT avec 1.0 USDT de risque)
+- Durée moyenne : 1.7 h
+
+### Par sous-version
+
+| | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
+|---|---|---|---|---|---|---|
+| 6.1 | 2 | 2 | 100 % | +1.52 | +1.45 | +2.90 |
+| 6.3 | 3 | 1 | 33 % | -0.00 | -0.09 | -0.27 |
+
+### Par sens
+
+| | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
+|---|---|---|---|---|---|---|
+| LONG | 5 | 3 | 60 % | +0.61 | +0.53 | +2.63 |
+
+### MFE / MAE (jusqu'où les trades sont allés)
+
+- Trades mesurés : 5 | RR visé moyen : 1.81 | MFE médian : **+1.54 R**
+- Ont atteint +1 R : 80 % | +1,5 R : 60 % | +2 R : 20 %
+- **MFE des perdants** (2 SL) : avaient atteint +0,5 R : 50 % | +1 R : 50 % | +1,5 R : 0 % avant de toucher le SL
+- **MAE des gagnants** (3) : moyen -0.29 R | médian -0.24 R | pire -0.61 R | 33 % sont descendus au-delà de -0,5 R
+
+⚠️ Seulement 5 trades clôturés : trop peu pour conclure (vise au moins 30 à 50 par catégorie).
 
 ---
 
