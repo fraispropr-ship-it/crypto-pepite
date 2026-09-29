@@ -244,9 +244,9 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 94 | RR visé moyen : 2.61 | MFE médian : **+0.89 R**
-- Ont atteint +1 R : 46 % | +1,5 R : 36 % | +2 R : 22 %
-- **MFE des perdants** (68 SL) : avaient atteint +0,5 R : 60 % | +1 R : 26 % | +1,5 R : 15 % avant de toucher le SL
+- Trades mesurés : 95 | RR visé moyen : 2.60 | MFE médian : **+0.87 R**
+- Ont atteint +1 R : 45 % | +1,5 R : 36 % | +2 R : 22 %
+- **MFE des perdants** (69 SL) : avaient atteint +0,5 R : 59 % | +1 R : 26 % | +1,5 R : 14 % avant de toucher le SL
 - **MAE des gagnants** (25) : moyen -0.37 R | médian -0.27 R | pire -0.99 R | 40 % sont descendus au-delà de -0,5 R
 
 ### Sorties — ensemble
