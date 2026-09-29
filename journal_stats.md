@@ -11,7 +11,7 @@ Aucun trade V6.3 clôturé pour l'instant.
 
 ## Signaux fantômes V6.3 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : ATTENTE 3 | PROMU 1
+Statuts : EN_COURS 2 | ATTENTE 2 | PROMU 1
 
 
 ## Gestion de sortie — tous les trades rejoués (réels toutes versions + fantômes)
@@ -19,9 +19,9 @@ Statuts : ATTENTE 3 | PROMU 1
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 52 | RR visé moyen : 2.90 | MFE médian : **+1.12 R**
-- Ont atteint +1 R : 52 % | +1,5 R : 40 % | +2 R : 27 %
-- **MFE des perdants** (38 SL) : avaient atteint +0,5 R : 68 % | +1 R : 37 % | +1,5 R : 24 % avant de toucher le SL
+- Trades mesurés : 54 | RR visé moyen : 2.85 | MFE médian : **+0.99 R**
+- Ont atteint +1 R : 50 % | +1,5 R : 39 % | +2 R : 26 %
+- **MFE des perdants** (40 SL) : avaient atteint +0,5 R : 68 % | +1 R : 35 % | +1,5 R : 22 % avant de toucher le SL
 - **MAE des gagnants** (13) : moyen -0.33 R | médian -0.30 R | pire -0.91 R | 38 % sont descendus au-delà de -0,5 R
 
 ### Sorties — ensemble
