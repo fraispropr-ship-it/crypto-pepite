@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V6.4 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V6.3 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -47,15 +47,19 @@
 #    - Telegram : TICKET envoyé en premier à chaque TRADE NOW, valeurs copiables d'un
 #      toucher (police monospace), dans l'ordre du formulaire Zoomex, arrondies au pas.
 #    - Stats : date de mise à jour en tête du fichier + vue « famille V6 » (6.x cumulées).
-#  V6.4 (suite au backtest V6.3 : 704 trades, +0,12 R net théorique, écart d'entrée réel +0,24 R) :
-#    - Entrée en ORDRE LIMITE au prix d'entrée (plus au Market) : supprime l'écart d'entrée
-#      et paie les frais maker. Ordre valable LIMITE_VALIDITE_H heures, sinon à annuler.
-#    - Journal réaliste : un trade réel n'est compté que si le prix revient toucher
-#      l'entrée pendant la validité (sinon NON_DECLENCHE, ou RATE si le TP est touché avant).
-#      Alerte Telegram quand l'ordre est à annuler.
-#    - TP plafonné à TP_MAX_R (2 R) : première zone opposée si plus proche, sinon 2 R.
-#    - Score supprimé des décisions et de l'affichage (non prédictif) ; ses composantes
-#      restent journalisées pour reconstruire un jour un score à partir des données.
+#  V6.4 (suite au backtest V6.3 : 704 trades réels / 1 396 fantômes sur 26 jours) :
+#    - Filtre BTC « sens-sens » : BTC dans le sens du trade en H4 ET en H1 -> WAIT
+#      (pire contexte du backtest : 344 trades à -0,09 R net ; entrée trop tardive).
+#    - Filtre de zone : zone testée au moins 3 fois OU âgée d'au moins 72 h, sinon WAIT.
+#    - Filtre de bougie : clôture M15 à 80 % ou plus OU corps de 60 % ou plus, sinon WAIT.
+#    - Chaque filtre a son interrupteur ; les setups écartés sont suivis en FANTÔMES
+#      avec la raison précise, pour vérifier en direct que chaque filtre a raison.
+#    - VERSION (numéro du script, change à chaque modification) séparée de
+#      VERSION_LOGIQUE (regroupe les statistiques, ne change que si les signaux changent).
+#  V6.5 : filtre BTC corrigé — on ne prend position QUE si BTC est neutre sur UNE SEULE
+#         des deux UT (H4 ou H1). Backtest V6.3 : ces contextes font 282 trades à +0,48 R net
+#         (contre +0,12 R sur l'ensemble) ; sens-sens, contre-contre, sens-contre et
+#         neutre-neutre étaient tous négatifs. Remplace le filtre « sens-sens » de la V6.4.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
@@ -64,14 +68,14 @@ from datetime import datetime, timezone
 from decimal import Decimal
 from html import escape
 
-VERSION = "6.4"
+VERSION         = "6.5"   # numéro du script : change à CHAQUE modification
+VERSION_LOGIQUE = "6.5"   # regroupe les stats : ne change que si les signaux changent
 
 # ---------------- PARAMÈTRES ----------------
 BASE          = "https://openapi.zoomex.com"
 CAPITAL       = 100.0        # USDT
 RISQUE        = 1.0          # USDT max perdus au SL (frais inclus)
 FRAIS_TAKER   = 0.0006       # 0,06 % par côté -> vérifie ton palier Zoomex
-FRAIS_MAKER   = 0.0002       # V6.4 : 0,02 % (ordre limite) -> vérifie ton palier Zoomex
 MIN_TURNOVER  = 5_000_000    # volume 24h minimum (USDT)
 MAX_SPREAD    = 0.0015       # 0,15 % max
 MAX_MOVE_24H  = 0.15         # anti-FOMO : > 15 % sur 24h = mouvement passé
@@ -137,11 +141,15 @@ REJET_VOLUME_MIN  = 1.0
 ZONE_LARGEUR_MAX  = 1.0      # V6.2 : largeur max d'une zone S/R (en ATR H1)
 TRAIL_N           = 3        # sortie D : SL sur le plus bas / haut des N dernières M15
 SIM_MAX           = 25       # nb max de trades dont on simule les sorties par scan
-# ---- NOUVEAU V6.4 ----
-ENTREE_LIMITE      = True    # True : entrée en ordre limite au prix d'entrée (frais maker)
-LIMITE_VALIDITE_H  = 4       # durée de validité de l'ordre limite (heures), ensuite à annuler
-TP_MAX_R           = 2.0     # TP plafonné à 2 R (backtest : meilleure sortie sans déplacer le SL)
-SCORE_FILTRE       = False   # False : le score ne filtre plus rien et n'est plus affiché
+
+# ---- NOUVEAU V6.4 (filtres issus du backtest ; False pour désactiver un filtre) ----
+FILTRE_BTC_UNE_NEUTRE = True  # V6.5 : trade seulement si BTC est neutre sur UNE SEULE UT (H4 ou H1)
+FILTRE_ZONE          = True   # zone assez solide (tests OU âge)
+ZONE_TESTS_MIN       = 3      # nb de tests mini de la zone H1
+ZONE_AGE_MIN_H       = 72     # ou âge mini de la zone (bougies H1)
+FILTRE_BOUGIE        = True   # bougie de rejet assez franche (clôture OU corps)
+CLOSE_POS_FORT       = 0.8    # clôture M15 dans les 20 % extrêmes (sens du trade)
+BODY_FORT            = 0.6    # ou corps >= 60 % de la bougie
 PRIO = {"TRADE NOW": 0, "PREPARE": 1, "WAIT": 2, "NO TRADE": 3}
 
 NEUTRE = "NEUTRE/RANGE"
@@ -382,7 +390,7 @@ def alerte_btc_neutre():
         return ""
     if BTC_CTX["n_neutre"] == 2:
         return ("⚠️ BTC SANS DIRECTION (H4 + H1 neutres) : marché indécis, faux départs fréquents.\n"
-                f"   → {MAX_NOW_BTC_NEUTRE} seul TRADE NOW autorisé. "
+                f"   → Score mini relevé à {SCORE_MIN_BTC_NEUTRE}, {MAX_NOW_BTC_NEUTRE} seul TRADE NOW autorisé. "
                 "Privilégie les setups de range.")
     ut = BTC_CTX["ut_neutres"][0]
     return (f"⚠️ BTC neutre en {ut} : direction partielle, réduis l'exposition "
@@ -499,22 +507,18 @@ def score(s, t4, t1, vol_ratio, oi4, ch4, rr, dist, row, r1):
     total = int(max(0, min(100, round(sum(c.values())))))
     return total, {k: round(float(v), 1) for k, v in c.items()}
 
-def taux_frais():
-    """V6.4 : frais aller-retour en fraction du notionnel (sortie comptée taker, par prudence)."""
-    return (FRAIS_MAKER if ENTREE_LIMITE else FRAIS_TAKER) + FRAIS_TAKER
-
 def arrondi(x, tick):
     return round(round(x / tick) * tick, 10) if tick else x
 
 def sizing(e, sl, inf):
     dist = abs(e - sl)
-    q = RISQUE / (dist + taux_frais() * e)
+    q = RISQUE / (dist + 2 * FRAIS_TAKER * e)
     step = inf.get("step")
     if step: q = math.floor(q / step) * step
     notional = q * e
     lev = max(1, math.ceil(notional / MARGE_CIBLE))
     return dict(q=q, notional=notional, lev=lev, marge=notional / lev,
-                risque=q * dist + taux_frais() * notional,
+                risque=q * dist + 2 * FRAIS_TAKER * notional,
                 trop_petit=bool(inf.get("minq") and q < inf["minq"]))
 
 # ---------------- ANALYSE D'UNE PAIRE ----------------
@@ -567,13 +571,12 @@ def analyse(row, inf):
         e, sl = s["entry"], s["sl"]; rd = abs(e - sl)
         if rd <= 0: continue
         # V6.3 : TP sur la première zone opposée, même si elle est proche (pas de TP au-delà d'un obstacle)
-        # V6.4 : TP plafonné à TP_MAX_R (la zone opposée reste prioritaire si elle est plus proche)
         if s["sens"] == "LONG":
             tgt = next((z["lo"] for z in res if z["lo"] > e), None)
-            tp = min(tgt, e + TP_MAX_R * rd) if tgt else e + TP_MAX_R * rd
+            tp = tgt if tgt else e + 2 * rd
         else:
             tgt = next((z["hi"] for z in sup if z["hi"] < e), None)
-            tp = max(tgt, e - TP_MAX_R * rd) if tgt else e - TP_MAX_R * rd
+            tp = tgt if tgt else e - 2 * rd
         rr = abs(tp - e) / rd
         dist = abs(px - e) / a1
         contre = (s["sens"] == "LONG" and t4 == "BAISSIÈRE") or (s["sens"] == "SHORT" and t4 == "HAUSSIÈRE")
@@ -587,6 +590,18 @@ def analyse(row, inf):
         elif bf[1]: dec, why = "WAIT", "choc BTC contre le trade (attendre que BTC se stabilise)"
         elif BTC_JAMAIS_CONTRE and bf[3] >= 1:
             dec, why = "WAIT", "BTC contre le trade sur une UT (règle « jamais contre BTC »)"
+        elif FILTRE_BTC_UNE_NEUTRE and not est_btc and BTC_CTX is not None \
+                and btc_detail(s["sens"]).split("-").count("neutre") != 1:
+            dec, why = "WAIT", (f"contexte BTC {btc_detail(s['sens'])} : il faut BTC neutre sur "
+                                "une seule UT (H4 ou H1) (filtre V6.5)")
+        elif FILTRE_ZONE and not (s["zone"]["touches"] >= ZONE_TESTS_MIN
+                                  or s["zone"].get("age_h", 0) >= ZONE_AGE_MIN_H):
+            dec, why = "WAIT", (f"zone trop faible : moins de {ZONE_TESTS_MIN} tests et "
+                                f"moins de {ZONE_AGE_MIN_H} h (filtre V6.4)")
+        elif FILTRE_BOUGIE and s["deja"] and not (
+                (s.get("close_pos") or 0) >= CLOSE_POS_FORT or (s.get("body_ratio") or 0) >= BODY_FORT):
+            dec, why = "WAIT", (f"bougie de rejet pas assez franche : clôture < {CLOSE_POS_FORT:.0%} "
+                                f"et corps < {BODY_FORT:.0%} (filtre V6.4)")
         elif s["deja"] and dist <= DIST_TRADE_NOW: dec, why = "TRADE NOW", "rejet M15 confirmé, prix proche de l'entrée"
         elif s["deja"]: dec, why = "PREPARE", "rejet M15 confirmé mais prix déjà trop loin de l'entrée"
         else: dec, why = "PREPARE", "pas de bougie de rejet M15 confirmée"
@@ -594,7 +609,7 @@ def analyse(row, inf):
         if BTC_IMPACT_SCORE:
             sc = int(max(0, min(100, sc + bf[0])))
         z = s["zone"]
-        cands.append(dict(s, symbol=sym, px=px, tp=tp, tp_theorique=tp != tgt, rr=rr, dist=dist,
+        cands.append(dict(s, symbol=sym, px=px, tp=tp, tp_theorique=tgt is None, rr=rr, dist=dist,
                           decision=dec, pourquoi=why, score=sc, t4=t4, t1=t1, t15=t15,
                           sup=sup[:2], res=res[:2], vol_ratio=vol_ratio, oi4=oi4, oi24=oi24,
                           ch4=ch4, funding=row.fundingRate, rsi_h1=r1, vwap=vwap_jour(m15),
@@ -620,14 +635,12 @@ def rapport(c):
     src = OI_SOURCE[0] if OI_SOURCE else "—"
     oi_txt = f"n/d (paire absente de {src})" if c["oi4"] is None else \
              f"{c['oi4']*100:+.1f} % (4h) / {c['oi24']*100:+.1f} % (24h)"
-    if c["decision"] != "TRADE NOW": ordre = "Conditional (déclenchement au niveau d'entrée)"
-    elif ENTREE_LIMITE: ordre = f"Limite au prix d'entrée — à annuler si non exécuté sous {LIMITE_VALIDITE_H} h"
-    else: ordre = "Market"
-    frais_r = taux_frais() * e / abs(e - sl) if e != sl else 0
+    ordre = "Market" if c["decision"] == "TRADE NOW" else "Conditional (déclenchement au niveau d'entrée)"
+    frais_r = 2 * FRAIS_TAKER * e / abs(e - sl) if e != sl else 0
     rejet = {True: "confirmé ✅", False: "non confirmé"}.get(c["rejet_confirme"], "n/a")
     return f"""
 ══════════════════════════════════════════════
-{c['symbol']}  |  Prix {c['px']}  |  {c['decision']}
+{c['symbol']}  |  Prix {c['px']}  |  Score {c['score']}/100  |  {c['decision']}
 ══════════════════════════════════════════════
 Tendance H4 : {c['t4']} | H1 : {c['t1']} | M15 : {c['t15']}
 Supports    : {' | '.join(fz(z, t) for z in c['sup']) or 'aucun identifié'}
@@ -641,7 +654,7 @@ Filtre BTC : {c['btc_txt']}
 Sens : {c['sens']} | Setup : {c['type']}
 Déclencheur : clôture M15 {'au-dessus' if c['dir']=='haut' else 'en dessous'} de {arrondi(c['trig'], t)}
 Ordre Zoomex : {ordre}
-Entrée : {e} | SL : {sl} | TP : {tp}{f' (plafond {TP_MAX_R:g} R)' if c['tp_theorique'] else ' (zone opposée)'}
+Entrée : {e} | SL : {sl} | TP : {tp}{' (théorique 2R, pas de zone identifiée)' if c['tp_theorique'] else ''}
 RR : {c['rr']:.2f} | Frais aller-retour ≈ {frais_r:.2f} R
 Capital : {CAPITAL:.0f} USDT | Risque visé : {RISQUE} USDT (frais inclus)
 Quantité : {sz['q']:.6g} tokens | Notionnel : {sz['notional']:.2f} USDT
@@ -650,6 +663,7 @@ Alerte TradingView : M15 — croisement vers le {c['dir']} de {arrondi(c['trig']
 Invalidation : clôture H1 {'sous' if c['sens']=='LONG' else 'au-dessus de'} {sl}
 Rejet M15 : {rejet} | clôture à {c['close_pos']*100 if c['close_pos'] == c['close_pos'] else 0:.0f} % | mèche {c['wick_ratio']*100 if c['wick_ratio'] == c['wick_ratio'] else 0:.0f} % | volume x{c['vol_ratio']:.2f}
 Zone : {c['touches_zone']} tests | âge {c['age_zone_h']} h | dernier test il y a {c['dernier_test_h']} h
+BTC H4-H1 par rapport au trade : {btc_detail(c['sens'])}
 Pourquoi maintenant : {c['pourquoi']} ; distance à l'entrée = {c['dist']:.2f} ATR H1
 ⚠️ News / macro NON vérifiées par le script : contrôle avant d'entrer."""
 
@@ -712,10 +726,8 @@ def ticket(r):
     txt = (f"🎫 <b>TICKET {escape(r['symbol'])} — {sens}</b>\n"
            f"Paire : <code>{escape(base)}</code>\n"
            f"Levier : <code>{sz['lev']}</code>\n"
-           + (f"Ordre : <b>LIMITE</b> — valable {LIMITE_VALIDITE_H} h\n" if ENTREE_LIMITE else "")
-           + f"Entrée : <code>{fmt_num(e, t)}</code>"
-           + (" (prix limite)\n" if ENTREE_LIMITE else " (Market)\n")
-           + f"Quantité : <code>{fmt_num(sz['q'], step)}</code> {escape(base)} — "
+           f"Entrée : <code>{fmt_num(e, t)}</code> (Market maintenant, ou Limite à ce prix)\n"
+           f"Quantité : <code>{fmt_num(sz['q'], step)}</code> {escape(base)} — "
            f"ou valeur <code>{sz['notional']:.2f}</code> USDT\n"
            f"TP : <code>{fmt_num(tp, t)}</code>\n"
            f"SL : <code>{fmt_num(sl, t)}</code>\n"
@@ -788,7 +800,7 @@ def ligne_journal(r, maintenant, type_, statut):
     ts = int(maintenant * 1000)
     actif = statut == "EN_COURS"
     lg = dict(
-        id=cle_signal(r), type=type_, version=VERSION,
+        id=cle_signal(r), type=type_, version=VERSION_LOGIQUE,
         date_utc=datetime.fromtimestamp(maintenant, timezone.utc).strftime("%Y-%m-%d %H:%M"),
         ts=ts, ts_entree=ts if actif else np.nan, symbol=r["symbol"], sens=r["sens"], setup=r["type"],
         decision=r["decision"], raison=r["pourquoi"], score=r["score"], entree=e, px_signal=r["px"],
@@ -798,7 +810,7 @@ def ligne_journal(r, maintenant, type_, statut):
         btc_ctx=contexte_btc_label(r["sens"]), btc_detail=btc_detail(r["sens"]),
         corr_btc=None if pd.isna(r["corr_btc"]) else round(float(r["corr_btc"]), 2),
         btc_pts=r["btc_pts"], statut=statut, date_sortie="", resultat_R=np.nan,
-        frais_R=round(taux_frais() * e / risque, 2) if risque > 0 else np.nan,
+        frais_R=round(2 * FRAIS_TAKER * e / risque, 2) if risque > 0 else np.nan,
         resultat_net_R=np.nan, mfe_R=0.0 if actif else np.nan, mae_R=0.0 if actif else np.nan,
         duree_h=np.nan, backfill="", sim_statut="",
         rejet_confirme={True: "oui", False: "non"}.get(r.get("rejet_confirme"), ""),
@@ -816,14 +828,7 @@ def ajouter_reels(j, signaux, maintenant):
         m = (j["type"] == "FANTOME") & j["statut"].isin(["ATTENTE", "EN_COURS"]) & \
             (j["symbol"] == r["symbol"]) & (j["sens"] == r["sens"]) & (j["setup"] == r["type"])
         j.loc[m, "statut"] = "PROMU"
-    return ajouter_lignes(j, [ligne_journal(r, maintenant, "REEL", statut_reel(r)) for r in signaux])
-
-def statut_reel(r):
-    """V6.4 : ordre limite -> le trade n'est actif que si le prix revient toucher l'entrée.
-    Si le prix est déjà du bon côté (au niveau ou en deçà de l'entrée), l'ordre s'exécute tout de suite."""
-    if not ENTREE_LIMITE: return "EN_COURS"
-    d = 1 if r["sens"] == "LONG" else -1
-    return "ATTENTE" if d * (r["px"] - r["entry"]) > 0 else "EN_COURS"
+    return ajouter_lignes(j, [ligne_journal(r, maintenant, "REEL", "EN_COURS") for r in signaux])
 
 def ajouter_fantomes(j, candidats, maintenant):
     """Un seul fantôme ouvert par paire + sens + setup (et pas de doublon d'un trade réel ouvert)."""
@@ -840,7 +845,7 @@ def ajouter_fantomes(j, candidats, maintenant):
         lignes.append(ligne_journal(r, maintenant, "FANTOME", statut))
     return ajouter_lignes(j, lignes), len(lignes)
 
-def parcours(row, bars, actif, validite_ms=None):
+def parcours(row, bars, actif):
     """Rejoue un signal sur des bougies M15. Hypothèses prudentes : SL compté si TP et SL
     sont touchés dans la même bougie ; un fantôme n'est « entré » que si le prix touche l'entrée."""
     d = 1 if row["sens"] == "LONG" else -1
@@ -855,8 +860,6 @@ def parcours(row, bars, actif, validite_ms=None):
         touche_sl = (b.l <= sl) if d == 1 else (b.h >= sl)
         touche_tp = (b.h >= tp) if d == 1 else (b.l <= tp)
         if not out["actif"]:
-            if validite_ms is not None and b.t >= float(row["ts"]) + validite_ms:
-                out.update(statut="NON_DECLENCHE", t_sortie=float(row["ts"]) + validite_ms); return out
             if b.l <= e <= b.h:
                 out["actif"], out["t_entree"] = True, b.t
             elif touche_sl:
@@ -875,14 +878,6 @@ def parcours(row, bars, actif, validite_ms=None):
             out.update(statut="TP", r=abs(tp - e) / risque, t_sortie=fin); return out
     return out
 
-def version_limite(v):
-    """V6.4 : les trades réels à partir de la 6.4 sont entrés en ordre limite (validité limitée)."""
-    try:
-        maj, mino = (int(x) for x in str(v).split(".")[:2])
-        return ENTREE_LIMITE and (maj, mino) >= (6, 4)
-    except ValueError:
-        return False
-
 def fmt_date(ms):
     return datetime.fromtimestamp(ms / 1000, timezone.utc).strftime("%Y-%m-%d %H:%M")
 
@@ -899,16 +894,14 @@ def evaluer_journal(j):
         for i, row in groupe.iterrows():
             actif0 = pd.notna(row["ts_entree"]) and row["ts_entree"] == row["ts"]
             bars = m15[m15.t >= row["ts"]]
-            limite = row["type"] == "REEL" and version_limite(row["version"])
-            val_ms = LIMITE_VALIDITE_H * 3_600_000 if limite else None
-            p = parcours(row, bars, actif0, val_ms)
+            p = parcours(row, bars, actif0)
             d = 1 if row["sens"] == "LONG" else -1
             risque = abs(row["entree"] - row["sl"])
             if p["statut"] is None:
                 if p["actif"] and now_ms - p["t_entree"] > expire_ms and len(bars):
                     p.update(statut="EXPIRE", r=d * (bars.c.iloc[-1] - row["entree"]) / risque,
                              t_sortie=bars.t.iloc[-1] + 900_000)
-                elif not p["actif"] and now_ms - row["ts"] > (val_ms or expire_ms):
+                elif not p["actif"] and now_ms - row["ts"] > expire_ms:
                     p.update(statut="NON_DECLENCHE", t_sortie=now_ms)
                 else:
                     j.loc[i, "statut"] = "EN_COURS" if p["actif"] else "ATTENTE"
@@ -923,12 +916,6 @@ def evaluer_journal(j):
             j.loc[i, "date_sortie"] = fmt_date(t_sortie)
             n_clos += 1
             if statut not in STATUTS_CLOS:
-                if row["type"] == "REEL" and statut in ("NON_DECLENCHE", "RATE", "INVALIDE"):
-                    motif = {"NON_DECLENCHE": f"non exécuté après {LIMITE_VALIDITE_H} h",
-                             "RATE": "TP atteint avant l'exécution",
-                             "INVALIDE": "SL atteint avant l'exécution"}[statut]
-                    msgs.append(f"🧹 {row['symbol']} {row['sens']} (signal du {row['date_utc']} UTC) — "
-                                f"ordre limite {motif} : ANNULE l'ordre sur Zoomex s'il est encore ouvert.")
                 continue
             r_mult = float(p["r"])
             frais = row["frais_R"] if pd.notna(row["frais_R"]) else 2 * FRAIS_TAKER * row["entree"] / risque
@@ -944,8 +931,8 @@ def evaluer_journal(j):
             if row["type"] == "REEL":
                 icone = {"TP": "✅", "SL": "❌", "EXPIRE": "⌛"}[statut]
                 libelle = {"TP": "TP touché", "SL": "SL touché", "EXPIRE": f"expiré après {JOURNAL_EXPIRE_H} h"}[statut]
-                msgs.append(f"{icone} {row['symbol']} {row['sens']} (signal du {row['date_utc']} UTC) "
-                            f"— {libelle} : {r_mult:+.2f} R brut / "
+                msgs.append(f"{icone} {row['symbol']} {row['sens']} (signal du {row['date_utc']} UTC, "
+                            f"score {int(row['score'])}) — {libelle} : {r_mult:+.2f} R brut / "
                             f"{r_mult - frais:+.2f} R net en {duree:.1f} h (MFE {p['mfe']:+.2f} R)")
     return j, msgs, n_clos
 
@@ -1141,50 +1128,40 @@ def _avertissement(n):
 def ecrire_stats(j):
     reel = j[j["type"] == "REEL"]
     fant_all = j[j["type"] == "FANTOME"]
-    cur = reel[reel["version"] == VERSION]
+    cur = reel[reel["version"] == VERSION_LOGIQUE]
     clos = _prep(cur[cur["statut"].isin(STATUTS_CLOS)])
     n_ouverts = int(j["statut"].isin(["EN_COURS", "ATTENTE"]).sum())
     n_attente_sim = int((j["statut"].isin(STATUTS_CLOS) & (j["sim_statut"] == "")).sum())
-    out = [f"# 📒 Journal Crypto Pépite V{VERSION} — statistiques\n",
+    out = [f"# 📒 Journal Crypto Pépite V{VERSION} (statistiques de la logique V{VERSION_LOGIQUE})\n",
            f"_Mis à jour le {datetime.now(timezone.utc):%d/%m/%Y %H:%M} UTC — {len(j)} lignes dans le journal, "
            f"{n_ouverts} signaux ouverts, {n_attente_sim} trades clôturés en attente de simulation (48 h)._\n",
-           f"Signaux réels V{VERSION} : **{len(cur)}** — clôturés : **{len(clos)}** — "
+           f"Signaux réels V{VERSION_LOGIQUE} : **{len(cur)}** — clôturés : **{len(clos)}** — "
            f"en cours : **{int((cur['statut'] == 'EN_COURS').sum())}**"
            + (" — SHORT suivis en fantôme uniquement" if SHORT_MODE == "FANTOME" else "") + "\n",
-           ("_Hypothèses : entrée en ordre limite au niveau d'entrée, comptée seulement si le prix y revient "
-            f"dans les {LIMITE_VALIDITE_H} h ; SL compté" if ENTREE_LIMITE else
-            "_Hypothèses : entrée au niveau d'entrée du signal ; SL compté") + " si TP et SL sont touchés "
+           "_Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés "
            f"dans la même bougie M15 ; clôture au prix du moment après {JOURNAL_EXPIRE_H} h. "
-           "1 R = distance entrée–SL. R brut = hors frais ; R net = frais aller-retour déduits._\n"]
-    if ENTREE_LIMITE and len(cur):
-        cpt = cur["statut"].value_counts()
-        exe = int(cpt.reindex(["EN_COURS"] + STATUTS_CLOS).fillna(0).sum())
-        nd, rate, inv = (int(cpt.get(k, 0)) for k in ("NON_DECLENCHE", "RATE", "INVALIDE"))
-        att = int(cpt.get("ATTENTE", 0))
-        out.append(f"Ordres limite V{VERSION} : **{exe}** exécutés | {nd} non exécutés (expirés) | "
-                   f"{rate} ratés (TP avant exécution) | {inv} invalidés (SL avant exécution) | {att} en attente\n")
+           "1 R = distance entrée–SL. R brut = hors frais ; R net = frais taker aller-retour déduits._\n"]
 
-    out.append(f"\n## Trades réels V{VERSION}\n")
+    out.append(f"\n## Trades réels V{VERSION_LOGIQUE}\n")
     if len(clos):
         out.append(_global(clos))
         out.append(_bloc_stats(clos, "Par setup", "setup"))
         out.append(_bloc_stats(clos, "Par sens", "sens", ["LONG", "SHORT"]))
         out.append(_bloc_stats(clos, "Par contexte BTC détaillé (H4-H1)", "btc_detail"))
-        out.append(_bloc_stats(clos, "Par tranche de score (journalisé, ne filtre plus)", "tranche_score", ["<80", "80-89", "90-100"]))
+        out.append(_bloc_stats(clos, "Par tranche de score", "tranche_score", ["<80", "80-89", "90-100"]))
         out += _blocs_qualite(clos)
         out.append(_bloc_mfe(clos))
-        out.append(_bloc_sorties(clos, f"Sorties — trades réels V{VERSION}"))
+        out.append(_bloc_sorties(clos, f"Sorties — trades réels V{VERSION_LOGIQUE}"))
         ec = clos["ecart_entree_R"].dropna()
         if len(ec):
-            out.append(f"\n- Distance moyenne prix au signal / entrée : {ec.mean():+.2f} R "
-                       + ("(avec l'ordre limite, c'est ce que tu n'as plus à payer)" if ENTREE_LIMITE
-                          else "(positif = entrée réelle moins favorable)"))
+            out.append(f"\n- Écart moyen entrée réelle (prix au signal) vs entrée théorique : {ec.mean():+.2f} R "
+                       "(positif = entrée réelle moins favorable)")
         out.append(_avertissement(len(clos)))
     else:
-        out.append(f"Aucun trade V{VERSION} clôturé pour l'instant.")
+        out.append(f"Aucun trade V{VERSION_LOGIQUE} clôturé pour l'instant.")
 
-    fant = fant_all[fant_all["version"] == VERSION]
-    out.append(f"\n## Signaux fantômes V{VERSION} (non tradés : SHORT, WAIT, PREPARE)\n")
+    fant = fant_all[fant_all["version"] == VERSION_LOGIQUE]
+    out.append(f"\n## Signaux fantômes V{VERSION_LOGIQUE} (non tradés : SHORT, WAIT, PREPARE)\n")
     if len(fant):
         cpt = fant["statut"].value_counts()
         out.append("Statuts : " + " | ".join(f"{k} {v}" for k, v in cpt.items()) + "\n")
@@ -1197,7 +1174,7 @@ def ecrire_stats(j):
             out.append(_bloc_stats(fc, "Fantômes par contexte BTC détaillé (H4-H1)", "btc_detail"))
             out += _blocs_qualite(fc)
             out.append(_bloc_mfe(fc))
-            out.append(_bloc_sorties(fc, f"Sorties — fantômes V{VERSION}"))
+            out.append(_bloc_sorties(fc, f"Sorties — fantômes V{VERSION_LOGIQUE}"))
             out.append(_avertissement(len(fc)))
     else:
         out.append("Aucun pour l'instant.")
@@ -1222,7 +1199,7 @@ def ecrire_stats(j):
         out.append(_bloc_mfe(clos6))
         out.append(_avertissement(len(clos6)))
 
-    prec = _prep(reel[(reel["version"] != VERSION) & reel["statut"].isin(STATUTS_CLOS)])
+    prec = _prep(reel[(reel["version"] != VERSION_LOGIQUE) & reel["statut"].isin(STATUTS_CLOS)])
     if len(prec):
         out.append("\n---\n\n## Versions précédentes (référence, non mélangé)\n")
         out.append(_bloc_stats(prec, "Trades réels par version", "version"))
@@ -1256,7 +1233,7 @@ def scan():
     print(f"OI récupéré via {src} : {OI_STATS['ok']} paires OK / {OI_STATS['ko']} n/d")
 
     btc_sans_dir = BTC_FILTRE and BTC_CTX is not None and BTC_CTX["n_neutre"] == 2
-    score_min = (SCORE_MIN_BTC_NEUTRE if btc_sans_dir else SCORE_MIN) if SCORE_FILTRE else -1
+    score_min = SCORE_MIN_BTC_NEUTRE if btc_sans_dir else SCORE_MIN
     max_now   = MAX_NOW_BTC_NEUTRE if btc_sans_dir else MAX_TRADE_NOW
 
     # V6.1 : SHORT en mode fantôme -> jamais tradés, suivis dans le journal
@@ -1287,7 +1264,7 @@ def scan():
     alerte = alerte_btc_neutre()
     if alerte: print("\n" + alerte)
     if not top:
-        print("\nAucun Crypto Pépite tradable actuellement.")
+        print(f"\nAucun Crypto Pépite tradable actuellement (score mini {score_min}).")
     else:
         for r in top: print(rapport(r))
     print("\n« Ne pas trader est aussi une décision de trading. »")
@@ -1309,7 +1286,7 @@ def scan():
     if FANTOMES:
         exclus = {id(r) for r in top if r["decision"] == "TRADE NOW"}
         candidats = sorted([r for r in results if r["decision"] != "NO TRADE"
-                            and r["score"] >= score_min and id(r) not in exclus], key=cle_prio)
+                            and r["score"] >= SCORE_MIN and id(r) not in exclus], key=cle_prio)
         journal, n_fant = ajouter_fantomes(journal, candidats, maintenant)
     journal.to_csv(JOURNAL, index=False)
     ecrire_stats(journal)
