@@ -1,6 +1,6 @@
 # 📒 Journal Crypto Pépite V6.3 — statistiques
 
-Signaux réels V6.3 : **5** — clôturés : **2** — en cours : **3** — SHORT suivis en fantôme uniquement
+Signaux réels V6.3 : **6** — clôturés : **2** — en cours : **4** — SHORT suivis en fantôme uniquement
 
 _Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés dans la même bougie M15 ; clôture au prix du moment après 48 h. 1 R = distance entrée–SL. R brut = hors frais ; R net = frais taker aller-retour déduits._
 
@@ -115,7 +115,7 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ## Signaux fantômes V6.3 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : EN_COURS 7 | SL 4 | ATTENTE 3 | TP 2 | PROMU 1 | RATE 1
+Statuts : EN_COURS 7 | ATTENTE 5 | SL 4 | TP 2 | PROMU 1 | RATE 1
 
 - Taux de réussite : **33 %** (2/6)
 - Espérance : **-0.13 R brut** / **-0.32 R net** par trade
@@ -240,9 +240,9 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 79 | RR visé moyen : 2.64 | MFE médian : **+0.92 R**
-- Ont atteint +1 R : 48 % | +1,5 R : 38 % | +2 R : 23 %
-- **MFE des perdants** (57 SL) : avaient atteint +0,5 R : 60 % | +1 R : 30 % | +1,5 R : 18 % avant de toucher le SL
+- Trades mesurés : 86 | RR visé moyen : 2.63 | MFE médian : **+0.86 R**
+- Ont atteint +1 R : 45 % | +1,5 R : 35 % | +2 R : 21 %
+- **MFE des perdants** (64 SL) : avaient atteint +0,5 R : 62 % | +1 R : 28 % | +1,5 R : 16 % avant de toucher le SL
 - **MAE des gagnants** (21) : moyen -0.37 R | médian -0.30 R | pire -0.99 R | 43 % sont descendus au-delà de -0,5 R
 
 ### Sorties — ensemble
@@ -258,13 +258,13 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | 6.1 | 2 | 2 | 100 % | +1.52 | +1.45 | +2.90 |
-| avant V6 | 51 | 12 | 24 % | -0.21 | -0.36 | -18.18 |
+| avant V6 | 52 | 12 | 23 % | -0.22 | -0.37 | -19.35 |
 
 ### Par setup (toutes versions précédentes)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| Cassure baissière (clôture M15) + retest | 10 | 1 | 10 % | -0.62 | -0.80 | -8.03 |
+| Cassure baissière (clôture M15) + retest | 11 | 1 | 9 % | -0.66 | -0.84 | -9.20 |
 | Cassure confirmée (clôture M15) + retest | 5 | 0 | 0 % | -1.00 | -1.16 | -5.79 |
 | Rebond sur support H1 | 18 | 9 | 50 % | +0.57 | +0.51 | +9.09 |
 | Rejet de résistance H1 | 20 | 4 | 20 % | -0.32 | -0.53 | -10.55 |
@@ -274,4 +274,4 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | LONG | 23 | 9 | 39 % | +0.23 | +0.14 | +3.30 |
-| SHORT | 30 | 5 | 17 % | -0.42 | -0.62 | -18.58 |
+| SHORT | 31 | 5 | 16 % | -0.44 | -0.64 | -19.75 |
