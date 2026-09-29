@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V6.2 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V6.3 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -41,13 +41,15 @@
 #    - Stats : MFE des perdants, MAE des gagnants, résultats par qualité de zone et de rejet.
 #  V6.2 : zones H1 plafonnées à ZONE_LARGEUR_MAX ATR (les pivots s'enchaînaient
 #         en « méga-zones » de 3 à 5 ATR avec des dizaines de tests et des SL démesurés).
+#  V6.3 : TP sur la PREMIÈRE zone opposée (plus de TP « par-dessus » une résistance / un support).
+#         Si cette zone est à moins de RR_MIN -> NO TRADE (« obstacle trop proche »).
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
 import numpy as np, pandas as pd
 from datetime import datetime, timezone
 
-VERSION = "6.2"
+VERSION = "6.3"
 
 # ---------------- PARAMÈTRES ----------------
 BASE          = "https://openapi.zoomex.com"
@@ -539,17 +541,20 @@ def analyse(row, inf):
     for s in setups:
         e, sl = s["entry"], s["sl"]; rd = abs(e - sl)
         if rd <= 0: continue
+        # V6.3 : TP sur la première zone opposée, même si elle est proche (pas de TP au-delà d'un obstacle)
         if s["sens"] == "LONG":
-            tgt = next((z["lo"] for z in res if z["lo"] > e + rd), None)
+            tgt = next((z["lo"] for z in res if z["lo"] > e), None)
             tp = tgt if tgt else e + 2 * rd
         else:
-            tgt = next((z["hi"] for z in sup if z["hi"] < e - rd), None)
+            tgt = next((z["hi"] for z in sup if z["hi"] < e), None)
             tp = tgt if tgt else e - 2 * rd
         rr = abs(tp - e) / rd
         dist = abs(px - e) / a1
         contre = (s["sens"] == "LONG" and t4 == "BAISSIÈRE") or (s["sens"] == "SHORT" and t4 == "HAUSSIÈRE")
         bf = (0, False, "sans objet (BTC lui-même)", 0) if est_btc else filtre_btc(s["sens"], corr, s["type"])
-        if rr < RR_MIN: dec, why = "NO TRADE", f"RR insuffisant ({rr:.2f})"
+        if rr < RR_MIN:
+            dec, why = "NO TRADE", (f"obstacle trop proche : {'résistance' if s['sens'] == 'LONG' else 'support'} "
+                                    f"à {rr:.2f} R" if tgt else f"RR insuffisant ({rr:.2f})")
         elif abs(row.price24hPcnt) > MAX_MOVE_24H: dec, why = "NO TRADE", "mouvement 24h déjà fait"
         elif dist > 1.0: dec, why = "NO TRADE", "prix trop loin de l'entrée (trop tard)"
         elif contre: dec, why = "WAIT", "contre-tendance H4"
