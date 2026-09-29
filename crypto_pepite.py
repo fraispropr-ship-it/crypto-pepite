@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V6.0 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V6.1 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -13,9 +13,9 @@
 #  V4.8  : journal des TRADE NOW + suivi TP/SL + statistiques + Telegram à la clôture.
 #  V4.9  : alertes PREPARE à partir d'un score de 90.
 #  V4.10 : fenêtre TRADE NOW élargie à 0,35 ATR H1.
-#  V6.0 (nouvelle base, suite à l'analyse du journal : 43 trades, -0,11 R/trade) :
+#  V6.0 (base historique, suite à l'analyse du journal : 43 trades, -0,11 R/trade) :
 #    - Cassures désactivées (1 gagnant sur 11, le retest n'était jamais vérifié).
-#    - Règle « jamais contre BTC » : BTC contre le trade sur au moins une UT -> WAIT.
+#    - Ancienne règle BTC ; désactivée en V6.1 (sauf choc contraire).
 #    - Bonus BTC supprimé (les trades alignés BTC étaient les moins bons).
 #    - Tri des setups par proximité de l'entrée, plus par score (score non prédictif).
 #    - Alertes PREPARE ≥ 90 coupées (0/2, score inversé).
@@ -25,15 +25,21 @@
 #    - Signaux FANTÔMES : les PREPARE / WAIT sont suivis sans être tradés,
 #      pour tester les filtres (dont « jamais contre BTC ») sans risquer 1 USDT.
 #      Tout est dans le même journal_signaux.csv (colonne « type »).
-#    - Stats : la section principale ne compte QUE les trades V6 (l'ancien historique
+#    - Stats : la section principale ne compte QUE les trades de la version courante (l'ancien historique
 #      est gardé à part, sans être mélangé) ; R brut et net ; simulation de sorties.
+#  V6.1 : rebond confirmé par la dernière M15 ; SHORT/cassures fantômes ; BTC
+#         descriptif sauf choc contraire ; classement décision/distance ; journal
+#         de la zone et du rejet ; simulation chronologique des sorties sur 12 h.
+#  Journal « REEL » = signal proposé au marché, PAS un ordre exécuté ni une
+#  preuve d'exécution ; résultats théoriques sans slippage. Vérifier macro/news.
+#  Dépendances : python -m pip install numpy pandas requests
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
 import numpy as np, pandas as pd
 from datetime import datetime, timezone
 
-VERSION = "6.0"
+VERSION = "6.1"
 
 # ---------------- PARAMÈTRES ----------------
 BASE          = "https://openapi.zoomex.com"
@@ -85,16 +91,23 @@ PREPARE_SCORE_MIN = 90
 # ---- Journal (V4.8) ----
 JOURNAL          = "journal_signaux.csv"
 STATS            = "journal_stats.md"
-JOURNAL_EXPIRE_H = 48
+JOURNAL_EXPIRE_H = 12
 
 # ---- NOUVEAU V6 ----
 CASSURES_ACTIVES  = False    # True pour réactiver les setups de cassure
-BTC_JAMAIS_CONTRE = True     # BTC contre le trade sur au moins une UT (H4 ou H1) -> WAIT
+BTC_JAMAIS_CONTRE = False     # BTC contre le trade sur au moins une UT (H4 ou H1) -> WAIT
 TRI_PAR_SCORE     = False    # False : setups triés par proximité de l'entrée
 FANTOMES          = True     # suivi des PREPARE / WAIT non tradés
 KLINES_JOURNAL    = 500      # bougies M15 lues pour suivre le journal (≈ 5 jours)
 BACKFILL_MAX      = 15       # nb max d'anciens trades dont on rattrape le MFE par scan
 
+# V6.1 : seuls les rebonds LONG sont proposés comme signaux ; les SHORT et
+# cassures restent mesurés en simulation. Le volume est une donnée, pas un veto.
+SHORT_MODE = "FANTOME"
+REBOND_VOLUME_MIN = 1.0  # descriptif ; tester les seuils après davantage de données
+REJET_CLOTURE_MIN = 0.60  # clôture dans les 40 % supérieurs/inférieurs de la bougie
+SIM_SCENARIOS = ("Actuel", "BE à 1R", "BE à 1,5R", "SL technique à 1,5R",
+                 "50 % à 1R + reste", "TP fixe 1,5R", "TP fixe 2R")
 NEUTRE = "NEUTRE/RANGE"
 
 S = requests.Session()
@@ -262,19 +275,19 @@ def zones(df, a, k=3, lookback=150):
     d = df.tail(lookback).reset_index(drop=True)
     pts = []
     for i in range(k, len(d) - k):
-        if d.h.iloc[i] == d.h.iloc[i-k:i+k+1].max(): pts.append(d.h.iloc[i])
-        if d.l.iloc[i] == d.l.iloc[i-k:i+k+1].min(): pts.append(d.l.iloc[i])
-    pts.sort()
+        if d.h.iloc[i] == d.h.iloc[i-k:i+k+1].max(): pts.append((d.h.iloc[i], d.t.iloc[i]))
+        if d.l.iloc[i] == d.l.iloc[i-k:i+k+1].min(): pts.append((d.l.iloc[i], d.t.iloc[i]))
+    pts.sort(key=lambda x: x[0])
     clusters = []
     for p in pts:
-        if clusters and p - clusters[-1][-1] <= 0.5 * a: clusters[-1].append(p)
+        if clusters and p[0] - clusters[-1][-1][0] <= 0.5 * a: clusters[-1].append(p)
         else: clusters.append([p])
     out = []
     for c in clusters:
-        lo, hi = min(c), max(c)
+        lo, hi = min(x[0] for x in c), max(x[0] for x in c)
         if hi - lo < 0.3 * a:
             m = (lo + hi) / 2; lo, hi = m - 0.15 * a, m + 0.15 * a
-        out.append(dict(lo=lo, hi=hi, touches=len(c)))
+        out.append(dict(lo=lo, hi=hi, touches=len(c), age_h=round((d.t.iloc[-1] - max(x[1] for x in c))/3_600_000, 1)))
     return out
 
 def vwap_jour(m15):
@@ -301,13 +314,7 @@ def contexte_btc():
 def alerte_btc_neutre():
     if not BTC_FILTRE or BTC_CTX is None or BTC_CTX["n_neutre"] == 0:
         return ""
-    if BTC_CTX["n_neutre"] == 2:
-        return ("⚠️ BTC SANS DIRECTION (H4 + H1 neutres) : marché indécis, faux départs fréquents.\n"
-                f"   → Score mini relevé à {SCORE_MIN_BTC_NEUTRE}, {MAX_NOW_BTC_NEUTRE} seul TRADE NOW autorisé. "
-                "Privilégie les setups de range.")
-    ut = BTC_CTX["ut_neutres"][0]
-    return (f"⚠️ BTC neutre en {ut} : direction partielle, réduis l'exposition "
-            f"(malus -{BTC_NEUTRE_1UT} pondéré par la corrélation).")
+    return "⚠️ BTC neutre : contexte consigné dans le journal (aucun veto automatique)."
 
 def resume_btc():
     if BTC_CTX is None:
@@ -346,7 +353,7 @@ def filtre_btc(sens, corr, setup_type=""):
         pts_neutre = -(BTC_NEUTRE_2UT if n_neutre == 2 else BTC_NEUTRE_1UT)
         if cassure: pts_neutre -= BTC_NEUTRE_CASSURE
     pts = round((pts + pts_neutre) * poids)
-    wait = (n_contre == 2 or choc_contre) and (not c_ok or corr >= CORR_WAIT)
+    wait = choc_contre  # seul le choc contraire bloque ; la tendance reste descriptive
 
     if n_contre == 2:   etat = "BTC contre le trade (H4 + H1)"
     elif n_contre == 1: etat = "BTC contre le trade sur une UT"
@@ -451,32 +458,40 @@ def analyse(row, inf):
     corr = np.nan if est_btc else correlation_btc(h1)
     ch4 = h1.c.iloc[-1] / h1.c.iloc[-5] - 1
     cl, lows, highs = m15.c, m15.l, m15.h
+    b = m15.iloc[-1]  # dernière bougie entièrement clôturée
+    amplitude = max(float(b.h - b.l), 1e-12)
+    fermeture_haute = (b.c - b.l) / amplitude
+    corps = abs(b.c - b.o) / amplitude
+    meche_basse = (min(b.o, b.c) - b.l) / amplitude
+    meche_haute = (b.h - max(b.o, b.c)) / amplitude
     setups = []
 
     if sup:   # ---- LONG ----
         z = sup[0]
-        if CASSURES_ACTIVES and cl.iloc[-1] > z["hi"] and (cl.iloc[-9:-1] < z["hi"]).any() and z["touches"] >= 2:
-            setups.append(dict(sens="LONG", type="Cassure confirmée (clôture M15) + retest",
+        if cl.iloc[-1] > z["hi"] and (cl.iloc[-9:-1] < z["hi"]).any() and z["touches"] >= 2:
+            setups.append(dict(sens="LONG", type="Cassure M15 (retest non vérifié)",
                                entry=z["hi"], sl=z["lo"] - 0.25 * a1, trig=z["hi"], dir="haut",
                                deja=True, zone=z))
         elif z["lo"] <= px <= z["hi"] + 0.5 * a1:
-            touched = (lows.iloc[-8:] <= z["hi"]).any()
+            rejet = (b.l <= z["hi"] and b.h >= z["lo"] and b.c > z["hi"]
+                     and b.c > b.o and fermeture_haute >= REJET_CLOTURE_MIN)
             setups.append(dict(sens="LONG", type="Rebond sur support H1",
                                entry=z["hi"], sl=z["lo"] - 0.3 * a1, trig=z["hi"], dir="haut",
-                               deja=touched and cl.iloc[-1] > z["hi"], zone=z))
+                               deja=bool(rejet), zone=z))
     if res:   # ---- SHORT ----
         z = res[0]
-        if CASSURES_ACTIVES and cl.iloc[-1] < z["lo"] and (cl.iloc[-9:-1] > z["lo"]).any() and z["touches"] >= 2:
-            setups.append(dict(sens="SHORT", type="Cassure baissière (clôture M15) + retest",
+        if cl.iloc[-1] < z["lo"] and (cl.iloc[-9:-1] > z["lo"]).any() and z["touches"] >= 2:
+            setups.append(dict(sens="SHORT", type="Cassure baissière M15 (retest non vérifié)",
                                entry=z["lo"], sl=z["hi"] + 0.25 * a1, trig=z["lo"], dir="bas",
                                deja=True, zone=z))
         elif z["lo"] - 0.5 * a1 <= px <= z["hi"]:
-            touched = (highs.iloc[-8:] >= z["lo"]).any()
+            rejet = (b.h >= z["lo"] and b.l <= z["hi"] and b.c < z["lo"]
+                     and b.c < b.o and fermeture_haute <= 1 - REJET_CLOTURE_MIN)
             setups.append(dict(sens="SHORT", type="Rejet de résistance H1",
                                entry=z["lo"], sl=z["hi"] + 0.3 * a1, trig=z["lo"], dir="bas",
-                               deja=touched and cl.iloc[-1] < z["lo"], zone=z))
+                               deja=bool(rejet), zone=z))
 
-    best = None
+    candidats = []
     for s in setups:
         e, sl = s["entry"], s["sl"]; rd = abs(e - sl)
         if rd <= 0: continue
@@ -494,10 +509,14 @@ def analyse(row, inf):
         elif abs(row.price24hPcnt) > MAX_MOVE_24H: dec, why = "NO TRADE", "mouvement 24h déjà fait"
         elif dist > 1.0: dec, why = "NO TRADE", "prix trop loin de l'entrée (trop tard)"
         elif contre: dec, why = "WAIT", "contre-tendance H4"
-        elif bf[1]: dec, why = "WAIT", "BTC contre le trade (attendre que BTC se stabilise)"
+        elif bf[1]: dec, why = "WAIT", "choc BTC opposé au trade"
         elif BTC_JAMAIS_CONTRE and bf[3] >= 1:
             dec, why = "WAIT", "BTC contre le trade sur une UT (règle « jamais contre BTC »)"
-        elif s["deja"] and dist <= DIST_TRADE_NOW: dec, why = "TRADE NOW", "déclencheur atteint, prix proche de l'entrée"
+        elif "Cassure" in s["type"] and not CASSURES_ACTIVES:
+            dec, why = "WAIT", "cassure observée en fantôme V6.1"
+        elif s["sens"] == "SHORT" and SHORT_MODE == "FANTOME":
+            dec, why = "WAIT", "SHORT en observation V6.1 (fantôme)"
+        elif s["deja"] and dist <= DIST_TRADE_NOW: dec, why = "TRADE NOW", "rejet confirmé sur la dernière M15 clôturée"
         else: dec, why = "PREPARE", "déclencheur pas encore atteint"
         sc, comps = score(s, t4, t1, vol_ratio, oi4, ch4, rr, dist, row, r1)
         sc = int(max(0, min(100, sc + bf[0])))
@@ -508,16 +527,28 @@ def analyse(row, inf):
                     atr_h1=a1, turnover=row.turnover24h, spread=row.spread,
                     ch24=row.price24hPcnt, inf=inf,
                     corr_btc=corr, btc_pts=bf[0], btc_txt=bf[2], btc_contre=bf[3],
-                    sc_btc=bf[0], **comps)
-        if best is None or cand["score"] > best["score"]: best = cand
-    return best
+                    sc_btc=bf[0], bougie_rejet=bool(s["deja"]),
+                    body_ratio=round(corps, 4),
+                    wick_ratio=round(meche_basse if s["sens"] == "LONG" else meche_haute, 4),
+                    close_location=round(fermeture_haute if s["sens"] == "LONG" else 1-fermeture_haute, 4),
+                    distance_zone_ATR=round(dist, 4), touches_zone=s["zone"]["touches"],
+                    age_zone_h=s["zone"]["age_h"], m15_signal_ts=int(b.t), **comps)
+        # Un signal Market doit être évalué au prix courant et non à l'ancien bord de zone.
+        if cand["decision"] == "TRADE NOW":
+            rr_marche = (tp - px) / (px - sl) if s["sens"] == "LONG" and px > sl else \
+                        (px - tp) / (sl - px) if s["sens"] == "SHORT" and px < sl else -1
+            if rr_marche < RR_MIN:
+                cand["decision"], cand["pourquoi"] = "NO TRADE", f"RR au prix du marché insuffisant ({rr_marche:.2f})"
+        candidats.append(cand)
+    return candidats
 
 # ---------------- RAPPORT ----------------
 def fz(z, t): return f"{arrondi(z['lo'], t)} – {arrondi(z['hi'], t)} ({z['touches']} tests)"
 
 def rapport(c):
     t = c["inf"].get("tick")
-    e, sl, tp = arrondi(c["entry"], t), arrondi(c["sl"], t), arrondi(c["tp"], t)
+    e = arrondi(c["px"] if c["decision"] == "TRADE NOW" else c["entry"], t)
+    sl, tp = arrondi(c["sl"], t), arrondi(c["tp"], t)
     sz = sizing(e, sl, c["inf"])
     rng = ""
     if c["t1"] == NEUTRE and c["sup"] and c["res"]:
@@ -544,8 +575,8 @@ Filtre BTC : {c['btc_txt']}
 Sens : {c['sens']} | Setup : {c['type']}
 Déclencheur : clôture M15 {'au-dessus' if c['dir']=='haut' else 'en dessous'} de {arrondi(c['trig'], t)}
 Ordre Zoomex : {ordre}
-Entrée : {e} | SL : {sl} | TP : {tp}{' (théorique 2R, pas de zone identifiée)' if c['tp_theorique'] else ''}
-RR : {c['rr']:.2f} | Frais aller-retour ≈ {frais_r:.2f} R
+Entrée {"au marché (prix indicatif)" if c["decision"] == "TRADE NOW" else "théorique"} : {e} | SL : {sl} | TP : {tp}{' (théorique 2R, pas de zone identifiée)' if c['tp_theorique'] else ''}
+RR au prix affiché : {abs(tp-e)/abs(e-sl):.2f} | Frais aller-retour ≈ {frais_r:.2f} R
 Capital : {CAPITAL:.0f} USDT | Risque visé : {RISQUE} USDT (frais inclus)
 Quantité : {sz['q']:.6g} tokens | Notionnel : {sz['notional']:.2f} USDT
 Levier : x{sz['lev']} | Marge ≈ {sz['marge']:.2f} USDT | Risque réel au SL ≈ {sz['risque']:.2f} USDT{'  ⚠️ quantité < minimum Zoomex' if sz['trop_petit'] else ''}
@@ -592,7 +623,7 @@ def lien_tv(r):
 
 def ligne_pepite(r):
     t = r["inf"].get("tick")
-    return f"PEPITE;{r['symbol']};{r['sens']};{arrondi(r['entry'], t)};{arrondi(r['sl'], t)};{arrondi(r['tp'], t)}"
+    return f"PEPITE;{r['symbol']};{r['sens']};{arrondi(r['px'] if r['decision'] == 'TRADE NOW' else r['entry'], t)};{arrondi(r['sl'], t)};{arrondi(r['tp'], t)}"
 
 def cle_signal(r):
     t = r["inf"].get("tick")
@@ -606,7 +637,9 @@ COLS_JOURNAL = ["id", "type", "version", "date_utc", "ts", "ts_entree", "symbol"
                 "decision", "raison", "score", "entree", "px_signal", "ecart_entree_R", "sl", "tp", "rr",
                 "btc_h4", "btc_h1", "btc_ctx", "btc_detail", "corr_btc", "btc_pts"] + SC_COLS + \
                ["statut", "date_sortie", "resultat_R", "frais_R", "resultat_net_R",
-                "mfe_R", "mae_R", "duree_h", "backfill"]
+                "mfe_R", "mae_R", "duree_h", "backfill", "bougie_rejet", "body_ratio",
+                "wick_ratio", "close_location", "volume_ratio", "distance_zone_ATR",
+                "touches_zone", "age_zone_h", "m15_signal_ts"]
 COLS_TEXTE = ["id", "type", "version", "date_utc", "symbol", "sens", "setup", "decision", "raison",
               "btc_h4", "btc_h1", "btc_ctx", "btc_detail", "statut", "date_sortie", "backfill"]
 STATUTS_CLOS = ["TP", "SL", "EXPIRE"]
@@ -640,7 +673,8 @@ def ajouter_lignes(j, lignes):
 
 def ligne_journal(r, maintenant, type_, statut):
     t = r["inf"].get("tick")
-    e, sl, tp = arrondi(r["entry"], t), arrondi(r["sl"], t), arrondi(r["tp"], t)
+    e = arrondi(r["px"] if type_ == "REEL" else r["entry"], t)
+    sl, tp = arrondi(r["sl"], t), arrondi(r["tp"], t)
     risque = abs(e - sl)
     d = 1 if r["sens"] == "LONG" else -1
     ts = int(maintenant * 1000)
@@ -651,14 +685,19 @@ def ligne_journal(r, maintenant, type_, statut):
         ts=ts, ts_entree=ts if actif else np.nan, symbol=r["symbol"], sens=r["sens"], setup=r["type"],
         decision=r["decision"], raison=r["pourquoi"], score=r["score"], entree=e, px_signal=r["px"],
         ecart_entree_R=round(d * (r["px"] - e) / risque, 2) if risque > 0 else np.nan,
-        sl=sl, tp=tp, rr=round(r["rr"], 2),
+        sl=sl, tp=tp, rr=round(abs(tp-e)/risque, 2) if risque else np.nan,
         btc_h4=BTC_CTX["t4"] if BTC_CTX else "", btc_h1=BTC_CTX["t1"] if BTC_CTX else "",
         btc_ctx=contexte_btc_label(r["sens"]), btc_detail=btc_detail(r["sens"]),
         corr_btc=None if pd.isna(r["corr_btc"]) else round(float(r["corr_btc"]), 2),
         btc_pts=r["btc_pts"], statut=statut, date_sortie="", resultat_R=np.nan,
         frais_R=round(2 * FRAIS_TAKER * e / risque, 2) if risque > 0 else np.nan,
         resultat_net_R=np.nan, mfe_R=0.0 if actif else np.nan, mae_R=0.0 if actif else np.nan,
-        duree_h=np.nan, backfill="")
+        duree_h=np.nan, backfill="",
+        bougie_rejet=int(r["bougie_rejet"]), body_ratio=r["body_ratio"],
+        wick_ratio=r["wick_ratio"], close_location=r["close_location"],
+        volume_ratio=round(r["vol_ratio"], 4), distance_zone_ATR=r["distance_zone_ATR"],
+        touches_zone=r["touches_zone"], age_zone_h=r["age_zone_h"],
+        m15_signal_ts=r["m15_signal_ts"])
     for c in SC_COLS:
         lg[c] = r.get(c, np.nan)
     return lg
@@ -844,28 +883,91 @@ def _bloc_mfe(df):
     if len(g): lignes.append(f"- MAE moyen des gagnants : -{g['mae_R'].mean():.2f} R")
     return "\n".join(lignes)
 
+def simuler_sortie(row, bars, scenario):
+    """Rejeu M15 ordonné. Ambiguïté intrabougie : SL avant TP ou partiel.
+    Les changements de SL n'entrent en vigueur qu'à la bougie suivante.
+    Résultat brut en R ; l'entrée est celle journalisée au signal.
+    """
+    d = 1 if row["sens"] == "LONG" else -1
+    e, stop_initial = float(row["entree"]), float(row["sl"])
+    risque = abs(e - stop_initial)
+    if risque <= 0 or bars.empty: return None
+    tp_original = float(row["tp"])
+    tp = e + d * (1.5 if scenario == "TP fixe 1,5R" else
+                  2 if scenario == "TP fixe 2R" else abs(tp_original - e) / risque) * risque
+    stop, resultat, restant = stop_initial, 0.0, 1.0
+    actif = row["type"] == "REEL"  # signal Market ; les fantômes attendent un contact
+    activation = False
+    partiel = False
+    for _, bar in bars.iterrows():
+        if not actif:
+            if bar.l <= e <= bar.h: actif = True
+            else: continue
+        touche_stop = bar.l <= stop if d == 1 else bar.h >= stop
+        # Convention prudente même si un objectif a été atteint dans cette bougie.
+        if touche_stop:
+            return resultat + restant * d * (stop - e) / risque
+        touche_tp = bar.h >= tp if d == 1 else bar.l <= tp
+        if touche_tp:
+            return resultat + restant * d * (tp - e) / risque
+        haut_r = (bar.h - e) / risque if d == 1 else (e - bar.l) / risque
+        if scenario == "50 % à 1R + reste" and not partiel and haut_r >= 1:
+            resultat += 0.5
+            restant = 0.5
+            partiel = True
+        if scenario == "BE à 1R" and haut_r >= 1:
+            stop = max(stop, e) if d == 1 else min(stop, e)
+        if scenario == "BE à 1,5R" and haut_r >= 1.5:
+            stop = max(stop, e) if d == 1 else min(stop, e)
+        if scenario == "SL technique à 1,5R" and haut_r >= 1.5:
+            # Structure prudente : extrême de la bougie M15 clôturée, appliqué à la suivante.
+            candidat = float(bar.l) if d == 1 else float(bar.h)
+            stop = max(stop, candidat) if d == 1 else min(stop, candidat)
+        activation = True
+    if not actif: return None
+    return resultat + restant * d * (float(bars.c.iloc[-1]) - e) / risque
+
+
 def _simuler(df):
-    """Rejoue les trades avec d'autres sorties, à partir du MFE (SL inchangé)."""
-    d = df[df["mfe_R"].notna()]
-    if not len(d): return ""
-    def cap(r, x):
-        if r["statut"] == "TP" and r["resultat_R"] <= x: return r["resultat_R"]
-        return x if r["mfe_R"] >= x else r["resultat_R"]
-    def partiel(r, reste):
-        return 0.5 + 0.5 * reste if r["mfe_R"] >= 1 else reste
-    scen = {
-        "Actuel (TP sur zone)": d["resultat_R"],
-        "TP plafonné à 1,5 R": d.apply(lambda r: cap(r, 1.5), axis=1),
-        "TP plafonné à 2 R": d.apply(lambda r: cap(r, 2.0), axis=1),
-        "50 % à 1 R + reste au TP": d.apply(lambda r: partiel(r, r["resultat_R"]), axis=1),
-        "50 % à 1 R + reste plafonné à 2 R": d.apply(lambda r: partiel(r, cap(r, 2.0)), axis=1)}
-    lignes = [f"\n### Simulation de sorties ({len(d)} trades avec MFE)\n",
-              "| Scénario | Taux | R moyen brut | R moyen net | R total net |", "|---|---|---|---|---|"]
-    for nom, s in scen.items():
-        net = s - d["frais_R"].fillna(0)
-        lignes.append(f"| {nom} | {100*(s > 0).mean():.0f} % | {s.mean():+.2f} | {net.mean():+.2f} | {net.sum():+.2f} |")
-    lignes.append("\n_Approximation : basée sur le plus haut favorable atteint avant la sortie ; "
-                  "la bougie du SL n'est pas comptée dans le MFE (prudent)._")
+    """Compare les sorties sur 12 h de M15, uniquement quand tout l'horizon est disponible."""
+    eligible = df[(df["version"] == VERSION) & (df["type"] == "REEL")].copy()
+    now_ms = time.time() * 1000
+    donnees = {nom: [] for nom in SIM_SCENARIOS}
+    exclus = 0
+    for _, row in eligible.iterrows():
+        debut = row["ts"]
+        fin = debut + JOURNAL_EXPIRE_H * 3_600_000
+        if pd.isna(debut) or fin > now_ms - 900_000:
+            exclus += 1; continue
+        try:
+            bars = klines_periode(row["symbol"], debut, fin)
+        except Exception:
+            bars = None
+        if bars is None:
+            exclus += 1; continue
+        bars = bars[(bars.t >= debut) & (bars.t < fin)].copy()
+        if bars.empty or bars.t.iloc[0] > debut + 900_000 or bars.t.iloc[-1] < fin - 1_800_000:
+            exclus += 1; continue
+        rs = {nom: simuler_sortie(row, bars, nom) for nom in SIM_SCENARIOS}
+        if any(x is None for x in rs.values()):
+            exclus += 1; continue
+        frais = float(row["frais_R"]) if pd.notna(row["frais_R"]) else 0.0
+        for nom, brut in rs.items():
+            # Partiel = deux sorties ; frais approchés au taker aller/retour journalisé.
+            donnees[nom].append((brut, brut - frais))
+    n = len(donnees["Actuel"])
+    if not n:
+        return f"\n### Sorties rejouées M15\nPas encore de signal V{VERSION} avec 12 h de données complètes."
+    lignes = [f"\n### Sorties rejouées M15 ({n} signaux V{VERSION}, {exclus} exclus)\n",
+              "| Scénario | Gagnants nets | R moyen brut | R moyen net | R total net |",
+              "|---|---:|---:|---:|---:|"]
+    for nom, valeurs in donnees.items():
+        brut, net = np.array(valeurs).T
+        lignes.append(f"| {nom} | {(net > 0).mean()*100:.0f} % | {brut.mean():+.2f} | "
+                      f"{net.mean():+.2f} | {net.sum():+.2f} |")
+    lignes.append("\n_Hypothèse : entrée au prix journalisé, SL prioritaire en cas de conflit dans une M15 ; "
+                  "BE et SL technique actifs à partir de la bougie suivante. Toutes les variantes "
+                  "sont évaluées jusqu'à 12 h. Ce sont des simulations, sans slippage._")
     return "\n".join(lignes)
 
 def _avertissement(n):
@@ -916,7 +1018,7 @@ def ecrire_stats(j):
             out.append(_bloc_stats(fc, "Fantômes par contexte BTC détaillé (H4-H1)", "btc_detail"))
             out.append(_bloc_stats(fc, "Fantômes par tranche de score", "tranche_score", ["<80", "80-89", "90-100"]))
             out.append(_bloc_mfe(fc))
-            out.append(_simuler(fc))
+            # Pas de sortie alternative sur les fantômes non exécutés.
             out.append(_avertissement(len(fc)))
     else:
         out.append("Aucun pour l'instant.")
@@ -925,10 +1027,20 @@ def ecrire_stats(j):
     # donc on utilise tous les trades réels dont le MFE est connu (plus de données).
     tous = _prep(reel[reel["statut"].isin(STATUTS_CLOS)])
     if len(tous):
-        out.append("\n## Sorties — tous les trades réels (V6 + historique)\n")
+        out.append("\n## MFE / MAE — historique complet (mesures descriptives)\n")
         out.append(_bloc_mfe(tous))
-        out.append(_simuler(tous))
+    if len(clos6):
+        out.append(_simuler(clos6))
 
+    if len(clos6):
+        out.append(_bloc_mfe(clos6))
+        perdants = clos6[clos6["resultat_R"] < 0]
+        if len(perdants):
+            out.append("\n### MFE des perdants\n" + " | ".join(
+                f"+{seuil:g} R atteint : {int((perdants['mfe_R'] >= seuil).sum())}/{len(perdants)}"
+                for seuil in (0.5, 1, 1.5)))
+        out.append(_bloc_stats(clos6, "Par nombre de touches H1", "touches_zone"))
+        out.append(_bloc_stats(clos6, "Setup × direction", ["setup", "sens"]))
     if len(clos_anc):
         out.append("\n---\n")
         out += _section_reels(clos_anc, "Historique avant V6 (référence, non mélangé)")
@@ -951,7 +1063,7 @@ def scan():
     for i, (_, row) in enumerate(liq.iterrows(), 1):
         try:
             r = analyse(row, info.get(row.symbol, {}))
-            if r: results.append(r)
+            if r: results.extend(r)
         except Exception as ex:
             print(f"  {row.symbol} : erreur {ex}")
         if i % 10 == 0: print(f"  {i}/{len(liq)}…")
@@ -961,12 +1073,17 @@ def scan():
     print(f"OI récupéré via {src} : {OI_STATS['ok']} paires OK / {OI_STATS['ko']} n/d")
 
     btc_sans_dir = BTC_FILTRE and BTC_CTX is not None and BTC_CTX["n_neutre"] == 2
-    score_min = SCORE_MIN_BTC_NEUTRE if btc_sans_dir else SCORE_MIN
-    max_now   = MAX_NOW_BTC_NEUTRE if btc_sans_dir else MAX_TRADE_NOW
+    max_now = MAX_TRADE_NOW  # score et neutralité BTC ne sont plus des filtres
 
-    tri = (lambda r: -r["score"]) if TRI_PAR_SCORE else (lambda r: (r["dist"], -r["rr"]))
+    priorite = {"TRADE NOW": 0, "PREPARE": 1, "WAIT": 2, "NO TRADE": 3}
+    tri = (lambda r: -r["score"]) if TRI_PAR_SCORE else (lambda r: (priorite[r["decision"]], r["dist"], -r["rr"]))
     ok = sorted([r for r in results if r["decision"] != "NO TRADE"], key=tri)
-    top = [r for r in ok if r["score"] >= score_min][:MAX_TOP]
+    # Une seule proposition visible par paire ; tous les autres setups sont journalisés.
+    top, deja_paires = [], set()
+    for r in ok:
+        if r["symbol"] not in deja_paires:
+            top.append(r); deja_paires.add(r["symbol"])
+        if len(top) >= MAX_TOP: break
 
     n_now = 0
     for r in top:
@@ -974,7 +1091,7 @@ def scan():
             n_now += 1
             if n_now > max_now:
                 r["decision"] = "WAIT"
-                r["pourquoi"] = "plafond de TRADE NOW atteint (BTC sans direction) — un seul trade à la fois"
+                r["pourquoi"] = "plafond de TRADE NOW atteint"
 
     pd.DataFrame([{k: v for k, v in r.items() if k not in ("inf", "sup", "res", "zone")}
                   for r in results]).to_csv("scan_pepite.csv", index=False)
@@ -982,7 +1099,7 @@ def scan():
     alerte = alerte_btc_neutre()
     if alerte: print("\n" + alerte)
     if not top:
-        print(f"\nAucun Crypto Pépite tradable actuellement (score mini {score_min}).")
+        print("\nAucun setup exploitable actuellement.")
     else:
         for r in top: print(rapport(r))
     print("\n« Ne pas trader est aussi une décision de trading. »")
@@ -992,7 +1109,7 @@ def scan():
     nouveaux = [r for r in top if r["decision"] == "TRADE NOW"
                 and maintenant - etat.get(cle_signal(r), 0) > DEDUP_HEURES * 3600]
 
-    # Journal : suivi des signaux ouverts, rattrapage MFE, puis ajout des nouveaux
+    # Journal : simulation des signaux, rattrapage MFE, puis ajout des nouveaux
     journal = charger_journal()
     journal, clotures, n_clos = evaluer_journal(journal)
     for m in clotures:
@@ -1002,7 +1119,7 @@ def scan():
     n_fant = 0
     if FANTOMES:
         exclus = {id(r) for r in top if r["decision"] == "TRADE NOW"}
-        candidats = [r for r in ok if r["score"] >= SCORE_MIN and id(r) not in exclus]
+        candidats = [r for r in ok if id(r) not in exclus]
         journal, n_fant = ajouter_fantomes(journal, candidats, maintenant)
     journal.to_csv(JOURNAL, index=False)
     ecrire_stats(journal)
