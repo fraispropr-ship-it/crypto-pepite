@@ -119,7 +119,7 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ## Signaux fantômes V6.3 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : EN_COURS 10 | SL 4 | ATTENTE 4 | TP 2 | PROMU 1 | RATE 1 | INVALIDE 1
+Statuts : EN_COURS 11 | SL 4 | ATTENTE 3 | TP 2 | RATE 2 | PROMU 1 | INVALIDE 1
 
 - Taux de réussite : **33 %** (2/6)
 - Espérance : **-0.13 R brut** / **-0.32 R net** par trade
@@ -244,10 +244,10 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 91 | RR visé moyen : 2.61 | MFE médian : **+0.91 R**
-- Ont atteint +1 R : 46 % | +1,5 R : 36 % | +2 R : 23 %
-- **MFE des perdants** (66 SL) : avaient atteint +0,5 R : 62 % | +1 R : 27 % | +1,5 R : 15 % avant de toucher le SL
-- **MAE des gagnants** (24) : moyen -0.37 R | médian -0.27 R | pire -0.99 R | 42 % sont descendus au-delà de -0,5 R
+- Trades mesurés : 94 | RR visé moyen : 2.61 | MFE médian : **+0.89 R**
+- Ont atteint +1 R : 46 % | +1,5 R : 36 % | +2 R : 22 %
+- **MFE des perdants** (68 SL) : avaient atteint +0,5 R : 60 % | +1 R : 26 % | +1,5 R : 15 % avant de toucher le SL
+- **MAE des gagnants** (25) : moyen -0.37 R | médian -0.27 R | pire -0.99 R | 40 % sont descendus au-delà de -0,5 R
 
 ### Sorties — ensemble
 Pas encore de trade simulé (il faut 48 h après l'entrée).
