@@ -1,8 +1,8 @@
 # 📒 Journal Crypto Pépite V6.3 — statistiques
 
-_Mis à jour le 29/09/2026 17:19 UTC — 229 lignes dans le journal, 41 signaux ouverts, 155 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 29/09/2026 17:33 UTC — 234 lignes dans le journal, 41 signaux ouverts, 158 trades clôturés en attente de simulation (48 h)._
 
-Signaux réels V6.3 : **12** — clôturés : **11** — en cours : **1** — SHORT suivis en fantôme uniquement
+Signaux réels V6.3 : **13** — clôturés : **11** — en cours : **2** — SHORT suivis en fantôme uniquement
 
 _Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés dans la même bougie M15 ; clôture au prix du moment après 48 h. 1 R = distance entrée–SL. R brut = hors frais ; R net = frais taker aller-retour déduits._
 
@@ -132,7 +132,7 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ## Signaux fantômes V6.3 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : SL 28 | EN_COURS 11 | TP 9 | RATE 8 | ATTENTE 7 | INVALIDE 4 | PROMU 2
+Statuts : SL 28 | EN_COURS 12 | TP 9 | RATE 8 | ATTENTE 8 | INVALIDE 5 | PROMU 3
 
 - Taux de réussite : **24 %** (9/37)
 - Espérance : **-0.16 R brut** / **-0.36 R net** par trade
@@ -266,9 +266,9 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 155 | RR visé moyen : 2.51 | MFE médian : **+0.85 R**
-- Ont atteint +1 R : 45 % | +1,5 R : 36 % | +2 R : 26 %
-- **MFE des perdants** (115 SL) : avaient atteint +0,5 R : 60 % | +1 R : 27 % | +1,5 R : 16 % avant de toucher le SL
+- Trades mesurés : 158 | RR visé moyen : 2.54 | MFE médian : **+0.85 R**
+- Ont atteint +1 R : 46 % | +1,5 R : 37 % | +2 R : 27 %
+- **MFE des perdants** (118 SL) : avaient atteint +0,5 R : 61 % | +1 R : 28 % | +1,5 R : 17 % avant de toucher le SL
 - **MAE des gagnants** (39) : moyen -0.37 R | médian -0.28 R | pire -0.99 R | 38 % sont descendus au-delà de -0,5 R
 
 ### Sorties — ensemble
