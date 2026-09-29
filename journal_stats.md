@@ -119,7 +119,7 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ## Signaux fantômes V6.3 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : EN_COURS 11 | SL 4 | ATTENTE 3 | TP 2 | RATE 2 | PROMU 1 | INVALIDE 1
+Statuts : EN_COURS 11 | ATTENTE 5 | SL 4 | TP 2 | RATE 2 | PROMU 1 | INVALIDE 1
 
 - Taux de réussite : **33 %** (2/6)
 - Espérance : **-0.13 R brut** / **-0.32 R net** par trade
