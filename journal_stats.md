@@ -1,17 +1,17 @@
-# 📒 Journal Crypto Pépite V6.2 — statistiques
+# 📒 Journal Crypto Pépite V6.3 — statistiques
 
-Signaux réels V6.2 : **1** — clôturés : **0** — en cours : **1** — SHORT suivis en fantôme uniquement
+Signaux réels V6.3 : **1** — clôturés : **0** — en cours : **1** — SHORT suivis en fantôme uniquement
 
 _Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés dans la même bougie M15 ; clôture au prix du moment après 48 h. 1 R = distance entrée–SL. R brut = hors frais ; R net = frais taker aller-retour déduits._
 
 
-## Trades réels V6.2
+## Trades réels V6.3
 
-Aucun trade V6.2 clôturé pour l'instant.
+Aucun trade V6.3 clôturé pour l'instant.
 
-## Signaux fantômes V6.2 (non tradés : SHORT, WAIT, PREPARE)
+## Signaux fantômes V6.3 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : ATTENTE 15 | EN_COURS 3
+Statuts : ATTENTE 4
 
 
 ## Gestion de sortie — tous les trades rejoués (réels toutes versions + fantômes)
