@@ -1,6 +1,6 @@
 # 📒 Journal Crypto Pépite — statistiques
 
-Signaux enregistrés : **53** — clôturés : **41** — en cours : **12**
+Signaux enregistrés : **55** — clôturés : **41** — en cours : **14**
 
 _Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés dans la même bougie M15 ; clôture au prix du moment après 48 h. Résultats en R bruts (1 R = distance entrée–SL), hors frais._
 
