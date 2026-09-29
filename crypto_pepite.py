@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V6.1 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V6.2 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -39,13 +39,15 @@
 #      (TP/SL actuels, BE +1 R, BE +1,5 R, SL technique dès +1,5 R, partiel 50 % à +1 R,
 #      TP fixe 1,5 R, TP fixe 2 R).
 #    - Stats : MFE des perdants, MAE des gagnants, résultats par qualité de zone et de rejet.
+#  V6.2 : zones H1 plafonnées à ZONE_LARGEUR_MAX ATR (les pivots s'enchaînaient
+#         en « méga-zones » de 3 à 5 ATR avec des dizaines de tests et des SL démesurés).
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
 import numpy as np, pandas as pd
 from datetime import datetime, timezone
 
-VERSION = "6.1"
+VERSION = "6.2"
 
 # ---------------- PARAMÈTRES ----------------
 BASE          = "https://openapi.zoomex.com"
@@ -114,6 +116,7 @@ SHORT_MODE        = "FANTOME"  # "REEL" pour retrader les SHORT, "FANTOME" pour 
 CLOSE_POS_MIN     = 0.6      # clôture M15 dans les 40 % extrêmes de la bougie (sens du trade)
 REJET_VOLUME_OBLIGATOIRE = False   # True : exige aussi volume M15 >= REJET_VOLUME_MIN x la moyenne
 REJET_VOLUME_MIN  = 1.0
+ZONE_LARGEUR_MAX  = 1.0      # V6.2 : largeur max d'une zone S/R (en ATR H1)
 TRAIL_N           = 3        # sortie D : SL sur le plus bas / haut des N dernières M15
 SIM_MAX           = 25       # nb max de trades dont on simule les sorties par scan
 PRIO = {"TRADE NOW": 0, "PREPARE": 1, "WAIT": 2, "NO TRADE": 3}
@@ -293,7 +296,10 @@ def zones(df, a, k=3, lookback=150):
     pts.sort()
     clusters = []
     for p in pts:
-        if clusters and p[0] - clusters[-1][-1][0] <= 0.5 * a: clusters[-1].append(p)
+        # V6.2 : proche du pivot précédent ET zone pas plus large que ZONE_LARGEUR_MAX
+        if clusters and p[0] - clusters[-1][-1][0] <= 0.5 * a \
+                and p[0] - clusters[-1][0][0] <= ZONE_LARGEUR_MAX * a:
+            clusters[-1].append(p)
         else: clusters.append([p])
     out = []
     for c in clusters:
