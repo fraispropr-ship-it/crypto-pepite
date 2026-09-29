@@ -43,11 +43,17 @@
 #         en « méga-zones » de 3 à 5 ATR avec des dizaines de tests et des SL démesurés).
 #  V6.3 : TP sur la PREMIÈRE zone opposée (plus de TP « par-dessus » une résistance / un support).
 #         Si cette zone est à moins de RR_MIN -> NO TRADE (« obstacle trop proche »).
+#  V6.3 (confort, sans changement des signaux, du journal ni du numéro de version) :
+#    - Telegram : TICKET envoyé en premier à chaque TRADE NOW, valeurs copiables d'un
+#      toucher (police monospace), dans l'ordre du formulaire Zoomex, arrondies au pas.
+#    - Stats : date de mise à jour en tête du fichier + vue « famille V6 » (6.x cumulées).
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
 import numpy as np, pandas as pd
 from datetime import datetime, timezone
+from decimal import Decimal
+from html import escape
 
 VERSION = "6.3"
 
@@ -626,7 +632,8 @@ Pourquoi maintenant : {c['pourquoi']} ; distance à l'entrée = {c['dist']:.2f} 
 ⚠️ News / macro NON vérifiées par le script : contrôle avant d'entrer."""
 
 # ---------------- TELEGRAM ----------------
-def telegram(texte):
+def telegram(texte, html=False):
+    """html=True : mise en forme Telegram (gras, <code> copiable d'un toucher)."""
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
         print("(Telegram non configuré : message non envoyé)")
         return
@@ -638,9 +645,10 @@ def telegram(texte):
     if bloc.strip(): morceaux.append(bloc)
     for m in morceaux:
         try:
+            data = dict(chat_id=TELEGRAM_CHAT_ID, text=m, disable_web_page_preview=True)
+            if html: data["parse_mode"] = "HTML"
             r = requests.post(f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
-                              data=dict(chat_id=TELEGRAM_CHAT_ID, text=m,
-                                        disable_web_page_preview=True), timeout=15)
+                              data=data, timeout=15)
             if r.status_code != 200:
                 print(f"⚠️ Telegram : HTTP {r.status_code} {r.text[:200]}")
         except Exception as ex:
@@ -664,6 +672,33 @@ def lien_tv(r):
 def ligne_pepite(r):
     t = r["inf"].get("tick")
     return f"PEPITE;{r['symbol']};{r['sens']};{arrondi(r['entry'], t)};{arrondi(r['sl'], t)};{arrondi(r['tp'], t)}"
+
+def fmt_num(x, pas=None):
+    """Nombre prêt à coller dans Zoomex : arrondi au pas, jamais en notation scientifique."""
+    if pas:
+        dec = max(0, -Decimal(str(pas)).normalize().as_tuple().exponent)
+        return f"{x:.{dec}f}"
+    return f"{x:.10f}".rstrip("0").rstrip(".")
+
+def ticket(r):
+    """Ticket court, valeurs copiables d'un toucher, dans l'ordre du formulaire Zoomex."""
+    t, step = r["inf"].get("tick"), r["inf"].get("step")
+    e, sl, tp = arrondi(r["entry"], t), arrondi(r["sl"], t), arrondi(r["tp"], t)
+    sz = sizing(e, sl, r["inf"])
+    base = r["symbol"][:-4]
+    sens = "🟢 LONG" if r["sens"] == "LONG" else "🔴 SHORT"
+    txt = (f"🎫 <b>TICKET {escape(r['symbol'])} — {sens}</b>\n"
+           f"Paire : <code>{escape(base)}</code>\n"
+           f"Levier : <code>{sz['lev']}</code>\n"
+           f"Entrée : <code>{fmt_num(e, t)}</code> (Market maintenant, ou Limite à ce prix)\n"
+           f"Quantité : <code>{fmt_num(sz['q'], step)}</code> {escape(base)} — "
+           f"ou valeur <code>{sz['notional']:.2f}</code> USDT\n"
+           f"TP : <code>{fmt_num(tp, t)}</code>\n"
+           f"SL : <code>{fmt_num(sl, t)}</code>\n"
+           f"Marge ≈ {sz['marge']:.2f} USDT · risque ≈ {sz['risque']:.2f} USDT")
+    if sz["trop_petit"]:
+        txt += "\n⚠️ Quantité sous le minimum Zoomex : trade impossible tel quel"
+    return txt
 
 def cle_signal(r):
     t = r["inf"].get("tick")
@@ -1059,7 +1094,11 @@ def ecrire_stats(j):
     fant_all = j[j["type"] == "FANTOME"]
     cur = reel[reel["version"] == VERSION]
     clos = _prep(cur[cur["statut"].isin(STATUTS_CLOS)])
+    n_ouverts = int(j["statut"].isin(["EN_COURS", "ATTENTE"]).sum())
+    n_attente_sim = int((j["statut"].isin(STATUTS_CLOS) & (j["sim_statut"] == "")).sum())
     out = [f"# 📒 Journal Crypto Pépite V{VERSION} — statistiques\n",
+           f"_Mis à jour le {datetime.now(timezone.utc):%d/%m/%Y %H:%M} UTC — {len(j)} lignes dans le journal, "
+           f"{n_ouverts} signaux ouverts, {n_attente_sim} trades clôturés en attente de simulation (48 h)._\n",
            f"Signaux réels V{VERSION} : **{len(cur)}** — clôturés : **{len(clos)}** — "
            f"en cours : **{int((cur['statut'] == 'EN_COURS').sum())}**"
            + (" — SHORT suivis en fantôme uniquement" if SHORT_MODE == "FANTOME" else "") + "\n",
@@ -1112,6 +1151,17 @@ def ecrire_stats(j):
         out.append("\n## Gestion de sortie — tous les trades rejoués (réels toutes versions + fantômes)\n")
         out.append(_bloc_mfe(tout))
         out.append(_bloc_sorties(tout, "Sorties — ensemble"))
+
+    # Vue cumulée de toutes les sous-versions 6.x (la V6.3 seule reste détaillée plus haut)
+    v6 = reel[reel["version"].astype(str).str.startswith("6.")]
+    clos6 = _prep(v6[v6["statut"].isin(STATUTS_CLOS)])
+    if len(clos6):
+        out.append("\n## Famille V6 (toutes sous-versions 6.x cumulées, trades réels)\n")
+        out.append(_global(clos6))
+        out.append(_bloc_stats(clos6, "Par sous-version", "version"))
+        out.append(_bloc_stats(clos6, "Par sens", "sens", ["LONG", "SHORT"]))
+        out.append(_bloc_mfe(clos6))
+        out.append(_avertissement(len(clos6)))
 
     prec = _prep(reel[(reel["version"] != VERSION) & reel["statut"].isin(STATUTS_CLOS)])
     if len(prec):
@@ -1210,6 +1260,9 @@ def scan():
           f"{int((journal['statut'] == 'EN_COURS').sum())} en cours")
 
     for r in nouveaux:
+        # 1) Ticket court et copiable (c'est lui qui s'affiche dans la notification)
+        telegram(ticket(r), html=True)
+        # 2) Rapport complet, lien TradingView et ligne PEPITE, comme avant
         entete = f"🚨 CRYPTO PÉPITE V{VERSION} — TRADE NOW — {datetime.now(timezone.utc):%H:%M} UTC"
         entete += "\n" + resume_btc()
         if alerte: entete += "\n" + alerte
