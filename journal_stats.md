@@ -11,7 +11,7 @@ Aucun trade V6.3 clôturé pour l'instant.
 
 ## Signaux fantômes V6.3 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : EN_COURS 2 | ATTENTE 2 | PROMU 1 | SL 1
+Statuts : EN_COURS 3 | ATTENTE 2 | PROMU 1 | SL 1
 
 - Taux de réussite : **0 %** (0/1)
 - Espérance : **-1.00 R brut** / **-1.10 R net** par trade
