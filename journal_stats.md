@@ -1,6 +1,6 @@
 # 📒 Journal Crypto Pépite V6.3 — statistiques
 
-_Mis à jour le 29/09/2026 21:34 UTC — 253 lignes dans le journal, 38 signaux ouverts, 177 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 29/09/2026 21:47 UTC — 253 lignes dans le journal, 38 signaux ouverts, 177 trades clôturés en attente de simulation (48 h)._
 
 Signaux réels V6.3 : **19** — clôturés : **14** — en cours : **5** — SHORT suivis en fantôme uniquement
 
