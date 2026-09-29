@@ -1,49 +1,44 @@
 # 📒 Journal Crypto Pépite V6.1 — statistiques
 
-Signaux réels V6.1 : **2** — clôturés : **0** — en cours : **2**
+Signaux réels V6.1 : **2** — clôturés : **0** — en cours : **2** — SHORT suivis en fantôme uniquement
 
-_Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés dans la même bougie M15 ; clôture au prix du moment après 12 h. 1 R = distance entrée–SL. R brut = hors frais ; R net = frais taker aller-retour déduits._
+_Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés dans la même bougie M15 ; clôture au prix du moment après 48 h. 1 R = distance entrée–SL. R brut = hors frais ; R net = frais taker aller-retour déduits._
 
 
 ## Trades réels V6.1
 
 Aucun trade V6.1 clôturé pour l'instant.
 
-## Signaux fantômes V6.1 (non tradés, suivis pour tester les filtres)
+## Signaux fantômes V6.1 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : ATTENTE 34 | EN_COURS 5
+Statuts : ATTENTE 45 | EN_COURS 6
 
 
-## MFE / MAE — historique complet (mesures descriptives)
+## Gestion de sortie — tous les trades rejoués (réels toutes versions + fantômes)
 
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 49
-- RR visé moyen : 2.91 | MFE médian : **+1.20 R**
+- Trades mesurés : 49 | RR visé moyen : 2.91 | MFE médian : **+1.20 R**
 - Ont atteint +1 R : 53 % | +1,5 R : 41 % | +2 R : 27 %
-- MAE moyen des gagnants : -0.36 R
+- **MFE des perdants** (36 SL) : avaient atteint +0,5 R : 72 % | +1 R : 39 % | +1,5 R : 25 % avant de toucher le SL
+- **MAE des gagnants** (12) : moyen -0.36 R | médian -0.39 R | pire -0.91 R | 42 % sont descendus au-delà de -0,5 R
+
+### Sorties — ensemble
+Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ---
 
+## Versions précédentes (référence, non mélangé)
 
-## Historique avant V6 (référence, non mélangé)
 
-- Taux de réussite : **24 %** (12/49)
-- Espérance : **-0.17 R brut** / **-0.32 R net** par trade
-- Frais moyens : 0.14 R par trade
-- Total : -8.53 R brut / **-15.48 R net** (≈ -15.48 USDT avec 1.0 USDT de risque)
-- Durée moyenne : 3.3 h
-
-### Par tranche de score
+### Trades réels par version
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <80 | 28 | 8 | 29 % | +0.07 | -0.09 | -2.49 |
-| 80-89 | 19 | 4 | 21 % | -0.45 | -0.57 | -10.79 |
-| 90-100 | 2 | 0 | 0 % | -1.00 | -1.10 | -2.20 |
+| avant V6 | 49 | 12 | 24 % | -0.17 | -0.32 | -15.48 |
 
-### Par setup
+### Par setup (toutes versions précédentes)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
@@ -52,13 +47,7 @@ Statuts : ATTENTE 34 | EN_COURS 5
 | Rebond sur support H1 | 16 | 7 | 44 % | +0.45 | +0.39 | +6.19 |
 | Rejet de résistance H1 | 19 | 4 | 21 % | -0.29 | -0.47 | -8.99 |
 
-### Par contexte BTC détaillé (H4-H1)
-
-| | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
-|---|---|---|---|---|---|---|
-| n/d (avant V6) | 49 | 12 | 24 % | -0.17 | -0.32 | -15.48 |
-
-### Par sens
+### Par sens (toutes versions précédentes)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
