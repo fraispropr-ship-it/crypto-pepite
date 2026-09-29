@@ -229,9 +229,9 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 68 | RR visé moyen : 2.74 | MFE médian : **+0.90 R**
-- Ont atteint +1 R : 49 % | +1,5 R : 38 % | +2 R : 25 %
-- **MFE des perdants** (50 SL) : avaient atteint +0,5 R : 58 % | +1 R : 32 % | +1,5 R : 20 % avant de toucher le SL
+- Trades mesurés : 69 | RR visé moyen : 2.74 | MFE médian : **+0.87 R**
+- Ont atteint +1 R : 48 % | +1,5 R : 38 % | +2 R : 25 %
+- **MFE des perdants** (51 SL) : avaient atteint +0,5 R : 57 % | +1 R : 31 % | +1,5 R : 20 % avant de toucher le SL
 - **MAE des gagnants** (17) : moyen -0.30 R | médian -0.24 R | pire -0.91 R | 35 % sont descendus au-delà de -0,5 R
 
 ### Sorties — ensemble
@@ -247,7 +247,7 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | 6.1 | 2 | 2 | 100 % | +1.52 | +1.45 | +2.90 |
-| avant V6 | 50 | 12 | 24 % | -0.19 | -0.33 | -16.62 |
+| avant V6 | 51 | 12 | 24 % | -0.21 | -0.36 | -18.18 |
 
 ### Par setup (toutes versions précédentes)
 
@@ -256,11 +256,11 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 | Cassure baissière (clôture M15) + retest | 10 | 1 | 10 % | -0.62 | -0.80 | -8.03 |
 | Cassure confirmée (clôture M15) + retest | 5 | 0 | 0 % | -1.00 | -1.16 | -5.79 |
 | Rebond sur support H1 | 18 | 9 | 50 % | +0.57 | +0.51 | +9.09 |
-| Rejet de résistance H1 | 19 | 4 | 21 % | -0.29 | -0.47 | -8.99 |
+| Rejet de résistance H1 | 20 | 4 | 20 % | -0.32 | -0.53 | -10.55 |
 
 ### Par sens (toutes versions précédentes)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | LONG | 23 | 9 | 39 % | +0.23 | +0.14 | +3.30 |
-| SHORT | 29 | 5 | 17 % | -0.40 | -0.59 | -17.02 |
+| SHORT | 30 | 5 | 17 % | -0.42 | -0.62 | -18.58 |
