@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V7.1 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V7.2 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -83,15 +83,18 @@
 #    - Lu au scan suivant (≤ 15 min) ; confirmation « 📝 Noté » envoyée sur Telegram.
 #    - Stats : section « Mes décisions » = trades pris / pas pris / sans réponse,
 #      comparés à l'ensemble des alertes.
+#  V7.2 : affichage du log GitHub seulement (signaux inchangés, VERSION_LOGIQUE reste 7.0).
+#    - Le log ne montre plus la note ni les rapports WAIT / PREPARE : un résumé des
+#      décisions du scan, puis uniquement les alertes réellement envoyées sur Telegram.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, re, json, time, math, requests
 import numpy as np, pandas as pd
 from datetime import datetime, timezone
 from decimal import Decimal
-from html import escape
+from html import escape, unescape
 
-VERSION         = "7.1"   # numéro du script : change à CHAQUE modification
+VERSION         = "7.2"   # numéro du script : change à CHAQUE modification
 VERSION_LOGIQUE = "7.0"   # regroupe les stats : ne change que si les signaux changent
 
 # ---------------- PARAMÈTRES ----------------
@@ -1420,12 +1423,15 @@ def scan():
                   for r in results]).to_csv("scan_pepite.csv", index=False)
 
     alerte = ""   # V7.0 : le contexte BTC est dans la fiche de chaque alerte
-    if alerte: print("\n" + alerte)
-    if not top:
-        print(f"\nAucun Crypto Pépite tradable actuellement (score mini {score_min}).")
-    else:
-        for r in top: print(rapport(r))
-    print("\n« Ne pas trader est aussi une décision de trading. »")
+    # V7.2 : résumé du scan (sans note) ; le détail des alertes envoyées est affiché plus bas
+    def compte(decision, longs_seulement=True):
+        return sum(1 for r in results if r["decision"] == decision
+                   and (not longs_seulement or r["sens"] == "LONG"))
+    print(f"\nSetups LONG trouvés : {compte('TRADE NOW')} TRADE NOW · {compte('PREPARE')} PREPARE "
+          f"(pas encore de rejet / trop loin) · {compte('WAIT')} WAIT (contre-tendance H4 ou choc BTC) · "
+          f"{compte('NO TRADE')} écartés (RR, mouvement 24 h, trop tard)")
+    n_short = sum(1 for r in results if r["sens"] == "SHORT" and r["decision"] != "NO TRADE")
+    if n_short: print(f"SHORT suivis en fantôme (non envoyés) : {n_short}")
 
     # Telegram — uniquement les TRADE NOW pas encore envoyés
     etat, maintenant = charger_etat(), time.time()
@@ -1463,7 +1469,11 @@ def scan():
         telegram(ligne_pepite(r))
         etat[cle_signal(r)] = maintenant
     sauver_etat(etat)
-    print(f"Telegram : {len(nouveaux)} nouveau(x) TRADE NOW envoyé(s)")
+    print(f"Telegram : {len(nouveaux)} nouvelle(s) alerte(s) TRADE NOW envoyée(s)")
+    for r in nouveaux:                                  # V7.2 : la fiche, telle qu'envoyée
+        print("\n" + unescape(re.sub(r"<[^>]+>", "", fiche(r))))
+    if not nouveaux:
+        print("Aucune nouvelle alerte ce scan. « Ne pas trader est aussi une décision de trading. »")
 
     n_prep = 0
     if PREPARE_ALERTE:
