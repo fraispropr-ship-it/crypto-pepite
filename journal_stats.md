@@ -1,8 +1,8 @@
 # 📒 Journal Crypto Pépite V6.5 (statistiques de la logique V6.5)
 
-_Mis à jour le 30/09/2026 00:34 UTC — 279 lignes dans le journal, 45 signaux ouverts, 190 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 30/09/2026 00:48 UTC — 281 lignes dans le journal, 47 signaux ouverts, 190 trades clôturés en attente de simulation (48 h)._
 
-Signaux réels V6.5 : **1** — clôturés : **1** — en cours : **0** — SHORT suivis en fantôme uniquement
+Signaux réels V6.5 : **3** — clôturés : **1** — en cours : **2** — SHORT suivis en fantôme uniquement
 
 _Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés dans la même bougie M15 ; clôture au prix du moment après 48 h. 1 R = distance entrée–SL. R brut = hors frais ; R net = frais taker aller-retour déduits._
 
