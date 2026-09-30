@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V6.7 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V7.1 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -66,16 +66,33 @@
 #         VERSION_LOGIQUE toujours 6.5) : ne trader que si BTC est en range en H4.
 #         Piste issue du backtest 56 jours (BTC H4 neutre : 73 trades à +0,39 R net),
 #         à valider sur une plus longue période avant de l'activer.
+#  V7.0 (nouvelle philosophie : le scanner DÉTECTE et PRÉSENTE, c'est TOI qui décides) :
+#    - Plus de note ni de plafond : tous les setups qui passent les règles de base sont envoyés
+#      (plus de score minimum, plus de limite de 3 par scan, plus de mode « 1 seul trade »).
+#    - Règles de base conservées (bloquantes) : paire liquide, prix sur zone H1, rejet M15
+#      confirmé et entrée proche, 1re résistance à >= 1,5 R, mouvement 24 h <= 15 %,
+#      PAS DE CONTRE-TENDANCE H4 (« trend is your friend »), pas de choc BTC.
+#    - Filtres V6.4 / V6.5 (zone, bougie, contexte BTC) : NON bloquants, ils deviennent des
+#      indications ✅ / ⚠️ dans la fiche (ils n'ont pas tenu sur le backtest 120 jours).
+#    - BTC en range / sans tendance en H4 = contexte à privilégier : ⭐ en tête de l'alerte.
+#    - Nouvelle fiche Telegram courte, BTC en premier, lisible en 30 s, puis le ticket.
+#    - VERSION_LOGIQUE 7.0 : les statistiques repartent sur cette nouvelle base.
+#  V7.1 : TES DÉCISIONS dans le journal (signaux inchangés, VERSION_LOGIQUE reste 7.0).
+#    - Réponds à une alerte sur Telegram : « pris » ou « non » (+ une raison si tu veux).
+#      Ex. : « pris », « non BTC trop nerveux », ou sans répondre : « pris COMP ».
+#    - Lu au scan suivant (≤ 15 min) ; confirmation « 📝 Noté » envoyée sur Telegram.
+#    - Stats : section « Mes décisions » = trades pris / pas pris / sans réponse,
+#      comparés à l'ensemble des alertes.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
-import os, json, time, math, requests
+import os, re, json, time, math, requests
 import numpy as np, pandas as pd
 from datetime import datetime, timezone
 from decimal import Decimal
 from html import escape
 
-VERSION         = "6.7"   # numéro du script : change à CHAQUE modification
-VERSION_LOGIQUE = "6.5"   # regroupe les stats : ne change que si les signaux changent
+VERSION         = "7.1"   # numéro du script : change à CHAQUE modification
+VERSION_LOGIQUE = "7.0"   # regroupe les stats : ne change que si les signaux changent
 
 # ---------------- PARAMÈTRES ----------------
 BASE          = "https://openapi.zoomex.com"
@@ -88,9 +105,9 @@ MAX_MOVE_24H  = 0.15         # anti-FOMO : > 15 % sur 24h = mouvement passé
 SHORTLIST     = 120          # V6.1 : nb de paires analysées en détail (était 60)
 MARGE_CIBLE   = 20.0         # marge max souhaitée par trade (USDT)
 RR_MIN        = 1.5
-SCORE_MIN     = 60
-MAX_TOP       = 3            # nb max de setups affichés
-MAX_TRADE_NOW = 3            # nb max de TRADE NOW en temps normal
+SCORE_MIN     = 0            # V7.0 : plus de note minimum (la note reste journalisée)
+MAX_TOP       = 50           # V7.0 : pas de plafond (était 3)
+MAX_TRADE_NOW = 50           # V7.0 : pas de plafond (était 3)
 DIST_TRADE_NOW = 0.35        # distance max prix/entrée (en ATR H1) pour un TRADE NOW
 
 # ---- Filtre BTC ----
@@ -107,8 +124,8 @@ CORR_WAIT       = 0.5    # corrélation mini pour forcer un WAIT
 BTC_NEUTRE_1UT        = 4
 BTC_NEUTRE_2UT        = 8
 BTC_NEUTRE_CASSURE    = 3
-SCORE_MIN_BTC_NEUTRE  = 70
-MAX_NOW_BTC_NEUTRE    = 1
+SCORE_MIN_BTC_NEUTRE  = 0    # V7.0 : désactivé (était 70)
+MAX_NOW_BTC_NEUTRE    = 50   # V7.0 : désactivé (était 1)
 
 # ---- Telegram (V4.5) ----
 TELEGRAM_TOKEN   = os.environ.get("TELEGRAM_TOKEN", "")
@@ -148,13 +165,13 @@ ZONE_LARGEUR_MAX  = 1.0      # V6.2 : largeur max d'une zone S/R (en ATR H1)
 TRAIL_N           = 3        # sortie D : SL sur le plus bas / haut des N dernières M15
 SIM_MAX           = 25       # nb max de trades dont on simule les sorties par scan
 
-# ---- NOUVEAU V6.4 (filtres issus du backtest ; False pour désactiver un filtre) ----
-FILTRE_BTC_UNE_NEUTRE = True  # V6.5 : trade seulement si BTC est neutre sur UNE SEULE UT (H4 ou H1)
+# ---- V6.4 / V6.5 : filtres issus du backtest. V7.0 : tous à False (indications dans la fiche) ----
+FILTRE_BTC_UNE_NEUTRE = False # V6.5 : trade seulement si BTC est neutre sur UNE SEULE UT (H4 ou H1)
 FILTRE_BTC_H4_RANGE  = False  # V6.7 (à l'essai) : trade seulement si BTC est en range en H4
-FILTRE_ZONE          = True   # zone assez solide (tests OU âge)
+FILTRE_ZONE          = False  # zone assez solide (tests OU âge)
 ZONE_TESTS_MIN       = 3      # nb de tests mini de la zone H1
 ZONE_AGE_MIN_H       = 72     # ou âge mini de la zone (bougies H1)
-FILTRE_BOUGIE        = True   # bougie de rejet assez franche (clôture OU corps)
+FILTRE_BOUGIE        = False  # bougie de rejet assez franche (clôture OU corps)
 CLOSE_POS_FORT       = 0.8    # clôture M15 dans les 20 % extrêmes (sens du trade)
 BODY_FORT            = 0.6    # ou corps >= 60 % de la bougie
 PRIO = {"TRADE NOW": 0, "PREPARE": 1, "WAIT": 2, "NO TRADE": 3}
@@ -747,6 +764,123 @@ def ticket(r):
         txt += "\n⚠️ Quantité sous le minimum Zoomex : trade impossible tel quel"
     return txt
 
+FRAIS_ALERTE_R = 0.15   # V7.0 : au-delà, la fiche signale des frais lourds (non bloquant)
+
+def fiche(r):
+    """V7.0 : fiche courte pour décider en 30 s. BTC d'abord, puis l'altcoin, puis les points clés."""
+    t = r["inf"].get("tick")
+    e, sl = arrondi(r["entry"], t), arrondi(r["sl"], t)
+    fl = {"HAUSSIÈRE": "↗️", "BAISSIÈRE": "↘️", NEUTRE: "➡️"}
+    court = {"HAUSSIÈRE": "haussière", "BAISSIÈRE": "baissière", NEUTRE: "range"}
+    sens = "🟢 LONG" if r["sens"] == "LONG" else "🔴 SHORT"
+    # BTC : contexte à privilégier = range / sans tendance en H4
+    if BTC_CTX is None:
+        etoile, btc = "", "₿ BTC : indisponible"
+    else:
+        t4, t1, choc = BTC_CTX["t4"], BTC_CTX["t1"], BTC_CTX["choc"]
+        favorable = t4 == NEUTRE
+        etoile = "⭐ " if favorable else ""
+        btc = (f"₿ BTC : H4 {court[t4]} {fl[t4]} | H1 {court[t1]} {fl[t1]} | 1h {choc*100:+.2f} %\n"
+               + ("   ⭐ BTC en range en H4 : contexte à privilégier" if favorable
+                  else "   ⚠️ BTC en tendance en H4 : contexte moins favorable"))
+    z = r["zone"]
+    zone_ok = z["touches"] >= ZONE_TESTS_MIN or z.get("age_h", 0) >= ZONE_AGE_MIN_H
+    cpos, body = r.get("close_pos") or 0, r.get("body_ratio") or 0
+    bougie_ok = cpos >= CLOSE_POS_FORT or body >= BODY_FORT
+    frais = 2 * FRAIS_TAKER * e / abs(e - sl) if e != sl else 0
+    obstacle = "1re résistance" if r["sens"] == "LONG" else "1er support"
+    cible = f"{obstacle} à {arrondi(r['tp'], t)}" if not r["tp_theorique"] else "aucune zone (TP théorique 2 R)"
+    lignes = [
+        f"{etoile}🚨 <b>{escape(r['symbol'])} — {sens}</b> — {escape(r['type'])}",
+        f"<i>V{VERSION} · {datetime.now(timezone.utc):%H:%M} UTC</i>",
+        "",
+        escape(btc),
+        f"📈 Tendance {escape(r['symbol'][:-4])} : H4 {court[r['t4']]} {fl[r['t4']]} ✅ | H1 {court[r['t1']]} {fl[r['t1']]}",
+        "",
+        f"{'✅' if zone_ok else '⚠️'} Zone H1 : {z['touches']} tests · âge {z.get('age_h', '?')} h"
+        + ("" if zone_ok else f" (fragile : < {ZONE_TESTS_MIN} tests et < {ZONE_AGE_MIN_H} h)"),
+        f"{'✅' if bougie_ok else '⚠️'} Bougie M15 : clôture {cpos*100:.0f} % · corps {body*100:.0f} % · volume x{r['vol_ratio']:.2f}"
+        + ("" if bougie_ok else " (peu franche)"),
+        f"🎯 Objectif : {cible} → RR {r['rr']:.2f}",
+        f"{'✅' if frais <= FRAIS_ALERTE_R else '⚠️'} Frais : {frais:.2f} R"
+        + ("" if frais <= FRAIS_ALERTE_R else " (lourds : SL très serré)"),
+        f"ℹ️ 24 h : {r['ch24']*100:+.1f} % · RSI H1 {r['rsi_h1']:.0f} · {escape(interp_funding(r['funding']))}",
+        "",
+        "⚠️ News / macro non vérifiées",
+        "↩️ Réponds « pris » ou « non » (+ raison) à ce message",
+        f"📊 <a href=\"{escape(lien_tv(r))}\">Graphique TradingView M15</a>",
+    ]
+    return "\n".join(lignes)
+
+# ---------------- MES DÉCISIONS (V7.1) ----------------
+MOTS_PRIS = ("pris", "prise", "pri", "in", "ok")
+MOTS_NON = ("non", "pas", "passe", "skip", "no")
+
+def _tg(methode, **params):
+    try:
+        r = requests.get(f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/{methode}", params=params, timeout=15)
+        j = r.json()
+        return j.get("result") if j.get("ok") else None
+    except Exception:
+        return None
+
+def lire_decisions(j):
+    """Lit les réponses « pris » / « non » envoyées sur Telegram depuis le dernier scan
+    et les range dans le journal (colonnes ma_decision / ma_raison / date_decision)."""
+    if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
+        return j, []
+    maj = _tg("getUpdates", timeout=0, allowed_updates=json.dumps(["message", "channel_post"]))
+    if not maj:
+        return j, []
+    notes = []
+    reels = j[(j["type"] == "REEL")]
+    symboles = set(reels["symbol"])
+    for u in maj:
+        m = u.get("message") or u.get("channel_post") or {}
+        if str(m.get("chat", {}).get("id")) != str(TELEGRAM_CHAT_ID):
+            continue                                   # uniquement ta conversation
+        texte = (m.get("text") or "").strip()
+        mots = texte.split()
+        if not mots:
+            continue
+        premier = mots[0].lower().strip(".,!:")
+        if premier.startswith(MOTS_PRIS) and not premier.startswith("pas"):
+            decision = "pris"
+        elif premier.startswith(MOTS_NON):
+            decision = "pas pris"
+            if premier == "pas" and len(mots) > 1 and mots[1].lower().startswith("pris"):
+                mots = mots[1:]
+        else:
+            continue
+        reste = mots[1:]
+        # Paire : dans la réponse (« pris COMP ») ou dans le message auquel tu réponds
+        sym = None
+        for w in reste[:2]:
+            w2 = w.upper().strip(".,!:")
+            for cand in (w2, w2 + "USDT"):
+                if cand in symboles:
+                    sym = cand
+            if sym:
+                reste = [x for x in reste if x != w]
+                break
+        if sym is None:
+            cite = (m.get("reply_to_message") or {}).get("text") or ""
+            trouve = re.findall(r"\b([A-Z0-9]{2,20}USDT)\b", cite)
+            sym = next((x for x in trouve if x in symboles), None)
+        reels = j[j["type"] == "REEL"]               # à jour (tient compte des réponses précédentes)
+        cibles = reels[reels["ma_decision"] == ""] if sym is None else reels[reels["symbol"] == sym]
+        if not len(cibles):
+            notes.append(f"❓ Je n'ai pas trouvé d'alerte pour « {texte} »")
+            continue
+        i = cibles["ts"].astype(float).idxmax()     # l'alerte la plus récente
+        raison = " ".join(reste).strip()
+        j.loc[i, "ma_decision"] = decision
+        j.loc[i, "ma_raison"] = raison
+        j.loc[i, "date_decision"] = fmt_date(float(m.get("date", time.time())) * 1000)
+        notes.append(f"📝 Noté : {j.loc[i, 'symbol']} — {decision}" + (f" ({raison})" if raison else ""))
+    _tg("getUpdates", offset=maj[-1]["update_id"] + 1, timeout=0)   # messages marqués comme lus
+    return j, notes
+
 def cle_signal(r):
     t = r["inf"].get("tick")
     return f"{r['symbol']}|{r['sens']}|{r['type']}|{arrondi(r['entry'], t)}"
@@ -770,10 +904,12 @@ COLS_JOURNAL = ["id", "type", "version", "date_utc", "ts", "ts_entree", "symbol"
                ["rejet_confirme", "body_ratio", "wick_ratio", "close_pos", "vol_ratio", "dist_ATR",
                 "touches_zone", "age_zone_h", "dernier_test_h", "largeur_zone_ATR",
                 "statut", "date_sortie", "resultat_R", "frais_R", "resultat_net_R",
-                "mfe_R", "mae_R", "duree_h", "backfill"] + SIM_COLS + ["sim_statut"]
+                "mfe_R", "mae_R", "duree_h", "backfill"] + SIM_COLS + ["sim_statut",
+                "ma_decision", "ma_raison", "date_decision"]
 COLS_TEXTE = ["id", "type", "version", "date_utc", "symbol", "sens", "setup", "decision", "raison",
               "btc_h4", "btc_h1", "btc_ctx", "btc_detail", "rejet_confirme",
-              "statut", "date_sortie", "backfill", "sim_statut"]
+              "statut", "date_sortie", "backfill", "sim_statut",
+              "ma_decision", "ma_raison", "date_decision"]
 STATUTS_CLOS = ["TP", "SL", "EXPIRE"]
 
 def charger_journal():
@@ -1172,6 +1308,17 @@ def ecrire_stats(j):
         out.append(f"Aucun trade V{VERSION_LOGIQUE} clôturé pour l'instant.")
 
     fant = fant_all[fant_all["version"] == VERSION_LOGIQUE]
+    if len(clos):
+        d = clos.copy()
+        d["ma_decision"] = d["ma_decision"].replace("", "sans réponse")
+        out.append(f"\n## Mes décisions (alertes V{VERSION_LOGIQUE} clôturées)\n")
+        out.append("_« pris » = tes trades. Compare-les à « pas pris » et à l'ensemble ci-dessus : "
+                   "si « pris » fait mieux, ton tri apporte quelque chose._")
+        out.append(_bloc_stats(d, "Résultat selon ta décision", "ma_decision", ["pris", "pas pris", "sans réponse"]))
+        p = d[d["ma_decision"] == "pris"]
+        if len(p):
+            out.append(_bloc_stats(p, "Tes trades pris, selon BTC H4", "btc_h4"))
+            out.append(_avertissement(len(p)))
     out.append(f"\n## Signaux fantômes V{VERSION_LOGIQUE} (non tradés : SHORT, WAIT, PREPARE)\n")
     if len(fant):
         cpt = fant["statut"].value_counts()
@@ -1272,7 +1419,7 @@ def scan():
     pd.DataFrame([{k: v for k, v in r.items() if k not in ("inf", "sup", "res", "zone")}
                   for r in results]).to_csv("scan_pepite.csv", index=False)
 
-    alerte = alerte_btc_neutre()
+    alerte = ""   # V7.0 : le contexte BTC est dans la fiche de chaque alerte
     if alerte: print("\n" + alerte)
     if not top:
         print(f"\nAucun Crypto Pépite tradable actuellement (score mini {score_min}).")
@@ -1287,6 +1434,9 @@ def scan():
 
     # Journal : suivi des signaux ouverts, rattrapage MFE, puis ajout des nouveaux
     journal = charger_journal()
+    journal, notes = lire_decisions(journal)          # V7.1 : tes réponses « pris » / « non »
+    for n in notes:
+        print(n); telegram(n)
     journal, clotures, n_clos = evaluer_journal(journal)
     for m in clotures:
         print(m); telegram(m)
@@ -1307,13 +1457,9 @@ def scan():
           f"{int((journal['statut'] == 'EN_COURS').sum())} en cours")
 
     for r in nouveaux:
-        # 1) Ticket court et copiable (c'est lui qui s'affiche dans la notification)
+        # V7.0 : 1) fiche courte pour décider  2) ticket copiable pour exécuter  3) ligne PEPITE
+        telegram(fiche(r), html=True)
         telegram(ticket(r), html=True)
-        # 2) Rapport complet, lien TradingView et ligne PEPITE, comme avant
-        entete = f"🚨 CRYPTO PÉPITE V{VERSION} — TRADE NOW — {datetime.now(timezone.utc):%H:%M} UTC"
-        entete += "\n" + resume_btc()
-        if alerte: entete += "\n" + alerte
-        telegram(entete + "\n" + rapport(r) + f"\n📈 Graphique TradingView (M15) : {lien_tv(r)}")
         telegram(ligne_pepite(r))
         etat[cle_signal(r)] = maintenant
     sauver_etat(etat)
