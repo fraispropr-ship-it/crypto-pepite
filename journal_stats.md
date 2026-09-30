@@ -1,6 +1,6 @@
 # 📒 Journal Crypto Pépite V7.4 (statistiques de la logique V7.4)
 
-_Mis à jour le 30/09/2026 20:04 UTC — 505 lignes dans le journal, 40 signaux ouverts, 327 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 30/09/2026 20:20 UTC — 507 lignes dans le journal, 41 signaux ouverts, 328 trades clôturés en attente de simulation (48 h)._
 
 Signaux réels V7.4 : **10** — clôturés : **8** — en cours : **2** — SHORT suivis en fantôme uniquement
 
@@ -138,27 +138,27 @@ _« pris » = tes trades. Compare-les à « pas pris » et à l'ensemble ci-dess
 
 ## Signaux fantômes V7.4 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : EN_COURS 10 | SL 8 | ATTENTE 8 | RATE 4 | TP 3 | PROMU 2
+Statuts : EN_COURS 12 | SL 9 | ATTENTE 7 | RATE 4 | TP 3 | PROMU 2
 
-- Taux de réussite : **27 %** (3/11)
-- Espérance : **-0.19 R brut** / **-0.37 R net** par trade
+- Taux de réussite : **25 %** (3/12)
+- Espérance : **-0.25 R brut** / **-0.45 R net** par trade
 - Frais moyens : 0.19 R par trade
-- Total : -2.05 R brut / **-4.12 R net** (≈ -4.12 USDT avec 1.0 USDT de risque)
-- Durée moyenne : 1.7 h
+- Total : -3.05 R brut / **-5.35 R net** (≈ -5.35 USDT avec 1.0 USDT de risque)
+- Durée moyenne : 1.6 h
 
 ### Fantômes par sens
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | LONG | 7 | 1 | 14 % | -0.57 | -0.75 | -5.28 |
-| SHORT | 4 | 2 | 50 % | +0.48 | +0.29 | +1.16 |
+| SHORT | 5 | 2 | 40 % | +0.19 | -0.01 | -0.07 |
 
 ### Fantômes par raison de non-trade
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | contre-tendance H4 | 4 | 1 | 25 % | -0.28 | -0.47 | -1.88 |
-| pas de bougie de rejet M15 confirmée | 5 | 1 | 20 % | -0.39 | -0.53 | -2.64 |
+| pas de bougie de rejet M15 confirmée | 6 | 1 | 17 % | -0.49 | -0.65 | -3.87 |
 | rejet M15 confirmé mais prix déjà trop loin de l'entrée | 2 | 1 | 50 % | +0.51 | +0.20 | +0.40 |
 
 ### Fantômes par setup
@@ -166,13 +166,13 @@ Statuts : EN_COURS 10 | SL 8 | ATTENTE 8 | RATE 4 | TP 3 | PROMU 2
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | Rebond sur support H1 | 7 | 1 | 14 % | -0.57 | -0.75 | -5.28 |
-| Rejet de résistance H1 | 4 | 2 | 50 % | +0.48 | +0.29 | +1.16 |
+| Rejet de résistance H1 | 5 | 2 | 40 % | +0.19 | -0.01 | -0.07 |
 
 ### Fantômes par contexte BTC détaillé (H4-H1)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| neutre-contre | 4 | 2 | 50 % | +0.48 | +0.29 | +1.16 |
+| neutre-contre | 5 | 2 | 40 % | +0.19 | -0.01 | -0.07 |
 | neutre-sens | 7 | 1 | 14 % | -0.57 | -0.75 | -5.28 |
 
 ### Par rejet M15 confirmé
@@ -180,13 +180,13 @@ Statuts : EN_COURS 10 | SL 8 | ATTENTE 8 | RATE 4 | TP 3 | PROMU 2
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | oui | 3 | 1 | 33 % | +0.01 | -0.27 | -0.81 |
-| non | 8 | 2 | 25 % | -0.26 | -0.41 | -3.31 |
+| non | 9 | 2 | 22 % | -0.34 | -0.50 | -4.54 |
 
 ### Par nombre de tests de la zone H1
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| 1 | 5 | 1 | 20 % | -0.40 | -0.67 | -3.35 |
+| 1 | 6 | 1 | 17 % | -0.50 | -0.76 | -4.58 |
 | 2 | 4 | 2 | 50 % | +0.48 | +0.39 | +1.57 |
 | 3 | 1 | 0 | 0 % | -1.00 | -1.10 | -1.10 |
 | ≥4 | 1 | 0 | 0 % | -1.00 | -1.24 | -1.24 |
@@ -196,7 +196,7 @@ Statuts : EN_COURS 10 | SL 8 | ATTENTE 8 | RATE 4 | TP 3 | PROMU 2
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | <24 h | 4 | 0 | 0 % | -1.00 | -1.24 | -4.94 |
-| 24-72 h | 5 | 2 | 40 % | +0.21 | +0.05 | +0.24 |
+| 24-72 h | 6 | 2 | 33 % | +0.01 | -0.17 | -0.99 |
 | ≥72 h | 2 | 1 | 50 % | +0.44 | +0.29 | +0.58 |
 
 ### Par ancienneté du dernier test (bougies H1)
@@ -204,14 +204,14 @@ Statuts : EN_COURS 10 | SL 8 | ATTENTE 8 | RATE 4 | TP 3 | PROMU 2
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | <12 h | 5 | 1 | 20 % | -0.42 | -0.61 | -3.06 |
-| 12-48 h | 5 | 1 | 20 % | -0.39 | -0.55 | -2.76 |
+| 12-48 h | 6 | 1 | 17 % | -0.49 | -0.67 | -3.99 |
 | ≥48 h | 1 | 1 | 100 % | +2.02 | +1.70 | +1.70 |
 
 ### Par position de clôture M15 (sens du trade)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <60 % | 6 | 2 | 33 % | -0.01 | -0.19 | -1.16 |
+| <60 % | 7 | 2 | 29 % | -0.15 | -0.34 | -2.39 |
 | 60-80 % | 3 | 0 | 0 % | -1.00 | -1.12 | -3.36 |
 | ≥80 % | 2 | 1 | 50 % | +0.51 | +0.20 | +0.40 |
 
@@ -219,7 +219,7 @@ Statuts : EN_COURS 10 | SL 8 | ATTENTE 8 | RATE 4 | TP 3 | PROMU 2
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <20 % | 5 | 2 | 40 % | +0.21 | -0.06 | -0.28 |
+| <20 % | 6 | 2 | 33 % | +0.01 | -0.25 | -1.51 |
 | 20-40 % | 3 | 1 | 33 % | -0.04 | -0.10 | -0.31 |
 | ≥40 % | 3 | 0 | 0 % | -1.00 | -1.18 | -3.53 |
 
@@ -228,14 +228,14 @@ Statuts : EN_COURS 10 | SL 8 | ATTENTE 8 | RATE 4 | TP 3 | PROMU 2
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | <30 % | 1 | 0 | 0 % | -1.00 | -1.10 | -1.10 |
-| 30-60 % | 4 | 0 | 0 % | -1.00 | -1.18 | -4.72 |
+| 30-60 % | 5 | 0 | 0 % | -1.00 | -1.19 | -5.95 |
 | ≥60 % | 6 | 3 | 50 % | +0.49 | +0.28 | +1.70 |
 
 ### Par volume M15 (x moyenne 20)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <1 | 8 | 2 | 25 % | -0.26 | -0.44 | -3.53 |
+| <1 | 9 | 2 | 22 % | -0.34 | -0.53 | -4.76 |
 | 1-1,5 | 1 | 1 | 100 % | +2.02 | +1.70 | +1.70 |
 | ≥1,5 | 2 | 0 | 0 % | -1.00 | -1.15 | -2.29 |
 
@@ -244,36 +244,36 @@ Statuts : EN_COURS 10 | SL 8 | ATTENTE 8 | RATE 4 | TP 3 | PROMU 2
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
 | <0,15 | 5 | 0 | 0 % | -1.00 | -1.14 | -5.68 |
-| 0,15-0,35 | 2 | 0 | 0 % | -1.00 | -1.27 | -2.54 |
+| 0,15-0,35 | 3 | 0 | 0 % | -1.00 | -1.26 | -3.77 |
 | ≥0,35 | 4 | 3 | 75 % | +1.24 | +1.03 | +4.10 |
 
 ### Par largeur de zone (ATR H1)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <0,4 | 10 | 3 | 30 % | -0.11 | -0.29 | -2.88 |
+| <0,4 | 11 | 3 | 27 % | -0.19 | -0.37 | -4.11 |
 | 0,4-0,8 | 1 | 0 | 0 % | -1.00 | -1.24 | -1.24 |
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 11 | RR visé moyen : 1.94 | MFE médian : **+0.71 R**
-- Ont atteint +1 R : 45 % | +1,5 R : 36 % | +2 R : 18 %
-- **MFE des perdants** (8 SL) : avaient atteint +0,5 R : 50 % | +1 R : 25 % | +1,5 R : 12 % avant de toucher le SL
+- Trades mesurés : 12 | RR visé moyen : 1.91 | MFE médian : **+0.61 R**
+- Ont atteint +1 R : 42 % | +1,5 R : 33 % | +2 R : 17 %
+- **MFE des perdants** (9 SL) : avaient atteint +0,5 R : 44 % | +1 R : 22 % | +1,5 R : 11 % avant de toucher le SL
 - **MAE des gagnants** (3) : moyen -0.26 R | médian -0.22 R | pire -0.44 R | 0 % sont descendus au-delà de -0,5 R
 
 ### Sorties — fantômes V7.4
 Pas encore de trade simulé (il faut 48 h après l'entrée).
 
-⚠️ Seulement 11 trades clôturés : trop peu pour conclure (vise au moins 30 à 50 par catégorie).
+⚠️ Seulement 12 trades clôturés : trop peu pour conclure (vise au moins 30 à 50 par catégorie).
 
 ## Gestion de sortie — tous les trades rejoués (réels toutes versions + fantômes)
 
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 354 | RR visé moyen : 2.49 | MFE médian : **+0.87 R**
+- Trades mesurés : 355 | RR visé moyen : 2.49 | MFE médian : **+0.87 R**
 - Ont atteint +1 R : 47 % | +1,5 R : 39 % | +2 R : 27 %
-- **MFE des perdants** (257 SL) : avaient atteint +0,5 R : 57 % | +1 R : 28 % | +1,5 R : 16 % avant de toucher le SL
+- **MFE des perdants** (258 SL) : avaient atteint +0,5 R : 57 % | +1 R : 28 % | +1,5 R : 16 % avant de toucher le SL
 - **MAE des gagnants** (96) : moyen -0.38 R | médian -0.36 R | pire -0.99 R | 38 % sont descendus au-delà de -0,5 R
 
 ### Sorties — ensemble — 27 trades rejoués bougie par bougie
