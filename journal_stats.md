@@ -1,6 +1,6 @@
 # 📒 Journal Crypto Pépite V7.4 (statistiques de la logique V7.4)
 
-_Mis à jour le 30/09/2026 21:33 UTC — 514 lignes dans le journal, 44 signaux ouverts, 329 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 30/09/2026 21:49 UTC — 518 lignes dans le journal, 48 signaux ouverts, 328 trades clôturés en attente de simulation (48 h)._
 
 Signaux réels V7.4 : **10** — clôturés : **8** — en cours : **2** — SHORT suivis en fantôme uniquement
 
@@ -138,7 +138,7 @@ _« pris » = tes trades. Compare-les à « pas pris » et à l'ensemble ci-dess
 
 ## Signaux fantômes V7.4 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : EN_COURS 16 | SL 10 | RATE 7 | ATTENTE 6 | TP 3 | PROMU 2
+Statuts : EN_COURS 18 | SL 10 | ATTENTE 8 | RATE 7 | TP 3 | PROMU 2
 
 - Taux de réussite : **23 %** (3/13)
 - Espérance : **-0.31 R brut** / **-0.49 R net** par trade
@@ -279,17 +279,17 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 - **MFE des perdants** (259 SL) : avaient atteint +0,5 R : 56 % | +1 R : 27 % | +1,5 R : 16 % avant de toucher le SL
 - **MAE des gagnants** (96) : moyen -0.38 R | médian -0.36 R | pire -0.99 R | 38 % sont descendus au-delà de -0,5 R
 
-### Sorties — ensemble — 27 trades rejoués bougie par bougie
+### Sorties — ensemble — 28 trades rejoués bougie par bougie
 
 | Gestion | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|
-| A — TP / SL actuels | 30 % | +0.09 | -0.05 | -1.28 |
-| B — SL à break-even dès +1 R | 15 % | +0.01 | -0.13 | -3.44 |
-| C — SL à break-even dès +1,5 R | 22 % | +0.09 | -0.05 | -1.28 |
-| D — rien avant +1,5 R, puis SL technique (extrême des 3 dernières M15) | 44 % | +0.04 | -0.10 | -2.67 |
-| E — 50 % à +1 R, reste au TP (SL inchangé) | 33 % | +0.14 | +0.00 | +0.03 |
-| F — TP fixe 1,5 R | 44 % | +0.14 | +0.01 | +0.17 |
-| G — TP fixe 2 R | 37 % | +0.14 | +0.01 | +0.17 |
+| A — TP / SL actuels | 29 % | +0.05 | -0.09 | -2.56 |
+| B — SL à break-even dès +1 R | 14 % | -0.03 | -0.17 | -4.72 |
+| C — SL à break-even dès +1,5 R | 21 % | +0.05 | -0.09 | -2.56 |
+| D — rien avant +1,5 R, puis SL technique (extrême des 3 dernières M15) | 43 % | -0.00 | -0.14 | -3.95 |
+| E — 50 % à +1 R, reste au TP (SL inchangé) | 32 % | +0.10 | -0.04 | -1.25 |
+| F — TP fixe 1,5 R | 43 % | +0.10 | -0.04 | -1.11 |
+| G — TP fixe 2 R | 36 % | +0.10 | -0.04 | -1.11 |
 
 _Prudent : SL testé avant le TP dans chaque bougie ; BE / SL technique actifs à partir de la bougie suivante ; horizon 48 h. La ligne A peut différer légèrement du résultat réel (horizon fixe)._
 
