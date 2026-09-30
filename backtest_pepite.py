@@ -1,37 +1,14 @@
 # ==============================================================================
-#  BACKTEST CRYPTO PÉPITE v3 — rejoue crypto_pepite.py (la version présente dans
-#  le même dossier : V6.5 et suivantes) sur l'historique
+#  BACKTEST CRYPTO PÉPITE — rejoue crypto_pepite.py (V6.3) sur l'historique
 #
 #  Principe : le script importe TON scanner et appelle ses propres fonctions
-#  (analyse avec TOUS ses filtres, zones, bougie de rejet, score, filtre BTC, suivi
-#  TP/SL, simulation des sorties, statistiques). Seules les bougies sont remplacées :
-#  à chaque pas de 15 min, le scanner ne voit que les bougies DÉJÀ CLÔTURÉES.
+#  (analyse, zones, bougie de rejet, score, filtre BTC, suivi TP/SL, simulation
+#  des sorties, statistiques). Seules les bougies sont remplacées : à chaque pas
+#  de 15 min, le scanner ne voit que les bougies DÉJÀ CLÔTURÉES à ce moment-là.
 #
 #  Utilisation (Colab ou PC, crypto_pepite.py dans le même dossier) :
-#     python backtest_pepite.py --jours 30 --paires 40                  # comme avant
-#     python backtest_pepite.py --jours 30 --paires 40 --entree marche  # entrée au marché
-#     python backtest_pepite.py --jours 30 --paires 40 --entree limite  # ordre limite
-#     ajouter --une-position : une seule position à la fois par paire
-#
-#  NOUVEAU v2 :
-#   - --entree theorique (défaut, comme la v1) : rempli pile au niveau d'entrée.
-#   - --entree marche : rempli au prix du signal (clôture M15), SL et TP inchangés,
-#     R et frais recalculés sur la vraie distance entrée–SL.
-#   - --entree limite : ordre posé au niveau d'entrée, rempli SEULEMENT si le prix
-#     y revient dans les --limite-h heures (défaut 2 h). Sinon : « RATE » (parti au TP
-#     sans revenir = gagnant manqué), « INVALIDE » (parti au SL = perte évitée)
-#     ou « NON_DECLENCHE » (resté entre les deux). Taux de remplissage en tête du rapport.
-#   - --une-position : pas de nouveau trade réel sur une paire tant que le précédent
-#     n'est pas clôturé (comme un trader réel).
-#
-#  NOUVEAU v3 :
-#   - --regle NOM=VALEUR : change un réglage du scanner pour ce backtest seulement,
-#     sans toucher au fichier (répétable). Exemples :
-#       --regle FILTRE_BTC_H4_RANGE=True     (tester le filtre « BTC en range en H4 »)
-#       --regle FILTRE_BOUGIE=False          (tester sans le filtre de bougie)
-#     Les réglages modifiés sont écrits en tête du rapport.
-#   - Tableau « par mois » détaillé aussi par tendance BTC H4, pour voir si une règle
-#     tient mois après mois (pas seulement en moyenne).
+#     python backtest_pepite.py --jours 7  --paires 20    # essai rapide
+#     python backtest_pepite.py --jours 60 --paires 60    # vrai test
 #
 #  Résultats : backtest_stats.md (même présentation que ton journal)
 #              backtest_journal.csv (tous les signaux, une ligne par signal)
@@ -40,6 +17,7 @@
 #   - OI : pas d'historique -> composante OI du score fixée à 5 (comme « OI n/d »)
 #   - funding non pris en compte, spread supposé à 0,05 %
 #   - paires = les plus liquides AUJOURD'HUI (biais de survie)
+#   - entrée au niveau théorique (sans l'écart de ~0,2 R constaté en réel)
 # ==============================================================================
 import argparse, math, os, pickle, sys, time
 from types import SimpleNamespace
@@ -51,7 +29,6 @@ import requests
 
 import crypto_pepite as cp
 
-BACKTEST_VERSION = "3"
 M15, H1, H4 = 900_000, 3_600_000, 14_400_000
 DUREE = {"15": M15, "60": H1, "240": H4}
 H48 = cp.JOURNAL_EXPIRE_H * H1
@@ -64,35 +41,6 @@ SRC = None
 SESS = requests.Session()
 DATA, INFO = {}, {}
 NOW = [0]
-
-# Options (remplies par main)
-MODE_ENTREE = "theorique"
-LIMITE_MS = 2 * H1
-UNE_POSITION = False
-POSITIONS = {}          # paire -> instant de clôture du dernier trade réel
-REGLES = []             # réglages du scanner modifiés pour ce backtest (texte, pour le rapport)
-
-
-def appliquer_regle(texte):
-    """--regle NOM=VALEUR : modifie un réglage de crypto_pepite.py pour ce backtest."""
-    if "=" not in texte:
-        sys.exit(f"⛔ --regle {texte} : format attendu NOM=VALEUR (ex. FILTRE_BTC_H4_RANGE=True)")
-    nom, val = (x.strip() for x in texte.split("=", 1))
-    if not hasattr(cp, nom):
-        sys.exit(f"⛔ --regle : le réglage « {nom} » n'existe pas dans crypto_pepite.py")
-    actuel = getattr(cp, nom)
-    if isinstance(actuel, bool):
-        if val.lower() not in ("true", "false", "1", "0", "oui", "non"):
-            sys.exit(f"⛔ --regle {nom} : valeur attendue True ou False")
-        v = val.lower() in ("true", "1", "oui")
-    elif isinstance(actuel, int):
-        v = int(val)
-    elif isinstance(actuel, float):
-        v = float(val)
-    else:
-        v = val
-    setattr(cp, nom, v)
-    REGLES.append(f"{nom} = {v!r} (au lieu de {actuel!r})")
 
 
 # ---------------- TÉLÉCHARGEMENT ----------------
@@ -305,23 +253,21 @@ def couvert(sym, jusqua):
     return DATA[sym]["15"]["t"][-1] >= jusqua - M15
 
 
-def evaluer(lg, fenetre_attente=H48):
-    """Renvoie (ligne mise à jour, instant où le signal cesse d'être « ouvert »).
-    fenetre_attente : durée pendant laquelle un signal en ATTENTE peut être déclenché
-    (48 h pour les fantômes, durée de validité de l'ordre en mode limite)."""
+def evaluer(lg):
+    """Renvoie (ligne mise à jour, instant où le signal cesse d'être « ouvert »)."""
     sym, ts = lg["symbol"], lg["ts"]
     if lg["statut"] == "EN_COURS":
         t_e = ts
     else:
-        if not couvert(sym, ts + fenetre_attente):
+        if not couvert(sym, ts + H48):
             return lg, math.inf
-        p = cp.parcours(lg, tranche(sym, ts, ts + fenetre_attente), False)
+        p = cp.parcours(lg, tranche(sym, ts, ts + H48), False)
         if p["statut"] in ("INVALIDE", "RATE"):
             lg.update(statut=p["statut"], date_sortie=cp.fmt_date(p["t_sortie"] or ts))
             return lg, p["t_sortie"] or ts
         if not p["actif"]:
-            lg.update(statut="NON_DECLENCHE", date_sortie=cp.fmt_date(ts + fenetre_attente))
-            return lg, ts + fenetre_attente
+            lg.update(statut="NON_DECLENCHE", date_sortie=cp.fmt_date(ts + H48))
+            return lg, ts + H48
         t_e = p["t_entree"]
     if not couvert(sym, t_e + H48):
         return lg, math.inf
@@ -347,21 +293,6 @@ def evaluer(lg, fenetre_attente=H48):
     for c in cp.SIM_COLS:
         lg[c] = round(cp.rejouer(lg, bars, c), 2)
     return lg, t_s
-
-
-def entree_marche(lg, r):
-    """v2 : trade rempli au prix du signal. SL et TP inchangés ; R, RR et frais recalculés.
-    Renvoie False si le prix du signal est déjà au-delà du TP ou du SL (trade impossible)."""
-    t = r["inf"].get("tick")
-    e = cp.arrondi(r["px"], t)
-    d = 1 if lg["sens"] == "LONG" else -1
-    risque = d * (e - lg["sl"])
-    gain = d * (lg["tp"] - e)
-    if risque <= 0 or gain <= 0:
-        return False
-    lg.update(entree=e, rr=round(gain / risque, 2), ecart_entree_R=0.0,
-              frais_R=round(2 * cp.FRAIS_TAKER * e / risque, 2))
-    return True
 
 
 # ---------------- BOUCLE PRINCIPALE ----------------
@@ -425,24 +356,10 @@ def un_pas(T, etat, ouvert_jusqua, dernier_fantome, lignes):
     cle3 = lambda r: f"{r['symbol']}|{r['sens']}|{r['type']}"
 
     for r in nouveaux:                                   # trades « réels »
-        if UNE_POSITION and POSITIONS.get(r["symbol"], 0) > T:
-            continue                                     # position déjà ouverte sur cette paire
-        lg = cp.ligne_journal(r, maintenant, "REEL", "EN_COURS")
-        fenetre = H48
-        if MODE_ENTREE == "marche":
-            if not entree_marche(lg, r):
-                lg.update(statut="INVALIDE", date_sortie=cp.fmt_date(T), ts_entree=np.nan)
-                lignes.append(lg)
-                etat[cp.cle_signal(r)] = maintenant
-                continue
-        elif MODE_ENTREE == "limite":
-            lg.update(statut="ATTENTE", ts_entree=np.nan, mfe_R=np.nan, mae_R=np.nan)
-            fenetre = LIMITE_MS
-        lg, t_fin = evaluer(lg, fenetre)
+        lg, t_fin = evaluer(cp.ligne_journal(r, maintenant, "REEL", "EN_COURS"))
         lignes.append(lg)
         etat[cp.cle_signal(r)] = maintenant
         ouvert_jusqua[cle3(r)] = max(ouvert_jusqua.get(cle3(r), 0), t_fin)
-        POSITIONS[r["symbol"]] = max(POSITIONS.get(r["symbol"], 0), t_fin)
 
     if cp.FANTOMES:                                      # signaux fantômes
         exclus = {id(r) for r in top if r["decision"] == "TRADE NOW"}
@@ -466,7 +383,6 @@ def lancer(debut, fin):
     """Rejoue un scan à chaque clôture M15 entre debut et fin (fin = dernier instant
     permettant 96 h de suivi : 48 h pour déclencher + 48 h de trade)."""
     brancher()
-    POSITIONS.clear()
     T0 = (debut // M15 + 1) * M15
     T_fin = ((fin - 2 * H48) // M15) * M15
     pas = list(range(T0, T_fin + 1, M15))
@@ -484,13 +400,24 @@ def lancer(debut, fin):
 
 
 # ---------------- RAPPORT ----------------
-def texte_entree():
-    if MODE_ENTREE == "marche":
-        return "entrée AU MARCHÉ au prix du signal (R et frais recalculés sur la vraie distance entrée–SL)"
-    if MODE_ENTREE == "limite":
-        return (f"entrée en ORDRE LIMITE au niveau d'entrée, valable {LIMITE_MS / H1:g} h "
-                "(rempli seulement si le prix revient le toucher)")
-    return "entrée au niveau THÉORIQUE (en réel, l'écart constaté est d'environ +0,2 R)"
+def au_marche(d):
+    """Recalcule les trades réels comme si l'entrée se faisait au Market, au prix du signal.
+    Mêmes SL / TP ; R et frais recalculés sur ce prix. Trades dont le RR au marché
+    serait < RR_MIN : marqués « trop tard » (tu ne les aurais pas pris)."""
+    d = d.copy()
+    s = np.where(d["sens"] == "LONG", 1.0, -1.0)
+    risque_m = s * (d["px_signal"] - d["sl"])
+    risque_t = (d["entree"] - d["sl"]).abs()
+    sortie = np.where(d["statut"] == "TP", d["tp"],
+             np.where(d["statut"] == "SL", d["sl"], d["entree"] + s * d["resultat_R"] * risque_t))
+    ok = risque_m > 0
+    d["rr_marche"] = np.where(ok, s * (d["tp"] - d["px_signal"]) / risque_m.where(ok, 1), 0)
+    d["resultat_R"] = np.where(ok, s * (sortie - d["px_signal"]) / risque_m.where(ok, 1), np.nan)
+    d["frais_R"] = np.where(ok, 2 * cp.FRAIS_TAKER * d["px_signal"] / risque_m.where(ok, 1), np.nan)
+    d["resultat_net_R"] = d["resultat_R"] - d["frais_R"]
+    d["_rr_ok"] = np.where(d["rr_marche"] >= cp.RR_MIN, "RR au marché ≥ " + str(cp.RR_MIN),
+                           "trop tard (RR au marché < " + str(cp.RR_MIN) + ")")
+    return d[d["resultat_R"].notna()]
 
 
 def rapport(lignes, pas, sauve, duree_calcul):
@@ -509,37 +436,34 @@ def rapport(lignes, pas, sauve, duree_calcul):
 
     npaires = len(DATA) - (0 if "BTCUSDT" in DATA else 1)
     entete = [
-        f"# 🔁 Backtest Crypto Pépite V{cp.VERSION} (backtest v{BACKTEST_VERSION})\n",
+        f"# 🔁 Backtest Crypto Pépite V{cp.VERSION} (logique V{getattr(cp, 'VERSION_LOGIQUE', cp.VERSION)})\n",
         f"_Période : du {cp.fmt_date(pas[0])} au {cp.fmt_date(pas[-1])} UTC "
         f"({len(pas) / 96:.0f} jours, {len(pas)} scans M15) — {npaires} paires — "
         f"source {sauve.get('source', '?')} — calcul {duree_calcul / 60:.0f} min._\n",
-        f"_Mode d'entrée : **{texte_entree()}**"
-        + (" — **une seule position à la fois par paire**" if UNE_POSITION else "") + "._\n",
-        ("_Réglages modifiés pour ce backtest : **" + " ; ".join(REGLES) + "**._\n") if REGLES
-        else "_Réglages du scanner : ceux du fichier, sans modification._\n",
         "_Limites : OI absent de l'historique (composante OI du score fixée à 5) ; funding ignoré ; "
-        f"spread supposé {SPREAD_SUPPOSE * 100:.2f} % ; paires = les plus liquides aujourd'hui (biais de survie)._\n"]
-
-    reels_tous = j[j["type"] == "REEL"]
-    if len(reels_tous):
-        jours = max(1, len(pas) / 96)
-        n_clos = int(reels_tous["statut"].isin(cp.STATUTS_CLOS).sum())
-        entete.append(f"_Fréquence : {len(reels_tous)} signaux TRADE NOW, {n_clos} trades pris, "
-                      f"soit ≈ {n_clos / jours:.1f} trades par jour._\n")
-        if MODE_ENTREE in ("limite", "marche"):
-            cpt = reels_tous["statut"].value_counts()
-            rate, inval, nd = cpt.get("RATE", 0), cpt.get("INVALIDE", 0), cpt.get("NON_DECLENCHE", 0)
-            if MODE_ENTREE == "limite":
-                entete.append(
-                    f"_Ordres limite : **{n_clos}/{len(reels_tous)} remplis "
-                    f"({100 * n_clos / len(reels_tous):.0f} %)** — non remplis : {rate} partis au TP sans revenir "
-                    f"(gagnants manqués), {inval} partis au SL avant (pertes évitées), "
-                    f"{nd} restés sans toucher l'entrée._\n")
-            elif inval:
-                entete.append(f"_Entrée au marché impossible (prix déjà au-delà du TP ou du SL) : {inval} signaux._\n")
+        f"spread supposé {SPREAD_SUPPOSE * 100:.2f} % ; paires = les plus liquides aujourd'hui (biais de survie) ; "
+        "entrée au niveau théorique (en réel, l'écart constaté est d'environ +0,2 R)._\n"]
 
     reel = cp._prep(j[(j["type"] == "REEL") & j["statut"].isin(cp.STATUTS_CLOS)])
     fant = cp._prep(j[(j["type"] == "FANTOME") & j["statut"].isin(cp.STATUTS_CLOS)])
+    marche = ["\n---\n\n## ⚠️ Résultat réaliste : entrée au Market (prix du signal)\n",
+              "_Les tableaux ci-dessus comptent l'entrée au niveau de la zone, alors qu'au signal le prix "
+              "est déjà au-dessus. Ici : mêmes trades, mêmes SL / TP, mais entrée au prix du signal "
+              "(ce que tu obtiens en Market). C'est le chiffre à retenir._\n"]
+    if len(reel):
+        m = au_marche(reel)
+        marche.append(cp._global(m))
+        marche.append(cp._bloc_stats(m, "Selon le RR restant au prix du marché", "_rr_ok"))
+        mm = m[m["rr_marche"] >= cp.RR_MIN]
+        if len(mm):
+            marche.append("\n**En ne gardant que les trades avec RR au marché ≥ " + str(cp.RR_MIN) + " :**\n")
+            marche.append(cp._global(mm))
+            marche.append(cp._bloc_tranches(mm, "Par distance à l'entrée (ATR H1)", "dist_ATR",
+                                            [0, 0.15, 0.35, float("inf")], ["<0,15", "0,15-0,35", "≥0,35"]))
+            marche.append(cp._bloc_stats(mm, "Par contexte BTC détaillé (H4-H1)", "btc_detail"))
+            marche.append(cp._bloc_stats(mm, "Selon la tendance BTC H4", "btc_h4"))
+            mm = mm.assign(semaine=pd.to_datetime(mm["date_utc"]).dt.strftime("%G-S%V"))
+            marche.append(cp._bloc_stats(mm, "Par semaine", "semaine"))
     temps = ["\n---\n\n## Stabilité dans le temps et selon le marché\n"]
     if len(reel):
         reel["mois"] = reel["date_utc"].str[:7]
@@ -547,8 +471,6 @@ def rapport(lignes, pas, sauve, duree_calcul):
         temps.append(cp._bloc_stats(reel, "Trades réels par mois", "mois"))
         temps.append(cp._bloc_stats(reel, "Trades réels par semaine", "semaine"))
         temps.append(cp._bloc_stats(reel, "Trades réels selon la tendance BTC H4", "btc_h4"))
-        reel["mois_btc_h4"] = reel["mois"] + " · BTC H4 " + reel["btc_h4"]
-        temps.append(cp._bloc_stats(reel, "Trades réels par mois et tendance BTC H4", "mois_btc_h4"))
     if len(fant):
         fant["mois"] = fant["date_utc"].str[:7]
         for sens in ("LONG", "SHORT"):
@@ -556,42 +478,33 @@ def rapport(lignes, pas, sauve, duree_calcul):
             if len(f):
                 temps.append(cp._bloc_stats(f, f"Fantômes {sens} par mois", "mois"))
         temps.append(cp._bloc_stats(fant, "Fantômes selon la tendance BTC H4 et le sens", "btc_h4"))
-        temps.append(cp._bloc_stats(fant, "Fantômes par raison de non-trade (dont filtres V6.4 / V6.5)", "raison"))
 
     with open(cp.STATS, "w", encoding="utf-8") as f:
-        f.write("\n".join(entete) + corps + "\n".join(temps) + "\n")
+        f.write("\n".join(entete) + corps + "\n".join(marche) + "\n".join(temps) + "\n")
 
     print("\n================ RÉSUMÉ ================")
-    print(f"Scanner V{cp.VERSION} — {texte_entree()}" + (" — une position par paire" if UNE_POSITION else ""))
     for nom, d in (("Trades réels (LONG)", reel), ("Fantômes", fant)):
         if len(d):
             w = (d["resultat_R"] > 0).mean() * 100
             print(f"{nom} : {len(d)} clôturés | réussite {w:.0f} % | "
                   f"{d['resultat_net_R'].mean():+.2f} R net/trade | total {d['resultat_net_R'].sum():+.1f} R")
+    if len(reel):
+        m = au_marche(reel)
+        mm = m[m["rr_marche"] >= cp.RR_MIN]
+        print(f"Trades réels AU MARCHÉ : {len(m)} | {m['resultat_net_R'].mean():+.2f} R net/trade | "
+              f"total {m['resultat_net_R'].sum():+.1f} R  —  en ne gardant que RR ≥ {cp.RR_MIN} au marché : "
+              f"{len(mm)} trades, {mm['resultat_net_R'].mean() if len(mm) else float('nan'):+.2f} R net/trade")
     print("Rapport complet : backtest_stats.md — détail : backtest_journal.csv")
 
 
 def main():
-    global DATA, INFO, MODE_ENTREE, LIMITE_MS, UNE_POSITION
     ap = argparse.ArgumentParser(description="Backtest Crypto Pépite")
     ap.add_argument("--jours", type=int, default=60, help="durée de l'historique rejoué")
     ap.add_argument("--paires", type=int, default=60, help="nb de paires (les plus liquides)")
     ap.add_argument("--retelecharger", action="store_true", help="ignorer les données déjà téléchargées")
-    ap.add_argument("--entree", choices=["theorique", "marche", "limite"], default="theorique",
-                    help="façon d'entrer en position (défaut : theorique)")
-    ap.add_argument("--limite-h", type=float, default=2.0,
-                    help="durée de validité de l'ordre limite, en heures (défaut 2)")
-    ap.add_argument("--une-position", action="store_true",
-                    help="une seule position à la fois par paire")
-    ap.add_argument("--regle", action="append", default=[],
-                    help="réglage du scanner à modifier, NOM=VALEUR (répétable)")
     a = ap.parse_args()
-    MODE_ENTREE, LIMITE_MS, UNE_POSITION = a.entree, int(a.limite_h * H1), a.une_position
-    for r in a.regle:
-        appliquer_regle(r)
-    print(f"BACKTEST CRYPTO PÉPITE V{cp.VERSION} (backtest v{BACKTEST_VERSION}) — {a.jours} jours, "
-          f"{a.paires} paires — entrée {MODE_ENTREE}" + (" — une position par paire" if UNE_POSITION else "")
-          + (" — réglages : " + " ; ".join(REGLES) if REGLES else ""))
+    global DATA, INFO
+    print(f"BACKTEST CRYPTO PÉPITE V{cp.VERSION} — {a.jours} jours, {a.paires} paires")
     sauve = charger_donnees(a.jours, a.paires, a.retelecharger)
     DATA, INFO = sauve["data"], sauve["info"]
     if "BTCUSDT" not in DATA:
