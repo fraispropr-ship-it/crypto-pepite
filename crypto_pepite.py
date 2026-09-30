@@ -93,6 +93,12 @@
 #    - Ordre des messages : 1) ticket  2) fiche d'analyse  3) ligne PEPITE.
 #    - La fiche détaille POURQUOI c'est un TRADE NOW (chaque critère coché avec sa valeur),
 #      les zones, le volume, l'OI, et garde le lien TradingView.
+#  V7.4 : SEULES LES ALERTES ⭐ ARRIVENT SUR TELEGRAM (FILTRE_BTC_H4_RANGE = True).
+#    - Backtest V7.3 (26 jours, entrée au Market) : -0,11 R net/trade au total, mais
+#      +0,23 R net/trade quand BTC est en range en H4 (116 trades).
+#    - BTC en tendance en H4 (ou indisponible) -> WAIT : le setup n'est pas envoyé mais
+#      reste suivi en FANTÔME (raison « pas d'alerte ⭐ »), pour vérifier que le filtre a raison.
+#    - VERSION_LOGIQUE 7.4 : les statistiques repartent sur cette base.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, re, json, time, math, requests
@@ -101,8 +107,8 @@ from datetime import datetime, timezone
 from decimal import Decimal
 from html import escape, unescape
 
-VERSION         = "7.3"   # numéro du script : change à CHAQUE modification
-VERSION_LOGIQUE = "7.0"   # regroupe les stats : ne change que si les signaux changent
+VERSION         = "7.4"   # numéro du script : change à CHAQUE modification
+VERSION_LOGIQUE = "7.4"   # regroupe les stats : ne change que si les signaux changent
 
 # ---------------- PARAMÈTRES ----------------
 BASE          = "https://openapi.zoomex.com"
@@ -177,7 +183,7 @@ SIM_MAX           = 25       # nb max de trades dont on simule les sorties par s
 
 # ---- V6.4 / V6.5 : filtres issus du backtest. V7.0 : tous à False (indications dans la fiche) ----
 FILTRE_BTC_UNE_NEUTRE = False # V6.5 : trade seulement si BTC est neutre sur UNE SEULE UT (H4 ou H1)
-FILTRE_BTC_H4_RANGE  = False  # V6.7 (à l'essai) : trade seulement si BTC est en range en H4
+FILTRE_BTC_H4_RANGE  = True   # V7.4 : ACTIVÉ — seules les alertes ⭐ (BTC en range en H4) sont envoyées
 FILTRE_ZONE          = False  # zone assez solide (tests OU âge)
 ZONE_TESTS_MIN       = 3      # nb de tests mini de la zone H1
 ZONE_AGE_MIN_H       = 72     # ou âge mini de la zone (bougies H1)
@@ -628,8 +634,10 @@ def analyse(row, inf):
                 and btc_detail(s["sens"]).split("-").count("neutre") != 1:
             dec, why = "WAIT", (f"contexte BTC {btc_detail(s['sens'])} : il faut BTC neutre sur "
                                 "une seule UT (H4 ou H1) (filtre V6.5)")
-        elif FILTRE_BTC_H4_RANGE and not est_btc and BTC_CTX is not None and BTC_CTX["t4"] != NEUTRE:
-            dec, why = "WAIT", f"BTC en tendance en H4 ({BTC_CTX['t4']}) : il faut BTC en range (filtre V6.7)"
+        elif FILTRE_BTC_H4_RANGE and (BTC_CTX is None or BTC_CTX["t4"] != NEUTRE):
+            dec, why = "WAIT", ("BTC indisponible : impossible de vérifier le range H4 (filtre ⭐)"
+                                if BTC_CTX is None else
+                                f"BTC en tendance en H4 ({BTC_CTX['t4']}) : pas d'alerte ⭐ (filtre V7.4)")
         elif FILTRE_ZONE and not (s["zone"]["touches"] >= ZONE_TESTS_MIN
                                   or s["zone"].get("age_h", 0) >= ZONE_AGE_MIN_H):
             dec, why = "WAIT", (f"zone trop faible : moins de {ZONE_TESTS_MIN} tests et "
