@@ -1,6 +1,6 @@
 # 📒 Journal Crypto Pépite V6.5 (statistiques de la logique V6.5)
 
-_Mis à jour le 30/09/2026 02:04 UTC — 292 lignes dans le journal, 46 signaux ouverts, 197 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 30/09/2026 02:19 UTC — 293 lignes dans le journal, 45 signaux ouverts, 198 trades clôturés en attente de simulation (48 h)._
 
 Signaux réels V6.5 : **4** — clôturés : **3** — en cours : **1** — SHORT suivis en fantôme uniquement
 
@@ -125,7 +125,7 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ## Signaux fantômes V6.5 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : EN_COURS 11 | ATTENTE 8 | INVALIDE 6 | SL 5 | RATE 1 | PROMU 1
+Statuts : EN_COURS 12 | ATTENTE 7 | INVALIDE 6 | SL 5 | RATE 2 | PROMU 1
 
 - Taux de réussite : **0 %** (0/5)
 - Espérance : **-1.00 R brut** / **-1.15 R net** par trade
@@ -252,9 +252,9 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 198 | RR visé moyen : 2.52 | MFE médian : **+0.84 R**
-- Ont atteint +1 R : 44 % | +1,5 R : 37 % | +2 R : 26 %
-- **MFE des perdants** (147 SL) : avaient atteint +0,5 R : 59 % | +1 R : 26 % | +1,5 R : 16 % avant de toucher le SL
+- Trades mesurés : 199 | RR visé moyen : 2.52 | MFE médian : **+0.85 R**
+- Ont atteint +1 R : 45 % | +1,5 R : 37 % | +2 R : 26 %
+- **MFE des perdants** (148 SL) : avaient atteint +0,5 R : 59 % | +1 R : 26 % | +1,5 R : 17 % avant de toucher le SL
 - **MAE des gagnants** (50) : moyen -0.36 R | médian -0.29 R | pire -0.99 R | 38 % sont descendus au-delà de -0,5 R
 
 ### Sorties — ensemble — 1 trades rejoués bougie par bougie
