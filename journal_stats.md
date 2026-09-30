@@ -1,6 +1,6 @@
 # 📒 Journal Crypto Pépite V7.4 (statistiques de la logique V7.4)
 
-_Mis à jour le 30/09/2026 23:04 UTC — 528 lignes dans le journal, 45 signaux ouverts, 333 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 30/09/2026 23:19 UTC — 528 lignes dans le journal, 45 signaux ouverts, 333 trades clôturés en attente de simulation (48 h)._
 
 Signaux réels V7.4 : **10** — clôturés : **8** — en cours : **2** — SHORT suivis en fantôme uniquement
 
