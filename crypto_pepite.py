@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V6.3 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V6.7 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -60,6 +60,12 @@
 #         des deux UT (H4 ou H1). Backtest V6.3 : ces contextes font 282 trades à +0,48 R net
 #         (contre +0,12 R sur l'ensemble) ; sens-sens, contre-contre, sens-contre et
 #         neutre-neutre étaient tous négatifs. Remplace le filtre « sens-sens » de la V6.4.
+#  V6.6 : affichage seulement (VERSION_LOGIQUE reste 6.5, les stats continuent) —
+#         nouvelle présentation du ticket Telegram : paire, quantité, entrée, SL, TP, valeur.
+#  V6.7 : option FILTRE_BTC_H4_RANGE (DÉSACTIVÉE par défaut, donc signaux inchangés et
+#         VERSION_LOGIQUE toujours 6.5) : ne trader que si BTC est en range en H4.
+#         Piste issue du backtest 56 jours (BTC H4 neutre : 73 trades à +0,39 R net),
+#         à valider sur une plus longue période avant de l'activer.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, json, time, math, requests
@@ -68,7 +74,7 @@ from datetime import datetime, timezone
 from decimal import Decimal
 from html import escape
 
-VERSION         = "6.5"   # numéro du script : change à CHAQUE modification
+VERSION         = "6.7"   # numéro du script : change à CHAQUE modification
 VERSION_LOGIQUE = "6.5"   # regroupe les stats : ne change que si les signaux changent
 
 # ---------------- PARAMÈTRES ----------------
@@ -144,6 +150,7 @@ SIM_MAX           = 25       # nb max de trades dont on simule les sorties par s
 
 # ---- NOUVEAU V6.4 (filtres issus du backtest ; False pour désactiver un filtre) ----
 FILTRE_BTC_UNE_NEUTRE = True  # V6.5 : trade seulement si BTC est neutre sur UNE SEULE UT (H4 ou H1)
+FILTRE_BTC_H4_RANGE  = False  # V6.7 (à l'essai) : trade seulement si BTC est en range en H4
 FILTRE_ZONE          = True   # zone assez solide (tests OU âge)
 ZONE_TESTS_MIN       = 3      # nb de tests mini de la zone H1
 ZONE_AGE_MIN_H       = 72     # ou âge mini de la zone (bougies H1)
@@ -594,6 +601,8 @@ def analyse(row, inf):
                 and btc_detail(s["sens"]).split("-").count("neutre") != 1:
             dec, why = "WAIT", (f"contexte BTC {btc_detail(s['sens'])} : il faut BTC neutre sur "
                                 "une seule UT (H4 ou H1) (filtre V6.5)")
+        elif FILTRE_BTC_H4_RANGE and not est_btc and BTC_CTX is not None and BTC_CTX["t4"] != NEUTRE:
+            dec, why = "WAIT", f"BTC en tendance en H4 ({BTC_CTX['t4']}) : il faut BTC en range (filtre V6.7)"
         elif FILTRE_ZONE and not (s["zone"]["touches"] >= ZONE_TESTS_MIN
                                   or s["zone"].get("age_h", 0) >= ZONE_AGE_MIN_H):
             dec, why = "WAIT", (f"zone trop faible : moins de {ZONE_TESTS_MIN} tests et "
@@ -717,20 +726,22 @@ def fmt_num(x, pas=None):
     return f"{x:.10f}".rstrip("0").rstrip(".")
 
 def ticket(r):
-    """Ticket court, valeurs copiables d'un toucher, dans l'ordre du formulaire Zoomex."""
+    """V6.6 : ticket court, valeurs copiables d'un toucher (police monospace)."""
     t, step = r["inf"].get("tick"), r["inf"].get("step")
     e, sl, tp = arrondi(r["entry"], t), arrondi(r["sl"], t), arrondi(r["tp"], t)
     sz = sizing(e, sl, r["inf"])
-    base = r["symbol"][:-4]
+    base = escape(r["symbol"][:-4])
     sens = "🟢 LONG" if r["sens"] == "LONG" else "🔴 SHORT"
-    txt = (f"🎫 <b>TICKET {escape(r['symbol'])} — {sens}</b>\n"
-           f"Paire : <code>{escape(base)}</code>\n"
-           f"Levier : <code>{sz['lev']}</code>\n"
-           f"Entrée : <code>{fmt_num(e, t)}</code> (Market maintenant, ou Limite à ce prix)\n"
-           f"Quantité : <code>{fmt_num(sz['q'], step)}</code> {escape(base)} — "
-           f"ou valeur <code>{sz['notional']:.2f}</code> USDT\n"
-           f"TP : <code>{fmt_num(tp, t)}</code>\n"
+    txt = (f"🎫 <b>TICKET {escape(r['symbol'])} —</b>\n"
+           f"<b>{sens}</b>\n"
+           f"\n"
+           f"Paire : <code>{base}</code>\n"
+           f"Quantité : <code>{fmt_num(sz['q'], step)}</code> {base}\n"
+           f"Entrée : <code>{fmt_num(e, t)}</code>\n"
            f"SL : <code>{fmt_num(sl, t)}</code>\n"
+           f"TP : <code>{fmt_num(tp, t)}</code>\n"
+           f"Valeur : <code>{sz['notional']:.2f}</code> USDT\n"
+           f"\n"
            f"Marge ≈ {sz['marge']:.2f} USDT · risque ≈ {sz['risque']:.2f} USDT")
     if sz["trop_petit"]:
         txt += "\n⚠️ Quantité sous le minimum Zoomex : trade impossible tel quel"

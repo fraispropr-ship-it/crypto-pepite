@@ -1,5 +1,5 @@
 # ==============================================================================
-#  BACKTEST CRYPTO PÉPITE v2 — rejoue crypto_pepite.py (la version présente dans
+#  BACKTEST CRYPTO PÉPITE v3 — rejoue crypto_pepite.py (la version présente dans
 #  le même dossier : V6.5 et suivantes) sur l'historique
 #
 #  Principe : le script importe TON scanner et appelle ses propres fonctions
@@ -24,6 +24,15 @@
 #   - --une-position : pas de nouveau trade réel sur une paire tant que le précédent
 #     n'est pas clôturé (comme un trader réel).
 #
+#  NOUVEAU v3 :
+#   - --regle NOM=VALEUR : change un réglage du scanner pour ce backtest seulement,
+#     sans toucher au fichier (répétable). Exemples :
+#       --regle FILTRE_BTC_H4_RANGE=True     (tester le filtre « BTC en range en H4 »)
+#       --regle FILTRE_BOUGIE=False          (tester sans le filtre de bougie)
+#     Les réglages modifiés sont écrits en tête du rapport.
+#   - Tableau « par mois » détaillé aussi par tendance BTC H4, pour voir si une règle
+#     tient mois après mois (pas seulement en moyenne).
+#
 #  Résultats : backtest_stats.md (même présentation que ton journal)
 #              backtest_journal.csv (tous les signaux, une ligne par signal)
 #
@@ -42,7 +51,7 @@ import requests
 
 import crypto_pepite as cp
 
-BACKTEST_VERSION = "2"
+BACKTEST_VERSION = "3"
 M15, H1, H4 = 900_000, 3_600_000, 14_400_000
 DUREE = {"15": M15, "60": H1, "240": H4}
 H48 = cp.JOURNAL_EXPIRE_H * H1
@@ -61,6 +70,29 @@ MODE_ENTREE = "theorique"
 LIMITE_MS = 2 * H1
 UNE_POSITION = False
 POSITIONS = {}          # paire -> instant de clôture du dernier trade réel
+REGLES = []             # réglages du scanner modifiés pour ce backtest (texte, pour le rapport)
+
+
+def appliquer_regle(texte):
+    """--regle NOM=VALEUR : modifie un réglage de crypto_pepite.py pour ce backtest."""
+    if "=" not in texte:
+        sys.exit(f"⛔ --regle {texte} : format attendu NOM=VALEUR (ex. FILTRE_BTC_H4_RANGE=True)")
+    nom, val = (x.strip() for x in texte.split("=", 1))
+    if not hasattr(cp, nom):
+        sys.exit(f"⛔ --regle : le réglage « {nom} » n'existe pas dans crypto_pepite.py")
+    actuel = getattr(cp, nom)
+    if isinstance(actuel, bool):
+        if val.lower() not in ("true", "false", "1", "0", "oui", "non"):
+            sys.exit(f"⛔ --regle {nom} : valeur attendue True ou False")
+        v = val.lower() in ("true", "1", "oui")
+    elif isinstance(actuel, int):
+        v = int(val)
+    elif isinstance(actuel, float):
+        v = float(val)
+    else:
+        v = val
+    setattr(cp, nom, v)
+    REGLES.append(f"{nom} = {v!r} (au lieu de {actuel!r})")
 
 
 # ---------------- TÉLÉCHARGEMENT ----------------
@@ -483,6 +515,8 @@ def rapport(lignes, pas, sauve, duree_calcul):
         f"source {sauve.get('source', '?')} — calcul {duree_calcul / 60:.0f} min._\n",
         f"_Mode d'entrée : **{texte_entree()}**"
         + (" — **une seule position à la fois par paire**" if UNE_POSITION else "") + "._\n",
+        ("_Réglages modifiés pour ce backtest : **" + " ; ".join(REGLES) + "**._\n") if REGLES
+        else "_Réglages du scanner : ceux du fichier, sans modification._\n",
         "_Limites : OI absent de l'historique (composante OI du score fixée à 5) ; funding ignoré ; "
         f"spread supposé {SPREAD_SUPPOSE * 100:.2f} % ; paires = les plus liquides aujourd'hui (biais de survie)._\n"]
 
@@ -513,6 +547,8 @@ def rapport(lignes, pas, sauve, duree_calcul):
         temps.append(cp._bloc_stats(reel, "Trades réels par mois", "mois"))
         temps.append(cp._bloc_stats(reel, "Trades réels par semaine", "semaine"))
         temps.append(cp._bloc_stats(reel, "Trades réels selon la tendance BTC H4", "btc_h4"))
+        reel["mois_btc_h4"] = reel["mois"] + " · BTC H4 " + reel["btc_h4"]
+        temps.append(cp._bloc_stats(reel, "Trades réels par mois et tendance BTC H4", "mois_btc_h4"))
     if len(fant):
         fant["mois"] = fant["date_utc"].str[:7]
         for sens in ("LONG", "SHORT"):
@@ -547,10 +583,15 @@ def main():
                     help="durée de validité de l'ordre limite, en heures (défaut 2)")
     ap.add_argument("--une-position", action="store_true",
                     help="une seule position à la fois par paire")
+    ap.add_argument("--regle", action="append", default=[],
+                    help="réglage du scanner à modifier, NOM=VALEUR (répétable)")
     a = ap.parse_args()
     MODE_ENTREE, LIMITE_MS, UNE_POSITION = a.entree, int(a.limite_h * H1), a.une_position
+    for r in a.regle:
+        appliquer_regle(r)
     print(f"BACKTEST CRYPTO PÉPITE V{cp.VERSION} (backtest v{BACKTEST_VERSION}) — {a.jours} jours, "
-          f"{a.paires} paires — entrée {MODE_ENTREE}" + (" — une position par paire" if UNE_POSITION else ""))
+          f"{a.paires} paires — entrée {MODE_ENTREE}" + (" — une position par paire" if UNE_POSITION else "")
+          + (" — réglages : " + " ; ".join(REGLES) if REGLES else ""))
     sauve = charger_donnees(a.jours, a.paires, a.retelecharger)
     DATA, INFO = sauve["data"], sauve["info"]
     if "BTCUSDT" not in DATA:
