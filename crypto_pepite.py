@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V7.2 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V7.3 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -86,6 +86,13 @@
 #  V7.2 : affichage du log GitHub seulement (signaux inchangés, VERSION_LOGIQUE reste 7.0).
 #    - Le log ne montre plus la note ni les rapports WAIT / PREPARE : un résumé des
 #      décisions du scan, puis uniquement les alertes réellement envoyées sur Telegram.
+#  V7.3 : correction + affichage (signaux inchangés, VERSION_LOGIQUE reste 7.0).
+#    - CORRECTION : la fiche n'arrivait pas quand elle contenait le signe « < » (zone fragile) :
+#      Telegram refusait le message. Tout le texte est désormais protégé, et si Telegram
+#      refuse un message mis en forme, il est renvoyé automatiquement en texte simple.
+#    - Ordre des messages : 1) ticket  2) fiche d'analyse  3) ligne PEPITE.
+#    - La fiche détaille POURQUOI c'est un TRADE NOW (chaque critère coché avec sa valeur),
+#      les zones, le volume, l'OI, et garde le lien TradingView.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, re, json, time, math, requests
@@ -94,7 +101,7 @@ from datetime import datetime, timezone
 from decimal import Decimal
 from html import escape, unescape
 
-VERSION         = "7.2"   # numéro du script : change à CHAQUE modification
+VERSION         = "7.3"   # numéro du script : change à CHAQUE modification
 VERSION_LOGIQUE = "7.0"   # regroupe les stats : ne change que si les signaux changent
 
 # ---------------- PARAMÈTRES ----------------
@@ -714,6 +721,13 @@ def telegram(texte, html=False):
             if html: data["parse_mode"] = "HTML"
             r = requests.post(f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
                               data=data, timeout=15)
+            if r.status_code == 400 and html:
+                # V7.3 : mise en forme refusée -> renvoi en texte simple (le message arrive quand même)
+                print(f"⚠️ Telegram : mise en forme refusée ({r.text[:120]}), renvoi en texte simple")
+                data.pop("parse_mode", None)
+                data["text"] = unescape(re.sub(r"<[^>]+>", "", m))
+                r = requests.post(f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
+                                  data=data, timeout=15)
             if r.status_code != 200:
                 print(f"⚠️ Telegram : HTTP {r.status_code} {r.text[:200]}")
         except Exception as ex:
@@ -770,48 +784,65 @@ def ticket(r):
 FRAIS_ALERTE_R = 0.15   # V7.0 : au-delà, la fiche signale des frais lourds (non bloquant)
 
 def fiche(r):
-    """V7.0 : fiche courte pour décider en 30 s. BTC d'abord, puis l'altcoin, puis les points clés."""
+    """V7.3 : fiche d'analyse — pourquoi c'est un TRADE NOW, contexte BTC, points à juger.
+    Tout texte variable passe par escape() : un « < » non protégé fait refuser le message."""
+    E = lambda x: escape(str(x))
     t = r["inf"].get("tick")
-    e, sl = arrondi(r["entry"], t), arrondi(r["sl"], t)
+    e, sl, tp = arrondi(r["entry"], t), arrondi(r["sl"], t), arrondi(r["tp"], t)
     fl = {"HAUSSIÈRE": "↗️", "BAISSIÈRE": "↘️", NEUTRE: "➡️"}
     court = {"HAUSSIÈRE": "haussière", "BAISSIÈRE": "baissière", NEUTRE: "range"}
     sens = "🟢 LONG" if r["sens"] == "LONG" else "🔴 SHORT"
-    # BTC : contexte à privilégier = range / sans tendance en H4
+    base = r["symbol"][:-4]
+    # --- BTC ---
     if BTC_CTX is None:
-        etoile, btc = "", "₿ BTC : indisponible"
+        etoile, btc = "", ["₿ BTC : indisponible"]
     else:
         t4, t1, choc = BTC_CTX["t4"], BTC_CTX["t1"], BTC_CTX["choc"]
         favorable = t4 == NEUTRE
         etoile = "⭐ " if favorable else ""
-        btc = (f"₿ BTC : H4 {court[t4]} {fl[t4]} | H1 {court[t1]} {fl[t1]} | 1h {choc*100:+.2f} %\n"
-               + ("   ⭐ BTC en range en H4 : contexte à privilégier" if favorable
-                  else "   ⚠️ BTC en tendance en H4 : contexte moins favorable"))
+        btc = [f"₿ BTC : H4 {court[t4]} {fl[t4]} | H1 {court[t1]} {fl[t1]} | 1h {choc*100:+.2f} %",
+               "⭐ BTC en range en H4 : contexte à privilégier" if favorable
+               else "⚠️ BTC en tendance en H4 : contexte moins favorable",
+               f"Position de BTC par rapport au trade (H4-H1) : {btc_detail(r['sens'])}"]
+    # --- points à juger ---
     z = r["zone"]
     zone_ok = z["touches"] >= ZONE_TESTS_MIN or z.get("age_h", 0) >= ZONE_AGE_MIN_H
     cpos, body = r.get("close_pos") or 0, r.get("body_ratio") or 0
     bougie_ok = cpos >= CLOSE_POS_FORT or body >= BODY_FORT
     frais = 2 * FRAIS_TAKER * e / abs(e - sl) if e != sl else 0
     obstacle = "1re résistance" if r["sens"] == "LONG" else "1er support"
-    cible = f"{obstacle} à {arrondi(r['tp'], t)}" if not r["tp_theorique"] else "aucune zone (TP théorique 2 R)"
+    cible = f"{obstacle} à {tp}" if not r["tp_theorique"] else f"aucune zone identifiée, TP théorique 2 R à {tp}"
+    fz_t = lambda zz: f"{arrondi(zz['lo'], t)}–{arrondi(zz['hi'], t)} ({zz['touches']} tests)"
+    src = OI_SOURCE[0] if OI_SOURCE else "—"
+    oi = "n/d" if r["oi4"] is None else f"{r['oi4']*100:+.1f} % (4h) / {r['oi24']*100:+.1f} % (24h)"
     lignes = [
-        f"{etoile}🚨 <b>{escape(r['symbol'])} — {sens}</b> — {escape(r['type'])}",
-        f"<i>V{VERSION} · {datetime.now(timezone.utc):%H:%M} UTC</i>",
+        f"{etoile}🚨 <b>{E(r['symbol'])} — {sens}</b>",
+        f"<i>{E(r['type'])} · prix {E(r['px'])} · V{VERSION} · {datetime.now(timezone.utc):%H:%M} UTC</i>",
         "",
-        escape(btc),
-        f"📈 Tendance {escape(r['symbol'][:-4])} : H4 {court[r['t4']]} {fl[r['t4']]} ✅ | H1 {court[r['t1']]} {fl[r['t1']]}",
+        "<b>Pourquoi TRADE NOW</b>",
+        f"✅ Rejet M15 confirmé : clôture {cpos*100:.0f} % de la bougie, au-dessus de {E(arrondi(r['trig'], t))}",
+        f"✅ Entrée proche : {r['dist']:.2f} ATR H1 (max {DIST_TRADE_NOW})",
+        f"✅ Objectif : {E(cible)} → RR {r['rr']:.2f} (min {RR_MIN})",
+        f"✅ Tendance {E(base)} : H4 {court[r['t4']]} {fl[r['t4']]} (pas de contre-tendance) | H1 {court[r['t1']]} {fl[r['t1']]}",
+        f"✅ 24 h : {r['ch24']*100:+.1f} % (max ±{MAX_MOVE_24H*100:.0f} %) · pas de choc BTC",
         "",
-        f"{'✅' if zone_ok else '⚠️'} Zone H1 : {z['touches']} tests · âge {z.get('age_h', '?')} h"
-        + ("" if zone_ok else f" (fragile : < {ZONE_TESTS_MIN} tests et < {ZONE_AGE_MIN_H} h)"),
-        f"{'✅' if bougie_ok else '⚠️'} Bougie M15 : clôture {cpos*100:.0f} % · corps {body*100:.0f} % · volume x{r['vol_ratio']:.2f}"
-        + ("" if bougie_ok else " (peu franche)"),
-        f"🎯 Objectif : {cible} → RR {r['rr']:.2f}",
-        f"{'✅' if frais <= FRAIS_ALERTE_R else '⚠️'} Frais : {frais:.2f} R"
-        + ("" if frais <= FRAIS_ALERTE_R else " (lourds : SL très serré)"),
-        f"ℹ️ 24 h : {r['ch24']*100:+.1f} % · RSI H1 {r['rsi_h1']:.0f} · {escape(interp_funding(r['funding']))}",
+        "<b>BTC</b>",
+        *[E(x) for x in btc],
+        "",
+        "<b>À juger</b>",
+        f"{'✅' if zone_ok else '⚠️'} Zone H1 {E(fz_t(z))} · âge {E(z.get('age_h', '?'))} h"
+        + ("" if zone_ok else E(f" — fragile : moins de {ZONE_TESTS_MIN} tests et moins de {ZONE_AGE_MIN_H} h")),
+        f"{'✅' if bougie_ok else '⚠️'} Bougie M15 : corps {body*100:.0f} % · mèche "
+        f"{(r.get('wick_ratio') or 0)*100:.0f} % · volume x{r['vol_ratio']:.2f}" + ("" if bougie_ok else " — peu franche"),
+        f"{'✅' if frais <= FRAIS_ALERTE_R else '⚠️'} Frais : {frais:.2f} R" + ("" if frais <= FRAIS_ALERTE_R else " — lourds, SL très serré"),
+        f"Supports : {E(' | '.join(fz_t(x) for x in r['sup']) or 'aucun')}",
+        f"Résistances : {E(' | '.join(fz_t(x) for x in r['res']) or 'aucune')}",
+        f"Volume 24 h : {r['turnover']/1e6:.1f} M USDT · RSI H1 {r['rsi_h1']:.0f} · VWAP {E(arrondi(r['vwap'], t))}",
+        f"OI ({E(src)}) : {E(oi)} · {E(interp_funding(r['funding']))}",
         "",
         "⚠️ News / macro non vérifiées",
+        f"📊 <a href=\"{E(lien_tv(r))}\">Graphique TradingView M15</a>",
         "↩️ Réponds « pris » ou « non » (+ raison) à ce message",
-        f"📊 <a href=\"{escape(lien_tv(r))}\">Graphique TradingView M15</a>",
     ]
     return "\n".join(lignes)
 
@@ -1463,9 +1494,9 @@ def scan():
           f"{int((journal['statut'] == 'EN_COURS').sum())} en cours")
 
     for r in nouveaux:
-        # V7.0 : 1) fiche courte pour décider  2) ticket copiable pour exécuter  3) ligne PEPITE
-        telegram(fiche(r), html=True)
+        # V7.3 : 1) ticket copiable  2) fiche d'analyse (pourquoi TRADE NOW + lien)  3) ligne PEPITE
         telegram(ticket(r), html=True)
+        telegram(fiche(r), html=True)
         telegram(ligne_pepite(r))
         etat[cle_signal(r)] = maintenant
     sauver_etat(etat)
