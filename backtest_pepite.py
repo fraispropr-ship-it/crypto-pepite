@@ -24,6 +24,14 @@
 #   - --une-position : pas de nouveau trade réel sur une paire tant que le précédent
 #     n'est pas clôturé (comme un trader réel).
 #
+#  NOUVEAU v5 (2e scanner « Tendance Alt » et test en deux temps) :
+#   - --scanner tendance_alt : teste tendance_alt.py au lieu de crypto_pepite.py
+#     (les deux fichiers doivent être dans le même dossier).
+#   - --de AAAA-MM-JJ / --a AAAA-MM-JJ : ne rejoue que cette période (les données
+#     téléchargées restent les mêmes). Ex. mise au point --de 2026-06-01 --a 2026-07-31,
+#     puis validation --de 2026-08-01 --a 2026-09-30.
+#   - Un scanner peut fournir preparer_scan() et prefiltre() : le backtest les utilise.
+#
 #  NOUVEAU v4 (pour le scanner V7.x : « ce que je reçois sur Telegram ») :
 #   - Section « Alertes Telegram V7 » : résultat des alertes selon chaque indication de la
 #     fiche (⭐ BTC en range H4, zone ✅/⚠️, bougie ✅/⚠️, frais ✅/⚠️) et selon le nombre de ✅.
@@ -46,7 +54,7 @@
 #   - funding non pris en compte, spread supposé à 0,05 %
 #   - paires = les plus liquides AUJOURD'HUI (biais de survie)
 # ==============================================================================
-import argparse, math, os, pickle, sys, time
+import argparse, importlib, math, os, pickle, sys, time
 from types import SimpleNamespace
 from datetime import datetime, timezone
 
@@ -54,9 +62,22 @@ import numpy as np
 import pandas as pd
 import requests
 
-import crypto_pepite as cp
 
-BACKTEST_VERSION = "4"
+def _nom_scanner():
+    """Le scanner à tester est lu avant tout le reste (option --scanner, défaut crypto_pepite)."""
+    for i, a in enumerate(sys.argv):
+        if a == "--scanner" and i + 1 < len(sys.argv):
+            return sys.argv[i + 1].removesuffix(".py")
+        if a.startswith("--scanner="):
+            return a.split("=", 1)[1].removesuffix(".py")
+    return "crypto_pepite"
+
+
+SCANNER = _nom_scanner()
+cp = importlib.import_module(SCANNER)
+NOM = getattr(cp, "NOM_SCANNER", "Crypto Pépite")
+
+BACKTEST_VERSION = "5"
 M15, H1, H4 = 900_000, 3_600_000, 14_400_000
 DUREE = {"15": M15, "60": H1, "240": H4}
 H48 = cp.JOURNAL_EXPIRE_H * H1
@@ -387,8 +408,11 @@ def un_pas(T, etat, ouvert_jusqua, dernier_fantome, lignes):
     liq.sort(reverse=True)
 
     results = []
+    if hasattr(cp, "preparer_scan"):                    # ex. force relative de Tendance Alt
+        cp.preparer_scan([sym for _, sym, _, _ in liq[:cp.SHORTLIST]])
+    filtre = cp.prefiltre if hasattr(cp, "prefiltre") else prix_dans_une_zone
     for tv, sym, ch24, px in liq[:cp.SHORTLIST]:
-        if not prix_dans_une_zone(sym):
+        if not filtre(sym):
             continue
         row = SimpleNamespace(symbol=sym, lastPrice=px, price24hPcnt=ch24, turnover24h=tv,
                               fundingRate=np.nan, spread=SPREAD_SUPPOSE)
@@ -467,6 +491,9 @@ def un_pas(T, etat, ouvert_jusqua, dernier_fantome, lignes):
             ouvert_jusqua[k] = max(ouvert_jusqua.get(k, 0), t_fin)
 
 
+PERIODE = [None, None]      # --de / --a, en ms
+
+
 def lancer(debut, fin):
     """Rejoue un scan à chaque clôture M15 entre debut et fin (fin = dernier instant
     permettant 96 h de suivi : 48 h pour déclencher + 48 h de trade)."""
@@ -475,6 +502,10 @@ def lancer(debut, fin):
     T0 = (debut // M15 + 1) * M15
     T_fin = ((fin - 2 * H48) // M15) * M15
     pas = list(range(T0, T_fin + 1, M15))
+    if PERIODE[0]: pas = [T for T in pas if T >= PERIODE[0]]
+    if PERIODE[1]: pas = [T for T in pas if T < PERIODE[1]]
+    if not pas:
+        sys.exit("⛔ Aucun scan dans la période demandée (vérifie --de / --a et --jours).")
     etat, ouvert_jusqua, dernier_fantome, lignes = {}, {}, {}, []
     t0 = time.time()
     for i, T in enumerate(pas, 1):
@@ -500,6 +531,17 @@ def texte_entree():
 
 def bloc_fiche(reel):
     """v4 : résultats des alertes selon les indications ✅ / ⚠️ de la fiche Telegram V7."""
+    if NOM == "Tendance Alt":
+        d = reel.copy()
+        d["mois_sens"] = d["mois"] + " · " + d["sens"]
+        d["f_force"] = pd.cut(d["force_vs_btc"].abs() * 100, [0, 5, 10, 20, 1e9],
+                              labels=["< 5 %", "5-10 %", "10-20 %", "≥ 20 %"], right=False)
+        d["btc_h4_sens"] = d["btc_h4"] + " · " + d["sens"]
+        return ["\n---\n\n## Tendance Alt — détail\n",
+                cp._bloc_stats(d, "Par mois et sens", "mois_sens"),
+                cp._bloc_stats(d, "Selon l'écart de performance avec BTC (3 jours)", "f_force",
+                               ["< 5 %", "5-10 %", "10-20 %", "≥ 20 %"]),
+                cp._bloc_stats(d, "Selon BTC H4 et le sens", "btc_h4_sens")]
     if not hasattr(cp, "FRAIS_ALERTE_R"):
         return []                                     # scanner antérieur à la V7 : section sans objet
     d = reel.copy()
@@ -539,7 +581,7 @@ def rapport(lignes, pas, sauve, duree_calcul):
 
     npaires = len(DATA) - (0 if "BTCUSDT" in DATA else 1)
     entete = [
-        f"# 🔁 Backtest Crypto Pépite V{cp.VERSION} (backtest v{BACKTEST_VERSION})\n",
+        f"# 🔁 Backtest {NOM} V{cp.VERSION} (backtest v{BACKTEST_VERSION})\n",
         f"_Période : du {cp.fmt_date(pas[0])} au {cp.fmt_date(pas[-1])} UTC "
         f"({len(pas) / 96:.0f} jours, {len(pas)} scans M15) — {npaires} paires — "
         f"source {sauve.get('source', '?')} — calcul {duree_calcul / 60:.0f} min._\n",
@@ -594,7 +636,7 @@ def rapport(lignes, pas, sauve, duree_calcul):
 
     print("\n================ RÉSUMÉ ================")
     print(f"Scanner V{cp.VERSION} — {texte_entree()}" + (" — une position par paire" if UNE_POSITION else ""))
-    for nom, d in (("Trades réels (LONG)", reel), ("Fantômes", fant)):
+    for nom, d in (("Trades réels", reel), ("Fantômes", fant)):
         if len(d):
             w = (d["resultat_R"] > 0).mean() * 100
             print(f"{nom} : {len(d)} clôturés | réussite {w:.0f} % | "
@@ -614,13 +656,19 @@ def main():
                     help="durée de validité de l'ordre limite, en heures (défaut 2)")
     ap.add_argument("--une-position", action="store_true",
                     help="une seule position à la fois par paire")
+    ap.add_argument("--scanner", default="crypto_pepite", help="crypto_pepite (défaut) ou tendance_alt")
+    ap.add_argument("--de", help="début de la période rejouée, AAAA-MM-JJ")
+    ap.add_argument("--a", dest="a_", help="fin de la période rejouée (jour inclus), AAAA-MM-JJ")
     ap.add_argument("--regle", action="append", default=[],
                     help="réglage du scanner à modifier, NOM=VALEUR (répétable)")
     a = ap.parse_args()
     MODE_ENTREE, LIMITE_MS, UNE_POSITION = a.entree, int(a.limite_h * H1), a.une_position
+    jour_ms = lambda x: int(datetime.strptime(x, "%Y-%m-%d").replace(tzinfo=timezone.utc).timestamp() * 1000)
+    PERIODE[0] = jour_ms(a.de) if a.de else None
+    PERIODE[1] = jour_ms(a.a_) + JOUR if a.a_ else None
     for r in a.regle:
         appliquer_regle(r)
-    print(f"BACKTEST CRYPTO PÉPITE V{cp.VERSION} (backtest v{BACKTEST_VERSION}) — {a.jours} jours, "
+    print(f"BACKTEST {NOM.upper()} V{cp.VERSION} (backtest v{BACKTEST_VERSION}) — {a.jours} jours, "
           f"{a.paires} paires — entrée {MODE_ENTREE}" + (" — une position par paire" if UNE_POSITION else "")
           + (" — réglages : " + " ; ".join(REGLES) if REGLES else ""))
     sauve = charger_donnees(a.jours, a.paires, a.retelecharger)
