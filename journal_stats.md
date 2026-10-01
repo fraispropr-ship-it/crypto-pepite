@@ -1,6 +1,6 @@
 # 📒 Journal Crypto Pépite V7.4 (statistiques de la logique V7.4)
 
-_Mis à jour le 01/10/2026 19:04 UTC — 720 lignes dans le journal, 25 signaux ouverts, 311 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 01/10/2026 19:19 UTC — 720 lignes dans le journal, 25 signaux ouverts, 309 trades clôturés en attente de simulation (48 h)._
 
 Signaux réels V7.4 : **29** — clôturés : **28** — en cours : **1** — SHORT suivis en fantôme uniquement
 
@@ -289,17 +289,17 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 - **MFE des perdants** (363 SL) : avaient atteint +0,5 R : 56 % | +1 R : 29 % | +1,5 R : 15 % avant de toucher le SL
 - **MAE des gagnants** (141) : moyen -0.39 R | médian -0.37 R | pire -1.00 R | 38 % sont descendus au-delà de -0,5 R
 
-### Sorties — ensemble — 198 trades rejoués bougie par bougie
+### Sorties — ensemble — 200 trades rejoués bougie par bougie
 
 | Gestion | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|
-| A — TP / SL actuels | 27 % | -0.11 | -0.25 | -50.02 |
-| B — SL à break-even dès +1 R | 21 % | -0.03 | -0.18 | -35.54 |
-| C — SL à break-even dès +1,5 R | 25 % | -0.01 | -0.16 | -31.01 |
-| D — rien avant +1,5 R, puis SL technique (extrême des 3 dernières M15) | 39 % | +0.03 | -0.12 | -23.63 |
-| E — 50 % à +1 R, reste au TP (SL inchangé) | 28 % | -0.07 | -0.22 | -42.73 |
-| F — TP fixe 1,5 R | 40 % | +0.01 | -0.14 | -27.60 |
-| G — TP fixe 2 R | 32 % | -0.02 | -0.17 | -33.56 |
+| A — TP / SL actuels | 26 % | -0.12 | -0.26 | -52.16 |
+| B — SL à break-even dès +1 R | 20 % | -0.04 | -0.18 | -36.68 |
+| C — SL à break-even dès +1,5 R | 25 % | -0.02 | -0.17 | -33.15 |
+| D — rien avant +1,5 R, puis SL technique (extrême des 3 dernières M15) | 38 % | +0.02 | -0.13 | -25.77 |
+| E — 50 % à +1 R, reste au TP (SL inchangé) | 28 % | -0.07 | -0.22 | -43.87 |
+| F — TP fixe 1,5 R | 40 % | -0.00 | -0.15 | -29.74 |
+| G — TP fixe 2 R | 32 % | -0.03 | -0.18 | -35.70 |
 
 _Prudent : SL testé avant le TP dans chaque bougie ; BE / SL technique actifs à partir de la bougie suivante ; horizon 48 h. La ligne A peut différer légèrement du résultat réel (horizon fixe)._
 
