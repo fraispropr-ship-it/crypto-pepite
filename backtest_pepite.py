@@ -24,6 +24,9 @@
 #   - --une-position : pas de nouveau trade réel sur une paire tant que le précédent
 #     n'est pas clôturé (comme un trader réel).
 #
+#  NOUVEAU v6 : 3e scanner « Excès Alt » (--scanner exces_alt) et détail adapté
+#   (écart de performance avec BTC par tranches au-delà du seuil d'excès).
+#
 #  NOUVEAU v5 (2e scanner « Tendance Alt » et test en deux temps) :
 #   - --scanner tendance_alt : teste tendance_alt.py au lieu de crypto_pepite.py
 #     (les deux fichiers doivent être dans le même dossier).
@@ -77,7 +80,7 @@ SCANNER = _nom_scanner()
 cp = importlib.import_module(SCANNER)
 NOM = getattr(cp, "NOM_SCANNER", "Crypto Pépite")
 
-BACKTEST_VERSION = "5"
+BACKTEST_VERSION = "6"
 M15, H1, H4 = 900_000, 3_600_000, 14_400_000
 DUREE = {"15": M15, "60": H1, "240": H4}
 H48 = cp.JOURNAL_EXPIRE_H * H1
@@ -531,16 +534,18 @@ def texte_entree():
 
 def bloc_fiche(reel):
     """v4 : résultats des alertes selon les indications ✅ / ⚠️ de la fiche Telegram V7."""
-    if NOM == "Tendance Alt":
+    if hasattr(cp, "preparer_scan"):                 # Tendance Alt, Excès Alt
         d = reel.copy()
         d["mois_sens"] = d["mois"] + " · " + d["sens"]
-        d["f_force"] = pd.cut(d["force_vs_btc"].abs() * 100, [0, 5, 10, 20, 1e9],
-                              labels=["< 5 %", "5-10 %", "10-20 %", "≥ 20 %"], right=False)
+        if NOM == "Excès Alt":
+            bornes, noms = [0, 30, 50, 1e9], ["< 30 %", "30-50 %", "≥ 50 %"]
+        else:
+            bornes, noms = [0, 5, 10, 20, 1e9], ["< 5 %", "5-10 %", "10-20 %", "≥ 20 %"]
+        d["f_force"] = pd.cut(d["force_vs_btc"].abs() * 100, bornes, labels=noms, right=False)
         d["btc_h4_sens"] = d["btc_h4"] + " · " + d["sens"]
-        return ["\n---\n\n## Tendance Alt — détail\n",
+        return [f"\n---\n\n## {NOM} — détail\n",
                 cp._bloc_stats(d, "Par mois et sens", "mois_sens"),
-                cp._bloc_stats(d, "Selon l'écart de performance avec BTC (3 jours)", "f_force",
-                               ["< 5 %", "5-10 %", "10-20 %", "≥ 20 %"]),
+                cp._bloc_stats(d, "Selon l'écart de performance avec BTC (3 jours)", "f_force", noms),
                 cp._bloc_stats(d, "Selon BTC H4 et le sens", "btc_h4_sens")]
     if not hasattr(cp, "FRAIS_ALERTE_R"):
         return []                                     # scanner antérieur à la V7 : section sans objet
@@ -656,7 +661,7 @@ def main():
                     help="durée de validité de l'ordre limite, en heures (défaut 2)")
     ap.add_argument("--une-position", action="store_true",
                     help="une seule position à la fois par paire")
-    ap.add_argument("--scanner", default="crypto_pepite", help="crypto_pepite (défaut) ou tendance_alt")
+    ap.add_argument("--scanner", default="crypto_pepite", help="crypto_pepite (défaut), tendance_alt ou exces_alt")
     ap.add_argument("--de", help="début de la période rejouée, AAAA-MM-JJ")
     ap.add_argument("--a", dest="a_", help="fin de la période rejouée (jour inclus), AAAA-MM-JJ")
     ap.add_argument("--regle", action="append", default=[],
