@@ -24,6 +24,9 @@
 #   - --une-position : pas de nouveau trade réel sur une paire tant que le précédent
 #     n'est pas clôturé (comme un trader réel).
 #
+#  NOUVEAU v7 : si le scanner tient des compteurs DIAG (Excès Alt), le rapport et le résumé
+#   indiquent combien de candidats passent chaque étape (pour voir où ça bloque).
+#
 #  NOUVEAU v6 : 3e scanner « Excès Alt » (--scanner exces_alt) et détail adapté
 #   (écart de performance avec BTC par tranches au-delà du seuil d'excès).
 #
@@ -80,7 +83,7 @@ SCANNER = _nom_scanner()
 cp = importlib.import_module(SCANNER)
 NOM = getattr(cp, "NOM_SCANNER", "Crypto Pépite")
 
-BACKTEST_VERSION = "6"
+BACKTEST_VERSION = "7"
 M15, H1, H4 = 900_000, 3_600_000, 14_400_000
 DUREE = {"15": M15, "60": H1, "240": H4}
 H48 = cp.JOURNAL_EXPIRE_H * H1
@@ -597,6 +600,9 @@ def rapport(lignes, pas, sauve, duree_calcul):
         "_Limites : OI absent de l'historique (composante OI du score fixée à 5) ; funding ignoré ; "
         f"spread supposé {SPREAD_SUPPOSE * 100:.2f} % ; paires = les plus liquides aujourd'hui (biais de survie)._\n"]
 
+    if hasattr(cp, "DIAG"):
+        etapes = " → ".join(f"{k[2:].replace('_', ' ')} {v}" for k, v in cp.DIAG.items())
+        entete.append(f"_Entonnoir (scans × paires) : {etapes}._\n")
     reels_tous = j[j["type"] == "REEL"]
     if len(reels_tous):
         jours = max(1, len(pas) / 96)
@@ -646,6 +652,8 @@ def rapport(lignes, pas, sauve, duree_calcul):
             w = (d["resultat_R"] > 0).mean() * 100
             print(f"{nom} : {len(d)} clôturés | réussite {w:.0f} % | "
                   f"{d['resultat_net_R'].mean():+.2f} R net/trade | total {d['resultat_net_R'].sum():+.1f} R")
+    if hasattr(cp, "DIAG"):
+        print("Entonnoir : " + " → ".join(f"{k[2:].replace('_', ' ')} {v}" for k, v in cp.DIAG.items()))
     print("Rapport complet : backtest_stats.md — détail : backtest_journal.csv")
 
 

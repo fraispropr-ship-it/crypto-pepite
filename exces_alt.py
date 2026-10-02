@@ -1,5 +1,5 @@
 # ==============================================================================
-#  EXCÈS ALT V1.0 — 3e scanner, INDÉPENDANT des autres (Zoomex Futures USDT)
+#  EXCÈS ALT V1.1 — 3e scanner, INDÉPENDANT des autres (Zoomex Futures USDT)
 #  Setup : RETOUR À LA MOYENNE après un EXCÈS de performance par rapport à BTC.
 #    1. Paires liquides (volume 24 h >= 5 M USDT, spread <= 0,15 %).
 #    2. Excès : sur 3 jours (72 h), l'altcoin a fait au moins SEUIL_EXCES de mieux que BTC
@@ -10,13 +10,18 @@
 #       moyenne 20 H1 (la précédente clôturait au-dessus) — miroir : première au-dessus.
 #    5. SL : au-dessus du sommet récent + SL_MARGE ATR H1 (SL large, frais faibles) ;
 #       alerte seulement si frais <= FRAIS_MAX_R.
-#    6. TP : retour à la moyenne 50 H1, plafonné à TP_MAX_R ; si la moyenne 50 est à moins
-#       de RR_MIN, pas de trade (« objectif trop proche »).
+#    6. TP : fixe à TP_R (2 R) depuis la V1.1.
 #    7. Pas de trade pendant un choc BTC dans le sens contraire.
 #  Fichiers propres : journal_exces_alt.csv, journal_exces_alt_stats.md, etat_exces_alt.json.
 #  Alertes Telegram marquées « 🔻 EXCÈS ALT ».
 #  V1.0 : version de test — mise au point sur juin-juillet, validation unique sur
 #         août-septembre AVANT toute mise en ligne.
+#  V1.1 (mise au point sur juin-juillet ; V1.0 n'avait produit que 2 trades en 58 jours) :
+#    - TP fixe à TP_R (2 R) au lieu de la moyenne 50 H1 : avec un SL au-dessus du sommet,
+#      la moyenne 50 était presque toujours à moins de 1,5 R, donc presque tout était écarté.
+#      La moyenne 50 reste affichée dans la fiche, à titre indicatif.
+#    - Compteurs DIAG : combien de paires passent chaque étape (excès, sommet récent,
+#      essoufflement, frais…), affichés par le backtest pour comprendre où ça bloque.
 #  Ne lit pas les réponses « pris » / « non » (réservé à Crypto Pépite pour l'instant).
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
@@ -27,8 +32,8 @@ from decimal import Decimal
 from html import escape, unescape
 
 NOM_SCANNER     = "Excès Alt"
-VERSION         = "1.0"   # numéro du script : change à CHAQUE modification
-VERSION_LOGIQUE = "1.0"   # regroupe les stats : ne change que si les signaux changent
+VERSION         = "1.1"   # numéro du script : change à CHAQUE modification
+VERSION_LOGIQUE = "1.1"   # regroupe les stats : ne change que si les signaux changent
 
 # ---------------- RÉGLAGES DU SETUP (les 3 premiers sont les seuls à ajuster) ----------------
 SEUIL_EXCES  = 0.20    # écart de performance avec BTC sur 3 jours pour parler d'excès
@@ -36,7 +41,7 @@ SL_MARGE     = 0.3     # marge au-dessus du sommet (sous le creux), en ATR H1
 SOMMET_H     = 12      # le sommet (creux) des 3 jours doit dater de moins de SOMMET_H heures
 FORCE_H      = 72      # durée de la comparaison avec BTC (heures)
 FRAIS_MAX_R  = 0.10    # frais aller-retour max, en R
-TP_MAX_R     = 4.0     # objectif plafonné à 4 R
+TP_R         = 2.0     # V1.1 : objectif fixe, en R
 TOP_FORCE    = 999     # pas de limite de nombre : tous les excès au-delà du seuil
 
 # ---------------- PARAMÈTRES GÉNÉRAUX ----------------
@@ -508,6 +513,10 @@ def preparer_scan(syms):
 def prefiltre(sym):
     return sym in ETIRES or sym in RETARD
 
+# Compteurs cumulés (scans x paires) : où les candidats s'arrêtent-ils ?
+DIAG = dict.fromkeys(["1_exces", "2_sommet_recent", "3_essoufflement", "4_choc_btc",
+                      "5_frais_trop_lourds", "6_trade_now"], 0)
+
 # ---------------- ANALYSE D'UNE PAIRE ----------------
 VIDE = dict(rejet_confirme=None, body_ratio=np.nan, wick_ratio=np.nan, close_pos=np.nan,
             touches_zone=np.nan, age_zone_h=np.nan, dernier_test_h=np.nan, largeur_zone_ATR=np.nan)
@@ -531,12 +540,17 @@ def analyse(row, inf):
     r1 = rsi(h1.c).iloc[-1]
     corr = correlation_btc(h1)
     setups = []
+    DIAG["1_exces"] += 1
+    sommet = (sym in ETIRES and rec.h.max() >= fen.h.max()) or (sym in RETARD and rec.l.min() <= fen.l.min())
+    if sommet:
+        DIAG["2_sommet_recent"] += 1
     if sym in ETIRES and rec.h.max() >= fen.h.max() and c0 < m0 and c1 >= m1:
         setups.append(dict(sens="SHORT", entry=px, sl=rec.h.max() + SL_MARGE * a1,
                            cible=e50.iloc[-1], extreme=rec.h.max(), trig=m0, dir="bas"))
     if sym in RETARD and rec.l.min() <= fen.l.min() and c0 > m0 and c1 <= m1:
         setups.append(dict(sens="LONG", entry=px, sl=rec.l.min() - SL_MARGE * a1,
                            cible=e50.iloc[-1], extreme=rec.l.min(), trig=m0, dir="haut"))
+    DIAG["3_essoufflement"] += len(setups)
     cands = []
     for s in setups:
         e, sl = s["entry"], s["sl"]
@@ -544,22 +558,22 @@ def analyse(row, inf):
         rd = d * (e - sl)
         if rd <= 0:
             continue
-        rr_cible = d * (s["cible"] - e) / rd
-        rr = min(rr_cible, TP_MAX_R)
+        rr = TP_R
         tp = e + d * rr * rd
         frais = 2 * FRAIS_TAKER * e / rd
         choc = BTC_CTX is not None and ((d == 1 and BTC_CTX["choc"] <= -BTC_CHOC) or
                                         (d == -1 and BTC_CTX["choc"] >= BTC_CHOC))
-        if rr < RR_MIN:
-            dec, why = "NO TRADE", f"objectif trop proche : moyenne 50 H1 à {rr_cible:.2f} R"
-        elif choc:
+        if choc:
             dec, why = "WAIT", "choc BTC contre le trade"
+            DIAG["4_choc_btc"] += 1
         elif frais > FRAIS_MAX_R:
             dec, why = "WAIT", f"frais trop lourds ({frais:.2f} R > {FRAIS_MAX_R} R)"
+            DIAG["5_frais_trop_lourds"] += 1
         else:
             dec, why = "TRADE NOW", "excès qui s'essouffle : première clôture H1 de l'autre côté de la moyenne 20"
+            DIAG["6_trade_now"] += 1
         cands.append(dict(s, **VIDE, type="Excès / retour à la moyenne", deja=True, zone=None,
-                          symbol=sym, px=px, tp=tp, tp_theorique=rr_cible > TP_MAX_R, rr=rr,
+                          symbol=sym, px=px, tp=tp, tp_theorique=False, rr=rr,
                           dist=0.0, decision=dec, pourquoi=why, score=0,
                           t4=NEUTRE, t1=tendance(h1), t15=tendance(m15), sup=[], res=[], vol_ratio=vol_ratio,
                           oi4=None, oi24=None, ch4=0.0, funding=row.fundingRate, rsi_h1=r1,
@@ -719,8 +733,7 @@ def fiche(r):
         f"✅ {'Sommet' if short else 'Creux'} récent ({E(arrondi(r['extreme'], t))}), il y a moins de {SOMMET_H} h",
         f"✅ Essoufflement : 1re clôture H1 {'sous' if short else 'au-dessus de'} la moyenne 20 "
         f"({E(arrondi(r['ema20'], t))})",
-        f"✅ Objectif : moyenne 50 H1 ({E(arrondi(r['ema50'], t))}) → TP {E(tp)} · RR {r['rr']:.2f}"
-        + (f" (plafonné à {TP_MAX_R:g} R)" if r["tp_theorique"] else ""),
+        f"✅ Objectif fixe {TP_R:g} R : TP {E(tp)} · moyenne 50 H1 à {E(arrondi(r['ema50'], t))} (indicatif)",
         f"✅ Frais : {r['frais_r']:.2f} R (max {FRAIS_MAX_R}) · SL {'au-dessus du sommet' if short else 'sous le creux'} : {E(sl)}",
         "",
         "<b>Contexte</b>",
@@ -1350,7 +1363,7 @@ def scan():
         return sum(1 for r in results if r["decision"] == decision
                    and (not longs_seulement or r["sens"] == "LONG"))
     print(f"\nSetups trouvés : {compte('TRADE NOW', False)} TRADE NOW · {compte('WAIT', False)} WAIT "
-          f"(choc BTC ou frais trop lourds) · {compte('NO TRADE', False)} écartés (objectif trop proche)")
+          f"(choc BTC ou frais trop lourds)")
 
     # Telegram — uniquement les TRADE NOW pas encore envoyés
     etat, maintenant = charger_etat(), time.time()
