@@ -1,6 +1,6 @@
 # 📒 Journal Crypto Pépite V7.4 (statistiques de la logique V7.4)
 
-_Mis à jour le 02/10/2026 17:49 UTC — 908 lignes dans le journal, 26 signaux ouverts, 279 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 02/10/2026 18:04 UTC — 909 lignes dans le journal, 27 signaux ouverts, 279 trades clôturés en attente de simulation (48 h)._
 
 Signaux réels V7.4 : **29** — clôturés : **29** — en cours : **0** — SHORT suivis en fantôme uniquement
 
@@ -155,7 +155,7 @@ _« pris » = tes trades. Compare-les à « pas pris » et à l'ensemble ci-dess
 
 ## Signaux fantômes V7.4 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : SL 184 | TP 84 | RATE 67 | INVALIDE 47 | EN_COURS 14 | ATTENTE 12 | PROMU 11
+Statuts : SL 184 | TP 84 | RATE 67 | INVALIDE 47 | EN_COURS 15 | ATTENTE 12 | PROMU 11
 
 - Taux de réussite : **31 %** (84/268)
 - Espérance : **-0.02 R brut** / **-0.19 R net** par trade
