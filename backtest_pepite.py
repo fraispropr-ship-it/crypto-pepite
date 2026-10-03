@@ -24,6 +24,9 @@
 #   - --une-position : pas de nouveau trade réel sur une paire tant que le précédent
 #     n'est pas clôturé (comme un trader réel).
 #
+#  NOUVEAU v8 : 4e scanner « Trio Alt » (--scanner trio_alt) : trois setups dans un seul
+#   fichier, détaillés séparément (par mois et setup, selon BTC H4 et le setup).
+#
 #  NOUVEAU v7 : si le scanner tient des compteurs DIAG (Excès Alt), le rapport et le résumé
 #   indiquent combien de candidats passent chaque étape (pour voir où ça bloque).
 #
@@ -83,7 +86,7 @@ SCANNER = _nom_scanner()
 cp = importlib.import_module(SCANNER)
 NOM = getattr(cp, "NOM_SCANNER", "Crypto Pépite")
 
-BACKTEST_VERSION = "7"
+BACKTEST_VERSION = "8"
 M15, H1, H4 = 900_000, 3_600_000, 14_400_000
 DUREE = {"15": M15, "60": H1, "240": H4}
 H48 = cp.JOURNAL_EXPIRE_H * H1
@@ -546,7 +549,13 @@ def bloc_fiche(reel):
             bornes, noms = [0, 5, 10, 20, 1e9], ["< 5 %", "5-10 %", "10-20 %", "≥ 20 %"]
         d["f_force"] = pd.cut(d["force_vs_btc"].abs() * 100, bornes, labels=noms, right=False)
         d["btc_h4_sens"] = d["btc_h4"] + " · " + d["sens"]
-        return [f"\n---\n\n## {NOM} — détail\n",
+        blocs = [f"\n---\n\n## {NOM} — détail\n"]
+        if d["setup"].nunique() > 1:                 # v8 : plusieurs setups dans un même scanner
+            d["mois_setup"] = d["mois"] + " · " + d["setup"]
+            d["btc_h4_setup"] = d["setup"] + " · BTC H4 " + d["btc_h4"]
+            blocs += [cp._bloc_stats(d, "Par mois et setup", "mois_setup"),
+                      cp._bloc_stats(d, "Selon le setup et BTC H4", "btc_h4_setup")]
+        return blocs + [
                 cp._bloc_stats(d, "Par mois et sens", "mois_sens"),
                 cp._bloc_stats(d, "Selon l'écart de performance avec BTC (3 jours)", "f_force", noms),
                 cp._bloc_stats(d, "Selon BTC H4 et le sens", "btc_h4_sens")]
@@ -669,7 +678,7 @@ def main():
                     help="durée de validité de l'ordre limite, en heures (défaut 2)")
     ap.add_argument("--une-position", action="store_true",
                     help="une seule position à la fois par paire")
-    ap.add_argument("--scanner", default="crypto_pepite", help="crypto_pepite (défaut), tendance_alt ou exces_alt")
+    ap.add_argument("--scanner", default="crypto_pepite", help="crypto_pepite (défaut), tendance_alt, exces_alt ou trio_alt")
     ap.add_argument("--de", help="début de la période rejouée, AAAA-MM-JJ")
     ap.add_argument("--a", dest="a_", help="fin de la période rejouée (jour inclus), AAAA-MM-JJ")
     ap.add_argument("--regle", action="append", default=[],
