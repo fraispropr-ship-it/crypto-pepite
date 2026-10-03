@@ -1,0 +1,26 @@
+name: Meteo Alts
+
+on:
+  schedule:
+    - cron: "30 5 * * *"        # tous les jours à 5 h 30 UTC (7 h 30 à Paris l'été, 6 h 30 l'hiver)
+  workflow_dispatch:            # bouton « Run workflow » pour lancer à la main
+
+jobs:
+  meteo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Envoyer la météo
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python meteo.py
