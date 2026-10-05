@@ -1,0 +1,49 @@
+name: Radar Alt
+
+# Déclenché toutes les heures par cron-job.org (minute 2), ou à la main (« Run workflow »).
+on:
+  workflow_dispatch:
+
+# Un seul radar à la fois (file d'attente séparée de Crypto Pépite et de la météo)
+concurrency:
+  group: radar-alt
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les modules
+        run: pip install -r requirements.txt
+
+      - name: Lancer le radar
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python radar_alt.py
+
+      - name: Enregistrer l'état du radar
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "radar-bot@users.noreply.github.com"
+          git add radar_etat.json
+          [ -f radar_journal.csv ] && git add radar_journal.csv
+          git diff --cached --quiet && exit 0
+          git commit -m "Radar $(date -u '+%Y-%m-%d %H:%M') UTC"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 10))
+          done
+          echo "Impossible d'enregistrer l'état du radar après 5 essais"
+          exit 1
