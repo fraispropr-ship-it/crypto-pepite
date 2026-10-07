@@ -1,3 +1,4 @@
 id,symbole,type,date_declenchement,entree,sl,objectif,statut,resultat_R,mfe_R,duree_h,feu,info
 OPUSDT|retournement|0.13884,OPUSDT,retournement,2026-10-06 00:00,0.13997,0.12873,0.16245,SL,-1.0,0.04,28.0,🟢,"{""creux1"": 0.12322, ""creux2"": 0.13001, ""baisse_atr"": 6.4}"
 ADAUSDT|continuation|0.2768,ADAUSDT,continuation,2026-10-06 14:00,0.2792,0.2593,0.31900000000000006,SL,-1.0,0.03,15.0,🟢,"{""repli_atr"": 2.0, ""age_h4"": 4, ""calme"": false}"
+APTUSDT|retournement|0.849,APTUSDT,retournement,2026-10-06 00:00,0.8506,0.7623,1.0272000000000001,SL,-1.0,0.1,31.0,🟢,"{""creux1"": 0.75, ""creux2"": 0.7697, ""baisse_atr"": 5.7}"
