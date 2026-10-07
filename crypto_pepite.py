@@ -1,5 +1,5 @@
 # ==============================================================================
-#  CRYPTO PÉPITE V7.3 — Scanner intraday Zoomex Futures (USDT perpetuals)
+#  CRYPTO PÉPITE V7.5 — Scanner intraday Zoomex Futures (USDT perpetuals)
 #  Données : API publique Zoomex v3 (aucune clé API nécessaire)
 #            + historique d'OI via la 1re source accessible parmi
 #              Binance / OKX / Gate / Bybit (Zoomex n'a pas d'historique d'OI)
@@ -94,11 +94,13 @@
 #    - La fiche détaille POURQUOI c'est un TRADE NOW (chaque critère coché avec sa valeur),
 #      les zones, le volume, l'OI, et garde le lien TradingView.
 #  V7.4 : SEULES LES ALERTES ⭐ ARRIVENT SUR TELEGRAM (FILTRE_BTC_H4_RANGE = True).
-#    - Backtest V7.3 (26 jours, entrée au Market) : -0,11 R net/trade au total, mais
-#      +0,23 R net/trade quand BTC est en range en H4 (116 trades).
 #    - BTC en tendance en H4 (ou indisponible) -> WAIT : le setup n'est pas envoyé mais
-#      reste suivi en FANTÔME (raison « pas d'alerte ⭐ »), pour vérifier que le filtre a raison.
-#    - VERSION_LOGIQUE 7.4 : les statistiques repartent sur cette base.
+#      reste suivi en FANTÔME (raison « pas d'alerte ⭐ »).
+#  V7.5 : ALERTE SEULEMENT SI TOUT EST ✅ (demande du 07/10/2026).
+#    - Les trois points « À juger » de la fiche deviennent bloquants :
+#      zone H1 solide (FILTRE_ZONE), bougie M15 franche (FILTRE_BOUGIE),
+#      frais <= FRAIS_ALERTE_R (FILTRE_FRAIS). Sinon WAIT, suivi en FANTÔME.
+#    - VERSION_LOGIQUE 7.5 : les statistiques repartent sur cette base.
 #  NE couvre PAS : news / macro -> à vérifier toi-même avant d'entrer.
 # ==============================================================================
 import os, re, json, time, math, requests
@@ -107,8 +109,8 @@ from datetime import datetime, timezone
 from decimal import Decimal
 from html import escape, unescape
 
-VERSION         = "7.4"   # numéro du script : change à CHAQUE modification
-VERSION_LOGIQUE = "7.4"   # regroupe les stats : ne change que si les signaux changent
+VERSION         = "7.5"   # numéro du script : change à CHAQUE modification
+VERSION_LOGIQUE = "7.5"   # regroupe les stats : ne change que si les signaux changent
 
 # ---------------- PARAMÈTRES ----------------
 BASE          = "https://openapi.zoomex.com"
@@ -183,13 +185,15 @@ SIM_MAX           = 25       # nb max de trades dont on simule les sorties par s
 
 # ---- V6.4 / V6.5 : filtres issus du backtest. V7.0 : tous à False (indications dans la fiche) ----
 FILTRE_BTC_UNE_NEUTRE = False # V6.5 : trade seulement si BTC est neutre sur UNE SEULE UT (H4 ou H1)
-FILTRE_BTC_H4_RANGE  = True   # V7.4 : ACTIVÉ — seules les alertes ⭐ (BTC en range en H4) sont envoyées
-FILTRE_ZONE          = False  # zone assez solide (tests OU âge)
+FILTRE_BTC_H4_RANGE  = True   # V7.4 : seules les alertes ⭐ (BTC en range en H4) sont envoyées
+FILTRE_ZONE          = True   # zone assez solide (tests OU âge)
 ZONE_TESTS_MIN       = 3      # nb de tests mini de la zone H1
 ZONE_AGE_MIN_H       = 72     # ou âge mini de la zone (bougies H1)
-FILTRE_BOUGIE        = False  # bougie de rejet assez franche (clôture OU corps)
+FILTRE_BOUGIE        = True   # bougie de rejet assez franche (clôture OU corps)
 CLOSE_POS_FORT       = 0.8    # clôture M15 dans les 20 % extrêmes (sens du trade)
 BODY_FORT            = 0.6    # ou corps >= 60 % de la bougie
+FILTRE_FRAIS         = True   # V7.5 : pas d'alerte si les frais dépassent FRAIS_ALERTE_R
+FRAIS_ALERTE_R       = 0.15   # frais aller-retour max, en R
 PRIO = {"TRADE NOW": 0, "PREPARE": 1, "WAIT": 2, "NO TRADE": 3}
 
 NEUTRE = "NEUTRE/RANGE"
@@ -646,6 +650,9 @@ def analyse(row, inf):
                 (s.get("close_pos") or 0) >= CLOSE_POS_FORT or (s.get("body_ratio") or 0) >= BODY_FORT):
             dec, why = "WAIT", (f"bougie de rejet pas assez franche : clôture < {CLOSE_POS_FORT:.0%} "
                                 f"et corps < {BODY_FORT:.0%} (filtre V6.4)")
+        elif FILTRE_FRAIS and 2 * FRAIS_TAKER * e / rd > FRAIS_ALERTE_R:
+            dec, why = "WAIT", (f"frais trop lourds : {2 * FRAIS_TAKER * e / rd:.2f} R "
+                                f"(max {FRAIS_ALERTE_R}) (filtre V7.5)")
         elif s["deja"] and dist <= DIST_TRADE_NOW: dec, why = "TRADE NOW", "rejet M15 confirmé, prix proche de l'entrée"
         elif s["deja"]: dec, why = "PREPARE", "rejet M15 confirmé mais prix déjà trop loin de l'entrée"
         else: dec, why = "PREPARE", "pas de bougie de rejet M15 confirmée"
@@ -789,7 +796,6 @@ def ticket(r):
         txt += "\n⚠️ Quantité sous le minimum Zoomex : trade impossible tel quel"
     return txt
 
-FRAIS_ALERTE_R = 0.15   # V7.0 : au-delà, la fiche signale des frais lourds (non bloquant)
 
 def fiche(r):
     """V7.3 : fiche d'analyse — pourquoi c'est un TRADE NOW, contexte BTC, points à juger.
