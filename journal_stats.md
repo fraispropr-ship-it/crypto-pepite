@@ -1,8 +1,8 @@
 # 📒 Journal Crypto Pépite V7.5 (statistiques de la logique V7.5)
 
-_Mis à jour le 07/10/2026 09:29 UTC — 2082 lignes dans le journal, 75 signaux ouverts, 378 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 07/10/2026 09:34 UTC — 2084 lignes dans le journal, 70 signaux ouverts, 382 trades clôturés en attente de simulation (48 h)._
 
-Signaux réels V7.5 : **0** — clôturés : **0** — en cours : **0** — SHORT suivis en fantôme uniquement
+Signaux réels V7.5 : **2** — clôturés : **0** — en cours : **2** — SHORT suivis en fantôme uniquement
 
 _Hypothèses : entrée au niveau d'entrée du signal ; SL compté si TP et SL sont touchés dans la même bougie M15 ; clôture au prix du moment après 48 h. 1 R = distance entrée–SL. R brut = hors frais ; R net = frais taker aller-retour déduits._
 
@@ -21,22 +21,22 @@ Statuts : ATTENTE 5
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 1464 | RR visé moyen : 2.45 | MFE médian : **+0.97 R**
-- Ont atteint +1 R : 49 % | +1,5 R : 39 % | +2 R : 27 %
-- **MFE des perdants** (1022 SL) : avaient atteint +0,5 R : 56 % | +1 R : 28 % | +1,5 R : 13 % avant de toucher le SL
-- **MAE des gagnants** (434) : moyen -0.38 R | médian -0.36 R | pire -1.00 R | 36 % sont descendus au-delà de -0,5 R
+- Trades mesurés : 1469 | RR visé moyen : 2.45 | MFE médian : **+0.97 R**
+- Ont atteint +1 R : 49 % | +1,5 R : 39 % | +2 R : 26 %
+- **MFE des perdants** (1026 SL) : avaient atteint +0,5 R : 56 % | +1 R : 28 % | +1,5 R : 13 % avant de toucher le SL
+- **MAE des gagnants** (435) : moyen -0.38 R | médian -0.36 R | pire -1.00 R | 36 % sont descendus au-delà de -0,5 R
 
-### Sorties — ensemble — 1086 trades rejoués bougie par bougie
+### Sorties — ensemble — 1087 trades rejoués bougie par bougie
 
 | Gestion | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|
-| A — TP / SL actuels | 31 % | -0.03 | -0.21 | -233.43 |
-| B — SL à break-even dès +1 R | 23 % | -0.00 | -0.19 | -203.74 |
-| C — SL à break-even dès +1,5 R | 28 % | +0.00 | -0.18 | -195.63 |
-| D — rien avant +1,5 R, puis SL technique (extrême des 3 dernières M15) | 39 % | +0.03 | -0.16 | -169.21 |
-| E — 50 % à +1 R, reste au TP (SL inchangé) | 31 % | -0.01 | -0.19 | -210.75 |
-| F — TP fixe 1,5 R | 41 % | +0.02 | -0.17 | -183.72 |
-| G — TP fixe 2 R | 33 % | -0.01 | -0.20 | -216.68 |
+| A — TP / SL actuels | 31 % | -0.03 | -0.22 | -234.54 |
+| B — SL à break-even dès +1 R | 23 % | -0.00 | -0.19 | -203.85 |
+| C — SL à break-even dès +1,5 R | 28 % | +0.00 | -0.18 | -195.74 |
+| D — rien avant +1,5 R, puis SL technique (extrême des 3 dernières M15) | 39 % | +0.03 | -0.16 | -169.53 |
+| E — 50 % à +1 R, reste au TP (SL inchangé) | 31 % | -0.01 | -0.19 | -210.86 |
+| F — TP fixe 1,5 R | 41 % | +0.02 | -0.17 | -182.33 |
+| G — TP fixe 2 R | 33 % | -0.01 | -0.20 | -214.79 |
 
 _Prudent : SL testé avant le TP dans chaque bougie ; BE / SL technique actifs à partir de la bougie suivante ; horizon 48 h. La ligne A peut différer légèrement du résultat réel (horizon fixe)._
 
@@ -85,7 +85,7 @@ _Prudent : SL testé avant le TP dans chaque bougie ; BE / SL technique actifs �
 | 6.3 | 21 | 3 | 14 % | -0.55 | -0.63 | -13.24 |
 | 6.5 | 9 | 3 | 33 % | -0.02 | -0.17 | -1.50 |
 | 7.0 | 25 | 6 | 24 % | -0.25 | -0.39 | -9.71 |
-| 7.4 | 53 | 20 | 38 % | +0.10 | -0.06 | -3.42 |
+| 7.4 | 56 | 20 | 36 % | +0.04 | -0.13 | -7.10 |
 | avant V6 | 56 | 13 | 23 % | -0.22 | -0.37 | -20.54 |
 
 ### Par setup (toutes versions précédentes)
@@ -94,12 +94,12 @@ _Prudent : SL testé avant le TP dans chaque bougie ; BE / SL technique actifs �
 |---|---|---|---|---|---|---|
 | Cassure baissière (clôture M15) + retest | 14 | 1 | 7 % | -0.73 | -0.88 | -12.35 |
 | Cassure confirmée (clôture M15) + retest | 5 | 0 | 0 % | -1.00 | -1.16 | -5.79 |
-| Rebond sur support H1 | 128 | 42 | 33 % | -0.01 | -0.14 | -17.90 |
+| Rebond sur support H1 | 131 | 42 | 32 % | -0.03 | -0.16 | -21.58 |
 | Rejet de résistance H1 | 20 | 4 | 20 % | -0.32 | -0.53 | -10.55 |
 
 ### Par sens (toutes versions précédentes)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| LONG | 133 | 42 | 32 % | -0.05 | -0.18 | -23.69 |
+| LONG | 136 | 42 | 31 % | -0.07 | -0.20 | -27.37 |
 | SHORT | 34 | 5 | 15 % | -0.49 | -0.67 | -22.90 |
