@@ -51,7 +51,7 @@
    "bruit": 9.42894189841184,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "WLDUSDT|continuation|0.6197": {
@@ -218,7 +218,7 @@
    "bruit": 5.976759217373471,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "BZUSDT|retournement|103.88": {
@@ -637,7 +637,7 @@
    "bruit": 11.645810231856363,
    "tick": 1e-06,
    "etape": "pret",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "SKYUSDT|continuation|0.10216": {
@@ -1099,7 +1099,7 @@
    "bruit": 5.653042913229015,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "BRUSDT|retournement|0.68132": {
@@ -1117,7 +1117,7 @@
    "bruit": 31.532801735427864,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "FILUSDT|retournement|1.2107": {
@@ -1153,7 +1153,7 @@
    "bruit": 6.731920380197344,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "XMRUSDT|continuation|566.41": {
@@ -1374,7 +1374,7 @@
    "bruit": 7.990117468740717,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "MRVLUSDT|continuation|301.32": {
@@ -1392,7 +1392,7 @@
    "bruit": 4.280916658583228,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "ETHFIUSDT|continuation|0.802": {
@@ -1499,7 +1499,7 @@
    "sym": "AVAXUSDT",
    "bruit": 5.744429239693498,
    "tick": 0.001,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1791432152145,
    "t_decl": 0
   },
@@ -1590,7 +1590,7 @@
    "bruit": 15.501673825112947,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "STXUSDT|continuation|0.4133": {
@@ -1626,7 +1626,7 @@
    "bruit": 7.03523293001791,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "TIAUSDT|retournement|0.493": {
@@ -1680,7 +1680,7 @@
    "bruit": 15.501673825112947,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "STXUSDT|retournement|0.4133": {
@@ -1762,7 +1762,7 @@
    "bruit": 1.1149150606652831,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "NMRUSDT|continuation|18": {
@@ -1780,7 +1780,7 @@
    "bruit": 8.38691885848269,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "NMRUSDT|retournement|18": {
@@ -1816,7 +1816,7 @@
    "bruit": 6.48223681562934,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "QQQUSDT|retournement|763.31": {
@@ -1852,7 +1852,7 @@
    "bruit": 3.9575318082252817,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "BZUSDT|retournement|102.24": {
@@ -1870,7 +1870,7 @@
    "bruit": 3.5616327706756667,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "ZHIPUUSDT|retournement|92.92": {
@@ -1906,7 +1906,7 @@
    "bruit": 8.362450668166284,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791432152145,
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "ARBUSDT|retournement|0.18882": {
@@ -1923,8 +1923,8 @@
    "sym": "ARBUSDT",
    "bruit": 9.758921435646634,
    "tick": 1e-05,
-   "etape": "pret",
-   "vu": 1791432152145,
+   "etape": "formation",
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "USUSDT|retournement|0.01643": {
@@ -1941,8 +1941,8 @@
    "sym": "USUSDT",
    "bruit": 47.304562446966976,
    "tick": 1e-05,
-   "etape": "formation",
-   "vu": 1791432152145,
+   "etape": "pret",
+   "vu": 1791435753585,
    "t_decl": 0
   },
   "TRUMPUSDT|retournement|1.904": {
@@ -1959,10 +1959,10 @@
    "sym": "TRUMPUSDT",
    "bruit": 9.24814878005597,
    "tick": 0.001,
-   "etape": "pret",
-   "vu": 1791432152145,
+   "etape": "formation",
+   "vu": 1791435753585,
    "t_decl": 0
   }
  },
- "dernier_resume": 124403
+ "dernier_resume": 124405
 }
