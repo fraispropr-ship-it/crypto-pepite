@@ -5,3 +5,5 @@ APTUSDT|retournement|0.849,APTUSDT,retournement,2026-10-06 00:00,0.8506,0.7623,1
 INJUSDT|retournement|7.841,INJUSDT,retournement,2026-10-06 16:00,7.873,7.299,9.021,SL,-1.0,0.78,20.0,🟢,"{""creux1"": 7.114, ""creux2"": 7.358, ""baisse_atr"": 4.1}"
 ETHFIUSDT|retournement|0.7773,ETHFIUSDT,retournement,2026-10-06 15:00,0.7886,0.7112,0.9433999999999998,SL,-1.0,0.05,22.0,🟢,"{""creux1"": 0.6709, ""creux2"": 0.7178, ""baisse_atr"": 6.9}"
 XMRUSDT|continuation|566.41,XMRUSDT,continuation,2026-10-07 09:00,570.75,546.61,619.03,SL,-1.0,0.06,6.0,🟢,"{""repli_atr"": 2.0, ""age_h4"": 5, ""calme"": false}"
+METUSDT|continuation|0.3463,METUSDT,continuation,2026-10-07 19:00,0.364,0.2978,0.49639999999999995,OBJECTIF,2.0,2.31,14.0,🟢,"{""repli_atr"": 3.2, ""age_h4"": 5, ""calme"": false}"
+METUSDT|retournement|0.3463,METUSDT,retournement,2026-10-07 19:00,0.364,0.2978,0.49639999999999995,OBJECTIF,2.0,2.31,14.0,🟢,"{""creux1"": 0.2818, ""creux2"": 0.302, ""baisse_atr"": 7.3}"
