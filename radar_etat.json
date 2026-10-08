@@ -200,7 +200,7 @@
    "bruit": 5.976759217373471,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "VIRTUALUSDT|retournement|0.8852": {
@@ -488,7 +488,7 @@
    "bruit": 11.645810231856363,
    "tick": 1e-06,
    "etape": "pret",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "TSLAUSDT|retournement|381.56": {
@@ -572,29 +572,6 @@
    "etape": "invalide",
    "vu": 1791338550178,
    "t_decl": 0
-  },
-  "INJUSDT|retournement|7.841": {
-   "type": "retournement",
-   "declenchement": 7.841,
-   "invalidation": 7.2987448451516315,
-   "atr": 0.19751718282789263,
-   "info": {
-    "creux1": 7.114,
-    "creux2": 7.358,
-    "baisse_atr": 4.1
-   },
-   "id": "INJUSDT|retournement|7.841",
-   "sym": "INJUSDT",
-   "bruit": 7.290470129917342,
-   "tick": 0.001,
-   "etape": "termine",
-   "vu": 1791291760119,
-   "t_decl": 1791295200000.0,
-   "entree": 7.873,
-   "sl": 7.299,
-   "objectif": 9.021,
-   "feu": "🟢",
-   "date_decl": "2026-10-06 16:00"
   },
   "TSLAUSDT|continuation|381.56": {
    "type": "continuation",
@@ -745,24 +722,6 @@
    "vu": 1791313353540,
    "t_decl": 0
   },
-  "SKHYNIXUSDT|retournement|1386.93": {
-   "type": "retournement",
-   "declenchement": 1386.93,
-   "invalidation": 1315.7969494126166,
-   "atr": 14.07683529127767,
-   "info": {
-    "creux1": 1289.55,
-    "creux2": 1320.02,
-    "baisse_atr": 5.8
-   },
-   "id": "SKHYNIXUSDT|retournement|1386.93",
-   "sym": "SKHYNIXUSDT",
-   "bruit": 3.991154279237473,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1791295352767,
-   "t_decl": 0
-  },
   "ASTERUSDT|retournement|0.7458": {
    "type": "retournement",
    "declenchement": 0.7458,
@@ -798,29 +757,6 @@
    "etape": "invalide",
    "vu": 1791334954930,
    "t_decl": 0
-  },
-  "ETHFIUSDT|retournement|0.7773": {
-   "type": "retournement",
-   "declenchement": 0.7773,
-   "invalidation": 0.7111771153495475,
-   "atr": 0.0220762821681748,
-   "info": {
-    "creux1": 0.6709,
-    "creux2": 0.7178,
-    "baisse_atr": 6.9
-   },
-   "id": "ETHFIUSDT|retournement|0.7773",
-   "sym": "ETHFIUSDT",
-   "bruit": 8.620588367279295,
-   "tick": 0.0001,
-   "etape": "termine",
-   "vu": 1791291760119,
-   "t_decl": 1791291600000.0,
-   "entree": 0.7886,
-   "sl": 0.7112,
-   "objectif": 0.9433999999999998,
-   "feu": "🟢",
-   "date_decl": "2026-10-06 15:00"
   },
   "NEARUSDT|continuation|5.385": {
    "type": "continuation",
@@ -914,7 +850,7 @@
    "bruit": 5.653042913229015,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "BRUSDT|retournement|0.68132": {
@@ -968,7 +904,7 @@
    "bruit": 6.731920380197344,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "XMRUSDT|continuation|566.41": {
@@ -1087,11 +1023,11 @@
   "ETHFIUSDT|retournement|0.802": {
    "type": "retournement",
    "declenchement": 0.802,
-   "invalidation": 0.6912100073697293,
-   "atr": 0.027299975434235745,
+   "invalidation": 0.6910777106546893,
+   "atr": 0.02740763115103607,
    "info": {
     "creux1": 0.6709,
-    "creux2": 0.6994,
+    "creux2": 0.6993,
     "baisse_atr": 5.5
    },
    "id": "ETHFIUSDT|retournement|0.802",
@@ -1105,11 +1041,11 @@
   "AEROUSDT|retournement|0.8906": {
    "type": "retournement",
    "declenchement": 0.8906,
-   "invalidation": 0.7711517824559371,
-   "atr": 0.02216072514687652,
+   "invalidation": 0.7616064868356577,
+   "atr": 0.021978377214474352,
    "info": {
     "creux1": 0.761,
-    "creux2": 0.7778,
+    "creux2": 0.7682,
     "baisse_atr": 4.6
    },
    "id": "AEROUSDT|retournement|0.8906",
@@ -1189,7 +1125,7 @@
    "bruit": 7.990117468740717,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "MRVLUSDT|continuation|301.32": {
@@ -1207,7 +1143,7 @@
    "bruit": 4.280916658583228,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "ETHFIUSDT|continuation|0.802": {
@@ -1405,7 +1341,7 @@
    "bruit": 15.501673825112947,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "STXUSDT|continuation|0.4133": {
@@ -1441,7 +1377,7 @@
    "bruit": 7.03523293001791,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "TIAUSDT|retournement|0.493": {
@@ -1495,7 +1431,7 @@
    "bruit": 15.501673825112947,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "STXUSDT|retournement|0.4133": {
@@ -1631,7 +1567,7 @@
    "bruit": 6.48223681562934,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "QQQUSDT|retournement|763.31": {
@@ -1731,7 +1667,7 @@
    "bruit": 8.362450668166284,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "ARBUSDT|retournement|0.18882": {
@@ -1767,7 +1703,7 @@
    "bruit": 47.304562446966976,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
    "t_decl": 0
   },
   "TRUMPUSDT|retournement|1.904": {
@@ -1803,7 +1739,25 @@
    "bruit": 8.070346604907572,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1791464552269,
+   "vu": 1791468155410,
+   "t_decl": 0
+  },
+  "ATOMUSDT|retournement|1.845": {
+   "type": "retournement",
+   "declenchement": 1.845,
+   "invalidation": 1.6524522693459507,
+   "atr": 0.04182576884683102,
+   "info": {
+    "creux1": 1.607,
+    "creux2": 1.665,
+    "baisse_atr": 6.9
+   },
+   "id": "ATOMUSDT|retournement|1.845",
+   "sym": "ATOMUSDT",
+   "bruit": 6.350584041140857,
+   "tick": 0.001,
+   "etape": "pret",
+   "vu": 1791468155410,
    "t_decl": 0
   }
  },
