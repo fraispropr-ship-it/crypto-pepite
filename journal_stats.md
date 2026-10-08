@@ -1,6 +1,6 @@
 # 📒 Journal Crypto Pépite V7.5 (statistiques de la logique V7.5)
 
-_Mis à jour le 08/10/2026 10:19 UTC — 2505 lignes dans le journal, 45 signaux ouverts, 495 trades clôturés en attente de simulation (48 h)._
+_Mis à jour le 08/10/2026 10:34 UTC — 2513 lignes dans le journal, 46 signaux ouverts, 497 trades clôturés en attente de simulation (48 h)._
 
 Signaux réels V7.5 : **17** — clôturés : **17** — en cours : **0** — SHORT suivis en fantôme uniquement
 
@@ -142,28 +142,28 @@ _« pris » = tes trades. Compare-les à « pas pris » et à l'ensemble ci-dess
 
 ## Signaux fantômes V7.5 (non tradés : SHORT, WAIT, PREPARE)
 
-Statuts : SL 180 | RATE 72 | TP 69 | INVALIDE 47 | EN_COURS 27 | ATTENTE 13 | PROMU 3
+Statuts : SL 183 | RATE 73 | TP 70 | INVALIDE 49 | EN_COURS 28 | ATTENTE 13 | PROMU 3
 
-- Taux de réussite : **28 %** (69/249)
+- Taux de réussite : **28 %** (70/253)
 - Espérance : **-0.10 R brut** / **-0.30 R net** par trade
 - Frais moyens : 0.20 R par trade
-- Total : -25.34 R brut / **-74.37 R net** (≈ -74.37 USDT avec 1.0 USDT de risque)
-- Durée moyenne : 2.6 h
+- Total : -26.30 R brut / **-76.13 R net** (≈ -76.13 USDT avec 1.0 USDT de risque)
+- Durée moyenne : 2.5 h
 
 ### Fantômes par sens
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| LONG | 122 | 27 | 22 % | -0.25 | -0.43 | -52.56 |
-| SHORT | 127 | 42 | 33 % | +0.04 | -0.17 | -21.81 |
+| LONG | 125 | 27 | 22 % | -0.27 | -0.45 | -56.11 |
+| SHORT | 128 | 43 | 34 % | +0.06 | -0.16 | -20.02 |
 
 ### Fantômes par raison de non-trade
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| BTC en tendance en H4 (BAISSIÈRE) : pas d'alerte ⭐ (filtre V7.4) | 31 | 7 | 23 % | -0.30 | -0.52 | -16.01 |
+| BTC en tendance en H4 (BAISSIÈRE) : pas d'alerte ⭐ (filtre V7.4) | 34 | 8 | 24 % | -0.27 | -0.49 | -16.57 |
 | bougie de rejet pas assez franche : clôture < 80% et corps < 60% (filtre V6.4) | 3 | 2 | 67 % | +1.23 | +1.03 | +3.09 |
-| contre-tendance H4 | 84 | 18 | 21 % | -0.28 | -0.48 | -40.68 |
+| contre-tendance H4 | 85 | 18 | 21 % | -0.28 | -0.49 | -41.88 |
 | frais trop lourds : 0.15 R (max 0.15) (filtre V7.5) | 2 | 0 | 0 % | -1.00 | -1.15 | -2.30 |
 | frais trop lourds : 0.16 R (max 0.15) (filtre V7.5) | 6 | 1 | 17 % | -0.25 | -0.41 | -2.44 |
 | frais trop lourds : 0.17 R (max 0.15) (filtre V7.5) | 3 | 0 | 0 % | -1.00 | -1.17 | -3.51 |
@@ -185,31 +185,31 @@ Statuts : SL 180 | RATE 72 | TP 69 | INVALIDE 47 | EN_COURS 27 | ATTENTE 13 | PR
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| Rebond sur support H1 | 122 | 27 | 22 % | -0.25 | -0.43 | -52.56 |
-| Rejet de résistance H1 | 127 | 42 | 33 % | +0.04 | -0.17 | -21.81 |
+| Rebond sur support H1 | 125 | 27 | 22 % | -0.27 | -0.45 | -56.11 |
+| Rejet de résistance H1 | 128 | 43 | 34 % | +0.06 | -0.16 | -20.02 |
 
 ### Fantômes par contexte BTC détaillé (H4-H1)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| contre-contre | 25 | 10 | 40 % | +0.33 | +0.10 | +2.52 |
+| contre-contre | 28 | 10 | 36 % | +0.18 | -0.04 | -1.03 |
 | neutre-contre | 97 | 17 | 18 % | -0.40 | -0.57 | -55.08 |
 | neutre-sens | 107 | 39 | 36 % | +0.15 | -0.07 | -7.06 |
-| sens-sens | 20 | 3 | 15 % | -0.56 | -0.74 | -14.75 |
+| sens-sens | 21 | 4 | 19 % | -0.43 | -0.62 | -12.96 |
 
 ### Par rejet M15 confirmé
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| oui | 61 | 22 | 36 % | +0.25 | +0.05 | +3.08 |
-| non | 188 | 47 | 25 % | -0.22 | -0.41 | -77.45 |
+| oui | 62 | 22 | 35 % | +0.23 | +0.03 | +1.94 |
+| non | 191 | 48 | 25 % | -0.21 | -0.41 | -78.07 |
 
 ### Par nombre de tests de la zone H1
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| 1 | 160 | 42 | 26 % | -0.14 | -0.35 | -56.19 |
-| 2 | 57 | 18 | 32 % | +0.01 | -0.19 | -11.10 |
+| 1 | 162 | 43 | 27 % | -0.13 | -0.34 | -55.54 |
+| 2 | 59 | 18 | 31 % | -0.02 | -0.23 | -13.51 |
 | 3 | 17 | 4 | 24 % | -0.14 | -0.26 | -4.48 |
 | ≥4 | 15 | 5 | 33 % | -0.06 | -0.17 | -2.60 |
 
@@ -217,72 +217,72 @@ Statuts : SL 180 | RATE 72 | TP 69 | INVALIDE 47 | EN_COURS 27 | ATTENTE 13 | PR
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <24 h | 125 | 33 | 26 % | -0.15 | -0.33 | -41.81 |
+| <24 h | 128 | 34 | 27 % | -0.15 | -0.33 | -42.36 |
 | 24-72 h | 42 | 11 | 26 % | -0.19 | -0.47 | -19.59 |
-| ≥72 h | 82 | 25 | 30 % | +0.02 | -0.16 | -12.97 |
+| ≥72 h | 83 | 25 | 30 % | +0.00 | -0.17 | -14.18 |
 
 ### Par ancienneté du dernier test (bougies H1)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <12 h | 128 | 32 | 25 % | -0.19 | -0.36 | -46.16 |
-| 12-48 h | 69 | 22 | 32 % | +0.03 | -0.20 | -14.02 |
-| ≥48 h | 52 | 15 | 29 % | -0.07 | -0.27 | -14.19 |
+| <12 h | 129 | 32 | 25 % | -0.20 | -0.37 | -47.36 |
+| 12-48 h | 71 | 23 | 32 % | +0.05 | -0.19 | -13.37 |
+| ≥48 h | 53 | 15 | 28 % | -0.08 | -0.29 | -15.40 |
 
 ### Par position de clôture M15 (sens du trade)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <60 % | 132 | 29 | 22 % | -0.29 | -0.48 | -63.77 |
-| 60-80 % | 49 | 18 | 37 % | +0.23 | +0.05 | +2.22 |
-| ≥80 % | 68 | 22 | 32 % | +0.03 | -0.19 | -12.82 |
+| <60 % | 133 | 29 | 22 % | -0.30 | -0.49 | -64.97 |
+| 60-80 % | 50 | 19 | 38 % | +0.27 | +0.08 | +4.01 |
+| ≥80 % | 70 | 22 | 31 % | +0.00 | -0.22 | -15.17 |
 
 ### Par mèche de rejet M15
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <20 % | 144 | 42 | 29 % | -0.05 | -0.25 | -36.47 |
+| <20 % | 146 | 43 | 29 % | -0.04 | -0.25 | -35.88 |
 | 20-40 % | 54 | 13 | 24 % | -0.19 | -0.39 | -21.03 |
-| ≥40 % | 51 | 14 | 27 % | -0.16 | -0.33 | -16.87 |
+| ≥40 % | 53 | 14 | 26 % | -0.19 | -0.36 | -19.22 |
 
 ### Par corps de bougie M15
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <30 % | 45 | 13 | 29 % | -0.07 | -0.23 | -10.26 |
-| 30-60 % | 69 | 20 | 29 % | -0.04 | -0.24 | -16.56 |
-| ≥60 % | 135 | 36 | 27 % | -0.15 | -0.35 | -47.55 |
+| <30 % | 47 | 13 | 28 % | -0.11 | -0.27 | -12.61 |
+| 30-60 % | 70 | 21 | 30 % | -0.01 | -0.21 | -14.77 |
+| ≥60 % | 136 | 36 | 26 % | -0.15 | -0.36 | -48.75 |
 
 ### Par volume M15 (x moyenne 20)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <1 | 122 | 35 | 29 % | -0.07 | -0.28 | -34.06 |
-| 1-1,5 | 56 | 16 | 29 % | -0.09 | -0.27 | -15.39 |
-| ≥1,5 | 71 | 18 | 25 % | -0.17 | -0.35 | -24.92 |
+| <1 | 124 | 36 | 29 % | -0.06 | -0.27 | -33.41 |
+| 1-1,5 | 57 | 16 | 28 % | -0.11 | -0.29 | -16.60 |
+| ≥1,5 | 72 | 18 | 25 % | -0.18 | -0.36 | -26.12 |
 
 ### Par distance à l'entrée (ATR H1)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <0,15 | 101 | 35 | 35 % | +0.08 | -0.13 | -13.24 |
-| 0,15-0,35 | 76 | 21 | 28 % | -0.06 | -0.25 | -19.10 |
+| <0,15 | 104 | 36 | 35 % | +0.08 | -0.13 | -13.86 |
+| 0,15-0,35 | 77 | 21 | 27 % | -0.07 | -0.26 | -20.24 |
 | ≥0,35 | 72 | 13 | 18 % | -0.40 | -0.58 | -42.03 |
 
 ### Par largeur de zone (ATR H1)
 
 | | Trades | Gagnants | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|---|---|
-| <0,4 | 227 | 62 | 27 % | -0.11 | -0.31 | -70.40 |
+| <0,4 | 231 | 63 | 27 % | -0.11 | -0.31 | -72.16 |
 | 0,4-0,8 | 18 | 6 | 33 % | -0.03 | -0.15 | -2.67 |
 | ≥0,8 | 4 | 1 | 25 % | -0.25 | -0.33 | -1.30 |
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 249 | RR visé moyen : 2.53 | MFE médian : **+0.90 R**
-- Ont atteint +1 R : 47 % | +1,5 R : 38 % | +2 R : 29 %
-- **MFE des perdants** (180 SL) : avaient atteint +0,5 R : 56 % | +1 R : 26 % | +1,5 R : 14 % avant de toucher le SL
-- **MAE des gagnants** (69) : moyen -0.50 R | médian -0.54 R | pire -0.99 R | 54 % sont descendus au-delà de -0,5 R
+- Trades mesurés : 253 | RR visé moyen : 2.53 | MFE médian : **+0.90 R**
+- Ont atteint +1 R : 46 % | +1,5 R : 38 % | +2 R : 29 %
+- **MFE des perdants** (183 SL) : avaient atteint +0,5 R : 56 % | +1 R : 26 % | +1,5 R : 14 % avant de toucher le SL
+- **MAE des gagnants** (70) : moyen -0.49 R | médian -0.54 R | pire -0.99 R | 53 % sont descendus au-delà de -0,5 R
 
 ### Sorties — fantômes V7.5
 Pas encore de trade simulé (il faut 48 h après l'entrée).
@@ -293,22 +293,22 @@ Pas encore de trade simulé (il faut 48 h après l'entrée).
 
 ### MFE / MAE (jusqu'où les trades sont allés)
 
-- Trades mesurés : 1781 | RR visé moyen : 2.47 | MFE médian : **+1.00 R**
+- Trades mesurés : 1785 | RR visé moyen : 2.47 | MFE médian : **+1.00 R**
 - Ont atteint +1 R : 50 % | +1,5 R : 40 % | +2 R : 28 %
-- **MFE des perdants** (1238 SL) : avaient atteint +0,5 R : 57 % | +1 R : 29 % | +1,5 R : 14 % avant de toucher le SL
-- **MAE des gagnants** (535) : moyen -0.39 R | médian -0.38 R | pire -1.00 R | 38 % sont descendus au-delà de -0,5 R
+- **MFE des perdants** (1241 SL) : avaient atteint +0,5 R : 57 % | +1 R : 29 % | +1,5 R : 14 % avant de toucher le SL
+- **MAE des gagnants** (536) : moyen -0.39 R | médian -0.38 R | pire -1.00 R | 38 % sont descendus au-delà de -0,5 R
 
-### Sorties — ensemble — 1286 trades rejoués bougie par bougie
+### Sorties — ensemble — 1288 trades rejoués bougie par bougie
 
 | Gestion | Taux | R moyen brut | R moyen net | R total net |
 |---|---|---|---|---|
-| A — TP / SL actuels | 30 % | -0.04 | -0.23 | -298.05 |
-| B — SL à break-even dès +1 R | 22 % | -0.01 | -0.20 | -258.45 |
-| C — SL à break-even dès +1,5 R | 27 % | -0.01 | -0.20 | -256.43 |
-| D — rien avant +1,5 R, puis SL technique (extrême des 3 dernières M15) | 38 % | +0.01 | -0.18 | -229.55 |
-| E — 50 % à +1 R, reste au TP (SL inchangé) | 30 % | -0.02 | -0.21 | -266.54 |
-| F — TP fixe 1,5 R | 40 % | +0.00 | -0.18 | -237.25 |
-| G — TP fixe 2 R | 32 % | -0.04 | -0.22 | -286.71 |
+| A — TP / SL actuels | 30 % | -0.04 | -0.23 | -294.78 |
+| B — SL à break-even dès +1 R | 22 % | -0.01 | -0.20 | -255.18 |
+| C — SL à break-even dès +1,5 R | 27 % | -0.01 | -0.20 | -253.16 |
+| D — rien avant +1,5 R, puis SL technique (extrême des 3 dernières M15) | 38 % | +0.01 | -0.18 | -229.66 |
+| E — 50 % à +1 R, reste au TP (SL inchangé) | 30 % | -0.02 | -0.21 | -265.02 |
+| F — TP fixe 1,5 R | 40 % | +0.00 | -0.18 | -236.98 |
+| G — TP fixe 2 R | 32 % | -0.03 | -0.22 | -285.94 |
 
 _Prudent : SL testé avant le TP dans chaque bougie ; BE / SL technique actifs à partir de la bougie suivante ; horizon 48 h. La ligne A peut différer légèrement du résultat réel (horizon fixe)._
 
