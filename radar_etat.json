@@ -36,24 +36,6 @@
    "vu": 1791442954252,
    "t_decl": 0
   },
-  "MSTRUSDT|retournement|170.22": {
-   "type": "retournement",
-   "declenchement": 170.22,
-   "invalidation": 155.2185313432305,
-   "atr": 2.6715621892317416,
-   "info": {
-    "creux1": 152.14,
-    "creux2": 156.02,
-    "baisse_atr": 4.3
-   },
-   "id": "MSTRUSDT|retournement|170.22",
-   "sym": "MSTRUSDT",
-   "bruit": 4.892730209809136,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1791363755224,
-   "t_decl": 0
-  },
   "CARVUSDT|continuation|0.05494": {
    "type": "continuation",
    "declenchement": 0.05494,
@@ -69,7 +51,7 @@
    "bruit": 5.976759217373471,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1791536550989,
+   "vu": 1791540155362,
    "t_decl": 0
   },
   "POLUSDT|retournement|0.11175": {
@@ -105,7 +87,7 @@
    "bruit": 11.645810231856363,
    "tick": 1e-06,
    "etape": "pret",
-   "vu": 1791536550989,
+   "vu": 1791540155362,
    "t_decl": 0
   },
   "TSLAUSDT|retournement|381.56": {
@@ -215,7 +197,7 @@
    "bruit": 5.653042913229015,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791536550989,
+   "vu": 1791540155362,
    "t_decl": 0
   },
   "BRUSDT|retournement|0.68132": {
@@ -251,25 +233,7 @@
    "bruit": 6.731920380197344,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791536550989,
-   "t_decl": 0
-  },
-  "ETHFIUSDT|retournement|0.802": {
-   "type": "retournement",
-   "declenchement": 0.802,
-   "invalidation": 0.6910777106546893,
-   "atr": 0.02740763115103607,
-   "info": {
-    "creux1": 0.6709,
-    "creux2": 0.6993,
-    "baisse_atr": 5.5
-   },
-   "id": "ETHFIUSDT|retournement|0.802",
-   "sym": "ETHFIUSDT",
-   "bruit": 9.167453752928019,
-   "tick": 0.0001,
-   "etape": "invalide",
-   "vu": 1791363755224,
+   "vu": 1791540155362,
    "t_decl": 0
   },
   "SPCXUSDT|continuation|176.33": {
@@ -323,25 +287,7 @@
    "bruit": 4.280916658583228,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1791536550989,
-   "t_decl": 0
-  },
-  "ETHFIUSDT|continuation|0.802": {
-   "type": "continuation",
-   "declenchement": 0.802,
-   "invalidation": 0.7355456584336878,
-   "atr": 0.02618113855437369,
-   "info": {
-    "repli_atr": 2.2,
-    "age_h4": 4,
-    "calme": false
-   },
-   "id": "ETHFIUSDT|continuation|0.802",
-   "sym": "ETHFIUSDT",
-   "bruit": 8.33641978854587,
-   "tick": 0.0001,
-   "etape": "invalide",
-   "vu": 1791363755224,
+   "vu": 1791540155362,
    "t_decl": 0
   },
   "CBRSUSDT|retournement|188.97": {
@@ -1014,7 +960,7 @@
    "bruit": 9.954888283686667,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791536550989,
+   "vu": 1791540155362,
    "t_decl": 0
   },
   "BZUSDT|retournement|104.85": {
@@ -1091,7 +1037,7 @@
    "bruit": 4.0275778220690714,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1791536550989,
+   "vu": 1791540155362,
    "t_decl": 0
   },
   "BZUSDT|continuation|104.85": {
@@ -1109,7 +1055,7 @@
    "bruit": 3.547560586255765,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1791536550989,
+   "vu": 1791540155362,
    "t_decl": 0
   },
   "PYTHUSDT|continuation|0.08608": {
@@ -1127,7 +1073,7 @@
    "bruit": 7.249217517408077,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1791536550989,
+   "vu": 1791540155362,
    "t_decl": 0
   },
   "TIAUSDT|continuation|0.5302": {
@@ -1145,7 +1091,7 @@
    "bruit": 8.021664628224666,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791536550989,
+   "vu": 1791540155362,
    "t_decl": 0
   }
  },
