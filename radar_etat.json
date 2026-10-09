@@ -69,7 +69,7 @@
    "bruit": 5.976759217373471,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1791522154739,
+   "vu": 1791525750309,
    "t_decl": 0
   },
   "POLUSDT|retournement|0.11175": {
@@ -105,7 +105,7 @@
    "bruit": 11.645810231856363,
    "tick": 1e-06,
    "etape": "pret",
-   "vu": 1791522154739,
+   "vu": 1791525750309,
    "t_decl": 0
   },
   "TSLAUSDT|retournement|381.56": {
@@ -233,7 +233,7 @@
    "bruit": 5.653042913229015,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791522154739,
+   "vu": 1791525750309,
    "t_decl": 0
   },
   "BRUSDT|retournement|0.68132": {
@@ -269,7 +269,7 @@
    "bruit": 6.731920380197344,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791522154739,
+   "vu": 1791525750309,
    "t_decl": 0
   },
   "XMRUSDT|continuation|566.41": {
@@ -364,7 +364,7 @@
    "bruit": 4.280916658583228,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1791522154739,
+   "vu": 1791525750309,
    "t_decl": 0
   },
   "ETHFIUSDT|continuation|0.802": {
@@ -923,7 +923,7 @@
    "sym": "USUSDT",
    "bruit": 36.97448184925279,
    "tick": 1e-05,
-   "etape": "declenche",
+   "etape": "trop_tard",
    "vu": 1791511351679,
    "t_decl": 1791514800000.0,
    "entree": 0.01665,
@@ -1055,7 +1055,7 @@
    "bruit": 9.954888283686667,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791522154739,
+   "vu": 1791525750309,
    "t_decl": 0
   },
   "BZUSDT|retournement|104.85": {
@@ -1114,7 +1114,7 @@
    "bruit": 8.294336452509206,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1791522154739,
+   "vu": 1791525750309,
    "t_decl": 0
   },
   "MUUSDT|retournement|1095": {
@@ -1132,7 +1132,7 @@
    "bruit": 4.0275778220690714,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1791522154739,
+   "vu": 1791525750309,
    "t_decl": 0
   },
   "BZUSDT|continuation|104.85": {
@@ -1150,7 +1150,7 @@
    "bruit": 3.547560586255765,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1791522154739,
+   "vu": 1791525750309,
    "t_decl": 0
   },
   "PYTHUSDT|continuation|0.08608": {
@@ -1168,7 +1168,7 @@
    "bruit": 7.249217517408077,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1791522154739,
+   "vu": 1791525750309,
    "t_decl": 0
   }
  },
