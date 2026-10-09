@@ -9,3 +9,4 @@ METUSDT|continuation|0.3463,METUSDT,continuation,2026-10-07 19:00,0.364,0.2978,0
 METUSDT|retournement|0.3463,METUSDT,retournement,2026-10-07 19:00,0.364,0.2978,0.49639999999999995,OBJECTIF,2.0,2.31,14.0,🟢,"{""creux1"": 0.2818, ""creux2"": 0.302, ""baisse_atr"": 7.3}"
 NEARUSDT|continuation|5.385,NEARUSDT,continuation,2026-10-07 23:00,5.408,4.787,6.650000000000001,SL,-1.0,0.38,19.0,🟢,"{""repli_atr"": 2.4, ""age_h4"": 10, ""calme"": false}"
 ZROUSDT|continuation|2.1462,ZROUSDT,continuation,2026-10-06 02:00,2.1659,1.8636,2.7705000000000006,EXPIRE,-0.67,0.44,72,🟢,"{""repli_atr"": 2.5, ""age_h4"": 12, ""calme"": false}"
+USUSDT|retournement|0.01643,USUSDT,retournement,2026-10-09 05:00,0.01665,0.01164,0.026670000000000006,OBJECTIF,2.0,2.07,5.0,🟢,"{""creux1"": 0.01003, ""creux2"": 0.01219, ""baisse_atr"": 16.5}"
