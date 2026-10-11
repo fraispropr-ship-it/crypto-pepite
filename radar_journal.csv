@@ -11,3 +11,4 @@ NEARUSDT|continuation|5.385,NEARUSDT,continuation,2026-10-07 23:00,5.408,4.787,6
 ZROUSDT|continuation|2.1462,ZROUSDT,continuation,2026-10-06 02:00,2.1659,1.8636,2.7705000000000006,EXPIRE,-0.67,0.44,72,🟢,"{""repli_atr"": 2.5, ""age_h4"": 12, ""calme"": false}"
 USUSDT|retournement|0.01643,USUSDT,retournement,2026-10-09 05:00,0.01665,0.01164,0.026670000000000006,OBJECTIF,2.0,2.07,5.0,🟢,"{""creux1"": 0.01003, ""creux2"": 0.01219, ""baisse_atr"": 16.5}"
 BTWUSDT|retournement|1.33193,BTWUSDT,retournement,2026-10-08 03:00,1.33405,1.06071,1.8807299999999998,EXPIRE,0.93,1.16,72,🟢,"{""creux1"": 0.86008, ""creux2"": 1.09101, ""baisse_atr"": 9.0}"
+BTWUSDT|retournement|1.65,BTWUSDT,retournement,2026-10-11 07:00,1.68099,1.55164,1.9396900000000001,SL,-1.0,0.11,2.0,🟢,"{""creux1"": 0.91424, ""creux2"": 1.57214, ""baisse_atr"": 12.5}"
