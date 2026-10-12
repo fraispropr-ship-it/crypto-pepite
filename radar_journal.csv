@@ -19,3 +19,8 @@ XAUTUSDT|retournement|4142.9,XAUTUSDT,retournement,2026-10-09 04:00,4166.6,4096.
 VRTXSTOCKUSDT|retournement|515.49,VRTXSTOCKUSDT,retournement,2026-10-12 08:00,516.45,507.43,534.4900000000001,SL,-1.0,0.0,1.0,🟢,"{""creux1"": 494.15, ""creux2"": 508.34, ""baisse_atr"": 5.7}"
 ZROUSDT|retournement|2.0482,ZROUSDT,retournement,2026-10-11 12:00,2.0914,1.937,2.4002000000000003,OBJECTIF,2.0,2.32,22.0,🟢,"{""creux1"": 1.885, ""creux2"": 1.9638, ""baisse_atr"": 4.6}"
 BZUSDT|retournement|102.24,BZUSDT,retournement,2026-10-08 09:00,102.7,98.77,110.56000000000002,EXPIRE,0.1,0.55,72,🟢,"{""creux1"": 97.01, ""creux2"": 99.15, ""baisse_atr"": 5.4}"
+XAUUSDT|retournement|4212.97,XAUUSDT,retournement,2026-10-12 03:00,4214.86,4171.28,4302.0199999999995,SL,-1.0,0.19,12.0,🟢,"{""creux1"": 4073.56, ""creux2"": 4175.5, ""baisse_atr"": 11.1}"
+AAVEUSDT|retournement|172.12,AAVEUSDT,retournement,2026-10-10 07:00,173.06,165.14,188.90000000000003,SL,-1.0,0.37,56.0,🟢,"{""creux1"": 159.7, ""creux2"": 166.46, ""baisse_atr"": 6.4}"
+XPLUSDT|retournement|0.08801,XPLUSDT,retournement,2026-10-10 21:00,0.08805,0.08551,0.09313,SL,-1.0,0.65,42.0,🟢,"{""creux1"": 0.07972, ""creux2"": 0.08619, ""baisse_atr"": 7.8}"
+WLDUSDT|continuation|0.5763,WLDUSDT,continuation,2026-10-11 18:00,0.5792,0.534,0.6696000000000001,SL,-1.0,0.15,21.0,🟢,"{""repli_atr"": 1.8, ""age_h4"": 7, ""calme"": false}"
+DOGEUSDT|retournement|0.08762,DOGEUSDT,retournement,2026-10-12 07:00,0.08794,0.08564,0.09254000000000003,SL,-1.0,0.07,8.0,🟢,"{""creux1"": 0.081, ""creux2"": 0.08603, ""baisse_atr"": 12.7}"
