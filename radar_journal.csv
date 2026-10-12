@@ -41,3 +41,5 @@ BCHUSDT|retournement|281.9,BCHUSDT,retournement,2026-10-12 11:00,284.96,269.95,3
 INJUSDT|retournement|7.899,INJUSDT,retournement,2026-10-11 20:00,7.921,7.371,9.021,SL,-1.0,0.51,28.0,🟢,"{""creux1"": 6.411, ""creux2"": 7.446, ""baisse_atr"": 7.6}"
 LINKUSDT|retournement|13.243,LINKUSDT,retournement,2026-10-11 18:00,13.354,12.766,14.529999999999998,SL,-1.0,0.25,30.0,🟢,"{""creux1"": 12.08, ""creux2"": 12.829, ""baisse_atr"": 10.7}"
 TAOUSDT|retournement|287.87,TAOUSDT,retournement,2026-10-11 17:00,289.37,277.06,313.99,SL,-1.0,1.04,31.0,🟢,"{""creux1"": 254.22, ""creux2"": 279.05, ""baisse_atr"": 8.5}"
+ETHUSDT|retournement|2519.53,ETHUSDT,retournement,2026-10-11 18:00,2534.62,2466.5,2670.8599999999997,SL,-1.0,0.64,31.0,🟢,"{""creux1"": 2405.56, ""creux2"": 2473.33, ""baisse_atr"": 14.6}"
+UNIUSDT|retournement|7.453,UNIUSDT,retournement,2026-10-10 08:00,7.503,7.157,8.195,SL,-1.0,1.12,65.0,🟢,"{""creux1"": 6.993, ""creux2"": 7.222, ""baisse_atr"": 10.4}"
