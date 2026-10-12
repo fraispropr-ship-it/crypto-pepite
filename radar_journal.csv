@@ -24,3 +24,6 @@ AAVEUSDT|retournement|172.12,AAVEUSDT,retournement,2026-10-10 07:00,173.06,165.1
 XPLUSDT|retournement|0.08801,XPLUSDT,retournement,2026-10-10 21:00,0.08805,0.08551,0.09313,SL,-1.0,0.65,42.0,🟢,"{""creux1"": 0.07972, ""creux2"": 0.08619, ""baisse_atr"": 7.8}"
 WLDUSDT|continuation|0.5763,WLDUSDT,continuation,2026-10-11 18:00,0.5792,0.534,0.6696000000000001,SL,-1.0,0.15,21.0,🟢,"{""repli_atr"": 1.8, ""age_h4"": 7, ""calme"": false}"
 DOGEUSDT|retournement|0.08762,DOGEUSDT,retournement,2026-10-12 07:00,0.08794,0.08564,0.09254000000000003,SL,-1.0,0.07,8.0,🟢,"{""creux1"": 0.081, ""creux2"": 0.08603, ""baisse_atr"": 12.7}"
+SOLUSDT|retournement|112.71,SOLUSDT,retournement,2026-10-12 07:00,113.16,109.56,120.35999999999999,SL,-1.0,0.06,10.0,🟢,"{""creux1"": 105.6, ""creux2"": 110.0, ""baisse_atr"": 11.2}"
+TAOUSDT|retournement|298.25,TAOUSDT,retournement,2026-10-12 07:00,299.42,285.64,326.9800000000001,SL,-1.0,0.2,10.0,🟢,"{""creux1"": 254.22, ""creux2"": 287.75, ""baisse_atr"": 8.0}"
+LINKUSDT|retournement|13.471,LINKUSDT,retournement,2026-10-12 10:00,13.472,13.066,14.283999999999997,SL,-1.0,0.0,7.0,🟢,"{""creux1"": 12.08, ""creux2"": 13.133, ""baisse_atr"": 10.0}"
