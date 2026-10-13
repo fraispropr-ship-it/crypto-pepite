@@ -53,3 +53,5 @@ AVAXUSDT|retournement|10.672,AVAXUSDT,retournement,2026-10-11 18:00,10.825,10.11
 QUSDT|continuation|0.03083,QUSDT,continuation,2026-10-10 08:00,0.03193,0.02399,0.04781,EXPIRE,0.84,1.03,72,🟢,"{""repli_atr"": 3.3, ""age_h4"": 5, ""calme"": false}"
 INJUSDT|retournement|7.201,INJUSDT,retournement,2026-10-10 12:00,7.241,6.76,8.203,EXPIRE,1.47,1.99,72,🟢,"{""creux1"": 6.411, ""creux2"": 6.83, ""baisse_atr"": 8.2}"
 STRKUSDT|continuation|0.07765,STRKUSDT,continuation,2026-10-10 17:00,0.08738,0.06713,0.12788,EXPIRE,-0.09,1.95,72,🟢,"{""repli_atr"": 2.1, ""age_h4"": 4, ""calme"": false}"
+PYTHUSDT|continuation|0.08735,PYTHUSDT,continuation,2026-10-12 13:00,0.08915,0.07758,0.11228999999999999,SL,-1.0,0.13,29.0,🟢,"{""repli_atr"": 2.3, ""age_h4"": 4, ""calme"": false}"
+ZKUSDT|continuation|0.014597,ZKUSDT,continuation,2026-10-10 17:00,0.014614,0.012967,0.017908,EXPIRE,1.08,1.75,72,🟢,"{""repli_atr"": 2.2, ""age_h4"": 4, ""calme"": false}"
