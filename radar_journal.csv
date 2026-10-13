@@ -50,3 +50,4 @@ AVAXUSDT|retournement|10.501,AVAXUSDT,retournement,2026-10-10 07:00,10.512,10.02
 APTUSDT|retournement|0.846,APTUSDT,retournement,2026-10-10 20:00,0.8543,0.7757,1.0114999999999998,SL,-1.0,1.4,55.0,🟢,"{""creux1"": 0.6907, ""creux2"": 0.785, ""baisse_atr"": 5.4}"
 FARTCOINUSDT|retournement|0.16737,FARTCOINUSDT,retournement,2026-10-11 20:00,0.17083,0.15671,0.19907000000000005,SL,-1.0,0.18,31.0,🟢,"{""creux1"": 0.14255, ""creux2"": 0.15822, ""baisse_atr"": 9.7}"
 AVAXUSDT|retournement|10.672,AVAXUSDT,retournement,2026-10-11 18:00,10.825,10.114,12.246999999999996,SL,-1.0,0.4,33.0,🟢,"{""creux1"": 9.756, ""creux2"": 10.183, ""baisse_atr"": 8.5}"
+QUSDT|continuation|0.03083,QUSDT,continuation,2026-10-10 08:00,0.03193,0.02399,0.04781,EXPIRE,0.84,1.03,72,🟢,"{""repli_atr"": 3.3, ""age_h4"": 5, ""calme"": false}"
