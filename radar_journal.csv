@@ -46,3 +46,7 @@ UNIUSDT|retournement|7.453,UNIUSDT,retournement,2026-10-10 08:00,7.503,7.157,8.1
 ADAUSDT|retournement|0.2413,ADAUSDT,retournement,2026-10-10 02:00,0.2429,0.2328,0.2631,SL,-1.0,1.63,72.0,🟢,"{""creux1"": 0.2235, ""creux2"": 0.2349, ""baisse_atr"": 8.4}"
 SUIUSDT|retournement|1.0787,SUIUSDT,retournement,2026-10-10 04:00,1.0899,1.0395,1.1907,SL,-1.0,1.02,70.0,🟢,"{""creux1"": 0.9971, ""creux2"": 1.0484, ""baisse_atr"": 9.0}"
 LINKUSDT|retournement|12.965,LINKUSDT,retournement,2026-10-10 11:00,12.977,12.609,13.713000000000001,SL,-1.0,1.42,63.0,🟢,"{""creux1"": 12.08, ""creux2"": 12.682, ""baisse_atr"": 9.2}"
+AVAXUSDT|retournement|10.501,AVAXUSDT,retournement,2026-10-10 07:00,10.512,10.021,11.494,SL,-1.0,1.22,68.0,🟢,"{""creux1"": 9.756, ""creux2"": 10.107, ""baisse_atr"": 6.9}"
+APTUSDT|retournement|0.846,APTUSDT,retournement,2026-10-10 20:00,0.8543,0.7757,1.0114999999999998,SL,-1.0,1.4,55.0,🟢,"{""creux1"": 0.6907, ""creux2"": 0.785, ""baisse_atr"": 5.4}"
+FARTCOINUSDT|retournement|0.16737,FARTCOINUSDT,retournement,2026-10-11 20:00,0.17083,0.15671,0.19907000000000005,SL,-1.0,0.18,31.0,🟢,"{""creux1"": 0.14255, ""creux2"": 0.15822, ""baisse_atr"": 9.7}"
+AVAXUSDT|retournement|10.672,AVAXUSDT,retournement,2026-10-11 18:00,10.825,10.114,12.246999999999996,SL,-1.0,0.4,33.0,🟢,"{""creux1"": 9.756, ""creux2"": 10.183, ""baisse_atr"": 8.5}"
