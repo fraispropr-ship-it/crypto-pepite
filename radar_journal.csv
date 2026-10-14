@@ -59,3 +59,4 @@ WUSDT|continuation|0.01867,WUSDT,continuation,2026-10-11 22:00,0.022865,0.016437
 BTWUSDT|continuation|1.69664,BTWUSDT,continuation,2026-10-12 09:00,1.72043,1.4595,2.2422899999999997,OBJECTIF,2.0,2.6,43.0,🟢,"{""repli_atr"": 2.2, ""age_h4"": 5, ""calme"": true}"
 BTWUSDT|continuation|1.93579,BTWUSDT,continuation,2026-10-13 17:00,1.9369,1.67249,2.46572,OBJECTIF,2.0,3.12,13.0,🟢,"{""repli_atr"": 2.2, ""age_h4"": 4, ""calme"": false}"
 BTWUSDT|retournement|1.93579,BTWUSDT,retournement,2026-10-13 17:00,1.9369,1.67249,2.46572,OBJECTIF,2.0,3.12,13.0,🟢,"{""creux1"": 1.18883, ""creux2"": 1.70384, ""baisse_atr"": 5.5}"
+BATUSDT|continuation|0.15906,BATUSDT,continuation,2026-10-11 18:00,0.16683,0.12643,0.24763000000000004,EXPIRE,0.19,0.99,72,🟢,"{""repli_atr"": 2.8, ""age_h4"": 5, ""calme"": false}"
