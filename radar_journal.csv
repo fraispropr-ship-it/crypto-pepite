@@ -56,3 +56,4 @@ STRKUSDT|continuation|0.07765,STRKUSDT,continuation,2026-10-10 17:00,0.08738,0.0
 PYTHUSDT|continuation|0.08735,PYTHUSDT,continuation,2026-10-12 13:00,0.08915,0.07758,0.11228999999999999,SL,-1.0,0.13,29.0,🟢,"{""repli_atr"": 2.3, ""age_h4"": 4, ""calme"": false}"
 ZKUSDT|continuation|0.014597,ZKUSDT,continuation,2026-10-10 17:00,0.014614,0.012967,0.017908,EXPIRE,1.08,1.75,72,🟢,"{""repli_atr"": 2.2, ""age_h4"": 4, ""calme"": false}"
 WUSDT|continuation|0.01867,WUSDT,continuation,2026-10-11 22:00,0.022865,0.016437,0.035721,SL,-1.0,1.41,46.0,🟢,"{""repli_atr"": 2.0, ""age_h4"": 5, ""calme"": true}"
+BTWUSDT|continuation|1.69664,BTWUSDT,continuation,2026-10-12 09:00,1.72043,1.4595,2.2422899999999997,OBJECTIF,2.0,2.6,43.0,🟢,"{""repli_atr"": 2.2, ""age_h4"": 5, ""calme"": true}"
