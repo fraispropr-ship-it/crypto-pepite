@@ -208,24 +208,6 @@
    "vu": 1791903750763,
    "t_decl": 0
   },
-  "ENAUSDT|retournement|0.24732": {
-   "type": "retournement",
-   "declenchement": 0.24732,
-   "invalidation": 0.19626846550391375,
-   "atr": 0.007671781653620808,
-   "info": {
-    "creux1": 0.19304,
-    "creux2": 0.19857,
-    "baisse_atr": 9.1
-   },
-   "id": "ENAUSDT|retournement|0.24732",
-   "sym": "ENAUSDT",
-   "bruit": 10.669145001467923,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1791885751346,
-   "t_decl": 0
-  },
   "ONDOUSDT|retournement|0.5324": {
    "type": "retournement",
    "declenchement": 0.5324,
@@ -462,7 +444,7 @@
    "bruit": 7.935862907131787,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792054954821,
+   "vu": 1792058556496,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.93579": {
@@ -999,7 +981,7 @@
    "bruit": 11.715227148438391,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792054954821,
+   "vu": 1792058556496,
    "t_decl": 0
   },
   "OPUSDT|continuation|0.16234": {
@@ -1166,7 +1148,7 @@
    "bruit": 5.138059723993633,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792054954821,
+   "vu": 1792058556496,
    "t_decl": 0
   },
   "BSPUSDT|continuation|58.12": {
@@ -1184,7 +1166,7 @@
    "bruit": 5.902667826159911,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792054954821,
+   "vu": 1792058556496,
    "t_decl": 0
   },
   "PUFFERUSDT|continuation|0.02952": {
@@ -1224,8 +1206,8 @@
    "sym": "NILUSDT",
    "bruit": 14.180778874797126,
    "tick": 1e-05,
-   "etape": "pret",
-   "vu": 1792054954821,
+   "etape": "formation",
+   "vu": 1792058556496,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3346": {
@@ -1243,7 +1225,7 @@
    "bruit": 1.3349526629384125,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792054954821,
+   "vu": 1792058556496,
    "t_decl": 0
   },
   "BERAUSDT|continuation|0.2499": {
@@ -1260,8 +1242,8 @@
    "sym": "BERAUSDT",
    "bruit": 7.616779488510811,
    "tick": 0.0001,
-   "etape": "pret",
-   "vu": 1792054954821,
+   "etape": "formation",
+   "vu": 1792058556496,
    "t_decl": 0
   }
  },
