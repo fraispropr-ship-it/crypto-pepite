@@ -258,7 +258,7 @@
    "sym": "1000PEPEUSDT",
    "bruit": 7.680911930489917,
    "tick": 1e-06,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792047756173,
    "t_decl": 0
   },
@@ -450,11 +450,11 @@
   "STXUSDT|continuation|0.4602": {
    "type": "continuation",
    "declenchement": 0.4602,
-   "invalidation": 0.3958778627851999,
-   "atr": 0.020407124049333758,
+   "invalidation": 0.39589944421565365,
+   "atr": 0.0203351859478212,
    "info": {
     "repli_atr": 2.9,
-    "age_h4": 13,
+    "age_h4": 14,
     "calme": false
    },
    "id": "STXUSDT|continuation|0.4602",
@@ -462,7 +462,7 @@
    "bruit": 7.935862907131787,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792047756173,
+   "vu": 1792051353268,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.93579": {
@@ -861,11 +861,11 @@
   "BATUSDT|continuation|0.20687": {
    "type": "continuation",
    "declenchement": 0.20687,
-   "invalidation": 0.15979888205865314,
-   "atr": 0.014303726471156273,
+   "invalidation": 0.15989881905446363,
+   "atr": 0.013970603151787967,
    "info": {
-    "repli_atr": 3.0,
-    "age_h4": 8,
+    "repli_atr": 3.1,
+    "age_h4": 9,
     "calme": true
    },
    "id": "BATUSDT|continuation|0.20687",
@@ -987,11 +987,11 @@
   "BTWUSDT|continuation|2.76168": {
    "type": "continuation",
    "declenchement": 2.76168,
-   "invalidation": 1.9948937634382173,
-   "atr": 0.2235207885392751,
+   "invalidation": 1.893456708961257,
+   "atr": 0.2351443034624761,
    "info": {
-    "repli_atr": 3.1,
-    "age_h4": 6,
+    "repli_atr": 3.4,
+    "age_h4": 7,
     "calme": false
    },
    "id": "BTWUSDT|continuation|2.76168",
@@ -999,7 +999,7 @@
    "bruit": 11.715227148438391,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792047756173,
+   "vu": 1792051353268,
    "t_decl": 0
   },
   "OPUSDT|continuation|0.16234": {
@@ -1124,7 +1124,7 @@
    "sym": "AKEUSDT",
    "bruit": 33.32629817134412,
    "tick": 1e-06,
-   "etape": "declenche",
+   "etape": "trop_tard",
    "vu": 1792015354685,
    "t_decl": 1792015200000.0,
    "entree": 0.027613,
@@ -1154,11 +1154,11 @@
   "XMRUSDT|continuation|560": {
    "type": "continuation",
    "declenchement": 560.0,
-   "invalidation": 534.7782387490882,
-   "atr": 10.739204169705925,
+   "invalidation": 529.3707204339272,
+   "atr": 11.06426522024266,
    "info": {
-    "repli_atr": 2.0,
-    "age_h4": 3,
+    "repli_atr": 2.5,
+    "age_h4": 4,
     "calme": false
    },
    "id": "XMRUSDT|continuation|560",
@@ -1166,17 +1166,17 @@
    "bruit": 5.138059723993633,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792047756173,
+   "vu": 1792051353268,
    "t_decl": 0
   },
   "BSPUSDT|continuation|58.12": {
    "type": "continuation",
    "declenchement": 58.12,
-   "invalidation": 51.026563703732094,
-   "atr": 2.1447876542263478,
+   "invalidation": 51.03588061865801,
+   "atr": 2.1137312711399674,
    "info": {
-    "repli_atr": 3.0,
-    "age_h4": 3,
+    "repli_atr": 3.1,
+    "age_h4": 4,
     "calme": false
    },
    "id": "BSPUSDT|continuation|58.12",
@@ -1184,7 +1184,7 @@
    "bruit": 5.902667826159911,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792047756173,
+   "vu": 1792051353268,
    "t_decl": 0
   },
   "PUFFERUSDT|continuation|0.02952": {
@@ -1209,7 +1209,43 @@
    "objectif": 0.09865,
    "feu": "🟢",
    "date_decl": "2026-10-15 08:00"
+  },
+  "NILUSDT|retournement|0.09376": {
+   "type": "retournement",
+   "declenchement": 0.09376,
+   "invalidation": 0.08043311419804888,
+   "atr": 0.005889619339837023,
+   "info": {
+    "creux1": 0.07082,
+    "creux2": 0.0822,
+    "baisse_atr": 4.6
+   },
+   "id": "NILUSDT|retournement|0.09376",
+   "sym": "NILUSDT",
+   "bruit": 14.180778874797126,
+   "tick": 1e-05,
+   "etape": "pret",
+   "vu": 1792051353268,
+   "t_decl": 0
+  },
+  "TRXUSDT|retournement|0.3346": {
+   "type": "retournement",
+   "declenchement": 0.3346,
+   "invalidation": 0.32903574624036613,
+   "atr": 0.0018808458654463035,
+   "info": {
+    "creux1": 0.3265,
+    "creux2": 0.3296,
+    "baisse_atr": 4.8
+   },
+   "id": "TRXUSDT|retournement|0.3346",
+   "sym": "TRXUSDT",
+   "bruit": 1.3349526629384125,
+   "tick": 0.0001,
+   "etape": "formation",
+   "vu": 1792051353268,
+   "t_decl": 0
   }
  },
- "dernier_resume": 124447
+ "dernier_resume": 124448
 }
