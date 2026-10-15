@@ -825,11 +825,11 @@
   "BATUSDT|continuation|0.20687": {
    "type": "continuation",
    "declenchement": 0.20687,
-   "invalidation": 0.15989881905446363,
-   "atr": 0.013970603151787967,
+   "invalidation": 0.15998968909246883,
+   "atr": 0.013667703025103978,
    "info": {
     "repli_atr": 3.1,
-    "age_h4": 9,
+    "age_h4": 10,
     "calme": true
    },
    "id": "BATUSDT|continuation|0.20687",
@@ -951,11 +951,11 @@
   "BTWUSDT|continuation|2.76168": {
    "type": "continuation",
    "declenchement": 2.76168,
-   "invalidation": 1.893456708961257,
-   "atr": 0.2351443034624761,
+   "invalidation": 1.786576222665335,
+   "atr": 0.2384125911155503,
    "info": {
-    "repli_atr": 3.4,
-    "age_h4": 7,
+    "repli_atr": 3.8,
+    "age_h4": 8,
     "calme": false
    },
    "id": "BTWUSDT|continuation|2.76168",
@@ -963,7 +963,7 @@
    "bruit": 11.715227148438391,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792062154099,
+   "vu": 1792065754999,
    "t_decl": 0
   },
   "OPUSDT|continuation|0.16234": {
@@ -1118,11 +1118,11 @@
   "XMRUSDT|continuation|560": {
    "type": "continuation",
    "declenchement": 560.0,
-   "invalidation": 529.3707204339272,
-   "atr": 11.06426522024266,
+   "invalidation": 529.3243120819448,
+   "atr": 11.218959726851152,
    "info": {
-    "repli_atr": 2.5,
-    "age_h4": 4,
+    "repli_atr": 2.4,
+    "age_h4": 5,
     "calme": false
    },
    "id": "XMRUSDT|continuation|560",
@@ -1130,17 +1130,17 @@
    "bruit": 5.138059723993633,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792062154099,
+   "vu": 1792065754999,
    "t_decl": 0
   },
   "BSPUSDT|continuation|58.12": {
    "type": "continuation",
    "declenchement": 58.12,
-   "invalidation": 51.03588061865801,
-   "atr": 2.1137312711399674,
+   "invalidation": 50.36724630056711,
+   "atr": 2.1091789981096243,
    "info": {
-    "repli_atr": 3.1,
-    "age_h4": 4,
+    "repli_atr": 3.4,
+    "age_h4": 5,
     "calme": false
    },
    "id": "BSPUSDT|continuation|58.12",
@@ -1148,7 +1148,7 @@
    "bruit": 5.902667826159911,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792062154099,
+   "vu": 1792065754999,
    "t_decl": 0
   },
   "PUFFERUSDT|continuation|0.02952": {
@@ -1177,26 +1177,26 @@
   "NILUSDT|retournement|0.09376": {
    "type": "retournement",
    "declenchement": 0.09376,
-   "invalidation": 0.08043311419804888,
-   "atr": 0.005889619339837023,
+   "invalidation": 0.0803583203421169,
+   "atr": 0.006138932192943643,
    "info": {
     "creux1": 0.07082,
     "creux2": 0.0822,
-    "baisse_atr": 4.6
+    "baisse_atr": 4.4
    },
    "id": "NILUSDT|retournement|0.09376",
    "sym": "NILUSDT",
    "bruit": 14.180778874797126,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792062154099,
+   "vu": 1792065754999,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3346": {
    "type": "retournement",
    "declenchement": 0.3346,
-   "invalidation": 0.32903574624036613,
-   "atr": 0.0018808458654463035,
+   "invalidation": 0.32903533626715553,
+   "atr": 0.001882212442814901,
    "info": {
     "creux1": 0.3265,
     "creux2": 0.3296,
@@ -1207,7 +1207,7 @@
    "bruit": 1.3349526629384125,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792062154099,
+   "vu": 1792065754999,
    "t_decl": 0
   },
   "BERAUSDT|continuation|0.2499": {
@@ -1224,10 +1224,46 @@
    "sym": "BERAUSDT",
    "bruit": 7.616779488510811,
    "tick": 0.0001,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792062154099,
+   "t_decl": 0
+  },
+  "WALUSDT|continuation|0.06798": {
+   "type": "continuation",
+   "declenchement": 0.06798,
+   "invalidation": 0.0497439547991342,
+   "atr": 0.005120150669552651,
+   "info": {
+    "repli_atr": 3.3,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "WALUSDT|continuation|0.06798",
+   "sym": "WALUSDT",
+   "bruit": 7.459012483341971,
+   "tick": 1e-05,
+   "etape": "formation",
+   "vu": 1792065754999,
+   "t_decl": 0
+  },
+  "DEEPUSDT|continuation|0.02534": {
+   "type": "continuation",
+   "declenchement": 0.02534,
+   "invalidation": 0.02112177667704297,
+   "atr": 0.0012940777431901048,
+   "info": {
+    "repli_atr": 3.0,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "DEEPUSDT|continuation|0.02534",
+   "sym": "DEEPUSDT",
+   "bruit": 7.940553302325777,
+   "tick": 1e-05,
+   "etape": "formation",
+   "vu": 1792065754999,
    "t_decl": 0
   }
  },
- "dernier_resume": 124448
+ "dernier_resume": 124449
 }
