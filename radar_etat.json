@@ -462,7 +462,7 @@
    "bruit": 7.935862907131787,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792051353268,
+   "vu": 1792054954821,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.93579": {
@@ -999,7 +999,7 @@
    "bruit": 11.715227148438391,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792051353268,
+   "vu": 1792054954821,
    "t_decl": 0
   },
   "OPUSDT|continuation|0.16234": {
@@ -1166,7 +1166,7 @@
    "bruit": 5.138059723993633,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792051353268,
+   "vu": 1792054954821,
    "t_decl": 0
   },
   "BSPUSDT|continuation|58.12": {
@@ -1184,7 +1184,7 @@
    "bruit": 5.902667826159911,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792051353268,
+   "vu": 1792054954821,
    "t_decl": 0
   },
   "PUFFERUSDT|continuation|0.02952": {
@@ -1225,7 +1225,7 @@
    "bruit": 14.180778874797126,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792051353268,
+   "vu": 1792054954821,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3346": {
@@ -1243,7 +1243,25 @@
    "bruit": 1.3349526629384125,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792051353268,
+   "vu": 1792054954821,
+   "t_decl": 0
+  },
+  "BERAUSDT|continuation|0.2499": {
+   "type": "continuation",
+   "declenchement": 0.2499,
+   "invalidation": 0.22381466310307188,
+   "atr": 0.009951122989760412,
+   "info": {
+    "repli_atr": 2.3,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "BERAUSDT|continuation|0.2499",
+   "sym": "BERAUSDT",
+   "bruit": 7.616779488510811,
+   "tick": 0.0001,
+   "etape": "pret",
+   "vu": 1792054954821,
    "t_decl": 0
   }
  },
