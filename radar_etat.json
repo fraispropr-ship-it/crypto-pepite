@@ -845,7 +845,7 @@
    "bruit": 11.715227148438391,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792080155555,
+   "vu": 1792083753479,
    "t_decl": 0
   },
   "OPUSDT|continuation|0.16234": {
@@ -1070,8 +1070,8 @@
    "sym": "NILUSDT",
    "bruit": 14.180778874797126,
    "tick": 1e-05,
-   "etape": "formation",
-   "vu": 1792080155555,
+   "etape": "pret",
+   "vu": 1792083753479,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3346": {
@@ -1125,7 +1125,7 @@
    "bruit": 7.459012483341971,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792080155555,
+   "vu": 1792083753479,
    "t_decl": 0
   },
   "DEEPUSDT|continuation|0.02534": {
@@ -1161,7 +1161,7 @@
    "bruit": 10.524748201223217,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792080155555,
+   "vu": 1792083753479,
    "t_decl": 0
   }
  },
