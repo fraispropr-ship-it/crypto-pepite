@@ -339,24 +339,6 @@
    "vu": 1791979355762,
    "t_decl": 0
   },
-  "VVVUSDT|retournement|25.546": {
-   "type": "retournement",
-   "declenchement": 25.546,
-   "invalidation": 21.23858245726442,
-   "atr": 0.9080584757852604,
-   "info": {
-    "creux1": 21.229,
-    "creux2": 21.511,
-    "baisse_atr": 10.6
-   },
-   "id": "VVVUSDT|retournement|25.546",
-   "sym": "VVVUSDT",
-   "bruit": 12.177618232837817,
-   "tick": 0.001,
-   "etape": "disparu",
-   "vu": 1791896555481,
-   "t_decl": 0
-  },
   "POLUSDT|retournement|0.10738": {
    "type": "retournement",
    "declenchement": 0.10738,
@@ -451,24 +433,6 @@
    "objectif": 2.46572,
    "feu": "🟢",
    "date_decl": "2026-10-13 17:00"
-  },
-  "FLEXUSDT|retournement|121.57": {
-   "type": "retournement",
-   "declenchement": 121.57,
-   "invalidation": 114.73768403035709,
-   "atr": 1.607719898809716,
-   "info": {
-    "creux1": 112.1,
-    "creux2": 115.22,
-    "baisse_atr": 6.4
-   },
-   "id": "FLEXUSDT|retournement|121.57",
-   "sym": "FLEXUSDT",
-   "bruit": 3.7728161693618283,
-   "tick": 0.01,
-   "etape": "invalide",
-   "vu": 1791896555481,
-   "t_decl": 0
   },
   "SAFEUSDT|continuation|0.14232": {
    "type": "continuation",
@@ -963,7 +927,7 @@
    "bruit": 11.715227148438391,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792065754999,
+   "vu": 1792069365700,
    "t_decl": 0
   },
   "OPUSDT|continuation|0.16234": {
@@ -1130,7 +1094,7 @@
    "bruit": 5.138059723993633,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792065754999,
+   "vu": 1792069365700,
    "t_decl": 0
   },
   "BSPUSDT|continuation|58.12": {
@@ -1148,7 +1112,7 @@
    "bruit": 5.902667826159911,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792065754999,
+   "vu": 1792069365700,
    "t_decl": 0
   },
   "PUFFERUSDT|continuation|0.02952": {
@@ -1188,8 +1152,8 @@
    "sym": "NILUSDT",
    "bruit": 14.180778874797126,
    "tick": 1e-05,
-   "etape": "formation",
-   "vu": 1792065754999,
+   "etape": "pret",
+   "vu": 1792069365700,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3346": {
@@ -1207,7 +1171,7 @@
    "bruit": 1.3349526629384125,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792065754999,
+   "vu": 1792069365700,
    "t_decl": 0
   },
   "BERAUSDT|continuation|0.2499": {
@@ -1243,7 +1207,7 @@
    "bruit": 7.459012483341971,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792065754999,
+   "vu": 1792069365700,
    "t_decl": 0
   },
   "DEEPUSDT|continuation|0.02534": {
@@ -1260,7 +1224,7 @@
    "sym": "DEEPUSDT",
    "bruit": 7.940553302325777,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792065754999,
    "t_decl": 0
   }
