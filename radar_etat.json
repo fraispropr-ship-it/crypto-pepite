@@ -845,7 +845,7 @@
    "bruit": 11.715227148438391,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792083753479,
+   "vu": 1792087352265,
    "t_decl": 0
   },
   "OPUSDT|continuation|0.16234": {
@@ -970,7 +970,7 @@
    "sym": "AKEUSDT",
    "bruit": 33.32629817134412,
    "tick": 1e-06,
-   "etape": "trop_tard",
+   "etape": "termine",
    "vu": 1792015354685,
    "t_decl": 1792015200000.0,
    "entree": 0.027613,
@@ -1071,7 +1071,7 @@
    "bruit": 14.180778874797126,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792083753479,
+   "vu": 1792087352265,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3346": {
@@ -1125,7 +1125,7 @@
    "bruit": 7.459012483341971,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792083753479,
+   "vu": 1792087352265,
    "t_decl": 0
   },
   "DEEPUSDT|continuation|0.02534": {
@@ -1161,7 +1161,7 @@
    "bruit": 10.524748201223217,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792083753479,
+   "vu": 1792087352265,
    "t_decl": 0
   }
  },
