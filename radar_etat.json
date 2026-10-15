@@ -136,24 +136,6 @@
    "vu": 1792011755214,
    "t_decl": 0
   },
-  "WLFIUSDT|continuation|0.05823": {
-   "type": "continuation",
-   "declenchement": 0.05823,
-   "invalidation": 0.05518367554966788,
-   "atr": 0.0007877481677737181,
-   "info": {
-    "repli_atr": 3.6,
-    "age_h4": 20,
-    "calme": false
-   },
-   "id": "WLFIUSDT|continuation|0.05823",
-   "sym": "WLFIUSDT",
-   "bruit": 4.3193218571176715,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1791903750763,
-   "t_decl": 0
-  },
   "WLFIUSDT|retournement|0.05823": {
    "type": "retournement",
    "declenchement": 0.05823,
@@ -170,24 +152,6 @@
    "tick": 1e-05,
    "etape": "disparu",
    "vu": 1791918150853,
-   "t_decl": 0
-  },
-  "NEARUSDT|retournement|6.04": {
-   "type": "retournement",
-   "declenchement": 6.04,
-   "invalidation": 4.69503208987586,
-   "atr": 0.22655970041379855,
-   "info": {
-    "creux1": 4.297,
-    "creux2": 4.763,
-    "baisse_atr": 5.9
-   },
-   "id": "NEARUSDT|retournement|6.04",
-   "sym": "NEARUSDT",
-   "bruit": 10.743820998332602,
-   "tick": 0.001,
-   "etape": "disparu",
-   "vu": 1791903750763,
    "t_decl": 0
   },
   "ONDOUSDT|retournement|0.5324": {
@@ -279,29 +243,6 @@
    "etape": "disparu",
    "vu": 1791918150853,
    "t_decl": 0
-  },
-  "BTWUSDT|continuation|1.93579": {
-   "type": "continuation",
-   "declenchement": 1.93579,
-   "invalidation": 1.672488753289325,
-   "atr": 0.1045041557022506,
-   "info": {
-    "repli_atr": 2.2,
-    "age_h4": 4,
-    "calme": false
-   },
-   "id": "BTWUSDT|continuation|1.93579",
-   "sym": "BTWUSDT",
-   "bruit": 14.348877601565864,
-   "tick": 1e-05,
-   "etape": "termine",
-   "vu": 1791900155833,
-   "t_decl": 1791903600000.0,
-   "entree": 1.9369,
-   "sl": 1.67249,
-   "objectif": 2.46572,
-   "feu": "🟢",
-   "date_decl": "2026-10-13 17:00"
   },
   "ICPUSDT|retournement|3.54": {
    "type": "retournement",
@@ -410,29 +351,6 @@
    "etape": "invalide",
    "vu": 1792058556496,
    "t_decl": 0
-  },
-  "BTWUSDT|retournement|1.93579": {
-   "type": "retournement",
-   "declenchement": 1.93579,
-   "invalidation": 1.672488753289325,
-   "atr": 0.1045041557022506,
-   "info": {
-    "creux1": 1.18883,
-    "creux2": 1.70384,
-    "baisse_atr": 5.5
-   },
-   "id": "BTWUSDT|retournement|1.93579",
-   "sym": "BTWUSDT",
-   "bruit": 14.348877601565864,
-   "tick": 1e-05,
-   "etape": "termine",
-   "vu": 1791900155833,
-   "t_decl": 1791903600000.0,
-   "entree": 1.9369,
-   "sl": 1.67249,
-   "objectif": 2.46572,
-   "feu": "🟢",
-   "date_decl": "2026-10-13 17:00"
   },
   "SAFEUSDT|continuation|0.14232": {
    "type": "continuation",
@@ -927,7 +845,7 @@
    "bruit": 11.715227148438391,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792072953364,
+   "vu": 1792076553911,
    "t_decl": 0
   },
   "OPUSDT|continuation|0.16234": {
@@ -1152,8 +1070,8 @@
    "sym": "NILUSDT",
    "bruit": 14.180778874797126,
    "tick": 1e-05,
-   "etape": "formation",
-   "vu": 1792072953364,
+   "etape": "pret",
+   "vu": 1792076553911,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3346": {
@@ -1171,7 +1089,7 @@
    "bruit": 1.3349526629384125,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792072953364,
+   "vu": 1792076553911,
    "t_decl": 0
   },
   "BERAUSDT|continuation|0.2499": {
@@ -1207,7 +1125,7 @@
    "bruit": 7.459012483341971,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792072953364,
+   "vu": 1792076553911,
    "t_decl": 0
   },
   "DEEPUSDT|continuation|0.02534": {
