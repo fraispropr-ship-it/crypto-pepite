@@ -707,12 +707,12 @@
   "BATUSDT|continuation|0.20687": {
    "type": "continuation",
    "declenchement": 0.20687,
-   "invalidation": 0.15998968909246883,
-   "atr": 0.013667703025103978,
+   "invalidation": 0.1597665684453694,
+   "atr": 0.014411438515435337,
    "info": {
-    "repli_atr": 3.1,
-    "age_h4": 10,
-    "calme": true
+    "repli_atr": 3.0,
+    "age_h4": 11,
+    "calme": false
    },
    "id": "BATUSDT|continuation|0.20687",
    "sym": "BATUSDT",
@@ -833,11 +833,11 @@
   "BTWUSDT|continuation|2.76168": {
    "type": "continuation",
    "declenchement": 2.76168,
-   "invalidation": 1.786576222665335,
-   "atr": 0.2384125911155503,
+   "invalidation": 1.7874872144865315,
+   "atr": 0.23537595171156234,
    "info": {
     "repli_atr": 3.8,
-    "age_h4": 8,
+    "age_h4": 9,
     "calme": false
    },
    "id": "BTWUSDT|continuation|2.76168",
@@ -845,7 +845,7 @@
    "bruit": 11.715227148438391,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792076553911,
+   "vu": 1792080155555,
    "t_decl": 0
   },
   "OPUSDT|continuation|0.16234": {
@@ -1000,11 +1000,11 @@
   "XMRUSDT|continuation|560": {
    "type": "continuation",
    "declenchement": 560.0,
-   "invalidation": 529.3243120819448,
-   "atr": 11.218959726851152,
+   "invalidation": 524.1210764213708,
+   "atr": 11.62974526209728,
    "info": {
-    "repli_atr": 2.4,
-    "age_h4": 5,
+    "repli_atr": 2.8,
+    "age_h4": 6,
     "calme": false
    },
    "id": "XMRUSDT|continuation|560",
@@ -1059,8 +1059,8 @@
   "NILUSDT|retournement|0.09376": {
    "type": "retournement",
    "declenchement": 0.09376,
-   "invalidation": 0.0803583203421169,
-   "atr": 0.006138932192943643,
+   "invalidation": 0.08035444033658118,
+   "atr": 0.0061518655447294025,
    "info": {
     "creux1": 0.07082,
     "creux2": 0.0822,
@@ -1070,8 +1070,8 @@
    "sym": "NILUSDT",
    "bruit": 14.180778874797126,
    "tick": 1e-05,
-   "etape": "pret",
-   "vu": 1792076553911,
+   "etape": "formation",
+   "vu": 1792080155555,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3346": {
@@ -1088,7 +1088,7 @@
    "sym": "TRXUSDT",
    "bruit": 1.3349526629384125,
    "tick": 0.0001,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792076553911,
    "t_decl": 0
   },
@@ -1113,11 +1113,11 @@
   "WALUSDT|continuation|0.06798": {
    "type": "continuation",
    "declenchement": 0.06798,
-   "invalidation": 0.0497439547991342,
-   "atr": 0.005120150669552651,
+   "invalidation": 0.049587672457603364,
+   "atr": 0.0051744251413221075,
    "info": {
     "repli_atr": 3.3,
-    "age_h4": 3,
+    "age_h4": 4,
     "calme": false
    },
    "id": "WALUSDT|continuation|0.06798",
@@ -1125,7 +1125,7 @@
    "bruit": 7.459012483341971,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792076553911,
+   "vu": 1792080155555,
    "t_decl": 0
   },
   "DEEPUSDT|continuation|0.02534": {
@@ -1145,7 +1145,25 @@
    "etape": "disparu",
    "vu": 1792065754999,
    "t_decl": 0
+  },
+  "QUSDT|continuation|0.05588": {
+   "type": "continuation",
+   "declenchement": 0.05588,
+   "invalidation": 0.047081553622886366,
+   "atr": 0.0037614879237121324,
+   "info": {
+    "repli_atr": 2.0,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "QUSDT|continuation|0.05588",
+   "sym": "QUSDT",
+   "bruit": 10.524748201223217,
+   "tick": 1e-05,
+   "etape": "formation",
+   "vu": 1792080155555,
+   "t_decl": 0
   }
  },
- "dernier_resume": 124449
+ "dernier_resume": 124450
 }
