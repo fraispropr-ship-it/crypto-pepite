@@ -295,7 +295,7 @@
    "bruit": 7.680911930489917,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792029752955,
+   "vu": 1792033355271,
    "t_decl": 0
   },
   "LINKUSDT|retournement|13.5": {
@@ -498,7 +498,7 @@
    "bruit": 7.935862907131787,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792029752955,
+   "vu": 1792033355271,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.93579": {
@@ -813,7 +813,7 @@
    "sym": "ARBUSDT",
    "bruit": 9.713914995427947,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792029752955,
    "t_decl": 0
   },
@@ -927,7 +927,7 @@
    "bruit": 8.964127158318522,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792029752955,
+   "vu": 1792033355271,
    "t_decl": 0
   },
   "APTUSDT|retournement|0.9644": {
@@ -998,7 +998,7 @@
    "sym": "BNBUSDT",
    "bruit": 3.1342403187953134,
    "tick": 0.01,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792029752955,
    "t_decl": 0
   },
@@ -1035,7 +1035,7 @@
    "bruit": 11.715227148438391,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792029752955,
+   "vu": 1792033355271,
    "t_decl": 0
   },
   "OPUSDT|continuation|0.16234": {
@@ -1052,7 +1052,7 @@
    "sym": "OPUSDT",
    "bruit": 9.285276064881105,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792029752955,
    "t_decl": 0
   },
@@ -1106,7 +1106,7 @@
    "sym": "BCHUSDT",
    "bruit": 6.450610999109784,
    "tick": 0.01,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792029752955,
    "t_decl": 0
   },
@@ -1124,7 +1124,7 @@
    "sym": "PENGUUSDT",
    "bruit": 9.688711573842625,
    "tick": 1e-06,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792029752955,
    "t_decl": 0
   },
@@ -1143,7 +1143,7 @@
    "bruit": 8.168912937693909,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792029752955,
+   "vu": 1792033355271,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.026897": {
@@ -1168,6 +1168,24 @@
    "objectif": 0.035656999999999994,
    "feu": "🟢",
    "date_decl": "2026-10-15 00:00"
+  },
+  "SEIUSDT|retournement|0.06633": {
+   "type": "retournement",
+   "declenchement": 0.06633,
+   "invalidation": 0.0611134733237779,
+   "atr": 0.0019217555874070033,
+   "info": {
+    "creux1": 0.06032,
+    "creux2": 0.06169,
+    "baisse_atr": 5.8
+   },
+   "id": "SEIUSDT|retournement|0.06633",
+   "sym": "SEIUSDT",
+   "bruit": 7.675141577269139,
+   "tick": 1e-05,
+   "etape": "invalide",
+   "vu": 1792033355271,
+   "t_decl": 0
   }
  },
  "dernier_resume": 124445
