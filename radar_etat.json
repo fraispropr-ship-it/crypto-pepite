@@ -730,11 +730,11 @@
   "PYTHUSDT|continuation|0.10094": {
    "type": "continuation",
    "declenchement": 0.10094,
-   "invalidation": 0.08387299752501134,
-   "atr": 0.00542334158329553,
+   "invalidation": 0.08146535475959801,
+   "atr": 0.00534881746800662,
    "info": {
-    "repli_atr": 2.8,
-    "age_h4": 6,
+    "repli_atr": 3.3,
+    "age_h4": 7,
     "calme": false
    },
    "id": "PYTHUSDT|continuation|0.10094",
@@ -825,11 +825,11 @@
   "AKEUSDT|continuation|0.037587": {
    "type": "continuation",
    "declenchement": 0.037587,
-   "invalidation": 0.027538608415837593,
-   "atr": 0.002547971947208014,
+   "invalidation": 0.027389579229810664,
+   "atr": 0.002701402567297779,
    "info": {
-    "repli_atr": 3.6,
-    "age_h4": 5,
+    "repli_atr": 3.5,
+    "age_h4": 6,
     "calme": false
    },
    "id": "AKEUSDT|continuation|0.037587",
@@ -837,7 +837,7 @@
    "bruit": 25.25917803389069,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792177352121,
+   "vu": 1792180949077,
    "t_decl": 0
   },
   "ADAUSDT|retournement|0.2323": {
@@ -974,11 +974,11 @@
   "BATUSDT|continuation|0.22394": {
    "type": "continuation",
    "declenchement": 0.22394,
-   "invalidation": 0.1864946506409764,
-   "atr": 0.01595116453007869,
+   "invalidation": 0.18654203289280305,
+   "atr": 0.015793223690656544,
    "info": {
-    "repli_atr": 2.0,
-    "age_h4": 4,
+    "repli_atr": 2.1,
+    "age_h4": 5,
     "calme": false
    },
    "id": "BATUSDT|continuation|0.22394",
@@ -986,7 +986,7 @@
    "bruit": 8.00427161014788,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792177352121,
+   "vu": 1792180949077,
    "t_decl": 0
   },
   "VVVUSDT|retournement|25.525": {
@@ -1021,7 +1021,7 @@
    "sym": "ZEREBROUSDT",
    "bruit": 7.814634151368105,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792177352121,
    "t_decl": 0
   },
@@ -1039,10 +1039,28 @@
    "sym": "FILUSDT",
    "bruit": 9.207256839709617,
    "tick": 0.0001,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792177352121,
+   "t_decl": 0
+  },
+  "ZKUSDT|continuation|0.018847": {
+   "type": "continuation",
+   "declenchement": 0.018847,
+   "invalidation": 0.015753719709979797,
+   "atr": 0.0011542676334006766,
+   "info": {
+    "repli_atr": 2.4,
+    "age_h4": 3,
+    "calme": true
+   },
+   "id": "ZKUSDT|continuation|0.018847",
+   "sym": "ZKUSDT",
+   "bruit": 9.150052088771812,
+   "tick": 1e-06,
+   "etape": "formation",
+   "vu": 1792180949077,
    "t_decl": 0
   }
  },
- "dernier_resume": 124456
+ "dernier_resume": 124457
 }
