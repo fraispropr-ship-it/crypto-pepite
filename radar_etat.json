@@ -59,29 +59,6 @@
    "vu": 1792058556496,
    "t_decl": 0
   },
-  "XMRUSDT|retournement|545.19": {
-   "type": "retournement",
-   "declenchement": 545.19,
-   "invalidation": 523.1352985206098,
-   "atr": 10.449004931300593,
-   "info": {
-    "creux1": 513.24,
-    "creux2": 526.27,
-    "baisse_atr": 5.6
-   },
-   "id": "XMRUSDT|retournement|545.19",
-   "sym": "XMRUSDT",
-   "bruit": 5.519933813399279,
-   "tick": 0.01,
-   "etape": "trop_tard",
-   "vu": 1791928951959,
-   "t_decl": 1791932400000.0,
-   "entree": 545.72,
-   "sl": 523.14,
-   "objectif": 590.8800000000001,
-   "feu": "🟢",
-   "date_decl": "2026-10-14 01:00"
-  },
   "ARBUSDT|retournement|0.20313": {
    "type": "retournement",
    "declenchement": 0.20313,
@@ -284,29 +261,6 @@
    "etape": "disparu",
    "vu": 1792033355271,
    "t_decl": 0
-  },
-  "AKEUSDT|retournement|0.026897": {
-   "type": "retournement",
-   "declenchement": 0.026897,
-   "invalidation": 0.023591140590032266,
-   "atr": 0.0013261980332257785,
-   "info": {
-    "creux1": 0.022432,
-    "creux2": 0.023989,
-    "baisse_atr": 8.6
-   },
-   "id": "AKEUSDT|retournement|0.026897",
-   "sym": "AKEUSDT",
-   "bruit": 33.32629817134412,
-   "tick": 1e-06,
-   "etape": "termine",
-   "vu": 1792015354685,
-   "t_decl": 1792015200000.0,
-   "entree": 0.027613,
-   "sl": 0.023591,
-   "objectif": 0.035656999999999994,
-   "feu": "🟢",
-   "date_decl": "2026-10-15 00:00"
   },
   "SEIUSDT|retournement|0.06633": {
    "type": "retournement",
@@ -657,7 +611,7 @@
    "bruit": 25.25917803389069,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792188152504,
+   "vu": 1792191750748,
    "t_decl": 0
   },
   "ADAUSDT|retournement|0.2323": {
@@ -806,7 +760,7 @@
    "bruit": 8.00427161014788,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792188152504,
+   "vu": 1792191750748,
    "t_decl": 0
   },
   "VVVUSDT|retournement|25.525": {
@@ -878,7 +832,7 @@
    "bruit": 9.150052088771812,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792188152504,
+   "vu": 1792191750748,
    "t_decl": 0
   }
  },

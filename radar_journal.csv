@@ -64,3 +64,4 @@ CFXUSDT|continuation|0.0648,CFXUSDT,continuation,2026-10-11 09:00,0.06919,0.0573
 AKEUSDT|retournement|0.026897,AKEUSDT,retournement,2026-10-15 00:00,0.027613,0.023591,0.035656999999999994,OBJECTIF,2.0,2.36,20.0,🟢,"{""creux1"": 0.022432, ""creux2"": 0.023989, ""baisse_atr"": 8.6}"
 STXUSDT|continuation|0.414,STXUSDT,continuation,2026-10-12 22:00,0.4405,0.3777,0.5661,EXPIRE,-0.58,0.31,72,🟢,"{""repli_atr"": 2.1, ""age_h4"": 7, ""calme"": true}"
 ETHUSDT|retournement|2466.28,ETHUSDT,retournement,2026-10-16 14:00,2476.39,2410.38,2608.4099999999994,SL,-1.0,0.04,6.0,🟢,"{""creux1"": 2315.0, ""creux2"": 2423.19, ""baisse_atr"": 6.2}"
+XMRUSDT|retournement|545.19,XMRUSDT,retournement,2026-10-14 01:00,545.72,523.14,590.8800000000001,EXPIRE,0.58,1.13,72,🟢,"{""creux1"": 513.24, ""creux2"": 526.27, ""baisse_atr"": 5.6}"
