@@ -1048,7 +1048,7 @@
    "bruit": 9.696403339170445,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792108952052,
+   "vu": 1792112553673,
    "t_decl": 0
   },
   "DEEPUSDT|continuation|0.02534": {
@@ -1084,7 +1084,7 @@
    "bruit": 10.537737054375679,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792108952052,
+   "vu": 1792112553673,
    "t_decl": 0
   },
   "ZKUSDT|continuation|0.018691": {
@@ -1102,7 +1102,7 @@
    "bruit": 9.150052088771812,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792108952052,
+   "vu": 1792112553673,
    "t_decl": 0
   },
   "ARCUSDT|retournement|0.04467": {
@@ -1119,7 +1119,7 @@
    "sym": "ARCUSDT",
    "bruit": 20.050774907529416,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792108952052,
    "t_decl": 0
   },
@@ -1138,7 +1138,7 @@
    "bruit": 7.814634151368105,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792108952052,
+   "vu": 1792112553673,
    "t_decl": 0
   }
  },
