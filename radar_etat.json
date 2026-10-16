@@ -657,7 +657,7 @@
    "bruit": 25.25917803389069,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792185905838,
+   "vu": 1792188152504,
    "t_decl": 0
   },
   "ADAUSDT|retournement|0.2323": {
@@ -806,7 +806,7 @@
    "bruit": 8.00427161014788,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792185905838,
+   "vu": 1792188152504,
    "t_decl": 0
   },
   "VVVUSDT|retournement|25.525": {
@@ -878,7 +878,7 @@
    "bruit": 9.150052088771812,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792185905838,
+   "vu": 1792188152504,
    "t_decl": 0
   }
  },
