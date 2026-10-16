@@ -923,16 +923,16 @@
   "XMRUSDT|continuation|560": {
    "type": "continuation",
    "declenchement": 560.0,
-   "invalidation": 524.190285489406,
-   "atr": 11.39904836864672,
+   "invalidation": 524.2922647759852,
+   "atr": 11.05911741338249,
    "info": {
-    "repli_atr": 2.8,
-    "age_h4": 7,
+    "repli_atr": 2.9,
+    "age_h4": 8,
     "calme": false
    },
    "id": "XMRUSDT|continuation|560",
    "sym": "XMRUSDT",
-   "bruit": 5.138059723993633,
+   "bruit": 5.140337685684416,
    "tick": 0.01,
    "etape": "invalide",
    "vu": 1792069365700,
@@ -1000,16 +1000,16 @@
   "TRXUSDT|retournement|0.3346": {
    "type": "retournement",
    "declenchement": 0.3346,
-   "invalidation": 0.32760475429279495,
-   "atr": 0.001984152357350209,
+   "invalidation": 0.3276322719023758,
+   "atr": 0.0018924269920806089,
    "info": {
     "creux1": 0.3265,
     "creux2": 0.3282,
-    "baisse_atr": 4.5
+    "baisse_atr": 4.8
    },
    "id": "TRXUSDT|retournement|0.3346",
    "sym": "TRXUSDT",
-   "bruit": 1.3349526629384125,
+   "bruit": 1.3396255402969957,
    "tick": 0.0001,
    "etape": "disparu",
    "vu": 1792076553911,
@@ -1036,19 +1036,19 @@
   "WALUSDT|continuation|0.06798": {
    "type": "continuation",
    "declenchement": 0.06798,
-   "invalidation": 0.048830338709450374,
-   "atr": 0.005065537635165421,
+   "invalidation": 0.04875002879926984,
+   "atr": 0.004866570669100532,
    "info": {
-    "repli_atr": 3.5,
-    "age_h4": 5,
+    "repli_atr": 3.7,
+    "age_h4": 6,
     "calme": false
    },
    "id": "WALUSDT|continuation|0.06798",
    "sym": "WALUSDT",
-   "bruit": 7.459012483341971,
+   "bruit": 9.696403339170445,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792105355760,
+   "vu": 1792108952052,
    "t_decl": 0
   },
   "DEEPUSDT|continuation|0.02534": {
@@ -1072,55 +1072,73 @@
   "QUSDT|continuation|0.05588": {
    "type": "continuation",
    "declenchement": 0.05588,
-   "invalidation": 0.04708801407603183,
-   "atr": 0.003739953079893906,
+   "invalidation": 0.04712915594546371,
+   "atr": 0.003602813515120967,
    "info": {
     "repli_atr": 2.1,
-    "age_h4": 4,
+    "age_h4": 5,
     "calme": false
    },
    "id": "QUSDT|continuation|0.05588",
    "sym": "QUSDT",
-   "bruit": 10.524748201223217,
+   "bruit": 10.537737054375679,
    "tick": 1e-05,
-   "etape": "pret",
-   "vu": 1792105355760,
+   "etape": "formation",
+   "vu": 1792108952052,
    "t_decl": 0
   },
   "ZKUSDT|continuation|0.018691": {
    "type": "continuation",
    "declenchement": 0.018691,
-   "invalidation": 0.015660001233229356,
-   "atr": 0.001209995889235477,
+   "invalidation": 0.01567150829957567,
+   "atr": 0.0011716390014144332,
    "info": {
-    "repli_atr": 2.2,
-    "age_h4": 3,
+    "repli_atr": 2.3,
+    "age_h4": 4,
     "calme": false
    },
    "id": "ZKUSDT|continuation|0.018691",
    "sym": "ZKUSDT",
-   "bruit": 9.088406279488057,
+   "bruit": 9.150052088771812,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792105355760,
+   "vu": 1792108952052,
    "t_decl": 0
   },
   "ARCUSDT|retournement|0.04467": {
    "type": "retournement",
    "declenchement": 0.04467,
-   "invalidation": 0.036465349437153106,
-   "atr": 0.005048835209489648,
+   "invalidation": 0.0365456816060377,
+   "atr": 0.004781061313207658,
    "info": {
     "creux1": 0.02201,
     "creux2": 0.03798,
-    "baisse_atr": 8.6
+    "baisse_atr": 9.1
    },
    "id": "ARCUSDT|retournement|0.04467",
    "sym": "ARCUSDT",
-   "bruit": 20.477952067259032,
+   "bruit": 20.050774907529416,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792105355760,
+   "vu": 1792108952052,
+   "t_decl": 0
+  },
+  "ZEREBROUSDT|continuation|0.0547": {
+   "type": "continuation",
+   "declenchement": 0.0547,
+   "invalidation": 0.041702269836984454,
+   "atr": 0.005159100543385131,
+   "info": {
+    "repli_atr": 2.2,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "ZEREBROUSDT|continuation|0.0547",
+   "sym": "ZEREBROUSDT",
+   "bruit": 7.814634151368105,
+   "tick": 1e-05,
+   "etape": "pret",
+   "vu": 1792108952052,
    "t_decl": 0
   }
  },
