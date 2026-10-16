@@ -496,24 +496,6 @@
    "vu": 1791961353014,
    "t_decl": 0
   },
-  "DDOGUSDT|retournement|299.84": {
-   "type": "retournement",
-   "declenchement": 299.84,
-   "invalidation": 281.15628770415907,
-   "atr": 3.3457076528030942,
-   "info": {
-    "creux1": 268.6,
-    "creux2": 282.16,
-    "baisse_atr": 5.0
-   },
-   "id": "DDOGUSDT|retournement|299.84",
-   "sym": "DDOGUSDT",
-   "bruit": 3.5081067985034524,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1791950551724,
-   "t_decl": 0
-  },
   "ARBUSDT|retournement|0.20313": {
    "type": "retournement",
    "declenchement": 0.20313,
@@ -1054,11 +1036,11 @@
   "QUSDT|continuation|0.05588": {
    "type": "continuation",
    "declenchement": 0.05588,
-   "invalidation": 0.04712915594546371,
-   "atr": 0.003602813515120967,
+   "invalidation": 0.04713735906504584,
+   "atr": 0.003575469783180549,
    "info": {
     "repli_atr": 2.1,
-    "age_h4": 5,
+    "age_h4": 6,
     "calme": false
    },
    "id": "QUSDT|continuation|0.05588",
@@ -1066,17 +1048,17 @@
    "bruit": 10.537737054375679,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792119758991,
+   "vu": 1792123353509,
    "t_decl": 0
   },
   "ZKUSDT|continuation|0.018691": {
    "type": "continuation",
    "declenchement": 0.018691,
-   "invalidation": 0.01567150829957567,
-   "atr": 0.0011716390014144332,
+   "invalidation": 0.01568112198372132,
+   "atr": 0.001139593387595601,
    "info": {
     "repli_atr": 2.3,
-    "age_h4": 4,
+    "age_h4": 5,
     "calme": false
    },
    "id": "ZKUSDT|continuation|0.018691",
@@ -1084,7 +1066,7 @@
    "bruit": 9.150052088771812,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792119758991,
+   "vu": 1792123353509,
    "t_decl": 0
   },
   "ARCUSDT|retournement|0.04467": {
@@ -1119,8 +1101,62 @@
    "sym": "ZEREBROUSDT",
    "bruit": 7.814634151368105,
    "tick": 1e-05,
-   "etape": "pret",
+   "etape": "invalide",
    "vu": 1792119758991,
+   "t_decl": 0
+  },
+  "PYTHUSDT|continuation|0.10094": {
+   "type": "continuation",
+   "declenchement": 0.10094,
+   "invalidation": 0.09005994602203819,
+   "atr": 0.005533513259872696,
+   "info": {
+    "repli_atr": 1.7,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "PYTHUSDT|continuation|0.10094",
+   "sym": "PYTHUSDT",
+   "bruit": 7.887214522603218,
+   "tick": 1e-05,
+   "etape": "formation",
+   "vu": 1792123353509,
+   "t_decl": 0
+  },
+  "NILUSDT|retournement|0.09519": {
+   "type": "retournement",
+   "declenchement": 0.09519,
+   "invalidation": 0.0794011706832614,
+   "atr": 0.0062294310557953194,
+   "info": {
+    "creux1": 0.07082,
+    "creux2": 0.08127,
+    "baisse_atr": 4.4
+   },
+   "id": "NILUSDT|retournement|0.09519",
+   "sym": "NILUSDT",
+   "bruit": 15.22915429610505,
+   "tick": 1e-05,
+   "etape": "formation",
+   "vu": 1792123353509,
+   "t_decl": 0
+  },
+  "GRASSUSDT|retournement|0.6954": {
+   "type": "retournement",
+   "declenchement": 0.6954,
+   "invalidation": 0.6370893724369971,
+   "atr": 0.03936875854334294,
+   "info": {
+    "creux1": 0.5904,
+    "creux2": 0.6489,
+    "baisse_atr": 7.7
+   },
+   "id": "GRASSUSDT|retournement|0.6954",
+   "sym": "GRASSUSDT",
+   "bruit": 12.657755562564372,
+   "tick": 0.0001,
+   "etape": "pret",
+   "vu": 1792123353509,
    "t_decl": 0
   }
  },
