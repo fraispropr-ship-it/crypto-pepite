@@ -185,24 +185,6 @@
    "vu": 1791986550363,
    "t_decl": 0
   },
-  "ICPUSDT|retournement|3.54": {
-   "type": "retournement",
-   "declenchement": 3.54,
-   "invalidation": 2.9434706426962793,
-   "atr": 0.10176452434573664,
-   "info": {
-    "creux1": 2.855,
-    "creux2": 2.974,
-    "baisse_atr": 7.4
-   },
-   "id": "ICPUSDT|retournement|3.54",
-   "sym": "ICPUSDT",
-   "bruit": 8.053686381591094,
-   "tick": 0.001,
-   "etape": "disparu",
-   "vu": 1791946954465,
-   "t_decl": 0
-  },
   "AEROUSDT|retournement|0.9918": {
    "type": "retournement",
    "declenchement": 0.9918,
@@ -1084,7 +1066,7 @@
    "bruit": 10.537737054375679,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792116155013,
+   "vu": 1792119758991,
    "t_decl": 0
   },
   "ZKUSDT|continuation|0.018691": {
@@ -1102,7 +1084,7 @@
    "bruit": 9.150052088771812,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792116155013,
+   "vu": 1792119758991,
    "t_decl": 0
   },
   "ARCUSDT|retournement|0.04467": {
@@ -1138,7 +1120,7 @@
    "bruit": 7.814634151368105,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792116155013,
+   "vu": 1792119758991,
    "t_decl": 0
   }
  },
