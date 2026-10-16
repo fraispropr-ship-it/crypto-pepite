@@ -113,24 +113,6 @@
    "vu": 1792011755214,
    "t_decl": 0
   },
-  "ONDOUSDT|retournement|0.5324": {
-   "type": "retournement",
-   "declenchement": 0.5324,
-   "invalidation": 0.44892763165683514,
-   "atr": 0.014907894477216225,
-   "info": {
-    "creux1": 0.4386,
-    "creux2": 0.4534,
-    "baisse_atr": 5.0
-   },
-   "id": "ONDOUSDT|retournement|0.5324",
-   "sym": "ONDOUSDT",
-   "bruit": 8.340865015611593,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1791954155273,
-   "t_decl": 0
-  },
   "1000PEPEUSDT|retournement|0.004329": {
    "type": "retournement",
    "declenchement": 0.004329,
@@ -1047,8 +1029,8 @@
    "sym": "QUSDT",
    "bruit": 10.537737054375679,
    "tick": 1e-05,
-   "etape": "formation",
-   "vu": 1792123353509,
+   "etape": "pret",
+   "vu": 1792126957553,
    "t_decl": 0
   },
   "ZKUSDT|continuation|0.018691": {
@@ -1066,7 +1048,7 @@
    "bruit": 9.150052088771812,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792123353509,
+   "vu": 1792126957553,
    "t_decl": 0
   },
   "ARCUSDT|retournement|0.04467": {
@@ -1120,7 +1102,7 @@
    "bruit": 7.887214522603218,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792123353509,
+   "vu": 1792126957553,
    "t_decl": 0
   },
   "NILUSDT|retournement|0.09519": {
@@ -1138,7 +1120,7 @@
    "bruit": 15.22915429610505,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792123353509,
+   "vu": 1792126957553,
    "t_decl": 0
   },
   "GRASSUSDT|retournement|0.6954": {
@@ -1156,9 +1138,9 @@
    "bruit": 12.657755562564372,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1792123353509,
+   "vu": 1792126957553,
    "t_decl": 0
   }
  },
- "dernier_resume": 124451
+ "dernier_resume": 124453
 }
