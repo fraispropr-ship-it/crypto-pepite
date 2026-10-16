@@ -393,24 +393,6 @@
    "vu": 1792026151772,
    "t_decl": 0
   },
-  "DOTUSDT|retournement|1.2984": {
-   "type": "retournement",
-   "declenchement": 1.2984,
-   "invalidation": 1.1002692628967707,
-   "atr": 0.036102457010764165,
-   "info": {
-    "creux1": 1.0084,
-    "creux2": 1.1111,
-    "baisse_atr": 6.6
-   },
-   "id": "DOTUSDT|retournement|1.2984",
-   "sym": "DOTUSDT",
-   "bruit": 7.552949261236502,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1792008151276,
-   "t_decl": 0
-  },
   "BCHUSDT|retournement|282.32": {
    "type": "retournement",
    "declenchement": 282.32,
@@ -837,7 +819,7 @@
    "bruit": 25.25917803389069,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792180949077,
+   "vu": 1792184553725,
    "t_decl": 0
   },
   "ADAUSDT|retournement|0.2323": {
@@ -986,7 +968,7 @@
    "bruit": 8.00427161014788,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792180949077,
+   "vu": 1792184553725,
    "t_decl": 0
   },
   "VVVUSDT|retournement|25.525": {
@@ -1058,7 +1040,7 @@
    "bruit": 9.150052088771812,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792180949077,
+   "vu": 1792184553725,
    "t_decl": 0
   }
  },
