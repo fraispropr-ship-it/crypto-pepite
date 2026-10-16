@@ -1030,7 +1030,7 @@
    "bruit": 10.537737054375679,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792126957553,
+   "vu": 1792130551839,
    "t_decl": 0
   },
   "ZKUSDT|continuation|0.018691": {
@@ -1047,8 +1047,8 @@
    "sym": "ZKUSDT",
    "bruit": 9.150052088771812,
    "tick": 1e-06,
-   "etape": "formation",
-   "vu": 1792126957553,
+   "etape": "pret",
+   "vu": 1792130551839,
    "t_decl": 0
   },
   "ARCUSDT|retournement|0.04467": {
@@ -1102,7 +1102,7 @@
    "bruit": 7.887214522603218,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792126957553,
+   "vu": 1792130551839,
    "t_decl": 0
   },
   "NILUSDT|retournement|0.09519": {
@@ -1120,7 +1120,7 @@
    "bruit": 15.22915429610505,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792126957553,
+   "vu": 1792130551839,
    "t_decl": 0
   },
   "GRASSUSDT|retournement|0.6954": {
@@ -1138,7 +1138,7 @@
    "bruit": 12.657755562564372,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1792126957553,
+   "vu": 1792130551839,
    "t_decl": 0
   }
  },
