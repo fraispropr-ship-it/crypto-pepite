@@ -66,3 +66,5 @@ STXUSDT|continuation|0.414,STXUSDT,continuation,2026-10-12 22:00,0.4405,0.3777,0
 ETHUSDT|retournement|2466.28,ETHUSDT,retournement,2026-10-16 14:00,2476.39,2410.38,2608.4099999999994,SL,-1.0,0.04,6.0,🟢,"{""creux1"": 2315.0, ""creux2"": 2423.19, ""baisse_atr"": 6.2}"
 XMRUSDT|retournement|545.19,XMRUSDT,retournement,2026-10-14 01:00,545.72,523.14,590.8800000000001,EXPIRE,0.58,1.13,72,🟢,"{""creux1"": 513.24, ""creux2"": 526.27, ""baisse_atr"": 5.6}"
 WLDUSDT|retournement|0.5126,WLDUSDT,retournement,2026-10-16 11:00,0.542,0.4869,0.6522000000000001,SL,-1.0,0.1,33.0,🟢,"{""creux1"": 0.4614, ""creux2"": 0.4928, ""baisse_atr"": 6.4}"
+FLUIDUSDT|continuation|2.2681,FLUIDUSDT,continuation,2026-10-15 00:00,2.4494,1.9067,3.5347999999999993,EXPIRE,-0.27,0.07,72,🟢,"{""repli_atr"": 3.0, ""age_h4"": 3, ""calme"": false}"
+BRKBUSDT|continuation|523.56,BRKBUSDT,continuation,2026-10-15 00:00,527.86,519.32,544.9399999999999,EXPIRE,0.61,0.99,72,🟢,"{""repli_atr"": 2.0, ""age_h4"": 3, ""calme"": true}"
