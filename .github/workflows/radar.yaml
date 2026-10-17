@@ -1,8 +1,14 @@
 name: Radar Alt
 
 # Déclenché toutes les heures par cron-job.org (minute 2), ou à la main (« Run workflow »).
+# À la main : cocher « Envoyer le résumé » pour recevoir le résumé Telegram quoi qu'il arrive.
 on:
   workflow_dispatch:
+    inputs:
+      resume:
+        description: "Envoyer le résumé Telegram maintenant"
+        type: boolean
+        default: false
 
 # Un seul radar à la fois (file d'attente séparée de Crypto Pépite et de la météo)
 concurrency:
@@ -30,7 +36,7 @@ jobs:
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python radar_alt.py
+        run: python radar_alt.py ${{ inputs.resume && '--resume' || '' }}
 
       - name: Enregistrer l'état du radar
         run: |
