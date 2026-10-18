@@ -321,7 +321,7 @@
    "bruit": 8.606599230188932,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792324949558,
+   "vu": 1792328553513,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.20847": {
@@ -925,7 +925,7 @@
    "bruit": 9.861930268226303,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792324949558,
+   "vu": 1792328553513,
    "t_decl": 0
   },
   "OPUSDT|retournement|0.16234": {
@@ -1015,7 +1015,7 @@
    "bruit": 10.195497484903182,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792324949558,
+   "vu": 1792328553513,
    "t_decl": 0
   },
   "ALTUSDT|continuation|0.009775": {
@@ -1033,7 +1033,7 @@
    "bruit": 7.236934766832703,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792324949558,
+   "vu": 1792328553513,
    "t_decl": 0
   }
  },
