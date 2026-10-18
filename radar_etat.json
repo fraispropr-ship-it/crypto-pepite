@@ -1,28 +1,5 @@
 {
  "setups": {
-  "PUFFERUSDT|continuation|0.02952": {
-   "type": "continuation",
-   "declenchement": 0.02952,
-   "invalidation": 0.023346387074171478,
-   "atr": 0.0018120430860950783,
-   "info": {
-    "repli_atr": 3.1,
-    "age_h4": 5,
-    "calme": false
-   },
-   "id": "PUFFERUSDT|continuation|0.02952",
-   "sym": "PUFFERUSDT",
-   "bruit": 11.074838275470483,
-   "tick": 1e-05,
-   "etape": "trop_tard",
-   "vu": 1792044153834,
-   "t_decl": 1792044000000.0,
-   "entree": 0.04845,
-   "sl": 0.02335,
-   "objectif": 0.09865,
-   "feu": "🟢",
-   "date_decl": "2026-10-15 08:00"
-  },
   "QUSDT|continuation|0.05588": {
    "type": "continuation",
    "declenchement": 0.05588,
@@ -498,7 +475,7 @@
    "bruit": 8.606599230188932,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792299752488,
+   "vu": 1792303351449,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.20847": {
@@ -1061,7 +1038,7 @@
    "bruit": 22.73469764000187,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792299752488,
+   "vu": 1792303351449,
    "t_decl": 0
   },
   "BRUSDT|retournement|0.46883": {
@@ -1102,7 +1079,7 @@
    "bruit": 9.861930268226303,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792299752488,
+   "vu": 1792303351449,
    "t_decl": 0
   },
   "OPUSDT|retournement|0.16234": {
@@ -1156,7 +1133,7 @@
    "bruit": 10.984032789090579,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792299752488,
+   "vu": 1792303351449,
    "t_decl": 0
   },
   "EIGENUSDT|continuation|0.2818": {
@@ -1192,7 +1169,7 @@
    "bruit": 10.195497484903182,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792299752488,
+   "vu": 1792303351449,
    "t_decl": 0
   }
  },

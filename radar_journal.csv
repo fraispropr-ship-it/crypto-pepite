@@ -68,3 +68,4 @@ XMRUSDT|retournement|545.19,XMRUSDT,retournement,2026-10-14 01:00,545.72,523.14,
 WLDUSDT|retournement|0.5126,WLDUSDT,retournement,2026-10-16 11:00,0.542,0.4869,0.6522000000000001,SL,-1.0,0.1,33.0,🟢,"{""creux1"": 0.4614, ""creux2"": 0.4928, ""baisse_atr"": 6.4}"
 FLUIDUSDT|continuation|2.2681,FLUIDUSDT,continuation,2026-10-15 00:00,2.4494,1.9067,3.5347999999999993,EXPIRE,-0.27,0.07,72,🟢,"{""repli_atr"": 3.0, ""age_h4"": 3, ""calme"": false}"
 BRKBUSDT|continuation|523.56,BRKBUSDT,continuation,2026-10-15 00:00,527.86,519.32,544.9399999999999,EXPIRE,0.61,0.99,72,🟢,"{""repli_atr"": 2.0, ""age_h4"": 3, ""calme"": true}"
+PUFFERUSDT|continuation|0.02952,PUFFERUSDT,continuation,2026-10-15 08:00,0.04845,0.02335,0.09865,EXPIRE,-0.26,0.19,72,🟢,"{""repli_atr"": 3.1, ""age_h4"": 5, ""calme"": false}"
