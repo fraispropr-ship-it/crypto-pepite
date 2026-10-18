@@ -320,7 +320,7 @@
    "sym": "INJUSDT",
    "bruit": 8.606599230188932,
    "tick": 0.001,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792328553513,
    "t_decl": 0
   },
@@ -746,16 +746,16 @@
   "ASTERUSDT|retournement|0.7205": {
    "type": "retournement",
    "declenchement": 0.7205,
-   "invalidation": 0.696992814152608,
-   "atr": 0.011357286157973165,
+   "invalidation": 0.6871606834362534,
+   "atr": 0.012131055212488558,
    "info": {
     "creux1": 0.6717,
-    "creux2": 0.7004,
-    "baisse_atr": 4.7
+    "creux2": 0.6908,
+    "baisse_atr": 4.4
    },
    "id": "ASTERUSDT|retournement|0.7205",
    "sym": "ASTERUSDT",
-   "bruit": 5.112313880281803,
+   "bruit": 5.038080979715897,
    "tick": 0.0001,
    "etape": "disparu",
    "vu": 1792238549934,
@@ -925,7 +925,7 @@
    "bruit": 9.861930268226303,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792328553513,
+   "vu": 1792332153261,
    "t_decl": 0
   },
   "OPUSDT|retournement|0.16234": {
@@ -1014,7 +1014,7 @@
    "sym": "FILUSDT",
    "bruit": 10.195497484903182,
    "tick": 0.0001,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792328553513,
    "t_decl": 0
   },
@@ -1033,7 +1033,7 @@
    "bruit": 7.236934766832703,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792328553513,
+   "vu": 1792332153261,
    "t_decl": 0
   }
  },
