@@ -1,23 +1,5 @@
 {
  "setups": {
-  "PYTHUSDT|continuation|0.10094": {
-   "type": "continuation",
-   "declenchement": 0.10094,
-   "invalidation": 0.08169831654178503,
-   "atr": 0.004572278194049908,
-   "info": {
-    "repli_atr": 3.9,
-    "age_h4": 11,
-    "calme": true
-   },
-   "id": "PYTHUSDT|continuation|0.10094",
-   "sym": "PYTHUSDT",
-   "bruit": 8.738957400062901,
-   "tick": 1e-05,
-   "etape": "invalide",
-   "vu": 1792173747936,
-   "t_decl": 0
-  },
   "AKEUSDT|continuation|0.037587": {
    "type": "continuation",
    "declenchement": 0.037587,
@@ -943,7 +925,7 @@
    "bruit": 8.332936404659064,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792342947349,
+   "vu": 1792346553362,
    "t_decl": 0
   },
   "BTWUSDT|retournement|2.68734": {
@@ -961,7 +943,7 @@
    "bruit": 13.555458519574925,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792342947349,
+   "vu": 1792346553362,
    "t_decl": 0
   },
   "BRUSDT|retournement|0.53644": {
@@ -979,7 +961,7 @@
    "bruit": 29.014125192671283,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792342947349,
+   "vu": 1792346553362,
    "t_decl": 0
   }
  },
