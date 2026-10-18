@@ -877,11 +877,11 @@
   "QUSDT|continuation|0.15109": {
    "type": "continuation",
    "declenchement": 0.15109,
-   "invalidation": 0.08105777592959193,
-   "atr": 0.019040746901360213,
+   "invalidation": 0.08122386329231303,
+   "atr": 0.01848712235895656,
    "info": {
-    "repli_atr": 3.4,
-    "age_h4": 3,
+    "repli_atr": 3.5,
+    "age_h4": 4,
     "calme": false
    },
    "id": "QUSDT|continuation|0.15109",
@@ -889,7 +889,7 @@
    "bruit": 8.332936404659064,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792350156375,
+   "vu": 1792353756510,
    "t_decl": 0
   },
   "BTWUSDT|retournement|2.68734": {
@@ -906,15 +906,15 @@
    "sym": "BTWUSDT",
    "bruit": 13.555458519574925,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792350156375,
    "t_decl": 0
   },
   "BRUSDT|retournement|0.53644": {
    "type": "retournement",
    "declenchement": 0.53644,
-   "invalidation": 0.3798745463315963,
-   "atr": 0.04781817889467917,
+   "invalidation": 0.3799300090598153,
+   "atr": 0.04763330313394917,
    "info": {
     "creux1": 0.29266,
     "creux2": 0.39422,
@@ -925,9 +925,27 @@
    "bruit": 29.014125192671283,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792350156375,
+   "vu": 1792353756510,
+   "t_decl": 0
+  },
+  "XMRUSDT|continuation|608.75": {
+   "type": "continuation",
+   "declenchement": 608.75,
+   "invalidation": 567.4480599722248,
+   "atr": 15.706466759250844,
+   "info": {
+    "repli_atr": 2.3,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "XMRUSDT|continuation|608.75",
+   "sym": "XMRUSDT",
+   "bruit": 4.919091365992415,
+   "tick": 0.01,
+   "etape": "formation",
+   "vu": 1792353756510,
    "t_decl": 0
   }
  },
- "dernier_resume": 124468
+ "dernier_resume": 124469
 }
