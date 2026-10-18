@@ -498,7 +498,7 @@
    "bruit": 8.606599230188932,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792296150077,
+   "vu": 1792299752488,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.20847": {
@@ -1061,7 +1061,7 @@
    "bruit": 22.73469764000187,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792296150077,
+   "vu": 1792299752488,
    "t_decl": 0
   },
   "BRUSDT|retournement|0.46883": {
@@ -1102,7 +1102,7 @@
    "bruit": 9.861930268226303,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792296150077,
+   "vu": 1792299752488,
    "t_decl": 0
   },
   "OPUSDT|retournement|0.16234": {
@@ -1156,7 +1156,7 @@
    "bruit": 10.984032789090579,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792296150077,
+   "vu": 1792299752488,
    "t_decl": 0
   },
   "EIGENUSDT|continuation|0.2818": {
@@ -1192,9 +1192,9 @@
    "bruit": 10.195497484903182,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792296150077,
+   "vu": 1792299752488,
    "t_decl": 0
   }
  },
- "dernier_resume": 124463
+ "dernier_resume": 124465
 }
