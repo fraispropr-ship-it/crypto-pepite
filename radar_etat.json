@@ -23,24 +23,6 @@
    "feu": "🟢",
    "date_decl": "2026-10-15 08:00"
   },
-  "WALUSDT|continuation|0.06798": {
-   "type": "continuation",
-   "declenchement": 0.06798,
-   "invalidation": 0.04875002879926984,
-   "atr": 0.004866570669100532,
-   "info": {
-    "repli_atr": 3.7,
-    "age_h4": 6,
-    "calme": false
-   },
-   "id": "WALUSDT|continuation|0.06798",
-   "sym": "WALUSDT",
-   "bruit": 9.696403339170445,
-   "tick": 1e-05,
-   "etape": "invalide",
-   "vu": 1792112553673,
-   "t_decl": 0
-  },
   "QUSDT|continuation|0.05588": {
    "type": "continuation",
    "declenchement": 0.05588,
@@ -75,24 +57,6 @@
    "tick": 1e-06,
    "etape": "disparu",
    "vu": 1792134156154,
-   "t_decl": 0
-  },
-  "ARCUSDT|retournement|0.04467": {
-   "type": "retournement",
-   "declenchement": 0.04467,
-   "invalidation": 0.0365456816060377,
-   "atr": 0.004781061313207658,
-   "info": {
-    "creux1": 0.02201,
-    "creux2": 0.03798,
-    "baisse_atr": 9.1
-   },
-   "id": "ARCUSDT|retournement|0.04467",
-   "sym": "ARCUSDT",
-   "bruit": 20.050774907529416,
-   "tick": 1e-05,
-   "etape": "invalide",
-   "vu": 1792108952052,
    "t_decl": 0
   },
   "ZEREBROUSDT|continuation|0.0547": {
@@ -552,7 +516,7 @@
    "bruit": 8.606599230188932,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792281747684,
+   "vu": 1792285354198,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.20847": {
@@ -1115,7 +1079,7 @@
    "bruit": 22.73469764000187,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792281747684,
+   "vu": 1792285354198,
    "t_decl": 0
   },
   "BRUSDT|retournement|0.46883": {
@@ -1156,7 +1120,7 @@
    "bruit": 9.861930268226303,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792281747684,
+   "vu": 1792285354198,
    "t_decl": 0
   },
   "OPUSDT|retournement|0.16234": {
@@ -1192,7 +1156,7 @@
    "bruit": 25.730172335702242,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792281747684,
+   "vu": 1792285354198,
    "t_decl": 0
   },
   "SIRENUSDT|continuation|0.04137": {
@@ -1210,7 +1174,7 @@
    "bruit": 10.984032789090579,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792281747684,
+   "vu": 1792285354198,
    "t_decl": 0
   },
   "EIGENUSDT|continuation|0.2818": {
@@ -1228,7 +1192,7 @@
    "bruit": 9.398387465325646,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792281747684,
+   "vu": 1792285354198,
    "t_decl": 0
   }
  },
