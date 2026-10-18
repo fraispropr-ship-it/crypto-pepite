@@ -36,42 +36,6 @@
    "vu": 1792234947370,
    "t_decl": 0
   },
-  "ZEREBROUSDT|continuation|0.0592": {
-   "type": "continuation",
-   "declenchement": 0.0592,
-   "invalidation": 0.03342194132244678,
-   "atr": 0.007293528925177397,
-   "info": {
-    "repli_atr": 3.2,
-    "age_h4": 3,
-    "calme": false
-   },
-   "id": "ZEREBROUSDT|continuation|0.0592",
-   "sym": "ZEREBROUSDT",
-   "bruit": 7.814634151368105,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1792177352121,
-   "t_decl": 0
-  },
-  "FILUSDT|retournement|1.2007": {
-   "type": "retournement",
-   "declenchement": 1.2007,
-   "invalidation": 1.1022382729362965,
-   "atr": 0.04887242354567814,
-   "info": {
-    "creux1": 1.0012,
-    "creux2": 1.1169,
-    "baisse_atr": 5.7
-   },
-   "id": "FILUSDT|retournement|1.2007",
-   "sym": "FILUSDT",
-   "bruit": 9.095776707941107,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1792177352121,
-   "t_decl": 0
-  },
   "ZKUSDT|continuation|0.018847": {
    "type": "continuation",
    "declenchement": 0.018847,
@@ -925,7 +889,7 @@
    "bruit": 8.332936404659064,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792346553362,
+   "vu": 1792350156375,
    "t_decl": 0
   },
   "BTWUSDT|retournement|2.68734": {
@@ -943,7 +907,7 @@
    "bruit": 13.555458519574925,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792346553362,
+   "vu": 1792350156375,
    "t_decl": 0
   },
   "BRUSDT|retournement|0.53644": {
@@ -961,7 +925,7 @@
    "bruit": 29.014125192671283,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792346553362,
+   "vu": 1792350156375,
    "t_decl": 0
   }
  },
