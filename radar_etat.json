@@ -889,7 +889,7 @@
    "bruit": 8.332936404659064,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792353756510,
+   "vu": 1792354199540,
    "t_decl": 0
   },
   "BTWUSDT|retournement|2.68734": {
@@ -925,7 +925,7 @@
    "bruit": 29.014125192671283,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792353756510,
+   "vu": 1792354199540,
    "t_decl": 0
   },
   "XMRUSDT|continuation|608.75": {
@@ -943,7 +943,7 @@
    "bruit": 4.919091365992415,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792353756510,
+   "vu": 1792354199540,
    "t_decl": 0
   }
  },
