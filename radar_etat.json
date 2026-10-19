@@ -108,24 +108,6 @@
    "vu": 1792328553513,
    "t_decl": 0
   },
-  "HBARUSDT|retournement|0.08711": {
-   "type": "retournement",
-   "declenchement": 0.08711,
-   "invalidation": 0.08140230500389387,
-   "atr": 0.002092316653687145,
-   "info": {
-    "creux1": 0.08,
-    "creux2": 0.08203,
-    "baisse_atr": 7.3
-   },
-   "id": "HBARUSDT|retournement|0.08711",
-   "sym": "HBARUSDT",
-   "bruit": 7.077884914889323,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1792252953942,
-   "t_decl": 0
-  },
   "BCHUSDT|retournement|284.39": {
    "type": "retournement",
    "declenchement": 284.39,
@@ -397,8 +379,8 @@
    "sym": "XMRUSDT",
    "bruit": 4.761811968948134,
    "tick": 0.01,
-   "etape": "formation",
-   "vu": 1792425749386,
+   "etape": "pret",
+   "vu": 1792429349845,
    "t_decl": 0
   },
   "HBARUSDT|retournement|0.08974": {
@@ -416,7 +398,7 @@
    "bruit": 7.214538113095674,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792425749386,
+   "vu": 1792429349845,
    "t_decl": 0
   },
   "SANDUSDT|retournement|0.06773": {
@@ -434,7 +416,7 @@
    "bruit": 11.199412032726222,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792425749386,
+   "vu": 1792429349845,
    "t_decl": 0
   },
   "ERAUSDT|retournement|0.07996": {
@@ -452,7 +434,7 @@
    "bruit": 9.779628735618697,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792425749386,
+   "vu": 1792429349845,
    "t_decl": 0
   },
   "BTWUSDT|continuation|2.68734": {
@@ -511,7 +493,7 @@
    "bruit": 6.944845180565001,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792425749386,
+   "vu": 1792429349845,
    "t_decl": 0
   },
   "ARBUSDT|retournement|0.20239": {
@@ -529,7 +511,7 @@
    "bruit": 9.381235684068631,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792425749386,
+   "vu": 1792429349845,
    "t_decl": 0
   },
   "CRVUSDT|retournement|0.3661": {
@@ -588,7 +570,7 @@
    "bruit": 10.569805228501691,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792425749386,
+   "vu": 1792429349845,
    "t_decl": 0
   }
  },
