@@ -360,42 +360,6 @@
    "vu": 1792249348738,
    "t_decl": 0
   },
-  "CRVUSDT|retournement|0.3661": {
-   "type": "retournement",
-   "declenchement": 0.3661,
-   "invalidation": 0.3239283080268758,
-   "atr": 0.010905639910414027,
-   "info": {
-    "creux1": 0.3097,
-    "creux2": 0.3272,
-    "baisse_atr": 7.0
-   },
-   "id": "CRVUSDT|retournement|0.3661",
-   "sym": "CRVUSDT",
-   "bruit": 8.351780662863614,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1792245752291,
-   "t_decl": 0
-  },
-  "SEIUSDT|retournement|0.06758": {
-   "type": "retournement",
-   "declenchement": 0.06758,
-   "invalidation": 0.0623249876023418,
-   "atr": 0.002083374658860684,
-   "info": {
-    "creux1": 0.05767,
-    "creux2": 0.06295,
-    "baisse_atr": 6.6
-   },
-   "id": "SEIUSDT|retournement|0.06758",
-   "sym": "SEIUSDT",
-   "bruit": 7.473474828560501,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1792245752291,
-   "t_decl": 0
-  },
   "BCHUSDT|retournement|284.39": {
    "type": "retournement",
    "declenchement": 284.39,
@@ -722,7 +686,7 @@
    "bruit": 4.761811968948134,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792414957613,
+   "vu": 1792418552629,
    "t_decl": 0
   },
   "HBARUSDT|retournement|0.08974": {
@@ -740,7 +704,7 @@
    "bruit": 7.214538113095674,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792414957613,
+   "vu": 1792418552629,
    "t_decl": 0
   },
   "SANDUSDT|retournement|0.06773": {
@@ -758,7 +722,7 @@
    "bruit": 11.199412032726222,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792414957613,
+   "vu": 1792418552629,
    "t_decl": 0
   },
   "ERAUSDT|retournement|0.07996": {
@@ -776,7 +740,7 @@
    "bruit": 9.779628735618697,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792414957613,
+   "vu": 1792418552629,
    "t_decl": 0
   },
   "BTWUSDT|continuation|2.68734": {
@@ -811,8 +775,8 @@
    "sym": "BRUSDT",
    "bruit": 28.558103946317328,
    "tick": 1e-05,
-   "etape": "pret",
-   "vu": 1792414957613,
+   "etape": "formation",
+   "vu": 1792418552629,
    "t_decl": 0
   },
   "ELSAUSDT|continuation|0.07536": {
@@ -830,7 +794,7 @@
    "bruit": 6.944845180565001,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792414957613,
+   "vu": 1792418552629,
    "t_decl": 0
   },
   "ARBUSDT|retournement|0.20239": {
@@ -847,8 +811,8 @@
    "sym": "ARBUSDT",
    "bruit": 9.381235684068631,
    "tick": 1e-05,
-   "etape": "pret",
-   "vu": 1792414957613,
+   "etape": "formation",
+   "vu": 1792418552629,
    "t_decl": 0
   }
  },
