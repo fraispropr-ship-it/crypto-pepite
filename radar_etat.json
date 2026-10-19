@@ -486,24 +486,6 @@
    "vu": 1792270950963,
    "t_decl": 0
   },
-  "BASEDUSDT|retournement|0.0568": {
-   "type": "retournement",
-   "declenchement": 0.0568,
-   "invalidation": 0.046342694949475995,
-   "atr": 0.003224350168413351,
-   "info": {
-    "creux1": 0.04039,
-    "creux2": 0.04731,
-    "baisse_atr": 9.2
-   },
-   "id": "BASEDUSDT|retournement|0.0568",
-   "sym": "BASEDUSDT",
-   "bruit": 10.9753389202982,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1792242154165,
-   "t_decl": 0
-  },
   "EPICUSDT|retournement|0.3328": {
    "type": "retournement",
    "declenchement": 0.3328,
@@ -739,8 +721,8 @@
    "sym": "XMRUSDT",
    "bruit": 4.761811968948134,
    "tick": 0.01,
-   "etape": "formation",
-   "vu": 1792411353778,
+   "etape": "pret",
+   "vu": 1792414957613,
    "t_decl": 0
   },
   "HBARUSDT|retournement|0.08974": {
@@ -758,7 +740,7 @@
    "bruit": 7.214538113095674,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792411353778,
+   "vu": 1792414957613,
    "t_decl": 0
   },
   "SANDUSDT|retournement|0.06773": {
@@ -776,7 +758,7 @@
    "bruit": 11.199412032726222,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792411353778,
+   "vu": 1792414957613,
    "t_decl": 0
   },
   "ERAUSDT|retournement|0.07996": {
@@ -794,7 +776,7 @@
    "bruit": 9.779628735618697,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792411353778,
+   "vu": 1792414957613,
    "t_decl": 0
   },
   "BTWUSDT|continuation|2.68734": {
@@ -830,7 +812,7 @@
    "bruit": 28.558103946317328,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792411353778,
+   "vu": 1792414957613,
    "t_decl": 0
   },
   "ELSAUSDT|continuation|0.07536": {
@@ -848,7 +830,7 @@
    "bruit": 6.944845180565001,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792411353778,
+   "vu": 1792414957613,
    "t_decl": 0
   },
   "ARBUSDT|retournement|0.20239": {
@@ -865,8 +847,8 @@
    "sym": "ARBUSDT",
    "bruit": 9.381235684068631,
    "tick": 1e-05,
-   "etape": "formation",
-   "vu": 1792411353778,
+   "etape": "pret",
+   "vu": 1792414957613,
    "t_decl": 0
   }
  },
