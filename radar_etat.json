@@ -36,24 +36,6 @@
    "vu": 1792234947370,
    "t_decl": 0
   },
-  "ZKUSDT|continuation|0.018847": {
-   "type": "continuation",
-   "declenchement": 0.018847,
-   "invalidation": 0.015781413415376377,
-   "atr": 0.0010619552820787404,
-   "info": {
-    "repli_atr": 2.6,
-    "age_h4": 5,
-    "calme": true
-   },
-   "id": "ZKUSDT|continuation|0.018847",
-   "sym": "ZKUSDT",
-   "bruit": 9.686661161698348,
-   "tick": 1e-06,
-   "etape": "disparu",
-   "vu": 1792216950513,
-   "t_decl": 0
-  },
   "ETHUSDT|retournement|2492.93": {
    "type": "retournement",
    "declenchement": 2492.93,
@@ -889,7 +871,7 @@
    "bruit": 4.761811968948134,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792386154320,
+   "vu": 1792389754928,
    "t_decl": 0
   },
   "HBARUSDT|retournement|0.08974": {
@@ -907,7 +889,7 @@
    "bruit": 7.214538113095674,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792386154320,
+   "vu": 1792389754928,
    "t_decl": 0
   },
   "SANDUSDT|retournement|0.06773": {
@@ -925,7 +907,7 @@
    "bruit": 11.199412032726222,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792386154320,
+   "vu": 1792389754928,
    "t_decl": 0
   },
   "ERAUSDT|retournement|0.07996": {
@@ -943,7 +925,7 @@
    "bruit": 9.779628735618697,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792386154320,
+   "vu": 1792389754928,
    "t_decl": 0
   }
  },
