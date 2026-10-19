@@ -889,7 +889,7 @@
    "bruit": 4.761811968948134,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792382555020,
+   "vu": 1792386154320,
    "t_decl": 0
   },
   "HBARUSDT|retournement|0.08974": {
@@ -907,7 +907,7 @@
    "bruit": 7.214538113095674,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792382555020,
+   "vu": 1792386154320,
    "t_decl": 0
   },
   "SANDUSDT|retournement|0.06773": {
@@ -925,7 +925,7 @@
    "bruit": 11.199412032726222,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792382555020,
+   "vu": 1792386154320,
    "t_decl": 0
   },
   "ERAUSDT|retournement|0.07996": {
@@ -943,9 +943,9 @@
    "bruit": 9.779628735618697,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792382555020,
+   "vu": 1792386154320,
    "t_decl": 0
   }
  },
- "dernier_resume": 124469
+ "dernier_resume": 124471
 }
