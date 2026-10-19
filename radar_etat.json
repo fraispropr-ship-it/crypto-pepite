@@ -57,8 +57,8 @@
   "ETHUSDT|retournement|2492.93": {
    "type": "retournement",
    "declenchement": 2492.93,
-   "invalidation": 2315.5851174387067,
-   "atr": 40.21627520431149,
+   "invalidation": 2315.6975392388895,
+   "atr": 39.84153587036825,
    "info": {
     "creux1": 2315.0,
     "creux2": 2327.65,
@@ -93,16 +93,16 @@
   "NEARUSDT|retournement|5.437": {
    "type": "retournement",
    "declenchement": 5.437,
-   "invalidation": 4.7041079470366185,
-   "atr": 0.20630684321127243,
+   "invalidation": 4.548527866812117,
+   "atr": 0.21824044395961006,
    "info": {
     "creux1": 4.52,
-    "creux2": 4.766,
-    "baisse_atr": 7.4
+    "creux2": 4.614,
+    "baisse_atr": 7.0
    },
    "id": "NEARUSDT|retournement|5.437",
    "sym": "NEARUSDT",
-   "bruit": 11.00488739116583,
+   "bruit": 10.569805228501691,
    "tick": 0.001,
    "etape": "disparu",
    "vu": 1792249348738,
@@ -476,16 +476,16 @@
   "CRVUSDT|retournement|0.3661": {
    "type": "retournement",
    "declenchement": 0.3661,
-   "invalidation": 0.3362300343919371,
-   "atr": 0.010899885360209652,
+   "invalidation": 0.32377679452973285,
+   "atr": 0.011410684900890446,
    "info": {
     "creux1": 0.3097,
-    "creux2": 0.3395,
-    "baisse_atr": 7.0
+    "creux2": 0.3272,
+    "baisse_atr": 6.7
    },
    "id": "CRVUSDT|retournement|0.3661",
    "sym": "CRVUSDT",
-   "bruit": 8.587668739342964,
+   "bruit": 8.351780662863614,
    "tick": 0.0001,
    "etape": "disparu",
    "vu": 1792245752291,
@@ -512,12 +512,12 @@
   "BCHUSDT|retournement|284.39": {
    "type": "retournement",
    "declenchement": 284.39,
-   "invalidation": 262.013943969602,
-   "atr": 6.220186767993274,
+   "invalidation": 262.06687669677405,
+   "atr": 6.04374434408641,
    "info": {
     "creux1": 255.73,
     "creux2": 263.88,
-    "baisse_atr": 5.3
+    "baisse_atr": 5.5
    },
    "id": "BCHUSDT|retournement|284.39",
    "sym": "BCHUSDT",
@@ -602,12 +602,12 @@
   "ARBUSDT|retournement|0.20239": {
    "type": "retournement",
    "declenchement": 0.20239,
-   "invalidation": 0.17287297474350538,
-   "atr": 0.006356750854982019,
+   "invalidation": 0.17283069124317466,
+   "atr": 0.006497695856084464,
    "info": {
     "creux1": 0.16941,
     "creux2": 0.17478,
-    "baisse_atr": 5.3
+    "baisse_atr": 5.2
    },
    "id": "ARBUSDT|retournement|0.20239",
    "sym": "ARBUSDT",
@@ -834,19 +834,19 @@
    "sym": "QUSDT",
    "bruit": 11.572373312915266,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792378952943,
    "t_decl": 0
   },
   "BTWUSDT|retournement|2.68734": {
    "type": "retournement",
    "declenchement": 2.68734,
-   "invalidation": 2.1152172721849785,
-   "atr": 0.23364242605007104,
+   "invalidation": 2.1160956820659456,
+   "atr": 0.23071439311351488,
    "info": {
     "creux1": 1.60815,
     "creux2": 2.18531,
-    "baisse_atr": 4.9
+    "baisse_atr": 5.0
    },
    "id": "BTWUSDT|retournement|2.68734",
    "sym": "BTWUSDT",
@@ -877,11 +877,11 @@
   "XMRUSDT|continuation|608.75": {
    "type": "continuation",
    "declenchement": 608.75,
-   "invalidation": 567.2666991339369,
-   "atr": 16.311002886876874,
+   "invalidation": 567.3025075825906,
+   "atr": 16.191641391364744,
    "info": {
-    "repli_atr": 2.2,
-    "age_h4": 4,
+    "repli_atr": 2.3,
+    "age_h4": 5,
     "calme": false
    },
    "id": "XMRUSDT|continuation|608.75",
@@ -889,25 +889,61 @@
    "bruit": 4.761811968948134,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792378952943,
+   "vu": 1792382555020,
    "t_decl": 0
   },
   "HBARUSDT|retournement|0.08974": {
    "type": "retournement",
    "declenchement": 0.08974,
-   "invalidation": 0.08053634436905203,
-   "atr": 0.0027455187698265425,
+   "invalidation": 0.08055896270519157,
+   "atr": 0.0026701243160281176,
    "info": {
     "creux1": 0.08,
     "creux2": 0.08136,
-    "baisse_atr": 5.5
+    "baisse_atr": 5.7
    },
    "id": "HBARUSDT|retournement|0.08974",
    "sym": "HBARUSDT",
    "bruit": 7.214538113095674,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792378952943,
+   "vu": 1792382555020,
+   "t_decl": 0
+  },
+  "SANDUSDT|retournement|0.06773": {
+   "type": "retournement",
+   "declenchement": 0.06773,
+   "invalidation": 0.05520230020983591,
+   "atr": 0.0032923326338803035,
+   "info": {
+    "creux1": 0.05272,
+    "creux2": 0.05619,
+    "baisse_atr": 5.2
+   },
+   "id": "SANDUSDT|retournement|0.06773",
+   "sym": "SANDUSDT",
+   "bruit": 11.199412032726222,
+   "tick": 1e-05,
+   "etape": "formation",
+   "vu": 1792382555020,
+   "t_decl": 0
+  },
+  "ERAUSDT|retournement|0.07996": {
+   "type": "retournement",
+   "declenchement": 0.07996,
+   "invalidation": 0.062121496691395814,
+   "atr": 0.00452834436201393,
+   "info": {
+    "creux1": 0.05633,
+    "creux2": 0.06348,
+    "baisse_atr": 7.6
+   },
+   "id": "ERAUSDT|retournement|0.07996",
+   "sym": "ERAUSDT",
+   "bruit": 9.779628735618697,
+   "tick": 1e-05,
+   "etape": "formation",
+   "vu": 1792382555020,
    "t_decl": 0
   }
  },
