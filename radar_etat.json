@@ -347,24 +347,6 @@
    "vu": 1792249348738,
    "t_decl": 0
   },
-  "APTUSDT|retournement|0.89": {
-   "type": "retournement",
-   "declenchement": 0.89,
-   "invalidation": 0.7656052308116866,
-   "atr": 0.027649230627711508,
-   "info": {
-    "creux1": 0.7494,
-    "creux2": 0.7739,
-    "baisse_atr": 7.8
-   },
-   "id": "APTUSDT|retournement|0.89",
-   "sym": "APTUSDT",
-   "bruit": 9.328187993584889,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1792220551310,
-   "t_decl": 0
-  },
   "AEROUSDT|retournement|0.9807": {
    "type": "retournement",
    "declenchement": 0.9807,
@@ -871,7 +853,7 @@
    "bruit": 4.761811968948134,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792389754928,
+   "vu": 1792393352916,
    "t_decl": 0
   },
   "HBARUSDT|retournement|0.08974": {
@@ -889,7 +871,7 @@
    "bruit": 7.214538113095674,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792389754928,
+   "vu": 1792393352916,
    "t_decl": 0
   },
   "SANDUSDT|retournement|0.06773": {
@@ -907,7 +889,7 @@
    "bruit": 11.199412032726222,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792389754928,
+   "vu": 1792393352916,
    "t_decl": 0
   },
   "ERAUSDT|retournement|0.07996": {
@@ -925,7 +907,7 @@
    "bruit": 9.779628735618697,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792389754928,
+   "vu": 1792393352916,
    "t_decl": 0
   }
  },
