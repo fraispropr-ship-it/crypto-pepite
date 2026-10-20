@@ -218,7 +218,7 @@
    "bruit": 7.267363056021765,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792476157134,
+   "vu": 1792479748481,
    "t_decl": 0
   },
   "SANDUSDT|retournement|0.06773": {
@@ -236,7 +236,7 @@
    "bruit": 10.993420673284694,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792476157134,
+   "vu": 1792479748481,
    "t_decl": 0
   },
   "ERAUSDT|retournement|0.07996": {
@@ -254,7 +254,7 @@
    "bruit": 10.637400398329515,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792476157134,
+   "vu": 1792479748481,
    "t_decl": 0
   },
   "BTWUSDT|continuation|2.68734": {
@@ -390,7 +390,7 @@
    "bruit": 10.558972079661869,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792476157134,
+   "vu": 1792479748481,
    "t_decl": 0
   },
   "SOLUSDT|retournement|106.15": {
@@ -408,7 +408,7 @@
    "bruit": 4.583558281215594,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792476157134,
+   "vu": 1792479748481,
    "t_decl": 0
   },
   "ZECUSDT|retournement|1193.23": {
@@ -426,7 +426,7 @@
    "bruit": 10.14184715459321,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792476157134,
+   "vu": 1792479748481,
    "t_decl": 0
   },
   "XRPUSDT|retournement|1.3211": {
@@ -498,7 +498,7 @@
    "bruit": 5.921556320743543,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792476157134,
+   "vu": 1792479748481,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2492.93": {
@@ -516,7 +516,7 @@
    "bruit": 3.8774304168327394,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792476157134,
+   "vu": 1792479748481,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.19645": {
@@ -534,7 +534,7 @@
    "bruit": 11.309742935220347,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792476157134,
+   "vu": 1792479748481,
    "t_decl": 0
   },
   "HYPEUSDT|retournement|80.398": {
@@ -551,8 +551,8 @@
    "sym": "HYPEUSDT",
    "bruit": 5.390449357249624,
    "tick": 0.001,
-   "etape": "formation",
-   "vu": 1792476157134,
+   "etape": "pret",
+   "vu": 1792479748481,
    "t_decl": 0
   },
   "1000PEPEUSDT|retournement|0.004179": {
@@ -855,7 +855,7 @@
    "bruit": 8.571202942530462,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792476157134,
+   "vu": 1792479748481,
    "t_decl": 0
   }
  },
