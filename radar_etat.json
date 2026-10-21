@@ -1361,7 +1361,7 @@
    "bruit": 4.857043486363625,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792616550033,
+   "vu": 1792620152285,
    "t_decl": 0
   },
   "DOTUSDT|retournement|1.1868": {
@@ -1638,7 +1638,7 @@
    "bruit": 8.222558726113476,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792616550033,
+   "vu": 1792620152285,
    "t_decl": 0
   },
   "AEROUSDT|retournement|0.894": {
@@ -1656,7 +1656,7 @@
    "bruit": 8.120891176309133,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792616550033,
+   "vu": 1792620152285,
    "t_decl": 0
   },
   "WLDUSDT|continuation|0.5978": {
@@ -1674,7 +1674,7 @@
    "bruit": 9.008068180421665,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792616550033,
+   "vu": 1792620152285,
    "t_decl": 0
   },
   "NBISUSDT|retournement|182.28": {
@@ -1692,7 +1692,7 @@
    "bruit": 8.981950963115633,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792616550033,
+   "vu": 1792620152285,
    "t_decl": 0
   }
  },
