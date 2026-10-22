@@ -427,10 +427,10 @@ def resume(etat, prix, ctx, nouveaux_decl):
                if s["etape"] in ("declenche", "trop_tard") and time.time() * 1000 - s["t_decl"] < 4 * H1 * 1.05]
     out = [f"📡 <b>RADAR ALT — {maintenant:%d/%m %H:%M}</b>", "", escape(ctx["texte"]), ""]
     out.append(f"🎯 <b>Prêts</b> (à moins de {PRET_ATR:g} ATR du déclenchement) : {len(prets)}")
-    out += [ligne_setup(s, prix.get(s["sym"])) for s in prets[:MAX_LISTE]] or ["aucun"]
+    out += ["\n\n".join(ligne_setup(s, prix.get(s["sym"])) for s in prets[:MAX_LISTE])] if prets else ["aucun"]
     out.append("")
     out.append(f"👀 <b>En formation</b> : {len(form)}")
-    out += [ligne_setup(s, prix.get(s["sym"])) for s in form[:MAX_LISTE]] or ["aucun"]
+    out += ["\n\n".join(ligne_setup(s, prix.get(s["sym"])) for s in form[:MAX_LISTE])] if form else ["aucun"]
     if len(form) > MAX_LISTE:
         out.append(f"… et {len(form) - MAX_LISTE} autres")
     if recents:
