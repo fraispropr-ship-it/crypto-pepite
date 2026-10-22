@@ -736,7 +736,7 @@
    "sym": "ONDOUSDT",
    "bruit": 8.123721969262897,
    "tick": 0.0001,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1792584151653,
    "t_decl": 1792587600000.0,
    "entree": 0.4623,
@@ -813,7 +813,7 @@
    "sym": "LINKUSDT",
    "bruit": 5.808135599740845,
    "tick": 0.001,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1792591349072,
    "t_decl": 1792594800000.0,
    "entree": 12.545,
@@ -1067,7 +1067,7 @@
    "sym": "1000PEPEUSDT",
    "bruit": 6.991777667057387,
    "tick": 1e-06,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1792591349072,
    "t_decl": 1792594800000.0,
    "entree": 0.004707,
@@ -1144,7 +1144,7 @@
    "sym": "ZECUSDT",
    "bruit": 9.465680940331978,
    "tick": 0.01,
-   "etape": "trop_tard",
+   "etape": "termine",
    "vu": 1792584151653,
    "t_decl": 1792587600000.0,
    "entree": 1296.7,
@@ -1398,7 +1398,7 @@
    "sym": "1000PEPEUSDT",
    "bruit": 6.894715688044111,
    "tick": 1e-06,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792656155542,
    "t_decl": 0
   },
@@ -1417,7 +1417,7 @@
    "bruit": 10.723429794057015,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792656155542,
+   "vu": 1792659754570,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.3822": {
@@ -1458,7 +1458,7 @@
    "bruit": 8.873373314131797,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792656155542,
+   "vu": 1792659754570,
    "t_decl": 0
   },
   "ZECUSDT|continuation|1368.33": {
@@ -1475,7 +1475,7 @@
    "sym": "ZECUSDT",
    "bruit": 9.051377611061794,
    "tick": 0.01,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792656155542,
    "t_decl": 0
   },
@@ -1494,7 +1494,7 @@
    "bruit": 8.65837503306408,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792656155542,
+   "vu": 1792659754570,
    "t_decl": 0
   },
   "BNBUSDT|continuation|751.58": {
@@ -1511,7 +1511,7 @@
    "sym": "BNBUSDT",
    "bruit": 2.800068647104711,
    "tick": 0.01,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792656155542,
    "t_decl": 0
   },
@@ -1530,7 +1530,7 @@
    "bruit": 11.554687021770876,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792656155542,
+   "vu": 1792659754570,
    "t_decl": 0
   }
  },

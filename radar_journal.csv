@@ -81,3 +81,7 @@ SOLUSDT|retournement|108.1,SOLUSDT,retournement,2026-10-21 18:00,108.41,104.76,1
 SUIUSDT|retournement|1.0434,SUIUSDT,retournement,2026-10-21 17:00,1.0436,0.9986,1.1336000000000002,SL,-1.0,0.27,15.0,🟢,"{""creux1"": 0.9365, ""creux2"": 1.006, ""baisse_atr"": 5.4}"
 ADAUSDT|retournement|0.2266,ADAUSDT,retournement,2026-10-21 17:00,0.2271,0.2183,0.2447,SL,-1.0,0.37,15.0,🟢,"{""creux1"": 0.2108, ""creux2"": 0.2196, ""baisse_atr"": 6.3}"
 DOTUSDT|retournement|1.1806,DOTUSDT,retournement,2026-10-20 17:00,1.1834,1.1136,1.3230000000000002,SL,-1.0,0.12,40.0,🟢,"{""creux1"": 1.0446, ""creux2"": 1.1248, ""baisse_atr"": 4.5}"
+ONDOUSDT|retournement|0.4619,ONDOUSDT,retournement,2026-10-21 15:00,0.4623,0.4378,0.5112999999999999,SL,-1.0,0.41,20.0,🟢,"{""creux1"": 0.4097, ""creux2"": 0.4414, ""baisse_atr"": 5.6}"
+LINKUSDT|retournement|12.462,LINKUSDT,retournement,2026-10-21 17:00,12.545,12.029,13.577,SL,-1.0,0.5,18.0,🟢,"{""creux1"": 11.508, ""creux2"": 12.099, ""baisse_atr"": 6.8}"
+1000PEPEUSDT|continuation|0.004667,1000PEPEUSDT,continuation,2026-10-21 17:00,0.004707,0.004421,0.005279000000000002,SL,-1.0,0.1,18.0,🟢,"{""repli_atr"": 1.7, ""age_h4"": 4, ""calme"": false}"
+ZECUSDT|retournement|1296.39,ZECUSDT,retournement,2026-10-21 15:00,1296.7,1236.87,1416.3600000000004,SL,-1.0,1.2,20.0,🟢,"{""creux1"": 1048.29, ""creux2"": 1250.83, ""baisse_atr"": 5.1}"
