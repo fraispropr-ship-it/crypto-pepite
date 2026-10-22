@@ -1584,7 +1584,7 @@
    "bruit": 8.65837503306408,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792630953610,
+   "vu": 1792634557303,
    "t_decl": 0
   },
   "AEROUSDT|retournement|0.894": {
@@ -1619,8 +1619,8 @@
    "sym": "WLDUSDT",
    "bruit": 8.874456105686836,
    "tick": 0.0001,
-   "etape": "pret",
-   "vu": 1792630953610,
+   "etape": "formation",
+   "vu": 1792634557303,
    "t_decl": 0
   },
   "NBISUSDT|retournement|182.28": {
@@ -1638,7 +1638,7 @@
    "bruit": 9.522336856700134,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792630953610,
+   "vu": 1792634557303,
    "t_decl": 0
   },
   "BCHUSDT|continuation|290.55": {
@@ -1655,8 +1655,8 @@
    "sym": "BCHUSDT",
    "bruit": 5.55954018002998,
    "tick": 0.01,
-   "etape": "pret",
-   "vu": 1792630953610,
+   "etape": "formation",
+   "vu": 1792634557303,
    "t_decl": 0
   }
  },
