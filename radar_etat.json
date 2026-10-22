@@ -105,24 +105,6 @@
    "feu": "🟢",
    "date_decl": "2026-10-19 18:00"
   },
-  "NEARUSDT|retournement|5.437": {
-   "type": "retournement",
-   "declenchement": 5.437,
-   "invalidation": 4.552073940118409,
-   "atr": 0.20642019960530228,
-   "info": {
-    "creux1": 4.52,
-    "creux2": 4.614,
-    "baisse_atr": 7.4
-   },
-   "id": "NEARUSDT|retournement|5.437",
-   "sym": "NEARUSDT",
-   "bruit": 10.446881596984165,
-   "tick": 0.001,
-   "etape": "disparu",
-   "vu": 1792490556140,
-   "t_decl": 0
-  },
   "SOLUSDT|retournement|106.15": {
    "type": "retournement",
    "declenchement": 106.15,
@@ -1416,7 +1398,7 @@
    "sym": "ARIAUSDT",
    "bruit": 10.723429794057015,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792659754570,
    "t_decl": 0
   },
@@ -1458,7 +1440,7 @@
    "bruit": 8.873373314131797,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792659754570,
+   "vu": 1792663356266,
    "t_decl": 0
   },
   "ZECUSDT|continuation|1368.33": {
@@ -1494,7 +1476,7 @@
    "bruit": 8.65837503306408,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792659754570,
+   "vu": 1792663356266,
    "t_decl": 0
   },
   "BNBUSDT|continuation|751.58": {
@@ -1530,7 +1512,7 @@
    "bruit": 11.554687021770876,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792659754570,
+   "vu": 1792663356266,
    "t_decl": 0
   }
  },
