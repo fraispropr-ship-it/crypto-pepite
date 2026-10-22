@@ -408,11 +408,11 @@ def ligne_setup(s, px):
     a, t = s["atr"], s["tick"]
     if px is None:
         return (f"<b>{escape(s['sym'][:-4])}</b> {NOMS[s['type']]} · déclenchement "
-                f"{escape(fmt(arrondi(s['declenchement'], t), t))} · prix indisponible")
+                f"<code>{escape(fmt(arrondi(s['declenchement'], t), t))}</code> · prix indisponible")
     dist = (s["declenchement"] - px) / a
     pct = 100 * (s["declenchement"] / px - 1)
     sl_pct = 100 * (1 - s["invalidation"] / s["declenchement"])
-    return (f"<b>{escape(s['sym'][:-4])}</b> {NOMS[s['type']]} · déclenchement {escape(fmt(arrondi(s['declenchement'], t), t))} "
+    return (f"<b>{escape(s['sym'][:-4])}</b> {NOMS[s['type']]} · déclenchement <code>{escape(fmt(arrondi(s['declenchement'], t), t))}</code> "
             f"({pct:+.1f} %, {dist:.1f} ATR) · SL −{sl_pct:.1f} % · bruit {s['bruit']:.0f} %")
 
 
@@ -466,7 +466,7 @@ def alerte(s, px, ctx, inf):
                "⚠️ déjà un peu parti : attendre un repli ?" if ecart <= TROP_TARD_ATR else "⌛ probablement trop tard")
     lignes = [
         f"🚀 <b>RADAR ALT — {base} — DÉCLENCHÉ</b> {ctx['feu']}",
-        f"{NOMS[s['type']]} · clôture H1 au-dessus de {escape(fmt(arrondi(s['declenchement'], t), t))}",
+        f"{NOMS[s['type']]} · clôture H1 au-dessus de <code>{escape(fmt(arrondi(s['declenchement'], t), t))}</code>",
         f"<i>{escape(pourquoi)}</i>",
         f"{verdict} ({ecart:+.1f} ATR H4 au-dessus du niveau)",
         "",
