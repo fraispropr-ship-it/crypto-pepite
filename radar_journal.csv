@@ -77,3 +77,6 @@ DOGEUSDT|retournement|0.08229,DOGEUSDT,retournement,2026-10-21 17:00,0.08313,0.0
 AAVEUSDT|retournement|158.3,AAVEUSDT,retournement,2026-10-21 18:00,158.52,152.28,171.00000000000003,SL,-1.0,0.3,11.0,🟢,"{""creux1"": 145.83, ""creux2"": 153.5, ""baisse_atr"": 4.9}"
 HYPEUSDT|retournement|81.799,HYPEUSDT,retournement,2026-10-21 04:00,81.848,78.741,88.062,SL,-1.0,0.22,26.0,🟢,"{""creux1"": 76.056, ""creux2"": 79.241, ""baisse_atr"": 4.0}"
 PENGUUSDT|retournement|0.008217,PENGUUSDT,retournement,2026-10-21 18:00,0.008231,0.007854,0.008985000000000002,SL,-1.0,0.45,13.0,🟢,"{""creux1"": 0.007049, ""creux2"": 0.007918, ""baisse_atr"": 4.1}"
+SOLUSDT|retournement|108.1,SOLUSDT,retournement,2026-10-21 18:00,108.41,104.76,115.70999999999998,SL,-1.0,0.21,14.0,🟢,"{""creux1"": 100.47, ""creux2"": 105.27, ""baisse_atr"": 4.7}"
+SUIUSDT|retournement|1.0434,SUIUSDT,retournement,2026-10-21 17:00,1.0436,0.9986,1.1336000000000002,SL,-1.0,0.27,15.0,🟢,"{""creux1"": 0.9365, ""creux2"": 1.006, ""baisse_atr"": 5.4}"
+ADAUSDT|retournement|0.2266,ADAUSDT,retournement,2026-10-21 17:00,0.2271,0.2183,0.2447,SL,-1.0,0.37,15.0,🟢,"{""creux1"": 0.2108, ""creux2"": 0.2196, ""baisse_atr"": 6.3}"

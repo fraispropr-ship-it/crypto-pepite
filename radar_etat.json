@@ -603,7 +603,7 @@
    "sym": "SOLUSDT",
    "bruit": 4.504474332445899,
    "tick": 0.01,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1792594952679,
    "t_decl": 1792598400000.0,
    "entree": 108.41,
@@ -690,7 +690,7 @@
    "sym": "SUIUSDT",
    "bruit": 7.307313696298784,
    "tick": 0.0001,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1792591349072,
    "t_decl": 1792594800000.0,
    "entree": 1.0436,
@@ -713,7 +713,7 @@
    "sym": "ADAUSDT",
    "bruit": 6.859255871377435,
    "tick": 0.0001,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1792591349072,
    "t_decl": 1792594800000.0,
    "entree": 0.2271,
@@ -1399,7 +1399,7 @@
    "bruit": 6.894715688044111,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792645353401,
+   "vu": 1792648952949,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.06892": {
@@ -1417,7 +1417,7 @@
    "bruit": 10.723429794057015,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792645353401,
+   "vu": 1792648952949,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.3822": {
@@ -1435,7 +1435,7 @@
    "bruit": 12.841255256613069,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792645353401,
+   "vu": 1792648952949,
    "t_decl": 0
   },
   "BMTUSDT|continuation|0.025906": {
@@ -1453,7 +1453,7 @@
    "bruit": 8.873373314131797,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792645353401,
+   "vu": 1792648952949,
    "t_decl": 0
   }
  },
