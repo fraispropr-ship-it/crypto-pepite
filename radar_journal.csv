@@ -85,3 +85,4 @@ ONDOUSDT|retournement|0.4619,ONDOUSDT,retournement,2026-10-21 15:00,0.4623,0.437
 LINKUSDT|retournement|12.462,LINKUSDT,retournement,2026-10-21 17:00,12.545,12.029,13.577,SL,-1.0,0.5,18.0,🟢,"{""creux1"": 11.508, ""creux2"": 12.099, ""baisse_atr"": 6.8}"
 1000PEPEUSDT|continuation|0.004667,1000PEPEUSDT,continuation,2026-10-21 17:00,0.004707,0.004421,0.005279000000000002,SL,-1.0,0.1,18.0,🟢,"{""repli_atr"": 1.7, ""age_h4"": 4, ""calme"": false}"
 ZECUSDT|retournement|1296.39,ZECUSDT,retournement,2026-10-21 15:00,1296.7,1236.87,1416.3600000000004,SL,-1.0,1.2,20.0,🟢,"{""creux1"": 1048.29, ""creux2"": 1250.83, ""baisse_atr"": 5.1}"
+FARTCOINUSDT|retournement|0.15091,FARTCOINUSDT,retournement,2026-10-21 17:00,0.15181,0.14354,0.16835,SL,-1.0,0.89,23.0,🟢,"{""creux1"": 0.13276, ""creux2"": 0.14483, ""baisse_atr"": 7.8}"

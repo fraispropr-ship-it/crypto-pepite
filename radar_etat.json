@@ -335,29 +335,6 @@
    "feu": "🟢",
    "date_decl": "2026-10-20 17:00"
   },
-  "DOTUSDT|retournement|1.1806": {
-   "type": "retournement",
-   "declenchement": 1.1806,
-   "invalidation": 1.1136375736977107,
-   "atr": 0.03720808767429756,
-   "info": {
-    "creux1": 1.0446,
-    "creux2": 1.1248,
-    "baisse_atr": 4.5
-   },
-   "id": "DOTUSDT|retournement|1.1806",
-   "sym": "DOTUSDT",
-   "bruit": 7.66105767587675,
-   "tick": 0.0001,
-   "etape": "termine",
-   "vu": 1792504953198,
-   "t_decl": 1792508400000.0,
-   "entree": 1.1834,
-   "sl": 1.1136,
-   "objectif": 1.3230000000000002,
-   "feu": "🟢",
-   "date_decl": "2026-10-20 17:00"
-  },
   "CRVUSDT|continuation|0.3769": {
    "type": "continuation",
    "declenchement": 0.3769,
@@ -913,7 +890,7 @@
    "sym": "FARTCOINUSDT",
    "bruit": 9.838442040875892,
    "tick": 1e-05,
-   "etape": "trop_tard",
+   "etape": "termine",
    "vu": 1792591349072,
    "t_decl": 1792594800000.0,
    "entree": 0.15181,
@@ -1458,7 +1435,7 @@
    "bruit": 11.554687021770876,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792675096219,
+   "vu": 1792677754623,
    "t_decl": 0
   },
   "VVVUSDT|retournement|28.321": {
@@ -1475,8 +1452,8 @@
    "sym": "VVVUSDT",
    "bruit": 9.626841383786248,
    "tick": 0.001,
-   "etape": "formation",
-   "vu": 1792675096219,
+   "etape": "pret",
+   "vu": 1792677754623,
    "t_decl": 0
   },
   "BILLUSDT|retournement|0.00755": {
@@ -1494,7 +1471,7 @@
    "bruit": 16.129754038425197,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792675096219,
+   "vu": 1792677754623,
    "t_decl": 0
   }
  },
