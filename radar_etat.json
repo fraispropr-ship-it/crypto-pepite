@@ -1333,11 +1333,11 @@
   "WLDUSDT|continuation|0.5978": {
    "type": "continuation",
    "declenchement": 0.5978,
-   "invalidation": 0.5588133923665951,
-   "atr": 0.021622025444683148,
+   "invalidation": 0.5304795779763954,
+   "atr": 0.022734740078681915,
    "info": {
-    "repli_atr": 1.5,
-    "age_h4": 5,
+    "repli_atr": 2.7,
+    "age_h4": 6,
     "calme": false
    },
    "id": "WLDUSDT|continuation|0.5978",
@@ -1387,11 +1387,11 @@
   "1000PEPEUSDT|continuation|0.004793": {
    "type": "continuation",
    "declenchement": 0.004793,
-   "invalidation": 0.004455563965581514,
-   "atr": 0.0001314534480616186,
+   "invalidation": 0.004427452259660887,
+   "atr": 0.00012849246779704466,
    "info": {
-    "repli_atr": 2.3,
-    "age_h4": 3,
+    "repli_atr": 2.5,
+    "age_h4": 4,
     "calme": false
    },
    "id": "1000PEPEUSDT|continuation|0.004793",
@@ -1399,17 +1399,17 @@
    "bruit": 6.894715688044111,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792652553442,
+   "vu": 1792656155542,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.06892": {
    "type": "continuation",
    "declenchement": 0.06892,
-   "invalidation": 0.05333436247520516,
-   "atr": 0.006285458415982786,
+   "invalidation": 0.05334005086865204,
+   "atr": 0.006266497104493194,
    "info": {
     "repli_atr": 2.2,
-    "age_h4": 3,
+    "age_h4": 4,
     "calme": false
    },
    "id": "ARIAUSDT|continuation|0.06892",
@@ -1417,7 +1417,7 @@
    "bruit": 10.723429794057015,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792652553442,
+   "vu": 1792656155542,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.3822": {
@@ -1446,11 +1446,11 @@
   "BMTUSDT|continuation|0.025906": {
    "type": "continuation",
    "declenchement": 0.025906,
-   "invalidation": 0.02080464305472121,
-   "atr": 0.0016911898175959634,
+   "invalidation": 0.019902261378422294,
+   "atr": 0.0017124620719256869,
    "info": {
-    "repli_atr": 2.7,
-    "age_h4": 3,
+    "repli_atr": 3.2,
+    "age_h4": 4,
     "calme": false
    },
    "id": "BMTUSDT|continuation|0.025906",
@@ -1458,9 +1458,81 @@
    "bruit": 8.873373314131797,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792652553442,
+   "vu": 1792656155542,
+   "t_decl": 0
+  },
+  "ZECUSDT|continuation|1368.33": {
+   "type": "continuation",
+   "declenchement": 1368.33,
+   "invalidation": 1243.2134658377063,
+   "atr": 47.52178054097894,
+   "info": {
+    "repli_atr": 2.3,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "ZECUSDT|continuation|1368.33",
+   "sym": "ZECUSDT",
+   "bruit": 9.051377611061794,
+   "tick": 0.01,
+   "etape": "formation",
+   "vu": 1792656155542,
+   "t_decl": 0
+  },
+  "INJUSDT|retournement|9.413": {
+   "type": "retournement",
+   "declenchement": 9.413,
+   "invalidation": 7.986952517052301,
+   "atr": 0.3434916098256629,
+   "info": {
+    "creux1": 7.79,
+    "creux2": 8.09,
+    "baisse_atr": 4.9
+   },
+   "id": "INJUSDT|retournement|9.413",
+   "sym": "INJUSDT",
+   "bruit": 8.65837503306408,
+   "tick": 0.001,
+   "etape": "formation",
+   "vu": 1792656155542,
+   "t_decl": 0
+  },
+  "BNBUSDT|continuation|751.58": {
+   "type": "continuation",
+   "declenchement": 751.58,
+   "invalidation": 733.9837303128378,
+   "atr": 6.687565623874242,
+   "info": {
+    "repli_atr": 2.3,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "BNBUSDT|continuation|751.58",
+   "sym": "BNBUSDT",
+   "bruit": 2.800068647104711,
+   "tick": 0.01,
+   "etape": "formation",
+   "vu": 1792656155542,
+   "t_decl": 0
+  },
+  "GRASSUSDT|continuation|0.7263": {
+   "type": "continuation",
+   "declenchement": 0.7263,
+   "invalidation": 0.6408896765724417,
+   "atr": 0.029701078091861174,
+   "info": {
+    "repli_atr": 2.6,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "GRASSUSDT|continuation|0.7263",
+   "sym": "GRASSUSDT",
+   "bruit": 11.554687021770876,
+   "tick": 0.0001,
+   "etape": "formation",
+   "vu": 1792656155542,
    "t_decl": 0
   }
  },
- "dernier_resume": 124489
+ "dernier_resume": 124490
 }
