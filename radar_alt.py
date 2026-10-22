@@ -406,14 +406,15 @@ NOMS = {"continuation": "📈 Continuation", "retournement": "🔄 Retournement"
 
 def ligne_setup(s, px):
     a, t = s["atr"], s["tick"]
+    lien = f'\n<a href="{escape(lien_tv(s["sym"]), quote=True)}">Lien TradingView</a>'
     if px is None:
         return (f"<b>{escape(s['sym'][:-4])}</b> {NOMS[s['type']]} · déclenchement "
-                f"<code>{escape(fmt(arrondi(s['declenchement'], t), t))}</code> · prix indisponible")
+                f"<code>{escape(fmt(arrondi(s['declenchement'], t), t))}</code> · prix indisponible{lien}")
     dist = (s["declenchement"] - px) / a
     pct = 100 * (s["declenchement"] / px - 1)
     sl_pct = 100 * (1 - s["invalidation"] / s["declenchement"])
     return (f"<b>{escape(s['sym'][:-4])}</b> {NOMS[s['type']]} · déclenchement <code>{escape(fmt(arrondi(s['declenchement'], t), t))}</code> "
-            f"({pct:+.1f} %, {dist:.1f} ATR) · SL −{sl_pct:.1f} % · bruit {s['bruit']:.0f} %")
+            f"({pct:+.1f} %, {dist:.1f} ATR) · SL −{sl_pct:.1f} % · bruit {s['bruit']:.0f} %{lien}")
 
 
 def resume(etat, prix, ctx, nouveaux_decl):
