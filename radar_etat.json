@@ -284,24 +284,6 @@
    "feu": "🟢",
    "date_decl": "2026-10-20 05:00"
   },
-  "FARTCOINUSDT|retournement|0.14711": {
-   "type": "retournement",
-   "declenchement": 0.14711,
-   "invalidation": 0.13843674180387586,
-   "atr": 0.004610860653747126,
-   "info": {
-    "creux1": 0.13276,
-    "creux2": 0.13982,
-    "baisse_atr": 7.3
-   },
-   "id": "FARTCOINUSDT|retournement|0.14711",
-   "sym": "FARTCOINUSDT",
-   "bruit": 10.215420484269394,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1792472553277,
-   "t_decl": 0
-  },
   "UNITREEUSDT|continuation|75.13": {
    "type": "continuation",
    "declenchement": 75.13,
@@ -1285,7 +1267,7 @@
    "sym": "PENGUUSDT",
    "bruit": 8.554279041296565,
    "tick": 1e-06,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1792594952679,
    "t_decl": 1792598400000.0,
    "entree": 0.008231,
@@ -1362,7 +1344,7 @@
    "sym": "WLDUSDT",
    "bruit": 8.874456105686836,
    "tick": 0.0001,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792641750721,
    "t_decl": 0
   },
@@ -1417,7 +1399,7 @@
    "bruit": 6.894715688044111,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792641750721,
+   "vu": 1792645353401,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.06892": {
@@ -1434,8 +1416,8 @@
    "sym": "ARIAUSDT",
    "bruit": 10.723429794057015,
    "tick": 1e-05,
-   "etape": "formation",
-   "vu": 1792641750721,
+   "etape": "pret",
+   "vu": 1792645353401,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.3822": {
@@ -1453,7 +1435,7 @@
    "bruit": 12.841255256613069,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792641750721,
+   "vu": 1792645353401,
    "t_decl": 0
   },
   "BMTUSDT|continuation|0.025906": {
@@ -1471,9 +1453,9 @@
    "bruit": 8.873373314131797,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792641750721,
+   "vu": 1792645353401,
    "t_decl": 0
   }
  },
- "dernier_resume": 124487
+ "dernier_resume": 124489
 }
