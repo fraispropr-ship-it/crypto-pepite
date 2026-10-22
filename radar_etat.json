@@ -403,7 +403,7 @@
    "sym": "DOTUSDT",
    "bruit": 7.66105767587675,
    "tick": 0.0001,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1792504953198,
    "t_decl": 1792508400000.0,
    "entree": 1.1834,
@@ -1399,7 +1399,7 @@
    "bruit": 6.894715688044111,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792648952949,
+   "vu": 1792652553442,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.06892": {
@@ -1416,8 +1416,8 @@
    "sym": "ARIAUSDT",
    "bruit": 10.723429794057015,
    "tick": 1e-05,
-   "etape": "pret",
-   "vu": 1792648952949,
+   "etape": "formation",
+   "vu": 1792652553442,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.3822": {
@@ -1434,9 +1434,14 @@
    "sym": "MAGMAUSDT",
    "bruit": 12.841255256613069,
    "tick": 0.0001,
-   "etape": "formation",
+   "etape": "trop_tard",
    "vu": 1792648952949,
-   "t_decl": 0
+   "t_decl": 1792652400000.0,
+   "entree": 0.4583,
+   "sl": 0.2989,
+   "objectif": 0.7770999999999999,
+   "feu": "🟢",
+   "date_decl": "2026-10-22 09:00"
   },
   "BMTUSDT|continuation|0.025906": {
    "type": "continuation",
@@ -1453,7 +1458,7 @@
    "bruit": 8.873373314131797,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792648952949,
+   "vu": 1792652553442,
    "t_decl": 0
   }
  },
