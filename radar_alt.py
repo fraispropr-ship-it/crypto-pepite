@@ -127,7 +127,7 @@ def bougies(sym, iv, limit, maintenant):
     df = pd.DataFrame(res["list"]).iloc[:, :6]
     df.columns = ["t", "o", "h", "l", "c", "v"]
     df = df.astype(float).drop_duplicates("t").sort_values("t").reset_index(drop=True)
-    duree = {"60": H1, "240": H4, "D": JOUR}[iv]
+    duree = {"15": 900_000, "60": H1, "240": H4, "D": JOUR}[iv]
     return df[df.t + duree <= maintenant].reset_index(drop=True)
 
 
@@ -341,11 +341,44 @@ COLS = ["id", "symbole", "type", "date_declenchement", "entree", "sl", "objectif
         "resultat_R", "mfe_R", "duree_h", "feu", "info"]
 
 
+def mesures_impulsion(sym, h1, maintenant):
+    """Mesures descriptives à la clôture H1, sans impact sur les alertes."""
+    if h1 is None or len(h1) < 15:
+        return {}
+    x = h1.iloc[-1]
+    amplitude = float(x.h - x.l)
+    atr_h1 = float(atr(h1, 14).iloc[-1])
+    position = float((x.c - x.l) / amplitude) if amplitude > 0 else None
+    mesures = dict(h1_amplitude=round(amplitude, 12),
+                   h1_amplitude_atr=round(amplitude / atr_h1, 4) if atr_h1 > 0 else None,
+                   h1_position_cloture=round(position, 4) if position is not None else None,
+                   h1_corps_pct=round(abs(float(x.c - x.o)) / amplitude, 4) if amplitude > 0 else None)
+    # Quatre bougies M15 appartenant exactement à la dernière H1 clôturée.
+    m15 = bougies(sym, "15", 12, maintenant)
+    debut = float(x.t)
+    if m15 is None:
+        mesures["m15_complet"] = False
+        return mesures
+    m15 = m15[(m15.t >= debut) & (m15.t < debut + H1)].sort_values("t")
+    attendues = [debut + i * 900_000 for i in range(4)]
+    mesures["m15_complet"] = len(m15) == 4 and list(m15.t.astype(float)) == attendues
+    if mesures["m15_complet"]:
+        mesures["m15_bougies"] = [
+            dict(heure_utc=datetime.fromtimestamp(float(b.t) / 1000, timezone.utc).isoformat(),
+                 o=float(b.o), h=float(b.h), l=float(b.l), c=float(b.c),
+                 amplitude=round(float(b.h - b.l), 12),
+                 corps_pct=round(abs(float(b.c - b.o)) / (float(b.h - b.l)), 4)
+                 if b.h > b.l else None,
+                 direction="hausse" if b.c > b.o else "baisse" if b.c < b.o else "neutre")
+            for _, b in m15.iterrows()]
+    return mesures
+
+
 def journaliser(s, statut, r, mfe, duree):
     ligne = dict(id=s["id"], symbole=s["sym"], type=s["type"], date_declenchement=s["date_decl"],
                  entree=s["entree"], sl=s["sl"], objectif=s["objectif"], statut=statut,
                  resultat_R=round(r, 2), mfe_R=round(mfe, 2), duree_h=round(duree, 1),
-                 feu=s.get("feu", ""), info=json.dumps(s.get("info", {}), ensure_ascii=False))
+                 feu=s.get("feu", ""), info=json.dumps(dict(s.get("info", {}), mesures_impulsion=s.get("mesures_impulsion", {})), ensure_ascii=False))
     existe = os.path.exists(JOURNAL)
     pd.DataFrame([ligne], columns=COLS).to_csv(JOURNAL, mode="a", header=not existe, index=False)
 
@@ -555,6 +588,11 @@ def main():
                 s.update(etape="declenche", t_decl=float(h1.t.iloc[-1]) + H1, entree=e, sl=sl,
                          objectif=e + OBJECTIF_R * (e - sl), feu=ctx["feu"],
                          date_decl=datetime.fromtimestamp((float(h1.t.iloc[-1]) + H1) / 1000, PARIS).strftime("%Y-%m-%d %H:%M"))
+                # Collecte purement descriptive ; aucune modification des alertes.
+                try:
+                    s["mesures_impulsion"] = mesures_impulsion(s["sym"], h1, maintenant)
+                except Exception as exc:
+                    s["mesures_impulsion"] = {"erreur_collecte": type(exc).__name__}
                 declenches.append(s)
             elif sid not in trouves:
                 s["etape"] = "disparu"                      # le pré-setup ne correspond plus aux règles
