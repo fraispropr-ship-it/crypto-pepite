@@ -1458,7 +1458,7 @@
    "bruit": 11.554687021770876,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792670550434,
+   "vu": 1792674159989,
    "t_decl": 0
   },
   "VVVUSDT|retournement|28.321": {
@@ -1475,8 +1475,8 @@
    "sym": "VVVUSDT",
    "bruit": 9.626841383786248,
    "tick": 0.001,
-   "etape": "pret",
-   "vu": 1792670550434,
+   "etape": "formation",
+   "vu": 1792674159989,
    "t_decl": 0
   },
   "BILLUSDT|retournement|0.00755": {
@@ -1494,7 +1494,7 @@
    "bruit": 16.129754038425197,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792670550434,
+   "vu": 1792674159989,
    "t_decl": 0
   }
  },
