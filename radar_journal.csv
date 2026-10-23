@@ -92,3 +92,4 @@ CRVUSDT|retournement|0.3661,CRVUSDT,retournement,2026-10-19 18:00,0.3667,0.3239,
 HYPEUSDT|retournement|80.398,HYPEUSDT,retournement,2026-10-20 17:00,81.451,77.12,90.11299999999997,SL,-1.0,0.25,50.0,🟢,"{""creux1"": 76.056, ""creux2"": 77.576, ""baisse_atr"": 4.4}"
 VVVUSDT|retournement|24.869,VVVUSDT,retournement,2026-10-20 05:00,25.04,22.791,29.537999999999997,EXPIRE,0.45,1.46,72,🟢,"{""creux1"": 20.903, ""creux2"": 23.07, ""baisse_atr"": 5.0, ""mesures_impulsion"": {}}"
 UNITREEUSDT|continuation|75.13,UNITREEUSDT,continuation,2026-10-20 05:00,78.53,70.99,93.61000000000001,EXPIRE,0.03,0.25,72,🟢,"{""repli_atr"": 2.4, ""age_h4"": 4, ""calme"": false, ""mesures_impulsion"": {}}"
+ERAUSDT|retournement|0.07996,ERAUSDT,retournement,2026-10-20 12:00,0.08017,0.06223,0.11605000000000001,EXPIRE,-0.36,0.01,72,🟢,"{""creux1"": 0.05633, ""creux2"": 0.06348, ""baisse_atr"": 8.3, ""mesures_impulsion"": {}}"
