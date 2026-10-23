@@ -90,3 +90,5 @@ ZROUSDT|retournement|1.9843,ZROUSDT,retournement,2026-10-20 17:00,1.9972,1.7991,
 BRUSDT|retournement|0.54544,BRUSDT,retournement,2026-10-19 18:00,0.61674,0.41592,1.0183799999999998,EXPIRE,-0.53,0.67,72,🟢,"{""creux1"": 0.29266, ""creux2"": 0.4318, ""baisse_atr"": 4.0}"
 CRVUSDT|retournement|0.3661,CRVUSDT,retournement,2026-10-19 18:00,0.3667,0.3239,0.45230000000000004,EXPIRE,0.01,1.0,72,🟢,"{""creux1"": 0.3097, ""creux2"": 0.3272, ""baisse_atr"": 7.0}"
 HYPEUSDT|retournement|80.398,HYPEUSDT,retournement,2026-10-20 17:00,81.451,77.12,90.11299999999997,SL,-1.0,0.25,50.0,🟢,"{""creux1"": 76.056, ""creux2"": 77.576, ""baisse_atr"": 4.4}"
+VVVUSDT|retournement|24.869,VVVUSDT,retournement,2026-10-20 05:00,25.04,22.791,29.537999999999997,EXPIRE,0.45,1.46,72,🟢,"{""creux1"": 20.903, ""creux2"": 23.07, ""baisse_atr"": 5.0, ""mesures_impulsion"": {}}"
+UNITREEUSDT|continuation|75.13,UNITREEUSDT,continuation,2026-10-20 05:00,78.53,70.99,93.61000000000001,EXPIRE,0.03,0.25,72,🟢,"{""repli_atr"": 2.4, ""age_h4"": 4, ""calme"": false, ""mesures_impulsion"": {}}"
