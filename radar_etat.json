@@ -435,24 +435,6 @@
    "vu": 1792594952679,
    "t_decl": 0
   },
-  "ALTUSDT|continuation|0.011067": {
-   "type": "continuation",
-   "declenchement": 0.011067,
-   "invalidation": 0.009297940002956116,
-   "atr": 0.0005668666568129532,
-   "info": {
-    "repli_atr": 2.8,
-    "age_h4": 7,
-    "calme": true
-   },
-   "id": "ALTUSDT|continuation|0.011067",
-   "sym": "ALTUSDT",
-   "bruit": 7.1241120361698815,
-   "tick": 1e-06,
-   "etape": "disparu",
-   "vu": 1792580553377,
-   "t_decl": 0
-  },
   "OPUSDT|retournement|0.13574": {
    "type": "retournement",
    "declenchement": 0.13574,
@@ -469,24 +451,6 @@
    "tick": 1e-05,
    "etape": "disparu",
    "vu": 1792594952679,
-   "t_decl": 0
-  },
-  "JUPUSDT|retournement|0.325": {
-   "type": "retournement",
-   "declenchement": 0.325,
-   "invalidation": 0.3088074567484991,
-   "atr": 0.008641810838336516,
-   "info": {
-    "creux1": 0.2753,
-    "creux2": 0.3114,
-    "baisse_atr": 7.1
-   },
-   "id": "JUPUSDT|retournement|0.325",
-   "sym": "JUPUSDT",
-   "bruit": 8.706546142633805,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1792580553377,
    "t_decl": 0
   },
   "USELESSUSDT|retournement|0.16796": {
@@ -571,24 +535,6 @@
    "vu": 1792623755419,
    "t_decl": 0
   },
-  "DOTUSDT|retournement|1.1868": {
-   "type": "retournement",
-   "declenchement": 1.1868,
-   "invalidation": 1.1300322156632339,
-   "atr": 0.03422594778922084,
-   "info": {
-    "creux1": 1.0446,
-    "creux2": 1.1403,
-    "baisse_atr": 4.9
-   },
-   "id": "DOTUSDT|retournement|1.1868",
-   "sym": "DOTUSDT",
-   "bruit": 7.591667705172782,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1792580553377,
-   "t_decl": 0
-  },
   "1000PEPEUSDT|continuation|0.004667": {
    "type": "continuation",
    "declenchement": 0.004667,
@@ -611,24 +557,6 @@
    "objectif": 0.005279000000000002,
    "feu": "🟢",
    "date_decl": "2026-10-21 17:00"
-  },
-  "ZROUSDT|retournement|2.0692": {
-   "type": "retournement",
-   "declenchement": 2.0692,
-   "invalidation": 1.9699314778086556,
-   "atr": 0.10022840730448092,
-   "info": {
-    "creux1": 1.7239,
-    "creux2": 2.0,
-    "baisse_atr": 5.5
-   },
-   "id": "ZROUSDT|retournement|2.0692",
-   "sym": "ZROUSDT",
-   "bruit": 10.634723227098501,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1792580553377,
-   "t_decl": 0
   },
   "COMPUSDT|continuation|29.13": {
    "type": "continuation",
@@ -1228,7 +1156,7 @@
    "bruit": 9.95702332862875,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "DOTUSDT|retournement|1.192": {
@@ -1318,7 +1246,7 @@
    "bruit": 3.9938997048817035,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "NEARUSDT|retournement|5.452": {
@@ -1336,7 +1264,7 @@
    "bruit": 10.577248439895667,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "HYPEUSDT|retournement|82.536": {
@@ -1354,7 +1282,7 @@
    "bruit": 5.427744144286994,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.22586": {
@@ -1372,7 +1300,7 @@
    "bruit": 10.892116564096511,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "DOGEUSDT|retournement|0.0838": {
@@ -1390,7 +1318,7 @@
    "bruit": 5.587391559631113,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "PUMPFUNUSDT|retournement|0.005221": {
@@ -1408,7 +1336,7 @@
    "bruit": 12.871369163987321,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "SUIUSDT|retournement|1.0558": {
@@ -1426,7 +1354,7 @@
    "bruit": 7.536952135450256,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "LINKUSDT|retournement|12.802": {
@@ -1444,7 +1372,7 @@
    "bruit": 5.968118670422256,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "ONDOUSDT|retournement|0.4723": {
@@ -1462,7 +1390,7 @@
    "bruit": 8.53411837014386,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "LTCUSDT|retournement|62.36": {
@@ -1480,7 +1408,7 @@
    "bruit": 5.080116719730969,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "ZROUSDT|retournement|2.1342": {
@@ -1516,7 +1444,7 @@
    "bruit": 2.89826887202696,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "TRUMPUSDT|retournement|1.921": {
@@ -1552,7 +1480,7 @@
    "bruit": 10.12792702952919,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "XLMUSDT|retournement|0.187": {
@@ -1588,7 +1516,7 @@
    "bruit": 5.113080211156019,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.5643": {
@@ -1606,7 +1534,7 @@
    "bruit": 10.318238663725152,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "ZECUSDT|retournement|1368.33": {
@@ -1624,7 +1552,7 @@
    "bruit": 9.88890165958162,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "WLDUSDT|retournement|0.5978": {
@@ -1642,7 +1570,7 @@
    "bruit": 9.625546177359197,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "XPLUSDT|retournement|0.08659": {
@@ -1660,7 +1588,7 @@
    "bruit": 10.471497742292971,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792749748800,
+   "vu": 1792753353544,
    "t_decl": 0
   },
   "APTUSDT|retournement|0.8452": {
