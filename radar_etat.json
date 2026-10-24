@@ -1,64 +1,5 @@
 {
  "setups": {
-  "ETHUSDT|retournement|2492.93": {
-   "type": "retournement",
-   "declenchement": 2492.93,
-   "invalidation": 2317.036403362339,
-   "atr": 35.378655458870625,
-   "info": {
-    "creux1": 2315.0,
-    "creux2": 2327.65,
-    "baisse_atr": 7.4
-   },
-   "id": "ETHUSDT|retournement|2492.93",
-   "sym": "ETHUSDT",
-   "bruit": 3.8365190041281223,
-   "tick": 0.01,
-   "etape": "declenche",
-   "vu": 1792591349072,
-   "t_decl": 1792594800000.0,
-   "entree": 2495.91,
-   "sl": 2317.04,
-   "objectif": 2853.6499999999996,
-   "feu": "🟢",
-   "date_decl": "2026-10-21 17:00"
-  },
-  "GRASSUSDT|continuation|0.7263": {
-   "type": "continuation",
-   "declenchement": 0.7263,
-   "invalidation": 0.6412389861683702,
-   "atr": 0.028536712772099727,
-   "info": {
-    "repli_atr": 2.7,
-    "age_h4": 4,
-    "calme": false
-   },
-   "id": "GRASSUSDT|continuation|0.7263",
-   "sym": "GRASSUSDT",
-   "bruit": 11.554687021770876,
-   "tick": 0.0001,
-   "etape": "invalide",
-   "vu": 1792677754623,
-   "t_decl": 0
-  },
-  "VVVUSDT|retournement|28.321": {
-   "type": "retournement",
-   "declenchement": 28.321,
-   "invalidation": 23.966515239511974,
-   "atr": 0.9416158682934116,
-   "info": {
-    "creux1": 20.903,
-    "creux2": 24.249,
-    "baisse_atr": 4.9
-   },
-   "id": "VVVUSDT|retournement|28.321",
-   "sym": "VVVUSDT",
-   "bruit": 10.260882442094758,
-   "tick": 0.001,
-   "etape": "invalide",
-   "vu": 1792677754623,
-   "t_decl": 0
-  },
   "BILLUSDT|retournement|0.00755": {
    "type": "retournement",
    "declenchement": 0.00755,
@@ -488,7 +429,7 @@
    "bruit": 2.8498192664829753,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792850551271,
+   "vu": 1792854155158,
    "t_decl": 0
   },
   "TRUMPUSDT|retournement|1.921": {
@@ -721,8 +662,8 @@
    "sym": "BTWUSDT",
    "bruit": 23.258062069142063,
    "tick": 1e-05,
-   "etape": "pret",
-   "vu": 1792850551271,
+   "etape": "formation",
+   "vu": 1792854155158,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -1028,7 +969,7 @@
    "bruit": 7.636534202399623,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792850551271,
+   "vu": 1792854155158,
    "t_decl": 0
   }
  },
