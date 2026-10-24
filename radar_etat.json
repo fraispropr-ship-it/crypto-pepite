@@ -609,7 +609,7 @@
    "bruit": 23.258062069142063,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792879352732,
+   "vu": 1792882952714,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -933,7 +933,7 @@
    "bruit": 11.568627152093187,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792879352732,
+   "vu": 1792882952714,
    "t_decl": 0
   },
   "ERAUSDT|continuation|0.10213": {
@@ -951,7 +951,7 @@
    "bruit": 10.93904766672692,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792879352732,
+   "vu": 1792882952714,
    "t_decl": 0
   },
   "LAUSDT|retournement|0.07188": {
@@ -969,8 +969,80 @@
    "bruit": 8.752441472443694,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792879352732,
+   "vu": 1792882952714,
    "t_decl": 0
+  },
+  "APRUSDT|retournement|0.0271": {
+   "type": "retournement",
+   "declenchement": 0.0271,
+   "invalidation": 0.02425365550818604,
+   "atr": 0.0021544816393798626,
+   "info": {
+    "creux1": 0.0225,
+    "creux2": 0.0249,
+    "baisse_atr": 6.6
+   },
+   "id": "APRUSDT|retournement|0.0271",
+   "sym": "APRUSDT",
+   "bruit": 64.58617571523081,
+   "tick": 0.0001,
+   "etape": "declenche",
+   "vu": 1792882952714,
+   "t_decl": 1792882800000.0,
+   "entree": 0.029,
+   "sl": 0.0243,
+   "objectif": 0.038400000000000004,
+   "feu": "🟠",
+   "date_decl": "2026-10-25 01:00",
+   "mesures_impulsion": {
+    "h1_amplitude": 0.0154,
+    "h1_amplitude_atr": 5.6115,
+    "h1_position_cloture": 0.0325,
+    "h1_corps_pct": 0.5909,
+    "m15_complet": true,
+    "m15_bougies": [
+     {
+      "heure_utc": "2026-10-24T22:00:00+00:00",
+      "o": 0.0381,
+      "h": 0.0439,
+      "l": 0.0323,
+      "c": 0.0335,
+      "amplitude": 0.0116,
+      "corps_pct": 0.3966,
+      "direction": "baisse"
+     },
+     {
+      "heure_utc": "2026-10-24T22:15:00+00:00",
+      "o": 0.0335,
+      "h": 0.0365,
+      "l": 0.0316,
+      "c": 0.0328,
+      "amplitude": 0.0049,
+      "corps_pct": 0.1429,
+      "direction": "baisse"
+     },
+     {
+      "heure_utc": "2026-10-24T22:30:00+00:00",
+      "o": 0.0328,
+      "h": 0.0335,
+      "l": 0.0304,
+      "c": 0.0313,
+      "amplitude": 0.0031,
+      "corps_pct": 0.4839,
+      "direction": "baisse"
+     },
+     {
+      "heure_utc": "2026-10-24T22:45:00+00:00",
+      "o": 0.0313,
+      "h": 0.0313,
+      "l": 0.0285,
+      "c": 0.029,
+      "amplitude": 0.0028,
+      "corps_pct": 0.8214,
+      "direction": "baisse"
+     }
+    ]
+   }
   }
  },
  "dernier_resume": 124505
