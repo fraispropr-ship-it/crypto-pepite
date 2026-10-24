@@ -105,29 +105,6 @@
    "vu": 1792659754570,
    "t_decl": 0
   },
-  "MAGMAUSDT|continuation|0.3822": {
-   "type": "continuation",
-   "declenchement": 0.3822,
-   "invalidation": 0.2989184390963294,
-   "atr": 0.020938536345568592,
-   "info": {
-    "repli_atr": 3.7,
-    "age_h4": 3,
-    "calme": false
-   },
-   "id": "MAGMAUSDT|continuation|0.3822",
-   "sym": "MAGMAUSDT",
-   "bruit": 12.841255256613069,
-   "tick": 0.0001,
-   "etape": "termine",
-   "vu": 1792648952949,
-   "t_decl": 1792652400000.0,
-   "entree": 0.4583,
-   "sl": 0.2989,
-   "objectif": 0.7770999999999999,
-   "feu": "🟢",
-   "date_decl": "2026-10-22 09:00"
-  },
   "BMTUSDT|continuation|0.025906": {
    "type": "continuation",
    "declenchement": 0.025906,
@@ -665,7 +642,7 @@
    "bruit": 2.8498192664829753,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792821748507,
+   "vu": 1792825355086,
    "t_decl": 0
   },
   "TRUMPUSDT|retournement|1.921": {
@@ -881,7 +858,7 @@
    "bruit": 18.35295085855534,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792821748507,
+   "vu": 1792825355086,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.99024": {
@@ -899,7 +876,7 @@
    "bruit": 23.258062069142063,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792821748507,
+   "vu": 1792825355086,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -916,7 +893,7 @@
    "sym": "AKEUSDT",
    "bruit": 24.929783382360366,
    "tick": 1e-06,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1792778553445,
    "t_decl": 1792782000000.0,
    "entree": 0.037452,
@@ -989,7 +966,7 @@
    "bruit": 14.516229881385486,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792821748507,
+   "vu": 1792825355086,
    "t_decl": 0
   },
   "DRAMUSDT|retournement|50.13": {
@@ -1133,7 +1110,7 @@
    "bruit": 7.437828183219979,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792821748507,
+   "vu": 1792825355086,
    "t_decl": 0
   },
   "DOTUSDT|retournement|1.2021": {
@@ -1151,7 +1128,7 @@
    "bruit": 7.996811340623942,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792821748507,
+   "vu": 1792825355086,
    "t_decl": 0
   },
   "1000BONKUSDT|retournement|0.003366": {
@@ -1169,7 +1146,7 @@
    "bruit": 8.107043855491673,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792821748507,
+   "vu": 1792825355086,
    "t_decl": 0
   },
   "ATOMUSDT|retournement|1.817": {
