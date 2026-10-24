@@ -144,24 +144,6 @@
    "vu": 1792738950593,
    "t_decl": 0
   },
-  "XMRUSDT|continuation|661.79": {
-   "type": "continuation",
-   "declenchement": 661.79,
-   "invalidation": 578.6147867431096,
-   "atr": 19.58404418963467,
-   "info": {
-    "repli_atr": 3.9,
-    "age_h4": 9,
-    "calme": true
-   },
-   "id": "XMRUSDT|continuation|661.79",
-   "sym": "XMRUSDT",
-   "bruit": 5.513392970096452,
-   "tick": 0.01,
-   "etape": "invalide",
-   "vu": 1792702956189,
-   "t_decl": 0
-  },
   "PHAUSDT|continuation|0.06984": {
    "type": "continuation",
    "declenchement": 0.06984,
@@ -627,7 +609,7 @@
    "bruit": 23.258062069142063,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792875751988,
+   "vu": 1792879352732,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -951,7 +933,7 @@
    "bruit": 11.568627152093187,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792875751988,
+   "vu": 1792879352732,
    "t_decl": 0
   },
   "ERAUSDT|continuation|0.10213": {
@@ -969,7 +951,7 @@
    "bruit": 10.93904766672692,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792875751988,
+   "vu": 1792879352732,
    "t_decl": 0
   },
   "LAUSDT|retournement|0.07188": {
@@ -987,7 +969,7 @@
    "bruit": 8.752441472443694,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792875751988,
+   "vu": 1792879352732,
    "t_decl": 0
   }
  },
