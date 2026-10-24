@@ -1,28 +1,5 @@
 {
  "setups": {
-  "BCHUSDT|retournement|284.39": {
-   "type": "retournement",
-   "declenchement": 284.39,
-   "invalidation": 262.1244415744072,
-   "atr": 5.851861418642689,
-   "info": {
-    "creux1": 255.73,
-    "creux2": 263.88,
-    "baisse_atr": 5.6
-   },
-   "id": "BCHUSDT|retournement|284.39",
-   "sym": "BCHUSDT",
-   "bruit": 5.785852262581875,
-   "tick": 0.01,
-   "etape": "declenche",
-   "vu": 1792540950095,
-   "t_decl": 1792544400000.0,
-   "entree": 285.01,
-   "sl": 262.12,
-   "objectif": 330.78999999999996,
-   "feu": "🟢",
-   "date_decl": "2026-10-21 03:00"
-  },
   "ETHUSDT|retournement|2492.93": {
    "type": "retournement",
    "declenchement": 2492.93,
@@ -760,7 +737,7 @@
    "bruit": 2.8498192664829753,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792800155266,
+   "vu": 1792803751156,
    "t_decl": 0
   },
   "TRUMPUSDT|retournement|1.921": {
@@ -976,7 +953,7 @@
    "bruit": 18.35295085855534,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792800155266,
+   "vu": 1792803751156,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.99024": {
@@ -994,7 +971,7 @@
    "bruit": 23.258062069142063,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792800155266,
+   "vu": 1792803751156,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -1084,7 +1061,7 @@
    "bruit": 14.516229881385486,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792800155266,
+   "vu": 1792803751156,
    "t_decl": 0
   },
   "DRAMUSDT|retournement|50.13": {
@@ -1102,7 +1079,7 @@
    "bruit": 5.535557500297353,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792800155266,
+   "vu": 1792803751156,
    "t_decl": 0
   },
   "DASHUSDT|continuation|55.9": {
