@@ -488,7 +488,7 @@
    "bruit": 2.8498192664829753,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792843357706,
+   "vu": 1792846953840,
    "t_decl": 0
   },
   "TRUMPUSDT|retournement|1.921": {
@@ -704,7 +704,7 @@
    "bruit": 18.35295085855534,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792843357706,
+   "vu": 1792846953840,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.99024": {
@@ -722,7 +722,7 @@
    "bruit": 23.258062069142063,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792843357706,
+   "vu": 1792846953840,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -1027,8 +1027,8 @@
    "sym": "INITUSDT",
    "bruit": 7.636534202399623,
    "tick": 1e-05,
-   "etape": "formation",
-   "vu": 1792843357706,
+   "etape": "pret",
+   "vu": 1792846953840,
    "t_decl": 0
   }
  },
