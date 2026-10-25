@@ -18,24 +18,6 @@
    "vu": 1792767757648,
    "t_decl": 0
   },
-  "DOTUSDT|retournement|1.192": {
-   "type": "retournement",
-   "declenchement": 1.192,
-   "invalidation": 1.0908075835612026,
-   "atr": 0.034974721462658086,
-   "info": {
-    "creux1": 1.0446,
-    "creux2": 1.1013,
-    "baisse_atr": 4.8
-   },
-   "id": "DOTUSDT|retournement|1.192",
-   "sym": "DOTUSDT",
-   "bruit": 7.563134805577242,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1792738950593,
-   "t_decl": 0
-  },
   "ETHUSDT|retournement|2524.72": {
    "type": "retournement",
    "declenchement": 2524.72,
@@ -429,7 +411,7 @@
    "bruit": 22.68249577560648,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792908152175,
+   "vu": 1792911755994,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -879,7 +861,7 @@
    "bruit": 26.389925799091916,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792908152175,
+   "vu": 1792911755994,
    "t_decl": 0
   },
   "GRAMUSDT|retournement|1.259": {
