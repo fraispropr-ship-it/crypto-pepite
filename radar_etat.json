@@ -393,7 +393,7 @@
    "bruit": 22.68249577560648,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792915350868,
+   "vu": 1792918951817,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -651,12 +651,12 @@
   "1000BONKUSDT|retournement|0.003366": {
    "type": "retournement",
    "declenchement": 0.003366,
-   "invalidation": 0.0028931198695525467,
-   "atr": 9.960043482484305e-05,
+   "invalidation": 0.002893561295274007,
+   "atr": 9.812901575330989e-05,
    "info": {
     "creux1": 0.002801,
     "creux2": 0.002923,
-    "baisse_atr": 4.7
+    "baisse_atr": 4.8
    },
    "id": "1000BONKUSDT|retournement|0.003366",
    "sym": "1000BONKUSDT",
@@ -843,7 +843,7 @@
    "bruit": 26.389925799091916,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792915350868,
+   "vu": 1792918951817,
    "t_decl": 0
   },
   "GRAMUSDT|retournement|1.259": {
