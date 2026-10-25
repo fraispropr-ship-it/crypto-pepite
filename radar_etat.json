@@ -234,42 +234,6 @@
    "vu": 1792782153405,
    "t_decl": 0
   },
-  "XRPUSDT|retournement|1.3988": {
-   "type": "retournement",
-   "declenchement": 1.3988,
-   "invalidation": 1.274629642510537,
-   "atr": 0.01990119163154291,
-   "info": {
-    "creux1": 1.2553,
-    "creux2": 1.2806,
-    "baisse_atr": 6.6
-   },
-   "id": "XRPUSDT|retournement|1.3988",
-   "sym": "XRPUSDT",
-   "bruit": 5.119605969098942,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1792764155968,
-   "t_decl": 0
-  },
-  "MAGMAUSDT|continuation|0.5643": {
-   "type": "continuation",
-   "declenchement": 0.5643,
-   "invalidation": 0.3583831361896337,
-   "atr": 0.05272287936788772,
-   "info": {
-    "repli_atr": 3.6,
-    "age_h4": 8,
-    "calme": false
-   },
-   "id": "MAGMAUSDT|continuation|0.5643",
-   "sym": "MAGMAUSDT",
-   "bruit": 14.812019324895854,
-   "tick": 0.0001,
-   "etape": "invalide",
-   "vu": 1792764155968,
-   "t_decl": 0
-  },
   "ZECUSDT|retournement|1368.33": {
    "type": "retournement",
    "declenchement": 1368.33,
@@ -393,7 +357,7 @@
    "bruit": 22.68249577560648,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792936951488,
+   "vu": 1792940551914,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -843,7 +807,7 @@
    "bruit": 26.389925799091916,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792936951488,
+   "vu": 1792940551914,
    "t_decl": 0
   },
   "GRAMUSDT|retournement|1.259": {
