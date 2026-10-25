@@ -429,7 +429,7 @@
    "bruit": 22.68249577560648,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792904551763,
+   "vu": 1792908152175,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -879,7 +879,7 @@
    "bruit": 26.389925799091916,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792904551763,
+   "vu": 1792908152175,
    "t_decl": 0
   },
   "GRAMUSDT|retournement|1.259": {
@@ -919,5 +919,5 @@
    "t_decl": 0
   }
  },
- "dernier_resume": 124505
+ "dernier_resume": 124507
 }
