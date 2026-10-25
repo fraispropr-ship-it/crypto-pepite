@@ -216,24 +216,6 @@
    "vu": 1792767757648,
    "t_decl": 0
   },
-  "ZROUSDT|retournement|2.1342": {
-   "type": "retournement",
-   "declenchement": 2.1342,
-   "invalidation": 1.7270841426093388,
-   "atr": 0.08271952463553738,
-   "info": {
-    "creux1": 1.7239,
-    "creux2": 1.7519,
-    "baisse_atr": 6.7
-   },
-   "id": "ZROUSDT|retournement|2.1342",
-   "sym": "ZROUSDT",
-   "bruit": 11.96969317298698,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1792728153678,
-   "t_decl": 0
-  },
   "BNBUSDT|retournement|751.58": {
    "type": "retournement",
    "declenchement": 751.58,
@@ -447,7 +429,7 @@
    "bruit": 22.68249577560648,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792900951816,
+   "vu": 1792904551763,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -824,7 +806,7 @@
    "sym": "APRUSDT",
    "bruit": 64.58617571523081,
    "tick": 0.0001,
-   "etape": "trop_tard",
+   "etape": "termine",
    "vu": 1792882952714,
    "t_decl": 1792882800000.0,
    "entree": 0.029,
@@ -897,7 +879,7 @@
    "bruit": 26.389925799091916,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792900951816,
+   "vu": 1792904551763,
    "t_decl": 0
   },
   "GRAMUSDT|retournement|1.259": {
