@@ -555,7 +555,7 @@
    "bruit": 22.68249577560648,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792890154397,
+   "vu": 1792893757678,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -878,7 +878,7 @@
    "sym": "BMTUSDT",
    "bruit": 10.260526641054428,
    "tick": 1e-06,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1792890154397,
    "t_decl": 0
   },
@@ -1005,7 +1005,7 @@
    "bruit": 26.389925799091916,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1792890154397,
+   "vu": 1792893757678,
    "t_decl": 0
   },
   "GRAMUSDT|retournement|1.259": {
