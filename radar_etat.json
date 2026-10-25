@@ -285,7 +285,7 @@
    "bruit": 22.68249577560648,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.037284": {
@@ -789,7 +789,7 @@
    "bruit": 3.992499333428277,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "SOLUSDT|retournement|102.73": {
@@ -807,7 +807,7 @@
    "bruit": 4.53240088546132,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "XRPUSDT|retournement|1.3152": {
@@ -825,7 +825,7 @@
    "bruit": 5.024304205814764,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "DOGEUSDT|retournement|0.07802": {
@@ -843,7 +843,7 @@
    "bruit": 5.608357032770472,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "XMRUSDT|retournement|621.83": {
@@ -861,7 +861,7 @@
    "bruit": 5.578281949836723,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "BNBUSDT|retournement|748.63": {
@@ -879,7 +879,7 @@
    "bruit": 2.8684636314566925,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "ADAUSDT|retournement|0.2092": {
@@ -897,7 +897,7 @@
    "bruit": 7.095219082647899,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "TAOUSDT|retournement|252.85": {
@@ -1059,7 +1059,7 @@
    "bruit": 17.333048254251622,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "AVAXUSDT|retournement|9.022": {
@@ -1077,7 +1077,7 @@
    "bruit": 6.974756712815486,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "LTCUSDT|retournement|57.26": {
@@ -1095,7 +1095,7 @@
    "bruit": 5.266230836604385,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   },
   "GRASSUSDT|retournement|0.7263": {
@@ -1113,7 +1113,7 @@
    "bruit": 11.53753259827848,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1792947751037,
+   "vu": 1792951353372,
    "t_decl": 0
   }
  },
