@@ -1,0 +1,30 @@
+name: Radar Alt V2 tests
+
+on:
+  push:
+    branches:
+      - feature/radar-alt-v2
+    paths:
+      - radar_v2_filters.py
+      - radar_alt.py
+      - tests/**
+      - .github/workflows/radar-v2-tests.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Compile
+        run: python -m py_compile radar_alt.py radar_v2_filters.py
+      - name: Run isolated tests
+        run: python -m unittest discover -s tests -p 'test_radar_v2.py' -v
