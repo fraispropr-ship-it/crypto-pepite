@@ -699,7 +699,7 @@
    "bruit": 10.90374845957328,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793034151202,
+   "vu": 1793037755132,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.212": {
@@ -896,8 +896,8 @@
    "sym": "INJUSDT",
    "bruit": 9.258321194346145,
    "tick": 0.001,
-   "etape": "formation",
-   "vu": 1793034151202,
+   "etape": "pret",
+   "vu": 1793037755132,
    "t_decl": 0
   },
   "ZROUSDT|retournement|1.7974": {
@@ -915,7 +915,7 @@
    "bruit": 11.58331131875299,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793034151202,
+   "vu": 1793037755132,
    "t_decl": 0
   },
   "GRASSUSDT|continuation|0.7408": {
@@ -933,7 +933,7 @@
    "bruit": 10.88735459812557,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793034151202,
+   "vu": 1793037755132,
    "t_decl": 0
   }
  },
