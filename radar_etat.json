@@ -51,7 +51,7 @@
    "bruit": 23.630614584660183,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792990949343,
+   "vu": 1792994553511,
    "t_decl": 0
   },
   "BTRUSDT|continuation|0.07201": {
@@ -465,7 +465,7 @@
    "bruit": 5.52639908744221,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792990949343,
+   "vu": 1792994553511,
    "t_decl": 0
   },
   "XMRUSDT|retournement|621.83": {
@@ -680,7 +680,7 @@
    "sym": "MAGMAUSDT",
    "bruit": 18.934300362427297,
    "tick": 0.0001,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1792990949343,
    "t_decl": 0
   },
@@ -699,7 +699,7 @@
    "bruit": 6.829541734887274,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1792990949343,
+   "vu": 1792994553511,
    "t_decl": 0
   },
   "LTCUSDT|retournement|57.26": {
@@ -793,5 +793,5 @@
    "t_decl": 0
   }
  },
- "dernier_resume": 124511
+ "dernier_resume": 124513
 }
