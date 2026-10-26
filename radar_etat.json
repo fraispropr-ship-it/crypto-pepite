@@ -51,7 +51,7 @@
    "bruit": 23.630614584660183,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1792994553511,
+   "vu": 1792998152243,
    "t_decl": 0
   },
   "BTRUSDT|continuation|0.07201": {
@@ -465,7 +465,7 @@
    "bruit": 5.52639908744221,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1792994553511,
+   "vu": 1792998152243,
    "t_decl": 0
   },
   "XMRUSDT|retournement|621.83": {
@@ -698,8 +698,8 @@
    "sym": "AVAXUSDT",
    "bruit": 6.829541734887274,
    "tick": 0.001,
-   "etape": "pret",
-   "vu": 1792994553511,
+   "etape": "formation",
+   "vu": 1792998152243,
    "t_decl": 0
   },
   "LTCUSDT|retournement|57.26": {
