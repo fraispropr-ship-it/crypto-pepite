@@ -18,24 +18,6 @@
    "vu": 1792854155158,
    "t_decl": 0
   },
-  "USELESSUSDT|retournement|0.17436": {
-   "type": "retournement",
-   "declenchement": 0.17436,
-   "invalidation": 0.1448133083682325,
-   "atr": 0.009422305439224964,
-   "info": {
-    "creux1": 0.13203,
-    "creux2": 0.14764,
-    "baisse_atr": 5.4
-   },
-   "id": "USELESSUSDT|retournement|0.17436",
-   "sym": "USELESSUSDT",
-   "bruit": 16.693619337705947,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1792846953840,
-   "t_decl": 0
-  },
   "BTWUSDT|retournement|1.99024": {
    "type": "retournement",
    "declenchement": 1.99024,
@@ -393,7 +375,7 @@
    "bruit": 5.52639908744221,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793016175201,
+   "vu": 1793019759182,
    "t_decl": 0
   },
   "XMRUSDT|retournement|621.83": {
@@ -627,7 +609,7 @@
    "bruit": 6.829541734887274,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1793016175201,
+   "vu": 1793019759182,
    "t_decl": 0
   },
   "LTCUSDT|retournement|57.26": {
@@ -735,7 +717,7 @@
    "bruit": 10.90374845957328,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1793016175201,
+   "vu": 1793019759182,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.212": {
@@ -789,7 +771,7 @@
    "bruit": 12.948801063499069,
    "tick": 1e-06,
    "etape": "pret",
-   "vu": 1793016175201,
+   "vu": 1793019759182,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.032": {
@@ -879,7 +861,7 @@
    "bruit": 7.417801364172944,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1793016175201,
+   "vu": 1793019759182,
    "t_decl": 0
   },
   "LTCUSDT|retournement|57.31": {
@@ -933,7 +915,7 @@
    "bruit": 9.258321194346145,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793016175201,
+   "vu": 1793019759182,
    "t_decl": 0
   },
   "ZROUSDT|retournement|1.7974": {
@@ -951,7 +933,7 @@
    "bruit": 11.58331131875299,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793016175201,
+   "vu": 1793019759182,
    "t_decl": 0
   },
   "GRASSUSDT|continuation|0.7408": {
@@ -969,7 +951,7 @@
    "bruit": 10.88735459812557,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793016175201,
+   "vu": 1793019759182,
    "t_decl": 0
   }
  },
