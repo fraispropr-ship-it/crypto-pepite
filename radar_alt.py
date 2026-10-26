@@ -50,8 +50,9 @@ from zoneinfo import ZoneInfo
 import numpy as np
 import pandas as pd
 import requests
+from radar_v2_filters import confirm_breakout, guarded_sizing
 
-VERSION = "1.1"
+VERSION = "2.0-experimental"
 
 # ---------------- RÉGLAGES ----------------
 LIQ_MIN        = 10_000_000   # volume 24 h minimum (USDT)
@@ -452,7 +453,9 @@ def alerte(s, px, ctx, inf):
     t, step = inf.get("tick"), inf.get("step")
     e, sl = arrondi(px, t), arrondi(s["invalidation"], t)
     tp = arrondi(e + OBJECTIF_R * (e - sl), t)
-    sz = sizing(e, sl, inf)
+    sz, cause = guarded_sizing(e, sl, inf.get("step", 0), inf.get("minq", 0), inf.get("tick", 0), RISQUE, MARGE_CIBLE)
+    if sz is None:
+        return f"⚠️ Ticket indisponible : {escape(cause)}"
     frais = 2 * FRAIS_TAKER * e / (e - sl)
     ecart = (px - s["declenchement"]) / s["atr"]
     base = escape(s["sym"][:-4])
@@ -583,7 +586,25 @@ def main():
             if c < s["invalidation"]:
                 s["etape"] = "invalide"
             elif c > s["declenchement"]:
+                # V2: signal only after closed H1 + synchronized M15 confirmation.
+                m15 = bougies(s["sym"], "15", 12, maintenant)
+                h1_atr = float(atr(h1, 14).iloc[-1])
+                ok, motif = confirm_breakout(h1, m15, s["declenchement"], h1_atr,
+                                             float(h1.t.iloc[-1]) + H1)
+                if not ok:
+                    print(f"V2: {s['sym']} non confirmé : {motif}")
+                    s["etape"] = "pret"
+                    continue
                 inf = info.get(s["sym"], {})
+                test_entree = arrondi(c, inf.get("tick"))
+                test_sl = arrondi(s["invalidation"], inf.get("tick"))
+                dimension, motif = guarded_sizing(test_entree, test_sl,
+                                                   inf.get("step", 0), inf.get("minq", 0),
+                                                   inf.get("tick", 0), RISQUE, MARGE_CIBLE)
+                if dimension is None:
+                    print(f"V2: {s['sym']} écarté par risque : {motif}")
+                    s["etape"] = "pret"
+                    continue
                 e = arrondi(c, inf.get("tick"))
                 sl = arrondi(s["invalidation"], inf.get("tick"))
                 s.update(etape="declenche", t_decl=float(h1.t.iloc[-1]) + H1, entree=e, sl=sl,
