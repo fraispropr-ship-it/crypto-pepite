@@ -1,0 +1,26 @@
+name: Radar V2 H1 threshold research
+on:
+  push:
+    branches: [feature/radar-alt-v2]
+    paths:
+      - radar_v2_h1_sweep.py
+      - .github/workflows/radar-v2-h1-sweep.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -u radar_v2_h1_sweep.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: radar-v2-h1-sweep
+          path: radar_v2_h1_sweep_report.json
