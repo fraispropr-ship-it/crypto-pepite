@@ -1,0 +1,25 @@
+name: Radar Alt V4 trend-retest pilot
+on:
+  push:
+    branches: [research/radar-alt-v4-trend-retest]
+    paths: [radar_v4_trend_retest.py, .github/workflows/radar-v4-retest.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m py_compile radar_v4_trend_retest.py
+      - run: python -u radar_v4_trend_retest.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: radar-v4-trend-retest-pilot
+          path: radar_v4_report.json
