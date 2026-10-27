@@ -1,0 +1,41 @@
+name: Trend Retest
+on:
+  schedule:
+    - cron: "3,18,33,48 * * * *"
+  workflow_dispatch:
+concurrency:
+  group: trend-retest-signals
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Scan and send confirmed alerts
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -u trend_retest.py
+      - name: Save Trend Retest deduplication state
+        if: success()
+        run: |
+          git config user.name "trend-retest-bot"
+          git config user.email "trend-retest-bot@users.noreply.github.com"
+          git add trend_retest_state.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Trend Retest signal state"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 4))
+          done
+          echo "Failed to persist deduplication state";exit 1
