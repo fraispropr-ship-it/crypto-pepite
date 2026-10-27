@@ -1,0 +1,422 @@
+[
+  {
+    "symbol": "BTCUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "BTCUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "BTCUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "ETHUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "ETHUSDT",
+    "date": "2024-01-01",
+    "returned": 0,
+    "latest_utc": null,
+    "error": "svc error: Get kline failed"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "SOLUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "SOLUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "SOLUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "XRPUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "XRPUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "XRPUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "LINKUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "LINKUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "LINKUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "ADAUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "ADAUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "ADAUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "AVAXUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "AVAXUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "AVAXUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "DOGEUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "DOGEUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "DOGEUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "SUIUSDT",
+    "date": "2023-01-01",
+    "returned": 0,
+    "latest_utc": null,
+    "error": null
+  },
+  {
+    "symbol": "SUIUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "SUIUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "AAVEUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "AAVEUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "AAVEUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "NEARUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "NEARUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "NEARUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "APTUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "APTUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "APTUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "BNBUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "BNBUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "BNBUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "UNIUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "UNIUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "UNIUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "ONDOUSDT",
+    "date": "2023-01-01",
+    "returned": 0,
+    "latest_utc": null,
+    "error": null
+  },
+  {
+    "symbol": "ONDOUSDT",
+    "date": "2024-01-01",
+    "returned": 0,
+    "latest_utc": null,
+    "error": null
+  },
+  {
+    "symbol": "ONDOUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "HYPEUSDT",
+    "date": "2023-01-01",
+    "returned": 0,
+    "latest_utc": null,
+    "error": null
+  },
+  {
+    "symbol": "HYPEUSDT",
+    "date": "2024-01-01",
+    "returned": 0,
+    "latest_utc": null,
+    "error": null
+  },
+  {
+    "symbol": "HYPEUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "INJUSDT",
+    "date": "2023-01-01",
+    "returned": 3,
+    "latest_utc": "2023-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "INJUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "INJUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "1000PEPEUSDT",
+    "date": "2023-01-01",
+    "returned": 0,
+    "latest_utc": null,
+    "error": null
+  },
+  {
+    "symbol": "1000PEPEUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "1000PEPEUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "WLDUSDT",
+    "date": "2023-01-01",
+    "returned": 0,
+    "latest_utc": null,
+    "error": null
+  },
+  {
+    "symbol": "WLDUSDT",
+    "date": "2024-01-01",
+    "returned": 3,
+    "latest_utc": "2024-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "WLDUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  },
+  {
+    "symbol": "ZROUSDT",
+    "date": "2023-01-01",
+    "returned": 0,
+    "latest_utc": null,
+    "error": null
+  },
+  {
+    "symbol": "ZROUSDT",
+    "date": "2024-01-01",
+    "returned": 0,
+    "latest_utc": null,
+    "error": null
+  },
+  {
+    "symbol": "ZROUSDT",
+    "date": "2025-01-01",
+    "returned": 3,
+    "latest_utc": "2025-01-01T00:00:00+00:00",
+    "error": null
+  }
+]
