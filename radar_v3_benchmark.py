@@ -40,7 +40,17 @@ def fetch(symbol,start=START-130*H,end=END+MAX_HOLD*H):
         if len(frames)>50:raise RuntimeError("pagination safety limit")
         time.sleep(.08)
     df=pd.concat(frames).drop_duplicates("t").sort_values("t").reset_index(drop=True)
-    return df[(df.t>=start)&(df.t+H<=end)].reset_index(drop=True)
+    df=df[(df.t>=start)&(df.t+H<=end)].reset_index(drop=True)
+    if df.empty:
+        raise RuntimeError(f"No candles for {symbol}")
+    times=df.t.astype("int64")
+    if (times.diff().iloc[1:]!=H).any():
+        raise RuntimeError(f"Non-contiguous H1 candles for {symbol}")
+    if int(times.iloc[0])>start+H or int(times.iloc[-1])+H<end-H:
+        raise RuntimeError(f"Truncated H1 history for {symbol}")
+    if (df.h < df.l).any() or (df.o <= 0).any() or (df.c <= 0).any():
+        raise RuntimeError(f"Invalid OHLC candles for {symbol}")
+    return df
 
 def evaluate(df,i,sig):
     if i+1>=len(df):return None
@@ -54,6 +64,9 @@ def evaluate(df,i,sig):
     last=min(i+MAX_HOLD,len(df)-1)
     for j in range(i+1,last+1):
         bar=df.iloc[j]
+        open_px=float(bar.o)
+        if (open_px<=stop if side==1 else open_px>=stop):
+            exit_price=open_px*(1-side*SLIPPAGE);reason="GAP_SL";break
         hit_sl=bar.l<=stop if side==1 else bar.h>=stop
         hit_tp=bar.h>=target if side==1 else bar.l<=target
         if hit_sl:exit_price=stop*(1-side*SLIPPAGE);reason="SL";break
@@ -94,7 +107,7 @@ def main():
         overview[name]=dict(train=summarize([t for t in v if t["t"]<SPLIT]),
                             holdout=summarize([t for t in v if t["t"]>=SPLIT]),
                             all=summarize(v))
-    report=dict(method="Fixed-symbol H1 V3 research; closed candles, next-open fills",
+    report=dict(method="Fixed-symbol H1 V3 research; closed candles, next-open fills; gap stop handling",
                 window=["2026-06-01","2026-10-20"],holdout_starts="2026-09-01",
                 market_data_failures=missing,strategies=overview,total=summarize(trades),
                 assumptions=["FEE 0.06% each side; SLIPPAGE 0.02% each side",
