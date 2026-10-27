@@ -1,0 +1,25 @@
+name: Radar V3.6 market state diagnostic
+on:
+  push:
+    branches: [research/radar-alt-v3]
+    paths: [radar_v3_market_state.py, .github/workflows/radar-v3-market-state.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m py_compile radar_v3_market_state.py
+      - run: python -u radar_v3_market_state.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: radar-v3-market-state
+          path: radar_v3_market_state_report.json
