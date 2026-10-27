@@ -1,0 +1,169 @@
+{
+  "status": "exploratory_not_final_validation",
+  "rules": "Long-only funding event hypothesis. Historical rate used only AFTER settlement.\nPredict next funding timestamp from last observed interval; never next realized rate.\nSignal: most recently settled rate <= -0.003; enter 1h before predicted settlement.\n2h maximum, stop 2 ATR14 H1, target 2R, planned stop loss 1 USDT incl costs.\nExploratory fixed-universe H1 approximation, no orders.\n",
+  "results": {
+    "2024_1x": {
+      "annual": {
+        "n": 0,
+        "total_R": 0.0,
+        "mean_R": null,
+        "profit_factor": null,
+        "max_drawdown_R": 0.0,
+        "wins": 0
+      },
+      "funding_pnl_USDT": 0,
+      "halves": {
+        "1": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "2": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        }
+      }
+    },
+    "2024_2x": {
+      "annual": {
+        "n": 0,
+        "total_R": 0.0,
+        "mean_R": null,
+        "profit_factor": null,
+        "max_drawdown_R": 0.0,
+        "wins": 0
+      },
+      "funding_pnl_USDT": 0,
+      "halves": {
+        "1": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "2": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        }
+      }
+    },
+    "2025_1x": {
+      "annual": {
+        "n": 9,
+        "total_R": 0.385,
+        "mean_R": 0.0428,
+        "profit_factor": 1.234,
+        "max_drawdown_R": 1.081,
+        "wins": 5
+      },
+      "funding_pnl_USDT": 0.3005072980193951,
+      "halves": {
+        "1": {
+          "n": 6,
+          "total_R": -0.842,
+          "mean_R": -0.1403,
+          "profit_factor": 0.488,
+          "max_drawdown_R": 1.081,
+          "wins": 3
+        },
+        "2": {
+          "n": 3,
+          "total_R": 1.227,
+          "mean_R": 0.409,
+          "profit_factor": 266.335,
+          "max_drawdown_R": 0.005,
+          "wins": 2
+        }
+      }
+    },
+    "2025_2x": {
+      "annual": {
+        "n": 9,
+        "total_R": 0.183,
+        "mean_R": 0.0203,
+        "profit_factor": 1.108,
+        "max_drawdown_R": 1.103,
+        "wins": 5
+      },
+      "funding_pnl_USDT": 0.2943911060061338,
+      "halves": {
+        "1": {
+          "n": 6,
+          "total_R": -0.97,
+          "mean_R": -0.1617,
+          "profit_factor": 0.422,
+          "max_drawdown_R": 1.103,
+          "wins": 3
+        },
+        "2": {
+          "n": 3,
+          "total_R": 1.153,
+          "mean_R": 0.3843,
+          "profit_factor": 83.519,
+          "max_drawdown_R": 0.014,
+          "wins": 2
+        }
+      }
+    }
+  },
+  "quality": {
+    "2024": {
+      "symbols": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "XRP",
+        "LINK",
+        "ADA",
+        "AVAX",
+        "DOGE",
+        "SUI",
+        "AAVE",
+        "NEAR",
+        "APT",
+        "BNB",
+        "UNI",
+        "INJ",
+        "1000PEPE",
+        "WLD"
+      ]
+    },
+    "2025": {
+      "symbols": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "XRP",
+        "LINK",
+        "ADA",
+        "AVAX",
+        "DOGE",
+        "SUI",
+        "AAVE",
+        "NEAR",
+        "APT",
+        "BNB",
+        "UNI",
+        "ONDO",
+        "HYPE",
+        "INJ",
+        "1000PEPE",
+        "WLD",
+        "ZRO"
+      ]
+    }
+  }
+}
