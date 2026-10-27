@@ -50,7 +50,7 @@ from zoneinfo import ZoneInfo
 import numpy as np
 import pandas as pd
 import requests
-from radar_v2_filters import confirm_breakout, guarded_sizing
+from radar_v2_filters import confirm_breakout, guarded_sizing, btc_permission
 
 VERSION = "2.0-experimental"
 
@@ -557,6 +557,12 @@ def main():
     prix = {s: float(h1s[s].c.iloc[-1]) for s in h1s}
     prix.update({s: p for s, p in prix_tk.items() if s not in prix})
     ctx = contexte(maintenant, quotidiens)
+    # Advisory by default: set RADAR_V2_BTC_MODE=strict to veto countertrend longs.
+    btc_mode = os.environ.get("RADAR_V2_BTC_MODE", "warn")
+    btc_d = bougies("BTCUSDT", "D", 220, maintenant)
+    btc_h4 = bougies("BTCUSDT", "240", 80, maintenant)
+    btc_ok, btc_why = btc_permission(btc_d, btc_h4, btc_mode)
+    print(f"V2 BTC [{btc_mode}] : {btc_why}")
     print(ctx["texte"])
 
     # 2) Mise à jour du cycle de vie
@@ -586,6 +592,10 @@ def main():
             if c < s["invalidation"]:
                 s["etape"] = "invalide"
             elif c > s["declenchement"]:
+                if not btc_ok:
+                    print(f"V2: {s['sym']} refusé : {btc_why}")
+                    s["etape"] = "pret"
+                    continue
                 # V2: signal only after closed H1 + synchronized M15 confirmation.
                 m15 = bougies(s["sym"], "15", 12, maintenant)
                 h1_atr = float(atr(h1, 14).iloc[-1])
