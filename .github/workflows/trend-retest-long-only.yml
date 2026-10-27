@@ -1,0 +1,19 @@
+name: Trend Retest LONG research
+on:
+  push:
+    branches: [research/trend-retest-long-only]
+    paths: [trend_retest_long_only_1y.py, .github/workflows/trend-retest-long-only.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python -u trend_retest_long_only_1y.py
