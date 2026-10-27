@@ -7,7 +7,9 @@ on:
     paths:
       - radar_v2_filters.py
       - radar_alt.py
+      - radar_v2_baseline.py
       - tests/**
+      - radar_journal.csv
       - .github/workflows/radar-v2-tests.yml
   workflow_dispatch:
 
@@ -25,6 +27,8 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - name: Compile
-        run: python -m py_compile radar_alt.py radar_v2_filters.py
+        run: python -m py_compile radar_alt.py radar_v2_filters.py radar_v2_baseline.py
       - name: Run isolated tests
         run: python -m unittest discover -s tests -p 'test_radar_v2.py' -v
+      - name: Historical V1 baseline (not V2 validation)
+        run: python radar_v2_baseline.py --journal radar_journal.csv
