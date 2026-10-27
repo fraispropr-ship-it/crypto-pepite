@@ -1,0 +1,185 @@
+{
+  "status": "exploratory_no_pristine_final_test",
+  "symbols": [
+    "BTC",
+    "ETH",
+    "SOL",
+    "XRP",
+    "LINK",
+    "ADA",
+    "AVAX",
+    "DOGE",
+    "SUI",
+    "AAVE",
+    "NEAR",
+    "APT",
+    "BNB",
+    "UNI",
+    "ONDO",
+    "HYPE",
+    "INJ",
+    "1000PEPE",
+    "WLD",
+    "ZRO"
+  ],
+  "excluded": [],
+  "assumptions": "See lab.py; H1 fills, conservative same-bar stop first, 1 position, 2 entries per UTC day, funding open proxy. 2x means doubled fee and slippage.",
+  "results": {
+    "1x_choc_btc_retour": {
+      "development": {
+        "n": 29,
+        "total_R": 5.445,
+        "mean_R": 0.1877,
+        "profit_factor": 1.514,
+        "max_drawdown_R": 3.904,
+        "wins": 16
+      },
+      "validation": {
+        "n": 5,
+        "total_R": -2.876,
+        "mean_R": -0.5751,
+        "profit_factor": 0.212,
+        "max_drawdown_R": 3.65,
+        "wins": 1
+      },
+      "previously_examined": {
+        "n": 11,
+        "total_R": -4.277,
+        "mean_R": -0.3888,
+        "profit_factor": 0.41,
+        "max_drawdown_R": 7.248,
+        "wins": 3
+      }
+    },
+    "1x_force_relative": {
+      "development": {
+        "n": 275,
+        "total_R": -10.316,
+        "mean_R": -0.0375,
+        "profit_factor": 0.925,
+        "max_drawdown_R": 22.771,
+        "wins": 116
+      },
+      "validation": {
+        "n": 116,
+        "total_R": 11.391,
+        "mean_R": 0.0982,
+        "profit_factor": 1.229,
+        "max_drawdown_R": 8.813,
+        "wins": 54
+      },
+      "previously_examined": {
+        "n": 151,
+        "total_R": -9.964,
+        "mean_R": -0.066,
+        "profit_factor": 0.87,
+        "max_drawdown_R": 13.694,
+        "wins": 59
+      }
+    },
+    "1x_funding_extreme_retournement": {
+      "development": {
+        "n": 122,
+        "total_R": -1.042,
+        "mean_R": -0.0085,
+        "profit_factor": 0.983,
+        "max_drawdown_R": 8.366,
+        "wins": 53
+      },
+      "validation": {
+        "n": 66,
+        "total_R": -5.567,
+        "mean_R": -0.0844,
+        "profit_factor": 0.852,
+        "max_drawdown_R": 9.504,
+        "wins": 25
+      },
+      "previously_examined": {
+        "n": 80,
+        "total_R": 3.421,
+        "mean_R": 0.0428,
+        "profit_factor": 1.095,
+        "max_drawdown_R": 9.872,
+        "wins": 35
+      }
+    },
+    "2x_choc_btc_retour": {
+      "development": {
+        "n": 29,
+        "total_R": 4.061,
+        "mean_R": 0.14,
+        "profit_factor": 1.379,
+        "max_drawdown_R": 4.255,
+        "wins": 15
+      },
+      "validation": {
+        "n": 5,
+        "total_R": -3.038,
+        "mean_R": -0.6075,
+        "profit_factor": 0.174,
+        "max_drawdown_R": 3.678,
+        "wins": 1
+      },
+      "previously_examined": {
+        "n": 11,
+        "total_R": -4.678,
+        "mean_R": -0.4253,
+        "profit_factor": 0.359,
+        "max_drawdown_R": 7.297,
+        "wins": 3
+      }
+    },
+    "2x_force_relative": {
+      "development": {
+        "n": 274,
+        "total_R": -24.885,
+        "mean_R": -0.0908,
+        "profit_factor": 0.819,
+        "max_drawdown_R": 33.748,
+        "wins": 114
+      },
+      "validation": {
+        "n": 116,
+        "total_R": 3.048,
+        "mean_R": 0.0263,
+        "profit_factor": 1.06,
+        "max_drawdown_R": 11.535,
+        "wins": 53
+      },
+      "previously_examined": {
+        "n": 151,
+        "total_R": -19.768,
+        "mean_R": -0.1309,
+        "profit_factor": 0.747,
+        "max_drawdown_R": 21.87,
+        "wins": 57
+      }
+    },
+    "2x_funding_extreme_retournement": {
+      "development": {
+        "n": 122,
+        "total_R": -7.889,
+        "mean_R": -0.0647,
+        "profit_factor": 0.873,
+        "max_drawdown_R": 10.946,
+        "wins": 51
+      },
+      "validation": {
+        "n": 66,
+        "total_R": -10.134,
+        "mean_R": -0.1535,
+        "profit_factor": 0.733,
+        "max_drawdown_R": 12.115,
+        "wins": 25
+      },
+      "previously_examined": {
+        "n": 80,
+        "total_R": -2.586,
+        "mean_R": -0.0323,
+        "profit_factor": 0.93,
+        "max_drawdown_R": 11.201,
+        "wins": 35
+      }
+    }
+  }
+}
