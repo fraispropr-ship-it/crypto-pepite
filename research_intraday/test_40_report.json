@@ -1,0 +1,950 @@
+{
+  "period": "2026-01-01 to 2026-10-27 UTC exclusive",
+  "errors": {},
+  "quality": {
+    "BTC": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "6b4bd4597a0fb3bbcbebca0a37be710a49c0bd277d390c94480eac3bf6447311",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "ETH": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "75aa19fc9bdbdba2182861c859f92d2739bc4c4ab41b5f00de28d7e148b199eb",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "SOL": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "8303f7be4569a4c50360186beec54602bd455a118d9123a438515543c9b66354",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "XRP": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "7d8ddf2833e28a6a45a8a35982a5c2fa003a9e243285ae5b61d43b91e9061195",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "LINK": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "1546884f3619b3cf4e0be28f83a28c73716d7828c96c0a6e5d7e0b93d67fb048",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "ADA": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "8a3dae15d069a268b0b5c548e97846a2e6726870adead7e273fb34d5ec711fb5",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "AVAX": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "6b80b3f3611dbc74fc57f2d5594ae3e4c17fd45977ce9884287cf0b015d75b7b",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "DOGE": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "cfe69c5dac1dfc3d7423f9e46b1dacc8d14437e44436fc6e2cc76e2246285575",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "SUI": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "f711d4b5c39c130025bd58f6d2f9f62bdad140d4f00448e7e3dc032b6306ed86",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "AAVE": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "5f10cdecadb4f7cc945594d5762804090fee3a62f7748d5df5ad065e03c1e7a1",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "NEAR": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "af7cd2183175e04fda0a85305f4ceceba696dd46ba3efa8343e341cacb7cae09",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "APT": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "aac8635f3e3c70754d1ef741eb1e5d068806431bc6db8fa7495a901220c44214",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "BNB": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "767d490aebbeea6f8a9bfe0c738fe29cb852b7b8d62dbfaf66d3096276cf49cb",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "UNI": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "82af7b2f1bd37fd6696a06952a821a315ed795335b1a68fe57dc74dedc8095be",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "ONDO": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 1980,
+        "sha256": "3dab33a4455d50a0b5d3a476c0b1a15beea4d7462a78d12ea00a0ad8f004a775",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "HYPE": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "588df9f65fd0d464579e0e2484f5e1241bce5f70f2868b7d7f2ab03be31c1c45",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "INJ": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 1139,
+        "sha256": "3abb9a042e2b4c3ee6cc67ad103fd91fad85a932548b1535e7ed3372da1b9ffe",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "1000PEPE": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "03e58a9307ad89723e009f39dfb067275daf381a403f6531151140d0c62a8549",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "WLD": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "aae4e6a609b39a312d96780cd5bcd2d6e9bc90d44b2b0a3aca114d558e62aa3e",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "ZRO": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 1980,
+        "sha256": "dae04d0fa40b56e27b00283cc758b01b2e007bcc752424cb33322b20f108a7dd",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "ZEC": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "9146463e59dece96094453d6bb5062b12eee3a3a9b90bb0db0bd0a5aa7ebcbd6",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "ENA": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 1980,
+        "sha256": "079c0ede827873eebf288d085bb4de70a37fff65db648de3aea3b25d8c3475f1",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "XMR": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "1f468a4f666c3e8fcf8c54fbf0a69ff6a5349607a9e686e1dd1acd2f3b0276f2",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "TAO": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 1980,
+        "sha256": "c3f99bb1e5e405f76ba4416b41df00cdb2f53b8aa7154a077eaa0f30f714bc6e",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "ARB": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "39c12ecdba27acc188c5cbed94aefbeb44ac0a25007c1cdfabba66e13bba5ab0",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "BCH": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "007b49f01630d38099169d383c95981045abeb79889c02c31a0d995af1ce80b0",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "TIA": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 1980,
+        "sha256": "a382d8b53c7e6aeeae2098a0d78987ec606e9d3b7eb81cf6af3132680a20d836",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "LTC": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "69af2af8c99da7480697132d29f2d3a1e5d769a23d51708686eab4e12b77d7e7",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "TRX": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "41604b5fb9f66eb68a36b444a5acca2f99945668cf75854232948b9a62526d5e",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "DOT": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "5ab72fbba46f4aa18cbcde795dcab2f678b1e3992198c645fc924efebcfa0d59",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "ATOM": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "f8a44f8f5f10f77efca44cfb9fe79e164310cd01612f6213875a253d35cacd60",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "FIL": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "2f8607255cf6adb17af4485c5fe6bf355ba5440eb675eaa37ef03889d93ac63e",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "ETC": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "a9db6202f23776d9203da7e9a489493d1f60802477b374c9a8f1833e429131f0",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "OP": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "589e9d671455abbb9705ed894dd03838540e71c897ced3a86cce1f50f845e6de",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "XLM": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "793f1815ca6e82069bfe1b0e1a2d13213e978fc47e4883de3f930fc1837364ba",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "SEI": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "e6b8490c6788928d46573a32b0e5ad33cad22cdd23ceaa37b409a816cd0e55e4",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "WIF": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 1980,
+        "sha256": "772cb02d6d82f1a953729af8ebb67458f46f3dcbbbbcb55b01687f7d1af5df86",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "1000BONK": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 1980,
+        "sha256": "91594706bda870104d422203bca8c1d66a17a00397e3bdad7ca806fd43a2a110",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "ALGO": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 990,
+        "sha256": "5049912893d9a52c49d6c6573da4eca5b0d1035df5cce242c1b086c9e2d1240d",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    },
+    "POL": {
+      "eligible": true,
+      "candles": {
+        "candles": 7920,
+        "missing": 0,
+        "duplicates": 0,
+        "invalid": 0,
+        "funding_count": 1980,
+        "sha256": "b29174c0a939700d9652d6fb990df7b6ca9fa8942b9f5c51008b7736e3cd59da",
+        "complete_ohlc": true
+      },
+      "funding_contiguous": true
+    }
+  },
+  "extra": [
+    "ZEC",
+    "ENA",
+    "XMR",
+    "TAO",
+    "ARB",
+    "BCH",
+    "TIA",
+    "LTC",
+    "TRX",
+    "DOT",
+    "ATOM",
+    "FIL",
+    "ETC",
+    "OP",
+    "XLM",
+    "SEI",
+    "WIF",
+    "1000BONK",
+    "ALGO",
+    "POL"
+  ],
+  "results": {
+    "20_1x": {
+      "annual": {
+        "n": 46,
+        "total_R": 10.014,
+        "mean_R": 0.2177,
+        "profit_factor": 1.516,
+        "max_drawdown_R": 2.256,
+        "wins": 23
+      },
+      "by_month": {
+        "1": {
+          "n": 5,
+          "total_R": 3.48,
+          "mean_R": 0.6959,
+          "profit_factor": 4.478,
+          "max_drawdown_R": 1.001,
+          "wins": 4
+        },
+        "2": {
+          "n": 6,
+          "total_R": 1.46,
+          "mean_R": 0.2433,
+          "profit_factor": 1.598,
+          "max_drawdown_R": 1.437,
+          "wins": 3
+        },
+        "3": {
+          "n": 4,
+          "total_R": -1.169,
+          "mean_R": -0.2923,
+          "profit_factor": 0.319,
+          "max_drawdown_R": 1.253,
+          "wins": 1
+        },
+        "4": {
+          "n": 4,
+          "total_R": 0.689,
+          "mean_R": 0.1722,
+          "profit_factor": 1.347,
+          "max_drawdown_R": 1.003,
+          "wins": 2
+        },
+        "5": {
+          "n": 5,
+          "total_R": 3.685,
+          "mean_R": 0.737,
+          "profit_factor": 4.685,
+          "max_drawdown_R": 1.0,
+          "wins": 4
+        },
+        "6": {
+          "n": 4,
+          "total_R": -2.246,
+          "mean_R": -0.5615,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 2.246,
+          "wins": 0
+        },
+        "7": {
+          "n": 5,
+          "total_R": 1.923,
+          "mean_R": 0.3846,
+          "profit_factor": 1.961,
+          "max_drawdown_R": 1.0,
+          "wins": 3
+        },
+        "8": {
+          "n": 4,
+          "total_R": 0.966,
+          "mean_R": 0.2414,
+          "profit_factor": 1.483,
+          "max_drawdown_R": 2.0,
+          "wins": 2
+        },
+        "9": {
+          "n": 5,
+          "total_R": 2.594,
+          "mean_R": 0.5188,
+          "profit_factor": 2.296,
+          "max_drawdown_R": 1.002,
+          "wins": 3
+        },
+        "10": {
+          "n": 4,
+          "total_R": -1.367,
+          "mean_R": -0.3417,
+          "profit_factor": 0.547,
+          "max_drawdown_R": 2.006,
+          "wins": 1
+        }
+      },
+      "without_best_5": {
+        "n": 41,
+        "total_R": 1.931,
+        "mean_R": 0.0471,
+        "profit_factor": 1.099,
+        "max_drawdown_R": 4.579,
+        "wins": 18
+      }
+    },
+    "40_1x": {
+      "annual": {
+        "n": 77,
+        "total_R": 14.264,
+        "mean_R": 0.1852,
+        "profit_factor": 1.432,
+        "max_drawdown_R": 6.008,
+        "wins": 39
+      },
+      "by_month": {
+        "1": {
+          "n": 8,
+          "total_R": 6.273,
+          "mean_R": 0.7841,
+          "profit_factor": 5.186,
+          "max_drawdown_R": 1.003,
+          "wins": 6
+        },
+        "2": {
+          "n": 7,
+          "total_R": 3.878,
+          "mean_R": 0.554,
+          "profit_factor": 3.54,
+          "max_drawdown_R": 1.437,
+          "wins": 4
+        },
+        "3": {
+          "n": 8,
+          "total_R": -1.865,
+          "mean_R": -0.2331,
+          "profit_factor": 0.529,
+          "max_drawdown_R": 3.409,
+          "wins": 2
+        },
+        "4": {
+          "n": 7,
+          "total_R": 1.043,
+          "mean_R": 0.149,
+          "profit_factor": 1.348,
+          "max_drawdown_R": 1.997,
+          "wins": 3
+        },
+        "5": {
+          "n": 9,
+          "total_R": 4.803,
+          "mean_R": 0.5337,
+          "profit_factor": 2.605,
+          "max_drawdown_R": 2.0,
+          "wins": 6
+        },
+        "6": {
+          "n": 7,
+          "total_R": -3.143,
+          "mean_R": -0.449,
+          "profit_factor": 0.372,
+          "max_drawdown_R": 4.004,
+          "wins": 2
+        },
+        "7": {
+          "n": 8,
+          "total_R": 2.228,
+          "mean_R": 0.2785,
+          "profit_factor": 1.743,
+          "max_drawdown_R": 2.0,
+          "wins": 5
+        },
+        "8": {
+          "n": 10,
+          "total_R": 1.248,
+          "mean_R": 0.1248,
+          "profit_factor": 1.312,
+          "max_drawdown_R": 4.003,
+          "wins": 6
+        },
+        "9": {
+          "n": 9,
+          "total_R": 1.152,
+          "mean_R": 0.128,
+          "profit_factor": 1.23,
+          "max_drawdown_R": 2.005,
+          "wins": 4
+        },
+        "10": {
+          "n": 4,
+          "total_R": -1.354,
+          "mean_R": -0.3384,
+          "profit_factor": 0.549,
+          "max_drawdown_R": 2.0,
+          "wins": 1
+        }
+      },
+      "without_best_5": {
+        "n": 72,
+        "total_R": 6.144,
+        "mean_R": 0.0853,
+        "profit_factor": 1.186,
+        "max_drawdown_R": 7.465,
+        "wins": 34
+      }
+    },
+    "20_2x": {
+      "annual": {
+        "n": 46,
+        "total_R": 5.406,
+        "mean_R": 0.1175,
+        "profit_factor": 1.276,
+        "max_drawdown_R": 2.371,
+        "wins": 23
+      },
+      "by_month": {
+        "1": {
+          "n": 5,
+          "total_R": 2.836,
+          "mean_R": 0.5672,
+          "profit_factor": 3.835,
+          "max_drawdown_R": 1.001,
+          "wins": 4
+        },
+        "2": {
+          "n": 6,
+          "total_R": 1.126,
+          "mean_R": 0.1877,
+          "profit_factor": 1.456,
+          "max_drawdown_R": 1.469,
+          "wins": 3
+        },
+        "3": {
+          "n": 4,
+          "total_R": -1.368,
+          "mean_R": -0.3421,
+          "profit_factor": 0.245,
+          "max_drawdown_R": 1.368,
+          "wins": 1
+        },
+        "4": {
+          "n": 4,
+          "total_R": 0.075,
+          "mean_R": 0.0187,
+          "profit_factor": 1.038,
+          "max_drawdown_R": 1.003,
+          "wins": 2
+        },
+        "5": {
+          "n": 5,
+          "total_R": 2.879,
+          "mean_R": 0.5757,
+          "profit_factor": 3.879,
+          "max_drawdown_R": 1.0,
+          "wins": 4
+        },
+        "6": {
+          "n": 4,
+          "total_R": -2.327,
+          "mean_R": -0.5817,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 2.327,
+          "wins": 0
+        },
+        "7": {
+          "n": 5,
+          "total_R": 1.384,
+          "mean_R": 0.2768,
+          "profit_factor": 1.692,
+          "max_drawdown_R": 1.0,
+          "wins": 3
+        },
+        "8": {
+          "n": 4,
+          "total_R": 0.216,
+          "mean_R": 0.0541,
+          "profit_factor": 1.108,
+          "max_drawdown_R": 2.0,
+          "wins": 2
+        },
+        "9": {
+          "n": 5,
+          "total_R": 2.043,
+          "mean_R": 0.4086,
+          "profit_factor": 2.021,
+          "max_drawdown_R": 1.002,
+          "wins": 3
+        },
+        "10": {
+          "n": 4,
+          "total_R": -1.458,
+          "mean_R": -0.3645,
+          "profit_factor": 0.516,
+          "max_drawdown_R": 2.006,
+          "wins": 1
+        }
+      },
+      "without_best_5": {
+        "n": 41,
+        "total_R": -2.032,
+        "mean_R": -0.0496,
+        "profit_factor": 0.896,
+        "max_drawdown_R": 4.869,
+        "wins": 18
+      }
+    },
+    "40_2x": {
+      "annual": {
+        "n": 77,
+        "total_R": 6.813,
+        "mean_R": 0.0885,
+        "profit_factor": 1.204,
+        "max_drawdown_R": 6.007,
+        "wins": 39
+      },
+      "by_month": {
+        "1": {
+          "n": 8,
+          "total_R": 5.304,
+          "mean_R": 0.663,
+          "profit_factor": 4.469,
+          "max_drawdown_R": 1.003,
+          "wins": 6
+        },
+        "2": {
+          "n": 7,
+          "total_R": 3.279,
+          "mean_R": 0.4684,
+          "profit_factor": 3.024,
+          "max_drawdown_R": 1.469,
+          "wins": 4
+        },
+        "3": {
+          "n": 8,
+          "total_R": -2.33,
+          "mean_R": -0.2913,
+          "profit_factor": 0.437,
+          "max_drawdown_R": 3.697,
+          "wins": 2
+        },
+        "4": {
+          "n": 7,
+          "total_R": 0.123,
+          "mean_R": 0.0175,
+          "profit_factor": 1.041,
+          "max_drawdown_R": 2.023,
+          "wins": 3
+        },
+        "5": {
+          "n": 9,
+          "total_R": 3.66,
+          "mean_R": 0.4067,
+          "profit_factor": 2.223,
+          "max_drawdown_R": 2.0,
+          "wins": 6
+        },
+        "6": {
+          "n": 7,
+          "total_R": -3.314,
+          "mean_R": -0.4735,
+          "profit_factor": 0.338,
+          "max_drawdown_R": 4.004,
+          "wins": 2
+        },
+        "7": {
+          "n": 8,
+          "total_R": 1.437,
+          "mean_R": 0.1797,
+          "profit_factor": 1.479,
+          "max_drawdown_R": 2.0,
+          "wins": 5
+        },
+        "8": {
+          "n": 10,
+          "total_R": -0.336,
+          "mean_R": -0.0336,
+          "profit_factor": 0.916,
+          "max_drawdown_R": 4.002,
+          "wins": 6
+        },
+        "9": {
+          "n": 9,
+          "total_R": 0.438,
+          "mean_R": 0.0487,
+          "profit_factor": 1.087,
+          "max_drawdown_R": 2.005,
+          "wins": 4
+        },
+        "10": {
+          "n": 4,
+          "total_R": -1.447,
+          "mean_R": -0.3617,
+          "profit_factor": 0.518,
+          "max_drawdown_R": 2.0,
+          "wins": 1
+        }
+      },
+      "without_best_5": {
+        "n": 72,
+        "total_R": -0.737,
+        "mean_R": -0.0102,
+        "profit_factor": 0.978,
+        "max_drawdown_R": 8.054,
+        "wins": 34
+      }
+    }
+  }
+}
