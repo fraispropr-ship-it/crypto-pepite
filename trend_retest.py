@@ -61,7 +61,7 @@ def main():
  gh='https://github.com/fraispropr-ship-it/crypto-pepite/actions/workflows/trend-retest.yml'
  if signal:
   s=signal;fmt=lambda x:format(x,'.8g')
-  text=('<b>⚡ REBOND ÉCLAIR — LONG</b>\n<b>'+html.escape(s['symbol'])+'</b> · rejet après excès H1\n\nPrix de référence : <code>'+fmt(s['reference'])+'</code>\nSL indicatif : <code>'+fmt(s['stop'])+'</code>\nTP indicatif : <code>'+fmt(s['target'])+'</code>\nQuantité indicative : <code>'+fmt(s['quantity'])+'</code>\nRisque prévu : 1 USDT hors funding et gaps · levier ≤10×\nDurée maximale : 12h · cible brute 1,75× distance du stop\n\n⚠️ Expérimental, non validé. Vérifier prix, frais, taille minimale et quantité. Aucun ordre automatique.')
+  text=('<b>⚡ REBOND ÉCLAIR — LONG</b>\n<b>'+html.escape(s['symbol'])+'</b> · rejet après excès H1\n\n🟢 Entrée estimée :\n<code>'+fmt(s['entry'])+'</code>\n\n🛑 Stop-loss :\n<code>'+fmt(s['stop'])+'</code>\n\n🎯 Take-profit :\n<code>'+fmt(s['target'])+'</code>\n\nQuantité indicative : <code>'+fmt(s['quantity'])+'</code>\nRisque prévu : 1 USDT hors funding et gaps · levier ≤10×\nDurée maximale : 12h · cible brute 1,75× distance du stop\n\n⚠️ Expérimental, non validé. Vérifier prix, frais, taille minimale et quantité. Aucun ordre automatique.')
   send(token,chat,text,[[{'text':'📈 TradingView','url':'https://www.tradingview.com/chart/?symbol=ZOOMEX:'+s['symbol']+'.P&interval=60'}],[{'text':'▶️ Lancer dans GitHub','url':gh}]])
   state.setdefault('sent',{})[s['id']]=now;day=str(now//(24*H));state.setdefault('counts',{})[day]=state['counts'].get(day,0)+1;state['busy_until']=now+12*H
   STATE.write_text(json.dumps(state,indent=2))
