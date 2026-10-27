@@ -1,0 +1,25 @@
+name: Trend Retest V2 signal quality research
+on:
+  push:
+    branches: [research/trend-retest-signal-quality]
+    paths: [trend_retest_signal_quality.py, .github/workflows/trend-retest-signal-quality.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt scikit-learn
+      - run: python -m py_compile trend_retest_signal_quality.py
+      - run: python -u trend_retest_signal_quality.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trend-retest-v2-signal-quality
+          path: trend_retest_signal_quality_report.json
