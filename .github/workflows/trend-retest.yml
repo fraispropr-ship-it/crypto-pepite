@@ -1,5 +1,10 @@
 name: Trend Retest
 on:
+  push:
+    branches: [main]
+    paths:
+      - trend_retest.py
+      - .github/workflows/trend-retest.yml
   schedule:
     - cron: "3,18,33,48 * * * *"
   workflow_dispatch:
