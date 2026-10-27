@@ -1,0 +1,1422 @@
+{
+  "period": "2025-10-27 00:00 UTC to 2026-10-27 00:00 UTC exclusive",
+  "method": "H1 next-open not live H+03; all signals with no alert lock and no daily entry cap; simultaneous simulated positions; not a capital-constrained portfolio, symbol alphabetical priority; 1 USDT planned stop risk, 1000 USDT capital, leverage 10x max; fee 0.06% per side, slippage 0.02% per side, historic funding at H1 open proxy; stop-first OHLC ambiguity. Current universe survivorship bias, prior research explored period; no M15, book, instrument rounding, liquidation, actual dynamic entry, live scheduling, exchange fee-tier validation.",
+  "quality": {
+    "BTC": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "321a68cd3c6d339d9391700132b6c1adca794ad0a7148dc818967a0763f23123",
+        "complete_ohlc": false
+      }
+    },
+    "ETH": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "b5a7bf9820a2938e5ab0c22956a700b2b2632a7065422f2c55c65e44302c39d8",
+        "complete_ohlc": false
+      }
+    },
+    "SOL": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "9e61be22196cf05d048279355f1c36a4e37cc8f0f992e81e3899d453c0ea2b72",
+        "complete_ohlc": false
+      }
+    },
+    "XRP": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "b6bfd479a59069fe537ba230470ee65add32f1eff7e52a81a699dcc58b71aa87",
+        "complete_ohlc": false
+      }
+    },
+    "LINK": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "4145dfc8948a3b1954b2af8bfca68f858dfc84f7f618d153605341f18a715393",
+        "complete_ohlc": false
+      }
+    },
+    "ADA": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "097a2326dfec98eeb2783c24b7dec5a5c1ae9f0a1113963b03fcf2cd0fc2b58c",
+        "complete_ohlc": false
+      }
+    },
+    "AVAX": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "48468452601763d8cf7e23eed19aacc3860ad2b39b1543a84b9dba242f74be0b",
+        "complete_ohlc": false
+      }
+    },
+    "DOGE": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "8dd30488441100386f13a005a190dc7cb67686bffbb3f4813eeb9fd10a635649",
+        "complete_ohlc": false
+      }
+    },
+    "SUI": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "513add5b50029809dd8c454200283c9efc3e8e0cfead0f51ddaea89f7965ac19",
+        "complete_ohlc": false
+      }
+    },
+    "AAVE": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "835c10c59f260219ef9baaae9ac0e755780e78b1c6cb3a2360f4f6a3751964bc",
+        "complete_ohlc": false
+      }
+    },
+    "NEAR": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "b7e83f953fbdd1cfc9c156b8e413fa137a27a4ffa16d3a105a804fff40adacfb",
+        "complete_ohlc": false
+      }
+    },
+    "APT": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "895ac7462b38f2dd4f284b8158285a06637221847fd616de0ae8b7964ab454da",
+        "complete_ohlc": false
+      }
+    },
+    "BNB": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "6c0d3dcfec9dab8f7e5deb0a27c5e1ddf2166a779f20b62f6e1a308fd2b80403",
+        "complete_ohlc": false
+      }
+    },
+    "UNI": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "bd26dc1390dd2ec7054766ae00695acaf4569f0a97c9b16e5f3a3674f0dc19f6",
+        "complete_ohlc": false
+      }
+    },
+    "ONDO": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 2346,
+        "sha256": "018cc8f85512b7b574ade673fcca30b218e442cd4989f35ef038b4e291a20f80",
+        "complete_ohlc": false
+      }
+    },
+    "HYPE": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "f1af069ea576f3a274383dc2cc254e11eec2c32aefd681d9a3b445af76e8362b",
+        "complete_ohlc": false
+      }
+    },
+    "INJ": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1322,
+        "sha256": "53d65f1033334091dba07bc471058d53ea86749521427f5f96e2e0e15277aec8",
+        "complete_ohlc": false
+      }
+    },
+    "1000PEPE": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "563a66f01e2a429cab079485b32779d5992075e63046362d45a4440121513df2",
+        "complete_ohlc": false
+      }
+    },
+    "WLD": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "2d03e8db09c777d10185a7b96f7099bd2173d8a353b4eab4d487a727406fa82f",
+        "complete_ohlc": false
+      }
+    },
+    "ZRO": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 2346,
+        "sha256": "121dd5d73de28804ea920887be279a7bd647cdc6eff82c373c91a8b45e5f333b",
+        "complete_ohlc": false
+      }
+    },
+    "ZEC": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "c786f2464892ce367e5a56a267deae71705724e64acb40d08a89509325fc3621",
+        "complete_ohlc": false
+      }
+    },
+    "ENA": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 2346,
+        "sha256": "af8d5e7cbfcbda735818b4df549d0687d27ebce3dd1273fb7a83e8e36d08a3a8",
+        "complete_ohlc": false
+      }
+    },
+    "XMR": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "1bc76a4cd6f436d794a17bf0ff9b9a6fefba863a44ba6b93b6a5b429125b84e0",
+        "complete_ohlc": false
+      }
+    },
+    "TAO": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 2346,
+        "sha256": "711a6f2f62893f7180e190b2080c17174e9442ccedf8a9113abcc1f867c8f72f",
+        "complete_ohlc": false
+      }
+    },
+    "ARB": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "9d187d9b63ffc6bb281b0d46dc518cc0394054345311b3c713238ccc93bb5dc0",
+        "complete_ohlc": false
+      }
+    },
+    "BCH": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "da59d6dfdf1be59414f8410b6395cec2d03b6549dcbacd168c41f7255629fdc1",
+        "complete_ohlc": false
+      }
+    },
+    "TIA": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 2346,
+        "sha256": "36cfd48d6624a8c3bf22c3e9c65502e5d057b56c88747ddd939eb1f7587fb21c",
+        "complete_ohlc": false
+      }
+    },
+    "LTC": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "193d5f5cb72ea1ad0c205efad9bb99bbba6a577ced6118dfc4947196eb469a86",
+        "complete_ohlc": false
+      }
+    },
+    "TRX": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "889f4304a2879b6852afeda74e2e33c3798a439b581abcd1ddbd9cb04b627607",
+        "complete_ohlc": false
+      }
+    },
+    "DOT": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "db66a4d28fd3c5b6e9f589dd0e154d0f4ee592cc46bcefdba48d25c7068c3479",
+        "complete_ohlc": false
+      }
+    },
+    "ATOM": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "f85d3c7511387af7be798a442c495091dfa14cd5442e2b1b0d6aabc2bb64e565",
+        "complete_ohlc": false
+      }
+    },
+    "FIL": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "13eeaa33d7a4f93a252a6cf1e97a1072f75901f9763252da230a428c4ad5ebcd",
+        "complete_ohlc": false
+      }
+    },
+    "ETC": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "2ac9b10ac4bc8f3c50842214141344eda8713fd0496a560a2477d11347b3becb",
+        "complete_ohlc": false
+      }
+    },
+    "OP": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "bd4a4d406184f4a407ef8cd8bfb85b09e46233b490e0854bb15aaf2efe4ea016",
+        "complete_ohlc": false
+      }
+    },
+    "XLM": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "570a4ed8f1e677292a208d5ded4d5913b651d35000ef5cbf023f0436b7edbdfe",
+        "complete_ohlc": false
+      }
+    },
+    "SEI": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "30e9665eb953028a776fb2dd7796ceb4657fd6776e99aef4c852d6bb4335d319",
+        "complete_ohlc": false
+      }
+    },
+    "WIF": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 2346,
+        "sha256": "1e0c84629bdeaa3764e8c0444e5392c954ab797837a3edaae436e16b4d718f1b",
+        "complete_ohlc": false
+      }
+    },
+    "1000BONK": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 2346,
+        "sha256": "525b58d9543805d2561807a30f839d3ab2f314bdccfed0840a2386c311d4027f",
+        "complete_ohlc": false
+      }
+    },
+    "ALGO": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 1173,
+        "sha256": "1b5745082aacc81d6afd24648a562233a3aadcb45c24679d285f33e4251174fa",
+        "complete_ohlc": false
+      }
+    },
+    "POL": {
+      "eligible": true,
+      "funding_contiguous": true,
+      "candles": {
+        "candles": 9384,
+        "missing": 0,
+        "duplicates": 80,
+        "invalid": 0,
+        "funding_count": 2346,
+        "sha256": "8f9c1a442cfe00029951f0f289a35dc505447a5a14ff4d2e0c665e1223d86f36",
+        "complete_ohlc": false
+      }
+    }
+  },
+  "errors": {},
+  "results": {
+    "1x": {
+      "summary": {
+        "n": 251,
+        "total_R": -18.088,
+        "mean_R": -0.0721,
+        "profit_factor": 0.863,
+        "max_drawdown_R": 28.446,
+        "wins": 102
+      },
+      "monthly": {
+        "2025-10": {
+          "n": 2,
+          "total_R": 1.305,
+          "mean_R": 0.6525,
+          "profit_factor": 4.949,
+          "max_drawdown_R": 0.33,
+          "wins": 1
+        },
+        "2025-11": {
+          "n": 23,
+          "total_R": 7.645,
+          "mean_R": 0.3324,
+          "profit_factor": 2.137,
+          "max_drawdown_R": 3.638,
+          "wins": 16
+        },
+        "2025-12": {
+          "n": 18,
+          "total_R": -10.573,
+          "mean_R": -0.5874,
+          "profit_factor": 0.244,
+          "max_drawdown_R": 12.853,
+          "wins": 4
+        },
+        "2026-01": {
+          "n": 43,
+          "total_R": -0.565,
+          "mean_R": -0.0131,
+          "profit_factor": 0.976,
+          "max_drawdown_R": 22.649,
+          "wins": 17
+        },
+        "2026-02": {
+          "n": 15,
+          "total_R": 7.983,
+          "mean_R": 0.5322,
+          "profit_factor": 4.106,
+          "max_drawdown_R": 1.437,
+          "wins": 10
+        },
+        "2026-03": {
+          "n": 22,
+          "total_R": -10.661,
+          "mean_R": -0.4846,
+          "profit_factor": 0.164,
+          "max_drawdown_R": 12.205,
+          "wins": 2
+        },
+        "2026-04": {
+          "n": 8,
+          "total_R": 2.312,
+          "mean_R": 0.289,
+          "profit_factor": 1.771,
+          "max_drawdown_R": 1.997,
+          "wins": 4
+        },
+        "2026-05": {
+          "n": 12,
+          "total_R": 8.402,
+          "mean_R": 0.7002,
+          "profit_factor": 3.807,
+          "max_drawdown_R": 1.0,
+          "wins": 9
+        },
+        "2026-06": {
+          "n": 26,
+          "total_R": -18.273,
+          "mean_R": -0.7028,
+          "profit_factor": 0.11,
+          "max_drawdown_R": 18.273,
+          "wins": 3
+        },
+        "2026-07": {
+          "n": 29,
+          "total_R": 12.921,
+          "mean_R": 0.4456,
+          "profit_factor": 2.612,
+          "max_drawdown_R": 2.0,
+          "wins": 21
+        },
+        "2026-08": {
+          "n": 34,
+          "total_R": -14.877,
+          "mean_R": -0.4376,
+          "profit_factor": 0.405,
+          "max_drawdown_R": 23.361,
+          "wins": 9
+        },
+        "2026-09": {
+          "n": 11,
+          "total_R": 1.673,
+          "mean_R": 0.1521,
+          "profit_factor": 1.279,
+          "max_drawdown_R": 3.0,
+          "wins": 5
+        },
+        "2026-10": {
+          "n": 8,
+          "total_R": -5.382,
+          "mean_R": -0.6728,
+          "profit_factor": 0.235,
+          "max_drawdown_R": 5.382,
+          "wins": 1
+        }
+      },
+      "by_symbol": {
+        "NEARUSDT": {
+          "n": 4,
+          "total_R": -1.771,
+          "mean_R": -0.4428,
+          "profit_factor": 0.24,
+          "max_drawdown_R": 2.0,
+          "wins": 1
+        },
+        "TAOUSDT": {
+          "n": 8,
+          "total_R": -0.908,
+          "mean_R": -0.1134,
+          "profit_factor": 0.724,
+          "max_drawdown_R": 2.543,
+          "wins": 2
+        },
+        "ALGOUSDT": {
+          "n": 6,
+          "total_R": -0.648,
+          "mean_R": -0.108,
+          "profit_factor": 0.811,
+          "max_drawdown_R": 1.997,
+          "wins": 2
+        },
+        "BNBUSDT": {
+          "n": 9,
+          "total_R": -1.033,
+          "mean_R": -0.1147,
+          "profit_factor": 0.746,
+          "max_drawdown_R": 3.023,
+          "wins": 4
+        },
+        "DOGEUSDT": {
+          "n": 10,
+          "total_R": -2.111,
+          "mean_R": -0.2111,
+          "profit_factor": 0.582,
+          "max_drawdown_R": 3.051,
+          "wins": 4
+        },
+        "LINKUSDT": {
+          "n": 7,
+          "total_R": -0.829,
+          "mean_R": -0.1185,
+          "profit_factor": 0.77,
+          "max_drawdown_R": 2.789,
+          "wins": 3
+        },
+        "POLUSDT": {
+          "n": 7,
+          "total_R": -0.791,
+          "mean_R": -0.113,
+          "profit_factor": 0.802,
+          "max_drawdown_R": 2.673,
+          "wins": 3
+        },
+        "SEIUSDT": {
+          "n": 3,
+          "total_R": -1.136,
+          "mean_R": -0.3786,
+          "profit_factor": 0.432,
+          "max_drawdown_R": 1.136,
+          "wins": 1
+        },
+        "WLDUSDT": {
+          "n": 4,
+          "total_R": -1.428,
+          "mean_R": -0.357,
+          "profit_factor": 0.524,
+          "max_drawdown_R": 2.002,
+          "wins": 1
+        },
+        "ZROUSDT": {
+          "n": 11,
+          "total_R": 3.54,
+          "mean_R": 0.3219,
+          "profit_factor": 1.845,
+          "max_drawdown_R": 2.199,
+          "wins": 6
+        },
+        "ETHUSDT": {
+          "n": 12,
+          "total_R": 4.727,
+          "mean_R": 0.3939,
+          "profit_factor": 2.433,
+          "max_drawdown_R": 1.003,
+          "wins": 8
+        },
+        "ETCUSDT": {
+          "n": 10,
+          "total_R": -0.705,
+          "mean_R": -0.0705,
+          "profit_factor": 0.872,
+          "max_drawdown_R": 4.503,
+          "wins": 4
+        },
+        "1000PEPEUSDT": {
+          "n": 8,
+          "total_R": 1.021,
+          "mean_R": 0.1276,
+          "profit_factor": 1.368,
+          "max_drawdown_R": 2.31,
+          "wins": 3
+        },
+        "BTCUSDT": {
+          "n": 10,
+          "total_R": -2.005,
+          "mean_R": -0.2005,
+          "profit_factor": 0.649,
+          "max_drawdown_R": 3.127,
+          "wins": 4
+        },
+        "ATOMUSDT": {
+          "n": 11,
+          "total_R": -4.58,
+          "mean_R": -0.4164,
+          "profit_factor": 0.427,
+          "max_drawdown_R": 6.174,
+          "wins": 3
+        },
+        "BCHUSDT": {
+          "n": 9,
+          "total_R": 3.454,
+          "mean_R": 0.3838,
+          "profit_factor": 2.122,
+          "max_drawdown_R": 1.005,
+          "wins": 5
+        },
+        "OPUSDT": {
+          "n": 6,
+          "total_R": -2.831,
+          "mean_R": -0.4719,
+          "profit_factor": 0.292,
+          "max_drawdown_R": 3.462,
+          "wins": 2
+        },
+        "XLMUSDT": {
+          "n": 6,
+          "total_R": 7.88,
+          "mean_R": 1.3133,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 6
+        },
+        "TRXUSDT": {
+          "n": 4,
+          "total_R": 2.156,
+          "mean_R": 0.5389,
+          "profit_factor": 3.168,
+          "max_drawdown_R": 0.994,
+          "wins": 3
+        },
+        "ZECUSDT": {
+          "n": 5,
+          "total_R": -1.506,
+          "mean_R": -0.3013,
+          "profit_factor": 0.484,
+          "max_drawdown_R": 1.706,
+          "wins": 2
+        },
+        "ENAUSDT": {
+          "n": 5,
+          "total_R": -5.01,
+          "mean_R": -1.002,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 5.01,
+          "wins": 0
+        },
+        "UNIUSDT": {
+          "n": 7,
+          "total_R": -2.273,
+          "mean_R": -0.3247,
+          "profit_factor": 0.408,
+          "max_drawdown_R": 2.532,
+          "wins": 1
+        },
+        "FILUSDT": {
+          "n": 5,
+          "total_R": -1.223,
+          "mean_R": -0.2445,
+          "profit_factor": 0.592,
+          "max_drawdown_R": 1.994,
+          "wins": 2
+        },
+        "ARBUSDT": {
+          "n": 5,
+          "total_R": -3.457,
+          "mean_R": -0.6914,
+          "profit_factor": 0.135,
+          "max_drawdown_R": 3.457,
+          "wins": 1
+        },
+        "ONDOUSDT": {
+          "n": 5,
+          "total_R": -2.488,
+          "mean_R": -0.4976,
+          "profit_factor": 0.379,
+          "max_drawdown_R": 4.003,
+          "wins": 1
+        },
+        "XRPUSDT": {
+          "n": 10,
+          "total_R": 3.139,
+          "mean_R": 0.3139,
+          "profit_factor": 1.784,
+          "max_drawdown_R": 2.568,
+          "wins": 6
+        },
+        "SOLUSDT": {
+          "n": 3,
+          "total_R": 4.176,
+          "mean_R": 1.392,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 3
+        },
+        "TIAUSDT": {
+          "n": 5,
+          "total_R": -1.896,
+          "mean_R": -0.3792,
+          "profit_factor": 0.457,
+          "max_drawdown_R": 2.494,
+          "wins": 1
+        },
+        "XMRUSDT": {
+          "n": 3,
+          "total_R": -0.453,
+          "mean_R": -0.151,
+          "profit_factor": 0.774,
+          "max_drawdown_R": 2.008,
+          "wins": 1
+        },
+        "AVAXUSDT": {
+          "n": 8,
+          "total_R": 0.465,
+          "mean_R": 0.0581,
+          "profit_factor": 1.116,
+          "max_drawdown_R": 1.446,
+          "wins": 4
+        },
+        "1000BONKUSDT": {
+          "n": 8,
+          "total_R": 2.215,
+          "mean_R": 0.2769,
+          "profit_factor": 2.483,
+          "max_drawdown_R": 1.494,
+          "wins": 5
+        },
+        "AAVEUSDT": {
+          "n": 3,
+          "total_R": -0.387,
+          "mean_R": -0.1288,
+          "profit_factor": 0.806,
+          "max_drawdown_R": 1.997,
+          "wins": 1
+        },
+        "ADAUSDT": {
+          "n": 4,
+          "total_R": -1.473,
+          "mean_R": -0.3681,
+          "profit_factor": 0.509,
+          "max_drawdown_R": 1.999,
+          "wins": 1
+        },
+        "DOTUSDT": {
+          "n": 2,
+          "total_R": 0.214,
+          "mean_R": 0.107,
+          "profit_factor": 1.215,
+          "max_drawdown_R": 0.997,
+          "wins": 1
+        },
+        "INJUSDT": {
+          "n": 6,
+          "total_R": -5.978,
+          "mean_R": -0.9964,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 5.978,
+          "wins": 0
+        },
+        "LTCUSDT": {
+          "n": 6,
+          "total_R": -2.097,
+          "mean_R": -0.3496,
+          "profit_factor": 0.476,
+          "max_drawdown_R": 2.604,
+          "wins": 2
+        },
+        "SUIUSDT": {
+          "n": 4,
+          "total_R": -1.489,
+          "mean_R": -0.3721,
+          "profit_factor": 0.505,
+          "max_drawdown_R": 3.01,
+          "wins": 1
+        },
+        "WIFUSDT": {
+          "n": 4,
+          "total_R": -0.4,
+          "mean_R": -0.0999,
+          "profit_factor": 0.804,
+          "max_drawdown_R": 2.035,
+          "wins": 1
+        },
+        "HYPEUSDT": {
+          "n": 3,
+          "total_R": -0.336,
+          "mean_R": -0.112,
+          "profit_factor": 0.833,
+          "max_drawdown_R": 2.008,
+          "wins": 1
+        },
+        "APTUSDT": {
+          "n": 5,
+          "total_R": 0.167,
+          "mean_R": 0.0334,
+          "profit_factor": 1.056,
+          "max_drawdown_R": 1.995,
+          "wins": 2
+        }
+      },
+      "without_best_5": {
+        "n": 246,
+        "total_R": -26.387,
+        "mean_R": -0.1073,
+        "profit_factor": 0.8,
+        "max_drawdown_R": 36.745,
+        "wins": 97
+      }
+    },
+    "2x": {
+      "summary": {
+        "n": 251,
+        "total_R": -36.453,
+        "mean_R": -0.1452,
+        "profit_factor": 0.728,
+        "max_drawdown_R": 44.113,
+        "wins": 102
+      },
+      "monthly": {
+        "2025-10": {
+          "n": 2,
+          "total_R": 1.159,
+          "mean_R": 0.5797,
+          "profit_factor": 3.988,
+          "max_drawdown_R": 0.388,
+          "wins": 1
+        },
+        "2025-11": {
+          "n": 23,
+          "total_R": 5.709,
+          "mean_R": 0.2482,
+          "profit_factor": 1.844,
+          "max_drawdown_R": 3.787,
+          "wins": 16
+        },
+        "2025-12": {
+          "n": 18,
+          "total_R": -11.667,
+          "mean_R": -0.6481,
+          "profit_factor": 0.165,
+          "max_drawdown_R": 13.249,
+          "wins": 4
+        },
+        "2026-01": {
+          "n": 43,
+          "total_R": -3.15,
+          "mean_R": -0.0732,
+          "profit_factor": 0.865,
+          "max_drawdown_R": 22.81,
+          "wins": 17
+        },
+        "2026-02": {
+          "n": 15,
+          "total_R": 6.974,
+          "mean_R": 0.4649,
+          "profit_factor": 3.561,
+          "max_drawdown_R": 1.469,
+          "wins": 10
+        },
+        "2026-03": {
+          "n": 22,
+          "total_R": -12.355,
+          "mean_R": -0.5616,
+          "profit_factor": 0.128,
+          "max_drawdown_R": 13.722,
+          "wins": 2
+        },
+        "2026-04": {
+          "n": 8,
+          "total_R": 1.06,
+          "mean_R": 0.1325,
+          "profit_factor": 1.35,
+          "max_drawdown_R": 2.023,
+          "wins": 4
+        },
+        "2026-05": {
+          "n": 12,
+          "total_R": 6.473,
+          "mean_R": 0.5395,
+          "profit_factor": 3.162,
+          "max_drawdown_R": 1.342,
+          "wins": 9
+        },
+        "2026-06": {
+          "n": 26,
+          "total_R": -18.637,
+          "mean_R": -0.7168,
+          "profit_factor": 0.097,
+          "max_drawdown_R": 18.637,
+          "wins": 3
+        },
+        "2026-07": {
+          "n": 29,
+          "total_R": 9.481,
+          "mean_R": 0.3269,
+          "profit_factor": 2.183,
+          "max_drawdown_R": 2.0,
+          "wins": 21
+        },
+        "2026-08": {
+          "n": 34,
+          "total_R": -16.795,
+          "mean_R": -0.494,
+          "profit_factor": 0.328,
+          "max_drawdown_R": 23.458,
+          "wins": 9
+        },
+        "2026-09": {
+          "n": 11,
+          "total_R": 0.765,
+          "mean_R": 0.0696,
+          "profit_factor": 1.127,
+          "max_drawdown_R": 3.0,
+          "wins": 5
+        },
+        "2026-10": {
+          "n": 8,
+          "total_R": -5.472,
+          "mean_R": -0.684,
+          "profit_factor": 0.222,
+          "max_drawdown_R": 5.472,
+          "wins": 1
+        }
+      },
+      "by_symbol": {
+        "NEARUSDT": {
+          "n": 4,
+          "total_R": -1.882,
+          "mean_R": -0.4705,
+          "profit_factor": 0.212,
+          "max_drawdown_R": 2.0,
+          "wins": 1
+        },
+        "TAOUSDT": {
+          "n": 8,
+          "total_R": -1.166,
+          "mean_R": -0.1457,
+          "profit_factor": 0.657,
+          "max_drawdown_R": 2.713,
+          "wins": 2
+        },
+        "ALGOUSDT": {
+          "n": 6,
+          "total_R": -0.979,
+          "mean_R": -0.1631,
+          "profit_factor": 0.719,
+          "max_drawdown_R": 1.997,
+          "wins": 2
+        },
+        "BNBUSDT": {
+          "n": 9,
+          "total_R": -1.62,
+          "mean_R": -0.18,
+          "profit_factor": 0.609,
+          "max_drawdown_R": 3.021,
+          "wins": 4
+        },
+        "DOGEUSDT": {
+          "n": 10,
+          "total_R": -2.86,
+          "mean_R": -0.286,
+          "profit_factor": 0.444,
+          "max_drawdown_R": 3.147,
+          "wins": 4
+        },
+        "LINKUSDT": {
+          "n": 7,
+          "total_R": -1.653,
+          "mean_R": -0.2361,
+          "profit_factor": 0.587,
+          "max_drawdown_R": 3.36,
+          "wins": 3
+        },
+        "POLUSDT": {
+          "n": 7,
+          "total_R": -1.208,
+          "mean_R": -0.1726,
+          "profit_factor": 0.698,
+          "max_drawdown_R": 2.864,
+          "wins": 3
+        },
+        "SEIUSDT": {
+          "n": 3,
+          "total_R": -1.189,
+          "mean_R": -0.3964,
+          "profit_factor": 0.405,
+          "max_drawdown_R": 1.189,
+          "wins": 1
+        },
+        "WLDUSDT": {
+          "n": 4,
+          "total_R": -1.576,
+          "mean_R": -0.3939,
+          "profit_factor": 0.475,
+          "max_drawdown_R": 2.002,
+          "wins": 1
+        },
+        "ZROUSDT": {
+          "n": 11,
+          "total_R": 2.937,
+          "mean_R": 0.267,
+          "profit_factor": 1.694,
+          "max_drawdown_R": 2.413,
+          "wins": 6
+        },
+        "ETHUSDT": {
+          "n": 12,
+          "total_R": 2.969,
+          "mean_R": 0.2474,
+          "profit_factor": 1.879,
+          "max_drawdown_R": 1.003,
+          "wins": 8
+        },
+        "ETCUSDT": {
+          "n": 10,
+          "total_R": -1.562,
+          "mean_R": -0.1562,
+          "profit_factor": 0.719,
+          "max_drawdown_R": 4.561,
+          "wins": 4
+        },
+        "1000PEPEUSDT": {
+          "n": 8,
+          "total_R": 0.556,
+          "mean_R": 0.0695,
+          "profit_factor": 1.191,
+          "max_drawdown_R": 2.466,
+          "wins": 3
+        },
+        "BTCUSDT": {
+          "n": 10,
+          "total_R": -2.811,
+          "mean_R": -0.2811,
+          "profit_factor": 0.512,
+          "max_drawdown_R": 3.334,
+          "wins": 4
+        },
+        "ATOMUSDT": {
+          "n": 11,
+          "total_R": -5.102,
+          "mean_R": -0.4638,
+          "profit_factor": 0.362,
+          "max_drawdown_R": 6.403,
+          "wins": 3
+        },
+        "BCHUSDT": {
+          "n": 9,
+          "total_R": 2.66,
+          "mean_R": 0.2956,
+          "profit_factor": 1.837,
+          "max_drawdown_R": 1.005,
+          "wins": 5
+        },
+        "OPUSDT": {
+          "n": 6,
+          "total_R": -3.054,
+          "mean_R": -0.509,
+          "profit_factor": 0.236,
+          "max_drawdown_R": 3.61,
+          "wins": 2
+        },
+        "XLMUSDT": {
+          "n": 6,
+          "total_R": 6.913,
+          "mean_R": 1.1521,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 6
+        },
+        "TRXUSDT": {
+          "n": 4,
+          "total_R": 0.928,
+          "mean_R": 0.2319,
+          "profit_factor": 1.932,
+          "max_drawdown_R": 0.995,
+          "wins": 3
+        },
+        "ZECUSDT": {
+          "n": 5,
+          "total_R": -1.711,
+          "mean_R": -0.3422,
+          "profit_factor": 0.416,
+          "max_drawdown_R": 1.792,
+          "wins": 2
+        },
+        "ENAUSDT": {
+          "n": 5,
+          "total_R": -5.01,
+          "mean_R": -1.002,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 5.01,
+          "wins": 0
+        },
+        "UNIUSDT": {
+          "n": 7,
+          "total_R": -2.946,
+          "mean_R": -0.4209,
+          "profit_factor": 0.323,
+          "max_drawdown_R": 3.012,
+          "wins": 1
+        },
+        "FILUSDT": {
+          "n": 5,
+          "total_R": -1.435,
+          "mean_R": -0.2869,
+          "profit_factor": 0.521,
+          "max_drawdown_R": 1.994,
+          "wins": 2
+        },
+        "ARBUSDT": {
+          "n": 5,
+          "total_R": -3.572,
+          "mean_R": -0.7145,
+          "profit_factor": 0.106,
+          "max_drawdown_R": 3.572,
+          "wins": 1
+        },
+        "ONDOUSDT": {
+          "n": 5,
+          "total_R": -2.686,
+          "mean_R": -0.5371,
+          "profit_factor": 0.329,
+          "max_drawdown_R": 4.003,
+          "wins": 1
+        },
+        "XRPUSDT": {
+          "n": 10,
+          "total_R": 2.122,
+          "mean_R": 0.2122,
+          "profit_factor": 1.53,
+          "max_drawdown_R": 2.713,
+          "wins": 6
+        },
+        "SOLUSDT": {
+          "n": 3,
+          "total_R": 3.42,
+          "mean_R": 1.1401,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 3
+        },
+        "TIAUSDT": {
+          "n": 5,
+          "total_R": -2.061,
+          "mean_R": -0.4121,
+          "profit_factor": 0.415,
+          "max_drawdown_R": 2.525,
+          "wins": 1
+        },
+        "XMRUSDT": {
+          "n": 3,
+          "total_R": -0.622,
+          "mean_R": -0.2074,
+          "profit_factor": 0.69,
+          "max_drawdown_R": 2.007,
+          "wins": 1
+        },
+        "AVAXUSDT": {
+          "n": 8,
+          "total_R": -0.268,
+          "mean_R": -0.0335,
+          "profit_factor": 0.933,
+          "max_drawdown_R": 1.565,
+          "wins": 4
+        },
+        "1000BONKUSDT": {
+          "n": 8,
+          "total_R": 1.629,
+          "mean_R": 0.2037,
+          "profit_factor": 2.013,
+          "max_drawdown_R": 1.609,
+          "wins": 5
+        },
+        "AAVEUSDT": {
+          "n": 3,
+          "total_R": -0.512,
+          "mean_R": -0.1706,
+          "profit_factor": 0.744,
+          "max_drawdown_R": 1.997,
+          "wins": 1
+        },
+        "ADAUSDT": {
+          "n": 4,
+          "total_R": -1.663,
+          "mean_R": -0.4157,
+          "profit_factor": 0.446,
+          "max_drawdown_R": 1.999,
+          "wins": 1
+        },
+        "DOTUSDT": {
+          "n": 2,
+          "total_R": 0.033,
+          "mean_R": 0.0165,
+          "profit_factor": 1.033,
+          "max_drawdown_R": 0.997,
+          "wins": 1
+        },
+        "INJUSDT": {
+          "n": 6,
+          "total_R": -5.98,
+          "mean_R": -0.9966,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 5.98,
+          "wins": 0
+        },
+        "LTCUSDT": {
+          "n": 6,
+          "total_R": -2.382,
+          "mean_R": -0.3969,
+          "profit_factor": 0.405,
+          "max_drawdown_R": 2.683,
+          "wins": 2
+        },
+        "SUIUSDT": {
+          "n": 4,
+          "total_R": -1.682,
+          "mean_R": -0.4205,
+          "profit_factor": 0.441,
+          "max_drawdown_R": 3.009,
+          "wins": 1
+        },
+        "WIFUSDT": {
+          "n": 4,
+          "total_R": -0.563,
+          "mean_R": -0.1407,
+          "profit_factor": 0.731,
+          "max_drawdown_R": 2.096,
+          "wins": 1
+        },
+        "HYPEUSDT": {
+          "n": 3,
+          "total_R": -0.407,
+          "mean_R": -0.1357,
+          "profit_factor": 0.797,
+          "max_drawdown_R": 2.008,
+          "wins": 1
+        },
+        "APTUSDT": {
+          "n": 5,
+          "total_R": -0.46,
+          "mean_R": -0.0919,
+          "profit_factor": 0.847,
+          "max_drawdown_R": 1.995,
+          "wins": 2
+        }
+      },
+      "without_best_5": {
+        "n": 246,
+        "total_R": -44.346,
+        "mean_R": -0.1803,
+        "profit_factor": 0.669,
+        "max_drawdown_R": 50.459,
+        "wins": 97
+      }
+    }
+  },
+  "limitations": "Signal study, all candidates independently simulated; overlapping signals, no portfolio allocation, fees and slippage fixed, OHLC fill, no live H+03; drawdown sorted by entry and not portfolio equity."
+}
