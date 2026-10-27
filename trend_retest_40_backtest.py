@@ -144,13 +144,13 @@ def stats(rows):
     return {"n":len(vals),"total_R":round(sum(vals),3),"mean_R":round(sum(vals)/len(vals),4) if vals else None,"pf":round(gains/loss,3) if loss else None}
 
 def main():
-    from trend_retest_40_test import EXCLUDE
+    from radar_alt import HORS_CRYPTO, MOTS_HORS_CRYPTO, base_de
     tick=requests.get("https://openapi.zoomex.com/cloud/trade/v3/market/tickers",params={"category":"linear"},timeout=30).json()
     if tick.get("retCode")!=0:raise RuntimeError("Zoomex tickers unavailable")
     elig=[]
     for row in tick["result"]["list"]:
         sym=row.get("symbol","")
-        if not sym.endswith("USDT") or sym[:-4] in EXCLUDE or "STOCK" in sym:continue
+        if not sym.endswith("USDT") or base_de(sym) in HORS_CRYPTO or any(m in sym for m in MOTS_HORS_CRYPTO):continue
         try:
             v=float(row.get("turnover24h") or 0)
             if v>=10000000:elig.append((v,sym))
