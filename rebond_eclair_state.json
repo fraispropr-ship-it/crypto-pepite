@@ -1,5 +1,6 @@
 {
   "sent": {},
   "counts": {},
-  "busy_until": 0
+  "busy_until": 0,
+  "last_failure": ""
 }
