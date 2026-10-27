@@ -1,0 +1,90 @@
+{
+  "status": "exploratory_not_final_validation",
+  "rules": "Long-only funding event hypothesis. Historical rate used only AFTER settlement.\nPredict next funding timestamp from last observed interval; never next realized rate.\nSignal: most recently settled rate <= -0.003; enter 1h before predicted settlement.\n2h maximum, stop 2 ATR14 H1, target 2R, planned stop loss 1 USDT incl costs.\nExploratory fixed-universe H1 approximation, no orders.\n",
+  "results": {
+    "2026_1x": {
+      "annual": {
+        "n": 3,
+        "total_R": -0.029,
+        "mean_R": -0.0096,
+        "profit_factor": 0.914,
+        "max_drawdown_R": 0.336,
+        "wins": 2
+      },
+      "funding_pnl_USDT": 0.2245505062044002,
+      "halves": {
+        "1": {
+          "n": 3,
+          "total_R": -0.029,
+          "mean_R": -0.0096,
+          "profit_factor": 0.914,
+          "max_drawdown_R": 0.336,
+          "wins": 2
+        },
+        "2": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        }
+      }
+    },
+    "2026_2x": {
+      "annual": {
+        "n": 3,
+        "total_R": -0.124,
+        "mean_R": -0.0413,
+        "profit_factor": 0.664,
+        "max_drawdown_R": 0.369,
+        "wins": 1
+      },
+      "funding_pnl_USDT": 0.21903380882174356,
+      "halves": {
+        "1": {
+          "n": 3,
+          "total_R": -0.124,
+          "mean_R": -0.0413,
+          "profit_factor": 0.664,
+          "max_drawdown_R": 0.369,
+          "wins": 1
+        },
+        "2": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        }
+      }
+    }
+  },
+  "quality": {
+    "2026": {
+      "symbols": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "XRP",
+        "LINK",
+        "ADA",
+        "AVAX",
+        "DOGE",
+        "SUI",
+        "AAVE",
+        "NEAR",
+        "APT",
+        "BNB",
+        "UNI",
+        "ONDO",
+        "HYPE",
+        "INJ",
+        "1000PEPE",
+        "WLD",
+        "ZRO"
+      ]
+    }
+  }
+}
