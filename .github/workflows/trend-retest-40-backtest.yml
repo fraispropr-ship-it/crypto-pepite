@@ -1,0 +1,25 @@
+name: Trend Retest 40 historical backtest
+on:
+  push:
+    branches: [research/trend-retest-40-test]
+    paths: [trend_retest_40_backtest.py, .github/workflows/trend-retest-40-backtest.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m py_compile trend_retest_40_backtest.py
+      - run: python -u trend_retest_40_backtest.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trend-retest-40-backtest-results
+          path: trend_retest_40_backtest_report.json
