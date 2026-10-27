@@ -55,8 +55,8 @@ def is_alert_time(now):
 
 def choose(found,state,now):
  day=str(paris_day(now));counts=state.get('counts',{});sent=state.get('sent',{})
- if not is_alert_time(now) or now<state.get('busy_until',0):return None
- if os.environ.get('MANUAL_SCAN')!='true' and counts.get(day,0)>=2:return None
+ if not is_alert_time(now):return None
+ if os.environ.get('MANUAL_SCAN')!='true' and (now<state.get('busy_until',0) or counts.get(day,0)>=2):return None
  return next((s for s in sorted(found,key=lambda s:s['symbol']) if s['id'] not in sent),None)
 def main():
  now=int(time.time()*1000);token=os.environ.get('TELEGRAM_TOKEN');chat=os.environ.get('TELEGRAM_CHAT_ID')
@@ -82,7 +82,9 @@ def main():
   text=('<b>⚡ REBOND ÉCLAIR — LONG</b>\n<b>'+html.escape(s['symbol'])+'</b> · rejet après excès H1\n\n🟢 Entrée estimée :\n<code>'+fmt(s['entry'])+'</code>\n\n🛑 Stop-loss :\n<code>'+fmt(s['stop'])+'</code>\n\n🎯 Take-profit :\n<code>'+fmt(s['target'])+'</code>\n\nQuantité indicative : <code>'+fmt(s['quantity'])+'</code>\nRisque prévu : 1 USDT hors funding et gaps · levier ≤10×\nDurée maximale : 12h · cible brute 1,75× distance du stop\n\n⚠️ Expérimental, non validé. Vérifier prix, frais, taille minimale et quantité. Aucun ordre automatique.')
   if errors:text+='\n\n⚠️ Scan partiel : '+str(successful)+'/'+str(len(SYMBOLS))+' paires disponibles.'
   send(token,chat,text,[[{'text':'📈 TradingView','url':'https://www.tradingview.com/chart/?symbol=ZOOMEX:'+s['symbol']+'.P&interval=60'}],[{'text':'▶️ Lancer dans GitHub','url':gh}]])
-  state.setdefault('sent',{})[s['id']]=now;day=str(paris_day(now));state.setdefault('counts',{})[day]=state['counts'].get(day,0)+1;state['busy_until']=now+12*H
+  state.setdefault('sent',{})[s['id']]=now
+  if os.environ.get('MANUAL_SCAN')!='true':
+   day=str(paris_day(now));state.setdefault('counts',{})[day]=state['counts'].get(day,0)+1;state['busy_until']=now+12*H
   STATE.write_text(json.dumps(state,indent=2))
  # Keep a separate forward-looking log. No Telegram messages for extra signals.
  journal_path=Path('rebond_eclair_observations.json')
@@ -97,7 +99,7 @@ def main():
   elif item['id'] in state.get('sent',{}):continue
   else:
    kind='supplementaire'
-   reason='hors_horaire_paris' if not is_alert_time(now) else ('pause_12h' if now<previous_busy else ('limite_jour' if previous_count>=2 and os.environ.get('MANUAL_SCAN')!='true' else 'signal_simultane'))
+   reason='hors_horaire_paris' if not is_alert_time(now) else ('pause_12h' if now<previous_busy and os.environ.get('MANUAL_SCAN')!='true' else ('limite_jour' if previous_count>=2 and os.environ.get('MANUAL_SCAN')!='true' else 'signal_simultane'))
   observations[item['id']]={**item,'type':kind,'reason':reason,'scan_started_at':now,'coverage_ok':successful,'coverage_total':len(SYMBOLS),'missing_symbols':errors,'fee_assumption':FEE,'slippage_assumption':SLIP,'max_hold_hours':12,'execution':'indicative_not_real_trade','manual_scan':os.environ.get('MANUAL_SCAN')=='true'}
  if observations:journal_path.write_text(json.dumps(journal,indent=2))
  # Report newly changed outages once; status runs always show current coverage.
@@ -107,7 +109,7 @@ def main():
  if status or (failure_key and failure_key!=previous_failure):
   coverage=str(successful)+'/'+str(len(SYMBOLS))+' cryptos contrôlées · longs uniquement.'
   failures=('\n⚠️ Paires indisponibles : '+html.escape(', '.join(errors))+'.') if errors else ''
-  send(token,chat,'<b>⚡ Rebond Éclair — scan terminé</b>\n'+coverage+failures+'\n'+('Une alerte a été envoyée.' if signal else 'Aucune nouvelle alerte éligible.')+'\nAlertes principales : 7h–23h heure de Paris. Maximum 2 alertes automatiques/jour, heure de Paris ; lancement manuel sans plafond quotidien. Pause de 12h conservée.\nScanner expérimental : aucun ordre automatique.',[[{'text':'▶️ Lancer dans GitHub','url':gh}]])
+  send(token,chat,'<b>⚡ Rebond Éclair — scan terminé</b>\n'+coverage+failures+'\n'+('Une alerte a été envoyée.' if signal else 'Aucune nouvelle alerte éligible.')+'\nAlertes principales : 7h–23h heure de Paris. Maximum 2 alertes automatiques/jour, heure de Paris ; lancement manuel sans plafond quotidien. Pause de 12h pour les alertes automatiques uniquement.\nScanner expérimental : aucun ordre automatique.',[[{'text':'▶️ Lancer dans GitHub','url':gh}]])
  state['last_failure']=failure_key
  state['sent']={k:v for k,v in state.get('sent',{}).items() if now-v<45*24*H};state['counts']={k:v for k,v in state.get('counts',{}).items() if int(k)>=paris_day(now)-2};STATE.write_text(json.dumps(state,indent=2))
  print(json.dumps({'scanner':'Rebond Eclair','symbols_ok':successful,'symbols_failed':errors,'candidates':len(found),'alerts_sent':int(signal is not None)}))
