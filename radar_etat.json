@@ -342,24 +342,6 @@
    "vu": 1792983754920,
    "t_decl": 0
   },
-  "IOSTUSDT|retournement|0.00089": {
-   "type": "retournement",
-   "declenchement": 0.00089,
-   "invalidation": 0.0007365398955673431,
-   "atr": 7.286701477552307e-05,
-   "info": {
-    "creux1": 0.0007245,
-    "creux2": 0.0007584,
-    "baisse_atr": 14.7
-   },
-   "id": "IOSTUSDT|retournement|0.00089",
-   "sym": "IOSTUSDT",
-   "bruit": 17.338566275017968,
-   "tick": 1e-07,
-   "etape": "disparu",
-   "vu": 1792965755136,
-   "t_decl": 0
-  },
   "NEARUSDT|retournement|4.696": {
    "type": "retournement",
    "declenchement": 4.696,
@@ -1004,8 +986,8 @@
    "sym": "CHIPUSDT",
    "bruit": 13.038357059746,
    "tick": 1e-05,
-   "etape": "pret",
-   "vu": 1793134953940,
+   "etape": "formation",
+   "vu": 1793138561328,
    "t_decl": 0
   },
   "TAOUSDT|retournement|256.12": {
@@ -1347,7 +1329,7 @@
    "bruit": 20.02283496217851,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793134953940,
+   "vu": 1793138561328,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.206": {
@@ -1365,7 +1347,7 @@
    "bruit": 8.333652723765727,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1793134953940,
+   "vu": 1793138561328,
    "t_decl": 0
   },
   "STRKUSDT|retournement|0.04761": {
@@ -1401,7 +1383,7 @@
    "bruit": 10.921633802890078,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793134953940,
+   "vu": 1793138561328,
    "t_decl": 0
   },
   "XMRUSDT|retournement|621.83": {
@@ -1419,7 +1401,7 @@
    "bruit": 5.658122201881554,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793134953940,
+   "vu": 1793138561328,
    "t_decl": 0
   }
  },
