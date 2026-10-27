@@ -77,3 +77,23 @@ def guarded_sizing(entry, stop, qty_step, min_qty, tick, risk_usdt=1.0, margin_l
     return dict(q=qty, notional=notional, lev=leverage, marge=notional / leverage,
                 risque_usdt=qty * (distance + fee_per_unit),
                 frais_R=fee_per_unit / distance), "ok"
+
+
+def btc_permission(daily, h4, mode="warn"):
+    """Closed-candle BTC regime. 'warn' logs only; 'strict' vetoes longs.
+
+    Do not use today's incomplete D candle or unclosed H4 candle.
+    """
+    if mode not in ("off", "warn", "strict"):
+        raise ValueError("mode BTC inconnu")
+    if mode == "off":
+        return True, "BTC désactivé"
+    if daily is None or h4 is None or len(daily) < 200 or len(h4) < 50:
+        return (mode != "strict"), "BTC données insuffisantes"
+    import pandas as pd
+    ma200 = float(daily.c.tail(200).mean())
+    e20 = float(h4.c.ewm(span=20, adjust=False).mean().iloc[-1])
+    e50 = float(h4.c.ewm(span=50, adjust=False).mean().iloc[-1])
+    last_d, last_h4 = float(daily.c.iloc[-1]), float(h4.c.iloc[-1])
+    bullish = last_d > ma200 and last_h4 > e50 and e20 > e50
+    return (bullish or mode != "strict"), ("BTC favorable" if bullish else "BTC défavorable")
