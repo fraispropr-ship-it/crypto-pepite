@@ -1,6 +1,7 @@
 import unittest
 import pandas as pd
-from radar_v2_filters import confirm_breakout, guarded_sizing
+from radar_v2_filters import confirm_breakout, guarded_sizing, btc_permission
+from radar_v2_baseline import stats
 
 
 class RadarV2Tests(unittest.TestCase):
@@ -53,6 +54,21 @@ class RadarV2Tests(unittest.TestCase):
     def test_min_qty_rejected(self):
         result,_=guarded_sizing(100,95,1,10,.01)
         self.assertIsNone(result)
+
+    def test_btc_strict_fails_closed(self):
+        permitted, _ = btc_permission(None, None, "strict")
+        self.assertFalse(permitted)
+
+    def test_btc_warn_allows_unavailable(self):
+        permitted, _ = btc_permission(None, None, "warn")
+        self.assertTrue(permitted)
+
+    def test_baseline_net_fees(self):
+        row = dict(entree="100", sl="95", resultat_R="2",
+                   statut="OBJECTIF")
+        result = stats([row])
+        self.assertLess(result["mean_net_R"], 2)
+        self.assertEqual(result["targets"], 1)
 
     def test_nonfinite_rejected(self):
         result,_=guarded_sizing(float('nan'),95,.01,.01,.01)
