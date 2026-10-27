@@ -56,17 +56,28 @@ def main():
     signal=f.result()
     if signal:found.append(signal)
    except Exception:errors.append(futs[f])
- if errors:raise RuntimeError('Incomplete scan, no alerts sent: '+','.join(sorted(errors)))
+ errors=sorted(errors)
+ successful=len(SYMBOLS)-len(errors)
+ print(json.dumps({'successful':successful,'failed':errors}),flush=True)
  signal=choose(found,state,now)
  gh='https://github.com/fraispropr-ship-it/crypto-pepite/actions/workflows/trend-retest.yml'
  if signal:
   s=signal;fmt=lambda x:format(x,'.8g')
   text=('<b>⚡ REBOND ÉCLAIR — LONG</b>\n<b>'+html.escape(s['symbol'])+'</b> · rejet après excès H1\n\n🟢 Entrée estimée :\n<code>'+fmt(s['entry'])+'</code>\n\n🛑 Stop-loss :\n<code>'+fmt(s['stop'])+'</code>\n\n🎯 Take-profit :\n<code>'+fmt(s['target'])+'</code>\n\nQuantité indicative : <code>'+fmt(s['quantity'])+'</code>\nRisque prévu : 1 USDT hors funding et gaps · levier ≤10×\nDurée maximale : 12h · cible brute 1,75× distance du stop\n\n⚠️ Expérimental, non validé. Vérifier prix, frais, taille minimale et quantité. Aucun ordre automatique.')
+  if errors:text+='\n\n⚠️ Scan partiel : '+str(successful)+'/'+str(len(SYMBOLS))+' paires disponibles.'
   send(token,chat,text,[[{'text':'📈 TradingView','url':'https://www.tradingview.com/chart/?symbol=ZOOMEX:'+s['symbol']+'.P&interval=60'}],[{'text':'▶️ Lancer dans GitHub','url':gh}]])
   state.setdefault('sent',{})[s['id']]=now;day=str(now//(24*H));state.setdefault('counts',{})[day]=state['counts'].get(day,0)+1;state['busy_until']=now+12*H
   STATE.write_text(json.dumps(state,indent=2))
- if os.environ.get('SEND_STATUS')=='true':
-  send(token,chat,'<b>⚡ Rebond Éclair — scan terminé</b>\n20 cryptos contrôlées · longs uniquement.\n'+('Une alerte a été envoyée.' if signal else 'Aucune nouvelle alerte éligible.')+'\nMaximum 2 alertes/jour UTC ; blocage conservateur de 12h après une alerte.\nScanner expérimental : aucun ordre automatique.',[[{'text':'▶️ Lancer dans GitHub','url':gh}]])
+ # Report newly changed outages once; status runs always show current coverage.
+ failure_key=','.join(errors)
+ previous_failure=state.get('last_failure','')
+ status=os.environ.get('SEND_STATUS')=='true'
+ if status or (failure_key and failure_key!=previous_failure):
+  coverage=str(successful)+'/'+str(len(SYMBOLS))+' cryptos contrôlées · longs uniquement.'
+  failures=('\n⚠️ Paires indisponibles : '+html.escape(', '.join(errors))+'.') if errors else ''
+  send(token,chat,'<b>⚡ Rebond Éclair — scan terminé</b>\n'+coverage+failures+'\n'+('Une alerte a été envoyée.' if signal else 'Aucune nouvelle alerte éligible.')+'\nMaximum 2 alertes/jour UTC ; blocage conservateur de 12h après une alerte.\nScanner expérimental : aucun ordre automatique.',[[{'text':'▶️ Lancer dans GitHub','url':gh}]])
+ state['last_failure']=failure_key
  state['sent']={k:v for k,v in state.get('sent',{}).items() if now-v<45*24*H};state['counts']={k:v for k,v in state.get('counts',{}).items() if int(k)>=now//(24*H)-2};STATE.write_text(json.dumps(state,indent=2))
- print(json.dumps({'scanner':'Rebond Eclair','symbols':20,'candidates':len(found),'alerts_sent':int(signal is not None)}))
+ print(json.dumps({'scanner':'Rebond Eclair','symbols_ok':successful,'symbols_failed':errors,'candidates':len(found),'alerts_sent':int(signal is not None)}))
+ if successful==0:raise RuntimeError('All market data unavailable')
 if __name__=='__main__':main()
