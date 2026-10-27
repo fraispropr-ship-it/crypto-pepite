@@ -1,0 +1,1734 @@
+{
+  "status": "exploratory_predefined_three_variants",
+  "results": {
+    "2024_1x_reference": {
+      "first_half": {
+        "n": 165,
+        "total_R": -10.247,
+        "mean_R": -0.0621,
+        "profit_factor": 0.88,
+        "max_drawdown_R": 18.822,
+        "wins": 67
+      },
+      "third_quarter": {
+        "n": 87,
+        "total_R": 6.774,
+        "mean_R": 0.0779,
+        "profit_factor": 1.186,
+        "max_drawdown_R": 10.567,
+        "wins": 39
+      },
+      "fourth_quarter": {
+        "n": 92,
+        "total_R": -1.092,
+        "mean_R": -0.0119,
+        "profit_factor": 0.977,
+        "max_drawdown_R": 13.296,
+        "wins": 38
+      },
+      "year": {
+        "n": 344,
+        "total_R": -4.565,
+        "mean_R": -0.0133,
+        "profit_factor": 0.973,
+        "max_drawdown_R": 22.884,
+        "wins": 144
+      },
+      "months": {
+        "1": {
+          "n": 22,
+          "total_R": -1.286,
+          "mean_R": -0.0584,
+          "profit_factor": 0.879,
+          "max_drawdown_R": 5.405,
+          "wins": 9
+        },
+        "2": {
+          "n": 29,
+          "total_R": 1.275,
+          "mean_R": 0.044,
+          "profit_factor": 1.11,
+          "max_drawdown_R": 6.921,
+          "wins": 12
+        },
+        "3": {
+          "n": 39,
+          "total_R": -4.353,
+          "mean_R": -0.1116,
+          "profit_factor": 0.817,
+          "max_drawdown_R": 11.508,
+          "wins": 14
+        },
+        "4": {
+          "n": 30,
+          "total_R": -5.278,
+          "mean_R": -0.1759,
+          "profit_factor": 0.699,
+          "max_drawdown_R": 8.73,
+          "wins": 11
+        },
+        "5": {
+          "n": 29,
+          "total_R": 5.024,
+          "mean_R": 0.1733,
+          "profit_factor": 1.433,
+          "max_drawdown_R": 3.323,
+          "wins": 16
+        },
+        "6": {
+          "n": 16,
+          "total_R": -5.63,
+          "mean_R": -0.3519,
+          "profit_factor": 0.456,
+          "max_drawdown_R": 7.06,
+          "wins": 5
+        },
+        "7": {
+          "n": 29,
+          "total_R": 0.258,
+          "mean_R": 0.0089,
+          "profit_factor": 1.02,
+          "max_drawdown_R": 4.817,
+          "wins": 12
+        },
+        "8": {
+          "n": 29,
+          "total_R": -0.281,
+          "mean_R": -0.0097,
+          "profit_factor": 0.979,
+          "max_drawdown_R": 5.75,
+          "wins": 14
+        },
+        "9": {
+          "n": 29,
+          "total_R": 6.798,
+          "mean_R": 0.2344,
+          "profit_factor": 1.657,
+          "max_drawdown_R": 3.319,
+          "wins": 13
+        },
+        "10": {
+          "n": 30,
+          "total_R": -1.037,
+          "mean_R": -0.0346,
+          "profit_factor": 0.933,
+          "max_drawdown_R": 5.393,
+          "wins": 12
+        },
+        "11": {
+          "n": 37,
+          "total_R": 10.906,
+          "mean_R": 0.2948,
+          "profit_factor": 1.75,
+          "max_drawdown_R": 3.282,
+          "wins": 20
+        },
+        "12": {
+          "n": 25,
+          "total_R": -10.961,
+          "mean_R": -0.4385,
+          "profit_factor": 0.353,
+          "max_drawdown_R": 13.296,
+          "wins": 6
+        }
+      },
+      "without_best_5": {
+        "n": 339,
+        "total_R": -13.089,
+        "mean_R": -0.0386,
+        "profit_factor": 0.923,
+        "max_drawdown_R": 22.884,
+        "wins": 139
+      }
+    },
+    "2024_1x_btc_trend": {
+      "first_half": {
+        "n": 115,
+        "total_R": -12.118,
+        "mean_R": -0.1054,
+        "profit_factor": 0.809,
+        "max_drawdown_R": 15.781,
+        "wins": 42
+      },
+      "third_quarter": {
+        "n": 29,
+        "total_R": -1.147,
+        "mean_R": -0.0395,
+        "profit_factor": 0.925,
+        "max_drawdown_R": 9.964,
+        "wins": 11
+      },
+      "fourth_quarter": {
+        "n": 89,
+        "total_R": -0.148,
+        "mean_R": -0.0017,
+        "profit_factor": 0.997,
+        "max_drawdown_R": 11.664,
+        "wins": 37
+      },
+      "year": {
+        "n": 233,
+        "total_R": -13.412,
+        "mean_R": -0.0576,
+        "profit_factor": 0.892,
+        "max_drawdown_R": 25.745,
+        "wins": 90
+      },
+      "months": {
+        "1": {
+          "n": 12,
+          "total_R": -4.767,
+          "mean_R": -0.3973,
+          "profit_factor": 0.42,
+          "max_drawdown_R": 4.77,
+          "wins": 3
+        },
+        "2": {
+          "n": 29,
+          "total_R": 1.275,
+          "mean_R": 0.044,
+          "profit_factor": 1.11,
+          "max_drawdown_R": 6.921,
+          "wins": 12
+        },
+        "3": {
+          "n": 39,
+          "total_R": -4.353,
+          "mean_R": -0.1116,
+          "profit_factor": 0.817,
+          "max_drawdown_R": 11.508,
+          "wins": 14
+        },
+        "4": {
+          "n": 14,
+          "total_R": -0.867,
+          "mean_R": -0.0619,
+          "profit_factor": 0.892,
+          "max_drawdown_R": 3.73,
+          "wins": 6
+        },
+        "5": {
+          "n": 12,
+          "total_R": 1.057,
+          "mean_R": 0.0881,
+          "profit_factor": 1.189,
+          "max_drawdown_R": 3.323,
+          "wins": 5
+        },
+        "6": {
+          "n": 9,
+          "total_R": -4.462,
+          "mean_R": -0.4958,
+          "profit_factor": 0.297,
+          "max_drawdown_R": 4.462,
+          "wins": 2
+        },
+        "7": {
+          "n": 10,
+          "total_R": -5.55,
+          "mean_R": -0.555,
+          "profit_factor": 0.243,
+          "max_drawdown_R": 5.55,
+          "wins": 2
+        },
+        "8": {
+          "n": 2,
+          "total_R": -1.997,
+          "mean_R": -0.9985,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 1.997,
+          "wins": 0
+        },
+        "9": {
+          "n": 17,
+          "total_R": 6.4,
+          "mean_R": 0.3765,
+          "profit_factor": 2.058,
+          "max_drawdown_R": 2.417,
+          "wins": 9
+        },
+        "10": {
+          "n": 30,
+          "total_R": -1.037,
+          "mean_R": -0.0346,
+          "profit_factor": 0.933,
+          "max_drawdown_R": 5.393,
+          "wins": 12
+        },
+        "11": {
+          "n": 37,
+          "total_R": 10.906,
+          "mean_R": 0.2948,
+          "profit_factor": 1.75,
+          "max_drawdown_R": 3.282,
+          "wins": 20
+        },
+        "12": {
+          "n": 22,
+          "total_R": -10.017,
+          "mean_R": -0.4553,
+          "profit_factor": 0.346,
+          "max_drawdown_R": 11.664,
+          "wins": 5
+        }
+      },
+      "without_best_5": {
+        "n": 228,
+        "total_R": -21.937,
+        "mean_R": -0.0962,
+        "profit_factor": 0.823,
+        "max_drawdown_R": 27.187,
+        "wins": 85
+      }
+    },
+    "2024_1x_btc_breadth": {
+      "first_half": {
+        "n": 74,
+        "total_R": -1.371,
+        "mean_R": -0.0185,
+        "profit_factor": 0.964,
+        "max_drawdown_R": 9.741,
+        "wins": 29
+      },
+      "third_quarter": {
+        "n": 21,
+        "total_R": 2.383,
+        "mean_R": 0.1135,
+        "profit_factor": 1.237,
+        "max_drawdown_R": 6.434,
+        "wins": 9
+      },
+      "fourth_quarter": {
+        "n": 65,
+        "total_R": 0.548,
+        "mean_R": 0.0084,
+        "profit_factor": 1.017,
+        "max_drawdown_R": 6.105,
+        "wins": 26
+      },
+      "year": {
+        "n": 160,
+        "total_R": 1.56,
+        "mean_R": 0.0098,
+        "profit_factor": 1.019,
+        "max_drawdown_R": 12.45,
+        "wins": 64
+      },
+      "months": {
+        "1": {
+          "n": 4,
+          "total_R": 0.003,
+          "mean_R": 0.0008,
+          "profit_factor": 1.002,
+          "max_drawdown_R": 1.679,
+          "wins": 2
+        },
+        "2": {
+          "n": 25,
+          "total_R": -2.513,
+          "mean_R": -0.1005,
+          "profit_factor": 0.782,
+          "max_drawdown_R": 6.911,
+          "wins": 9
+        },
+        "3": {
+          "n": 29,
+          "total_R": -0.402,
+          "mean_R": -0.0139,
+          "profit_factor": 0.976,
+          "max_drawdown_R": 7.557,
+          "wins": 11
+        },
+        "4": {
+          "n": 4,
+          "total_R": -1.381,
+          "mean_R": -0.3452,
+          "profit_factor": 0.54,
+          "max_drawdown_R": 3.0,
+          "wins": 1
+        },
+        "5": {
+          "n": 10,
+          "total_R": 2.38,
+          "mean_R": 0.238,
+          "profit_factor": 1.556,
+          "max_drawdown_R": 2.0,
+          "wins": 5
+        },
+        "6": {
+          "n": 2,
+          "total_R": 0.542,
+          "mean_R": 0.2711,
+          "profit_factor": 1.542,
+          "max_drawdown_R": 1.0,
+          "wins": 1
+        },
+        "7": {
+          "n": 6,
+          "total_R": -5.329,
+          "mean_R": -0.8882,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 5.329,
+          "wins": 0
+        },
+        "8": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "9": {
+          "n": 15,
+          "total_R": 7.713,
+          "mean_R": 0.5142,
+          "profit_factor": 2.628,
+          "max_drawdown_R": 1.73,
+          "wins": 9
+        },
+        "10": {
+          "n": 19,
+          "total_R": -3.724,
+          "mean_R": -0.196,
+          "profit_factor": 0.677,
+          "max_drawdown_R": 5.02,
+          "wins": 5
+        },
+        "11": {
+          "n": 34,
+          "total_R": 8.73,
+          "mean_R": 0.2568,
+          "profit_factor": 1.644,
+          "max_drawdown_R": 3.705,
+          "wins": 18
+        },
+        "12": {
+          "n": 12,
+          "total_R": -4.458,
+          "mean_R": -0.3715,
+          "profit_factor": 0.39,
+          "max_drawdown_R": 6.105,
+          "wins": 3
+        }
+      },
+      "without_best_5": {
+        "n": 155,
+        "total_R": -6.964,
+        "mean_R": -0.0449,
+        "profit_factor": 0.914,
+        "max_drawdown_R": 14.592,
+        "wins": 59
+      }
+    },
+    "2024_2x_reference": {
+      "first_half": {
+        "n": 167,
+        "total_R": -20.863,
+        "mean_R": -0.1249,
+        "profit_factor": 0.764,
+        "max_drawdown_R": 25.508,
+        "wins": 66
+      },
+      "third_quarter": {
+        "n": 88,
+        "total_R": 0.824,
+        "mean_R": 0.0094,
+        "profit_factor": 1.022,
+        "max_drawdown_R": 11.585,
+        "wins": 38
+      },
+      "fourth_quarter": {
+        "n": 92,
+        "total_R": -5.334,
+        "mean_R": -0.058,
+        "profit_factor": 0.887,
+        "max_drawdown_R": 13.647,
+        "wins": 37
+      },
+      "year": {
+        "n": 347,
+        "total_R": -25.373,
+        "mean_R": -0.0731,
+        "profit_factor": 0.854,
+        "max_drawdown_R": 32.409,
+        "wins": 141
+      },
+      "months": {
+        "1": {
+          "n": 22,
+          "total_R": -2.697,
+          "mean_R": -0.1226,
+          "profit_factor": 0.752,
+          "max_drawdown_R": 5.941,
+          "wins": 8
+        },
+        "2": {
+          "n": 29,
+          "total_R": -0.25,
+          "mean_R": -0.0086,
+          "profit_factor": 0.979,
+          "max_drawdown_R": 7.62,
+          "wins": 12
+        },
+        "3": {
+          "n": 39,
+          "total_R": -5.637,
+          "mean_R": -0.1445,
+          "profit_factor": 0.763,
+          "max_drawdown_R": 12.329,
+          "wins": 14
+        },
+        "4": {
+          "n": 31,
+          "total_R": -8.17,
+          "mean_R": -0.2635,
+          "profit_factor": 0.561,
+          "max_drawdown_R": 9.888,
+          "wins": 11
+        },
+        "5": {
+          "n": 30,
+          "total_R": 2.419,
+          "mean_R": 0.0806,
+          "profit_factor": 1.191,
+          "max_drawdown_R": 3.375,
+          "wins": 16
+        },
+        "6": {
+          "n": 16,
+          "total_R": -6.528,
+          "mean_R": -0.408,
+          "profit_factor": 0.374,
+          "max_drawdown_R": 7.429,
+          "wins": 5
+        },
+        "7": {
+          "n": 29,
+          "total_R": -1.428,
+          "mean_R": -0.0493,
+          "profit_factor": 0.89,
+          "max_drawdown_R": 5.213,
+          "wins": 12
+        },
+        "8": {
+          "n": 29,
+          "total_R": -1.801,
+          "mean_R": -0.0621,
+          "profit_factor": 0.867,
+          "max_drawdown_R": 6.372,
+          "wins": 14
+        },
+        "9": {
+          "n": 30,
+          "total_R": 4.054,
+          "mean_R": 0.1351,
+          "profit_factor": 1.355,
+          "max_drawdown_R": 4.353,
+          "wins": 12
+        },
+        "10": {
+          "n": 30,
+          "total_R": -2.888,
+          "mean_R": -0.0963,
+          "profit_factor": 0.816,
+          "max_drawdown_R": 6.248,
+          "wins": 12
+        },
+        "11": {
+          "n": 37,
+          "total_R": 9.081,
+          "mean_R": 0.2454,
+          "profit_factor": 1.621,
+          "max_drawdown_R": 3.303,
+          "wins": 19
+        },
+        "12": {
+          "n": 25,
+          "total_R": -11.527,
+          "mean_R": -0.4611,
+          "profit_factor": 0.324,
+          "max_drawdown_R": 13.647,
+          "wins": 6
+        }
+      },
+      "without_best_5": {
+        "n": 342,
+        "total_R": -33.696,
+        "mean_R": -0.0985,
+        "profit_factor": 0.806,
+        "max_drawdown_R": 34.265,
+        "wins": 136
+      }
+    },
+    "2024_2x_btc_trend": {
+      "first_half": {
+        "n": 116,
+        "total_R": -18.133,
+        "mean_R": -0.1563,
+        "profit_factor": 0.721,
+        "max_drawdown_R": 19.32,
+        "wins": 42
+      },
+      "third_quarter": {
+        "n": 29,
+        "total_R": -2.663,
+        "mean_R": -0.0918,
+        "profit_factor": 0.828,
+        "max_drawdown_R": 10.416,
+        "wins": 11
+      },
+      "fourth_quarter": {
+        "n": 89,
+        "total_R": -4.244,
+        "mean_R": -0.0477,
+        "profit_factor": 0.907,
+        "max_drawdown_R": 11.988,
+        "wins": 36
+      },
+      "year": {
+        "n": 234,
+        "total_R": -25.04,
+        "mean_R": -0.107,
+        "profit_factor": 0.802,
+        "max_drawdown_R": 29.736,
+        "wins": 89
+      },
+      "months": {
+        "1": {
+          "n": 12,
+          "total_R": -5.255,
+          "mean_R": -0.4379,
+          "profit_factor": 0.367,
+          "max_drawdown_R": 5.255,
+          "wins": 3
+        },
+        "2": {
+          "n": 29,
+          "total_R": -0.25,
+          "mean_R": -0.0086,
+          "profit_factor": 0.979,
+          "max_drawdown_R": 7.62,
+          "wins": 12
+        },
+        "3": {
+          "n": 39,
+          "total_R": -5.637,
+          "mean_R": -0.1445,
+          "profit_factor": 0.763,
+          "max_drawdown_R": 12.329,
+          "wins": 14
+        },
+        "4": {
+          "n": 14,
+          "total_R": -1.615,
+          "mean_R": -0.1154,
+          "profit_factor": 0.798,
+          "max_drawdown_R": 3.948,
+          "wins": 6
+        },
+        "5": {
+          "n": 13,
+          "total_R": -0.602,
+          "mean_R": -0.0463,
+          "profit_factor": 0.91,
+          "max_drawdown_R": 3.375,
+          "wins": 5
+        },
+        "6": {
+          "n": 9,
+          "total_R": -4.774,
+          "mean_R": -0.5305,
+          "profit_factor": 0.257,
+          "max_drawdown_R": 4.774,
+          "wins": 2
+        },
+        "7": {
+          "n": 10,
+          "total_R": -5.788,
+          "mean_R": -0.5788,
+          "profit_factor": 0.214,
+          "max_drawdown_R": 5.788,
+          "wins": 2
+        },
+        "8": {
+          "n": 2,
+          "total_R": -1.997,
+          "mean_R": -0.9985,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 1.997,
+          "wins": 0
+        },
+        "9": {
+          "n": 17,
+          "total_R": 5.122,
+          "mean_R": 0.3013,
+          "profit_factor": 1.832,
+          "max_drawdown_R": 2.631,
+          "wins": 9
+        },
+        "10": {
+          "n": 30,
+          "total_R": -2.888,
+          "mean_R": -0.0963,
+          "profit_factor": 0.816,
+          "max_drawdown_R": 6.248,
+          "wins": 12
+        },
+        "11": {
+          "n": 37,
+          "total_R": 9.081,
+          "mean_R": 0.2454,
+          "profit_factor": 1.621,
+          "max_drawdown_R": 3.303,
+          "wins": 19
+        },
+        "12": {
+          "n": 22,
+          "total_R": -10.437,
+          "mean_R": -0.4744,
+          "profit_factor": 0.322,
+          "max_drawdown_R": 11.988,
+          "wins": 5
+        }
+      },
+      "without_best_5": {
+        "n": 229,
+        "total_R": -33.363,
+        "mean_R": -0.1457,
+        "profit_factor": 0.736,
+        "max_drawdown_R": 33.527,
+        "wins": 84
+      }
+    },
+    "2024_2x_btc_breadth": {
+      "first_half": {
+        "n": 75,
+        "total_R": -5.444,
+        "mean_R": -0.0726,
+        "profit_factor": 0.864,
+        "max_drawdown_R": 11.371,
+        "wins": 29
+      },
+      "third_quarter": {
+        "n": 21,
+        "total_R": 1.105,
+        "mean_R": 0.0526,
+        "profit_factor": 1.109,
+        "max_drawdown_R": 6.647,
+        "wins": 9
+      },
+      "fourth_quarter": {
+        "n": 65,
+        "total_R": -2.117,
+        "mean_R": -0.0326,
+        "profit_factor": 0.935,
+        "max_drawdown_R": 6.738,
+        "wins": 25
+      },
+      "year": {
+        "n": 161,
+        "total_R": -6.456,
+        "mean_R": -0.0401,
+        "profit_factor": 0.922,
+        "max_drawdown_R": 14.984,
+        "wins": 63
+      },
+      "months": {
+        "1": {
+          "n": 4,
+          "total_R": -0.167,
+          "mean_R": -0.0418,
+          "profit_factor": 0.916,
+          "max_drawdown_R": 1.786,
+          "wins": 2
+        },
+        "2": {
+          "n": 25,
+          "total_R": -3.633,
+          "mean_R": -0.1453,
+          "profit_factor": 0.692,
+          "max_drawdown_R": 7.612,
+          "wins": 9
+        },
+        "3": {
+          "n": 29,
+          "total_R": -1.28,
+          "mean_R": -0.0441,
+          "profit_factor": 0.924,
+          "max_drawdown_R": 7.973,
+          "wins": 11
+        },
+        "4": {
+          "n": 4,
+          "total_R": -1.5,
+          "mean_R": -0.375,
+          "profit_factor": 0.5,
+          "max_drawdown_R": 3.0,
+          "wins": 1
+        },
+        "5": {
+          "n": 11,
+          "total_R": 0.773,
+          "mean_R": 0.0703,
+          "profit_factor": 1.145,
+          "max_drawdown_R": 2.0,
+          "wins": 5
+        },
+        "6": {
+          "n": 2,
+          "total_R": 0.363,
+          "mean_R": 0.1817,
+          "profit_factor": 1.363,
+          "max_drawdown_R": 1.0,
+          "wins": 1
+        },
+        "7": {
+          "n": 6,
+          "total_R": -5.367,
+          "mean_R": -0.8945,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 5.367,
+          "wins": 0
+        },
+        "8": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "9": {
+          "n": 15,
+          "total_R": 6.472,
+          "mean_R": 0.4315,
+          "profit_factor": 2.347,
+          "max_drawdown_R": 1.797,
+          "wins": 9
+        },
+        "10": {
+          "n": 19,
+          "total_R": -4.649,
+          "mean_R": -0.2447,
+          "profit_factor": 0.602,
+          "max_drawdown_R": 5.322,
+          "wins": 5
+        },
+        "11": {
+          "n": 34,
+          "total_R": 7.266,
+          "mean_R": 0.2137,
+          "profit_factor": 1.533,
+          "max_drawdown_R": 4.019,
+          "wins": 17
+        },
+        "12": {
+          "n": 12,
+          "total_R": -4.734,
+          "mean_R": -0.3945,
+          "profit_factor": 0.359,
+          "max_drawdown_R": 6.285,
+          "wins": 3
+        }
+      },
+      "without_best_5": {
+        "n": 156,
+        "total_R": -14.779,
+        "mean_R": -0.0947,
+        "profit_factor": 0.821,
+        "max_drawdown_R": 18.689,
+        "wins": 58
+      }
+    },
+    "2025_1x_reference": {
+      "first_half": {
+        "n": 153,
+        "total_R": -17.911,
+        "mean_R": -0.1171,
+        "profit_factor": 0.778,
+        "max_drawdown_R": 21.722,
+        "wins": 58
+      },
+      "third_quarter": {
+        "n": 65,
+        "total_R": 12.68,
+        "mean_R": 0.1951,
+        "profit_factor": 1.457,
+        "max_drawdown_R": 7.479,
+        "wins": 34
+      },
+      "fourth_quarter": {
+        "n": 77,
+        "total_R": -13.595,
+        "mean_R": -0.1766,
+        "profit_factor": 0.699,
+        "max_drawdown_R": 16.187,
+        "wins": 26
+      },
+      "year": {
+        "n": 295,
+        "total_R": -18.825,
+        "mean_R": -0.0638,
+        "profit_factor": 0.877,
+        "max_drawdown_R": 21.722,
+        "wins": 118
+      },
+      "months": {
+        "1": {
+          "n": 35,
+          "total_R": -11.634,
+          "mean_R": -0.3324,
+          "profit_factor": 0.456,
+          "max_drawdown_R": 13.998,
+          "wins": 11
+        },
+        "2": {
+          "n": 14,
+          "total_R": 0.52,
+          "mean_R": 0.0371,
+          "profit_factor": 1.08,
+          "max_drawdown_R": 2.004,
+          "wins": 6
+        },
+        "3": {
+          "n": 27,
+          "total_R": -1.361,
+          "mean_R": -0.0504,
+          "profit_factor": 0.893,
+          "max_drawdown_R": 5.927,
+          "wins": 9
+        },
+        "4": {
+          "n": 28,
+          "total_R": -2.722,
+          "mean_R": -0.0972,
+          "profit_factor": 0.806,
+          "max_drawdown_R": 6.212,
+          "wins": 11
+        },
+        "5": {
+          "n": 28,
+          "total_R": 2.546,
+          "mean_R": 0.0909,
+          "profit_factor": 1.198,
+          "max_drawdown_R": 5.692,
+          "wins": 13
+        },
+        "6": {
+          "n": 21,
+          "total_R": -5.26,
+          "mean_R": -0.2505,
+          "profit_factor": 0.596,
+          "max_drawdown_R": 6.828,
+          "wins": 8
+        },
+        "7": {
+          "n": 22,
+          "total_R": 10.687,
+          "mean_R": 0.4858,
+          "profit_factor": 2.486,
+          "max_drawdown_R": 2.386,
+          "wins": 14
+        },
+        "8": {
+          "n": 21,
+          "total_R": 5.797,
+          "mean_R": 0.276,
+          "profit_factor": 1.654,
+          "max_drawdown_R": 2.387,
+          "wins": 11
+        },
+        "9": {
+          "n": 22,
+          "total_R": -3.803,
+          "mean_R": -0.1729,
+          "profit_factor": 0.674,
+          "max_drawdown_R": 7.479,
+          "wins": 9
+        },
+        "10": {
+          "n": 30,
+          "total_R": -5.683,
+          "mean_R": -0.1894,
+          "profit_factor": 0.687,
+          "max_drawdown_R": 8.275,
+          "wins": 10
+        },
+        "11": {
+          "n": 22,
+          "total_R": -4.547,
+          "mean_R": -0.2067,
+          "profit_factor": 0.643,
+          "max_drawdown_R": 4.547,
+          "wins": 7
+        },
+        "12": {
+          "n": 25,
+          "total_R": -3.365,
+          "mean_R": -0.1346,
+          "profit_factor": 0.764,
+          "max_drawdown_R": 9.752,
+          "wins": 9
+        }
+      },
+      "without_best_5": {
+        "n": 290,
+        "total_R": -27.091,
+        "mean_R": -0.0934,
+        "profit_factor": 0.823,
+        "max_drawdown_R": 29.988,
+        "wins": 113
+      }
+    },
+    "2025_1x_btc_trend": {
+      "first_half": {
+        "n": 84,
+        "total_R": -14.647,
+        "mean_R": -0.1744,
+        "profit_factor": 0.693,
+        "max_drawdown_R": 17.019,
+        "wins": 31
+      },
+      "third_quarter": {
+        "n": 38,
+        "total_R": 10.307,
+        "mean_R": 0.2712,
+        "profit_factor": 1.663,
+        "max_drawdown_R": 4.672,
+        "wins": 21
+      },
+      "fourth_quarter": {
+        "n": 14,
+        "total_R": -1.234,
+        "mean_R": -0.0881,
+        "profit_factor": 0.846,
+        "max_drawdown_R": 3.671,
+        "wins": 5
+      },
+      "year": {
+        "n": 136,
+        "total_R": -5.573,
+        "mean_R": -0.041,
+        "profit_factor": 0.922,
+        "max_drawdown_R": 17.019,
+        "wins": 57
+      },
+      "months": {
+        "1": {
+          "n": 22,
+          "total_R": -7.312,
+          "mean_R": -0.3324,
+          "profit_factor": 0.46,
+          "max_drawdown_R": 9.805,
+          "wins": 7
+        },
+        "2": {
+          "n": 1,
+          "total_R": -0.358,
+          "mean_R": -0.3583,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 0.358,
+          "wins": 0
+        },
+        "3": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "4": {
+          "n": 21,
+          "total_R": -3.699,
+          "mean_R": -0.1761,
+          "profit_factor": 0.69,
+          "max_drawdown_R": 4.941,
+          "wins": 8
+        },
+        "5": {
+          "n": 28,
+          "total_R": 2.546,
+          "mean_R": 0.0909,
+          "profit_factor": 1.198,
+          "max_drawdown_R": 5.692,
+          "wins": 13
+        },
+        "6": {
+          "n": 12,
+          "total_R": -5.824,
+          "mean_R": -0.4853,
+          "profit_factor": 0.354,
+          "max_drawdown_R": 5.824,
+          "wins": 3
+        },
+        "7": {
+          "n": 22,
+          "total_R": 10.687,
+          "mean_R": 0.4858,
+          "profit_factor": 2.486,
+          "max_drawdown_R": 2.386,
+          "wins": 14
+        },
+        "8": {
+          "n": 11,
+          "total_R": 3.288,
+          "mean_R": 0.2989,
+          "profit_factor": 1.737,
+          "max_drawdown_R": 1.452,
+          "wins": 6
+        },
+        "9": {
+          "n": 5,
+          "total_R": -3.668,
+          "mean_R": -0.7336,
+          "profit_factor": 0.059,
+          "max_drawdown_R": 3.897,
+          "wins": 1
+        },
+        "10": {
+          "n": 12,
+          "total_R": 0.766,
+          "mean_R": 0.0639,
+          "profit_factor": 1.128,
+          "max_drawdown_R": 2.173,
+          "wins": 5
+        },
+        "11": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "12": {
+          "n": 2,
+          "total_R": -2.0,
+          "mean_R": -1.0,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 2.0,
+          "wins": 0
+        }
+      },
+      "without_best_5": {
+        "n": 131,
+        "total_R": -13.77,
+        "mean_R": -0.1051,
+        "profit_factor": 0.807,
+        "max_drawdown_R": 23.585,
+        "wins": 52
+      }
+    },
+    "2025_1x_btc_breadth": {
+      "first_half": {
+        "n": 52,
+        "total_R": -6.849,
+        "mean_R": -0.1317,
+        "profit_factor": 0.775,
+        "max_drawdown_R": 10.341,
+        "wins": 19
+      },
+      "third_quarter": {
+        "n": 33,
+        "total_R": 11.842,
+        "mean_R": 0.3589,
+        "profit_factor": 1.947,
+        "max_drawdown_R": 2.386,
+        "wins": 20
+      },
+      "fourth_quarter": {
+        "n": 13,
+        "total_R": -0.229,
+        "mean_R": -0.0176,
+        "profit_factor": 0.967,
+        "max_drawdown_R": 3.0,
+        "wins": 5
+      },
+      "year": {
+        "n": 98,
+        "total_R": 4.765,
+        "mean_R": 0.0486,
+        "profit_factor": 1.095,
+        "max_drawdown_R": 10.341,
+        "wins": 44
+      },
+      "months": {
+        "1": {
+          "n": 11,
+          "total_R": -3.495,
+          "mean_R": -0.3178,
+          "profit_factor": 0.517,
+          "max_drawdown_R": 5.867,
+          "wins": 3
+        },
+        "2": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "3": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "4": {
+          "n": 18,
+          "total_R": -1.73,
+          "mean_R": -0.0961,
+          "profit_factor": 0.826,
+          "max_drawdown_R": 3.972,
+          "wins": 7
+        },
+        "5": {
+          "n": 18,
+          "total_R": -1.744,
+          "mean_R": -0.0969,
+          "profit_factor": 0.831,
+          "max_drawdown_R": 5.325,
+          "wins": 7
+        },
+        "6": {
+          "n": 5,
+          "total_R": 0.12,
+          "mean_R": 0.0241,
+          "profit_factor": 1.04,
+          "max_drawdown_R": 2.0,
+          "wins": 2
+        },
+        "7": {
+          "n": 20,
+          "total_R": 9.33,
+          "mean_R": 0.4665,
+          "profit_factor": 2.327,
+          "max_drawdown_R": 2.386,
+          "wins": 13
+        },
+        "8": {
+          "n": 11,
+          "total_R": 3.288,
+          "mean_R": 0.2989,
+          "profit_factor": 1.737,
+          "max_drawdown_R": 1.452,
+          "wins": 6
+        },
+        "9": {
+          "n": 2,
+          "total_R": -0.776,
+          "mean_R": -0.3878,
+          "profit_factor": 0.228,
+          "max_drawdown_R": 1.004,
+          "wins": 1
+        },
+        "10": {
+          "n": 11,
+          "total_R": 1.771,
+          "mean_R": 0.161,
+          "profit_factor": 1.354,
+          "max_drawdown_R": 2.0,
+          "wins": 5
+        },
+        "11": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "12": {
+          "n": 2,
+          "total_R": -2.0,
+          "mean_R": -1.0,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 2.0,
+          "wins": 0
+        }
+      },
+      "without_best_5": {
+        "n": 93,
+        "total_R": -3.428,
+        "mean_R": -0.0369,
+        "profit_factor": 0.931,
+        "max_drawdown_R": 15.28,
+        "wins": 39
+      }
+    },
+    "2025_2x_reference": {
+      "first_half": {
+        "n": 153,
+        "total_R": -25.667,
+        "mean_R": -0.1678,
+        "profit_factor": 0.686,
+        "max_drawdown_R": 28.432,
+        "wins": 57
+      },
+      "third_quarter": {
+        "n": 65,
+        "total_R": 7.242,
+        "mean_R": 0.1114,
+        "profit_factor": 1.257,
+        "max_drawdown_R": 8.12,
+        "wins": 33
+      },
+      "fourth_quarter": {
+        "n": 77,
+        "total_R": -18.907,
+        "mean_R": -0.2455,
+        "profit_factor": 0.585,
+        "max_drawdown_R": 21.009,
+        "wins": 26
+      },
+      "year": {
+        "n": 295,
+        "total_R": -37.332,
+        "mean_R": -0.1265,
+        "profit_factor": 0.76,
+        "max_drawdown_R": 39.187,
+        "wins": 116
+      },
+      "months": {
+        "1": {
+          "n": 35,
+          "total_R": -13.312,
+          "mean_R": -0.3803,
+          "profit_factor": 0.396,
+          "max_drawdown_R": 15.183,
+          "wins": 11
+        },
+        "2": {
+          "n": 14,
+          "total_R": -0.253,
+          "mean_R": -0.0181,
+          "profit_factor": 0.961,
+          "max_drawdown_R": 2.004,
+          "wins": 6
+        },
+        "3": {
+          "n": 27,
+          "total_R": -2.577,
+          "mean_R": -0.0955,
+          "profit_factor": 0.801,
+          "max_drawdown_R": 6.345,
+          "wins": 9
+        },
+        "4": {
+          "n": 28,
+          "total_R": -4.258,
+          "mean_R": -0.1521,
+          "profit_factor": 0.701,
+          "max_drawdown_R": 6.854,
+          "wins": 10
+        },
+        "5": {
+          "n": 28,
+          "total_R": 1.039,
+          "mean_R": 0.0371,
+          "profit_factor": 1.08,
+          "max_drawdown_R": 5.822,
+          "wins": 13
+        },
+        "6": {
+          "n": 21,
+          "total_R": -6.306,
+          "mean_R": -0.3003,
+          "profit_factor": 0.516,
+          "max_drawdown_R": 7.216,
+          "wins": 8
+        },
+        "7": {
+          "n": 22,
+          "total_R": 8.736,
+          "mean_R": 0.3971,
+          "profit_factor": 2.204,
+          "max_drawdown_R": 2.497,
+          "wins": 14
+        },
+        "8": {
+          "n": 21,
+          "total_R": 3.819,
+          "mean_R": 0.1819,
+          "profit_factor": 1.427,
+          "max_drawdown_R": 2.613,
+          "wins": 11
+        },
+        "9": {
+          "n": 22,
+          "total_R": -5.313,
+          "mean_R": -0.2415,
+          "profit_factor": 0.555,
+          "max_drawdown_R": 8.12,
+          "wins": 8
+        },
+        "10": {
+          "n": 30,
+          "total_R": -7.44,
+          "mean_R": -0.248,
+          "profit_factor": 0.593,
+          "max_drawdown_R": 9.542,
+          "wins": 10
+        },
+        "11": {
+          "n": 22,
+          "total_R": -5.637,
+          "mean_R": -0.2562,
+          "profit_factor": 0.563,
+          "max_drawdown_R": 5.637,
+          "wins": 7
+        },
+        "12": {
+          "n": 25,
+          "total_R": -5.83,
+          "mean_R": -0.2332,
+          "profit_factor": 0.595,
+          "max_drawdown_R": 10.477,
+          "wins": 9
+        }
+      },
+      "without_best_5": {
+        "n": 290,
+        "total_R": -45.153,
+        "mean_R": -0.1557,
+        "profit_factor": 0.71,
+        "max_drawdown_R": 47.008,
+        "wins": 111
+      }
+    },
+    "2025_2x_btc_trend": {
+      "first_half": {
+        "n": 84,
+        "total_R": -18.896,
+        "mean_R": -0.2249,
+        "profit_factor": 0.61,
+        "max_drawdown_R": 20.922,
+        "wins": 30
+      },
+      "third_quarter": {
+        "n": 38,
+        "total_R": 6.99,
+        "mean_R": 0.1839,
+        "profit_factor": 1.446,
+        "max_drawdown_R": 4.764,
+        "wins": 21
+      },
+      "fourth_quarter": {
+        "n": 14,
+        "total_R": -2.363,
+        "mean_R": -0.1688,
+        "profit_factor": 0.708,
+        "max_drawdown_R": 4.465,
+        "wins": 5
+      },
+      "year": {
+        "n": 136,
+        "total_R": -14.269,
+        "mean_R": -0.1049,
+        "profit_factor": 0.803,
+        "max_drawdown_R": 20.922,
+        "wins": 56
+      },
+      "months": {
+        "1": {
+          "n": 22,
+          "total_R": -8.565,
+          "mean_R": -0.3893,
+          "profit_factor": 0.393,
+          "max_drawdown_R": 10.607,
+          "wins": 7
+        },
+        "2": {
+          "n": 1,
+          "total_R": -0.373,
+          "mean_R": -0.3731,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 0.373,
+          "wins": 0
+        },
+        "3": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "4": {
+          "n": 21,
+          "total_R": -4.784,
+          "mean_R": -0.2278,
+          "profit_factor": 0.602,
+          "max_drawdown_R": 5.144,
+          "wins": 7
+        },
+        "5": {
+          "n": 28,
+          "total_R": 1.039,
+          "mean_R": 0.0371,
+          "profit_factor": 1.08,
+          "max_drawdown_R": 5.822,
+          "wins": 13
+        },
+        "6": {
+          "n": 12,
+          "total_R": -6.213,
+          "mean_R": -0.5177,
+          "profit_factor": 0.311,
+          "max_drawdown_R": 6.213,
+          "wins": 3
+        },
+        "7": {
+          "n": 22,
+          "total_R": 8.736,
+          "mean_R": 0.3971,
+          "profit_factor": 2.204,
+          "max_drawdown_R": 2.497,
+          "wins": 14
+        },
+        "8": {
+          "n": 11,
+          "total_R": 2.014,
+          "mean_R": 0.1831,
+          "profit_factor": 1.447,
+          "max_drawdown_R": 1.498,
+          "wins": 6
+        },
+        "9": {
+          "n": 5,
+          "total_R": -3.76,
+          "mean_R": -0.752,
+          "profit_factor": 0.038,
+          "max_drawdown_R": 3.91,
+          "wins": 1
+        },
+        "10": {
+          "n": 12,
+          "total_R": -0.363,
+          "mean_R": -0.0303,
+          "profit_factor": 0.94,
+          "max_drawdown_R": 2.76,
+          "wins": 5
+        },
+        "11": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "12": {
+          "n": 2,
+          "total_R": -2.0,
+          "mean_R": -1.0,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 2.0,
+          "wins": 0
+        }
+      },
+      "without_best_5": {
+        "n": 131,
+        "total_R": -21.961,
+        "mean_R": -0.1676,
+        "profit_factor": 0.696,
+        "max_drawdown_R": 27.096,
+        "wins": 51
+      }
+    },
+    "2025_2x_btc_breadth": {
+      "first_half": {
+        "n": 52,
+        "total_R": -9.936,
+        "mean_R": -0.1911,
+        "profit_factor": 0.681,
+        "max_drawdown_R": 12.757,
+        "wins": 19
+      },
+      "third_quarter": {
+        "n": 33,
+        "total_R": 8.801,
+        "mean_R": 0.2667,
+        "profit_factor": 1.702,
+        "max_drawdown_R": 2.497,
+        "wins": 20
+      },
+      "fourth_quarter": {
+        "n": 13,
+        "total_R": -1.358,
+        "mean_R": -0.1045,
+        "profit_factor": 0.808,
+        "max_drawdown_R": 3.46,
+        "wins": 5
+      },
+      "year": {
+        "n": 98,
+        "total_R": -2.494,
+        "mean_R": -0.0254,
+        "profit_factor": 0.951,
+        "max_drawdown_R": 12.757,
+        "wins": 44
+      },
+      "months": {
+        "1": {
+          "n": 11,
+          "total_R": -4.441,
+          "mean_R": -0.4037,
+          "profit_factor": 0.429,
+          "max_drawdown_R": 6.467,
+          "wins": 3
+        },
+        "2": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "3": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "4": {
+          "n": 18,
+          "total_R": -2.748,
+          "mean_R": -0.1526,
+          "profit_factor": 0.725,
+          "max_drawdown_R": 4.107,
+          "wins": 7
+        },
+        "5": {
+          "n": 18,
+          "total_R": -2.542,
+          "mean_R": -0.1412,
+          "profit_factor": 0.754,
+          "max_drawdown_R": 5.44,
+          "wins": 7
+        },
+        "6": {
+          "n": 5,
+          "total_R": -0.206,
+          "mean_R": -0.0411,
+          "profit_factor": 0.931,
+          "max_drawdown_R": 2.0,
+          "wins": 2
+        },
+        "7": {
+          "n": 20,
+          "total_R": 7.64,
+          "mean_R": 0.382,
+          "profit_factor": 2.087,
+          "max_drawdown_R": 2.497,
+          "wins": 13
+        },
+        "8": {
+          "n": 11,
+          "total_R": 2.014,
+          "mean_R": 0.1831,
+          "profit_factor": 1.447,
+          "max_drawdown_R": 1.498,
+          "wins": 6
+        },
+        "9": {
+          "n": 2,
+          "total_R": -0.854,
+          "mean_R": -0.4269,
+          "profit_factor": 0.15,
+          "max_drawdown_R": 1.004,
+          "wins": 1
+        },
+        "10": {
+          "n": 11,
+          "total_R": 0.642,
+          "mean_R": 0.0583,
+          "profit_factor": 1.126,
+          "max_drawdown_R": 2.0,
+          "wins": 5
+        },
+        "11": {
+          "n": 0,
+          "total_R": 0.0,
+          "mean_R": null,
+          "profit_factor": null,
+          "max_drawdown_R": 0.0,
+          "wins": 0
+        },
+        "12": {
+          "n": 2,
+          "total_R": -2.0,
+          "mean_R": -1.0,
+          "profit_factor": 0.0,
+          "max_drawdown_R": 2.0,
+          "wins": 0
+        }
+      },
+      "without_best_5": {
+        "n": 93,
+        "total_R": -10.179,
+        "mean_R": -0.1094,
+        "profit_factor": 0.799,
+        "max_drawdown_R": 17.41,
+        "wins": 39
+      }
+    }
+  },
+  "quality": {
+    "2024": {
+      "symbols": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "XRP",
+        "LINK",
+        "ADA",
+        "AVAX",
+        "DOGE",
+        "SUI",
+        "AAVE",
+        "NEAR",
+        "APT",
+        "BNB",
+        "UNI",
+        "INJ",
+        "1000PEPE",
+        "WLD"
+      ],
+      "common_h4_eligibility_starts": 1704283200000
+    },
+    "2025": {
+      "symbols": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "XRP",
+        "LINK",
+        "ADA",
+        "AVAX",
+        "DOGE",
+        "SUI",
+        "AAVE",
+        "NEAR",
+        "APT",
+        "BNB",
+        "UNI",
+        "ONDO",
+        "HYPE",
+        "INJ",
+        "1000PEPE",
+        "WLD",
+        "ZRO"
+      ],
+      "common_h4_eligibility_starts": 1735905600000
+    }
+  }
+}
