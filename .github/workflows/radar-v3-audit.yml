@@ -1,0 +1,28 @@
+name: Radar V3 audit and rerun
+on:
+  push:
+    branches: [research/radar-alt-v3]
+    paths:
+      - radar_v3_benchmark.py
+      - tests/test_radar_v3_execution_audit.py
+      - .github/workflows/radar-v3-audit.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -p 'test_radar_v3_execution_audit.py' -v
+      - run: python -u radar_v3_benchmark.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: radar-v3-audited-baseline
+          path: radar_v3_benchmark.json
