@@ -74,7 +74,7 @@ def evaluate(df,i,sig):
     else:
         exit_price=float(df.c.iloc[last])*(1-side*SLIPPAGE);reason="TIME"
     r=(side*(exit_price-entry)-FEE*(entry+exit_price))/risk
-    return dict(net_r=round(r,6),exit=reason,exit_index=last if reason=="TIME" else j)
+    return dict(net_r=round(r,6),exit=reason,entry_index=i+1,exit_index=last if reason=="TIME" else j)
 
 def summarize(items):
     vals=[x["net_r"] for x in items];n=len(vals)
@@ -98,7 +98,7 @@ def main():
                 if sig is None:i+=1;continue
                 result=evaluate(df,i,sig)
                 if result is None:i+=1;continue
-                trades.append(dict(symbol=sym,strategy=name,side=sig["side"],t=int(df.t.iloc[i]+H),**result))
+                trades.append(dict(symbol=sym,strategy=name,side=sig["side"],t=int(df.t.iloc[i]+H),entry_time=int(df.t.iloc[result["entry_index"]]),exit_time=int(df.t.iloc[result["exit_index"]]+H),**result))
                 i=max(i+1,result["exit_index"]+1)
         print("DONE",sym,flush=True)
     overview={}
