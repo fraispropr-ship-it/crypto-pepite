@@ -1,0 +1,25 @@
+name: Radar V2 expanded historical research
+on:
+  push:
+    branches: [feature/radar-alt-v2]
+    paths: [radar_v2_expanded.py, .github/workflows/radar-v2-expanded.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Reconstruct historical H4 setups
+        run: python -u radar_v2_expanded.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: radar-v2-expanded-report
+          path: radar_v2_expanded_report.json
