@@ -5,7 +5,7 @@ import os,json,time,html
 from datetime import datetime,timezone
 import requests,pandas as pd
 BASE="https://openapi.zoomex.com/cloud/trade/v3/market/kline"
-SYMBOLS=["BTCUSDT","ETHUSDT","SOLUSDT","LINKUSDT"]
+SYMBOLS=["BTCUSDT","ETHUSDT","SOLUSDT","XRPUSDT","LINKUSDT","ADAUSDT","AVAXUSDT","DOGEUSDT","SUIUSDT","AAVEUSDT","NEARUSDT","APTUSDT","BNBUSDT","UNIUSDT","ONDOUSDT","HYPEUSDT","INJUSDT","1000PEPEUSDT","WLDUSDT","ZROUSDT"]
 STEP=900000
 FEE=.0006
 SLIPPAGE=.0002
