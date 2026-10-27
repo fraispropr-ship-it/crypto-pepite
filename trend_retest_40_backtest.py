@@ -5,7 +5,9 @@ All timestamps UTC. Signal at H1 candle close; H4 only fully closed bars.
 import json,time
 from datetime import datetime,timezone
 import requests,pandas as pd
-from radar_v3_benchmark import BASE,FEE,SLIPPAGE
+BASE="https://openapi.zoomex.com/cloud/trade/v3/market/kline"
+FEE=.0006
+SLIPPAGE=.0002
 
 SYMBOLS=[]
 STEP=900000
@@ -173,7 +175,7 @@ def main():
             "limitations":["Historical sample and candidate were selected after V1-V3 research; September holdout not pristine",
                            "No concurrent cross-asset portfolio allocation, funding, orderbook spread or real execution",
                            "40 present-day high-volume symbols; survivorship bias"],"trades":alltrades}
-    with open("radar_v4_report.json","w") as f:json.dump(report,f,indent=2)
+    with open("trend_retest_40_backtest_report.json","w") as f:json.dump(report,f,indent=2)
     print("SUMMARY",json.dumps({k:v for k,v in report.items() if k!="trades"}),flush=True)
     if errors:raise RuntimeError("Market data missing for one or more symbols")
 if __name__=="__main__":main()
