@@ -16,26 +16,29 @@ def audit(report):
     for x in trades:
         if x["t"]%H: faults.append("non-H1-aligned signal")
         if not 0<=x["exit_index"]: faults.append("bad exit index")
+        if not x["entry_time"]<x["exit_time"]: faults.append("invalid trade chronology")
+        if x["entry_time"]!=x["t"]: faults.append("entry time differs from signal closure")
     # Training labels need to be complete *before* the holdout starts.
     # A conservative embargo excludes any training signal in last 12 hours.
-    embargo=[t for t in trades if SPLIT-MAX_HOLD<=t["t"]<SPLIT]
+    embargo=[t for t in trades if t["t"]<SPLIT and t["exit_time"]>=SPLIT]
     groups=defaultdict(list)
     for t in trades:groups[(t["symbol"],t["strategy"])].append(t)
     overlaps=0
     for key,series in groups.items():
         ordered=sorted(series,key=lambda x:x["t"])
-        # Approximate end timestamp by exit_index delta cannot be recovered from
-        # current report: exit_index is an absolute candle index; flag deficiency.
         for a,b in zip(ordered,ordered[1:]):
+            if b["entry_time"]<a["exit_time"]:faults.append("overlapping trades "+str(key))
             if b["t"]<=a["t"]:faults.append("duplicate signals "+str(key))
     by_symbol=defaultdict(lambda:dict(n=0,total=0.0))
     for t in trades:
         x=by_symbol[t["symbol"]];x["n"]+=1;x["total"]+=t["net_r"]
-    return {"n":len(trades),"split_utc":"2026-09-01T00:00:00Z",
+    train=[t for t in trades if t["t"]<SPLIT and t["exit_time"]<SPLIT]
+    holdout=[t for t in trades if t["t"]>=SPLIT]
+    return {"n":len(trades),"purged_train_count":len(train),"holdout_count":len(holdout),"split_utc":"2026-09-01T00:00:00Z",
             "12h_embargo_training_signals":len(embargo),
             "per_symbol":{k:{"n":v["n"],"total_R":round(v["total"],3)} for k,v in sorted(by_symbol.items())},
             "faults":faults,
-            "audit_limitations":["Existing report lacks explicit entry and exit timestamps: cannot certify concurrent-position and label overlap handling",
+            "audit_limitations":["Per-strategy same-symbol overlap checked; cross-strategy/portfolio concurrency still not enforced",
              "Same holdout previously inspected and used in selecting hypotheses: not independent validation",
              "Historical symbol membership/survivorship remains unknown",
              "No parameter tuning should use holdout set as an optimization target"]}
