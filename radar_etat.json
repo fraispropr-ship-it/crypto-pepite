@@ -753,7 +753,7 @@
    "bruit": 8.936711123997737,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1793059355166,
+   "vu": 1793062954287,
    "t_decl": 0
   },
   "ZROUSDT|retournement|1.7974": {
@@ -789,7 +789,7 @@
    "bruit": 11.432580483542434,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793059355166,
+   "vu": 1793062954287,
    "t_decl": 0
   },
   "UNITREEUSDT|continuation|105.78": {
@@ -831,16 +831,16 @@
   "HBARUSDT|retournement|0.07856": {
    "type": "retournement",
    "declenchement": 0.07856,
-   "invalidation": 0.07573095625934825,
-   "atr": 0.0014301458021725164,
+   "invalidation": 0.07573588802244459,
+   "atr": 0.0014137065918513679,
    "info": {
     "creux1": 0.07485,
     "creux2": 0.07616,
-    "baisse_atr": 8.1
+    "baisse_atr": 8.2
    },
    "id": "HBARUSDT|retournement|0.07856",
    "sym": "HBARUSDT",
-   "bruit": 7.148236438999022,
+   "bruit": 6.916733340242199,
    "tick": 1e-05,
    "etape": "disparu",
    "vu": 1793055758158,
@@ -861,7 +861,7 @@
    "bruit": 20.02283496217851,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793059355166,
+   "vu": 1793062954287,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.09668": {
@@ -879,7 +879,7 @@
    "bruit": 10.682919116380154,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793059355166,
+   "vu": 1793062954287,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.192": {
@@ -897,7 +897,7 @@
    "bruit": 8.333652723765727,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1793059355166,
+   "vu": 1793062954287,
    "t_decl": 0
   },
   "NILUSDT|continuation|0.09728": {
@@ -915,7 +915,7 @@
    "bruit": 13.292700308339585,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793059355166,
+   "vu": 1793062954287,
    "t_decl": 0
   }
  },
