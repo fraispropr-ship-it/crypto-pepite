@@ -2,17 +2,24 @@
 Research only; no orders or messaging. Run lab.py first to fetch data.
 Same cost/portfolio model as lab.py, validation is exploratory, not pristine.
 """
-import json
+import json, os
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import lab
+
+YEAR=int(os.environ.get("LAB_YEAR","2025"))
+lab.START=int(pd.Timestamp(f"{YEAR-1}-12-01",tz="UTC").timestamp()*1000)
+lab.END=int(pd.Timestamp(f"{YEAR+1}-01-01",tz="UTC").timestamp()*1000)
+lab.EVALUATION_START=int(pd.Timestamp(f"{YEAR}-01-01",tz="UTC").timestamp()*1000)
+lab.OUT=Path("research_intraday/data" if YEAR==2025 else f"research_intraday/data_{YEAR}")
 
 loaded={}
 quality={}
 for sym in lab.S:
  try:
   d,f,q=lab.load(sym); quality[sym]=q
-  window_start=int(pd.Timestamp('2024-12-27',tz='UTC').timestamp()*1000)
+  window_start=int(pd.Timestamp(f'{YEAR-1}-12-27',tz='UTC').timestamp()*1000)
   window=d[d.t>=window_start]
   full=(len(window)==(lab.END-window_start)//lab.H and not (window.t.diff().iloc[1:]!=lab.H).any())
   if full and q['invalid']==0 and len(f)>=1000:loaded[sym]=(d,f)
@@ -45,8 +52,8 @@ report={'status':'exploratory_no_pristine_final_test','symbols':list(loaded),'ex
 for m,trades in alltr.items():
  for strategy in sorted({x['strategy'] for x in trades}):
   p=lab.portfolio([x for x in trades if x['strategy']==strategy]); out={}
-  for name,beg,end in [('development','2025-01-01','2025-07-01'),('validation','2025-07-01','2025-10-01'),('previously_examined','2025-10-01','2026-01-01')]:
+  for name,beg,end in [('first_half',f'{YEAR}-01-01',f'{YEAR}-07-01'),('third_quarter',f'{YEAR}-07-01',f'{YEAR}-10-01'),('fourth_quarter',f'{YEAR}-10-01',f'{YEAR+1}-01-01')]:
    a=int(pd.Timestamp(beg,tz='UTC').timestamp()*1000); b=int(pd.Timestamp(end,tz='UTC').timestamp()*1000)
    out[name]=lab.metrics([x for x in p if a<=x['entry_t'] and x['exit_t']<b])
   report['results'][str(m)+'x_'+strategy]=out
-open('research_intraday/cross_report.json','w').write(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+open(f'research_intraday/cross_report_{YEAR}.json','w').write(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
