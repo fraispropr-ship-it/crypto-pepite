@@ -12,6 +12,7 @@ H=3600000
 START=int(pd.Timestamp('2024-12-01',tz='UTC').timestamp()*1000)
 END=int(pd.Timestamp('2026-01-01',tz='UTC').timestamp()*1000)
 FEE=.0006; SLIP=.0002; CAPITAL=1000; RR=1.75
+EVALUATION_START=int(pd.Timestamp('2025-01-01',tz='UTC').timestamp()*1000)
 OUT=Path('research_intraday/data'); OUT.mkdir(parents=True,exist_ok=True)
 def api(path,params):
  url=BASE+path+'?'+urllib.parse.urlencode(params)
@@ -63,7 +64,7 @@ def generate(sym,d,f,cost_mult=1):
    j=i+1
    if j+12>=len(data) or not np.isfinite(a[i]) or a[i]<=0:continue
    t,o,h,l,c,v=data[j]; t=int(t)
-   if t<int(pd.Timestamp('2025-01-01',tz='UTC').timestamp()*1000):continue
+   if t<EVALUATION_START:continue
    side=int(sides[i]); entry=o*(1+side*SLIP*cost_mult); distance=1.5*a[i]; stop=entry-side*distance; tp=entry+side*RR*distance
    # Net planned stop including assumed exit slippage and both fees: 1 USDT at stop (not guaranteed in gaps).
    stopfill=stop*(1-side*SLIP*cost_mult); lossunit=side*(entry-stopfill)+FEE*cost_mult*(entry+stopfill)
