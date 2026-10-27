@@ -1,0 +1,1069 @@
+{
+  "status": "exploratory_not_execution_validated",
+  "rules": "Every 4h rank past 24h returns. Momentum: long strongest short weakest; reversal: inverse. Equal initial USDT notional. Spread stop=1.5*48h realized hourly spread vol*sqrt(12), floor 0.5%. TP=1.75*stop; max12h; max2 pair operations per UTC day; no overlap. All four fees and leg slippage included. Conservative unsynchronized hourly joint-extreme bounds; needs finer execution validation if promising.",
+  "results": {
+    "2024_1x_momentum": {
+      "annual": {
+        "n": 561,
+        "total_R": -63.279,
+        "mean_R": -0.1128,
+        "profit_factor": 0.68,
+        "max_drawdown_R": 64.909,
+        "wins": 237
+      },
+      "ambiguous": 6,
+      "halves": {
+        "1": {
+          "n": 266,
+          "total_R": -31.512,
+          "mean_R": -0.1185,
+          "profit_factor": 0.665,
+          "max_drawdown_R": 33.441,
+          "wins": 116
+        },
+        "2": {
+          "n": 295,
+          "total_R": -31.767,
+          "mean_R": -0.1077,
+          "profit_factor": 0.695,
+          "max_drawdown_R": 37.859,
+          "wins": 121
+        }
+      },
+      "months": {
+        "1": {
+          "n": 48,
+          "total_R": -10.055,
+          "mean_R": -0.2095,
+          "profit_factor": 0.498,
+          "max_drawdown_R": 11.186,
+          "wins": 19
+        },
+        "2": {
+          "n": 36,
+          "total_R": -4.646,
+          "mean_R": -0.1291,
+          "profit_factor": 0.61,
+          "max_drawdown_R": 6.348,
+          "wins": 14
+        },
+        "3": {
+          "n": 18,
+          "total_R": -3.86,
+          "mean_R": -0.2145,
+          "profit_factor": 0.53,
+          "max_drawdown_R": 4.916,
+          "wins": 7
+        },
+        "4": {
+          "n": 57,
+          "total_R": -9.198,
+          "mean_R": -0.1614,
+          "profit_factor": 0.563,
+          "max_drawdown_R": 9.724,
+          "wins": 22
+        },
+        "5": {
+          "n": 52,
+          "total_R": -0.287,
+          "mean_R": -0.0055,
+          "profit_factor": 0.981,
+          "max_drawdown_R": 6.213,
+          "wins": 31
+        },
+        "6": {
+          "n": 55,
+          "total_R": -3.465,
+          "mean_R": -0.063,
+          "profit_factor": 0.806,
+          "max_drawdown_R": 5.403,
+          "wins": 23
+        },
+        "7": {
+          "n": 55,
+          "total_R": -3.781,
+          "mean_R": -0.0687,
+          "profit_factor": 0.782,
+          "max_drawdown_R": 9.019,
+          "wins": 24
+        },
+        "8": {
+          "n": 54,
+          "total_R": -7.903,
+          "mean_R": -0.1463,
+          "profit_factor": 0.591,
+          "max_drawdown_R": 9.052,
+          "wins": 22
+        },
+        "9": {
+          "n": 51,
+          "total_R": -4.542,
+          "mean_R": -0.0891,
+          "profit_factor": 0.748,
+          "max_drawdown_R": 10.007,
+          "wins": 17
+        },
+        "10": {
+          "n": 56,
+          "total_R": -1.684,
+          "mean_R": -0.0301,
+          "profit_factor": 0.891,
+          "max_drawdown_R": 6.406,
+          "wins": 27
+        },
+        "11": {
+          "n": 36,
+          "total_R": -6.113,
+          "mean_R": -0.1698,
+          "profit_factor": 0.622,
+          "max_drawdown_R": 8.834,
+          "wins": 15
+        },
+        "12": {
+          "n": 43,
+          "total_R": -7.746,
+          "mean_R": -0.1801,
+          "profit_factor": 0.562,
+          "max_drawdown_R": 9.376,
+          "wins": 16
+        }
+      }
+    },
+    "2024_2x_momentum": {
+      "annual": {
+        "n": 561,
+        "total_R": -91.216,
+        "mean_R": -0.1626,
+        "profit_factor": 0.558,
+        "max_drawdown_R": 92.734,
+        "wins": 219
+      },
+      "ambiguous": 6,
+      "halves": {
+        "1": {
+          "n": 266,
+          "total_R": -44.522,
+          "mean_R": -0.1674,
+          "profit_factor": 0.542,
+          "max_drawdown_R": 46.182,
+          "wins": 107
+        },
+        "2": {
+          "n": 295,
+          "total_R": -46.694,
+          "mean_R": -0.1583,
+          "profit_factor": 0.572,
+          "max_drawdown_R": 51.993,
+          "wins": 112
+        }
+      },
+      "months": {
+        "1": {
+          "n": 48,
+          "total_R": -12.02,
+          "mean_R": -0.2504,
+          "profit_factor": 0.414,
+          "max_drawdown_R": 12.247,
+          "wins": 18
+        },
+        "2": {
+          "n": 36,
+          "total_R": -6.939,
+          "mean_R": -0.1927,
+          "profit_factor": 0.446,
+          "max_drawdown_R": 7.45,
+          "wins": 13
+        },
+        "3": {
+          "n": 18,
+          "total_R": -4.5,
+          "mean_R": -0.25,
+          "profit_factor": 0.461,
+          "max_drawdown_R": 5.006,
+          "wins": 7
+        },
+        "4": {
+          "n": 57,
+          "total_R": -11.842,
+          "mean_R": -0.2077,
+          "profit_factor": 0.459,
+          "max_drawdown_R": 12.187,
+          "wins": 20
+        },
+        "5": {
+          "n": 52,
+          "total_R": -2.83,
+          "mean_R": -0.0544,
+          "profit_factor": 0.816,
+          "max_drawdown_R": 7.595,
+          "wins": 28
+        },
+        "6": {
+          "n": 55,
+          "total_R": -6.391,
+          "mean_R": -0.1162,
+          "profit_factor": 0.657,
+          "max_drawdown_R": 8.051,
+          "wins": 21
+        },
+        "7": {
+          "n": 55,
+          "total_R": -6.565,
+          "mean_R": -0.1194,
+          "profit_factor": 0.639,
+          "max_drawdown_R": 10.9,
+          "wins": 22
+        },
+        "8": {
+          "n": 54,
+          "total_R": -10.309,
+          "mean_R": -0.1909,
+          "profit_factor": 0.487,
+          "max_drawdown_R": 11.095,
+          "wins": 20
+        },
+        "9": {
+          "n": 51,
+          "total_R": -6.973,
+          "mean_R": -0.1367,
+          "profit_factor": 0.631,
+          "max_drawdown_R": 11.176,
+          "wins": 17
+        },
+        "10": {
+          "n": 56,
+          "total_R": -4.551,
+          "mean_R": -0.0813,
+          "profit_factor": 0.721,
+          "max_drawdown_R": 8.046,
+          "wins": 26
+        },
+        "11": {
+          "n": 36,
+          "total_R": -7.675,
+          "mean_R": -0.2132,
+          "profit_factor": 0.535,
+          "max_drawdown_R": 9.902,
+          "wins": 13
+        },
+        "12": {
+          "n": 43,
+          "total_R": -10.621,
+          "mean_R": -0.247,
+          "profit_factor": 0.446,
+          "max_drawdown_R": 12.14,
+          "wins": 14
+        }
+      }
+    },
+    "2024_1x_reversal": {
+      "annual": {
+        "n": 565,
+        "total_R": -86.326,
+        "mean_R": -0.1528,
+        "profit_factor": 0.598,
+        "max_drawdown_R": 87.266,
+        "wins": 254
+      },
+      "ambiguous": 3,
+      "halves": {
+        "1": {
+          "n": 266,
+          "total_R": -32.021,
+          "mean_R": -0.1204,
+          "profit_factor": 0.668,
+          "max_drawdown_R": 33.4,
+          "wins": 121
+        },
+        "2": {
+          "n": 299,
+          "total_R": -54.305,
+          "mean_R": -0.1816,
+          "profit_factor": 0.541,
+          "max_drawdown_R": 54.305,
+          "wins": 133
+        }
+      },
+      "months": {
+        "1": {
+          "n": 47,
+          "total_R": -4.864,
+          "mean_R": -0.1035,
+          "profit_factor": 0.711,
+          "max_drawdown_R": 6.491,
+          "wins": 23
+        },
+        "2": {
+          "n": 36,
+          "total_R": 0.776,
+          "mean_R": 0.0215,
+          "profit_factor": 1.102,
+          "max_drawdown_R": 2.759,
+          "wins": 20
+        },
+        "3": {
+          "n": 19,
+          "total_R": -2.664,
+          "mean_R": -0.1402,
+          "profit_factor": 0.669,
+          "max_drawdown_R": 3.996,
+          "wins": 9
+        },
+        "4": {
+          "n": 56,
+          "total_R": -1.929,
+          "mean_R": -0.0344,
+          "profit_factor": 0.901,
+          "max_drawdown_R": 9.18,
+          "wins": 27
+        },
+        "5": {
+          "n": 53,
+          "total_R": -12.312,
+          "mean_R": -0.2323,
+          "profit_factor": 0.49,
+          "max_drawdown_R": 13.36,
+          "wins": 18
+        },
+        "6": {
+          "n": 55,
+          "total_R": -11.028,
+          "mean_R": -0.2005,
+          "profit_factor": 0.456,
+          "max_drawdown_R": 13.071,
+          "wins": 24
+        },
+        "7": {
+          "n": 55,
+          "total_R": -11.538,
+          "mean_R": -0.2098,
+          "profit_factor": 0.493,
+          "max_drawdown_R": 11.538,
+          "wins": 21
+        },
+        "8": {
+          "n": 55,
+          "total_R": -13.385,
+          "mean_R": -0.2434,
+          "profit_factor": 0.405,
+          "max_drawdown_R": 13.627,
+          "wins": 24
+        },
+        "9": {
+          "n": 52,
+          "total_R": -6.01,
+          "mean_R": -0.1156,
+          "profit_factor": 0.698,
+          "max_drawdown_R": 9.803,
+          "wins": 23
+        },
+        "10": {
+          "n": 56,
+          "total_R": -12.519,
+          "mean_R": -0.2236,
+          "profit_factor": 0.436,
+          "max_drawdown_R": 12.855,
+          "wins": 26
+        },
+        "11": {
+          "n": 36,
+          "total_R": -3.106,
+          "mean_R": -0.0863,
+          "profit_factor": 0.784,
+          "max_drawdown_R": 5.306,
+          "wins": 19
+        },
+        "12": {
+          "n": 45,
+          "total_R": -7.748,
+          "mean_R": -0.1722,
+          "profit_factor": 0.534,
+          "max_drawdown_R": 8.679,
+          "wins": 20
+        }
+      }
+    },
+    "2024_2x_reversal": {
+      "annual": {
+        "n": 565,
+        "total_R": -114.01,
+        "mean_R": -0.2018,
+        "profit_factor": 0.488,
+        "max_drawdown_R": 114.828,
+        "wins": 236
+      },
+      "ambiguous": 4,
+      "halves": {
+        "1": {
+          "n": 266,
+          "total_R": -46.229,
+          "mean_R": -0.1738,
+          "profit_factor": 0.539,
+          "max_drawdown_R": 47.071,
+          "wins": 114
+        },
+        "2": {
+          "n": 299,
+          "total_R": -67.782,
+          "mean_R": -0.2267,
+          "profit_factor": 0.446,
+          "max_drawdown_R": 67.782,
+          "wins": 122
+        }
+      },
+      "months": {
+        "1": {
+          "n": 47,
+          "total_R": -6.757,
+          "mean_R": -0.1438,
+          "profit_factor": 0.608,
+          "max_drawdown_R": 8.201,
+          "wins": 21
+        },
+        "2": {
+          "n": 36,
+          "total_R": -1.283,
+          "mean_R": -0.0356,
+          "profit_factor": 0.842,
+          "max_drawdown_R": 3.171,
+          "wins": 19
+        },
+        "3": {
+          "n": 19,
+          "total_R": -3.347,
+          "mean_R": -0.1762,
+          "profit_factor": 0.589,
+          "max_drawdown_R": 4.303,
+          "wins": 9
+        },
+        "4": {
+          "n": 56,
+          "total_R": -7.183,
+          "mean_R": -0.1283,
+          "profit_factor": 0.661,
+          "max_drawdown_R": 11.479,
+          "wins": 24
+        },
+        "5": {
+          "n": 53,
+          "total_R": -14.363,
+          "mean_R": -0.271,
+          "profit_factor": 0.421,
+          "max_drawdown_R": 15.159,
+          "wins": 18
+        },
+        "6": {
+          "n": 55,
+          "total_R": -13.296,
+          "mean_R": -0.2417,
+          "profit_factor": 0.364,
+          "max_drawdown_R": 14.394,
+          "wins": 23
+        },
+        "7": {
+          "n": 55,
+          "total_R": -14.317,
+          "mean_R": -0.2603,
+          "profit_factor": 0.4,
+          "max_drawdown_R": 14.317,
+          "wins": 21
+        },
+        "8": {
+          "n": 55,
+          "total_R": -15.585,
+          "mean_R": -0.2834,
+          "profit_factor": 0.323,
+          "max_drawdown_R": 15.751,
+          "wins": 22
+        },
+        "9": {
+          "n": 52,
+          "total_R": -8.869,
+          "mean_R": -0.1706,
+          "profit_factor": 0.577,
+          "max_drawdown_R": 12.089,
+          "wins": 21
+        },
+        "10": {
+          "n": 56,
+          "total_R": -14.742,
+          "mean_R": -0.2632,
+          "profit_factor": 0.351,
+          "max_drawdown_R": 14.903,
+          "wins": 22
+        },
+        "11": {
+          "n": 36,
+          "total_R": -4.737,
+          "mean_R": -0.1316,
+          "profit_factor": 0.676,
+          "max_drawdown_R": 5.872,
+          "wins": 18
+        },
+        "12": {
+          "n": 45,
+          "total_R": -9.531,
+          "mean_R": -0.2118,
+          "profit_factor": 0.446,
+          "max_drawdown_R": 10.307,
+          "wins": 18
+        }
+      }
+    },
+    "2025_1x_momentum": {
+      "annual": {
+        "n": 650,
+        "total_R": -76.009,
+        "mean_R": -0.1169,
+        "profit_factor": 0.664,
+        "max_drawdown_R": 78.39,
+        "wins": 270
+      },
+      "ambiguous": 2,
+      "halves": {
+        "1": {
+          "n": 302,
+          "total_R": -39.964,
+          "mean_R": -0.1323,
+          "profit_factor": 0.644,
+          "max_drawdown_R": 40.269,
+          "wins": 122
+        },
+        "2": {
+          "n": 348,
+          "total_R": -36.045,
+          "mean_R": -0.1036,
+          "profit_factor": 0.684,
+          "max_drawdown_R": 38.366,
+          "wins": 148
+        }
+      },
+      "months": {
+        "1": {
+          "n": 46,
+          "total_R": -7.321,
+          "mean_R": -0.1592,
+          "profit_factor": 0.55,
+          "max_drawdown_R": 7.993,
+          "wins": 21
+        },
+        "2": {
+          "n": 49,
+          "total_R": 1.669,
+          "mean_R": 0.0341,
+          "profit_factor": 1.108,
+          "max_drawdown_R": 4.152,
+          "wins": 24
+        },
+        "3": {
+          "n": 43,
+          "total_R": -7.004,
+          "mean_R": -0.1629,
+          "profit_factor": 0.589,
+          "max_drawdown_R": 9.541,
+          "wins": 18
+        },
+        "4": {
+          "n": 48,
+          "total_R": -7.96,
+          "mean_R": -0.1658,
+          "profit_factor": 0.556,
+          "max_drawdown_R": 10.725,
+          "wins": 17
+        },
+        "5": {
+          "n": 57,
+          "total_R": -7.938,
+          "mean_R": -0.1393,
+          "profit_factor": 0.636,
+          "max_drawdown_R": 9.502,
+          "wins": 23
+        },
+        "6": {
+          "n": 59,
+          "total_R": -11.409,
+          "mean_R": -0.1934,
+          "profit_factor": 0.517,
+          "max_drawdown_R": 11.409,
+          "wins": 19
+        },
+        "7": {
+          "n": 62,
+          "total_R": -9.757,
+          "mean_R": -0.1574,
+          "profit_factor": 0.483,
+          "max_drawdown_R": 10.002,
+          "wins": 26
+        },
+        "8": {
+          "n": 60,
+          "total_R": -9.178,
+          "mean_R": -0.153,
+          "profit_factor": 0.573,
+          "max_drawdown_R": 9.227,
+          "wins": 23
+        },
+        "9": {
+          "n": 54,
+          "total_R": 5.228,
+          "mean_R": 0.0968,
+          "profit_factor": 1.333,
+          "max_drawdown_R": 4.184,
+          "wins": 31
+        },
+        "10": {
+          "n": 58,
+          "total_R": -13.826,
+          "mean_R": -0.2384,
+          "profit_factor": 0.378,
+          "max_drawdown_R": 14.052,
+          "wins": 18
+        },
+        "11": {
+          "n": 53,
+          "total_R": -3.519,
+          "mean_R": -0.0664,
+          "profit_factor": 0.799,
+          "max_drawdown_R": 8.558,
+          "wins": 23
+        },
+        "12": {
+          "n": 61,
+          "total_R": -4.994,
+          "mean_R": -0.0819,
+          "profit_factor": 0.724,
+          "max_drawdown_R": 7.524,
+          "wins": 27
+        }
+      }
+    },
+    "2025_2x_momentum": {
+      "annual": {
+        "n": 650,
+        "total_R": -112.166,
+        "mean_R": -0.1726,
+        "profit_factor": 0.532,
+        "max_drawdown_R": 112.859,
+        "wins": 239
+      },
+      "ambiguous": 2,
+      "halves": {
+        "1": {
+          "n": 302,
+          "total_R": -54.134,
+          "mean_R": -0.1793,
+          "profit_factor": 0.535,
+          "max_drawdown_R": 54.383,
+          "wins": 109
+        },
+        "2": {
+          "n": 348,
+          "total_R": -58.033,
+          "mean_R": -0.1668,
+          "profit_factor": 0.528,
+          "max_drawdown_R": 58.595,
+          "wins": 130
+        }
+      },
+      "months": {
+        "1": {
+          "n": 46,
+          "total_R": -9.352,
+          "mean_R": -0.2033,
+          "profit_factor": 0.443,
+          "max_drawdown_R": 9.693,
+          "wins": 20
+        },
+        "2": {
+          "n": 49,
+          "total_R": -1.196,
+          "mean_R": -0.0244,
+          "profit_factor": 0.925,
+          "max_drawdown_R": 4.714,
+          "wins": 20
+        },
+        "3": {
+          "n": 43,
+          "total_R": -8.716,
+          "mean_R": -0.2027,
+          "profit_factor": 0.503,
+          "max_drawdown_R": 10.548,
+          "wins": 15
+        },
+        "4": {
+          "n": 48,
+          "total_R": -10.106,
+          "mean_R": -0.2105,
+          "profit_factor": 0.462,
+          "max_drawdown_R": 12.037,
+          "wins": 16
+        },
+        "5": {
+          "n": 57,
+          "total_R": -10.491,
+          "mean_R": -0.184,
+          "profit_factor": 0.536,
+          "max_drawdown_R": 11.063,
+          "wins": 20
+        },
+        "6": {
+          "n": 59,
+          "total_R": -14.273,
+          "mean_R": -0.2419,
+          "profit_factor": 0.423,
+          "max_drawdown_R": 14.273,
+          "wins": 18
+        },
+        "7": {
+          "n": 62,
+          "total_R": -13.322,
+          "mean_R": -0.2149,
+          "profit_factor": 0.349,
+          "max_drawdown_R": 13.441,
+          "wins": 20
+        },
+        "8": {
+          "n": 60,
+          "total_R": -14.064,
+          "mean_R": -0.2344,
+          "profit_factor": 0.426,
+          "max_drawdown_R": 14.064,
+          "wins": 20
+        },
+        "9": {
+          "n": 54,
+          "total_R": 1.475,
+          "mean_R": 0.0273,
+          "profit_factor": 1.09,
+          "max_drawdown_R": 4.54,
+          "wins": 29
+        },
+        "10": {
+          "n": 58,
+          "total_R": -17.223,
+          "mean_R": -0.2969,
+          "profit_factor": 0.288,
+          "max_drawdown_R": 17.309,
+          "wins": 15
+        },
+        "11": {
+          "n": 53,
+          "total_R": -6.263,
+          "mean_R": -0.1182,
+          "profit_factor": 0.656,
+          "max_drawdown_R": 9.997,
+          "wins": 22
+        },
+        "12": {
+          "n": 61,
+          "total_R": -8.635,
+          "mean_R": -0.1416,
+          "profit_factor": 0.552,
+          "max_drawdown_R": 9.079,
+          "wins": 24
+        }
+      }
+    },
+    "2025_1x_reversal": {
+      "annual": {
+        "n": 658,
+        "total_R": -116.564,
+        "mean_R": -0.1771,
+        "profit_factor": 0.53,
+        "max_drawdown_R": 117.423,
+        "wins": 279
+      },
+      "ambiguous": 2,
+      "halves": {
+        "1": {
+          "n": 308,
+          "total_R": -49.717,
+          "mean_R": -0.1614,
+          "profit_factor": 0.584,
+          "max_drawdown_R": 50.905,
+          "wins": 133
+        },
+        "2": {
+          "n": 350,
+          "total_R": -66.847,
+          "mean_R": -0.191,
+          "profit_factor": 0.48,
+          "max_drawdown_R": 68.253,
+          "wins": 146
+        }
+      },
+      "months": {
+        "1": {
+          "n": 49,
+          "total_R": -16.666,
+          "mean_R": -0.3401,
+          "profit_factor": 0.28,
+          "max_drawdown_R": 16.948,
+          "wins": 16
+        },
+        "2": {
+          "n": 50,
+          "total_R": -11.545,
+          "mean_R": -0.2309,
+          "profit_factor": 0.503,
+          "max_drawdown_R": 12.182,
+          "wins": 20
+        },
+        "3": {
+          "n": 43,
+          "total_R": -7.017,
+          "mean_R": -0.1632,
+          "profit_factor": 0.586,
+          "max_drawdown_R": 9.406,
+          "wins": 17
+        },
+        "4": {
+          "n": 48,
+          "total_R": -1.715,
+          "mean_R": -0.0357,
+          "profit_factor": 0.882,
+          "max_drawdown_R": 5.367,
+          "wins": 24
+        },
+        "5": {
+          "n": 59,
+          "total_R": -8.601,
+          "mean_R": -0.1458,
+          "profit_factor": 0.636,
+          "max_drawdown_R": 12.467,
+          "wins": 25
+        },
+        "6": {
+          "n": 59,
+          "total_R": -4.174,
+          "mean_R": -0.0707,
+          "profit_factor": 0.77,
+          "max_drawdown_R": 6.907,
+          "wins": 31
+        },
+        "7": {
+          "n": 62,
+          "total_R": -7.188,
+          "mean_R": -0.1159,
+          "profit_factor": 0.602,
+          "max_drawdown_R": 8.98,
+          "wins": 26
+        },
+        "8": {
+          "n": 60,
+          "total_R": -10.45,
+          "mean_R": -0.1742,
+          "profit_factor": 0.542,
+          "max_drawdown_R": 10.534,
+          "wins": 26
+        },
+        "9": {
+          "n": 54,
+          "total_R": -18.249,
+          "mean_R": -0.3379,
+          "profit_factor": 0.258,
+          "max_drawdown_R": 18.444,
+          "wins": 17
+        },
+        "10": {
+          "n": 59,
+          "total_R": -8.955,
+          "mean_R": -0.1518,
+          "profit_factor": 0.545,
+          "max_drawdown_R": 11.197,
+          "wins": 26
+        },
+        "11": {
+          "n": 54,
+          "total_R": -13.64,
+          "mean_R": -0.2526,
+          "profit_factor": 0.4,
+          "max_drawdown_R": 14.015,
+          "wins": 23
+        },
+        "12": {
+          "n": 61,
+          "total_R": -8.365,
+          "mean_R": -0.1371,
+          "profit_factor": 0.594,
+          "max_drawdown_R": 9.828,
+          "wins": 28
+        }
+      }
+    },
+    "2025_2x_reversal": {
+      "annual": {
+        "n": 658,
+        "total_R": -150.314,
+        "mean_R": -0.2284,
+        "profit_factor": 0.42,
+        "max_drawdown_R": 150.374,
+        "wins": 253
+      },
+      "ambiguous": 2,
+      "halves": {
+        "1": {
+          "n": 308,
+          "total_R": -65.357,
+          "mean_R": -0.2122,
+          "profit_factor": 0.476,
+          "max_drawdown_R": 65.821,
+          "wins": 122
+        },
+        "2": {
+          "n": 350,
+          "total_R": -84.957,
+          "mean_R": -0.2427,
+          "profit_factor": 0.367,
+          "max_drawdown_R": 85.04,
+          "wins": 131
+        }
+      },
+      "months": {
+        "1": {
+          "n": 49,
+          "total_R": -18.258,
+          "mean_R": -0.3726,
+          "profit_factor": 0.23,
+          "max_drawdown_R": 18.258,
+          "wins": 16
+        },
+        "2": {
+          "n": 50,
+          "total_R": -14.398,
+          "mean_R": -0.288,
+          "profit_factor": 0.41,
+          "max_drawdown_R": 14.829,
+          "wins": 19
+        },
+        "3": {
+          "n": 43,
+          "total_R": -8.888,
+          "mean_R": -0.2067,
+          "profit_factor": 0.492,
+          "max_drawdown_R": 10.674,
+          "wins": 16
+        },
+        "4": {
+          "n": 48,
+          "total_R": -4.203,
+          "mean_R": -0.0876,
+          "profit_factor": 0.723,
+          "max_drawdown_R": 6.993,
+          "wins": 19
+        },
+        "5": {
+          "n": 59,
+          "total_R": -11.449,
+          "mean_R": -0.1941,
+          "profit_factor": 0.528,
+          "max_drawdown_R": 13.987,
+          "wins": 25
+        },
+        "6": {
+          "n": 59,
+          "total_R": -8.16,
+          "mean_R": -0.1383,
+          "profit_factor": 0.586,
+          "max_drawdown_R": 9.668,
+          "wins": 27
+        },
+        "7": {
+          "n": 62,
+          "total_R": -10.718,
+          "mean_R": -0.1729,
+          "profit_factor": 0.442,
+          "max_drawdown_R": 11.39,
+          "wins": 26
+        },
+        "8": {
+          "n": 60,
+          "total_R": -13.968,
+          "mean_R": -0.2328,
+          "profit_factor": 0.419,
+          "max_drawdown_R": 13.968,
+          "wins": 20
+        },
+        "9": {
+          "n": 54,
+          "total_R": -20.564,
+          "mean_R": -0.3808,
+          "profit_factor": 0.194,
+          "max_drawdown_R": 20.564,
+          "wins": 16
+        },
+        "10": {
+          "n": 59,
+          "total_R": -12.08,
+          "mean_R": -0.2047,
+          "profit_factor": 0.415,
+          "max_drawdown_R": 12.564,
+          "wins": 23
+        },
+        "11": {
+          "n": 54,
+          "total_R": -15.924,
+          "mean_R": -0.2949,
+          "profit_factor": 0.317,
+          "max_drawdown_R": 16.075,
+          "wins": 20
+        },
+        "12": {
+          "n": 61,
+          "total_R": -11.703,
+          "mean_R": -0.1919,
+          "profit_factor": 0.458,
+          "max_drawdown_R": 12.49,
+          "wins": 26
+        }
+      }
+    }
+  },
+  "quality": {
+    "2024": {
+      "symbols": [
+        "1000PEPE",
+        "AAVE",
+        "ADA",
+        "APT",
+        "AVAX",
+        "BNB",
+        "BTC",
+        "DOGE",
+        "ETH",
+        "INJ",
+        "LINK",
+        "NEAR",
+        "SOL",
+        "SUI",
+        "UNI",
+        "WLD",
+        "XRP"
+      ]
+    },
+    "2025": {
+      "symbols": [
+        "1000PEPE",
+        "AAVE",
+        "ADA",
+        "APT",
+        "AVAX",
+        "BNB",
+        "BTC",
+        "DOGE",
+        "ETH",
+        "HYPE",
+        "INJ",
+        "LINK",
+        "NEAR",
+        "ONDO",
+        "SOL",
+        "SUI",
+        "UNI",
+        "WLD",
+        "XRP",
+        "ZRO"
+      ]
+    }
+  }
+}
