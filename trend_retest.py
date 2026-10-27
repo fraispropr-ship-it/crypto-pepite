@@ -4,7 +4,7 @@ Replaces Trend Retest. Fixed rules from research; live reference is indicative.
 import concurrent.futures,html,json,os,time,urllib.parse,urllib.request
 from pathlib import Path
 import pandas as pd
-SYMBOLS=[s+'USDT' for s in 'BTC ETH SOL XRP LINK ADA AVAX DOGE SUI AAVE NEAR APT BNB UNI ONDO HYPE INJ 1000PEPE WLD ZRO'.split()]
+SYMBOLS=[s+'USDT' for s in 'BTC ETH SOL XRP LINK ADA AVAX DOGE SUI AAVE NEAR APT BNB UNI ONDO HYPE INJ 1000PEPE WLD ZRO ZEC ENA XMR TAO ARB BCH TIA LTC TRX DOT ATOM FIL ETC OP XLM SEI WIF 1000BONK ALGO POL'.split()]
 H=3600000;FEE=.0006;SLIP=.0002;STATE=Path('rebond_eclair_state.json')
 def call(url,payload=None):
  data=None if payload is None else json.dumps(payload).encode()
