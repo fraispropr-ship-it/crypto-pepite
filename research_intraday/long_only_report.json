@@ -1,0 +1,589 @@
+{
+  "method": "Long-only filter BEFORE portfolio allocation; unchanged rules and costs. Exploratory, fixed current universe. 19 symbols for four initial rules in 2025; cross-market 20 in 2025 and 17 in 2024.",
+  "results": {
+    "2025_1x_cassure_volatilite": {
+      "first_half": {
+        "n": 245,
+        "total_R": -14.395,
+        "mean_R": -0.0588,
+        "profit_factor": 0.89,
+        "max_drawdown_R": 21.225,
+        "wins": 97
+      },
+      "third_quarter": {
+        "n": 129,
+        "total_R": -7.001,
+        "mean_R": -0.0543,
+        "profit_factor": 0.894,
+        "max_drawdown_R": 16.466,
+        "wins": 52
+      },
+      "fourth_quarter": {
+        "n": 118,
+        "total_R": -31.002,
+        "mean_R": -0.2627,
+        "profit_factor": 0.583,
+        "max_drawdown_R": 34.214,
+        "wins": 39
+      },
+      "year": {
+        "n": 492,
+        "total_R": -52.398,
+        "mean_R": -0.1065,
+        "profit_factor": 0.806,
+        "max_drawdown_R": 59.227,
+        "wins": 188
+      }
+    },
+    "2025_1x_rejet_exces": {
+      "first_half": {
+        "n": 31,
+        "total_R": -3.418,
+        "mean_R": -0.1103,
+        "profit_factor": 0.802,
+        "max_drawdown_R": 6.57,
+        "wins": 13
+      },
+      "third_quarter": {
+        "n": 11,
+        "total_R": -3.303,
+        "mean_R": -0.3003,
+        "profit_factor": 0.548,
+        "max_drawdown_R": 5.488,
+        "wins": 3
+      },
+      "fourth_quarter": {
+        "n": 14,
+        "total_R": -3.614,
+        "mean_R": -0.2582,
+        "profit_factor": 0.551,
+        "max_drawdown_R": 4.326,
+        "wins": 5
+      },
+      "year": {
+        "n": 56,
+        "total_R": -10.335,
+        "mean_R": -0.1846,
+        "profit_factor": 0.684,
+        "max_drawdown_R": 13.707,
+        "wins": 21
+      }
+    },
+    "2025_1x_retour_moyenne": {
+      "first_half": {
+        "n": 247,
+        "total_R": -11.66,
+        "mean_R": -0.0472,
+        "profit_factor": 0.906,
+        "max_drawdown_R": 21.937,
+        "wins": 105
+      },
+      "third_quarter": {
+        "n": 106,
+        "total_R": -13.075,
+        "mean_R": -0.1234,
+        "profit_factor": 0.747,
+        "max_drawdown_R": 15.662,
+        "wins": 45
+      },
+      "fourth_quarter": {
+        "n": 120,
+        "total_R": -5.223,
+        "mean_R": -0.0435,
+        "profit_factor": 0.914,
+        "max_drawdown_R": 11.425,
+        "wins": 48
+      },
+      "year": {
+        "n": 474,
+        "total_R": -30.345,
+        "mean_R": -0.064,
+        "profit_factor": 0.872,
+        "max_drawdown_R": 40.285,
+        "wins": 198
+      }
+    },
+    "2025_1x_tendance_reprise": {
+      "first_half": {
+        "n": 250,
+        "total_R": -44.909,
+        "mean_R": -0.1796,
+        "profit_factor": 0.668,
+        "max_drawdown_R": 47.893,
+        "wins": 89
+      },
+      "third_quarter": {
+        "n": 141,
+        "total_R": -22.407,
+        "mean_R": -0.1589,
+        "profit_factor": 0.711,
+        "max_drawdown_R": 25.521,
+        "wins": 55
+      },
+      "fourth_quarter": {
+        "n": 107,
+        "total_R": -16.435,
+        "mean_R": -0.1536,
+        "profit_factor": 0.729,
+        "max_drawdown_R": 28.001,
+        "wins": 38
+      },
+      "year": {
+        "n": 498,
+        "total_R": -83.752,
+        "mean_R": -0.1682,
+        "profit_factor": 0.694,
+        "max_drawdown_R": 92.927,
+        "wins": 182
+      }
+    },
+    "2025_2x_cassure_volatilite": {
+      "first_half": {
+        "n": 244,
+        "total_R": -29.142,
+        "mean_R": -0.1194,
+        "profit_factor": 0.777,
+        "max_drawdown_R": 34.97,
+        "wins": 94
+      },
+      "third_quarter": {
+        "n": 129,
+        "total_R": -17.934,
+        "mean_R": -0.139,
+        "profit_factor": 0.737,
+        "max_drawdown_R": 24.757,
+        "wins": 50
+      },
+      "fourth_quarter": {
+        "n": 117,
+        "total_R": -36.916,
+        "mean_R": -0.3155,
+        "profit_factor": 0.499,
+        "max_drawdown_R": 39.226,
+        "wins": 36
+      },
+      "year": {
+        "n": 490,
+        "total_R": -83.992,
+        "mean_R": -0.1714,
+        "profit_factor": 0.692,
+        "max_drawdown_R": 89.82,
+        "wins": 180
+      }
+    },
+    "2025_2x_rejet_exces": {
+      "first_half": {
+        "n": 31,
+        "total_R": -5.246,
+        "mean_R": -0.1692,
+        "profit_factor": 0.698,
+        "max_drawdown_R": 6.877,
+        "wins": 13
+      },
+      "third_quarter": {
+        "n": 11,
+        "total_R": -4.365,
+        "mean_R": -0.3968,
+        "profit_factor": 0.455,
+        "max_drawdown_R": 6.272,
+        "wins": 3
+      },
+      "fourth_quarter": {
+        "n": 14,
+        "total_R": -4.485,
+        "mean_R": -0.3203,
+        "profit_factor": 0.45,
+        "max_drawdown_R": 4.485,
+        "wins": 5
+      },
+      "year": {
+        "n": 56,
+        "total_R": -14.095,
+        "mean_R": -0.2517,
+        "profit_factor": 0.579,
+        "max_drawdown_R": 15.715,
+        "wins": 21
+      }
+    },
+    "2025_2x_retour_moyenne": {
+      "first_half": {
+        "n": 246,
+        "total_R": -28.533,
+        "mean_R": -0.116,
+        "profit_factor": 0.772,
+        "max_drawdown_R": 36.173,
+        "wins": 103
+      },
+      "third_quarter": {
+        "n": 106,
+        "total_R": -21.927,
+        "mean_R": -0.2069,
+        "profit_factor": 0.592,
+        "max_drawdown_R": 22.009,
+        "wins": 39
+      },
+      "fourth_quarter": {
+        "n": 120,
+        "total_R": -13.374,
+        "mean_R": -0.1114,
+        "profit_factor": 0.783,
+        "max_drawdown_R": 16.283,
+        "wins": 48
+      },
+      "year": {
+        "n": 473,
+        "total_R": -64.832,
+        "mean_R": -0.1371,
+        "profit_factor": 0.732,
+        "max_drawdown_R": 70.083,
+        "wins": 190
+      }
+    },
+    "2025_2x_tendance_reprise": {
+      "first_half": {
+        "n": 250,
+        "total_R": -60.502,
+        "mean_R": -0.242,
+        "profit_factor": 0.566,
+        "max_drawdown_R": 62.813,
+        "wins": 87
+      },
+      "third_quarter": {
+        "n": 142,
+        "total_R": -37.177,
+        "mean_R": -0.2618,
+        "profit_factor": 0.543,
+        "max_drawdown_R": 38.064,
+        "wins": 50
+      },
+      "fourth_quarter": {
+        "n": 107,
+        "total_R": -24.449,
+        "mean_R": -0.2285,
+        "profit_factor": 0.608,
+        "max_drawdown_R": 33.156,
+        "wins": 37
+      },
+      "year": {
+        "n": 499,
+        "total_R": -122.128,
+        "mean_R": -0.2447,
+        "profit_factor": 0.569,
+        "max_drawdown_R": 129.117,
+        "wins": 174
+      }
+    },
+    "2024_1x_choc_btc_retour": {
+      "first_half": {
+        "n": 20,
+        "total_R": 5.912,
+        "mean_R": 0.2956,
+        "profit_factor": 1.807,
+        "max_drawdown_R": 4.6,
+        "wins": 12
+      },
+      "third_quarter": {
+        "n": 10,
+        "total_R": -2.918,
+        "mean_R": -0.2918,
+        "profit_factor": 0.54,
+        "max_drawdown_R": 4.351,
+        "wins": 3
+      },
+      "fourth_quarter": {
+        "n": 11,
+        "total_R": -2.516,
+        "mean_R": -0.2287,
+        "profit_factor": 0.582,
+        "max_drawdown_R": 5.015,
+        "wins": 4
+      }
+    },
+    "2024_1x_force_relative": {
+      "first_half": {
+        "n": 169,
+        "total_R": -11.738,
+        "mean_R": -0.0695,
+        "profit_factor": 0.867,
+        "max_drawdown_R": 18.822,
+        "wins": 68
+      },
+      "third_quarter": {
+        "n": 87,
+        "total_R": 6.774,
+        "mean_R": 0.0779,
+        "profit_factor": 1.186,
+        "max_drawdown_R": 10.567,
+        "wins": 39
+      },
+      "fourth_quarter": {
+        "n": 92,
+        "total_R": -1.092,
+        "mean_R": -0.0119,
+        "profit_factor": 0.977,
+        "max_drawdown_R": 13.296,
+        "wins": 38
+      }
+    },
+    "2024_1x_funding_extreme_retournement": {
+      "first_half": {
+        "n": 34,
+        "total_R": -0.361,
+        "mean_R": -0.0106,
+        "profit_factor": 0.975,
+        "max_drawdown_R": 6.163,
+        "wins": 14
+      },
+      "third_quarter": {
+        "n": 20,
+        "total_R": -3.073,
+        "mean_R": -0.1537,
+        "profit_factor": 0.668,
+        "max_drawdown_R": 5.102,
+        "wins": 8
+      },
+      "fourth_quarter": {
+        "n": 3,
+        "total_R": 0.387,
+        "mean_R": 0.129,
+        "profit_factor": 1.502,
+        "max_drawdown_R": 0.771,
+        "wins": 1
+      }
+    },
+    "2024_2x_choc_btc_retour": {
+      "first_half": {
+        "n": 20,
+        "total_R": 5.183,
+        "mean_R": 0.2591,
+        "profit_factor": 1.705,
+        "max_drawdown_R": 4.641,
+        "wins": 12
+      },
+      "third_quarter": {
+        "n": 10,
+        "total_R": -3.187,
+        "mean_R": -0.3187,
+        "profit_factor": 0.501,
+        "max_drawdown_R": 4.387,
+        "wins": 3
+      },
+      "fourth_quarter": {
+        "n": 11,
+        "total_R": -2.765,
+        "mean_R": -0.2514,
+        "profit_factor": 0.545,
+        "max_drawdown_R": 5.067,
+        "wins": 3
+      }
+    },
+    "2024_2x_force_relative": {
+      "first_half": {
+        "n": 171,
+        "total_R": -22.507,
+        "mean_R": -0.1316,
+        "profit_factor": 0.753,
+        "max_drawdown_R": 25.508,
+        "wins": 67
+      },
+      "third_quarter": {
+        "n": 88,
+        "total_R": 0.824,
+        "mean_R": 0.0094,
+        "profit_factor": 1.022,
+        "max_drawdown_R": 11.585,
+        "wins": 38
+      },
+      "fourth_quarter": {
+        "n": 92,
+        "total_R": -5.334,
+        "mean_R": -0.058,
+        "profit_factor": 0.887,
+        "max_drawdown_R": 13.647,
+        "wins": 37
+      }
+    },
+    "2024_2x_funding_extreme_retournement": {
+      "first_half": {
+        "n": 34,
+        "total_R": -3.989,
+        "mean_R": -0.1173,
+        "profit_factor": 0.734,
+        "max_drawdown_R": 6.784,
+        "wins": 13
+      },
+      "third_quarter": {
+        "n": 20,
+        "total_R": -3.901,
+        "mean_R": -0.1951,
+        "profit_factor": 0.586,
+        "max_drawdown_R": 5.66,
+        "wins": 8
+      },
+      "fourth_quarter": {
+        "n": 3,
+        "total_R": 0.155,
+        "mean_R": 0.0518,
+        "profit_factor": 1.176,
+        "max_drawdown_R": 0.883,
+        "wins": 1
+      }
+    },
+    "2025_1x_choc_btc_retour": {
+      "first_half": {
+        "n": 20,
+        "total_R": 3.476,
+        "mean_R": 0.1738,
+        "profit_factor": 1.4,
+        "max_drawdown_R": 4.002,
+        "wins": 11
+      },
+      "third_quarter": {
+        "n": 1,
+        "total_R": 0.774,
+        "mean_R": 0.7741,
+        "profit_factor": null,
+        "max_drawdown_R": 0.0,
+        "wins": 1
+      },
+      "fourth_quarter": {
+        "n": 7,
+        "total_R": -4.265,
+        "mean_R": -0.6093,
+        "profit_factor": 0.187,
+        "max_drawdown_R": 5.248,
+        "wins": 1
+      }
+    },
+    "2025_1x_force_relative": {
+      "first_half": {
+        "n": 157,
+        "total_R": -17.993,
+        "mean_R": -0.1146,
+        "profit_factor": 0.782,
+        "max_drawdown_R": 21.722,
+        "wins": 60
+      },
+      "third_quarter": {
+        "n": 65,
+        "total_R": 12.68,
+        "mean_R": 0.1951,
+        "profit_factor": 1.457,
+        "max_drawdown_R": 7.479,
+        "wins": 34
+      },
+      "fourth_quarter": {
+        "n": 77,
+        "total_R": -13.595,
+        "mean_R": -0.1766,
+        "profit_factor": 0.699,
+        "max_drawdown_R": 16.187,
+        "wins": 26
+      }
+    },
+    "2025_1x_funding_extreme_retournement": {
+      "first_half": {
+        "n": 59,
+        "total_R": -10.897,
+        "mean_R": -0.1847,
+        "profit_factor": 0.681,
+        "max_drawdown_R": 13.539,
+        "wins": 20
+      },
+      "third_quarter": {
+        "n": 10,
+        "total_R": -2.157,
+        "mean_R": -0.2157,
+        "profit_factor": 0.679,
+        "max_drawdown_R": 4.714,
+        "wins": 3
+      },
+      "fourth_quarter": {
+        "n": 76,
+        "total_R": -1.71,
+        "mean_R": -0.0225,
+        "profit_factor": 0.953,
+        "max_drawdown_R": 13.159,
+        "wins": 31
+      }
+    },
+    "2025_2x_choc_btc_retour": {
+      "first_half": {
+        "n": 20,
+        "total_R": 2.494,
+        "mean_R": 0.1247,
+        "profit_factor": 1.286,
+        "max_drawdown_R": 4.002,
+        "wins": 11
+      },
+      "third_quarter": {
+        "n": 1,
+        "total_R": 0.64,
+        "mean_R": 0.6399,
+        "profit_factor": null,
+        "max_drawdown_R": 0.0,
+        "wins": 1
+      },
+      "fourth_quarter": {
+        "n": 7,
+        "total_R": -4.435,
+        "mean_R": -0.6336,
+        "profit_factor": 0.163,
+        "max_drawdown_R": 5.297,
+        "wins": 1
+      }
+    },
+    "2025_2x_force_relative": {
+      "first_half": {
+        "n": 157,
+        "total_R": -25.96,
+        "mean_R": -0.1654,
+        "profit_factor": 0.69,
+        "max_drawdown_R": 28.432,
+        "wins": 59
+      },
+      "third_quarter": {
+        "n": 65,
+        "total_R": 7.242,
+        "mean_R": 0.1114,
+        "profit_factor": 1.257,
+        "max_drawdown_R": 8.12,
+        "wins": 33
+      },
+      "fourth_quarter": {
+        "n": 77,
+        "total_R": -18.907,
+        "mean_R": -0.2455,
+        "profit_factor": 0.585,
+        "max_drawdown_R": 21.009,
+        "wins": 26
+      }
+    },
+    "2025_2x_funding_extreme_retournement": {
+      "first_half": {
+        "n": 59,
+        "total_R": -13.506,
+        "mean_R": -0.2289,
+        "profit_factor": 0.608,
+        "max_drawdown_R": 14.954,
+        "wins": 20
+      },
+      "third_quarter": {
+        "n": 10,
+        "total_R": -2.867,
+        "mean_R": -0.2867,
+        "profit_factor": 0.575,
+        "max_drawdown_R": 4.752,
+        "wins": 3
+      },
+      "fourth_quarter": {
+        "n": 76,
+        "total_R": -7.051,
+        "mean_R": -0.0928,
+        "profit_factor": 0.809,
+        "max_drawdown_R": 14.235,
+        "wins": 31
+      }
+    }
+  }
+}
