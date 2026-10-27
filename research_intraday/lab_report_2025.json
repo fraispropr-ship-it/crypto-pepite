@@ -1,0 +1,399 @@
+{
+  "status": "exploratory_not_pristine_test",
+  "data_errors": {
+    "HYPE": "Incomplete OHLC or insufficient funding"
+  },
+  "quality": {
+    "BTC": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "e7f87723e5ce43773c22ad5b31b9eb24793826db7399bcdeabdbd4d1b43bc065",
+      "complete_ohlc": true
+    },
+    "ETH": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "853510e61a76777a5d96dab8638ccf32a1c811c493ba9ebc4788a8930ade0e02",
+      "complete_ohlc": true
+    },
+    "SOL": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "4685e952dfd063f3ac6e2f46f05e7b37c37961eecfd00cc03cf25813cd05d29a",
+      "complete_ohlc": true
+    },
+    "XRP": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "4a2679cda9da542185e994b4bf46384284e0c820e897e3aeb593289ef63229db",
+      "complete_ohlc": true
+    },
+    "LINK": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "f311d9cbed9afe2d3f81404feff2eb5a135cf3f2071346d482e6d23099c2f104",
+      "complete_ohlc": true
+    },
+    "ADA": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "89075bb6c0d920df89a505311d3f793af9b66d39c9d21c858f12f6567aaf439f",
+      "complete_ohlc": true
+    },
+    "AVAX": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "3f6278e8c2110654db3743baef6ccf4bab580f1a5005961cfb954099445f075a",
+      "complete_ohlc": true
+    },
+    "DOGE": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "d906abee5728734427af42550d1df4b151982739ad66014d2427c839150b4849",
+      "complete_ohlc": true
+    },
+    "SUI": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "81ec7cd5396739882fb73a752577a0aaaff739d73159daca37a8f92ae2cfe02f",
+      "complete_ohlc": true
+    },
+    "AAVE": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "3d1fe947fe5d139487dbba3849f5cbccdf0029bc442345dcaa080e289473a0ca",
+      "complete_ohlc": true
+    },
+    "NEAR": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "6140c22bc0aefdfa0a9290f3789e92e052b6845f8fb04673d96f29d544f553fa",
+      "complete_ohlc": true
+    },
+    "APT": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "74fa0b39c93ec135bc11c33e4ddd01c30d6611a167df75b37dd9181ad5fce68b",
+      "complete_ohlc": true
+    },
+    "BNB": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "7e2426aa2f9ca86077a084b7852763325de2d4f83a02554eae09736e25690f68",
+      "complete_ohlc": true
+    },
+    "UNI": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "9972413182f79046cb74cd5fb49dd7258a9996ae2f7350d3f0c2ca0bf5ec7a21",
+      "complete_ohlc": true
+    },
+    "ONDO": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 2240,
+      "sha256": "5607faa8ba380291d9b8e94a2c6b0660d501ab31ae227f87ac059222bde1a955",
+      "complete_ohlc": true
+    },
+    "HYPE": {
+      "candles": 9396,
+      "missing": 108,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1175,
+      "sha256": "0cb045488c856c89dba86699bc1931c346feb0fcaea19c3ea6082730c274a579",
+      "complete_ohlc": false
+    },
+    "INJ": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "7c1a6f0ea85c651d6e5801fb5efe36abe2f7a024eba10aca15e58fbdb5a754b9",
+      "complete_ohlc": true
+    },
+    "1000PEPE": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "1cc6df1089496048191869c020be81452ff0857d28ca20728715703dc8343e24",
+      "complete_ohlc": true
+    },
+    "WLD": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 1188,
+      "sha256": "22f98ee29b8b481aba5444e6fad07ee5da46029b6391ec279ed85ecdb99a5096",
+      "complete_ohlc": true
+    },
+    "ZRO": {
+      "candles": 9504,
+      "missing": 0,
+      "duplicates": 0,
+      "invalid": 0,
+      "funding_count": 2240,
+      "sha256": "26ae8ac92183038b7264703f047190703778cf03c18d171d95e363eb971be5ad",
+      "complete_ohlc": true
+    }
+  },
+  "assumptions": "H1 candles, next-open market entry, stop first within candle, 12h, 1 USDT planned net stop loss, 1000 USDT capital 10x max, one position, 2 entries/UTC day, cost 0.06% taker and 0.02% slippage each side, historical funding with open-price proxy, no min order size.",
+  "results": {
+    "1x_cassure_volatilite": {
+      "development": {
+        "n": 336,
+        "total_R": -11.263,
+        "mean_R": -0.0335,
+        "profit_factor": 0.934,
+        "max_drawdown_R": 26.361,
+        "wins": 141
+      },
+      "validation": {
+        "n": 172,
+        "total_R": -7.829,
+        "mean_R": -0.0455,
+        "profit_factor": 0.909,
+        "max_drawdown_R": 14.792,
+        "wins": 71
+      },
+      "explored_later": {
+        "n": 170,
+        "total_R": -39.439,
+        "mean_R": -0.232,
+        "profit_factor": 0.625,
+        "max_drawdown_R": 41.98,
+        "wins": 58
+      }
+    },
+    "1x_rejet_exces": {
+      "development": {
+        "n": 49,
+        "total_R": -8.104,
+        "mean_R": -0.1654,
+        "profit_factor": 0.705,
+        "max_drawdown_R": 12.129,
+        "wins": 20
+      },
+      "validation": {
+        "n": 29,
+        "total_R": -3.55,
+        "mean_R": -0.1224,
+        "profit_factor": 0.773,
+        "max_drawdown_R": 9.012,
+        "wins": 12
+      },
+      "explored_later": {
+        "n": 32,
+        "total_R": -7.45,
+        "mean_R": -0.2328,
+        "profit_factor": 0.633,
+        "max_drawdown_R": 7.572,
+        "wins": 10
+      }
+    },
+    "1x_retour_moyenne": {
+      "development": {
+        "n": 348,
+        "total_R": -26.446,
+        "mean_R": -0.076,
+        "profit_factor": 0.849,
+        "max_drawdown_R": 33.724,
+        "wins": 142
+      },
+      "validation": {
+        "n": 174,
+        "total_R": -52.245,
+        "mean_R": -0.3003,
+        "profit_factor": 0.493,
+        "max_drawdown_R": 52.382,
+        "wins": 59
+      },
+      "explored_later": {
+        "n": 171,
+        "total_R": -7.213,
+        "mean_R": -0.0422,
+        "profit_factor": 0.914,
+        "max_drawdown_R": 12.887,
+        "wins": 73
+      }
+    },
+    "1x_tendance_reprise": {
+      "development": {
+        "n": 345,
+        "total_R": -46.637,
+        "mean_R": -0.1352,
+        "profit_factor": 0.744,
+        "max_drawdown_R": 48.704,
+        "wins": 136
+      },
+      "validation": {
+        "n": 176,
+        "total_R": -14.004,
+        "mean_R": -0.0796,
+        "profit_factor": 0.846,
+        "max_drawdown_R": 18.418,
+        "wins": 70
+      },
+      "explored_later": {
+        "n": 176,
+        "total_R": -36.241,
+        "mean_R": -0.2059,
+        "profit_factor": 0.639,
+        "max_drawdown_R": 41.694,
+        "wins": 61
+      }
+    },
+    "2x_cassure_volatilite": {
+      "development": {
+        "n": 336,
+        "total_R": -34.724,
+        "mean_R": -0.1033,
+        "profit_factor": 0.8,
+        "max_drawdown_R": 42.4,
+        "wins": 137
+      },
+      "validation": {
+        "n": 172,
+        "total_R": -20.76,
+        "mean_R": -0.1207,
+        "profit_factor": 0.763,
+        "max_drawdown_R": 25.816,
+        "wins": 70
+      },
+      "explored_later": {
+        "n": 170,
+        "total_R": -48.41,
+        "mean_R": -0.2848,
+        "profit_factor": 0.539,
+        "max_drawdown_R": 50.441,
+        "wins": 54
+      }
+    },
+    "2x_rejet_exces": {
+      "development": {
+        "n": 49,
+        "total_R": -11.27,
+        "mean_R": -0.23,
+        "profit_factor": 0.591,
+        "max_drawdown_R": 13.641,
+        "wins": 19
+      },
+      "validation": {
+        "n": 29,
+        "total_R": -5.858,
+        "mean_R": -0.202,
+        "profit_factor": 0.646,
+        "max_drawdown_R": 10.559,
+        "wins": 12
+      },
+      "explored_later": {
+        "n": 32,
+        "total_R": -9.304,
+        "mean_R": -0.2907,
+        "profit_factor": 0.546,
+        "max_drawdown_R": 9.304,
+        "wins": 10
+      }
+    },
+    "2x_retour_moyenne": {
+      "development": {
+        "n": 349,
+        "total_R": -48.757,
+        "mean_R": -0.1397,
+        "profit_factor": 0.73,
+        "max_drawdown_R": 53.362,
+        "wins": 135
+      },
+      "validation": {
+        "n": 174,
+        "total_R": -63.021,
+        "mean_R": -0.3622,
+        "profit_factor": 0.396,
+        "max_drawdown_R": 63.021,
+        "wins": 54
+      },
+      "explored_later": {
+        "n": 171,
+        "total_R": -17.98,
+        "mean_R": -0.1051,
+        "profit_factor": 0.788,
+        "max_drawdown_R": 17.98,
+        "wins": 71
+      }
+    },
+    "2x_tendance_reprise": {
+      "development": {
+        "n": 345,
+        "total_R": -69.595,
+        "mean_R": -0.2017,
+        "profit_factor": 0.626,
+        "max_drawdown_R": 71.16,
+        "wins": 128
+      },
+      "validation": {
+        "n": 176,
+        "total_R": -31.018,
+        "mean_R": -0.1762,
+        "profit_factor": 0.672,
+        "max_drawdown_R": 31.018,
+        "wins": 65
+      },
+      "explored_later": {
+        "n": 176,
+        "total_R": -46.144,
+        "mean_R": -0.2622,
+        "profit_factor": 0.547,
+        "max_drawdown_R": 50.208,
+        "wins": 55
+      }
+    }
+  }
+}
