@@ -28,6 +28,7 @@ jobs:
       - name: Scan and send confirmed alerts
         env:
           SEND_STATUS: ${{ github.event_name != 'schedule' && 'true' || 'false' }}
+          MANUAL_SCAN: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python -u trend_retest.py
@@ -37,6 +38,7 @@ jobs:
           git config user.name "trend-retest-bot"
           git config user.email "trend-retest-bot@users.noreply.github.com"
           git add rebond_eclair_state.json
+          if [ -f rebond_eclair_observations.json ]; then git add rebond_eclair_observations.json; fi
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Rebond Eclair signal state"
           for i in 1 2 3 4 5; do

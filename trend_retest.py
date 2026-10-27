@@ -4,6 +4,8 @@ Replaces Trend Retest. Fixed rules from research; live reference is indicative.
 import concurrent.futures,html,json,os,time,urllib.parse,urllib.request
 from pathlib import Path
 import pandas as pd
+from datetime import datetime,timezone
+from zoneinfo import ZoneInfo
 SYMBOLS=[s+'USDT' for s in 'BTC ETH SOL XRP LINK ADA AVAX DOGE SUI AAVE NEAR APT BNB UNI ONDO HYPE INJ 1000PEPE WLD ZRO ZEC ENA XMR TAO ARB BCH TIA LTC TRX DOT ATOM FIL ETC OP XLM SEI WIF 1000BONK ALGO POL'.split()]
 H=3600000;FEE=.0006;SLIP=.0002;STATE=Path('rebond_eclair_state.json')
 def call(url,payload=None):
@@ -20,13 +22,16 @@ def fetch(symbol,now):
    ref=float(d.c.iloc[-1]);closed=d[d.t+H<=now].reset_index(drop=True)
    if len(closed)<250 or closed.t.duplicated().any() or (closed.t.diff().iloc[1:]!=H).any() or int(closed.t.iloc[-1])+H!=(now//H)*H:raise RuntimeError('Incomplete H1 coverage')
    if (closed[['o','h','l','c']]<=0).any().any() or (closed.h<closed[['o','c','l']].max(axis=1)).any() or (closed.l>closed[['o','c','h']].min(axis=1)).any():raise RuntimeError('Invalid OHLC')
-   return detect(closed,symbol,now,ref)
+   signal=detect(closed,symbol,now,ref)
+   if signal:signal['observed_at']=int(time.time()*1000)
+   return signal
   except Exception:
    if n==2:raise
    time.sleep(n+1)
 def detect(d,symbol,now,ref):
  prev=d.c.shift();atr=pd.concat([d.h-d.l,(d.h-prev).abs(),(d.l-prev).abs()],axis=1).max(axis=1).ewm(alpha=1/14,adjust=False).mean();b=d.iloc[-1];a=float(atr.iloc[-1]);closed=int(b.t)+H
- if now-closed>15*60000:return None
+ max_age=H if os.environ.get('MANUAL_SCAN')=='true' else 15*60000
+ if now-closed>=max_age:return None
  if not (b.h-b.l>2*a and b.c>b.o and b.o-b.l>.55*(b.h-b.l)):return None
  # Indicator uses closed bars only; reference may use forming bar price for timeliness.
  entry=ref*(1+SLIP);distance=1.5*a;stop=entry-distance;target=entry+1.75*distance
@@ -40,9 +45,13 @@ def send(token,chat,text,buttons=None):
  try:r=call('https://api.telegram.org/bot'+token+'/sendMessage',payload)
  except Exception:raise RuntimeError('Telegram delivery failed (details redacted)') from None
  if not r.get('ok'):raise RuntimeError('Telegram rejected delivery')
+def is_alert_time(now):
+ local=datetime.fromtimestamp(now/1000,timezone.utc).astimezone(ZoneInfo('Europe/Paris'))
+ return 7<=local.hour<23
+
 def choose(found,state,now):
  day=str(now//(24*H));counts=state.get('counts',{});sent=state.get('sent',{})
- if now<state.get('busy_until',0) or counts.get(day,0)>=2:return None
+ if not is_alert_time(now) or now<state.get('busy_until',0) or counts.get(day,0)>=2:return None
  return next((s for s in sorted(found,key=lambda s:s['symbol']) if s['id'] not in sent),None)
 def main():
  now=int(time.time()*1000);token=os.environ.get('TELEGRAM_TOKEN');chat=os.environ.get('TELEGRAM_CHAT_ID')
@@ -59,6 +68,8 @@ def main():
  errors=sorted(errors)
  successful=len(SYMBOLS)-len(errors)
  print(json.dumps({'successful':successful,'failed':errors}),flush=True)
+ previous_busy=state.get('busy_until',0)
+ previous_count=state.get('counts',{}).get(str(now//(24*H)),0)
  signal=choose(found,state,now)
  gh='https://github.com/fraispropr-ship-it/crypto-pepite/actions/workflows/trend-retest.yml'
  if signal:
@@ -68,6 +79,22 @@ def main():
   send(token,chat,text,[[{'text':'📈 TradingView','url':'https://www.tradingview.com/chart/?symbol=ZOOMEX:'+s['symbol']+'.P&interval=60'}],[{'text':'▶️ Lancer dans GitHub','url':gh}]])
   state.setdefault('sent',{})[s['id']]=now;day=str(now//(24*H));state.setdefault('counts',{})[day]=state['counts'].get(day,0)+1;state['busy_until']=now+12*H
   STATE.write_text(json.dumps(state,indent=2))
+ # Keep a separate forward-looking log. No Telegram messages for extra signals.
+ journal_path=Path('rebond_eclair_observations.json')
+ journal=json.loads(journal_path.read_text()) if journal_path.exists() else {'version':1,'observations':{}}
+ observations=journal.setdefault('observations',{})
+ for item in sorted(found,key=lambda x:x['symbol']):
+  if item['id'] in observations:
+   if signal and item['id']==signal['id'] and observations[item['id']]['type']!='principal':
+    observations[item['id']]['later_primary']={**item,'sent_at':now}
+   continue
+  if signal and item['id']==signal['id']:kind='principal';reason='sent'
+  elif item['id'] in state.get('sent',{}):continue
+  else:
+   kind='supplementaire'
+   reason='hors_horaire_paris' if not is_alert_time(now) else ('pause_12h' if now<previous_busy else ('limite_jour' if previous_count>=2 else 'signal_simultane'))
+  observations[item['id']]={**item,'type':kind,'reason':reason,'scan_started_at':now,'coverage_ok':successful,'coverage_total':len(SYMBOLS),'missing_symbols':errors,'fee_assumption':FEE,'slippage_assumption':SLIP,'max_hold_hours':12,'execution':'indicative_not_real_trade','manual_scan':os.environ.get('MANUAL_SCAN')=='true'}
+ if observations:journal_path.write_text(json.dumps(journal,indent=2))
  # Report newly changed outages once; status runs always show current coverage.
  failure_key=','.join(errors)
  previous_failure=state.get('last_failure','')
@@ -75,7 +102,7 @@ def main():
  if status or (failure_key and failure_key!=previous_failure):
   coverage=str(successful)+'/'+str(len(SYMBOLS))+' cryptos contrôlées · longs uniquement.'
   failures=('\n⚠️ Paires indisponibles : '+html.escape(', '.join(errors))+'.') if errors else ''
-  send(token,chat,'<b>⚡ Rebond Éclair — scan terminé</b>\n'+coverage+failures+'\n'+('Une alerte a été envoyée.' if signal else 'Aucune nouvelle alerte éligible.')+'\nMaximum 2 alertes/jour UTC ; blocage conservateur de 12h après une alerte.\nScanner expérimental : aucun ordre automatique.',[[{'text':'▶️ Lancer dans GitHub','url':gh}]])
+  send(token,chat,'<b>⚡ Rebond Éclair — scan terminé</b>\n'+coverage+failures+'\n'+('Une alerte a été envoyée.' if signal else 'Aucune nouvelle alerte éligible.')+'\nAlertes principales : 7h–23h heure de Paris. Maximum 2 alertes/jour UTC ; blocage de 12h après une alerte.\nScanner expérimental : aucun ordre automatique.',[[{'text':'▶️ Lancer dans GitHub','url':gh}]])
  state['last_failure']=failure_key
  state['sent']={k:v for k,v in state.get('sent',{}).items() if now-v<45*24*H};state['counts']={k:v for k,v in state.get('counts',{}).items() if int(k)>=now//(24*H)-2};STATE.write_text(json.dumps(state,indent=2))
  print(json.dumps({'scanner':'Rebond Eclair','symbols_ok':successful,'symbols_failed':errors,'candidates':len(found),'alerts_sent':int(signal is not None)}))
