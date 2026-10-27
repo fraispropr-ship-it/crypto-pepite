@@ -1,0 +1,46 @@
+{
+  "2024_compression_retest": {
+    "ambiguous_trades": 0,
+    "optimistic_fixed_portfolio": {
+      "n": 55,
+      "total_R": -6.093,
+      "mean_R": -0.1108,
+      "profit_factor": 0.684,
+      "max_drawdown_R": 10.951,
+      "wins": 20
+    }
+  },
+  "2024_false_break_reentry": {
+    "ambiguous_trades": 0,
+    "optimistic_fixed_portfolio": {
+      "n": 473,
+      "total_R": -65.445,
+      "mean_R": -0.1384,
+      "profit_factor": 0.774,
+      "max_drawdown_R": 76.455,
+      "wins": 171
+    }
+  },
+  "2025_compression_retest": {
+    "ambiguous_trades": 0,
+    "optimistic_fixed_portfolio": {
+      "n": 74,
+      "total_R": -8.504,
+      "mean_R": -0.1149,
+      "profit_factor": 0.687,
+      "max_drawdown_R": 12.098,
+      "wins": 32
+    }
+  },
+  "2025_false_break_reentry": {
+    "ambiguous_trades": 1,
+    "optimistic_fixed_portfolio": {
+      "n": 470,
+      "total_R": -49.551,
+      "mean_R": -0.1054,
+      "profit_factor": 0.822,
+      "max_drawdown_R": 57.961,
+      "wins": 182
+    }
+  }
+}
