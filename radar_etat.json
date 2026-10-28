@@ -1095,7 +1095,7 @@
    "bruit": 20.65981428755685,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793196153120,
+   "vu": 1793199756564,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.206": {
@@ -1167,7 +1167,7 @@
    "bruit": 5.43826570259594,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793196153120,
+   "vu": 1793199756564,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2370.66": {
@@ -1418,7 +1418,7 @@
    "sym": "STRKUSDT",
    "bruit": 19.190868079245877,
    "tick": 1e-05,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1793181754478,
    "t_decl": 1793185200000.0,
    "entree": 0.04784,
@@ -1509,7 +1509,7 @@
    "bruit": 10.403798857771557,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793196153120,
+   "vu": 1793199756564,
    "t_decl": 0
   },
   "ENAUSDT|continuation|0.21622": {
@@ -1544,7 +1544,7 @@
    "sym": "INJUSDT",
    "bruit": 8.976955718944941,
    "tick": 0.001,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1793196153120,
    "t_decl": 0
   },
@@ -1688,7 +1688,7 @@
    "sym": "ZECUSDT",
    "bruit": 8.750176200433863,
    "tick": 0.01,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1793196153120,
    "t_decl": 0
   }
