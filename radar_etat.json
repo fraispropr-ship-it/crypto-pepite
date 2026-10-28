@@ -453,16 +453,16 @@
   "HBARUSDT|retournement|0.07856": {
    "type": "retournement",
    "declenchement": 0.07856,
-   "invalidation": 0.07560583708781018,
-   "atr": 0.0013805430406327425,
+   "invalidation": 0.07485692262743399,
+   "atr": 0.0012769245752200556,
    "info": {
     "creux1": 0.07485,
-    "creux2": 0.07602,
-    "baisse_atr": 8.4
+    "creux2": 0.07524,
+    "baisse_atr": 9.0
    },
    "id": "HBARUSDT|retournement|0.07856",
    "sym": "HBARUSDT",
-   "bruit": 6.916733340242199,
+   "bruit": 6.834064912759989,
    "tick": 1e-05,
    "etape": "disparu",
    "vu": 1793055758158,
@@ -1095,7 +1095,7 @@
    "bruit": 20.65981428755685,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793188954492,
+   "vu": 1793192553694,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.206": {
@@ -1167,7 +1167,7 @@
    "bruit": 5.43826570259594,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793188954492,
+   "vu": 1793192553694,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2370.66": {
@@ -1509,7 +1509,7 @@
    "bruit": 10.403798857771557,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793188954492,
+   "vu": 1793192553694,
    "t_decl": 0
   },
   "ENAUSDT|continuation|0.21622": {
@@ -1526,7 +1526,7 @@
    "sym": "ENAUSDT",
    "bruit": 9.998751168667747,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1793188954492,
    "t_decl": 0
   },
@@ -1545,7 +1545,7 @@
    "bruit": 8.976955718944941,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793188954492,
+   "vu": 1793192553694,
    "t_decl": 0
   },
   "HUMAUSDT|retournement|0.02867": {
@@ -1652,7 +1652,7 @@
    "sym": "XRPUSDT",
    "bruit": 4.620379080819363,
    "tick": 0.0001,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1793188954492,
    "t_decl": 0
   },
@@ -1670,8 +1670,26 @@
    "sym": "AVAXUSDT",
    "bruit": 6.484568065713528,
    "tick": 0.001,
-   "etape": "pret",
+   "etape": "invalide",
    "vu": 1793188954492,
+   "t_decl": 0
+  },
+  "ZECUSDT|continuation|1331.29": {
+   "type": "continuation",
+   "declenchement": 1331.29,
+   "invalidation": 1279.2654009636005,
+   "atr": 37.11533012133189,
+   "info": {
+    "repli_atr": 1.1,
+    "age_h4": 3,
+    "calme": false
+   },
+   "id": "ZECUSDT|continuation|1331.29",
+   "sym": "ZECUSDT",
+   "bruit": 8.750176200433863,
+   "tick": 0.01,
+   "etape": "formation",
+   "vu": 1793192553694,
    "t_decl": 0
   }
  },
