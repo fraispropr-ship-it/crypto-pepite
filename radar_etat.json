@@ -1095,7 +1095,7 @@
    "bruit": 20.65981428755685,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793192553694,
+   "vu": 1793196153120,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.206": {
@@ -1167,7 +1167,7 @@
    "bruit": 5.43826570259594,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793192553694,
+   "vu": 1793196153120,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2370.66": {
@@ -1509,7 +1509,7 @@
    "bruit": 10.403798857771557,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793192553694,
+   "vu": 1793196153120,
    "t_decl": 0
   },
   "ENAUSDT|continuation|0.21622": {
@@ -1545,7 +1545,7 @@
    "bruit": 8.976955718944941,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793192553694,
+   "vu": 1793196153120,
    "t_decl": 0
   },
   "HUMAUSDT|retournement|0.02867": {
@@ -1689,7 +1689,7 @@
    "bruit": 8.750176200433863,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793192553694,
+   "vu": 1793196153120,
    "t_decl": 0
   }
  },
