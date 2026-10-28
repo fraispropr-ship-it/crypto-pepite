@@ -879,7 +879,7 @@
    "bruit": 20.65981428755685,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793206956434,
+   "vu": 1793210550904,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.206": {
@@ -951,7 +951,7 @@
    "bruit": 5.43826570259594,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793206956434,
+   "vu": 1793210550904,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2370.66": {
@@ -1491,7 +1491,7 @@
    "bruit": 10.481971506164074,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793206956434,
+   "vu": 1793210550904,
    "t_decl": 0
   },
   "VVVUSDT|retournement|26.327": {
@@ -1509,7 +1509,7 @@
    "bruit": 9.374003584891284,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793206956434,
+   "vu": 1793210550904,
    "t_decl": 0
   }
  },
