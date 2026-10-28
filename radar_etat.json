@@ -933,7 +933,7 @@
    "bruit": 5.43826570259594,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2370.66": {
@@ -1473,7 +1473,7 @@
    "bruit": 10.481971506164074,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
    "t_decl": 0
   },
   "VVVUSDT|retournement|26.327": {
@@ -1509,7 +1509,7 @@
    "bruit": 3.813280385512107,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
    "t_decl": 0
   },
   "SOLUSDT|retournement|103.61": {
@@ -1527,7 +1527,7 @@
    "bruit": 4.283432980820438,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
    "t_decl": 0
   },
   "HYPEUSDT|retournement|82.585": {
@@ -1545,7 +1545,7 @@
    "bruit": 5.039059283903634,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.21622": {
@@ -1563,7 +1563,7 @@
    "bruit": 9.998751168667747,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
    "t_decl": 0
   },
   "DOGEUSDT|retournement|0.08062": {
@@ -1581,7 +1581,7 @@
    "bruit": 5.134385165067731,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.87535": {
@@ -1599,7 +1599,7 @@
    "bruit": 24.27284841644129,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.269": {
@@ -1617,7 +1617,7 @@
    "bruit": 8.188770079373446,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
    "t_decl": 0
   },
   "STRKUSDT|retournement|0.04827": {
@@ -1635,7 +1635,7 @@
    "bruit": 19.190868079245877,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
    "t_decl": 0
   },
   "BLURUSDT|retournement|0.008913": {
@@ -1653,7 +1653,25 @@
    "bruit": 16.789120728754412,
    "tick": 1e-06,
    "etape": "pret",
-   "vu": 1793217753018,
+   "vu": 1793221362842,
+   "t_decl": 0
+  },
+  "DOODUSDT|retournement|0.002957": {
+   "type": "retournement",
+   "declenchement": 0.002957,
+   "invalidation": 0.0018297858839662635,
+   "atr": 0.00025404705344578824,
+   "info": {
+    "creux1": 0.001376,
+    "creux2": 0.001906,
+    "baisse_atr": 14.4
+   },
+   "id": "DOODUSDT|retournement|0.002957",
+   "sym": "DOODUSDT",
+   "bruit": 20.65981428755685,
+   "tick": 1e-06,
+   "etape": "disparu",
+   "vu": 1793221362842,
    "t_decl": 0
   }
  },
