@@ -1022,7 +1022,7 @@
    "sym": "SNXXUSDT",
    "bruit": 15.534955195133087,
    "tick": 0.01,
-   "etape": "declenche",
+   "etape": "trop_tard",
    "vu": 1793106154544,
    "t_decl": 1793109600000.0,
    "entree": 8.95,
@@ -1239,7 +1239,7 @@
    "bruit": 20.65981428755685,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793145754123,
+   "vu": 1793149361002,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.206": {
@@ -1257,7 +1257,7 @@
    "bruit": 8.188770079373446,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1793145754123,
+   "vu": 1793149361002,
    "t_decl": 0
   },
   "STRKUSDT|retournement|0.04761": {
@@ -1311,7 +1311,25 @@
    "bruit": 5.43826570259594,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793145754123,
+   "vu": 1793149361002,
+   "t_decl": 0
+  },
+  "ETHUSDT|retournement|2370.66": {
+   "type": "retournement",
+   "declenchement": 2370.66,
+   "invalidation": 2282.9770105932644,
+   "atr": 30.976631355784736,
+   "info": {
+    "creux1": 2281.95,
+    "creux2": 2292.27,
+    "baisse_atr": 7.8
+   },
+   "id": "ETHUSDT|retournement|2370.66",
+   "sym": "ETHUSDT",
+   "bruit": 3.813280385512107,
+   "tick": 0.01,
+   "etape": "pret",
+   "vu": 1793149361002,
    "t_decl": 0
   }
  },
