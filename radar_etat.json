@@ -753,7 +753,7 @@
    "bruit": 5.509128540400916,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793239355738,
+   "vu": 1793242953248,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2370.66": {
@@ -1383,7 +1383,7 @@
    "bruit": 9.970477864203158,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793239355738,
+   "vu": 1793242953248,
    "t_decl": 0
   },
   "DOGEUSDT|retournement|0.08062": {
@@ -1436,7 +1436,7 @@
    "sym": "UNIUSDT",
    "bruit": 8.188770079373446,
    "tick": 0.001,
-   "etape": "declenche",
+   "etape": "termine",
    "vu": 1793221362842,
    "t_decl": 1793224800000.0,
    "entree": 7.301,
@@ -1527,7 +1527,7 @@
    "bruit": 15.04438851276037,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793239355738,
+   "vu": 1793242953248,
    "t_decl": 0
   },
   "DOODUSDT|retournement|0.002957": {
@@ -1563,7 +1563,7 @@
    "bruit": 2.7331874472184925,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793239355738,
+   "vu": 1793242953248,
    "t_decl": 0
   },
   "BCHUSDT|continuation|304.76": {
@@ -1581,7 +1581,7 @@
    "bruit": 5.5418705263186085,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793239355738,
+   "vu": 1793242953248,
    "t_decl": 0
   },
   "HAEDALUSDT|continuation|0.03396": {
@@ -1599,7 +1599,7 @@
    "bruit": 7.852014944657175,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793239355738,
+   "vu": 1793242953248,
    "t_decl": 0
   },
   "CHIPUSDT|continuation|0.05747": {
@@ -1617,7 +1617,7 @@
    "bruit": 13.67093600180485,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793239355738,
+   "vu": 1793242953248,
    "t_decl": 0
   }
  },
