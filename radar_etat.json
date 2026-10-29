@@ -1113,7 +1113,7 @@
    "bruit": 8.771895887201877,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793307752804,
+   "vu": 1793311349095,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2391.3": {
@@ -1652,7 +1652,7 @@
    "sym": "1000PEPEUSDT",
    "bruit": 7.035008981818166,
    "tick": 1e-06,
-   "etape": "trop_tard",
+   "etape": "termine",
    "vu": 1793286155003,
    "t_decl": 1793289600000.0,
    "entree": 0.005494,
@@ -1779,7 +1779,25 @@
    "bruit": 10.158746954135855,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793307752804,
+   "vu": 1793311349095,
+   "t_decl": 0
+  },
+  "AEROUSDT|retournement|0.715": {
+   "type": "retournement",
+   "declenchement": 0.715,
+   "invalidation": 0.6585902365072821,
+   "atr": 0.022032544975726487,
+   "info": {
+    "creux1": 0.6581,
+    "creux2": 0.6652,
+    "baisse_atr": 9.7
+   },
+   "id": "AEROUSDT|retournement|0.715",
+   "sym": "AEROUSDT",
+   "bruit": 9.335488928809111,
+   "tick": 0.0001,
+   "etape": "invalide",
+   "vu": 1793311349095,
    "t_decl": 0
   }
  },
