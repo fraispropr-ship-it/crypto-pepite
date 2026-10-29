@@ -735,7 +735,7 @@
    "bruit": 5.509128540400916,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793250153217,
+   "vu": 1793253751980,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2370.66": {
@@ -1365,7 +1365,7 @@
    "bruit": 9.970477864203158,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793250153217,
+   "vu": 1793253751980,
    "t_decl": 0
   },
   "DOGEUSDT|retournement|0.08062": {
@@ -1509,7 +1509,7 @@
    "bruit": 15.04438851276037,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793250153217,
+   "vu": 1793253751980,
    "t_decl": 0
   },
   "DOODUSDT|retournement|0.002957": {
@@ -1545,7 +1545,7 @@
    "bruit": 2.7331874472184925,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1793250153217,
+   "vu": 1793253751980,
    "t_decl": 0
   },
   "BCHUSDT|continuation|304.76": {
@@ -1581,7 +1581,7 @@
    "bruit": 7.852014944657175,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793250153217,
+   "vu": 1793253751980,
    "t_decl": 0
   },
   "CHIPUSDT|continuation|0.05747": {
@@ -1635,9 +1635,9 @@
    "bruit": 8.771895887201877,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793250153217,
+   "vu": 1793253751980,
    "t_decl": 0
   }
  },
- "dernier_resume": 124529
+ "dernier_resume": 124531
 }
