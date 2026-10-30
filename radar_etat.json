@@ -537,7 +537,7 @@
    "bruit": 9.393477117620163,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793379754489,
+   "vu": 1793383355111,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2391.3": {
@@ -1257,7 +1257,7 @@
    "bruit": 5.387476404627053,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793379754489,
+   "vu": 1793383355111,
    "t_decl": 0
   },
   "ZECUSDT|retournement|1398.49": {
@@ -1275,7 +1275,7 @@
    "bruit": 9.503903607374786,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793379754489,
+   "vu": 1793383355111,
    "t_decl": 0
   },
   "PARTIUSDT|continuation|0.06481": {
@@ -1293,7 +1293,7 @@
    "bruit": 7.9399551303380775,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793379754489,
+   "vu": 1793383355111,
    "t_decl": 0
   },
   "BLESSUSDT|continuation|0.0146": {
@@ -1346,8 +1346,8 @@
    "sym": "MAGMAUSDT",
    "bruit": 21.39042256278516,
    "tick": 0.0001,
-   "etape": "pret",
-   "vu": 1793379754489,
+   "etape": "formation",
+   "vu": 1793383355111,
    "t_decl": 0
   }
  },
