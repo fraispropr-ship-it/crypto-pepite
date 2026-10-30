@@ -1005,7 +1005,7 @@
    "bruit": 9.393477117620163,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793336552577,
+   "vu": 1793340151175,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2391.3": {
@@ -1707,9 +1707,9 @@
    "bruit": 26.842767989504484,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793336552577,
+   "vu": 1793340151175,
    "t_decl": 0
   }
  },
- "dernier_resume": 124535
+ "dernier_resume": 124537
 }
