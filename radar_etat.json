@@ -90,78 +90,6 @@
     ]
    }
   },
-  "SOLUSDT|retournement|102.73": {
-   "type": "retournement",
-   "declenchement": 102.73,
-   "invalidation": 98.7867360212423,
-   "atr": 1.3108799291923214,
-   "info": {
-    "creux1": 98.69,
-    "creux2": 99.18,
-    "baisse_atr": 8.0
-   },
-   "id": "SOLUSDT|retournement|102.73",
-   "sym": "SOLUSDT",
-   "bruit": 4.283432980820438,
-   "tick": 0.01,
-   "etape": "termine",
-   "vu": 1793178157610,
-   "t_decl": 1793181600000.0,
-   "entree": 102.92,
-   "sl": 98.79,
-   "objectif": 111.17999999999999,
-   "feu": "🟠",
-   "date_decl": "2026-10-28 11:00",
-   "mesures_impulsion": {
-    "h1_amplitude": 0.5,
-    "h1_amplitude_atr": 0.8108,
-    "h1_position_cloture": 0.96,
-    "h1_corps_pct": 0.54,
-    "m15_complet": true,
-    "m15_bougies": [
-     {
-      "heure_utc": "2026-10-28T09:00:00+00:00",
-      "o": 102.65,
-      "h": 102.72,
-      "l": 102.51,
-      "c": 102.7,
-      "amplitude": 0.21,
-      "corps_pct": 0.2381,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-10-28T09:15:00+00:00",
-      "o": 102.7,
-      "h": 102.78,
-      "l": 102.58,
-      "c": 102.66,
-      "amplitude": 0.2,
-      "corps_pct": 0.2,
-      "direction": "baisse"
-     },
-     {
-      "heure_utc": "2026-10-28T09:30:00+00:00",
-      "o": 102.66,
-      "h": 102.76,
-      "l": 102.44,
-      "c": 102.76,
-      "amplitude": 0.32,
-      "corps_pct": 0.3125,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-10-28T09:45:00+00:00",
-      "o": 102.76,
-      "h": 102.94,
-      "l": 102.75,
-      "c": 102.92,
-      "amplitude": 0.19,
-      "corps_pct": 0.8421,
-      "direction": "hausse"
-     }
-    ]
-   }
-  },
   "HAEDALUSDT|continuation|0.03387": {
    "type": "continuation",
    "declenchement": 0.03387,
@@ -915,7 +843,7 @@
    "bruit": 9.393477117620163,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793350952520,
+   "vu": 1793354550420,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2391.3": {
@@ -1617,7 +1545,7 @@
    "bruit": 26.842767989504484,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793350952520,
+   "vu": 1793354550420,
    "t_decl": 0
   },
   "HYPEUSDT|continuation|97.052": {
@@ -1635,7 +1563,7 @@
    "bruit": 5.387476404627053,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793350952520,
+   "vu": 1793354550420,
    "t_decl": 0
   },
   "ZECUSDT|retournement|1398.49": {
@@ -1653,7 +1581,7 @@
    "bruit": 9.503903607374786,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793350952520,
+   "vu": 1793354550420,
    "t_decl": 0
   },
   "PARTIUSDT|continuation|0.06481": {
@@ -1671,7 +1599,7 @@
    "bruit": 7.9399551303380775,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793350952520,
+   "vu": 1793354550420,
    "t_decl": 0
   },
   "BLESSUSDT|continuation|0.0146": {
@@ -1689,7 +1617,7 @@
    "bruit": 10.506819191309258,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793350952520,
+   "vu": 1793354550420,
    "t_decl": 0
   },
   "PURRUSDT|continuation|12.451": {
@@ -1707,7 +1635,7 @@
    "bruit": 7.867489775004152,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793350952520,
+   "vu": 1793354550420,
    "t_decl": 0
   },
   "MAGMAUSDT|retournement|0.4048": {
@@ -1725,7 +1653,7 @@
    "bruit": 21.39042256278516,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793350952520,
+   "vu": 1793354550420,
    "t_decl": 0
   }
  },
