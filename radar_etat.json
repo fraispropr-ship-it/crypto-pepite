@@ -1,77 +1,5 @@
 {
  "setups": {
-  "ZECUSDT|continuation|1268.38": {
-   "type": "continuation",
-   "declenchement": 1268.38,
-   "invalidation": 1199.3036770696358,
-   "atr": 37.88774310121458,
-   "info": {
-    "repli_atr": 1.5,
-    "age_h4": 5,
-    "calme": true
-   },
-   "id": "ZECUSDT|continuation|1268.38",
-   "sym": "ZECUSDT",
-   "bruit": 9.273233452791155,
-   "tick": 0.01,
-   "etape": "trop_tard",
-   "vu": 1793109754608,
-   "t_decl": 1793113200000.0,
-   "entree": 1279.07,
-   "sl": 1199.3,
-   "objectif": 1438.61,
-   "feu": "🟠",
-   "date_decl": "2026-10-27 16:00",
-   "mesures_impulsion": {
-    "h1_amplitude": 25.72,
-    "h1_amplitude_atr": 1.3524,
-    "h1_position_cloture": 0.8184,
-    "h1_corps_pct": 0.6073,
-    "m15_complet": true,
-    "m15_bougies": [
-     {
-      "heure_utc": "2026-10-27T14:00:00+00:00",
-      "o": 1263.45,
-      "h": 1271.3,
-      "l": 1258.02,
-      "c": 1267.34,
-      "amplitude": 13.28,
-      "corps_pct": 0.2929,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-10-27T14:15:00+00:00",
-      "o": 1267.34,
-      "h": 1278.58,
-      "l": 1262.94,
-      "c": 1275.82,
-      "amplitude": 15.64,
-      "corps_pct": 0.5422,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-10-27T14:30:00+00:00",
-      "o": 1275.82,
-      "h": 1283.74,
-      "l": 1275.82,
-      "c": 1280.64,
-      "amplitude": 7.92,
-      "corps_pct": 0.6086,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-10-27T14:45:00+00:00",
-      "o": 1280.64,
-      "h": 1282.19,
-      "l": 1275.91,
-      "c": 1279.07,
-      "amplitude": 6.28,
-      "corps_pct": 0.25,
-      "direction": "baisse"
-     }
-    ]
-   }
-  },
   "DOODUSDT|continuation|0.002957": {
    "type": "continuation",
    "declenchement": 0.002957,
@@ -1077,7 +1005,7 @@
    "bruit": 9.393477117620163,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793318554690,
+   "vu": 1793322153351,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2391.3": {
