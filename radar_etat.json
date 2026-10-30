@@ -885,16 +885,16 @@
   "DOODUSDT|retournement|0.002957": {
    "type": "retournement",
    "declenchement": 0.002957,
-   "invalidation": 0.0017021340443210962,
-   "atr": 0.00020955318559634625,
+   "invalidation": 0.001634690302211158,
+   "atr": 0.00020436565929614017,
    "info": {
     "creux1": 0.001376,
-    "creux2": 0.001765,
-    "baisse_atr": 17.5
+    "creux2": 0.001696,
+    "baisse_atr": 17.9
    },
    "id": "DOODUSDT|retournement|0.002957",
    "sym": "DOODUSDT",
-   "bruit": 22.690400952759873,
+   "bruit": 23.260711739023964,
    "tick": 1e-06,
    "etape": "disparu",
    "vu": 1793221362842,
@@ -975,12 +975,12 @@
   "EVAAUSDT|continuation|1.6327": {
    "type": "continuation",
    "declenchement": 1.6327,
-   "invalidation": 0.9532037327387969,
-   "atr": 0.1706542242040101,
+   "invalidation": 0.9538241799632213,
+   "atr": 0.1685860667892621,
    "info": {
     "repli_atr": 3.7,
-    "age_h4": 8,
-    "calme": false
+    "age_h4": 9,
+    "calme": true
    },
    "id": "EVAAUSDT|continuation|1.6327",
    "sym": "EVAAUSDT",
@@ -993,11 +993,11 @@
   "INITUSDT|continuation|0.25695": {
    "type": "continuation",
    "declenchement": 0.25695,
-   "invalidation": 0.18322343213400402,
-   "atr": 0.020755226219986662,
+   "invalidation": 0.18313290140077912,
+   "atr": 0.021056995330736284,
    "info": {
-    "repli_atr": 3.3,
-    "age_h4": 8,
+    "repli_atr": 3.2,
+    "age_h4": 9,
     "calme": false
    },
    "id": "INITUSDT|continuation|0.25695",
@@ -1005,7 +1005,7 @@
    "bruit": 9.393477117620163,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793329350588,
+   "vu": 1793332957884,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2391.3": {
@@ -1690,6 +1690,24 @@
    "tick": 0.0001,
    "etape": "invalide",
    "vu": 1793311349095,
+   "t_decl": 0
+  },
+  "BTWUSDT|retournement|1.88489": {
+   "type": "retournement",
+   "declenchement": 1.88489,
+   "invalidation": 1.312182566173509,
+   "atr": 0.15939144608830416,
+   "info": {
+    "creux1": 0.87806,
+    "creux2": 1.36,
+    "baisse_atr": 7.0
+   },
+   "id": "BTWUSDT|retournement|1.88489",
+   "sym": "BTWUSDT",
+   "bruit": 26.842767989504484,
+   "tick": 1e-05,
+   "etape": "formation",
+   "vu": 1793332957884,
    "t_decl": 0
   }
  },
