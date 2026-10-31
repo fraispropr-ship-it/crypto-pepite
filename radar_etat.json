@@ -144,24 +144,6 @@
     ]
    }
   },
-  "HYPEUSDT|retournement|82.585": {
-   "type": "retournement",
-   "declenchement": 82.585,
-   "invalidation": 77.67305498377318,
-   "atr": 1.5731500540893517,
-   "info": {
-    "creux1": 74.418,
-    "creux2": 78.145,
-    "baisse_atr": 5.2
-   },
-   "id": "HYPEUSDT|retournement|82.585",
-   "sym": "HYPEUSDT",
-   "bruit": 5.008004137282225,
-   "tick": 0.001,
-   "etape": "invalide",
-   "vu": 1793235753724,
-   "t_decl": 0
-  },
   "ENAUSDT|retournement|0.21622": {
    "type": "retournement",
    "declenchement": 0.21622,
@@ -303,7 +285,7 @@
    "bruit": 11.764681916977619,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793408553455,
+   "vu": 1793412147828,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2391.3": {
@@ -1023,7 +1005,7 @@
    "bruit": 5.367166454706298,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793408553455,
+   "vu": 1793412147828,
    "t_decl": 0
   },
   "ZECUSDT|retournement|1398.49": {
@@ -1041,7 +1023,7 @@
    "bruit": 9.123761180282779,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793408553455,
+   "vu": 1793412147828,
    "t_decl": 0
   },
   "PARTIUSDT|continuation|0.06481": {
@@ -1059,7 +1041,7 @@
    "bruit": 10.20637802377634,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793408553455,
+   "vu": 1793412147828,
    "t_decl": 0
   },
   "BLESSUSDT|continuation|0.0146": {
@@ -1113,7 +1095,7 @@
    "bruit": 17.61970079027652,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793408553455,
+   "vu": 1793412147828,
    "t_decl": 0
   },
   "QUSDT|retournement|0.06391": {
@@ -1130,7 +1112,7 @@
    "sym": "QUSDT",
    "bruit": 71.76834998330298,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1793408553455,
    "t_decl": 0
   },
@@ -1166,8 +1148,8 @@
    "sym": "BNBUSDT",
    "bruit": 3.491813203064949,
    "tick": 0.01,
-   "etape": "pret",
-   "vu": 1793408553455,
+   "etape": "formation",
+   "vu": 1793412147828,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -1185,7 +1167,7 @@
    "bruit": 17.61970079027652,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793408553455,
+   "vu": 1793412147828,
    "t_decl": 0
   },
   "HBARUSDT|retournement|0.07246": {
