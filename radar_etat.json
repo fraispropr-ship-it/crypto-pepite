@@ -198,24 +198,6 @@
    "vu": 1793271753631,
    "t_decl": 0
   },
-  "HAEDALUSDT|continuation|0.03396": {
-   "type": "continuation",
-   "declenchement": 0.03396,
-   "invalidation": 0.024455897739386695,
-   "atr": 0.0024803408687110217,
-   "info": {
-    "repli_atr": 3.5,
-    "age_h4": 5,
-    "calme": true
-   },
-   "id": "HAEDALUSDT|continuation|0.03396",
-   "sym": "HAEDALUSDT",
-   "bruit": 7.852014944657175,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1793264550521,
-   "t_decl": 0
-  },
   "INITUSDT|continuation|0.25695": {
    "type": "continuation",
    "declenchement": 0.25695,
@@ -951,7 +933,7 @@
    "bruit": 5.367166454706298,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "ZECUSDT|retournement|1398.49": {
@@ -987,7 +969,7 @@
    "bruit": 10.20637802377634,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "BLESSUSDT|continuation|0.0146": {
@@ -1095,7 +1077,7 @@
    "bruit": 3.491813203064949,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -1257,7 +1239,7 @@
    "bruit": 4.051719973399105,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "SOLUSDT|retournement|98.51": {
@@ -1275,7 +1257,7 @@
    "bruit": 4.753873061900083,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "XRPUSDT|retournement|1.274": {
@@ -1293,7 +1275,7 @@
    "bruit": 5.002884661042116,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "NEARUSDT|retournement|4.431": {
@@ -1311,7 +1293,7 @@
    "bruit": 11.392838376101365,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.19668": {
@@ -1329,7 +1311,7 @@
    "bruit": 11.875669989567648,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "BEAMUSDT|continuation|0.0053945": {
@@ -1346,8 +1328,8 @@
    "sym": "BEAMUSDT",
    "bruit": 7.712120397308482,
    "tick": 1e-07,
-   "etape": "pret",
-   "vu": 1793433753260,
+   "etape": "formation",
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "DOGEUSDT|retournement|0.07679": {
@@ -1365,7 +1347,7 @@
    "bruit": 5.483396897556201,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "AVAXUSDT|retournement|8.671": {
@@ -1383,7 +1365,7 @@
    "bruit": 6.908852058046499,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "ZROUSDT|retournement|1.7751": {
@@ -1401,7 +1383,7 @@
    "bruit": 12.075382677765756,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "PUMPFUNUSDT|retournement|0.004214": {
@@ -1419,7 +1401,7 @@
    "bruit": 12.663519932835113,
    "tick": 1e-06,
    "etape": "pret",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "XLMUSDT|retournement|0.1722": {
@@ -1437,7 +1419,7 @@
    "bruit": 5.7808977980186915,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "STRKUSDT|retournement|0.04551": {
@@ -1491,7 +1473,7 @@
    "bruit": 5.266198994370209,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "CRVUSDT|retournement|0.2916": {
@@ -1545,7 +1527,7 @@
    "bruit": 14.441248430474136,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   },
   "BIRBUSDT|continuation|0.104": {
@@ -1563,7 +1545,7 @@
    "bruit": 17.195584211705526,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793433753260,
+   "vu": 1793437351912,
    "t_decl": 0
   }
  },
