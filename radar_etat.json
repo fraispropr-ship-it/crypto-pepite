@@ -303,7 +303,7 @@
    "bruit": 11.764681916977619,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793404949670,
+   "vu": 1793408553455,
    "t_decl": 0
   },
   "ETHUSDT|retournement|2391.3": {
@@ -1023,7 +1023,7 @@
    "bruit": 5.367166454706298,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793404949670,
+   "vu": 1793408553455,
    "t_decl": 0
   },
   "ZECUSDT|retournement|1398.49": {
@@ -1041,7 +1041,7 @@
    "bruit": 9.123761180282779,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793404949670,
+   "vu": 1793408553455,
    "t_decl": 0
   },
   "PARTIUSDT|continuation|0.06481": {
@@ -1059,7 +1059,7 @@
    "bruit": 10.20637802377634,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793404949670,
+   "vu": 1793408553455,
    "t_decl": 0
   },
   "BLESSUSDT|continuation|0.0146": {
@@ -1113,7 +1113,7 @@
    "bruit": 17.61970079027652,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793404949670,
+   "vu": 1793408553455,
    "t_decl": 0
   },
   "QUSDT|retournement|0.06391": {
@@ -1130,8 +1130,8 @@
    "sym": "QUSDT",
    "bruit": 71.76834998330298,
    "tick": 1e-05,
-   "etape": "pret",
-   "vu": 1793404949670,
+   "etape": "formation",
+   "vu": 1793408553455,
    "t_decl": 0
   },
   "DOODUSDT|retournement|0.002957": {
@@ -1166,8 +1166,8 @@
    "sym": "BNBUSDT",
    "bruit": 3.491813203064949,
    "tick": 0.01,
-   "etape": "formation",
-   "vu": 1793404949670,
+   "etape": "pret",
+   "vu": 1793408553455,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -1185,7 +1185,7 @@
    "bruit": 17.61970079027652,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793404949670,
+   "vu": 1793408553455,
    "t_decl": 0
   },
   "HBARUSDT|retournement|0.07246": {
@@ -1202,9 +1202,63 @@
    "sym": "HBARUSDT",
    "bruit": 7.413766319413254,
    "tick": 1e-05,
-   "etape": "pret",
+   "etape": "declenche",
    "vu": 1793404949670,
-   "t_decl": 0
+   "t_decl": 1793408400000.0,
+   "entree": 0.07299,
+   "sl": 0.07019,
+   "objectif": 0.07859,
+   "feu": "🟠",
+   "date_decl": "2026-10-31 02:00",
+   "mesures_impulsion": {
+    "h1_amplitude": 0.00085,
+    "h1_amplitude_atr": 0.9496,
+    "h1_position_cloture": 0.9647,
+    "h1_corps_pct": 0.8706,
+    "m15_complet": true,
+    "m15_bougies": [
+     {
+      "heure_utc": "2026-10-31T00:00:00+00:00",
+      "o": 0.07225,
+      "h": 0.07244,
+      "l": 0.07217,
+      "c": 0.07243,
+      "amplitude": 0.00027,
+      "corps_pct": 0.6667,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-10-31T00:15:00+00:00",
+      "o": 0.07243,
+      "h": 0.07261,
+      "l": 0.07232,
+      "c": 0.07258,
+      "amplitude": 0.00029,
+      "corps_pct": 0.5172,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-10-31T00:30:00+00:00",
+      "o": 0.07258,
+      "h": 0.073,
+      "l": 0.07256,
+      "c": 0.0729,
+      "amplitude": 0.00044,
+      "corps_pct": 0.7273,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-10-31T00:45:00+00:00",
+      "o": 0.0729,
+      "h": 0.07302,
+      "l": 0.07276,
+      "c": 0.07299,
+      "amplitude": 0.00026,
+      "corps_pct": 0.3462,
+      "direction": "hausse"
+     }
+    ]
+   }
   }
  },
  "dernier_resume": 124541
