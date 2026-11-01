@@ -108,24 +108,6 @@
    "vu": 1793408553455,
    "t_decl": 0
   },
-  "DOODUSDT|retournement|0.002957": {
-   "type": "retournement",
-   "declenchement": 0.002957,
-   "invalidation": 0.001639973650739167,
-   "atr": 0.00018675449753610988,
-   "info": {
-    "creux1": 0.001376,
-    "creux2": 0.001696,
-    "baisse_atr": 19.6
-   },
-   "id": "DOODUSDT|retournement|0.002957",
-   "sym": "DOODUSDT",
-   "bruit": 21.099873702698876,
-   "tick": 1e-06,
-   "etape": "disparu",
-   "vu": 1793401349956,
-   "t_decl": 0
-  },
   "BNBUSDT|retournement|720.73": {
    "type": "retournement",
    "declenchement": 720.73,
@@ -141,7 +123,7 @@
    "bruit": 3.4057255056838347,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793570550705,
+   "vu": 1793574150680,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -321,7 +303,7 @@
    "bruit": 4.655943543155387,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793570550705,
+   "vu": 1793574150680,
    "t_decl": 0
   },
   "XRPUSDT|retournement|1.274": {
@@ -339,7 +321,7 @@
    "bruit": 4.869518780009813,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793570550705,
+   "vu": 1793574150680,
    "t_decl": 0
   },
   "NEARUSDT|retournement|4.431": {
@@ -465,7 +447,7 @@
    "bruit": 5.333708077528179,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793570550705,
+   "vu": 1793574150680,
    "t_decl": 0
   },
   "AVAXUSDT|retournement|8.671": {
@@ -1401,7 +1383,7 @@
    "bruit": 14.994649016832991,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793570550705,
+   "vu": 1793574150680,
    "t_decl": 0
   },
   "AAVEUSDT|retournement|140.89": {
@@ -1437,7 +1419,7 @@
    "bruit": 6.996895566133247,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793570550705,
+   "vu": 1793574150680,
    "t_decl": 0
   },
   "BEAMUSDT|continuation|0.0063716": {
@@ -1455,7 +1437,7 @@
    "bruit": 7.475146433644357,
    "tick": 1e-07,
    "etape": "formation",
-   "vu": 1793570550705,
+   "vu": 1793574150680,
    "t_decl": 0
   },
   "EVAAUSDT|continuation|1.742": {
@@ -1473,7 +1455,7 @@
    "bruit": 12.115739103512091,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793570550705,
+   "vu": 1793574150680,
    "t_decl": 0
   }
  },
