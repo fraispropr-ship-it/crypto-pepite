@@ -159,7 +159,7 @@
    "bruit": 3.4057255056838347,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -339,7 +339,7 @@
    "bruit": 4.655943543155387,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "XRPUSDT|retournement|1.274": {
@@ -357,7 +357,7 @@
    "bruit": 4.869518780009813,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "NEARUSDT|retournement|4.431": {
@@ -447,7 +447,7 @@
    "bruit": 11.599299191950202,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "BEAMUSDT|continuation|0.0053945": {
@@ -482,8 +482,8 @@
    "sym": "DOGEUSDT",
    "bruit": 5.333708077528179,
    "tick": 1e-05,
-   "etape": "formation",
-   "vu": 1793538148233,
+   "etape": "pret",
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "AVAXUSDT|retournement|8.671": {
@@ -807,7 +807,7 @@
    "bruit": 7.396391812382975,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.227": {
@@ -897,7 +897,7 @@
    "bruit": 12.167496482113586,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "ONDOUSDT|retournement|0.4229": {
@@ -915,7 +915,7 @@
    "bruit": 8.329704219896488,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "NILUSDT|retournement|0.08201": {
@@ -1239,7 +1239,7 @@
    "bruit": 9.739723594157754,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "RSRUSDT|retournement|0.0017444": {
@@ -1275,7 +1275,7 @@
    "bruit": 9.864568523557567,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "STRKUSDT|retournement|0.04605": {
@@ -1293,7 +1293,7 @@
    "bruit": 18.292085896123655,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "LINKUSDT|retournement|11.942": {
@@ -1311,7 +1311,7 @@
    "bruit": 6.187773504815662,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "XMRUSDT|retournement|611.39": {
@@ -1329,7 +1329,7 @@
    "bruit": 5.848868183597453,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   },
   "ZROUSDT|retournement|1.888": {
@@ -1346,9 +1346,63 @@
    "sym": "ZROUSDT",
    "bruit": 11.087039064659471,
    "tick": 0.0001,
-   "etape": "pret",
+   "etape": "declenche",
    "vu": 1793538148233,
-   "t_decl": 0
+   "t_decl": 1793541600000.0,
+   "entree": 1.9176,
+   "sl": 1.7885,
+   "objectif": 2.1757999999999997,
+   "feu": "🟠",
+   "date_decl": "2026-11-01 15:00",
+   "mesures_impulsion": {
+    "h1_amplitude": 0.0513,
+    "h1_amplitude_atr": 1.4277,
+    "h1_position_cloture": 0.9045,
+    "h1_corps_pct": 0.8928,
+    "m15_complet": true,
+    "m15_bougies": [
+     {
+      "heure_utc": "2026-11-01T13:00:00+00:00",
+      "o": 1.8718,
+      "h": 1.8904,
+      "l": 1.8712,
+      "c": 1.8855,
+      "amplitude": 0.0192,
+      "corps_pct": 0.7135,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-01T13:15:00+00:00",
+      "o": 1.8855,
+      "h": 1.8946,
+      "l": 1.8799,
+      "c": 1.8937,
+      "amplitude": 0.0147,
+      "corps_pct": 0.5578,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-01T13:30:00+00:00",
+      "o": 1.8937,
+      "h": 1.9182,
+      "l": 1.8889,
+      "c": 1.8993,
+      "amplitude": 0.0293,
+      "corps_pct": 0.1911,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-01T13:45:00+00:00",
+      "o": 1.8993,
+      "h": 1.9225,
+      "l": 1.8987,
+      "c": 1.9176,
+      "amplitude": 0.0238,
+      "corps_pct": 0.7689,
+      "direction": "hausse"
+     }
+    ]
+   }
   },
   "MAGMAUSDT|retournement|0.468": {
    "type": "retournement",
@@ -1365,7 +1419,7 @@
    "bruit": 14.994649016832991,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793538148233,
+   "vu": 1793541752953,
    "t_decl": 0
   }
  },
