@@ -18,24 +18,6 @@
    "vu": 1793458952511,
    "t_decl": 0
   },
-  "PARTIUSDT|continuation|0.06481": {
-   "type": "continuation",
-   "declenchement": 0.06481,
-   "invalidation": 0.04470484323583234,
-   "atr": 0.0047171892138921905,
-   "info": {
-    "repli_atr": 4.0,
-    "age_h4": 10,
-    "calme": true
-   },
-   "id": "PARTIUSDT|continuation|0.06481",
-   "sym": "PARTIUSDT",
-   "bruit": 10.20637802377634,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1793455353056,
-   "t_decl": 0
-  },
   "BNBUSDT|retournement|720.73": {
    "type": "retournement",
    "declenchement": 720.73,
@@ -51,7 +33,7 @@
    "bruit": 3.297754798655688,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793624553338,
+   "vu": 1793628153850,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -249,7 +231,7 @@
    "bruit": 4.674641472802571,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793624553338,
+   "vu": 1793628153850,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.19668": {
@@ -303,7 +285,7 @@
    "bruit": 5.167455932890765,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793624553338,
+   "vu": 1793628153850,
    "t_decl": 0
   },
   "AVAXUSDT|retournement|8.671": {
@@ -484,24 +466,6 @@
    "tick": 0.0001,
    "etape": "disparu",
    "vu": 1793476951318,
-   "t_decl": 0
-  },
-  "BIRBUSDT|continuation|0.104": {
-   "type": "continuation",
-   "declenchement": 0.104,
-   "invalidation": 0.07628172235494601,
-   "atr": 0.0074275921501799355,
-   "info": {
-    "repli_atr": 3.4,
-    "age_h4": 9,
-    "calme": true
-   },
-   "id": "BIRBUSDT|continuation|0.104",
-   "sym": "BIRBUSDT",
-   "bruit": 19.123963574153642,
-   "tick": 1e-05,
-   "etape": "invalide",
-   "vu": 1793451758828,
    "t_decl": 0
   },
   "SUIUSDT|retournement|0.9137": {
@@ -1185,17 +1149,17 @@
    "bruit": 8.230519882606556,
    "tick": 1e-07,
    "etape": "formation",
-   "vu": 1793624553338,
+   "vu": 1793628153850,
    "t_decl": 0
   },
   "EVAAUSDT|continuation|1.742": {
    "type": "continuation",
    "declenchement": 1.742,
-   "invalidation": 1.085775319207044,
-   "atr": 0.1674156026431859,
+   "invalidation": 1.0872863672680766,
+   "atr": 0.1623787757730778,
    "info": {
-    "repli_atr": 3.6,
-    "age_h4": 6,
+    "repli_atr": 3.7,
+    "age_h4": 7,
     "calme": true
    },
    "id": "EVAAUSDT|continuation|1.742",
@@ -1311,7 +1275,7 @@
    "bruit": 8.274750717361014,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1793624553338,
+   "vu": 1793628153850,
    "t_decl": 0
   },
   "FLOCKUSDT|retournement|0.04671": {
@@ -1382,8 +1346,8 @@
    "sym": "ZECUSDT",
    "bruit": 8.893371251619719,
    "tick": 0.01,
-   "etape": "formation",
-   "vu": 1793624553338,
+   "etape": "pret",
+   "vu": 1793628153850,
    "t_decl": 0
   },
   "AVAXUSDT|retournement|9.034": {
@@ -1527,7 +1491,7 @@
    "bruit": 3.717405883174299,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793624553338,
+   "vu": 1793628153850,
    "t_decl": 0
   },
   "ESPORTSUSDT|continuation|0.02239": {
@@ -1545,7 +1509,7 @@
    "bruit": 8.507010383285714,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793624553338,
+   "vu": 1793628153850,
    "t_decl": 0
   },
   "APRUSDT|retournement|0.0779": {
@@ -1581,7 +1545,7 @@
    "bruit": 19.90768450782952,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793624553338,
+   "vu": 1793628153850,
    "t_decl": 0
   }
  },
