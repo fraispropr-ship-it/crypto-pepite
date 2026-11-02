@@ -15,7 +15,7 @@
    "bruit": 3.297754798655688,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793649750806,
+   "vu": 1793653355852,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -141,7 +141,7 @@
    "bruit": 4.674641472802571,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793649750806,
+   "vu": 1793653355852,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.19668": {
@@ -359,24 +359,6 @@
      }
     ]
    }
-  },
-  "XLMUSDT|retournement|0.1722": {
-   "type": "retournement",
-   "declenchement": 0.1722,
-   "invalidation": 0.16499738180982151,
-   "atr": 0.0026753939672616127,
-   "info": {
-    "creux1": 0.1575,
-    "creux2": 0.1658,
-    "baisse_atr": 6.6
-   },
-   "id": "XLMUSDT|retournement|0.1722",
-   "sym": "XLMUSDT",
-   "bruit": 5.475178947645854,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1793476951318,
-   "t_decl": 0
   },
   "SUIUSDT|retournement|0.9137": {
    "type": "retournement",
@@ -914,7 +896,7 @@
    "sym": "BEAMUSDT",
    "bruit": 8.230519882606556,
    "tick": 1e-07,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1793649750806,
    "t_decl": 0
   },
