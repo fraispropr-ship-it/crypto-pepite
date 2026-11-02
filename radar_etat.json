@@ -15,7 +15,7 @@
    "bruit": 3.297754798655688,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793656953990,
+   "vu": 1793660565215,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -90,24 +90,6 @@
     ]
    }
   },
-  "ETHUSDT|retournement|2261.29": {
-   "type": "retournement",
-   "declenchement": 2261.29,
-   "invalidation": 2206.0318115576742,
-   "atr": 31.89396147441865,
-   "info": {
-    "creux1": 2172.71,
-    "creux2": 2215.6,
-    "baisse_atr": 6.9
-   },
-   "id": "ETHUSDT|retournement|2261.29",
-   "sym": "ETHUSDT",
-   "bruit": 4.051719973399105,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1793487754140,
-   "t_decl": 0
-  },
   "SOLUSDT|retournement|98.51": {
    "type": "retournement",
    "declenchement": 98.51,
@@ -141,7 +123,7 @@
    "bruit": 4.674641472802571,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793656953990,
+   "vu": 1793660565215,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.19668": {
@@ -520,60 +502,6 @@
    "tick": 0.0001,
    "etape": "disparu",
    "vu": 1793502152954,
-   "t_decl": 0
-  },
-  "OPUSDT|retournement|0.12193": {
-   "type": "retournement",
-   "declenchement": 0.12193,
-   "invalidation": 0.11017837661270291,
-   "atr": 0.0039720779576569686,
-   "info": {
-    "creux1": 0.09315,
-    "creux2": 0.11137,
-    "baisse_atr": 5.7
-   },
-   "id": "OPUSDT|retournement|0.12193",
-   "sym": "OPUSDT",
-   "bruit": 10.369273058829231,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1793487754140,
-   "t_decl": 0
-  },
-  "XMRUSDT|retournement|602.46": {
-   "type": "retournement",
-   "declenchement": 602.46,
-   "invalidation": 583.3896021052301,
-   "atr": 15.934659649232767,
-   "info": {
-    "creux1": 574.35,
-    "creux2": 588.17,
-    "baisse_atr": 4.9
-   },
-   "id": "XMRUSDT|retournement|602.46",
-   "sym": "XMRUSDT",
-   "bruit": 6.159867819354605,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1793487754140,
-   "t_decl": 0
-  },
-  "TAOUSDT|retournement|239.8": {
-   "type": "retournement",
-   "declenchement": 239.8,
-   "invalidation": 229.74987124900017,
-   "atr": 4.733762503332779,
-   "info": {
-    "creux1": 218.91,
-    "creux2": 231.17,
-    "baisse_atr": 9.2
-   },
-   "id": "TAOUSDT|retournement|239.8",
-   "sym": "TAOUSDT",
-   "bruit": 7.274012079440017,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1793487754140,
    "t_decl": 0
   },
   "WETUSDT|continuation|0.06733": {
