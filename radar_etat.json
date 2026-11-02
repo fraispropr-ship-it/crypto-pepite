@@ -15,7 +15,7 @@
    "bruit": 3.297754798655688,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793642556954,
+   "vu": 1793646166010,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -141,7 +141,7 @@
    "bruit": 4.674641472802571,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793642556954,
+   "vu": 1793646166010,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.19668": {
@@ -576,24 +576,6 @@
    "vu": 1793487754140,
    "t_decl": 0
   },
-  "MAGMAUSDT|retournement|0.43": {
-   "type": "retournement",
-   "declenchement": 0.43,
-   "invalidation": 0.3859335027589612,
-   "atr": 0.030221657470129403,
-   "info": {
-    "creux1": 0.2426,
-    "creux2": 0.395,
-    "baisse_atr": 9.5
-   },
-   "id": "MAGMAUSDT|retournement|0.43",
-   "sym": "MAGMAUSDT",
-   "bruit": 17.61970079027652,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1793473352452,
-   "t_decl": 0
-  },
   "TAOUSDT|retournement|239.8": {
    "type": "retournement",
    "declenchement": 239.8,
@@ -610,24 +592,6 @@
    "tick": 0.01,
    "etape": "disparu",
    "vu": 1793487754140,
-   "t_decl": 0
-  },
-  "BCHUSDT|retournement|297.83": {
-   "type": "retournement",
-   "declenchement": 297.83,
-   "invalidation": 284.57496587987134,
-   "atr": 8.216780400428899,
-   "info": {
-    "creux1": 262.8,
-    "creux2": 287.04,
-    "baisse_atr": 5.1
-   },
-   "id": "BCHUSDT|retournement|297.83",
-   "sym": "BCHUSDT",
-   "bruit": 5.939068111743428,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1793473352452,
    "t_decl": 0
   },
   "WETUSDT|continuation|0.06733": {
@@ -951,7 +915,7 @@
    "bruit": 8.230519882606556,
    "tick": 1e-07,
    "etape": "formation",
-   "vu": 1793642556954,
+   "vu": 1793646166010,
    "t_decl": 0
   },
   "EVAAUSDT|continuation|1.742": {
@@ -1077,7 +1041,7 @@
    "bruit": 8.274750717361014,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793642556954,
+   "vu": 1793646166010,
    "t_decl": 0
   },
   "FLOCKUSDT|retournement|0.04671": {
@@ -1310,7 +1274,7 @@
    "sym": "ESPORTSUSDT",
    "bruit": 8.507010383285714,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1793642556954,
    "t_decl": 0
   },
@@ -1365,7 +1329,7 @@
    "bruit": 11.138700621714364,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793642556954,
+   "vu": 1793646166010,
    "t_decl": 0
   }
  },
