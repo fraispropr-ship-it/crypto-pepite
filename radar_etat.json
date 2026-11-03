@@ -108,24 +108,6 @@
     ]
    }
   },
-  "ENAUSDT|retournement|0.19668": {
-   "type": "retournement",
-   "declenchement": 0.19668,
-   "invalidation": 0.16568386333856244,
-   "atr": 0.0069204555381252005,
-   "info": {
-    "creux1": 0.16556,
-    "creux2": 0.16776,
-    "baisse_atr": 7.6
-   },
-   "id": "ENAUSDT|retournement|0.19668",
-   "sym": "ENAUSDT",
-   "bruit": 12.460550112590912,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1793559759073,
-   "t_decl": 0
-  },
   "DOGEUSDT|retournement|0.07679": {
    "type": "retournement",
    "declenchement": 0.07679,
@@ -142,96 +124,6 @@
    "tick": 1e-05,
    "etape": "invalide",
    "vu": 1793639279424,
-   "t_decl": 0
-  },
-  "SUIUSDT|retournement|0.9137": {
-   "type": "retournement",
-   "declenchement": 0.9137,
-   "invalidation": 0.8527299257801046,
-   "atr": 0.01790024739965102,
-   "info": {
-    "creux1": 0.8238,
-    "creux2": 0.8581,
-    "baisse_atr": 7.9
-   },
-   "id": "SUIUSDT|retournement|0.9137",
-   "sym": "SUIUSDT",
-   "bruit": 7.250407627801501,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1793559759073,
-   "t_decl": 0
-  },
-  "WLDUSDT|retournement|0.4181": {
-   "type": "retournement",
-   "declenchement": 0.4181,
-   "invalidation": 0.35977210006916505,
-   "atr": 0.01142633310278334,
-   "info": {
-    "creux1": 0.3594,
-    "creux2": 0.3632,
-    "baisse_atr": 9.9
-   },
-   "id": "WLDUSDT|retournement|0.4181",
-   "sym": "WLDUSDT",
-   "bruit": 12.209893687071945,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1793559759073,
-   "t_decl": 0
-  },
-  "ONDOUSDT|retournement|0.4229": {
-   "type": "retournement",
-   "declenchement": 0.4229,
-   "invalidation": 0.376620751649969,
-   "atr": 0.008930827833436735,
-   "info": {
-    "creux1": 0.3605,
-    "creux2": 0.3793,
-    "baisse_atr": 8.4
-   },
-   "id": "ONDOUSDT|retournement|0.4229",
-   "sym": "ONDOUSDT",
-   "bruit": 8.501749248836381,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1793559759073,
-   "t_decl": 0
-  },
-  "STXUSDT|retournement|0.3403": {
-   "type": "retournement",
-   "declenchement": 0.3403,
-   "invalidation": 0.31291425822301383,
-   "atr": 0.011952472589953958,
-   "info": {
-    "creux1": 0.2673,
-    "creux2": 0.3165,
-    "baisse_atr": 4.7
-   },
-   "id": "STXUSDT|retournement|0.3403",
-   "sym": "STXUSDT",
-   "bruit": 9.864568523557567,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1793559759073,
-   "t_decl": 0
-  },
-  "LINKUSDT|retournement|11.942": {
-   "type": "retournement",
-   "declenchement": 11.942,
-   "invalidation": 10.915211367008801,
-   "atr": 0.22929544330399768,
-   "info": {
-    "creux1": 10.251,
-    "creux2": 10.984,
-    "baisse_atr": 7.7
-   },
-   "id": "LINKUSDT|retournement|11.942",
-   "sym": "LINKUSDT",
-   "bruit": 6.30698284815503,
-   "tick": 0.001,
-   "etape": "disparu",
-   "vu": 1793559759073,
    "t_decl": 0
   },
   "MAGMAUSDT|retournement|0.468": {
@@ -717,7 +609,7 @@
    "bruit": 10.672852390487076,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793728955894,
+   "vu": 1793732564280,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -897,7 +789,7 @@
    "bruit": 8.743688076996635,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793728955894,
+   "vu": 1793732564280,
    "t_decl": 0
   },
   "XLMUSDT|retournement|0.1722": {
@@ -915,7 +807,7 @@
    "bruit": 5.623513961149729,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793728955894,
+   "vu": 1793732564280,
    "t_decl": 0
   },
   "OPUSDT|retournement|0.12193": {
@@ -934,6 +826,24 @@
    "tick": 1e-05,
    "etape": "disparu",
    "vu": 1793721754565,
+   "t_decl": 0
+  },
+  "AAVEUSDT|retournement|140.89": {
+   "type": "retournement",
+   "declenchement": 140.89,
+   "invalidation": 122.80822701063833,
+   "atr": 3.372576631205521,
+   "info": {
+    "creux1": 114.93,
+    "creux2": 123.82,
+    "baisse_atr": 7.1
+   },
+   "id": "AAVEUSDT|retournement|140.89",
+   "sym": "AAVEUSDT",
+   "bruit": 7.817662529191781,
+   "tick": 0.01,
+   "etape": "disparu",
+   "vu": 1793732564280,
    "t_decl": 0
   }
  },
