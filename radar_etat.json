@@ -342,24 +342,6 @@
    "vu": 1793559759073,
    "t_decl": 0
   },
-  "INJUSDT|retournement|7.575": {
-   "type": "retournement",
-   "declenchement": 7.575,
-   "invalidation": 6.926767320737829,
-   "atr": 0.22077559754057163,
-   "info": {
-    "creux1": 6.859,
-    "creux2": 6.993,
-    "baisse_atr": 6.5
-   },
-   "id": "INJUSDT|retournement|7.575",
-   "sym": "INJUSDT",
-   "bruit": 9.545284090260658,
-   "tick": 0.001,
-   "etape": "disparu",
-   "vu": 1793545350941,
-   "t_decl": 0
-  },
   "STXUSDT|retournement|0.3403": {
    "type": "retournement",
    "declenchement": 0.3403,
@@ -378,24 +360,6 @@
    "vu": 1793559759073,
    "t_decl": 0
   },
-  "STRKUSDT|retournement|0.04605": {
-   "type": "retournement",
-   "declenchement": 0.04605,
-   "invalidation": 0.03990051653801754,
-   "atr": 0.0013649448732748668,
-   "info": {
-    "creux1": 0.03976,
-    "creux2": 0.04031,
-    "baisse_atr": 6.3
-   },
-   "id": "STRKUSDT|retournement|0.04605",
-   "sym": "STRKUSDT",
-   "bruit": 18.454599450813383,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1793545350941,
-   "t_decl": 0
-  },
   "LINKUSDT|retournement|11.942": {
    "type": "retournement",
    "declenchement": 11.942,
@@ -412,24 +376,6 @@
    "tick": 0.001,
    "etape": "disparu",
    "vu": 1793559759073,
-   "t_decl": 0
-  },
-  "XMRUSDT|retournement|611.39": {
-   "type": "retournement",
-   "declenchement": 611.39,
-   "invalidation": 588.0621759075871,
-   "atr": 11.992746974709718,
-   "info": {
-    "creux1": 574.35,
-    "creux2": 591.66,
-    "baisse_atr": 6.5
-   },
-   "id": "XMRUSDT|retournement|611.39",
-   "sym": "XMRUSDT",
-   "bruit": 5.729027072714602,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1793545350941,
    "t_decl": 0
   },
   "MAGMAUSDT|retournement|0.468": {
@@ -933,7 +879,7 @@
    "bruit": 10.672852390487076,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793714556117,
+   "vu": 1793718157705,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -1113,7 +1059,7 @@
    "bruit": 8.743688076996635,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793714556117,
+   "vu": 1793718157705,
    "t_decl": 0
   },
   "XLMUSDT|retournement|0.1722": {
@@ -1131,7 +1077,7 @@
    "bruit": 5.623513961149729,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793714556117,
+   "vu": 1793718157705,
    "t_decl": 0
   }
  },
