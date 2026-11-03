@@ -15,7 +15,7 @@
    "bruit": 3.3561167775409886,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793678556230,
+   "vu": 1793682154075,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -123,7 +123,7 @@
    "bruit": 4.569984609636033,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793678556230,
+   "vu": 1793682154075,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.19668": {
@@ -1203,7 +1203,7 @@
    "bruit": 10.672852390487076,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793678556230,
+   "vu": 1793682154075,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -1239,7 +1239,7 @@
    "bruit": 7.538950666204385,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793678556230,
+   "vu": 1793682154075,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3195": {
@@ -1365,7 +1365,7 @@
    "bruit": 6.732712931987603,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793678556230,
+   "vu": 1793682154075,
    "t_decl": 0
   }
  },
