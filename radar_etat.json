@@ -15,7 +15,7 @@
    "bruit": 3.3561167775409886,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793664148205,
+   "vu": 1793667754825,
    "t_decl": 0
   },
   "MAGMAUSDT|continuation|0.394": {
@@ -123,7 +123,7 @@
    "bruit": 4.569984609636033,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793664148205,
+   "vu": 1793667754825,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.19668": {
@@ -1257,7 +1257,7 @@
    "bruit": 10.672852390487076,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793664148205,
+   "vu": 1793667754825,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -1275,7 +1275,7 @@
    "bruit": 6.0005990451507,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793664148205,
+   "vu": 1793667754825,
    "t_decl": 0
   },
   "TAOUSDT|retournement|239.8": {
@@ -1293,7 +1293,7 @@
    "bruit": 7.538950666204385,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793664148205,
+   "vu": 1793667754825,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3195": {
@@ -1310,9 +1310,63 @@
    "sym": "TRXUSDT",
    "bruit": 2.6507960739513634,
    "tick": 0.0001,
-   "etape": "pret",
+   "etape": "declenche",
    "vu": 1793664148205,
-   "t_decl": 0
+   "t_decl": 1793667600000.0,
+   "entree": 0.3203,
+   "sl": 0.3153,
+   "objectif": 0.33029999999999987,
+   "feu": "🟠",
+   "date_decl": "2026-11-03 02:00",
+   "mesures_impulsion": {
+    "h1_amplitude": 0.0011,
+    "h1_amplitude_atr": 0.9032,
+    "h1_position_cloture": 0.9091,
+    "h1_corps_pct": 0.9091,
+    "m15_complet": true,
+    "m15_bougies": [
+     {
+      "heure_utc": "2026-11-03T00:00:00+00:00",
+      "o": 0.3193,
+      "h": 0.32,
+      "l": 0.3193,
+      "c": 0.32,
+      "amplitude": 0.0007,
+      "corps_pct": 1.0,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-03T00:15:00+00:00",
+      "o": 0.32,
+      "h": 0.32,
+      "l": 0.3198,
+      "c": 0.32,
+      "amplitude": 0.0002,
+      "corps_pct": 0.0,
+      "direction": "neutre"
+     },
+     {
+      "heure_utc": "2026-11-03T00:30:00+00:00",
+      "o": 0.32,
+      "h": 0.3202,
+      "l": 0.32,
+      "c": 0.3201,
+      "amplitude": 0.0002,
+      "corps_pct": 0.5,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-03T00:45:00+00:00",
+      "o": 0.3201,
+      "h": 0.3204,
+      "l": 0.3201,
+      "c": 0.3203,
+      "amplitude": 0.0003,
+      "corps_pct": 0.6667,
+      "direction": "hausse"
+     }
+    ]
+   }
   },
   "LTCUSDT|retournement|56.45": {
    "type": "retournement",
@@ -1329,7 +1383,7 @@
    "bruit": 5.22226824395524,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793664148205,
+   "vu": 1793667754825,
    "t_decl": 0
   },
   "FARTCOINUSDT|retournement|0.12449": {
@@ -1347,7 +1401,7 @@
    "bruit": 10.625019740488625,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793664148205,
+   "vu": 1793667754825,
    "t_decl": 0
   }
  },
