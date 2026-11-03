@@ -1,0 +1,57 @@
+name: Radar ALT - Prealerte resistance
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Diagnostic sans envoyer de messages'
+        type: boolean
+        default: true
+  push:
+    paths:
+      - 'radar_resistance.py'
+      - 'test_radar_resistance.py'
+      - '.github/workflows/resistance-prealert.yml'
+permissions:
+  contents: write
+concurrency:
+  group: radar-resistance
+  cancel-in-progress: false
+jobs:
+  prealert:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - name: Tests de detection
+        run: python -m unittest -v test_radar_resistance.py
+      - name: Scan Zoomex M15
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DRY_RUN: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python radar_resistance.py --dry-run
+          else
+            python radar_resistance.py
+          fi
+      - name: Enregistrer observations et anti-doublons
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && !inputs.dry_run)
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "radar-bot@users.noreply.github.com"
+          git add resistance_state.json
+          if [ -f resistance_events.jsonl ]; then git add resistance_events.jsonl; fi
+          git diff --cached --quiet && exit 0
+          git commit -m "Resistance M15: observations et etat"
+          for i in 1 2 3; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+          done
+          exit 1
