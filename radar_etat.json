@@ -50,9 +50,63 @@
    "sym": "XRPUSDT",
    "bruit": 4.569984609636033,
    "tick": 0.0001,
-   "etape": "formation",
+   "etape": "declenche",
    "vu": 1793707350166,
-   "t_decl": 0
+   "t_decl": 1793710800000.0,
+   "entree": 1.2816,
+   "sl": 1.2234,
+   "objectif": 1.3980000000000001,
+   "feu": "🟠",
+   "date_decl": "2026-11-03 14:00",
+   "mesures_impulsion": {
+    "h1_amplitude": 0.0323,
+    "h1_amplitude_atr": 3.6833,
+    "h1_position_cloture": 0.7895,
+    "h1_corps_pct": 0.7492,
+    "m15_complet": true,
+    "m15_bougies": [
+     {
+      "heure_utc": "2026-11-03T12:00:00+00:00",
+      "o": 1.2574,
+      "h": 1.261,
+      "l": 1.2561,
+      "c": 1.2609,
+      "amplitude": 0.0049,
+      "corps_pct": 0.7143,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-03T12:15:00+00:00",
+      "o": 1.2609,
+      "h": 1.2884,
+      "l": 1.2606,
+      "c": 1.2808,
+      "amplitude": 0.0278,
+      "corps_pct": 0.7158,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-03T12:30:00+00:00",
+      "o": 1.2808,
+      "h": 1.287,
+      "l": 1.2785,
+      "c": 1.2836,
+      "amplitude": 0.0085,
+      "corps_pct": 0.3294,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-03T12:45:00+00:00",
+      "o": 1.2836,
+      "h": 1.2878,
+      "l": 1.2808,
+      "c": 1.2816,
+      "amplitude": 0.007,
+      "corps_pct": 0.2857,
+      "direction": "baisse"
+     }
+    ]
+   }
   },
   "ENAUSDT|retournement|0.19668": {
    "type": "retournement",
@@ -377,78 +431,6 @@
    "etape": "disparu",
    "vu": 1793545350941,
    "t_decl": 0
-  },
-  "ZROUSDT|retournement|1.888": {
-   "type": "retournement",
-   "declenchement": 1.888,
-   "invalidation": 1.788473506645884,
-   "atr": 0.08108831118038659,
-   "info": {
-    "creux1": 1.4164,
-    "creux2": 1.8128,
-    "baisse_atr": 4.7
-   },
-   "id": "ZROUSDT|retournement|1.888",
-   "sym": "ZROUSDT",
-   "bruit": 11.087039064659471,
-   "tick": 0.0001,
-   "etape": "termine",
-   "vu": 1793538148233,
-   "t_decl": 1793541600000.0,
-   "entree": 1.9176,
-   "sl": 1.7885,
-   "objectif": 2.1757999999999997,
-   "feu": "🟠",
-   "date_decl": "2026-11-01 15:00",
-   "mesures_impulsion": {
-    "h1_amplitude": 0.0513,
-    "h1_amplitude_atr": 1.4277,
-    "h1_position_cloture": 0.9045,
-    "h1_corps_pct": 0.8928,
-    "m15_complet": true,
-    "m15_bougies": [
-     {
-      "heure_utc": "2026-11-01T13:00:00+00:00",
-      "o": 1.8718,
-      "h": 1.8904,
-      "l": 1.8712,
-      "c": 1.8855,
-      "amplitude": 0.0192,
-      "corps_pct": 0.7135,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-11-01T13:15:00+00:00",
-      "o": 1.8855,
-      "h": 1.8946,
-      "l": 1.8799,
-      "c": 1.8937,
-      "amplitude": 0.0147,
-      "corps_pct": 0.5578,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-11-01T13:30:00+00:00",
-      "o": 1.8937,
-      "h": 1.9182,
-      "l": 1.8889,
-      "c": 1.8993,
-      "amplitude": 0.0293,
-      "corps_pct": 0.1911,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-11-01T13:45:00+00:00",
-      "o": 1.8993,
-      "h": 1.9225,
-      "l": 1.8987,
-      "c": 1.9176,
-      "amplitude": 0.0238,
-      "corps_pct": 0.7689,
-      "direction": "hausse"
-     }
-    ]
-   }
   },
   "MAGMAUSDT|retournement|0.468": {
    "type": "retournement",
@@ -951,7 +933,7 @@
    "bruit": 10.672852390487076,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793707350166,
+   "vu": 1793710951918,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -1131,7 +1113,7 @@
    "bruit": 8.743688076996635,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793707350166,
+   "vu": 1793710951918,
    "t_decl": 0
   },
   "XLMUSDT|retournement|0.1722": {
@@ -1149,7 +1131,7 @@
    "bruit": 5.623513961149729,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793707350166,
+   "vu": 1793710951918,
    "t_decl": 0
   }
  },
