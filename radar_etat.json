@@ -51,7 +51,7 @@
    "bruit": 4.569984609636033,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793700154133,
+   "vu": 1793703754063,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.19668": {
@@ -1005,7 +1005,7 @@
    "bruit": 10.672852390487076,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793700154133,
+   "vu": 1793703754063,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -1167,7 +1167,7 @@
    "bruit": 6.732712931987603,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793700154133,
+   "vu": 1793703754063,
    "t_decl": 0
   },
   "1000PEPEUSDT|retournement|0.005304": {
@@ -1185,7 +1185,7 @@
    "bruit": 8.743688076996635,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793700154133,
+   "vu": 1793703754063,
    "t_decl": 0
   }
  },
