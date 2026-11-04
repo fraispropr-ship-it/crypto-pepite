@@ -270,24 +270,6 @@
     ]
    }
   },
-  "ESPORTSUSDT|continuation|0.02239": {
-   "type": "continuation",
-   "declenchement": 0.02239,
-   "invalidation": 0.01346457603917108,
-   "atr": 0.0021847465360963995,
-   "info": {
-    "repli_atr": 3.8,
-    "age_h4": 4,
-    "calme": false
-   },
-   "id": "ESPORTSUSDT|continuation|0.02239",
-   "sym": "ESPORTSUSDT",
-   "bruit": 8.507010383285714,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1793642556954,
-   "t_decl": 0
-  },
   "ZROUSDT|retournement|1.923": {
    "type": "retournement",
    "declenchement": 1.923,
@@ -321,7 +303,7 @@
    "bruit": 10.577388650424913,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793815351314,
+   "vu": 1793818952402,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -969,7 +951,7 @@
    "bruit": 8.663305112769336,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793815351314,
+   "vu": 1793818952402,
    "t_decl": 0
   },
   "GRAMUSDT|retournement|1.234": {
@@ -1149,7 +1131,7 @@
    "bruit": 106.8291539554083,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793815351314,
+   "vu": 1793818952402,
    "t_decl": 0
   },
   "BIRBUSDT|retournement|0.104": {
@@ -1167,7 +1149,7 @@
    "bruit": 18.465953987008007,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793815351314,
+   "vu": 1793818952402,
    "t_decl": 0
   }
  },
