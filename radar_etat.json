@@ -90,24 +90,6 @@
     ]
    }
   },
-  "DOGEUSDT|retournement|0.07679": {
-   "type": "retournement",
-   "declenchement": 0.07679,
-   "invalidation": 0.07281172028667425,
-   "atr": 0.0010609323777525206,
-   "info": {
-    "creux1": 0.0721,
-    "creux2": 0.07313,
-    "baisse_atr": 8.8
-   },
-   "id": "DOGEUSDT|retournement|0.07679",
-   "sym": "DOGEUSDT",
-   "bruit": 5.033418654157065,
-   "tick": 1e-05,
-   "etape": "invalide",
-   "vu": 1793639279424,
-   "t_decl": 0
-  },
   "BEAMUSDT|continuation|0.0063716": {
    "type": "continuation",
    "declenchement": 0.0063716,
@@ -214,24 +196,6 @@
    "tick": 0.001,
    "etape": "disparu",
    "vu": 1793646166010,
-   "t_decl": 0
-  },
-  "ZECUSDT|retournement|1298.06": {
-   "type": "retournement",
-   "declenchement": 1298.06,
-   "invalidation": 1199.1902304597916,
-   "atr": 36.83256513402842,
-   "info": {
-    "creux1": 1180.37,
-    "creux2": 1210.24,
-    "baisse_atr": 5.9
-   },
-   "id": "ZECUSDT|retournement|1298.06",
-   "sym": "ZECUSDT",
-   "bruit": 8.893371251619719,
-   "tick": 0.01,
-   "etape": "invalide",
-   "vu": 1793639279424,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.09377": {
@@ -357,7 +321,7 @@
    "bruit": 10.577388650424913,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793811754024,
+   "vu": 1793815351314,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -1005,7 +969,7 @@
    "bruit": 8.663305112769336,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793811754024,
+   "vu": 1793815351314,
    "t_decl": 0
   },
   "GRAMUSDT|retournement|1.234": {
@@ -1185,7 +1149,7 @@
    "bruit": 106.8291539554083,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793811754024,
+   "vu": 1793815351314,
    "t_decl": 0
   },
   "BIRBUSDT|retournement|0.104": {
@@ -1203,7 +1167,7 @@
    "bruit": 18.465953987008007,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793811754024,
+   "vu": 1793815351314,
    "t_decl": 0
   }
  },
