@@ -1095,7 +1095,7 @@
    "bruit": 18.465953987008007,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793829760240,
+   "vu": 1793833347243,
    "t_decl": 0
   },
   "BMTUSDT|continuation|0.0326": {
@@ -1113,7 +1113,7 @@
    "bruit": 16.27801538296577,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793829760240,
+   "vu": 1793833347243,
    "t_decl": 0
   },
   "TRXUSDT|retournement|0.3242": {
@@ -1131,7 +1131,7 @@
    "bruit": 2.597503686228146,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793829760240,
+   "vu": 1793833347243,
    "t_decl": 0
   },
   "AXISUSDT|retournement|0.152": {
@@ -1149,7 +1149,7 @@
    "bruit": NaN,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793829760240,
+   "vu": 1793833347243,
    "t_decl": 0
   }
  },
