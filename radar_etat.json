@@ -519,7 +519,7 @@
    "bruit": 10.577388650424913,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793764954127,
+   "vu": 1793768549898,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -699,7 +699,7 @@
    "bruit": 8.520730743530297,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793764954127,
+   "vu": 1793768549898,
    "t_decl": 0
   },
   "XLMUSDT|retournement|0.1722": {
@@ -1059,7 +1059,7 @@
    "bruit": 11.781157796079619,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793764954127,
+   "vu": 1793768549898,
    "t_decl": 0
   }
  },
