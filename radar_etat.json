@@ -357,7 +357,7 @@
    "bruit": 10.577388650424913,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793808149085,
+   "vu": 1793811754024,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -1005,7 +1005,7 @@
    "bruit": 8.663305112769336,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793808149085,
+   "vu": 1793811754024,
    "t_decl": 0
   },
   "GRAMUSDT|retournement|1.234": {
@@ -1185,7 +1185,25 @@
    "bruit": 106.8291539554083,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793808149085,
+   "vu": 1793811754024,
+   "t_decl": 0
+  },
+  "BIRBUSDT|retournement|0.104": {
+   "type": "retournement",
+   "declenchement": 0.104,
+   "invalidation": 0.07421944122131835,
+   "atr": 0.005401862595605499,
+   "info": {
+    "creux1": 0.065,
+    "creux2": 0.07584,
+    "baisse_atr": 7.4
+   },
+   "id": "BIRBUSDT|retournement|0.104",
+   "sym": "BIRBUSDT",
+   "bruit": 18.465953987008007,
+   "tick": 1e-05,
+   "etape": "formation",
+   "vu": 1793811754024,
    "t_decl": 0
   }
  },
