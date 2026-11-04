@@ -32,7 +32,7 @@
    "sym": "XRPUSDT",
    "bruit": 4.569984609636033,
    "tick": 0.0001,
-   "etape": "declenche",
+   "etape": "trop_tard",
    "vu": 1793707350166,
    "t_decl": 1793710800000.0,
    "entree": 1.2816,
@@ -429,7 +429,7 @@
    "bruit": 10.577388650424913,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793786555078,
+   "vu": 1793790150303,
    "t_decl": 0
   },
   "BCHUSDT|retournement|297.83": {
@@ -609,7 +609,7 @@
    "bruit": 8.520730743530297,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1793786555078,
+   "vu": 1793790150303,
    "t_decl": 0
   },
   "XLMUSDT|retournement|0.1722": {
@@ -987,7 +987,7 @@
    "bruit": 4.444161980260015,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1793786555078,
+   "vu": 1793790150303,
    "t_decl": 0
   },
   "PUMPFUNUSDT|retournement|0.004434": {
@@ -1076,8 +1076,8 @@
    "sym": "RUNEUSDT",
    "bruit": 8.663305112769336,
    "tick": 0.0001,
-   "etape": "pret",
-   "vu": 1793786555078,
+   "etape": "formation",
+   "vu": 1793790150303,
    "t_decl": 0
   },
   "GRAMUSDT|retournement|1.234": {
@@ -1113,7 +1113,7 @@
    "bruit": 9.588073203940771,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793786555078,
+   "vu": 1793790150303,
    "t_decl": 0
   },
   "UNITREEUSDT|retournement|99.2": {
@@ -1131,7 +1131,7 @@
    "bruit": 6.080822937323439,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793786555078,
+   "vu": 1793790150303,
    "t_decl": 0
   },
   "AVAXUSDT|retournement|9.034": {
@@ -1149,7 +1149,7 @@
    "bruit": 6.512016122625031,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793786555078,
+   "vu": 1793790150303,
    "t_decl": 0
   },
   "ARBUSDT|retournement|0.16678": {
@@ -1167,7 +1167,25 @@
    "bruit": 9.324312829292383,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793786555078,
+   "vu": 1793790150303,
+   "t_decl": 0
+  },
+  "NBISUSDT|retournement|158.81": {
+   "type": "retournement",
+   "declenchement": 158.81,
+   "invalidation": 140.70035257458338,
+   "atr": 5.5654914180553945,
+   "info": {
+    "creux1": 139.47,
+    "creux2": 142.37,
+    "baisse_atr": 7.0
+   },
+   "id": "NBISUSDT|retournement|158.81",
+   "sym": "NBISUSDT",
+   "bruit": 9.378425603943992,
+   "tick": 0.01,
+   "etape": "pret",
+   "vu": 1793790150303,
    "t_decl": 0
   }
  },
