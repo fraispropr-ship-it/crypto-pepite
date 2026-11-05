@@ -144,24 +144,6 @@
    "vu": 1793761355431,
    "t_decl": 0
   },
-  "WLDUSDT|retournement|0.4181": {
-   "type": "retournement",
-   "declenchement": 0.4181,
-   "invalidation": 0.3598370179708774,
-   "atr": 0.0112099400970754,
-   "info": {
-    "creux1": 0.3594,
-    "creux2": 0.3632,
-    "baisse_atr": 10.1
-   },
-   "id": "WLDUSDT|retournement|0.4181",
-   "sym": "WLDUSDT",
-   "bruit": 11.855280359201693,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1793736162077,
-   "t_decl": 0
-  },
   "LINKUSDT|retournement|11.942": {
    "type": "retournement",
    "declenchement": 11.942,
@@ -1509,7 +1491,7 @@
    "bruit": 9.02190510446182,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793908953147,
+   "vu": 1793912551012,
    "t_decl": 0
   },
   "INJUSDT|retournement|8.588": {
@@ -1527,7 +1509,7 @@
    "bruit": 8.690853070243183,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793908953147,
+   "vu": 1793912551012,
    "t_decl": 0
   },
   "ASTERUSDT|retournement|0.7143": {
@@ -1545,7 +1527,7 @@
    "bruit": 4.016207411251783,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793908953147,
+   "vu": 1793912551012,
    "t_decl": 0
   }
  },
