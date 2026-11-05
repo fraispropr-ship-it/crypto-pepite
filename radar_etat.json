@@ -1419,7 +1419,7 @@
    "bruit": 9.02190510446182,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793916152392,
+   "vu": 1793919751332,
    "t_decl": 0
   },
   "INJUSDT|retournement|8.588": {
@@ -1437,7 +1437,7 @@
    "bruit": 8.690853070243183,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793916152392,
+   "vu": 1793919751332,
    "t_decl": 0
   },
   "ASTERUSDT|retournement|0.7143": {
@@ -1455,7 +1455,7 @@
    "bruit": 4.016207411251783,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1793916152392,
+   "vu": 1793919751332,
    "t_decl": 0
   }
  },
