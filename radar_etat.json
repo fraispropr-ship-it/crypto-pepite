@@ -1011,11 +1011,11 @@
   "STXUSDT|continuation|0.3646": {
    "type": "continuation",
    "declenchement": 0.3646,
-   "invalidation": 0.3218656182308513,
-   "atr": 0.014781272563828869,
+   "invalidation": 0.32189950380063154,
+   "atr": 0.014668320664561548,
    "info": {
     "repli_atr": 2.6,
-    "age_h4": 7,
+    "age_h4": 8,
     "calme": false
    },
    "id": "STXUSDT|continuation|0.3646",
@@ -1131,7 +1131,7 @@
    "bruit": 9.237849775250607,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793941353453,
+   "vu": 1793944951187,
    "t_decl": 0
   },
   "INJUSDT|retournement|8.588": {
@@ -1184,8 +1184,8 @@
    "sym": "INJUSDT",
    "bruit": 8.637539317422705,
    "tick": 0.001,
-   "etape": "pret",
-   "vu": 1793941353453,
+   "etape": "formation",
+   "vu": 1793944951187,
    "t_decl": 0
   },
   "CAPUSDT|retournement|0.11262": {
@@ -1203,9 +1203,9 @@
    "bruit": 13.802712993290557,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1793941353453,
+   "vu": 1793944951187,
    "t_decl": 0
   }
  },
- "dernier_resume": 124577
+ "dernier_resume": 124579
 }
