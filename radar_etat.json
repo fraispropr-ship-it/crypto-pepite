@@ -36,24 +36,6 @@
    "vu": 1793804549196,
    "t_decl": 0
   },
-  "ICNTUSDT|continuation|0.2532": {
-   "type": "continuation",
-   "declenchement": 0.2532,
-   "invalidation": 0.19241262923136357,
-   "atr": 0.016291235895454743,
-   "info": {
-    "repli_atr": 3.4,
-    "age_h4": 15,
-    "calme": false
-   },
-   "id": "ICNTUSDT|continuation|0.2532",
-   "sym": "ICNTUSDT",
-   "bruit": 12.549599514481546,
-   "tick": 0.0001,
-   "etape": "invalide",
-   "vu": 1793782959227,
-   "t_decl": 0
-  },
   "XRPUSDT|retournement|1.2914": {
    "type": "retournement",
    "declenchement": 1.2914,
@@ -1041,7 +1023,7 @@
    "bruit": 9.237849775250607,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793955754362,
+   "vu": 1793959351055,
    "t_decl": 0
   },
   "INJUSDT|retournement|8.588": {
@@ -1095,7 +1077,7 @@
    "bruit": 8.637539317422705,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793955754362,
+   "vu": 1793959351055,
    "t_decl": 0
   },
   "CAPUSDT|retournement|0.11262": {
@@ -1131,7 +1113,7 @@
    "bruit": 9.426296816522463,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793955754362,
+   "vu": 1793959351055,
    "t_decl": 0
   },
   "CAPUSDT|continuation|0.11262": {
@@ -1149,7 +1131,7 @@
    "bruit": 13.802712993290557,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793955754362,
+   "vu": 1793959351055,
    "t_decl": 0
   }
  },
