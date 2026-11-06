@@ -950,8 +950,8 @@
    "sym": "INJUSDT",
    "bruit": 8.637539317422705,
    "tick": 0.001,
-   "etape": "formation",
-   "vu": 1793988153277,
+   "etape": "pret",
+   "vu": 1793991751642,
    "t_decl": 0
   },
   "CAPUSDT|retournement|0.11262": {
@@ -987,7 +987,7 @@
    "bruit": 9.426296816522463,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793988153277,
+   "vu": 1793991751642,
    "t_decl": 0
   },
   "CAPUSDT|continuation|0.11262": {
@@ -1005,7 +1005,7 @@
    "bruit": 13.802712993290557,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793988153277,
+   "vu": 1793991751642,
    "t_decl": 0
   },
   "BNBUSDT|retournement|723.24": {
@@ -1023,7 +1023,7 @@
    "bruit": 3.643114656105476,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793988153277,
+   "vu": 1793991751642,
    "t_decl": 0
   },
   "UVXYUSDT|continuation|24.72": {
@@ -1041,7 +1041,7 @@
    "bruit": 6.8590509159197595,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793988153277,
+   "vu": 1793991751642,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.18976": {
@@ -1130,7 +1130,7 @@
    "sym": "VVVUSDT",
    "bruit": 11.503956903012691,
    "tick": 0.001,
-   "etape": "pret",
+   "etape": "disparu",
    "vu": 1793988153277,
    "t_decl": 0
   }
