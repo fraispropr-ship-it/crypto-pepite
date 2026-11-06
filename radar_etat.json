@@ -36,24 +36,6 @@
    "vu": 1793804549196,
    "t_decl": 0
   },
-  "XRPUSDT|retournement|1.2914": {
-   "type": "retournement",
-   "declenchement": 1.2914,
-   "invalidation": 1.2352744652505012,
-   "atr": 0.018418449164995562,
-   "info": {
-    "creux1": 1.1981,
-    "creux2": 1.2408,
-    "baisse_atr": 7.9
-   },
-   "id": "XRPUSDT|retournement|1.2914",
-   "sym": "XRPUSDT",
-   "bruit": 4.444161980260015,
-   "tick": 0.0001,
-   "etape": "disparu",
-   "vu": 1793790150303,
-   "t_decl": 0
-  },
   "RUNEUSDT|retournement|0.6653": {
    "type": "retournement",
    "declenchement": 0.6653,
@@ -1023,7 +1005,7 @@
    "bruit": 9.237849775250607,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1793959351055,
+   "vu": 1793962950975,
    "t_decl": 0
   },
   "INJUSDT|retournement|8.588": {
@@ -1077,7 +1059,7 @@
    "bruit": 8.637539317422705,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1793959351055,
+   "vu": 1793962950975,
    "t_decl": 0
   },
   "CAPUSDT|retournement|0.11262": {
@@ -1113,7 +1095,7 @@
    "bruit": 9.426296816522463,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793959351055,
+   "vu": 1793962950975,
    "t_decl": 0
   },
   "CAPUSDT|continuation|0.11262": {
@@ -1131,7 +1113,7 @@
    "bruit": 13.802712993290557,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1793959351055,
+   "vu": 1793962950975,
    "t_decl": 0
   }
  },
