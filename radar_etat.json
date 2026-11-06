@@ -1239,7 +1239,7 @@
    "bruit": 9.237849775250607,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1793926954063,
+   "vu": 1793930552768,
    "t_decl": 0
   },
   "INJUSDT|retournement|8.588": {
@@ -1292,8 +1292,8 @@
    "sym": "INJUSDT",
    "bruit": 8.637539317422705,
    "tick": 0.001,
-   "etape": "pret",
-   "vu": 1793926954063,
+   "etape": "formation",
+   "vu": 1793930552768,
    "t_decl": 0
   }
  },
