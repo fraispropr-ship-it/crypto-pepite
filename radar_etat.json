@@ -54,96 +54,6 @@
    "vu": 1793761355431,
    "t_decl": 0
   },
-  "HBARUSDT|retournement|0.07313": {
-   "type": "retournement",
-   "declenchement": 0.07313,
-   "invalidation": 0.06715838000161249,
-   "atr": 0.001272066661291719,
-   "info": {
-    "creux1": 0.06571,
-    "creux2": 0.06754,
-    "baisse_atr": 10.1
-   },
-   "id": "HBARUSDT|retournement|0.07313",
-   "sym": "HBARUSDT",
-   "bruit": 6.851312517958556,
-   "tick": 1e-05,
-   "etape": "invalide",
-   "vu": 1793757756123,
-   "t_decl": 0
-  },
-  "AXISUSDT|retournement|0.1415": {
-   "type": "retournement",
-   "declenchement": 0.1415,
-   "invalidation": 0.12796952169819745,
-   "atr": 0.008768261006008507,
-   "info": {
-    "creux1": 0.1172,
-    "creux2": 0.1306,
-    "baisse_atr": 12.6
-   },
-   "id": "AXISUSDT|retournement|0.1415",
-   "sym": "AXISUSDT",
-   "bruit": NaN,
-   "tick": 0.0001,
-   "etape": "termine",
-   "vu": 1793757756123,
-   "t_decl": 1793757600000.0,
-   "entree": 0.1458,
-   "sl": 0.128,
-   "objectif": 0.18140000000000003,
-   "feu": "🟠",
-   "date_decl": "2026-11-04 03:00",
-   "mesures_impulsion": {
-    "h1_amplitude": 0.0155,
-    "h1_amplitude_atr": 3.1984,
-    "h1_position_cloture": 0.9548,
-    "h1_corps_pct": 0.6903,
-    "m15_complet": true,
-    "m15_bougies": [
-     {
-      "heure_utc": "2026-11-04T01:00:00+00:00",
-      "o": 0.1351,
-      "h": 0.1351,
-      "l": 0.1311,
-      "c": 0.1321,
-      "amplitude": 0.004,
-      "corps_pct": 0.75,
-      "direction": "baisse"
-     },
-     {
-      "heure_utc": "2026-11-04T01:15:00+00:00",
-      "o": 0.1321,
-      "h": 0.1395,
-      "l": 0.131,
-      "c": 0.1393,
-      "amplitude": 0.0085,
-      "corps_pct": 0.8471,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-11-04T01:30:00+00:00",
-      "o": 0.1393,
-      "h": 0.1449,
-      "l": 0.1382,
-      "c": 0.1431,
-      "amplitude": 0.0067,
-      "corps_pct": 0.5672,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-11-04T01:45:00+00:00",
-      "o": 0.1431,
-      "h": 0.1465,
-      "l": 0.141,
-      "c": 0.1458,
-      "amplitude": 0.0055,
-      "corps_pct": 0.4909,
-      "direction": "hausse"
-     }
-    ]
-   }
-  },
   "ICNTUSDT|continuation|0.2532": {
    "type": "continuation",
    "declenchement": 0.2532,
@@ -1239,7 +1149,7 @@
    "bruit": 9.237849775250607,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1793930552768,
+   "vu": 1793934154631,
    "t_decl": 0
   },
   "INJUSDT|retournement|8.588": {
@@ -1292,8 +1202,8 @@
    "sym": "INJUSDT",
    "bruit": 8.637539317422705,
    "tick": 0.001,
-   "etape": "formation",
-   "vu": 1793930552768,
+   "etape": "pret",
+   "vu": 1793934154631,
    "t_decl": 0
   }
  },
