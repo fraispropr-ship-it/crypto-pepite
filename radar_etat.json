@@ -159,7 +159,7 @@
    "bruit": 8.306949410114521,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794067354044,
+   "vu": 1794070950792,
    "t_decl": 0
   },
   "CAPUSDT|retournement|0.11262": {
@@ -231,7 +231,7 @@
    "bruit": 3.540731540432499,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1794067354044,
+   "vu": 1794070950792,
    "t_decl": 0
   },
   "UVXYUSDT|continuation|24.72": {
@@ -393,7 +393,7 @@
    "bruit": 16.249736033261332,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794067354044,
+   "vu": 1794070950792,
    "t_decl": 0
   },
   "SUIUSDT|retournement|0.8813": {
@@ -446,7 +446,7 @@
    "sym": "SNXXUSDT",
    "bruit": 41.093093559743735,
    "tick": 0.01,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1794067354044,
    "t_decl": 0
   },
@@ -645,7 +645,7 @@
    "bruit": 9.68279450747636,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794067354044,
+   "vu": 1794070950792,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.127": {
@@ -663,7 +663,7 @@
    "bruit": 8.998810225327823,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1794067354044,
+   "vu": 1794070950792,
    "t_decl": 0
   },
   "TIAUSDT|retournement|0.4494": {
@@ -681,7 +681,7 @@
    "bruit": 11.777616713859427,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1794067354044,
+   "vu": 1794070950792,
    "t_decl": 0
   },
   "ZROUSDT|retournement|1.6939": {
@@ -879,7 +879,7 @@
    "bruit": 9.15737040054345,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794067354044,
+   "vu": 1794070950792,
    "t_decl": 0
   },
   "AAVEUSDT|retournement|133.47": {
@@ -897,7 +897,7 @@
    "bruit": 7.490839871441139,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1794067354044,
+   "vu": 1794070950792,
    "t_decl": 0
   },
   "PUMPFUNUSDT|retournement|0.004173": {
@@ -933,7 +933,7 @@
    "bruit": 5.3354348501477125,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1794067354044,
+   "vu": 1794070950792,
    "t_decl": 0
   },
   "ONDOUSDT|retournement|0.3799": {
@@ -1023,7 +1023,7 @@
    "bruit": 16.25188261287283,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794067354044,
+   "vu": 1794070950792,
    "t_decl": 0
   }
  },
