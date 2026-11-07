@@ -123,7 +123,7 @@
    "bruit": 8.306949410114521,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   },
   "CAPUSDT|retournement|0.11262": {
@@ -357,7 +357,7 @@
    "bruit": 16.249736033261332,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   },
   "SUIUSDT|retournement|0.8813": {
@@ -609,7 +609,7 @@
    "bruit": 9.68279450747636,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   },
   "UNIUSDT|retournement|7.127": {
@@ -699,7 +699,7 @@
    "bruit": 11.777616713859427,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   },
   "ZROUSDT|retournement|1.6939": {
@@ -897,7 +897,7 @@
    "bruit": 9.15737040054345,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   },
   "AAVEUSDT|retournement|133.47": {
@@ -915,7 +915,7 @@
    "bruit": 7.490839871441139,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   },
   "PUMPFUNUSDT|retournement|0.004173": {
@@ -1041,7 +1041,7 @@
    "bruit": 16.25188261287283,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   },
   "ZECUSDT|retournement|1387.21": {
@@ -1059,7 +1059,7 @@
    "bruit": 8.982644825859639,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.16977": {
@@ -1077,7 +1077,7 @@
    "bruit": 11.216362205902339,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   },
   "STRKUSDT|retournement|0.0425": {
@@ -1095,7 +1095,7 @@
    "bruit": 17.18290366769707,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   },
   "ESPORTSUSDT|retournement|0.01271": {
@@ -1113,7 +1113,7 @@
    "bruit": 18.29018163188271,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794085352311,
+   "vu": 1794088953579,
    "t_decl": 0
   }
  },
