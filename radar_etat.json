@@ -87,7 +87,7 @@
    "bruit": 8.175753093089442,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794128555546,
+   "vu": 1794132154073,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.1662": {
@@ -861,7 +861,7 @@
    "bruit": 7.502416137168206,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1794128555546,
+   "vu": 1794132154073,
    "t_decl": 0
   },
   "PUMPFUNUSDT|retournement|0.004173": {
@@ -1023,7 +1023,7 @@
    "bruit": 10.863252699077684,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1794128555546,
+   "vu": 1794132154073,
    "t_decl": 0
   },
   "STRKUSDT|retournement|0.0425": {
@@ -1149,7 +1149,7 @@
    "bruit": 4.225885875752242,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1794128555546,
+   "vu": 1794132154073,
    "t_decl": 0
   },
   "HYPEUSDT|retournement|79.626": {
@@ -1167,7 +1167,7 @@
    "bruit": 6.344759397859151,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794128555546,
+   "vu": 1794132154073,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.006562": {
@@ -1185,7 +1185,7 @@
    "bruit": 106.84180092568508,
    "tick": 1e-06,
    "etape": "pret",
-   "vu": 1794128555546,
+   "vu": 1794132154073,
    "t_decl": 0
   }
  },
