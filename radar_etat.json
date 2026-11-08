@@ -87,7 +87,7 @@
    "bruit": 8.175753093089442,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794132154073,
+   "vu": 1794135750790,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.1662": {
@@ -860,8 +860,8 @@
    "sym": "AAVEUSDT",
    "bruit": 7.502416137168206,
    "tick": 0.01,
-   "etape": "pret",
-   "vu": 1794132154073,
+   "etape": "formation",
+   "vu": 1794135750790,
    "t_decl": 0
   },
   "PUMPFUNUSDT|retournement|0.004173": {
@@ -1023,7 +1023,7 @@
    "bruit": 10.863252699077684,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1794132154073,
+   "vu": 1794135750790,
    "t_decl": 0
   },
   "STRKUSDT|retournement|0.0425": {
@@ -1149,7 +1149,7 @@
    "bruit": 4.225885875752242,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1794132154073,
+   "vu": 1794135750790,
    "t_decl": 0
   },
   "HYPEUSDT|retournement|79.626": {
@@ -1167,7 +1167,7 @@
    "bruit": 6.344759397859151,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794132154073,
+   "vu": 1794135750790,
    "t_decl": 0
   },
   "AKEUSDT|retournement|0.006562": {
@@ -1185,7 +1185,25 @@
    "bruit": 106.84180092568508,
    "tick": 1e-06,
    "etape": "pret",
-   "vu": 1794132154073,
+   "vu": 1794135750790,
+   "t_decl": 0
+  },
+  "BTWUSDT|retournement|1.31926": {
+   "type": "retournement",
+   "declenchement": 1.31926,
+   "invalidation": 1.0847944186800527,
+   "atr": 0.09228527106649109,
+   "info": {
+    "creux1": 0.8701,
+    "creux2": 1.11248,
+    "baisse_atr": 11.0
+   },
+   "id": "BTWUSDT|retournement|1.31926",
+   "sym": "BTWUSDT",
+   "bruit": 29.11847172028812,
+   "tick": 1e-05,
+   "etape": "formation",
+   "vu": 1794135750790,
    "t_decl": 0
   }
  },
