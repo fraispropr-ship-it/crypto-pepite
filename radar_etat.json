@@ -87,7 +87,7 @@
    "bruit": 8.175753093089442,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794168155634,
+   "vu": 1794171753752,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.1662": {
@@ -1130,8 +1130,8 @@
    "sym": "ETHUSDT",
    "bruit": 4.225885875752242,
    "tick": 0.01,
-   "etape": "pret",
-   "vu": 1794168155634,
+   "etape": "formation",
+   "vu": 1794171753752,
    "t_decl": 0
   },
   "HYPEUSDT|retournement|79.626": {
@@ -1167,7 +1167,7 @@
    "bruit": 106.84180092568508,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1794168155634,
+   "vu": 1794171753752,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.31926": {
@@ -1203,7 +1203,7 @@
    "bruit": 9.883378780125279,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794168155634,
+   "vu": 1794171753752,
    "t_decl": 0
   },
   "ACTUSDT|continuation|0.012988": {
