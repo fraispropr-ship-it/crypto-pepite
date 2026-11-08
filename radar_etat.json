@@ -15,7 +15,7 @@
    "bruit": 8.175753093089442,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794175352379,
+   "vu": 1794178953420,
    "t_decl": 0
   },
   "ARIAUSDT|continuation|0.1662": {
@@ -1095,7 +1095,7 @@
    "bruit": 106.84180092568508,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1794175352379,
+   "vu": 1794178953420,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.31926": {
@@ -1131,7 +1131,7 @@
    "bruit": 9.883378780125279,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794175352379,
+   "vu": 1794178953420,
    "t_decl": 0
   },
   "ACTUSDT|continuation|0.012988": {
