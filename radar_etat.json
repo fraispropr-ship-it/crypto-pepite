@@ -18,24 +18,6 @@
    "vu": 1794178953420,
    "t_decl": 0
   },
-  "BNBUSDT|retournement|723.24": {
-   "type": "retournement",
-   "declenchement": 723.24,
-   "invalidation": 681.4963627652421,
-   "atr": 6.178790782526366,
-   "info": {
-    "creux1": 679.85,
-    "creux2": 683.35,
-    "baisse_atr": 6.6
-   },
-   "id": "BNBUSDT|retournement|723.24",
-   "sym": "BNBUSDT",
-   "bruit": 3.389601474189512,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1794070950792,
-   "t_decl": 0
-  },
   "BIRBUSDT|continuation|0.12364": {
    "type": "continuation",
    "declenchement": 0.12364,
@@ -519,7 +501,7 @@
    "bruit": 10.71562652436712,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794240155487,
+   "vu": 1794243757557,
    "t_decl": 0
   },
   "TAUSDT|continuation|0.11982": {
