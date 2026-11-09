@@ -54,24 +54,6 @@
    "vu": 1794092551270,
    "t_decl": 0
   },
-  "SNXXUSDT|retournement|3.88": {
-   "type": "retournement",
-   "declenchement": 3.88,
-   "invalidation": 3.034991158737914,
-   "atr": 0.38336280420695196,
-   "info": {
-    "creux1": 2.99,
-    "creux2": 3.15,
-    "baisse_atr": 11.3
-   },
-   "id": "SNXXUSDT|retournement|3.88",
-   "sym": "SNXXUSDT",
-   "bruit": 41.093093559743735,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1794067354044,
-   "t_decl": 0
-  },
   "CYBERUSDT|continuation|0.4099": {
    "type": "continuation",
    "declenchement": 0.4099,
@@ -255,12 +237,12 @@
   "ZECUSDT|retournement|1387.21": {
    "type": "retournement",
    "declenchement": 1387.21,
-   "invalidation": 1165.7073107799197,
-   "atr": 45.44229740026724,
+   "invalidation": 1166.0313601564096,
+   "atr": 44.36213281196732,
    "info": {
     "creux1": 1120.56,
     "creux2": 1179.34,
-    "baisse_atr": 6.1
+    "baisse_atr": 6.3
    },
    "id": "ZECUSDT|retournement|1387.21",
    "sym": "ZECUSDT",
@@ -435,12 +417,12 @@
   "AKEUSDT|retournement|0.006562": {
    "type": "retournement",
    "declenchement": 0.006562,
-   "invalidation": 0.00461067238332147,
-   "atr": 0.0009444253889284347,
+   "invalidation": 0.003926290723929508,
+   "atr": 0.0009290309202349735,
    "info": {
     "creux1": 0.001907,
-    "creux2": 0.004894,
-    "baisse_atr": 11.1
+    "creux2": 0.004205,
+    "baisse_atr": 11.3
    },
    "id": "AKEUSDT|retournement|0.006562",
    "sym": "AKEUSDT",
@@ -525,11 +507,11 @@
   "ICNTUSDT|continuation|0.3964": {
    "type": "continuation",
    "declenchement": 0.3964,
-   "invalidation": 0.3035649031550829,
-   "atr": 0.03278365614972377,
+   "invalidation": 0.3039266956923567,
+   "atr": 0.03157768102547768,
    "info": {
-    "repli_atr": 2.5,
-    "age_h4": 6,
+    "repli_atr": 2.6,
+    "age_h4": 7,
     "calme": false
    },
    "id": "ICNTUSDT|continuation|0.3964",
@@ -537,7 +519,7 @@
    "bruit": 10.71562652436712,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794236555197,
+   "vu": 1794240155487,
    "t_decl": 0
   },
   "TAUSDT|continuation|0.11982": {
@@ -572,7 +554,7 @@
    "sym": "INJUSDT",
    "bruit": 8.388793068695058,
    "tick": 0.001,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1794236555197,
    "t_decl": 0
   },
@@ -829,5 +811,5 @@
    }
   }
  },
- "dernier_resume": 124599
+ "dernier_resume": 124600
 }
