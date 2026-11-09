@@ -36,24 +36,6 @@
    "vu": 1794070950792,
    "t_decl": 0
   },
-  "SOLUSDT|retournement|91.46": {
-   "type": "retournement",
-   "declenchement": 91.46,
-   "invalidation": 88.31602123187177,
-   "atr": 1.2799292270941096,
-   "info": {
-    "creux1": 88.24,
-    "creux2": 88.7,
-    "baisse_atr": 7.7
-   },
-   "id": "SOLUSDT|retournement|91.46",
-   "sym": "SOLUSDT",
-   "bruit": 5.073874247820774,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1794063754320,
-   "t_decl": 0
-  },
   "BIRBUSDT|continuation|0.12364": {
    "type": "continuation",
    "declenchement": 0.12364,
@@ -88,42 +70,6 @@
    "tick": 0.01,
    "etape": "disparu",
    "vu": 1794067354044,
-   "t_decl": 0
-  },
-  "NBISUSDT|retournement|137.11": {
-   "type": "retournement",
-   "declenchement": 137.11,
-   "invalidation": 120.74827105151648,
-   "atr": 6.239096494945053,
-   "info": {
-    "creux1": 113.55,
-    "creux2": 122.62,
-    "baisse_atr": 7.4
-   },
-   "id": "NBISUSDT|retournement|137.11",
-   "sym": "NBISUSDT",
-   "bruit": 11.751696915582512,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1794063754320,
-   "t_decl": 0
-  },
-  "ZECUSDT|continuation|1387.21": {
-   "type": "continuation",
-   "declenchement": 1387.21,
-   "invalidation": 1268.9331907090177,
-   "atr": 50.95603096994128,
-   "info": {
-    "repli_atr": 2.0,
-    "age_h4": 5,
-    "calme": true
-   },
-   "id": "ZECUSDT|continuation|1387.21",
-   "sym": "ZECUSDT",
-   "bruit": 8.982644825859639,
-   "tick": 0.01,
-   "etape": "invalide",
-   "vu": 1794063754320,
    "t_decl": 0
   },
   "CYBERUSDT|continuation|0.4099": {
@@ -286,42 +232,6 @@
    "tick": 0.01,
    "etape": "disparu",
    "vu": 1794081749799,
-   "t_decl": 0
-  },
-  "AVAXUSDT|retournement|8.472": {
-   "type": "retournement",
-   "declenchement": 8.472,
-   "invalidation": 8.197173028950846,
-   "atr": 0.18275657016385016,
-   "info": {
-    "creux1": 8.072,
-    "creux2": 8.252,
-    "baisse_atr": 6.3
-   },
-   "id": "AVAXUSDT|retournement|8.472",
-   "sym": "AVAXUSDT",
-   "bruit": 6.947028299180943,
-   "tick": 0.001,
-   "etape": "disparu",
-   "vu": 1794063754320,
-   "t_decl": 0
-  },
-  "TAOUSDT|retournement|227.57": {
-   "type": "retournement",
-   "declenchement": 227.57,
-   "invalidation": 218.8624748473706,
-   "atr": 4.391750508764627,
-   "info": {
-    "creux1": 211.8,
-    "creux2": 220.18,
-    "baisse_atr": 6.4
-   },
-   "id": "TAOUSDT|retournement|227.57",
-   "sym": "TAOUSDT",
-   "bruit": 7.48801547196371,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1794063754320,
    "t_decl": 0
   },
   "LYNUSDT|continuation|0.03136": {
@@ -627,7 +537,7 @@
    "bruit": 10.71562652436712,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794232953277,
+   "vu": 1794236555197,
    "t_decl": 0
   },
   "TAUSDT|continuation|0.11982": {
@@ -663,7 +573,7 @@
    "bruit": 8.388793068695058,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794232953277,
+   "vu": 1794236555197,
    "t_decl": 0
   },
   "QUSDT|retournement|0.03384": {
@@ -769,6 +679,150 @@
       "c": 0.0018136,
       "amplitude": 2.94e-05,
       "corps_pct": 0.415,
+      "direction": "hausse"
+     }
+    ]
+   }
+  },
+  "DRAMUSDT|retournement|40.76": {
+   "type": "retournement",
+   "declenchement": 40.76,
+   "invalidation": 37.49201738776399,
+   "atr": 1.1599420407867163,
+   "info": {
+    "creux1": 36.63,
+    "creux2": 37.84,
+    "baisse_atr": 11.9
+   },
+   "id": "DRAMUSDT|retournement|40.76",
+   "sym": "DRAMUSDT",
+   "bruit": 7.1688308503587095,
+   "tick": 0.01,
+   "etape": "declenche",
+   "vu": 1794236555197,
+   "t_decl": 1794236400000.0,
+   "entree": 41.34,
+   "sl": 37.49,
+   "objectif": 49.040000000000006,
+   "feu": "🟠",
+   "date_decl": "2026-11-09 16:00",
+   "mesures_impulsion": {
+    "h1_amplitude": 1.96,
+    "h1_amplitude_atr": 2.9276,
+    "h1_position_cloture": 0.9796,
+    "h1_corps_pct": 0.8724,
+    "m15_complet": true,
+    "m15_bougies": [
+     {
+      "heure_utc": "2026-11-09T14:00:00+00:00",
+      "o": 39.63,
+      "h": 39.71,
+      "l": 39.51,
+      "c": 39.56,
+      "amplitude": 0.2,
+      "corps_pct": 0.35,
+      "direction": "baisse"
+     },
+     {
+      "heure_utc": "2026-11-09T14:15:00+00:00",
+      "o": 39.56,
+      "h": 40.05,
+      "l": 39.54,
+      "c": 39.93,
+      "amplitude": 0.51,
+      "corps_pct": 0.7255,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-09T14:30:00+00:00",
+      "o": 39.93,
+      "h": 40.56,
+      "l": 39.42,
+      "c": 40.54,
+      "amplitude": 1.14,
+      "corps_pct": 0.5351,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-09T14:45:00+00:00",
+      "o": 40.54,
+      "h": 41.38,
+      "l": 40.51,
+      "c": 41.34,
+      "amplitude": 0.87,
+      "corps_pct": 0.9195,
+      "direction": "hausse"
+     }
+    ]
+   }
+  },
+  "MUUUSDT|retournement|15.13": {
+   "type": "retournement",
+   "declenchement": 15.13,
+   "invalidation": 12.383754253325286,
+   "atr": 0.9541524889157162,
+   "info": {
+    "creux1": 12.22,
+    "creux2": 12.67,
+    "baisse_atr": 14.2
+   },
+   "id": "MUUUSDT|retournement|15.13",
+   "sym": "MUUUSDT",
+   "bruit": 20.228697400920115,
+   "tick": 0.01,
+   "etape": "declenche",
+   "vu": 1794236555197,
+   "t_decl": 1794236400000.0,
+   "entree": 15.29,
+   "sl": 12.38,
+   "objectif": 21.109999999999996,
+   "feu": "🟠",
+   "date_decl": "2026-11-09 16:00",
+   "mesures_impulsion": {
+    "h1_amplitude": 1.53,
+    "h1_amplitude_atr": 2.924,
+    "h1_position_cloture": 0.9804,
+    "h1_corps_pct": 0.7778,
+    "m15_complet": true,
+    "m15_bougies": [
+     {
+      "heure_utc": "2026-11-09T14:00:00+00:00",
+      "o": 14.1,
+      "h": 14.19,
+      "l": 14.01,
+      "c": 14.05,
+      "amplitude": 0.18,
+      "corps_pct": 0.2778,
+      "direction": "baisse"
+     },
+     {
+      "heure_utc": "2026-11-09T14:15:00+00:00",
+      "o": 14.05,
+      "h": 14.42,
+      "l": 14.04,
+      "c": 14.3,
+      "amplitude": 0.38,
+      "corps_pct": 0.6579,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-09T14:30:00+00:00",
+      "o": 14.3,
+      "h": 14.58,
+      "l": 13.79,
+      "c": 14.57,
+      "amplitude": 0.79,
+      "corps_pct": 0.3418,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-09T14:45:00+00:00",
+      "o": 14.57,
+      "h": 15.32,
+      "l": 14.52,
+      "c": 15.29,
+      "amplitude": 0.8,
+      "corps_pct": 0.9,
       "direction": "hausse"
      }
     ]
