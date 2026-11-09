@@ -18,24 +18,6 @@
    "vu": 1794178953420,
    "t_decl": 0
   },
-  "ARIAUSDT|continuation|0.1662": {
-   "type": "continuation",
-   "declenchement": 0.1662,
-   "invalidation": 0.10741720447227575,
-   "atr": 0.013809318425747525,
-   "info": {
-    "repli_atr": 4.0,
-    "age_h4": 8,
-    "calme": true
-   },
-   "id": "ARIAUSDT|continuation|0.1662",
-   "sym": "ARIAUSDT",
-   "bruit": 11.216362205902339,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1794034952172,
-   "t_decl": 0
-  },
   "BNBUSDT|retournement|723.24": {
    "type": "retournement",
    "declenchement": 723.24,
@@ -268,24 +250,6 @@
    "tick": 0.01,
    "etape": "disparu",
    "vu": 1794056554669,
-   "t_decl": 0
-  },
-  "BTWUSDT|retournement|1.31803": {
-   "type": "retournement",
-   "declenchement": 1.31803,
-   "invalidation": 1.093716974290854,
-   "atr": 0.09277675236382077,
-   "info": {
-    "creux1": 0.8701,
-    "creux2": 1.12155,
-    "baisse_atr": 10.9
-   },
-   "id": "BTWUSDT|retournement|1.31803",
-   "sym": "BTWUSDT",
-   "bruit": 29.01338960469106,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1794034952172,
    "t_decl": 0
   },
   "ZECUSDT|continuation|1387.21": {
@@ -987,7 +951,7 @@
    "bruit": 10.71562652436712,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794204151183,
+   "vu": 1794207754701,
    "t_decl": 0
   },
   "TAUSDT|continuation|0.11982": {
@@ -1005,7 +969,7 @@
    "bruit": 7.433323096993776,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794204151183,
+   "vu": 1794207754701,
    "t_decl": 0
   },
   "INJUSDT|retournement|8.588": {
@@ -1023,7 +987,7 @@
    "bruit": 8.388793068695058,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794204151183,
+   "vu": 1794207754701,
    "t_decl": 0
   },
   "QUSDT|retournement|0.03384": {
@@ -1041,7 +1005,7 @@
    "bruit": 92.50666346479714,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794204151183,
+   "vu": 1794207754701,
    "t_decl": 0
   },
   "HANAUSDT|continuation|0.01659": {
@@ -1059,7 +1023,7 @@
    "bruit": 12.367684359659672,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1794204151183,
+   "vu": 1794207754701,
    "t_decl": 0
   }
  },
