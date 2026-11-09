@@ -1059,7 +1059,7 @@
    "bruit": 10.71562652436712,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794196953618,
+   "vu": 1794200556844,
    "t_decl": 0
   },
   "TAUSDT|continuation|0.11982": {
@@ -1077,7 +1077,7 @@
    "bruit": 7.433323096993776,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794196953618,
+   "vu": 1794200556844,
    "t_decl": 0
   },
   "INJUSDT|retournement|8.588": {
@@ -1095,7 +1095,7 @@
    "bruit": 8.388793068695058,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794196953618,
+   "vu": 1794200556844,
    "t_decl": 0
   },
   "QUSDT|retournement|0.03384": {
@@ -1113,7 +1113,7 @@
    "bruit": 92.50666346479714,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794196953618,
+   "vu": 1794200556844,
    "t_decl": 0
   }
  },
