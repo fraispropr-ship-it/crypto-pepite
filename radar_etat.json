@@ -360,24 +360,6 @@
    "vu": 1794034952172,
    "t_decl": 0
   },
-  "FARTCOINUSDT|retournement|0.12242": {
-   "type": "retournement",
-   "declenchement": 0.12242,
-   "invalidation": 0.11580090577761415,
-   "atr": 0.00426364740795283,
-   "info": {
-    "creux1": 0.11062,
-    "creux2": 0.11708,
-    "baisse_atr": 5.3
-   },
-   "id": "FARTCOINUSDT|retournement|0.12242",
-   "sym": "FARTCOINUSDT",
-   "bruit": 10.75858192691639,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1794013349038,
-   "t_decl": 0
-  },
   "ZECUSDT|continuation|1387.21": {
    "type": "continuation",
    "declenchement": 1387.21,
@@ -1059,7 +1041,7 @@
    "bruit": 112.33390969488241,
    "tick": 1e-06,
    "etape": "formation",
-   "vu": 1794182555321,
+   "vu": 1794186151265,
    "t_decl": 0
   },
   "BTWUSDT|retournement|1.31926": {
@@ -1149,7 +1131,7 @@
    "bruit": 10.71562652436712,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794182555321,
+   "vu": 1794186151265,
    "t_decl": 0
   },
   "TAUSDT|continuation|0.11982": {
@@ -1167,7 +1149,7 @@
    "bruit": 7.433323096993776,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794182555321,
+   "vu": 1794186151265,
    "t_decl": 0
   }
  },
