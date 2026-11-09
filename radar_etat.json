@@ -411,7 +411,7 @@
    "bruit": 10.71562652436712,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794258155050,
+   "vu": 1794261759578,
    "t_decl": 0
   },
   "TAUSDT|continuation|0.11982": {
@@ -572,7 +572,7 @@
    "sym": "DRAMUSDT",
    "bruit": 7.1688308503587095,
    "tick": 0.01,
-   "etape": "declenche",
+   "etape": "trop_tard",
    "vu": 1794236555197,
    "t_decl": 1794236400000.0,
    "entree": 41.34,
@@ -717,7 +717,7 @@
    "bruit": 12.367684359659672,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794258155050,
+   "vu": 1794261759578,
    "t_decl": 0
   },
   "RSRUSDT|retournement|0.0018472": {
@@ -735,7 +735,7 @@
    "bruit": 9.585964015146295,
    "tick": 1e-07,
    "etape": "formation",
-   "vu": 1794258155050,
+   "vu": 1794261759578,
    "t_decl": 0
   }
  },
