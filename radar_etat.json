@@ -537,7 +537,7 @@
    "bruit": 4.521509613996064,
    "tick": 0.01,
    "etape": "formation",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "DOGEUSDT|retournement|0.07085": {
@@ -609,7 +609,7 @@
    "bruit": 5.0583805892703735,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "AVAXUSDT|retournement|9.007": {
@@ -663,7 +663,7 @@
    "bruit": 8.198973524924881,
    "tick": 1e-06,
    "etape": "pret",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "NEARUSDT|retournement|3.68": {
@@ -681,7 +681,7 @@
    "bruit": 11.570158034365155,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "PIEVERSEUSDT|continuation|2.2556": {
@@ -699,7 +699,7 @@
    "bruit": 6.854655084145916,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.1576": {
@@ -717,7 +717,7 @@
    "bruit": 13.090879925163112,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "SUIUSDT|retournement|0.8692": {
@@ -735,7 +735,7 @@
    "bruit": 7.566892338536908,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "ADAUSDT|retournement|0.1834": {
@@ -753,7 +753,7 @@
    "bruit": 7.159478473171699,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "WLDUSDT|retournement|0.3267": {
@@ -771,7 +771,7 @@
    "bruit": 12.851699566832986,
    "tick": 0.0001,
    "etape": "pret",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "EDGEUSDT|continuation|0.4454": {
@@ -789,7 +789,7 @@
    "bruit": 9.84420121958349,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "DRAMUSDT|retournement|42.26": {
@@ -807,7 +807,7 @@
    "bruit": 6.790298565767925,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "LTCUSDT|retournement|52.24": {
@@ -825,7 +825,7 @@
    "bruit": 5.560092868601162,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "FARTCOINUSDT|retournement|0.12054": {
@@ -843,7 +843,7 @@
    "bruit": 10.178638628747327,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "TAOUSDT|retournement|226.11": {
@@ -861,7 +861,7 @@
    "bruit": 7.509714436272866,
    "tick": 0.01,
    "etape": "pret",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   },
   "HBARUSDT|retournement|0.06887": {
@@ -879,7 +879,7 @@
    "bruit": 6.824716120172894,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794297751040,
+   "vu": 1794301356172,
    "t_decl": 0
   }
  },
