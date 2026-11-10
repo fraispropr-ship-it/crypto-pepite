@@ -1,5 +1,5 @@
 # ==============================================================================
-#  RADAR ALT V2.0 — repère les altcoins qui ont un avantage MESURÉ (Zoomex, USDT perp)
+#  RADAR ALT V2.1 — repère les altcoins qui ont un avantage MESURÉ (Zoomex, USDT perp)
 #
 #  Philosophie : la machine REPÈRE et PRÉVIENT, c'est TOI qui décides.
 #  Aucune promesse de gain : voir « Ce que dit le backtest » ci-dessous.
@@ -34,7 +34,7 @@
 #  Messages Telegram :
 #   - une ALERTE immédiate à chaque signal, avec le ticket copiable ;
 #   - un RÉSUMÉ toutes les 4 h, juste après la clôture H4 (sauf la nuit, voir SILENCE_NUIT) :
-#     signaux en cours et paires à surveiller.
+#     signaux en cours et paires à surveiller, avec leurs niveaux (déclenchement, entrée, SL, TP).
 #
 #  Suivi automatique : chaque signal est suivi (objectif, SL, durée max) et enregistré dans
 #  radar_journal.csv (types « leader » et « cassure_bas »), pour comparer réel et backtest.
@@ -55,7 +55,7 @@ import numpy as np
 import pandas as pd
 import requests
 
-VERSION = "2.0"
+VERSION = "2.1"
 
 # ---------------- RÉGLAGES ----------------
 LIQ_MIN        = 10_000_000   # volume 24 h minimum (USDT)
@@ -452,16 +452,26 @@ def alerte(s, m, ctx, inf):
     return "\n".join(lignes)
 
 
-def resume(etat, M, candidats, ctx, latents, maintenant_ms):
+def niveaux(prix, a, typ, tick):
+    """Ticket indicatif (entrée, SL, objectif) si on entrait à `prix`."""
+    e, sl, tp = ticket(prix, a, typ, tick)
+    return f"entrée <code>{fmt(e, tick)}</code> · SL <code>{fmt(sl, tick)}</code> · TP <code>{fmt(tp, tick)}</code>"
+
+
+def resume(etat, M, candidats, ctx, latents, maintenant_ms, info, prix):
     maintenant = datetime.now(PARIS)
+    tick = lambda s: info.get(s, {}).get("tick")
     out = [f"📡 <b>RADAR ALT — {maintenant:%d/%m %H:%M}</b>", "", escape(ctx["texte"]), ""]
     suivis = sorted(etat["suivis"].values(), key=lambda s: -s["t_decl"])
     out.append(f"🚀 <b>Signaux en cours</b> : {len(suivis)}")
     for s in suivis[:2 * MAX_LISTE]:
         age = (maintenant_ms - s["t_decl"]) / H1
-        r = latents.get(s["id"])
+        r, t, px = latents.get(s["id"]), tick(s["sym"]), prix.get(s["sym"])
         etat_txt = f"{r:+.1f} R" if r is not None else "prix indisponible"
         out.append(f"<b>{escape(s['sym'][:-4])}</b> {NOMS.get(s['type'], s['type'])} · depuis {age:.0f} h · {etat_txt} · {lien(s['sym'], 'graphique')}")
+        out.append(f"   entrée <code>{fmt(s['entree'], t)}</code> · SL <code>{fmt(arrondi(s['sl'], t), t)}</code> · "
+                   f"TP <code>{fmt(arrondi(s['objectif'], t), t)}</code>"
+                   + (f" · prix <code>{fmt(arrondi(px, t), t)}</code>" if px else ""))
     if not suivis:
         out.append("aucun")
     en_cours = {(s["sym"], s["type"]) for s in suivis}
@@ -470,23 +480,41 @@ def resume(etat, M, candidats, ctx, latents, maintenant_ms):
                         if "force7" in m and min(m["force7"], m["force30"]) > FORCE_PROCHE
                         and m["h4_haussier"] and m["jour_haussier"] and (s, "leader") not in en_cours],
                        key=lambda x: -x[0])
-    out += ["", f"👀 <b>Alts fortes en tendance</b> (top {100 * (1 - FORCE_PROCHE):.0f} % sur 7 j et 30 j) : {len(proches_l)}"]
+    out += ["", f"👀 <b>Alts fortes en tendance</b> (top {100 * (1 - FORCE_PROCHE):.0f} % sur 7 j et 30 j) : {len(proches_l)}",
+            "<i>Pas de niveau de prix à casser : le signal LONG part quand l'alt entre dans le top "
+            f"{100 * (1 - FORCE_MIN):.0f} % à une clôture H4. Niveaux donnés si entrée au prix actuel.</i>"]
     for f, s, m in proches_l[:MAX_LISTE]:
-        marque = "🏆 leader" if (s, "leader") in candidats else "proche"
+        px = prix.get(s, m["prix"])
+        if (s, "leader") in candidats:
+            marque = "🏆 déjà leader (signal passé)"
+        else:
+            marque = (f"proche : top {max(1, round(100 * (1 - m['force7'])))} % sur 7 j, "
+                      f"top {max(1, round(100 * (1 - m['force30'])))} % sur 30 j")
         out.append(f"<b>{escape(s[:-4])}</b> {100 * m['r7']:+.0f} % sur 7 j · {100 * m['r30']:+.0f} % sur 30 j · {marque} · {lien(s, 'graphique')}")
+        out.append("   " + niveaux(px, m["atr"], "leader", tick(s)))
     if not proches_l:
         out.append("aucune")
     proches_s = sorted([((m["prix"] - m["bas60"]) / m["atr"], s, m) for s, m in M.items()
                         if m["bas60"] is not None and (m["prix"] - m["bas60"]) / m["atr"] <= 1.0
                         and (s, "cassure_bas") not in en_cours], key=lambda x: x[0])
-    out += ["", f"👀 <b>Alts faibles près de leur plus bas 60 j</b> (à moins de 1 ATR) : {len(proches_s)}"]
+    out += ["", f"👀 <b>Alts faibles près de leur plus bas 60 j</b> (à moins de 1 ATR) : {len(proches_s)}",
+            "<i>Signal SHORT à la première clôture H4 sous le niveau. Niveaux donnés pour une entrée au niveau.</i>"]
     for dist, s, m in proches_s[:MAX_LISTE]:
-        marque = "📉 déjà dessous" if dist < 0 else f"à {dist:.1f} ATR"
+        t, px = tick(s), prix.get(s, m["prix"])
+        niveau = arrondi(m["bas60"], t)
+        if dist < 0:
+            marque = f"📉 déjà sous <code>{fmt(niveau, t)}</code> (signal passé)"
+            ref = px
+        else:
+            marque = f"déclenchement sous <code>{fmt(niveau, t)}</code> ({100 * (niveau / px - 1):+.1f} %, {dist:.1f} ATR)"
+            ref = niveau
         out.append(f"<b>{escape(s[:-4])}</b> {100 * m['r30']:+.0f} % sur 30 j · {marque} · {lien(s, 'graphique')}")
+        out.append("   " + niveaux(ref, m["atr"], "cassure_bas", t))
     if not proches_s:
         out.append("aucune")
-    out += ["", f"<i>Signal = état nouveau à la clôture H4 (au plus {MAX_PAR_PASSAGE} par sens). "
-                f"Ce n'est pas un ordre : c'est toi qui décides. News / macro non vérifiées. V{VERSION}</i>"]
+    out += ["", f"<i>Signal = état nouveau à la clôture H4 (au plus {MAX_PAR_PASSAGE} par sens) : l'alerte donne alors le ticket exact. "
+                f"SL à {STOP_ATR:g} ATR H4, TP à {OBJECTIF_R:g} R. Ce n'est pas un ordre : c'est toi qui décides. "
+                f"News / macro non vérifiées. V{VERSION}</i>"]
     return "\n".join(out)
 
 
@@ -594,7 +622,8 @@ def main():
     bloc_h4 = maintenant // H4
     forcer = "--resume" in sys.argv
     if forcer or (etat.get("dernier_resume", 0) < bloc_h4 and not nuit):
-        telegram(resume(etat, M, candidats, ctx, latents, maintenant))
+        prix = {x: float(h.c.iloc[-1]) for x, h in h1s.items()}
+        telegram(resume(etat, M, candidats, ctx, latents, maintenant, info, prix))
         etat["dernier_resume"] = bloc_h4
     n = {t: sum(1 for k in candidats if k[1] == t) for t in SENS}
     print(f"Paires classées : {len(M)} · leaders : {n['leader']} · sous leur plus bas 60 j : {n['cassure_bas']} · "
