@@ -752,7 +752,7 @@
    "sym": "PIEVERSEUSDT",
    "bruit": 6.854655084145916,
    "tick": 0.0001,
-   "etape": "formation",
+   "etape": "invalide",
    "vu": 1794326556628,
    "t_decl": 0
   },
@@ -843,7 +843,7 @@
    "bruit": 9.84420121958349,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794326556628,
+   "vu": 1794330156452,
    "t_decl": 0
   },
   "DRAMUSDT|retournement|42.26": {
@@ -987,7 +987,7 @@
    "bruit": 6.590359487435009,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1794326556628,
+   "vu": 1794330156452,
    "t_decl": 0
   },
   "NBISUSDT|retournement|144.65": {
