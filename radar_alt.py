@@ -1,5 +1,5 @@
 # ==============================================================================
-#  RADAR ALT V2.2 — repère les altcoins qui ont un avantage MESURÉ (Zoomex, USDT perp)
+#  RADAR ALT V2.3 — repère les altcoins qui ont un avantage MESURÉ (Zoomex, USDT perp)
 #
 #  Philosophie : la machine REPÈRE et PRÉVIENT, c'est TOI qui décides.
 #  Aucune promesse de gain : voir « Ce que dit le backtest » ci-dessous.
@@ -33,7 +33,7 @@
 #
 #  Messages Telegram :
 #   - une ALERTE immédiate à chaque signal, avec le ticket copiable ;
-#   - un RÉSUMÉ toutes les 4 h, juste après la clôture H4 (sauf la nuit, voir SILENCE_NUIT) :
+#   - un RÉSUMÉ toutes les 4 h, juste après la clôture H4, jour et nuit (voir SILENCE_NUIT) :
 #     un bloc par paire, LONG ou SHORT, avec la consigne (y aller / attendre / ne pas
 #     entrer), le déclenchement et les niveaux (entrée, SL, TP).
 #
@@ -56,7 +56,7 @@ import numpy as np
 import pandas as pd
 import requests
 
-VERSION = "2.2"
+VERSION = "2.3"
 
 # ---------------- RÉGLAGES ----------------
 LIQ_MIN        = 10_000_000   # volume 24 h minimum (USDT)
@@ -73,7 +73,7 @@ RETARD_MAX_H   = 2            # passage trop en retard après la clôture H4 : p
 STOP_ATR       = 2.0          # SL à 2 ATR H4 de l'entrée
 OBJECTIF_R     = 3.0          # objectif indicatif
 SUIVI_MAX_H    = 168          # suivi d'un signal : 7 jours maximum
-SILENCE_NUIT   = (23, 7)      # pas de résumé entre 23 h et 7 h (heure de Paris) ; alertes maintenues
+SILENCE_NUIT   = None         # résumé jour et nuit ; mettre (23, 7) pour le couper de 23 h à 7 h (heure de Paris)
 RISQUE         = 1.0          # USDT risqués par trade (pour le ticket)
 MARGE_CIBLE    = 20.0         # marge max souhaitée par trade (USDT)
 FRAIS_TAKER    = 0.0006
@@ -638,7 +638,7 @@ def main():
         print(f"Signal : {s['sym']} {s['type']}")
         telegram(alerte(s, m, ctx, info.get(s["sym"], {})))
     heure_paris = datetime.now(PARIS).hour
-    nuit = SILENCE_NUIT[0] <= heure_paris or heure_paris < SILENCE_NUIT[1]
+    nuit = bool(SILENCE_NUIT) and (SILENCE_NUIT[0] <= heure_paris or heure_paris < SILENCE_NUIT[1])
     bloc_h4 = maintenant // H4
     forcer = "--resume" in sys.argv
     if forcer or (etat.get("dernier_resume", 0) < bloc_h4 and not nuit):
