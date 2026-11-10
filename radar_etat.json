@@ -609,7 +609,7 @@
    "bruit": 11.490773330399575,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794286950678,
+   "vu": 1794290563951,
    "t_decl": 0
   },
   "RSRUSDT|retournement|0.0018472": {
@@ -644,8 +644,8 @@
    "sym": "ETHUSDT",
    "bruit": 4.521509613996064,
    "tick": 0.01,
-   "etape": "formation",
-   "vu": 1794286950678,
+   "etape": "pret",
+   "vu": 1794290563951,
    "t_decl": 0
   },
   "DOGEUSDT|retournement|0.07085": {
@@ -717,7 +717,7 @@
    "bruit": 5.0583805892703735,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794286950678,
+   "vu": 1794290563951,
    "t_decl": 0
   },
   "AVAXUSDT|retournement|9.007": {
@@ -735,7 +735,7 @@
    "bruit": 6.784076705819649,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794286950678,
+   "vu": 1794290563951,
    "t_decl": 0
   },
   "ARBUSDT|continuation|0.18781": {
@@ -753,9 +753,9 @@
    "bruit": 8.551377776241056,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794286950678,
+   "vu": 1794290563951,
    "t_decl": 0
   }
  },
- "dernier_resume": 124601
+ "dernier_resume": 124603
 }
