@@ -18,24 +18,6 @@
    "vu": 1794178953420,
    "t_decl": 0
   },
-  "ARIAUSDT|continuation|0.16977": {
-   "type": "continuation",
-   "declenchement": 0.16977,
-   "invalidation": 0.1462787181648951,
-   "atr": 0.012070939450349668,
-   "info": {
-    "repli_atr": 1.6,
-    "age_h4": 11,
-    "calme": true
-   },
-   "id": "ARIAUSDT|continuation|0.16977",
-   "sym": "ARIAUSDT",
-   "bruit": 10.811686352002305,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1794164553145,
-   "t_decl": 0
-  },
   "ETHUSDT|retournement|2252.54": {
    "type": "retournement",
    "declenchement": 2252.54,
@@ -88,24 +70,6 @@
    "tick": 0.0001,
    "etape": "disparu",
    "vu": 1794178953420,
-   "t_decl": 0
-  },
-  "ACTUSDT|continuation|0.012988": {
-   "type": "continuation",
-   "declenchement": 0.012988,
-   "invalidation": 0.00955703939538548,
-   "atr": 0.0008132020153817364,
-   "info": {
-    "repli_atr": 3.9,
-    "age_h4": 3,
-    "calme": false
-   },
-   "id": "ACTUSDT|continuation|0.012988",
-   "sym": "ACTUSDT",
-   "bruit": 7.140064695138312,
-   "tick": 1e-06,
-   "etape": "disparu",
-   "vu": 1794164553145,
    "t_decl": 0
   },
   "ICNTUSDT|continuation|0.3964": {
@@ -825,7 +789,7 @@
    "bruit": 9.84420121958349,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794333754759,
+   "vu": 1794337361745,
    "t_decl": 0
   },
   "DRAMUSDT|retournement|42.26": {
@@ -969,7 +933,7 @@
    "bruit": 6.590359487435009,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1794333754759,
+   "vu": 1794337361745,
    "t_decl": 0
   },
   "NBISUSDT|retournement|144.65": {
