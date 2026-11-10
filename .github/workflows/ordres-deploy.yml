@@ -1,0 +1,90 @@
+name: Radar Ordres - déployer
+
+# À lancer à la main (« Run workflow »). Installe ou met à jour le worker Cloudflare qui reçoit
+# les boutons « Prendre » des alertes du radar et passe l'ordre sur Zoomex. Voir ordres/README.md.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Compte Zoomex visé"
+        type: choice
+        options: [test, reel]
+        default: test
+      risque:
+        description: "Risque par ordre (USDT)"
+        default: "1"
+      max_positions:
+        description: "Positions ouvertes maximum"
+        default: "3"
+
+permissions:
+  contents: read
+
+jobs:
+  deployer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: ordres
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      BOT: ${{ secrets.RADAR_TELEGRAM_TOKEN }}
+      CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+      ZKEY: ${{ inputs.mode == 'reel' && secrets.ZOOMEX_API_KEY || secrets.ZOOMEX_TEST_API_KEY }}
+      ZSECRET: ${{ inputs.mode == 'reel' && secrets.ZOOMEX_API_SECRET || secrets.ZOOMEX_TEST_API_SECRET }}
+      ZBASE: ${{ inputs.mode == 'reel' && 'https://openapi.zoomex.com' || 'https://openapi-testnet.zoomex.com' }}
+      RISQUE: ${{ inputs.risque }}
+      MAXPOS: ${{ inputs.max_positions }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Vérifier les secrets
+        run: |
+          manque=""
+          for v in CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID BOT CHAT ZKEY ZSECRET; do
+            [ -n "${!v}" ] || manque="$manque $v"
+          done
+          if [ -n "$manque" ]; then
+            echo "::error::Secrets manquants :$manque (voir ordres/README.md ; ZKEY/ZSECRET = clés Zoomex du mode choisi)"
+            exit 1
+          fi
+          case "$RISQUE$MAXPOS" in *[!0-9.]*) echo "::error::risque et max_positions doivent être des nombres"; exit 1;; esac
+
+      - name: Tests
+        run: npm test
+
+      - name: Déployer le worker
+        run: |
+          npx --yes wrangler@4 deploy --var ZOOMEX_BASE:"$ZBASE" --var RISQUE_USDT:"$RISQUE" --var MAX_POSITIONS:"$MAXPOS" | tee deploy.log
+          url=$(grep -o 'https://[a-z0-9.-]*workers\.dev' deploy.log | head -1)
+          [ -n "$url" ] || { echo "::error::Adresse du worker introuvable dans la sortie de wrangler"; exit 1; }
+          echo "WORKER_URL=$url" >> "$GITHUB_ENV"
+
+      - name: Enregistrer les secrets du worker
+        run: |
+          WEBHOOK_SECRET=$(printf '%s' "$BOT:radar-ordres" | sha256sum | cut -c1-48)
+          echo "::add-mask::$WEBHOOK_SECRET"
+          echo "WEBHOOK_SECRET=$WEBHOOK_SECRET" >> "$GITHUB_ENV"
+          umask 077
+          BOT="$BOT" CHAT="$CHAT" ZKEY="$ZKEY" ZSECRET="$ZSECRET" WEBHOOK_SECRET="$WEBHOOK_SECRET" node -e '
+            const e = process.env;
+            require("fs").writeFileSync("secrets.json", JSON.stringify({ TELEGRAM_TOKEN: e.BOT, OWNER_ID: e.CHAT,
+              WEBHOOK_SECRET: e.WEBHOOK_SECRET, ZOOMEX_API_KEY: e.ZKEY, ZOOMEX_API_SECRET: e.ZSECRET }));'
+          npx --yes wrangler@4 secret bulk secrets.json
+          rm -f secrets.json
+
+      - name: Relier le bot Telegram au worker
+        run: |
+          rep=$(curl -sS "https://api.telegram.org/bot$BOT/setWebhook" \
+            --data-urlencode "url=$WORKER_URL/telegram" \
+            --data-urlencode "secret_token=$WEBHOOK_SECRET" \
+            --data-urlencode 'allowed_updates=["message","callback_query"]')
+          echo "$rep" | grep -q '"ok":true' || { echo "::error::Telegram a refusé le webhook : $rep"; exit 1; }
+          curl -sS "https://api.telegram.org/bot$BOT/sendMessage" --data-urlencode "chat_id=$CHAT" \
+            --data-urlencode "text=✅ Radar Ordres installé (mode ${{ inputs.mode }}, risque $RISQUE USDT, $MAXPOS positions max). Envoie /test pour essayer les boutons." > /dev/null
