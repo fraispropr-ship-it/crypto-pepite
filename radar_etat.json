@@ -18,24 +18,6 @@
    "vu": 1794178953420,
    "t_decl": 0
   },
-  "AAVEUSDT|retournement|133.47": {
-   "type": "retournement",
-   "declenchement": 133.47,
-   "invalidation": 122.79904904867519,
-   "atr": 3.6365031710827127,
-   "info": {
-    "creux1": 122.27,
-    "creux2": 123.89,
-    "baisse_atr": 5.1
-   },
-   "id": "AAVEUSDT|retournement|133.47",
-   "sym": "AAVEUSDT",
-   "bruit": 7.681026073468072,
-   "tick": 0.01,
-   "etape": "disparu",
-   "vu": 1794150151849,
-   "t_decl": 0
-  },
   "ARIAUSDT|continuation|0.16977": {
    "type": "continuation",
    "declenchement": 0.16977,
@@ -644,9 +626,63 @@
    "sym": "1000PEPEUSDT",
    "bruit": 8.198973524924881,
    "tick": 1e-06,
-   "etape": "pret",
+   "etape": "declenche",
    "vu": 1794319350111,
-   "t_decl": 0
+   "t_decl": 1794322800000.0,
+   "entree": 0.005556,
+   "sl": 0.005009,
+   "objectif": 0.00665,
+   "feu": "🟠",
+   "date_decl": "2026-11-10 16:00",
+   "mesures_impulsion": {
+    "h1_amplitude": 0.000283,
+    "h1_amplitude_atr": 2.5985,
+    "h1_position_cloture": 0.8587,
+    "h1_corps_pct": 0.8233,
+    "m15_complet": true,
+    "m15_bougies": [
+     {
+      "heure_utc": "2026-11-10T14:00:00+00:00",
+      "o": 0.005323,
+      "h": 0.005389,
+      "l": 0.005317,
+      "c": 0.005364,
+      "amplitude": 7.2e-05,
+      "corps_pct": 0.5694,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-10T14:15:00+00:00",
+      "o": 0.005364,
+      "h": 0.005381,
+      "l": 0.005319,
+      "c": 0.005351,
+      "amplitude": 6.2e-05,
+      "corps_pct": 0.2097,
+      "direction": "baisse"
+     },
+     {
+      "heure_utc": "2026-11-10T14:30:00+00:00",
+      "o": 0.005351,
+      "h": 0.005487,
+      "l": 0.005313,
+      "c": 0.005461,
+      "amplitude": 0.000174,
+      "corps_pct": 0.6322,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-10T14:45:00+00:00",
+      "o": 0.005461,
+      "h": 0.005596,
+      "l": 0.005423,
+      "c": 0.005556,
+      "amplitude": 0.000173,
+      "corps_pct": 0.5491,
+      "direction": "hausse"
+     }
+    ]
+   }
   },
   "NEARUSDT|retournement|3.68": {
    "type": "retournement",
@@ -662,9 +698,63 @@
    "sym": "NEARUSDT",
    "bruit": 11.570158034365155,
    "tick": 0.001,
-   "etape": "pret",
+   "etape": "declenche",
    "vu": 1794319350111,
-   "t_decl": 0
+   "t_decl": 1794322800000.0,
+   "entree": 3.724,
+   "sl": 3.512,
+   "objectif": 4.148000000000001,
+   "feu": "🟠",
+   "date_decl": "2026-11-10 16:00",
+   "mesures_impulsion": {
+    "h1_amplitude": 0.128,
+    "h1_amplitude_atr": 2.068,
+    "h1_position_cloture": 0.8984,
+    "h1_corps_pct": 0.7109,
+    "m15_complet": true,
+    "m15_bougies": [
+     {
+      "heure_utc": "2026-11-10T14:00:00+00:00",
+      "o": 3.633,
+      "h": 3.669,
+      "l": 3.632,
+      "c": 3.661,
+      "amplitude": 0.037,
+      "corps_pct": 0.7568,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-10T14:15:00+00:00",
+      "o": 3.661,
+      "h": 3.668,
+      "l": 3.619,
+      "c": 3.63,
+      "amplitude": 0.049,
+      "corps_pct": 0.6327,
+      "direction": "baisse"
+     },
+     {
+      "heure_utc": "2026-11-10T14:30:00+00:00",
+      "o": 3.63,
+      "h": 3.737,
+      "l": 3.609,
+      "c": 3.733,
+      "amplitude": 0.128,
+      "corps_pct": 0.8047,
+      "direction": "hausse"
+     },
+     {
+      "heure_utc": "2026-11-10T14:45:00+00:00",
+      "o": 3.733,
+      "h": 3.737,
+      "l": 3.684,
+      "c": 3.724,
+      "amplitude": 0.053,
+      "corps_pct": 0.1698,
+      "direction": "baisse"
+     }
+    ]
+   }
   },
   "PIEVERSEUSDT|continuation|2.2556": {
    "type": "continuation",
@@ -681,7 +771,7 @@
    "bruit": 6.854655084145916,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794319350111,
+   "vu": 1794322954847,
    "t_decl": 0
   },
   "ENAUSDT|retournement|0.1576": {
@@ -699,7 +789,7 @@
    "bruit": 13.090879925163112,
    "tick": 1e-05,
    "etape": "pret",
-   "vu": 1794319350111,
+   "vu": 1794322954847,
    "t_decl": 0
   },
   "SUIUSDT|retournement|0.8692": {
@@ -735,7 +825,7 @@
    "bruit": 7.159478473171699,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794319350111,
+   "vu": 1794322954847,
    "t_decl": 0
   },
   "WLDUSDT|retournement|0.3267": {
@@ -752,8 +842,8 @@
    "sym": "WLDUSDT",
    "bruit": 12.851699566832986,
    "tick": 0.0001,
-   "etape": "formation",
-   "vu": 1794319350111,
+   "etape": "pret",
+   "vu": 1794322954847,
    "t_decl": 0
   },
   "EDGEUSDT|continuation|0.4454": {
@@ -771,7 +861,7 @@
    "bruit": 9.84420121958349,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794319350111,
+   "vu": 1794322954847,
    "t_decl": 0
   },
   "DRAMUSDT|retournement|42.26": {
@@ -878,8 +968,8 @@
    "sym": "ONDOUSDT",
    "bruit": 8.66391049299291,
    "tick": 0.0001,
-   "etape": "formation",
-   "vu": 1794319350111,
+   "etape": "pret",
+   "vu": 1794322954847,
    "t_decl": 0
   },
   "SNXXUSDT|retournement|3.82": {
@@ -915,7 +1005,7 @@
    "bruit": 6.590359487435009,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1794319350111,
+   "vu": 1794322954847,
    "t_decl": 0
   },
   "NBISUSDT|retournement|144.65": {
