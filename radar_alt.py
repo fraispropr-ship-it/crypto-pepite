@@ -1,5 +1,5 @@
 # ==============================================================================
-#  RADAR ALT V2.3 — repère les altcoins qui ont un avantage MESURÉ (Zoomex, USDT perp)
+#  RADAR ALT V2.4 — repère les altcoins qui ont un avantage MESURÉ (Zoomex, USDT perp)
 #
 #  Philosophie : la machine REPÈRE et PRÉVIENT, c'est TOI qui décides.
 #  Aucune promesse de gain : voir « Ce que dit le backtest » ci-dessous.
@@ -32,7 +32,8 @@
 #  C'est une base plus saine que la V1 (−0,4 R par alerte en réel), pas une machine à gagner.
 #
 #  Messages Telegram :
-#   - une ALERTE immédiate à chaque signal, avec le ticket copiable ;
+#   - une ALERTE immédiate à chaque signal, avec le ticket copiable et, si le bot d'ordres est
+#     installé (ordres/README.md), les boutons « Prendre » / « Ignorer » ;
 #   - un RÉSUMÉ toutes les 4 h, juste après la clôture H4, jour et nuit (voir SILENCE_NUIT) :
 #     un bloc par paire, LONG ou SHORT, avec la consigne (y aller / attendre / ne pas
 #     entrer), le déclenchement et les niveaux (entrée, SL, TP).
@@ -56,7 +57,7 @@ import numpy as np
 import pandas as pd
 import requests
 
-VERSION = "2.3"
+VERSION = "2.4"
 
 # ---------------- RÉGLAGES ----------------
 LIQ_MIN        = 10_000_000   # volume 24 h minimum (USDT)
@@ -104,7 +105,11 @@ HORS_CRYPTO = {
 MOTS_HORS_CRYPTO = ("STOCK", "XSTOCK")
 TYPES_HORS_CRYPTO = ("stock", "xstock", "equity", "commodity", "metal", "forex", "index", "etf", "tradfi")
 
-TELEGRAM_TOKEN   = os.environ.get("TELEGRAM_TOKEN", "")
+# Bouton « Prendre » : si le secret RADAR_TELEGRAM_TOKEN existe, le radar écrit via ce bot dédié
+# (relié au worker ordres/, voir ordres/README.md) et ajoute les boutons d'ordre aux alertes.
+RADAR_TOKEN      = os.environ.get("RADAR_TELEGRAM_TOKEN", "")
+BOUTONS_ORDRE    = bool(RADAR_TOKEN)
+TELEGRAM_TOKEN   = RADAR_TOKEN or os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 ETAT    = "radar_etat.json"
 JOURNAL = "radar_journal.csv"
@@ -298,13 +303,26 @@ def lien_tv(sym):
     return f"https://www.tradingview.com/chart/?symbol=ZOOMEX:{sym}.P&interval=240"
 
 
-def telegram(texte):
+def boutons_ordre(s, tick=None):
+    """Boutons « Prendre » / « Ignorer » d'une alerte ; le ticket voyage dans le bouton (64 octets max)."""
+    nom = f"{'LONG' if s['sens'] == 1 else 'SHORT'} {s['sym'][:-4]}"
+    ticket = "|".join(["p", s["sym"], "L" if s["sens"] == 1 else "S"] + [fmt(s[k], tick) for k in ("entree", "sl", "objectif")])
+    if len(ticket.encode()) > 64:
+        return None
+    return {"inline_keyboard": [[{"text": f"✅ Prendre {nom}", "callback_data": ticket},
+                                 {"text": "❌ Ignorer", "callback_data": "i"}]]}
+
+
+def telegram(texte, boutons=None):
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
         print("(Telegram non configuré : message non envoyé)")
         return
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    for m in decouper(texte):
+    morceaux = decouper(texte)
+    for n, m in enumerate(morceaux):
         data = dict(chat_id=TELEGRAM_CHAT_ID, text=m, parse_mode="HTML", disable_web_page_preview=True)
+        if boutons and n == len(morceaux) - 1:
+            data["reply_markup"] = json.dumps(boutons)
         try:
             r = requests.post(url, data=data, timeout=15)
             if r.status_code == 400:                    # mise en forme refusée -> texte simple
@@ -636,7 +654,8 @@ def main():
     # 4) Messages
     for s, m in signaux:
         print(f"Signal : {s['sym']} {s['type']}")
-        telegram(alerte(s, m, ctx, info.get(s["sym"], {})))
+        inf = info.get(s["sym"], {})
+        telegram(alerte(s, m, ctx, inf), boutons_ordre(s, inf.get("tick")) if BOUTONS_ORDRE else None)
     heure_paris = datetime.now(PARIS).hour
     nuit = bool(SILENCE_NUIT) and (SILENCE_NUIT[0] <= heure_paris or heure_paris < SILENCE_NUIT[1])
     bloc_h4 = maintenant // H4

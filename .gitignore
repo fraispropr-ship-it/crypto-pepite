@@ -1,3 +1,7 @@
 .cache_radar/
 __pycache__/
 *.pyc
+node_modules/
+.wrangler/
+ordres/secrets.json
+ordres/deploy.log

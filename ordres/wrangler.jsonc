@@ -1,0 +1,18 @@
+{
+  "name": "radar-ordres",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-03",
+  "workers_dev": true,
+  "observability": { "enabled": true },
+  // Réglages non secrets. ZOOMEX_BASE est fixé au déploiement (test ou réel).
+  // Secrets (jamais ici) : TELEGRAM_TOKEN, OWNER_ID, WEBHOOK_SECRET, ZOOMEX_API_KEY, ZOOMEX_API_SECRET.
+  "vars": {
+    "ORDRES_ACTIFS": "true",
+    "RISQUE_USDT": "1",
+    "MARGE_CIBLE": "20",
+    "MAX_POSITIONS": "3",
+    "R_MIN": "-0.5",
+    "R_MAX": "0.3",
+    "AGE_MAX_H": "24"
+  }
+}

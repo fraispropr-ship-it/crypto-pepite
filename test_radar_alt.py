@@ -87,3 +87,11 @@ def test_migration_v1_garde_les_declenchements(tmp_path, monkeypatch):
     e = R.charger_etat()
     assert e["version"] == 2 and list(e["suivis"]) == ["A"] and "vus" not in e
     assert e["suivis"]["A"]["max_h"] == 72 and e["dernier_resume"] == 7
+
+
+def test_boutons_ordre_portent_le_ticket():
+    s = dict(sym="DOTUSDT", sens=-1, entree=0.8316, sl=0.8752, objectif=0.7008)
+    b = R.boutons_ordre(s, 0.0001)["inline_keyboard"][0]
+    assert b[0]["callback_data"] == "p|DOTUSDT|S|0.8316|0.8752|0.7008" and "SHORT DOT" in b[0]["text"]
+    assert b[1]["callback_data"] == "i"
+    assert R.boutons_ordre(dict(s, sym="X" * 60 + "USDT"), 0.0001) is None       # trop long pour Telegram

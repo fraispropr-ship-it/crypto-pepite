@@ -36,6 +36,7 @@ jobs:
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RADAR_TELEGRAM_TOKEN: ${{ secrets.RADAR_TELEGRAM_TOKEN }}   # bot dédié aux boutons d'ordre (facultatif)
         run: python radar_alt.py ${{ inputs.resume && '--resume' || '' }}
 
       - name: Enregistrer l'état du radar
