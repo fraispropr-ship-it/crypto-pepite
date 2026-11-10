@@ -1,5 +1,5 @@
 # ==============================================================================
-#  RADAR ALT V2.1 — repère les altcoins qui ont un avantage MESURÉ (Zoomex, USDT perp)
+#  RADAR ALT V2.2 — repère les altcoins qui ont un avantage MESURÉ (Zoomex, USDT perp)
 #
 #  Philosophie : la machine REPÈRE et PRÉVIENT, c'est TOI qui décides.
 #  Aucune promesse de gain : voir « Ce que dit le backtest » ci-dessous.
@@ -34,7 +34,8 @@
 #  Messages Telegram :
 #   - une ALERTE immédiate à chaque signal, avec le ticket copiable ;
 #   - un RÉSUMÉ toutes les 4 h, juste après la clôture H4 (sauf la nuit, voir SILENCE_NUIT) :
-#     signaux en cours et paires à surveiller, avec leurs niveaux (déclenchement, entrée, SL, TP).
+#     un bloc par paire, LONG ou SHORT, avec la consigne (y aller / attendre / ne pas
+#     entrer), le déclenchement et les niveaux (entrée, SL, TP).
 #
 #  Suivi automatique : chaque signal est suivi (objectif, SL, durée max) et enregistré dans
 #  radar_journal.csv (types « leader » et « cassure_bas »), pour comparer réel et backtest.
@@ -55,7 +56,7 @@ import numpy as np
 import pandas as pd
 import requests
 
-VERSION = "2.1"
+VERSION = "2.2"
 
 # ---------------- RÉGLAGES ----------------
 LIQ_MIN        = 10_000_000   # volume 24 h minimum (USDT)
@@ -77,6 +78,7 @@ RISQUE         = 1.0          # USDT risqués par trade (pour le ticket)
 MARGE_CIBLE    = 20.0         # marge max souhaitée par trade (USDT)
 FRAIS_TAKER    = 0.0006
 MAX_LISTE      = 5
+ENTREE_OK      = (-0.5, 0.3)  # résumé : signal encore prenable si son résultat en cours est entre −0,5 R et +0,3 R
 
 # Tout ce qui n'est pas une crypto (comparé au nom sans « USDT » ni préfixe « 1000 »).
 # Si une action ou une matière première passe encore, ajoute-la ici.
@@ -430,7 +432,8 @@ def alerte(s, m, ctx, inf):
     base = escape(s["sym"][:-4])
     sl_pct = 100 * abs(1 - sl / e)
     lignes = [
-        f"🚀 <b>RADAR ALT — {base} — {'LONG' if s['sens'] == 1 else 'SHORT'}</b> {ctx['feu']}",
+        f"{'🟢' if s['sens'] == 1 else '🔴'} <b>{'LONG' if s['sens'] == 1 else 'SHORT'} — {base}</b> · RADAR ALT",
+        "✅ <b>Déclenché : OK pour y aller maintenant</b>",
         NOMS[s["type"]],
         f"<i>{escape(pourquoi(s['type'], m, t))}</i>",
         "",
@@ -452,69 +455,86 @@ def alerte(s, m, ctx, inf):
     return "\n".join(lignes)
 
 
-def niveaux(prix, a, typ, tick):
-    """Ticket indicatif (entrée, SL, objectif) si on entrait à `prix`."""
-    e, sl, tp = ticket(prix, a, typ, tick)
-    return f"entrée <code>{fmt(e, tick)}</code> · SL <code>{fmt(sl, tick)}</code> · TP <code>{fmt(tp, tick)}</code>"
+def titre(sym, sens):
+    return f"{'🟢' if sens == 1 else '🔴'} <b>{'LONG' if sens == 1 else 'SHORT'} — {escape(sym[:-4])}</b>"
 
 
 def resume(etat, M, candidats, ctx, latents, maintenant_ms, info, prix):
+    """Résumé en blocs : ce qu'on peut prendre maintenant, ce qu'il faut attendre, le reste."""
     maintenant = datetime.now(PARIS)
     tick = lambda s: info.get(s, {}).get("tick")
-    out = [f"📡 <b>RADAR ALT — {maintenant:%d/%m %H:%M}</b>", "", escape(ctx["texte"]), ""]
+    p = lambda x, s: f"<code>{fmt(arrondi(x, tick(s)), tick(s))}</code>"
     suivis = sorted(etat["suivis"].values(), key=lambda s: -s["t_decl"])
-    out.append(f"🚀 <b>Signaux en cours</b> : {len(suivis)}")
-    for s in suivis[:2 * MAX_LISTE]:
-        age = (maintenant_ms - s["t_decl"]) / H1
-        r, t, px = latents.get(s["id"]), tick(s["sym"]), prix.get(s["sym"])
-        etat_txt = f"{r:+.1f} R" if r is not None else "prix indisponible"
-        out.append(f"<b>{escape(s['sym'][:-4])}</b> {NOMS.get(s['type'], s['type'])} · depuis {age:.0f} h · {etat_txt} · {lien(s['sym'], 'graphique')}")
-        out.append(f"   entrée <code>{fmt(s['entree'], t)}</code> · SL <code>{fmt(arrondi(s['sl'], t), t)}</code> · "
-                   f"TP <code>{fmt(arrondi(s['objectif'], t), t)}</code>"
-                   + (f" · prix <code>{fmt(arrondi(px, t), t)}</code>" if px else ""))
-    if not suivis:
-        out.append("aucun")
     en_cours = {(s["sym"], s["type"]) for s in suivis}
-    # Paires proches d'un signal : pas encore un état nouveau, à garder à l'œil.
-    proches_l = sorted([(min(m["force7"], m["force30"]), s, m) for s, m in M.items()
-                        if "force7" in m and min(m["force7"], m["force30"]) > FORCE_PROCHE
-                        and m["h4_haussier"] and m["jour_haussier"] and (s, "leader") not in en_cours],
-                       key=lambda x: -x[0])
-    out += ["", f"👀 <b>Alts fortes en tendance</b> (top {100 * (1 - FORCE_PROCHE):.0f} % sur 7 j et 30 j) : {len(proches_l)}",
-            "<i>Pas de niveau de prix à casser : le signal LONG part quand l'alt entre dans le top "
-            f"{100 * (1 - FORCE_MIN):.0f} % à une clôture H4. Niveaux donnés si entrée au prix actuel.</i>"]
-    for f, s, m in proches_l[:MAX_LISTE]:
+
+    # 1) Signaux V2 en cours : encore prenables ou non, selon l'écart du prix avec l'entrée
+    prendre, passes = [], []
+    for s in suivis:
+        r, px = latents.get(s["id"]), prix.get(s["sym"])
+        age = (maintenant_ms - s["t_decl"]) / H1
+        if s["type"] in SENS and r is not None and px and ENTREE_OK[0] <= r <= ENTREE_OK[1]:
+            prendre.append("\n".join([
+                titre(s["sym"], s["sens"]),
+                "✅ <b>OK pour y aller maintenant</b> (prix encore proche de l'entrée du signal)",
+                f"Entrée : {p(px, s['sym'])} (prix actuel)",
+                f"SL : {p(s['sl'], s['sym'])}",
+                f"TP : {p(s['objectif'], s['sym'])}",
+                f"Signal donné il y a {age:.0f} h à {p(s['entree'], s['sym'])} · {lien(s['sym'], 'graphique')}"]))
+        else:
+            if s["type"] not in SENS:
+                raison = "⛔ Ne pas entrer : ancien radar V1, simple suivi"
+            elif r is None:
+                raison = "⛔ Ne pas entrer : prix indisponible"
+            elif r > ENTREE_OK[1]:
+                raison = "⛔ Trop tard pour entrer : le prix est déjà parti"
+            else:
+                raison = "⛔ Ne pas entrer : le prix est revenu près du SL"
+            passes.append("\n".join([
+                titre(s["sym"], s.get("sens", 1)),
+                raison,
+                f"Résultat en cours : {r:+.1f} R · depuis {age:.0f} h" if r is not None else f"Depuis {age:.0f} h",
+                f"Entrée {p(s['entree'], s['sym'])} · SL {p(s['sl'], s['sym'])} · TP {p(s['objectif'], s['sym'])}"]))
+
+    # 2) SHORT en attente : prix à moins de 1 ATR au-dessus du plus bas 60 j
+    attente_s = []
+    for dist, s, m in sorted([((m["prix"] - m["bas60"]) / m["atr"], s, m) for s, m in M.items()
+                              if m["bas60"] is not None and 0 <= (m["prix"] - m["bas60"]) / m["atr"] <= 1.0
+                              and (s, "cassure_bas") not in en_cours], key=lambda x: x[0])[:MAX_LISTE]:
         px = prix.get(s, m["prix"])
-        if (s, "leader") in candidats:
-            marque = "🏆 déjà leader (signal passé)"
-        else:
-            marque = (f"proche : top {max(1, round(100 * (1 - m['force7'])))} % sur 7 j, "
-                      f"top {max(1, round(100 * (1 - m['force30'])))} % sur 30 j")
-        out.append(f"<b>{escape(s[:-4])}</b> {100 * m['r7']:+.0f} % sur 7 j · {100 * m['r30']:+.0f} % sur 30 j · {marque} · {lien(s, 'graphique')}")
-        out.append("   " + niveaux(px, m["atr"], "leader", tick(s)))
-    if not proches_l:
-        out.append("aucune")
-    proches_s = sorted([((m["prix"] - m["bas60"]) / m["atr"], s, m) for s, m in M.items()
-                        if m["bas60"] is not None and (m["prix"] - m["bas60"]) / m["atr"] <= 1.0
-                        and (s, "cassure_bas") not in en_cours], key=lambda x: x[0])
-    out += ["", f"👀 <b>Alts faibles près de leur plus bas 60 j</b> (à moins de 1 ATR) : {len(proches_s)}",
-            "<i>Signal SHORT à la première clôture H4 sous le niveau. Niveaux donnés pour une entrée au niveau.</i>"]
-    for dist, s, m in proches_s[:MAX_LISTE]:
-        t, px = tick(s), prix.get(s, m["prix"])
-        niveau = arrondi(m["bas60"], t)
-        if dist < 0:
-            marque = f"📉 déjà sous <code>{fmt(niveau, t)}</code> (signal passé)"
-            ref = px
-        else:
-            marque = f"déclenchement sous <code>{fmt(niveau, t)}</code> ({100 * (niveau / px - 1):+.1f} %, {dist:.1f} ATR)"
-            ref = niveau
-        out.append(f"<b>{escape(s[:-4])}</b> {100 * m['r30']:+.0f} % sur 30 j · {marque} · {lien(s, 'graphique')}")
-        out.append("   " + niveaux(ref, m["atr"], "cassure_bas", t))
-    if not proches_s:
-        out.append("aucune")
-    out += ["", f"<i>Signal = état nouveau à la clôture H4 (au plus {MAX_PAR_PASSAGE} par sens) : l'alerte donne alors le ticket exact. "
-                f"SL à {STOP_ATR:g} ATR H4, TP à {OBJECTIF_R:g} R. Ce n'est pas un ordre : c'est toi qui décides. "
-                f"News / macro non vérifiées. V{VERSION}</i>"]
+        e, sl, tp = ticket(m["bas60"], m["atr"], "cassure_bas", tick(s))
+        attente_s.append("\n".join([
+            titre(s, -1),
+            f"⏳ <b>Attendre.</b> Y aller seulement si une bougie H4 clôture sous {p(m['bas60'], s)}",
+            f"Prix actuel : {p(px, s)} (déclenchement à {100 * (m['bas60'] / px - 1):+.1f} %)",
+            f"Si déclenché : entrée ≈ {p(e, s)} · SL {p(sl, s)} · TP {p(tp, s)}",
+            lien(s, "graphique")]))
+
+    # 3) LONG en attente : alts fortes en tendance, pas encore dans le top du classement
+    attente_l = []
+    for f, s, m in sorted([(min(m["force7"], m["force30"]), s, m) for s, m in M.items()
+                           if "force7" in m and min(m["force7"], m["force30"]) > FORCE_PROCHE
+                           and m["h4_haussier"] and m["jour_haussier"] and (s, "leader") not in candidats],
+                          key=lambda x: -x[0])[:MAX_LISTE]:
+        attente_l.append("\n".join([
+            titre(s, 1),
+            "⏳ <b>Attendre l'alerte.</b> Pas de prix à surveiller : le signal part à une clôture H4 "
+            f"si l'alt entre dans le top {100 * (1 - FORCE_MIN):.0f} % sur 7 j et sur 30 j",
+            f"Aujourd'hui : top {max(1, round(100 * (1 - m['force7'])))} % sur 7 j ({100 * m['r7']:+.0f} %) · "
+            f"top {max(1, round(100 * (1 - m['force30'])))} % sur 30 j ({100 * m['r30']:+.0f} %)",
+            lien(s, "graphique")]))
+
+    def section(nom, blocs):
+        return ["━━━━━━━━━━━━", f"<b>{nom} : {len(blocs)}</b>", "", "\n\n".join(blocs) if blocs else "aucun", ""]
+
+    out = [f"📡 <b>RADAR ALT — {maintenant:%d/%m %H:%M}</b>", "", escape(ctx["texte"]), ""]
+    out += section("✅ À PRENDRE MAINTENANT", prendre)
+    out += section("⏳ À ATTENDRE — SHORT proche du déclenchement", attente_s)
+    out += section("⏳ À ATTENDRE — LONG proche du signal", attente_l)
+    out += section("⛔ SIGNAUX EN COURS À NE PAS PRENDRE", passes[:2 * MAX_LISTE])
+    out += ["━━━━━━━━━━━━",
+            f"<i>Une alerte avec le ticket complet part à chaque déclenchement (au plus {MAX_PAR_PASSAGE} par sens "
+            f"et par clôture H4, les paires les plus liquides d'abord). SL à {STOP_ATR:g} ATR H4, TP à {OBJECTIF_R:g} R. "
+            f"News / macro non vérifiées. V{VERSION}</i>"]
     return "\n".join(out)
 
 
