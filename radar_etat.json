@@ -72,96 +72,6 @@
    "vu": 1794164553145,
    "t_decl": 0
   },
-  "ESPORTSUSDT|retournement|0.01271": {
-   "type": "retournement",
-   "declenchement": 0.01271,
-   "invalidation": 0.009826008641523394,
-   "atr": 0.0010799711949220161,
-   "info": {
-    "creux1": 0.00917,
-    "creux2": 0.01015,
-    "baisse_atr": 12.2
-   },
-   "id": "ESPORTSUSDT|retournement|0.01271",
-   "sym": "ESPORTSUSDT",
-   "bruit": 17.868541779358534,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1794121350407,
-   "t_decl": 0
-  },
-  "ICNTUSDT|continuation|0.3661": {
-   "type": "continuation",
-   "declenchement": 0.3661,
-   "invalidation": 0.29574735097231125,
-   "atr": 0.02750883009229575,
-   "info": {
-    "repli_atr": 2.3,
-    "age_h4": 4,
-    "calme": false
-   },
-   "id": "ICNTUSDT|continuation|0.3661",
-   "sym": "ICNTUSDT",
-   "bruit": 10.777566278913778,
-   "tick": 0.0001,
-   "etape": "termine",
-   "vu": 1794121350407,
-   "t_decl": 1794124800000.0,
-   "entree": 0.3693,
-   "sl": 0.2957,
-   "objectif": 0.5165,
-   "feu": "🟠",
-   "date_decl": "2026-11-08 09:00",
-   "mesures_impulsion": {
-    "h1_amplitude": 0.0646,
-    "h1_amplitude_atr": 3.6621,
-    "h1_position_cloture": 0.8344,
-    "h1_corps_pct": 0.8282,
-    "m15_complet": true,
-    "m15_bougies": [
-     {
-      "heure_utc": "2026-11-08T07:00:00+00:00",
-      "o": 0.3158,
-      "h": 0.3289,
-      "l": 0.3154,
-      "c": 0.328,
-      "amplitude": 0.0135,
-      "corps_pct": 0.9037,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-11-08T07:15:00+00:00",
-      "o": 0.328,
-      "h": 0.3566,
-      "l": 0.3277,
-      "c": 0.3449,
-      "amplitude": 0.0289,
-      "corps_pct": 0.5848,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-11-08T07:30:00+00:00",
-      "o": 0.3449,
-      "h": 0.3648,
-      "l": 0.343,
-      "c": 0.3641,
-      "amplitude": 0.0218,
-      "corps_pct": 0.8807,
-      "direction": "hausse"
-     },
-     {
-      "heure_utc": "2026-11-08T07:45:00+00:00",
-      "o": 0.3641,
-      "h": 0.38,
-      "l": 0.3606,
-      "c": 0.3693,
-      "amplitude": 0.0194,
-      "corps_pct": 0.268,
-      "direction": "hausse"
-     }
-    ]
-   }
-  },
   "ETHUSDT|retournement|2252.54": {
    "type": "retournement",
    "declenchement": 2252.54,
@@ -608,7 +518,7 @@
    "sym": "HANAUSDT",
    "bruit": 11.490773330399575,
    "tick": 1e-05,
-   "etape": "formation",
+   "etape": "disparu",
    "vu": 1794290563951,
    "t_decl": 0
   },
@@ -644,8 +554,8 @@
    "sym": "ETHUSDT",
    "bruit": 4.521509613996064,
    "tick": 0.01,
-   "etape": "pret",
-   "vu": 1794290563951,
+   "etape": "formation",
+   "vu": 1794294154890,
    "t_decl": 0
   },
   "DOGEUSDT|retournement|0.07085": {
@@ -717,7 +627,7 @@
    "bruit": 5.0583805892703735,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794290563951,
+   "vu": 1794294154890,
    "t_decl": 0
   },
   "AVAXUSDT|retournement|9.007": {
@@ -735,7 +645,7 @@
    "bruit": 6.784076705819649,
    "tick": 0.001,
    "etape": "formation",
-   "vu": 1794290563951,
+   "vu": 1794294154890,
    "t_decl": 0
   },
   "ARBUSDT|continuation|0.18781": {
@@ -753,7 +663,7 @@
    "bruit": 8.551377776241056,
    "tick": 1e-05,
    "etape": "formation",
-   "vu": 1794290563951,
+   "vu": 1794294154890,
    "t_decl": 0
   }
  },
