@@ -72,24 +72,6 @@
    "vu": 1794193352288,
    "t_decl": 0
   },
-  "BTWUSDT|retournement|1.31926": {
-   "type": "retournement",
-   "declenchement": 1.31926,
-   "invalidation": 1.0841322850683492,
-   "atr": 0.09449238310550241,
-   "info": {
-    "creux1": 0.8701,
-    "creux2": 1.11248,
-    "baisse_atr": 10.7
-   },
-   "id": "BTWUSDT|retournement|1.31926",
-   "sym": "BTWUSDT",
-   "bruit": 29.11847172028812,
-   "tick": 1e-05,
-   "etape": "disparu",
-   "vu": 1794160954078,
-   "t_decl": 0
-  },
   "METUSDT|continuation|0.3358": {
    "type": "continuation",
    "declenchement": 0.3358,
@@ -843,7 +825,7 @@
    "bruit": 9.84420121958349,
    "tick": 0.0001,
    "etape": "formation",
-   "vu": 1794330156452,
+   "vu": 1794333754759,
    "t_decl": 0
   },
   "DRAMUSDT|retournement|42.26": {
@@ -987,7 +969,7 @@
    "bruit": 6.590359487435009,
    "tick": 0.001,
    "etape": "pret",
-   "vu": 1794330156452,
+   "vu": 1794333754759,
    "t_decl": 0
   },
   "NBISUSDT|retournement|144.65": {
