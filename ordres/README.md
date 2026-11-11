@@ -3,7 +3,7 @@
 Quand le Radar Alt envoie une alerte, deux boutons apparaissent sous le message :
 **✅ Prendre** et **❌ Ignorer**. « Prendre » demande une confirmation, puis « Confirmer »
 passe l'ordre sur Zoomex : entrée au marché, SL et TP du ticket, quantité calculée pour
-risquer le montant choisi (1 USDT par défaut).
+risquer le montant choisi (5 USDT par défaut).
 
 Ce dossier contient le petit service (worker Cloudflare) qui reçoit l'appui sur le bouton.
 

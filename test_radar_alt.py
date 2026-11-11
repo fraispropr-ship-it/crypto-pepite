@@ -95,3 +95,9 @@ def test_boutons_ordre_portent_le_ticket():
     assert b[0]["callback_data"] == "p|DOTUSDT|S|0.8316|0.8752|0.7008" and "SHORT DOT" in b[0]["text"]
     assert b[1]["callback_data"] == "i"
     assert R.boutons_ordre(dict(s, sym="X" * 60 + "USDT"), 0.0001) is None       # trop long pour Telegram
+
+
+def test_pas_de_short_si_objectif_impossible():
+    M = univers(casse=("ZZZUSDT",))
+    M["ZZZUSDT"]["atr"] = 0.2                      # 2 ATR x 3 R = 1,2 : plus que le prix (0,9)
+    assert ("ZZZUSDT", "cassure_bas") not in R.detecter(M)
