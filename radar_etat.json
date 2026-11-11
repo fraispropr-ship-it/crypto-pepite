@@ -39,25 +39,6 @@
     "baisse_atr": 14.2
    }
   },
-  "1000PEPEUSDT|continuation|0.005391": {
-   "id": "1000PEPEUSDT|continuation|0.005391",
-   "sym": "1000PEPEUSDT",
-   "type": "continuation",
-   "sens": 1,
-   "t_decl": 1794322800000.0,
-   "entree": 0.005556,
-   "sl": 0.005009,
-   "objectif": 0.00665,
-   "objectif_r": 2.0,
-   "max_h": 72,
-   "feu": "🟠",
-   "date_decl": "2026-11-10 16:00",
-   "info": {
-    "repli_atr": 1.9,
-    "age_h4": 4,
-    "calme": true
-   }
-  },
   "ERAUSDT|leader|1794384000000": {
    "id": "ERAUSDT|leader|1794384000000",
    "sym": "ERAUSDT",
