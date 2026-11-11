@@ -1,5 +1,5 @@
 # ==============================================================================
-#  RADAR ALT V2.4 — repère les altcoins qui ont un avantage MESURÉ (Zoomex, USDT perp)
+#  RADAR ALT V2.5 — repère les altcoins qui ont un avantage MESURÉ (Zoomex, USDT perp)
 #
 #  Philosophie : la machine REPÈRE et PRÉVIENT, c'est TOI qui décides.
 #  Aucune promesse de gain : voir « Ce que dit le backtest » ci-dessous.
@@ -57,7 +57,7 @@ import numpy as np
 import pandas as pd
 import requests
 
-VERSION = "2.4"
+VERSION = "2.5"
 
 # ---------------- RÉGLAGES ----------------
 LIQ_MIN        = 10_000_000   # volume 24 h minimum (USDT)
@@ -75,7 +75,7 @@ STOP_ATR       = 2.0          # SL à 2 ATR H4 de l'entrée
 OBJECTIF_R     = 3.0          # objectif indicatif
 SUIVI_MAX_H    = 168          # suivi d'un signal : 7 jours maximum
 SILENCE_NUIT   = None         # résumé jour et nuit ; mettre (23, 7) pour le couper de 23 h à 7 h (heure de Paris)
-RISQUE         = 1.0          # USDT risqués par trade (pour le ticket)
+RISQUE         = 5.0          # USDT risqués par trade (pour le ticket)
 MARGE_CIBLE    = 20.0         # marge max souhaitée par trade (USDT)
 FRAIS_TAKER    = 0.0006
 MAX_LISTE      = 5
@@ -226,6 +226,11 @@ def mesures(h4, d):
     return m
 
 
+def short_possible(m):
+    """Faux si la paire est si volatile que l'objectif d'un short tomberait à zéro ou en dessous."""
+    return m["bas60"] is not None and STOP_ATR * OBJECTIF_R * m["atr"] < 0.9 * min(m["prix"], m["bas60"])
+
+
 def detecter(M):
     """M = {paire: mesures}. Ajoute force7 / force30 (rang 0-1 dans l'univers) à chaque paire
     et retourne {(paire, type): mesures} pour les paires qui remplissent une condition."""
@@ -238,7 +243,7 @@ def detecter(M):
             if min(m["force7"], m["force30"]) > FORCE_MIN and m["h4_haussier"] and m["jour_haussier"]:
                 out[(s, "leader")] = m
     for s, m in M.items():
-        if m["bas60"] is not None and m["prix"] < m["bas60"]:
+        if short_possible(m) and m["prix"] < m["bas60"]:
             out[(s, "cassure_bas")] = m
     return out
 
@@ -458,10 +463,11 @@ def alerte(s, m, ctx, inf):
         f"Paire : <code>{base}</code>",
         f"Sens : <code>{'LONG (achat)' if s['sens'] == 1 else 'SHORT (vente)'}</code>",
         f"Quantité : <code>{fmt(sz['q'], step)}</code> {base}",
+        f"Taille de position : <code>{sz['notional']:.2f}</code> USDT (risque {RISQUE:g} USDT)",
         f"Entrée : <code>{fmt(e, t)}</code>",
         f"SL ({STOP_ATR:g} ATR H4) : <code>{fmt(sl, t)}</code>",
         f"TP ({OBJECTIF_R:g} R, indicatif) : <code>{fmt(tp, t)}</code>",
-        f"Valeur : <code>{sz['notional']:.2f}</code> USDT · levier x{sz['lev']} · marge ≈ {sz['marge']:.2f} USDT",
+        f"Levier x{sz['lev']} · marge ≈ {sz['marge']:.2f} USDT",
         f"Frais ≈ {frais:.2f} R · SL à {sl_pct:.1f} % (bruit journalier {s['bruit']:.0f} %) · durée max {SUIVI_MAX_H // 24} j",
         "",
         escape(ctx["texte"]),
@@ -482,6 +488,8 @@ def resume(etat, M, candidats, ctx, latents, maintenant_ms, info, prix):
     maintenant = datetime.now(PARIS)
     tick = lambda s: info.get(s, {}).get("tick")
     p = lambda x, s: f"<code>{fmt(arrondi(x, tick(s)), tick(s))}</code>"
+    taille = lambda e, sl, s: (f"Taille de position : <code>{sizing(e, sl, info.get(s, {}))['notional']:.2f}</code> USDT "
+                               f"(risque {RISQUE:g} USDT)")
     suivis = sorted(etat["suivis"].values(), key=lambda s: -s["t_decl"])
     en_cours = {(s["sym"], s["type"]) for s in suivis}
 
@@ -494,6 +502,7 @@ def resume(etat, M, candidats, ctx, latents, maintenant_ms, info, prix):
             prendre.append("\n".join([
                 titre(s["sym"], s["sens"]),
                 "✅ <b>OK pour y aller maintenant</b> (prix encore proche de l'entrée du signal)",
+                taille(px, s["sl"], s["sym"]),
                 f"Entrée : {p(px, s['sym'])} (prix actuel)",
                 f"SL : {p(s['sl'], s['sym'])}",
                 f"TP : {p(s['objectif'], s['sym'])}",
@@ -516,7 +525,7 @@ def resume(etat, M, candidats, ctx, latents, maintenant_ms, info, prix):
     # 2) SHORT en attente : prix à moins de 1 ATR au-dessus du plus bas 60 j
     attente_s = []
     for dist, s, m in sorted([((m["prix"] - m["bas60"]) / m["atr"], s, m) for s, m in M.items()
-                              if m["bas60"] is not None and 0 <= (m["prix"] - m["bas60"]) / m["atr"] <= 1.0
+                              if short_possible(m) and 0 <= (m["prix"] - m["bas60"]) / m["atr"] <= 1.0
                               and (s, "cassure_bas") not in en_cours], key=lambda x: x[0])[:MAX_LISTE]:
         px = prix.get(s, m["prix"])
         e, sl, tp = ticket(m["bas60"], m["atr"], "cassure_bas", tick(s))
@@ -525,6 +534,7 @@ def resume(etat, M, candidats, ctx, latents, maintenant_ms, info, prix):
             f"⏳ <b>Attendre.</b> Y aller seulement si une bougie H4 clôture sous {p(m['bas60'], s)}",
             f"Prix actuel : {p(px, s)} (déclenchement à {100 * (m['bas60'] / px - 1):+.1f} %)",
             f"Si déclenché : entrée ≈ {p(e, s)} · SL {p(sl, s)} · TP {p(tp, s)}",
+            taille(e, sl, s),
             lien(s, "graphique")]))
 
     # 3) LONG en attente : alts fortes en tendance, pas encore dans le top du classement

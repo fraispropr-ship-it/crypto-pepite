@@ -8,7 +8,7 @@
   // Secrets (jamais ici) : TELEGRAM_TOKEN, OWNER_ID, WEBHOOK_SECRET, ZOOMEX_API_KEY, ZOOMEX_API_SECRET.
   "vars": {
     "ORDRES_ACTIFS": "true",
-    "RISQUE_USDT": "1",
+    "RISQUE_USDT": "5",
     "MARGE_CIBLE": "20",
     "MAX_POSITIONS": "3",
     "R_MIN": "-0.5",
