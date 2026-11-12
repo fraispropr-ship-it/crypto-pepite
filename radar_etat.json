@@ -1,44 +1,6 @@
 {
  "version": 2,
  "suivis": {
-  "DRAMUSDT|retournement|40.76": {
-   "id": "DRAMUSDT|retournement|40.76",
-   "sym": "DRAMUSDT",
-   "type": "retournement",
-   "sens": 1,
-   "t_decl": 1794236400000.0,
-   "entree": 41.34,
-   "sl": 37.49,
-   "objectif": 49.040000000000006,
-   "objectif_r": 2.0,
-   "max_h": 72,
-   "feu": "🟠",
-   "date_decl": "2026-11-09 16:00",
-   "info": {
-    "creux1": 36.63,
-    "creux2": 37.84,
-    "baisse_atr": 11.9
-   }
-  },
-  "MUUUSDT|retournement|15.13": {
-   "id": "MUUUSDT|retournement|15.13",
-   "sym": "MUUUSDT",
-   "type": "retournement",
-   "sens": 1,
-   "t_decl": 1794236400000.0,
-   "entree": 15.29,
-   "sl": 12.38,
-   "objectif": 21.109999999999996,
-   "objectif_r": 2.0,
-   "max_h": 72,
-   "feu": "🟠",
-   "date_decl": "2026-11-09 16:00",
-   "info": {
-    "creux1": 12.22,
-    "creux2": 12.67,
-    "baisse_atr": 14.2
-   }
-  },
   "ERAUSDT|leader|1794384000000": {
    "id": "ERAUSDT|leader|1794384000000",
    "sym": "ERAUSDT",
