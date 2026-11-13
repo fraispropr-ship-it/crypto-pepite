@@ -201,31 +201,6 @@
     "volume24h": 2603641024
    }
   },
-  "SOLUSDT|cassure_bas|1794542400000": {
-   "id": "SOLUSDT|cassure_bas|1794542400000",
-   "sym": "SOLUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1794542400000.0,
-   "entree": 78.45,
-   "sl": 81.77,
-   "objectif": 68.49,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 5.361862022861813,
-   "date_decl": "2026-11-13 05:00",
-   "info": {
-    "sens": "short",
-    "atr": 1.6604753195834085,
-    "r7": -0.1244,
-    "r30": -0.2723,
-    "force7": 0.346,
-    "force30": 0.462,
-    "bas60": 80.43,
-    "volume24h": 523285825
-   }
-  },
   "BARDUSDT|leader|1794571200000": {
    "id": "BARDUSDT|leader|1794571200000",
    "sym": "BARDUSDT",
