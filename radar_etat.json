@@ -1,31 +1,6 @@
 {
  "version": 2,
  "suivis": {
-  "ERAUSDT|leader|1794384000000": {
-   "id": "ERAUSDT|leader|1794384000000",
-   "sym": "ERAUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1794384000000.0,
-   "entree": 0.0841,
-   "sl": 0.07538,
-   "objectif": 0.11026,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🟠",
-   "bruit": 11.627480560398263,
-   "date_decl": "2026-11-11 09:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.00436081674562833,
-    "r7": 0.2974,
-    "r30": 0.1687,
-    "force7": 0.92,
-    "force30": 0.92,
-    "bas60": 0.05398,
-    "volume24h": 12962456
-   }
-  },
   "OPGUSDT|leader|1794427200000": {
    "id": "OPGUSDT|leader|1794427200000",
    "sym": "OPGUSDT",
@@ -225,24 +200,49 @@
     "bas60": 0.08003,
     "volume24h": 150141889
    }
+  },
+  "NBISUSDT|cassure_bas|1794585600000": {
+   "id": "NBISUSDT|cassure_bas|1794585600000",
+   "sym": "NBISUSDT",
+   "type": "cassure_bas",
+   "sens": -1,
+   "t_decl": 1794585600000.0,
+   "entree": 112.98,
+   "sl": 130.21,
+   "objectif": 61.29,
+   "objectif_r": 3.0,
+   "max_h": 168,
+   "feu": "🔴",
+   "bruit": 12.662970412269592,
+   "date_decl": "2026-11-13 17:00",
+   "info": {
+    "sens": "short",
+    "atr": 8.61267622252021,
+    "r7": -0.1294,
+    "r30": -0.4003,
+    "force7": 0.267,
+    "force30": 0.15,
+    "bas60": 113.55,
+    "volume24h": 28495310
+   }
   }
  },
- "dernier_resume": 124623,
- "dernier_h4": 1794571200000,
+ "dernier_resume": 124624,
+ "dernier_h4": 1794585600000,
  "vus": {
   "INITUSDT|leader": 1794412800000,
   "1000PEPEUSDT|leader": 1794384000000,
-  "PIEVERSEUSDT|leader": 1794571200000,
-  "ARIAUSDT|leader": 1794571200000,
+  "PIEVERSEUSDT|leader": 1794585600000,
+  "ARIAUSDT|leader": 1794585600000,
   "INJUSDT|leader": 1794427200000,
   "CAPUSDT|leader": 1794398400000,
   "EDGEUSDT|leader": 1794340800000,
   "ICNTUSDT|leader": 1794355200000,
   "ZECUSDT|cassure_bas": 1794542400000,
   "VVVUSDT|cassure_bas": 1794340800000,
-  "ERAUSDT|leader": 1794571200000,
+  "ERAUSDT|leader": 1794585600000,
   "OPGUSDT|leader": 1794499200000,
-  "HUSDT|cassure_bas": 1794499200000,
+  "HUSDT|cassure_bas": 1794585600000,
   "LINKUSDT|cassure_bas": 1794542400000,
   "BNBUSDT|cassure_bas": 1794556800000,
   "XRPUSDT|cassure_bas": 1794542400000,
@@ -258,6 +258,7 @@
   "LTCUSDT|cassure_bas": 1794542400000,
   "FARTCOINUSDT|cassure_bas": 1794542400000,
   "DOTUSDT|cassure_bas": 1794542400000,
-  "BARDUSDT|leader": 1794571200000
+  "BARDUSDT|leader": 1794585600000,
+  "NBISUSDT|cassure_bas": 1794585600000
  }
 }
