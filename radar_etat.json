@@ -200,17 +200,67 @@
     "bas60": 113.55,
     "volume24h": 28495310
    }
+  },
+  "MAGMAUSDT|leader|1794614400000": {
+   "id": "MAGMAUSDT|leader|1794614400000",
+   "sym": "MAGMAUSDT",
+   "type": "leader",
+   "sens": 1,
+   "t_decl": 1794614400000.0,
+   "entree": 0.3198,
+   "sl": 0.2705,
+   "objectif": 0.4677,
+   "objectif_r": 3.0,
+   "max_h": 168,
+   "feu": "🔴",
+   "bruit": 19.616005264769438,
+   "date_decl": "2026-11-14 01:00",
+   "info": {
+    "sens": "long",
+    "atr": 0.02466301046385563,
+    "r7": 0.1348,
+    "r30": 0.3796,
+    "force7": 0.875,
+    "force30": 0.946,
+    "bas60": 0.181,
+    "volume24h": 12623617
+   }
+  },
+  "AEROUSDT|cassure_bas|1794614400000": {
+   "id": "AEROUSDT|cassure_bas|1794614400000",
+   "sym": "AEROUSDT",
+   "type": "cassure_bas",
+   "sens": -1,
+   "t_decl": 1794614400000.0,
+   "entree": 0.4685,
+   "sl": 0.504,
+   "objectif": 0.362,
+   "objectif_r": 3.0,
+   "max_h": 168,
+   "feu": "🔴",
+   "bruit": 12.097831742973392,
+   "date_decl": "2026-11-14 01:00",
+   "info": {
+    "sens": "short",
+    "atr": 0.017741990501451366,
+    "r7": -0.2362,
+    "r30": -0.4809,
+    "force7": 0.071,
+    "force30": 0.107,
+    "bas60": 0.4699,
+    "volume24h": 13303539
+   }
   }
  },
- "dernier_resume": 124625,
- "dernier_h4": 1794600000000,
+ "dernier_resume": 124626,
+ "dernier_h4": 1794614400000,
  "vus": {
   "INITUSDT|leader": 1794412800000,
   "1000PEPEUSDT|leader": 1794384000000,
-  "PIEVERSEUSDT|leader": 1794600000000,
-  "ARIAUSDT|leader": 1794600000000,
+  "PIEVERSEUSDT|leader": 1794614400000,
+  "ARIAUSDT|leader": 1794614400000,
   "INJUSDT|leader": 1794427200000,
-  "CAPUSDT|leader": 1794600000000,
+  "CAPUSDT|leader": 1794614400000,
   "EDGEUSDT|leader": 1794340800000,
   "ICNTUSDT|leader": 1794355200000,
   "ZECUSDT|cassure_bas": 1794542400000,
@@ -233,7 +283,9 @@
   "LTCUSDT|cassure_bas": 1794542400000,
   "FARTCOINUSDT|cassure_bas": 1794542400000,
   "DOTUSDT|cassure_bas": 1794542400000,
-  "BARDUSDT|leader": 1794600000000,
-  "NBISUSDT|cassure_bas": 1794585600000
+  "BARDUSDT|leader": 1794614400000,
+  "NBISUSDT|cassure_bas": 1794585600000,
+  "MAGMAUSDT|leader": 1794614400000,
+  "AEROUSDT|cassure_bas": 1794614400000
  }
 }
