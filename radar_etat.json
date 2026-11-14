@@ -51,31 +51,6 @@
     "volume24h": 10293430
    }
   },
-  "LINKUSDT|cassure_bas|1794484800000": {
-   "id": "LINKUSDT|cassure_bas|1794484800000",
-   "sym": "LINKUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1794484800000.0,
-   "entree": 9.99,
-   "sl": 10.441,
-   "objectif": 8.637,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🟠",
-   "bruit": 6.653987665886963,
-   "date_decl": "2026-11-12 13:00",
-   "info": {
-    "sens": "short",
-    "atr": 0.22572363002358053,
-    "r7": -0.1338,
-    "r30": -0.2212,
-    "force7": 0.372,
-    "force30": 0.558,
-    "bas60": 10.007,
-    "volume24h": 24052668
-   }
-  },
   "XRPUSDT|cassure_bas|1794499200000": {
    "id": "XRPUSDT|cassure_bas|1794499200000",
    "sym": "XRPUSDT",
@@ -99,31 +74,6 @@
     "force30": 0.457,
     "bas60": 1.0301,
     "volume24h": 300265373
-   }
-  },
-  "DOGEUSDT|cassure_bas|1794499200000": {
-   "id": "DOGEUSDT|cassure_bas|1794499200000",
-   "sym": "DOGEUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1794499200000.0,
-   "entree": 0.06551,
-   "sl": 0.06833,
-   "objectif": 0.05705,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🟠",
-   "bruit": 5.678719774686528,
-   "date_decl": "2026-11-12 17:00",
-   "info": {
-    "sens": "short",
-    "atr": 0.0014103012962385845,
-    "r7": -0.0871,
-    "r30": -0.2218,
-    "force7": 0.348,
-    "force30": 0.609,
-    "bas60": 0.06604,
-    "volume24h": 73760187
    }
   },
   "ETHUSDT|cassure_bas|1794542400000": {
