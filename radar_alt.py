@@ -321,36 +321,69 @@ def boutons_ordre(s, tick=None):
 def telegram(texte, boutons=None):
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
         print("(Telegram non configuré : message non envoyé)")
-        return
+        return False
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    morceaux = decouper(texte)
-    for n, m in enumerate(morceaux):
-        data = dict(chat_id=TELEGRAM_CHAT_ID, text=m, parse_mode="HTML", disable_web_page_preview=True)
-        if boutons and n == len(morceaux) - 1:
+    est_resume = not isinstance(texte, str)
+    morceaux = decouper(texte if est_resume else [texte])
+    for numero, morceau in enumerate(morceaux, 1):
+        data = dict(chat_id=TELEGRAM_CHAT_ID, text=morceau, parse_mode="HTML", disable_web_page_preview=True)
+        if boutons and numero == len(morceaux):
             data["reply_markup"] = json.dumps(boutons)
-        try:
-            r = requests.post(url, data=data, timeout=15)
-            if r.status_code == 400:                    # mise en forme refusée -> texte simple
-                data.pop("parse_mode")
-                data["text"] = unescape(re.sub(r"<[^>]+>", "", m))
+        for essai in range(4):
+            try:
                 r = requests.post(url, data=data, timeout=15)
-            print("Telegram :", "envoyé" if r.ok else f"échec ({r.status_code} {r.text[:120]})")
-        except Exception as e:
-            print(f"Telegram : échec ({e})")
-        time.sleep(0.4)
+            except (requests.ConnectionError, requests.Timeout) as e:
+                if not est_resume or essai == 3:
+                    print(f"Telegram {numero}/{len(morceaux)} : échec ({type(e).__name__})")
+                    return False
+                print(f"Telegram {numero}/{len(morceaux)} : nouvel essai ({type(e).__name__})")
+                time.sleep(2 ** essai)
+                continue
+            except requests.RequestException as e:
+                print(f"Telegram {numero}/{len(morceaux)} : échec ({type(e).__name__})")
+                return False
+            if r.ok:
+                break
+            if essai < 3 and r.status_code == 400 and "parse_mode" in data:
+                data.pop("parse_mode")
+                data["text"] = unescape(re.sub(r"<[^>]+>", "", morceau))
+                continue
+            if essai < 3 and r.status_code == 429:
+                try:
+                    delai = int(r.json().get("parameters", {}).get("retry_after", 1))
+                except (ValueError, TypeError):
+                    delai = 1
+                if delai <= 60:
+                    time.sleep(max(1, delai))
+                    continue
+            print(f"Telegram {numero}/{len(morceaux)} : échec (HTTP {r.status_code})")
+            return False
+        print(f"Telegram {numero}/{len(morceaux)} : envoyé")
+        time.sleep(1.1)
+    return True
 
 
-def decouper(texte, n=3800):
-    morceaux, bloc = [], ""
-    for ligne in texte.split("\n"):
-        if len(bloc) + len(ligne) + 1 > n:
-            morceaux.append(bloc)
-            bloc = ""
-        bloc += ligne + "\n"
-    return morceaux + ([bloc] if bloc.strip() else [])
+def decouper(blocs, limite=3800):
+    morceaux = []
+    courant = ""
+    for bloc in blocs:
+        if len(bloc.encode("utf-16-le")) // 2 > limite:
+            raise ValueError("Bloc Telegram trop long")
+        suivant = f"{courant}\n\n{bloc}" if courant else bloc
+        if len(suivant.encode("utf-16-le")) // 2 > limite:
+            morceaux.append(courant)
+            courant = bloc
+        else:
+            courant = suivant
+    if courant:
+        morceaux.append(courant)
+    if len(morceaux) > 1:
+        total = len(morceaux)
+        return [f"📡 <b>RADAR ALT · {numero}/{total}</b>\n\n{morceau}"
+                for numero, morceau in enumerate(morceaux, 1)]
+    return morceaux
 
 
-# ---------------- CONTEXTE BTC ----------------
 def contexte(maintenant, quotidiens):
     d = bougies("BTCUSDT", "D", 260, maintenant)
     h4 = bougies("BTCUSDT", "240", 120, maintenant)
@@ -552,18 +585,20 @@ def resume(etat, M, candidats, ctx, latents, maintenant_ms, info, prix):
             lien(s, "graphique")]))
 
     def section(nom, blocs):
-        return ["━━━━━━━━━━━━", f"<b>{nom} : {len(blocs)}</b>", "", "\n\n".join(blocs) if blocs else "aucun", ""]
+        entete = f"━━━━━━━━━━━━\n<b>{nom} : {len(blocs)}</b>"
+        fiches = blocs or ["aucun"]
+        return [f"{entete}\n\n{fiches[0]}", *fiches[1:]]
 
-    out = [f"📡 <b>RADAR ALT — {maintenant:%d/%m %H:%M}</b>", "", escape(ctx["texte"]), ""]
+    out = [f"📡 <b>RADAR ALT — {maintenant:%d/%m %H:%M}</b>\n\n{escape(ctx['texte'])}"]
     out += section("✅ À PRENDRE MAINTENANT", prendre)
     out += section("⏳ À ATTENDRE — SHORT proche du déclenchement", attente_s)
     out += section("⏳ À ATTENDRE — LONG proche du signal", attente_l)
     out += section("⛔ SIGNAUX EN COURS À NE PAS PRENDRE", passes[:2 * MAX_LISTE])
-    out += ["━━━━━━━━━━━━",
+    out += ["━━━━━━━━━━━━\n"
             f"<i>Une alerte avec le ticket complet part à chaque déclenchement (au plus {MAX_PAR_PASSAGE} par sens "
             f"et par clôture H4, les paires les plus liquides d'abord). SL à {STOP_ATR:g} ATR H4, TP à {OBJECTIF_R:g} R. "
             f"News / macro non vérifiées. V{VERSION}</i>"]
-    return "\n".join(out)
+    return out
 
 
 # ---------------- PROGRAMME ----------------
@@ -672,8 +707,8 @@ def main():
     forcer = "--resume" in sys.argv
     if forcer or (etat.get("dernier_resume", 0) < bloc_h4 and not nuit):
         prix = {x: float(h.c.iloc[-1]) for x, h in h1s.items()}
-        telegram(resume(etat, M, candidats, ctx, latents, maintenant, info, prix))
-        etat["dernier_resume"] = bloc_h4
+        if telegram(resume(etat, M, candidats, ctx, latents, maintenant, info, prix)):
+            etat["dernier_resume"] = bloc_h4
     n = {t: sum(1 for k in candidats if k[1] == t) for t in SENS}
     print(f"Paires classées : {len(M)} · leaders : {n['leader']} · sous leur plus bas 60 j : {n['cassure_bas']} · "
           f"signaux suivis : {len(suivis)} · {len(signaux)} nouveau(x) signal(aux)")
