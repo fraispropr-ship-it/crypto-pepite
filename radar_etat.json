@@ -126,31 +126,6 @@
     "volume24h": 28495310
    }
   },
-  "MAGMAUSDT|leader|1794614400000": {
-   "id": "MAGMAUSDT|leader|1794614400000",
-   "sym": "MAGMAUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1794614400000.0,
-   "entree": 0.3198,
-   "sl": 0.2705,
-   "objectif": 0.4677,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 19.616005264769438,
-   "date_decl": "2026-11-14 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.02466301046385563,
-    "r7": 0.1348,
-    "r30": 0.3796,
-    "force7": 0.875,
-    "force30": 0.946,
-    "bas60": 0.181,
-    "volume24h": 12623617
-   }
-  },
   "AEROUSDT|cassure_bas|1794614400000": {
    "id": "AEROUSDT|cassure_bas|1794614400000",
    "sym": "AEROUSDT",
@@ -274,31 +249,6 @@
     "force30": 0.426,
     "bas60": 0.00325,
     "volume24h": 25623449
-   }
-  },
-  "EVAAUSDT|leader|1794686400000": {
-   "id": "EVAAUSDT|leader|1794686400000",
-   "sym": "EVAAUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1794686400000.0,
-   "entree": 1.6202,
-   "sl": 1.3157,
-   "objectif": 2.5337,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 17.948462349729542,
-   "date_decl": "2026-11-14 21:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.1522341380999099,
-    "r7": 0.2219,
-    "r30": 1.6927,
-    "force7": 0.929,
-    "force30": 0.982,
-    "bas60": 0.4106,
-    "volume24h": 40713597
    }
   },
   "BERAUSDT|cassure_bas|1794686400000": {
