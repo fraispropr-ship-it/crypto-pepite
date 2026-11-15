@@ -401,31 +401,6 @@
     "volume24h": 51175865
    }
   },
-  "XMRUSDT|cassure_bas|1794700800000": {
-   "id": "XMRUSDT|cassure_bas|1794700800000",
-   "sym": "XMRUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1794700800000.0,
-   "entree": 470.14,
-   "sl": 505.39,
-   "objectif": 364.39,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 7.723389815491631,
-   "date_decl": "2026-11-15 01:00",
-   "info": {
-    "sens": "short",
-    "atr": 17.625116872003204,
-    "r7": -0.2192,
-    "r30": -0.145,
-    "force7": 0.311,
-    "force30": 0.852,
-    "bas60": 484.29,
-    "volume24h": 30834381
-   }
-  },
   "NIGHTUSDT|leader|1794715200000": {
    "id": "NIGHTUSDT|leader|1794715200000",
    "sym": "NIGHTUSDT",
