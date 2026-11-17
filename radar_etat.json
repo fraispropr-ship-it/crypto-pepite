@@ -375,56 +375,6 @@
     "bas60": 0.09539,
     "volume24h": 10625795
    }
-  },
-  "SNXXUSDT|cassure_bas|1794931200000": {
-   "id": "SNXXUSDT|cassure_bas|1794931200000",
-   "sym": "SNXXUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1794931200000.0,
-   "entree": 2.69,
-   "sl": 3.18,
-   "objectif": 1.22,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 36.40512866226636,
-   "date_decl": "2026-11-17 17:00",
-   "info": {
-    "sens": "short",
-    "atr": 0.24557104023677187,
-    "r7": -0.197,
-    "r30": -0.6861,
-    "force7": 0.192,
-    "force30": 0.058,
-    "bas60": 2.76,
-    "volume24h": 41744007
-   }
-  },
-  "NBISUSDT|cassure_bas|1794931200000": {
-   "id": "NBISUSDT|cassure_bas|1794931200000",
-   "sym": "NBISUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1794931200000.0,
-   "entree": 104.71,
-   "sl": 115.11,
-   "objectif": 73.51,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 14.669712137953908,
-   "date_decl": "2026-11-17 17:00",
-   "info": {
-    "sens": "short",
-    "atr": 5.199644331876858,
-    "r7": -0.2387,
-    "r30": -0.3613,
-    "force7": 0.096,
-    "force30": 0.231,
-    "bas60": 104.96,
-    "volume24h": 18871312
-   }
   }
  },
  "dernier_resume": 124649,
