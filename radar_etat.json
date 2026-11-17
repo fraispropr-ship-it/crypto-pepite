@@ -301,31 +301,6 @@
     "volume24h": 19170959
    }
   },
-  "XLFUSDT|leader|1794700800000": {
-   "id": "XLFUSDT|leader|1794700800000",
-   "sym": "XLFUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1794700800000.0,
-   "entree": 59.14,
-   "sl": 56.98,
-   "objectif": 65.62,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 2.2099612490299996,
-   "date_decl": "2026-11-15 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 1.0816031568942668,
-    "r7": 0.0525,
-    "r30": 0.0679,
-    "force7": 0.902,
-    "force30": 0.918,
-    "bas60": 52.66,
-    "volume24h": 10902311
-   }
-  },
   "AVAXUSDT|cassure_bas|1794700800000": {
    "id": "AVAXUSDT|cassure_bas|1794700800000",
    "sym": "AVAXUSDT",
@@ -375,15 +350,90 @@
     "bas60": 0.008216,
     "volume24h": 71225736
    }
+  },
+  "CROSSUSDT|leader|1794931200000": {
+   "id": "CROSSUSDT|leader|1794931200000",
+   "sym": "CROSSUSDT",
+   "type": "leader",
+   "sens": 1,
+   "t_decl": 1794931200000.0,
+   "entree": 0.15443,
+   "sl": 0.13702,
+   "objectif": 0.20666,
+   "objectif_r": 3.0,
+   "max_h": 168,
+   "feu": "🔴",
+   "bruit": 6.377826478853568,
+   "date_decl": "2026-11-17 17:00",
+   "info": {
+    "sens": "long",
+    "atr": 0.008704559721414491,
+    "r7": 0.4924,
+    "r30": 0.5615,
+    "force7": 0.962,
+    "force30": 0.942,
+    "bas60": 0.09539,
+    "volume24h": 10625795
+   }
+  },
+  "SNXXUSDT|cassure_bas|1794931200000": {
+   "id": "SNXXUSDT|cassure_bas|1794931200000",
+   "sym": "SNXXUSDT",
+   "type": "cassure_bas",
+   "sens": -1,
+   "t_decl": 1794931200000.0,
+   "entree": 2.69,
+   "sl": 3.18,
+   "objectif": 1.22,
+   "objectif_r": 3.0,
+   "max_h": 168,
+   "feu": "🔴",
+   "bruit": 36.40512866226636,
+   "date_decl": "2026-11-17 17:00",
+   "info": {
+    "sens": "short",
+    "atr": 0.24557104023677187,
+    "r7": -0.197,
+    "r30": -0.6861,
+    "force7": 0.192,
+    "force30": 0.058,
+    "bas60": 2.76,
+    "volume24h": 41744007
+   }
+  },
+  "NBISUSDT|cassure_bas|1794931200000": {
+   "id": "NBISUSDT|cassure_bas|1794931200000",
+   "sym": "NBISUSDT",
+   "type": "cassure_bas",
+   "sens": -1,
+   "t_decl": 1794931200000.0,
+   "entree": 104.71,
+   "sl": 115.11,
+   "objectif": 73.51,
+   "objectif_r": 3.0,
+   "max_h": 168,
+   "feu": "🔴",
+   "bruit": 14.669712137953908,
+   "date_decl": "2026-11-17 17:00",
+   "info": {
+    "sens": "short",
+    "atr": 5.199644331876858,
+    "r7": -0.2387,
+    "r30": -0.3613,
+    "force7": 0.096,
+    "force30": 0.231,
+    "bas60": 104.96,
+    "volume24h": 18871312
+   }
   }
  },
- "dernier_resume": 124647,
- "dernier_h4": 1794916800000,
+ "dernier_resume": 124648,
+ "dernier_h4": 1794931200000,
  "vus": {
   "INITUSDT|leader": 1794412800000,
   "1000PEPEUSDT|leader": 1794384000000,
-  "PIEVERSEUSDT|leader": 1794873600000,
-  "ARIAUSDT|leader": 1794916800000,
+  "PIEVERSEUSDT|leader": 1794931200000,
+  "ARIAUSDT|leader": 1794931200000,
   "INJUSDT|leader": 1794427200000,
   "CAPUSDT|leader": 1794744000000,
   "EDGEUSDT|leader": 1794340800000,
@@ -409,7 +459,7 @@
   "FARTCOINUSDT|cassure_bas": 1794700800000,
   "DOTUSDT|cassure_bas": 1794700800000,
   "BARDUSDT|leader": 1794758400000,
-  "NBISUSDT|cassure_bas": 1794585600000,
+  "NBISUSDT|cassure_bas": 1794931200000,
   "MAGMAUSDT|leader": 1794628800000,
   "AEROUSDT|cassure_bas": 1794628800000,
   "HYPEUSDT|cassure_bas": 1794700800000,
@@ -423,7 +473,7 @@
   "KAVAUSDT|cassure_bas": 1794686400000,
   "BCHUSDT|cassure_bas": 1794700800000,
   "OPUSDT|cassure_bas": 1794700800000,
-  "EVAAUSDT|leader": 1794916800000,
+  "EVAAUSDT|leader": 1794931200000,
   "BERAUSDT|cassure_bas": 1794686400000,
   "ARBUSDT|cassure_bas": 1794700800000,
   "ASTERUSDT|cassure_bas": 1794700800000,
@@ -437,7 +487,9 @@
   "VIRTUALUSDT|cassure_bas": 1794700800000,
   "MNTUSDT|cassure_bas": 1794700800000,
   "NIGHTUSDT|leader": 1794744000000,
-  "BLESSUSDT|leader": 1794916800000,
-  "RAREUSDT|leader": 1794916800000
+  "BLESSUSDT|leader": 1794931200000,
+  "RAREUSDT|leader": 1794931200000,
+  "CROSSUSDT|leader": 1794931200000,
+  "SNXXUSDT|cassure_bas": 1794931200000
  }
 }
