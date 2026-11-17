@@ -351,31 +351,6 @@
     "volume24h": 51175865
    }
   },
-  "BLESSUSDT|leader|1794844800000": {
-   "id": "BLESSUSDT|leader|1794844800000",
-   "sym": "BLESSUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1794844800000.0,
-   "entree": 0.018485,
-   "sl": 0.016257,
-   "objectif": 0.025169,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 13.561205056642173,
-   "date_decl": "2026-11-16 17:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.0011141707151080618,
-    "r7": 1.2565,
-    "r30": 1.4548,
-    "force7": 0.977,
-    "force30": 0.955,
-    "bas60": 0.006846,
-    "volume24h": 26757737
-   }
-  },
   "RAREUSDT|leader|1794873600000": {
    "id": "RAREUSDT|leader|1794873600000",
    "sym": "RAREUSDT",
