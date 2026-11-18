@@ -375,31 +375,6 @@
     "bas60": 0.09539,
     "volume24h": 10625795
    }
-  },
-  "BREVUSDT|leader|1794960000000": {
-   "id": "BREVUSDT|leader|1794960000000",
-   "sym": "BREVUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1794960000000.0,
-   "entree": 0.11079,
-   "sl": 0.09677,
-   "objectif": 0.15285,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 8.271060642787909,
-   "date_decl": "2026-11-18 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.007008866317885768,
-    "r7": 0.6073,
-    "r30": 0.5398,
-    "force7": 0.962,
-    "force30": 0.925,
-    "bas60": 0.05525,
-    "volume24h": 132890787
-   }
   }
  },
  "dernier_resume": 124652,
