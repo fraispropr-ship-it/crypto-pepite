@@ -400,31 +400,6 @@
     "bas60": 0.05525,
     "volume24h": 132890787
    }
-  },
-  "MMTUSDT|leader|1794960000000": {
-   "id": "MMTUSDT|leader|1794960000000",
-   "sym": "MMTUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1794960000000.0,
-   "entree": 0.1451,
-   "sl": 0.1259,
-   "objectif": 0.2027,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 8.480192218792928,
-   "date_decl": "2026-11-18 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.009594160414830303,
-    "r7": 0.1835,
-    "r30": 0.0951,
-    "force7": 0.906,
-    "force30": 0.887,
-    "bas60": 0.0942,
-    "volume24h": 30993026
-   }
   }
  },
  "dernier_resume": 124651,
