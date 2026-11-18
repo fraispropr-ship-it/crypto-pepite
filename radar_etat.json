@@ -375,15 +375,65 @@
     "bas60": 0.09539,
     "volume24h": 10625795
    }
+  },
+  "BREVUSDT|leader|1794960000000": {
+   "id": "BREVUSDT|leader|1794960000000",
+   "sym": "BREVUSDT",
+   "type": "leader",
+   "sens": 1,
+   "t_decl": 1794960000000.0,
+   "entree": 0.11079,
+   "sl": 0.09677,
+   "objectif": 0.15285,
+   "objectif_r": 3.0,
+   "max_h": 168,
+   "feu": "🔴",
+   "bruit": 8.271060642787909,
+   "date_decl": "2026-11-18 01:00",
+   "info": {
+    "sens": "long",
+    "atr": 0.007008866317885768,
+    "r7": 0.6073,
+    "r30": 0.5398,
+    "force7": 0.962,
+    "force30": 0.925,
+    "bas60": 0.05525,
+    "volume24h": 132890787
+   }
+  },
+  "MMTUSDT|leader|1794960000000": {
+   "id": "MMTUSDT|leader|1794960000000",
+   "sym": "MMTUSDT",
+   "type": "leader",
+   "sens": 1,
+   "t_decl": 1794960000000.0,
+   "entree": 0.1451,
+   "sl": 0.1259,
+   "objectif": 0.2027,
+   "objectif_r": 3.0,
+   "max_h": 168,
+   "feu": "🔴",
+   "bruit": 8.480192218792928,
+   "date_decl": "2026-11-18 01:00",
+   "info": {
+    "sens": "long",
+    "atr": 0.009594160414830303,
+    "r7": 0.1835,
+    "r30": 0.0951,
+    "force7": 0.906,
+    "force30": 0.887,
+    "bas60": 0.0942,
+    "volume24h": 30993026
+   }
   }
  },
- "dernier_resume": 124649,
- "dernier_h4": 1794945600000,
+ "dernier_resume": 124650,
+ "dernier_h4": 1794960000000,
  "vus": {
   "INITUSDT|leader": 1794412800000,
   "1000PEPEUSDT|leader": 1794384000000,
-  "PIEVERSEUSDT|leader": 1794945600000,
-  "ARIAUSDT|leader": 1794945600000,
+  "PIEVERSEUSDT|leader": 1794960000000,
+  "ARIAUSDT|leader": 1794960000000,
   "INJUSDT|leader": 1794427200000,
   "CAPUSDT|leader": 1794744000000,
   "EDGEUSDT|leader": 1794340800000,
@@ -423,7 +473,7 @@
   "KAVAUSDT|cassure_bas": 1794686400000,
   "BCHUSDT|cassure_bas": 1794700800000,
   "OPUSDT|cassure_bas": 1794700800000,
-  "EVAAUSDT|leader": 1794945600000,
+  "EVAAUSDT|leader": 1794960000000,
   "BERAUSDT|cassure_bas": 1794686400000,
   "ARBUSDT|cassure_bas": 1794700800000,
   "ASTERUSDT|cassure_bas": 1794700800000,
@@ -437,9 +487,11 @@
   "VIRTUALUSDT|cassure_bas": 1794700800000,
   "MNTUSDT|cassure_bas": 1794700800000,
   "NIGHTUSDT|leader": 1794744000000,
-  "BLESSUSDT|leader": 1794945600000,
+  "BLESSUSDT|leader": 1794960000000,
   "RAREUSDT|leader": 1794945600000,
-  "CROSSUSDT|leader": 1794945600000,
-  "SNXXUSDT|cassure_bas": 1794931200000
+  "CROSSUSDT|leader": 1794960000000,
+  "SNXXUSDT|cassure_bas": 1794931200000,
+  "BREVUSDT|leader": 1794960000000,
+  "MMTUSDT|leader": 1794960000000
  }
 }
