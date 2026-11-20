@@ -401,31 +401,6 @@
     "volume24h": 26615817
    }
   },
-  "IRYSUSDT|leader|1795132800000": {
-   "id": "IRYSUSDT|leader|1795132800000",
-   "sym": "IRYSUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1795132800000.0,
-   "entree": 0.022464,
-   "sl": 0.019108,
-   "objectif": 0.032532,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 46.50724286143148,
-   "date_decl": "2026-11-20 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.0016781095908447003,
-    "r7": 0.4075,
-    "r30": 0.7249,
-    "force7": 0.895,
-    "force30": 0.912,
-    "bas60": 0.01168,
-    "volume24h": 69333868
-   }
-  },
   "1000LUNCUSDT|leader|1795132800000": {
    "id": "1000LUNCUSDT|leader|1795132800000",
    "sym": "1000LUNCUSDT",
