@@ -326,31 +326,6 @@
     "volume24h": 25129527
    }
   },
-  "PIPPINUSDT|leader|1795046400000": {
-   "id": "PIPPINUSDT|leader|1795046400000",
-   "sym": "PIPPINUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1795046400000.0,
-   "entree": 0.01823,
-   "sl": 0.0153,
-   "objectif": 0.02702,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 8.15849407090283,
-   "date_decl": "2026-11-19 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.001462640982448098,
-    "r7": 0.4785,
-    "r30": 0.1754,
-    "force7": 0.918,
-    "force30": 0.857,
-    "bas60": 0.01019,
-    "volume24h": 70982189
-   }
-  },
   "STRKUSDT|cassure_bas|1795118400000": {
    "id": "STRKUSDT|cassure_bas|1795118400000",
    "sym": "STRKUSDT",
