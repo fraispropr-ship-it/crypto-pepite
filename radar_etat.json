@@ -526,31 +526,6 @@
     "volume24h": 47897445
    }
   },
-  "SOLUSDT|cassure_bas|1795233600000": {
-   "id": "SOLUSDT|cassure_bas|1795233600000",
-   "sym": "SOLUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1795233600000.0,
-   "entree": 66.23,
-   "sl": 70.2,
-   "objectif": 54.32,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 6.714464563023364,
-   "date_decl": "2026-11-21 05:00",
-   "info": {
-    "sens": "short",
-    "atr": 1.9855715896583008,
-    "r7": -0.1169,
-    "r30": -0.372,
-    "force7": 0.735,
-    "force30": 0.456,
-    "bas60": 67.11,
-    "volume24h": 700194154
-   }
-  },
   "XRPUSDT|cassure_bas|1795233600000": {
    "id": "XRPUSDT|cassure_bas|1795233600000",
    "sym": "XRPUSDT",
