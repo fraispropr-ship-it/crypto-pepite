@@ -526,31 +526,6 @@
     "volume24h": 47897445
    }
   },
-  "XRPUSDT|cassure_bas|1795233600000": {
-   "id": "XRPUSDT|cassure_bas|1795233600000",
-   "sym": "XRPUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1795233600000.0,
-   "entree": 0.8807,
-   "sl": 0.9327,
-   "objectif": 0.7247,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 6.729210592576251,
-   "date_decl": "2026-11-21 05:00",
-   "info": {
-    "sens": "short",
-    "atr": 0.026006824199565813,
-    "r7": -0.1103,
-    "r30": -0.3451,
-    "force7": 0.75,
-    "force30": 0.529,
-    "bas60": 0.8837,
-    "volume24h": 418046186
-   }
-  },
   "ASTERUSDT|cassure_bas|1795248000000": {
    "id": "ASTERUSDT|cassure_bas|1795248000000",
    "sym": "ASTERUSDT",
