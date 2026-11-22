@@ -401,31 +401,6 @@
     "volume24h": 15101584
    }
   },
-  "KERNELUSDT|leader|1795219200000": {
-   "id": "KERNELUSDT|leader|1795219200000",
-   "sym": "KERNELUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1795219200000.0,
-   "entree": 0.04647,
-   "sl": 0.03987,
-   "objectif": 0.06627,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 9.37521589100664,
-   "date_decl": "2026-11-21 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.0033022982500373653,
-    "r7": 0.0612,
-    "r30": -0.0213,
-    "force7": 0.812,
-    "force30": 0.891,
-    "bas60": 0.0368,
-    "volume24h": 47897445
-   }
-  },
   "ASTERUSDT|cassure_bas|1795248000000": {
    "id": "ASTERUSDT|cassure_bas|1795248000000",
    "sym": "ASTERUSDT",
@@ -449,31 +424,6 @@
     "force30": 0.557,
     "bas60": 0.478,
     "volume24h": 13812789
-   }
-  },
-  "ELSAUSDT|leader|1795291200000": {
-   "id": "ELSAUSDT|leader|1795291200000",
-   "sym": "ELSAUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1795291200000.0,
-   "entree": 0.06683,
-   "sl": 0.0592,
-   "objectif": 0.08972,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 13.806121142869664,
-   "date_decl": "2026-11-21 21:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.0038167416905608323,
-    "r7": 0.1206,
-    "r30": -0.048,
-    "force7": 0.847,
-    "force30": 0.864,
-    "bas60": 0.04758,
-    "volume24h": 12854302
    }
   },
   "VVVUSDT|leader|1795305600000": {
