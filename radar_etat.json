@@ -450,40 +450,15 @@
     "bas60": 16.728,
     "volume24h": 27297826
    }
-  },
-  "ACEUSDT|cassure_bas|1795377600000": {
-   "id": "ACEUSDT|cassure_bas|1795377600000",
-   "sym": "ACEUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1795377600000.0,
-   "entree": 0.0631,
-   "sl": 0.07571,
-   "objectif": 0.02527,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 12.669840612994344,
-   "date_decl": "2026-11-22 21:00",
-   "info": {
-    "sens": "short",
-    "atr": 0.0063063362040874146,
-    "r7": -0.3306,
-    "r30": -0.5699,
-    "force7": 0.05,
-    "force30": 0.05,
-    "bas60": 0.08058,
-    "volume24h": 18727949
-   }
   }
  },
- "dernier_resume": 124679,
- "dernier_h4": 1795377600000,
+ "dernier_resume": 124680,
+ "dernier_h4": 1795392000000,
  "vus": {
   "INITUSDT|leader": 1794412800000,
   "1000PEPEUSDT|leader": 1794384000000,
-  "PIEVERSEUSDT|leader": 1795377600000,
-  "ARIAUSDT|leader": 1795377600000,
+  "PIEVERSEUSDT|leader": 1795392000000,
+  "ARIAUSDT|leader": 1795392000000,
   "INJUSDT|leader": 1794427200000,
   "CAPUSDT|leader": 1794744000000,
   "EDGEUSDT|leader": 1794340800000,
@@ -537,12 +512,12 @@
   "VIRTUALUSDT|cassure_bas": 1795233600000,
   "MNTUSDT|cassure_bas": 1794700800000,
   "NIGHTUSDT|leader": 1794744000000,
-  "BLESSUSDT|leader": 1795377600000,
+  "BLESSUSDT|leader": 1795392000000,
   "RAREUSDT|leader": 1795363200000,
   "CROSSUSDT|leader": 1794974400000,
   "SNXXUSDT|cassure_bas": 1795190400000,
   "BREVUSDT|leader": 1795118400000,
-  "MMTUSDT|leader": 1795377600000,
+  "MMTUSDT|leader": 1795392000000,
   "PIPPINUSDT|leader": 1795248000000,
   "SENTUSDT|leader": 1795248000000,
   "STRKUSDT|cassure_bas": 1795233600000,
@@ -565,8 +540,8 @@
   "KERNELUSDT|leader": 1795276800000,
   "ZROUSDT|cassure_bas": 1795233600000,
   "TRXUSDT|cassure_bas": 1795233600000,
-  "ELSAUSDT|leader": 1795377600000,
-  "VVVUSDT|leader": 1795377600000,
+  "ELSAUSDT|leader": 1795392000000,
+  "VVVUSDT|leader": 1795392000000,
   "ACEUSDT|cassure_bas": 1795377600000
  }
 }
