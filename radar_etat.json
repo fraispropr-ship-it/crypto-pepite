@@ -26,31 +26,6 @@
     "volume24h": 71225736
    }
   },
-  "CROSSUSDT|leader|1794931200000": {
-   "id": "CROSSUSDT|leader|1794931200000",
-   "sym": "CROSSUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1794931200000.0,
-   "entree": 0.15443,
-   "sl": 0.13702,
-   "objectif": 0.20666,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 6.377826478853568,
-   "date_decl": "2026-11-17 17:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.008704559721414491,
-    "r7": 0.4924,
-    "r30": 0.5615,
-    "force7": 0.962,
-    "force30": 0.942,
-    "bas60": 0.09539,
-    "volume24h": 10625795
-   }
-  },
   "ENAUSDT|cassure_bas|1795017600000": {
    "id": "ENAUSDT|cassure_bas|1795017600000",
    "sym": "ENAUSDT",
@@ -250,15 +225,40 @@
     "bas60": 16.728,
     "volume24h": 27297826
    }
+  },
+  "UNITREEUSDT|leader|1795449600000": {
+   "id": "UNITREEUSDT|leader|1795449600000",
+   "sym": "UNITREEUSDT",
+   "type": "leader",
+   "sens": 1,
+   "t_decl": 1795449600000.0,
+   "entree": 108.1,
+   "sl": 102.38,
+   "objectif": 125.26,
+   "objectif_r": 3.0,
+   "max_h": 168,
+   "feu": "🔴",
+   "bruit": 6.3731209214844675,
+   "date_decl": "2026-11-23 17:00",
+   "info": {
+    "sens": "long",
+    "atr": 2.8594945280642534,
+    "r7": 0.0498,
+    "r30": 0.1426,
+    "force7": 0.854,
+    "force30": 0.875,
+    "bas60": 60.06,
+    "volume24h": 14911431
+   }
   }
  },
- "dernier_resume": 124683,
- "dernier_h4": 1795435200000,
+ "dernier_resume": 124684,
+ "dernier_h4": 1795449600000,
  "vus": {
   "INITUSDT|leader": 1794412800000,
   "1000PEPEUSDT|leader": 1794384000000,
-  "PIEVERSEUSDT|leader": 1795435200000,
-  "ARIAUSDT|leader": 1795435200000,
+  "PIEVERSEUSDT|leader": 1795449600000,
+  "ARIAUSDT|leader": 1795449600000,
   "INJUSDT|leader": 1794427200000,
   "CAPUSDT|leader": 1794744000000,
   "EDGEUSDT|leader": 1794340800000,
@@ -317,7 +317,7 @@
   "CROSSUSDT|leader": 1794974400000,
   "SNXXUSDT|cassure_bas": 1795190400000,
   "BREVUSDT|leader": 1795118400000,
-  "MMTUSDT|leader": 1795435200000,
+  "MMTUSDT|leader": 1795449600000,
   "PIPPINUSDT|leader": 1795248000000,
   "SENTUSDT|leader": 1795248000000,
   "STRKUSDT|cassure_bas": 1795233600000,
@@ -340,8 +340,9 @@
   "KERNELUSDT|leader": 1795276800000,
   "ZROUSDT|cassure_bas": 1795233600000,
   "TRXUSDT|cassure_bas": 1795233600000,
-  "ELSAUSDT|leader": 1795435200000,
-  "VVVUSDT|leader": 1795420800000,
-  "ACEUSDT|cassure_bas": 1795377600000
+  "ELSAUSDT|leader": 1795449600000,
+  "VVVUSDT|leader": 1795449600000,
+  "ACEUSDT|cassure_bas": 1795377600000,
+  "UNITREEUSDT|leader": 1795449600000
  }
 }
