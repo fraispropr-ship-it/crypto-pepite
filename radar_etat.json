@@ -376,31 +376,6 @@
     "volume24h": 39360009
    }
   },
-  "SAMSUNGEMUSDT|cassure_bas|1795204800000": {
-   "id": "SAMSUNGEMUSDT|cassure_bas|1795204800000",
-   "sym": "SAMSUNGEMUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1795204800000.0,
-   "entree": 538.12,
-   "sl": 580.25,
-   "objectif": 411.73,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 9.883887879051418,
-   "date_decl": "2026-11-20 21:00",
-   "info": {
-    "sens": "short",
-    "atr": 21.062732114049005,
-    "r7": -0.153,
-    "r30": -0.3955,
-    "force7": 0.676,
-    "force30": 0.426,
-    "bas60": 542.3,
-    "volume24h": 15101584
-   }
-  },
   "ASTERUSDT|cassure_bas|1795248000000": {
    "id": "ASTERUSDT|cassure_bas|1795248000000",
    "sym": "ASTERUSDT",
