@@ -276,31 +276,6 @@
     "volume24h": 21464434
    }
   },
-  "ETHUSDT|cassure_bas|1795190400000": {
-   "id": "ETHUSDT|cassure_bas|1795190400000",
-   "sym": "ETHUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1795190400000.0,
-   "entree": 1654.01,
-   "sl": 1739.73,
-   "objectif": 1396.85,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 5.728395509348345,
-   "date_decl": "2026-11-20 17:00",
-   "info": {
-    "sens": "short",
-    "atr": 42.858251940698665,
-    "r7": -0.1448,
-    "r30": -0.3414,
-    "force7": 0.677,
-    "force30": 0.569,
-    "bas60": 1711.28,
-    "volume24h": 3419002447
-   }
-  },
   "ZECUSDT|cassure_bas|1795190400000": {
    "id": "ZECUSDT|cassure_bas|1795190400000",
    "sym": "ZECUSDT",
@@ -427,13 +402,13 @@
    }
   }
  },
- "dernier_resume": 124680,
- "dernier_h4": 1795392000000,
+ "dernier_resume": 124681,
+ "dernier_h4": 1795406400000,
  "vus": {
   "INITUSDT|leader": 1794412800000,
   "1000PEPEUSDT|leader": 1794384000000,
-  "PIEVERSEUSDT|leader": 1795392000000,
-  "ARIAUSDT|leader": 1795392000000,
+  "PIEVERSEUSDT|leader": 1795406400000,
+  "ARIAUSDT|leader": 1795406400000,
   "INJUSDT|leader": 1794427200000,
   "CAPUSDT|leader": 1794744000000,
   "EDGEUSDT|leader": 1794340800000,
@@ -473,7 +448,7 @@
   "KAVAUSDT|cassure_bas": 1794686400000,
   "BCHUSDT|cassure_bas": 1795233600000,
   "OPUSDT|cassure_bas": 1795233600000,
-  "EVAAUSDT|leader": 1795348800000,
+  "EVAAUSDT|leader": 1795406400000,
   "BERAUSDT|cassure_bas": 1794686400000,
   "ARBUSDT|cassure_bas": 1795248000000,
   "ASTERUSDT|cassure_bas": 1795248000000,
@@ -487,12 +462,12 @@
   "VIRTUALUSDT|cassure_bas": 1795233600000,
   "MNTUSDT|cassure_bas": 1794700800000,
   "NIGHTUSDT|leader": 1794744000000,
-  "BLESSUSDT|leader": 1795392000000,
+  "BLESSUSDT|leader": 1795406400000,
   "RAREUSDT|leader": 1795363200000,
   "CROSSUSDT|leader": 1794974400000,
   "SNXXUSDT|cassure_bas": 1795190400000,
   "BREVUSDT|leader": 1795118400000,
-  "MMTUSDT|leader": 1795392000000,
+  "MMTUSDT|leader": 1795406400000,
   "PIPPINUSDT|leader": 1795248000000,
   "SENTUSDT|leader": 1795248000000,
   "STRKUSDT|cassure_bas": 1795233600000,
@@ -515,8 +490,8 @@
   "KERNELUSDT|leader": 1795276800000,
   "ZROUSDT|cassure_bas": 1795233600000,
   "TRXUSDT|cassure_bas": 1795233600000,
-  "ELSAUSDT|leader": 1795392000000,
-  "VVVUSDT|leader": 1795392000000,
+  "ELSAUSDT|leader": 1795406400000,
+  "VVVUSDT|leader": 1795406400000,
   "ACEUSDT|cassure_bas": 1795377600000
  }
 }
