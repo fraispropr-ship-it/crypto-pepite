@@ -1,31 +1,6 @@
 {
  "version": 2,
  "suivis": {
-  "RAREUSDT|leader|1794873600000": {
-   "id": "RAREUSDT|leader|1794873600000",
-   "sym": "RAREUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1794873600000.0,
-   "entree": 0.013403,
-   "sl": 0.010266,
-   "objectif": 0.022814,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 11.760527168819689,
-   "date_decl": "2026-11-17 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.0015683028207975904,
-    "r7": 0.2624,
-    "r30": -0.0496,
-    "force7": 0.936,
-    "force30": 0.894,
-    "bas60": 0.008216,
-    "volume24h": 71225736
-   }
-  },
   "ENAUSDT|cassure_bas|1795017600000": {
    "id": "ENAUSDT|cassure_bas|1795017600000",
    "sym": "ENAUSDT",
@@ -252,13 +227,13 @@
    }
   }
  },
- "dernier_resume": 124685,
- "dernier_h4": 1795464000000,
+ "dernier_resume": 124686,
+ "dernier_h4": 1795478400000,
  "vus": {
   "INITUSDT|leader": 1794412800000,
   "1000PEPEUSDT|leader": 1794384000000,
-  "PIEVERSEUSDT|leader": 1795464000000,
-  "ARIAUSDT|leader": 1795464000000,
+  "PIEVERSEUSDT|leader": 1795478400000,
+  "ARIAUSDT|leader": 1795478400000,
   "INJUSDT|leader": 1794427200000,
   "CAPUSDT|leader": 1794744000000,
   "EDGEUSDT|leader": 1794340800000,
@@ -317,7 +292,7 @@
   "CROSSUSDT|leader": 1794974400000,
   "SNXXUSDT|cassure_bas": 1795190400000,
   "BREVUSDT|leader": 1795118400000,
-  "MMTUSDT|leader": 1795464000000,
+  "MMTUSDT|leader": 1795478400000,
   "PIPPINUSDT|leader": 1795248000000,
   "SENTUSDT|leader": 1795248000000,
   "STRKUSDT|cassure_bas": 1795233600000,
@@ -340,9 +315,9 @@
   "KERNELUSDT|leader": 1795276800000,
   "ZROUSDT|cassure_bas": 1795233600000,
   "TRXUSDT|cassure_bas": 1795233600000,
-  "ELSAUSDT|leader": 1795464000000,
-  "VVVUSDT|leader": 1795464000000,
+  "ELSAUSDT|leader": 1795478400000,
+  "VVVUSDT|leader": 1795478400000,
   "ACEUSDT|cassure_bas": 1795377600000,
-  "UNITREEUSDT|leader": 1795464000000
+  "UNITREEUSDT|leader": 1795478400000
  }
 }
