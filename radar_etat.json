@@ -225,15 +225,40 @@
     "bas60": 60.06,
     "volume24h": 14911431
    }
+  },
+  "WLFIUSDT|cassure_bas|1795492800000": {
+   "id": "WLFIUSDT|cassure_bas|1795492800000",
+   "sym": "WLFIUSDT",
+   "type": "cassure_bas",
+   "sens": -1,
+   "t_decl": 1795492800000.0,
+   "entree": 0.04072,
+   "sl": 0.04238,
+   "objectif": 0.03574,
+   "objectif_r": 3.0,
+   "max_h": 168,
+   "feu": "🔴",
+   "bruit": 5.014507342427646,
+   "date_decl": "2026-11-24 05:00",
+   "info": {
+    "sens": "short",
+    "atr": 0.0008303780840671837,
+    "r7": -0.1109,
+    "r30": -0.2294,
+    "force7": 0.323,
+    "force30": 0.694,
+    "bas60": 0.04096,
+    "volume24h": 11530970
+   }
   }
  },
- "dernier_resume": 124686,
- "dernier_h4": 1795478400000,
+ "dernier_resume": 124687,
+ "dernier_h4": 1795492800000,
  "vus": {
   "INITUSDT|leader": 1794412800000,
   "1000PEPEUSDT|leader": 1794384000000,
-  "PIEVERSEUSDT|leader": 1795478400000,
-  "ARIAUSDT|leader": 1795478400000,
+  "PIEVERSEUSDT|leader": 1795492800000,
+  "ARIAUSDT|leader": 1795492800000,
   "INJUSDT|leader": 1794427200000,
   "CAPUSDT|leader": 1794744000000,
   "EDGEUSDT|leader": 1794340800000,
@@ -287,12 +312,12 @@
   "VIRTUALUSDT|cassure_bas": 1795233600000,
   "MNTUSDT|cassure_bas": 1794700800000,
   "NIGHTUSDT|leader": 1794744000000,
-  "BLESSUSDT|leader": 1795435200000,
+  "BLESSUSDT|leader": 1795492800000,
   "RAREUSDT|leader": 1795363200000,
   "CROSSUSDT|leader": 1794974400000,
   "SNXXUSDT|cassure_bas": 1795190400000,
   "BREVUSDT|leader": 1795118400000,
-  "MMTUSDT|leader": 1795478400000,
+  "MMTUSDT|leader": 1795492800000,
   "PIPPINUSDT|leader": 1795248000000,
   "SENTUSDT|leader": 1795248000000,
   "STRKUSDT|cassure_bas": 1795233600000,
@@ -315,9 +340,10 @@
   "KERNELUSDT|leader": 1795276800000,
   "ZROUSDT|cassure_bas": 1795233600000,
   "TRXUSDT|cassure_bas": 1795233600000,
-  "ELSAUSDT|leader": 1795478400000,
-  "VVVUSDT|leader": 1795478400000,
+  "ELSAUSDT|leader": 1795492800000,
+  "VVVUSDT|leader": 1795492800000,
   "ACEUSDT|cassure_bas": 1795377600000,
-  "UNITREEUSDT|leader": 1795478400000
+  "UNITREEUSDT|leader": 1795492800000,
+  "WLFIUSDT|cassure_bas": 1795492800000
  }
 }
