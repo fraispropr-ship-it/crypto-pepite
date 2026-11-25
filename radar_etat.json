@@ -201,31 +201,6 @@
     "volume24h": 27297826
    }
   },
-  "UNITREEUSDT|leader|1795449600000": {
-   "id": "UNITREEUSDT|leader|1795449600000",
-   "sym": "UNITREEUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1795449600000.0,
-   "entree": 108.1,
-   "sl": 102.38,
-   "objectif": 125.26,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 6.3731209214844675,
-   "date_decl": "2026-11-23 17:00",
-   "info": {
-    "sens": "long",
-    "atr": 2.8594945280642534,
-    "r7": 0.0498,
-    "r30": 0.1426,
-    "force7": 0.854,
-    "force30": 0.875,
-    "bas60": 60.06,
-    "volume24h": 14911431
-   }
-  },
   "WLFIUSDT|cassure_bas|1795492800000": {
    "id": "WLFIUSDT|cassure_bas|1795492800000",
    "sym": "WLFIUSDT",
