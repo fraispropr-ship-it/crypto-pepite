@@ -326,31 +326,6 @@
     "volume24h": 20751189
    }
   },
-  "OPGUSDT|leader|1795579200000": {
-   "id": "OPGUSDT|leader|1795579200000",
-   "sym": "OPGUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1795579200000.0,
-   "entree": 0.1759,
-   "sl": 0.1609,
-   "objectif": 0.2209,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 7.334201885512306,
-   "date_decl": "2026-11-25 05:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.00750111356935906,
-    "r7": 0.2386,
-    "r30": 0.6124,
-    "force7": 0.913,
-    "force30": 0.891,
-    "bas60": 0.10766,
-    "volume24h": 10169001
-   }
-  },
   "MUUUSDT|cassure_bas|1795608000000": {
    "id": "MUUUSDT|cassure_bas|1795608000000",
    "sym": "MUUUSDT",
