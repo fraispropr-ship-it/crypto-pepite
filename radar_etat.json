@@ -151,31 +151,6 @@
     "volume24h": 27297826
    }
   },
-  "WLFIUSDT|cassure_bas|1795492800000": {
-   "id": "WLFIUSDT|cassure_bas|1795492800000",
-   "sym": "WLFIUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1795492800000.0,
-   "entree": 0.04072,
-   "sl": 0.04238,
-   "objectif": 0.03574,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 5.014507342427646,
-   "date_decl": "2026-11-24 05:00",
-   "info": {
-    "sens": "short",
-    "atr": 0.0008303780840671837,
-    "r7": -0.1109,
-    "r30": -0.2294,
-    "force7": 0.323,
-    "force30": 0.694,
-    "bas60": 0.04096,
-    "volume24h": 11530970
-   }
-  },
   "ZROUSDT|cassure_bas|1795521600000": {
    "id": "ZROUSDT|cassure_bas|1795521600000",
    "sym": "ZROUSDT",
