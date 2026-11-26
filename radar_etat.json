@@ -1,31 +1,6 @@
 {
  "version": 2,
  "suivis": {
-  "LTCUSDT|cassure_bas|1795132800000": {
-   "id": "LTCUSDT|cassure_bas|1795132800000",
-   "sym": "LTCUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1795132800000.0,
-   "entree": 42.28,
-   "sl": 44.19,
-   "objectif": 36.55,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 6.629691306459984,
-   "date_decl": "2026-11-20 01:00",
-   "info": {
-    "sens": "short",
-    "atr": 0.953783369681533,
-    "r7": -0.1546,
-    "r30": -0.3132,
-    "force7": 0.351,
-    "force30": 0.421,
-    "bas60": 42.44,
-    "volume24h": 18253485
-   }
-  },
   "1000PEPEUSDT|cassure_bas|1795147200000": {
    "id": "1000PEPEUSDT|cassure_bas|1795147200000",
    "sym": "1000PEPEUSDT",
