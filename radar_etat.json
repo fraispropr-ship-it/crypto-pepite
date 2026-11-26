@@ -226,31 +226,6 @@
     "volume24h": 54526249
    }
   },
-  "INJUSDT|cassure_bas|1795550400000": {
-   "id": "INJUSDT|cassure_bas|1795550400000",
-   "sym": "INJUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1795550400000.0,
-   "entree": 5.802,
-   "sl": 6.327,
-   "objectif": 4.227,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 11.432396765731749,
-   "date_decl": "2026-11-24 21:00",
-   "info": {
-    "sens": "short",
-    "atr": 0.2622542391496918,
-    "r7": -0.1837,
-    "r30": -0.2815,
-    "force7": 0.188,
-    "force30": 0.583,
-    "bas60": 5.836,
-    "volume24h": 20751189
-   }
-  },
   "MUUUSDT|cassure_bas|1795608000000": {
    "id": "MUUUSDT|cassure_bas|1795608000000",
    "sym": "MUUUSDT",
