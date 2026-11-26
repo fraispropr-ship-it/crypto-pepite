@@ -275,31 +275,6 @@
     "bas60": 9.17,
     "volume24h": 11311086
    }
-  },
-  "BLURUSDT|leader|1795651200000": {
-   "id": "BLURUSDT|leader|1795651200000",
-   "sym": "BLURUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1795651200000.0,
-   "entree": 0.010899,
-   "sl": 0.009743,
-   "objectif": 0.014367,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 8.605795123095193,
-   "date_decl": "2026-11-26 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.000578004035156433,
-    "r7": 0.6514,
-    "r30": 0.4818,
-    "force7": 0.981,
-    "force30": 0.906,
-    "bas60": 0.005666,
-    "volume24h": 17632962
-   }
   }
  },
  "dernier_resume": 124701,
