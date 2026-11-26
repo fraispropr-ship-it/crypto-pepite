@@ -276,31 +276,6 @@
     "volume24h": 11311086
    }
   },
-  "BIGTIMEUSDT|leader|1795651200000": {
-   "id": "BIGTIMEUSDT|leader|1795651200000",
-   "sym": "BIGTIMEUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1795651200000.0,
-   "entree": 0.006476,
-   "sl": 0.00544,
-   "objectif": 0.009584,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 8.518494092539456,
-   "date_decl": "2026-11-26 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.0005181211473580392,
-    "r7": 0.4785,
-    "r30": -0.0604,
-    "force7": 0.943,
-    "force30": 0.811,
-    "bas60": 0.003809,
-    "volume24h": 135270798
-   }
-  },
   "BLURUSDT|leader|1795651200000": {
    "id": "BLURUSDT|leader|1795651200000",
    "sym": "BLURUSDT",
