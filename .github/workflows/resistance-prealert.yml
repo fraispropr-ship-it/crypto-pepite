@@ -20,6 +20,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   prealert:
+    # Alertes mises en pause à la demande de Pierre (2026-11-27).
+    if: ${{ false }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
