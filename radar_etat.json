@@ -125,31 +125,6 @@
     "bas60": 1.684,
     "volume24h": 54526249
    }
-  },
-  "INITUSDT|leader|1795737600000": {
-   "id": "INITUSDT|leader|1795737600000",
-   "sym": "INITUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1795737600000.0,
-   "entree": 0.14178,
-   "sl": 0.12344,
-   "objectif": 0.1968,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 20.935740900267838,
-   "date_decl": "2026-11-27 01:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.009170722613225019,
-    "r7": 0.4248,
-    "r30": -0.1463,
-    "force7": 0.94,
-    "force30": 0.82,
-    "bas60": 0.07904,
-    "volume24h": 88763128
-   }
   }
  },
  "dernier_resume": 124705,
