@@ -1,31 +1,6 @@
 {
  "version": 2,
  "suivis": {
-  "NAORISUSDT|leader|1795161600000": {
-   "id": "NAORISUSDT|leader|1795161600000",
-   "sym": "NAORISUSDT",
-   "type": "leader",
-   "sens": 1,
-   "t_decl": 1795161600000.0,
-   "entree": 0.03173,
-   "sl": 0.02642,
-   "objectif": 0.04766,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 11.958720282039089,
-   "date_decl": "2026-11-20 09:00",
-   "info": {
-    "sens": "long",
-    "atr": 0.0026566041000847113,
-    "r7": 0.2279,
-    "r30": -0.0258,
-    "force7": 0.85,
-    "force30": 0.85,
-    "bas60": 0.02142,
-    "volume24h": 39013528
-   }
-  },
   "MUUUSDT|cassure_bas|1795176000000": {
    "id": "MUUUSDT|cassure_bas|1795176000000",
    "sym": "MUUUSDT",
@@ -127,12 +102,12 @@
    }
   }
  },
- "dernier_resume": 124705,
- "dernier_h4": 1795752000000,
+ "dernier_resume": 124706,
+ "dernier_h4": 1795766400000,
  "vus": {
   "INITUSDT|leader": 1795737600000,
   "1000PEPEUSDT|leader": 1794384000000,
-  "PIEVERSEUSDT|leader": 1795752000000,
+  "PIEVERSEUSDT|leader": 1795766400000,
   "ARIAUSDT|leader": 1795752000000,
   "INJUSDT|leader": 1794427200000,
   "CAPUSDT|leader": 1794744000000,
@@ -187,7 +162,7 @@
   "VIRTUALUSDT|cassure_bas": 1795622400000,
   "MNTUSDT|cassure_bas": 1795622400000,
   "NIGHTUSDT|leader": 1794744000000,
-  "BLESSUSDT|leader": 1795752000000,
+  "BLESSUSDT|leader": 1795766400000,
   "RAREUSDT|leader": 1795363200000,
   "CROSSUSDT|leader": 1794974400000,
   "SNXXUSDT|cassure_bas": 1795536000000,
@@ -215,14 +190,14 @@
   "KERNELUSDT|leader": 1795276800000,
   "ZROUSDT|cassure_bas": 1795622400000,
   "TRXUSDT|cassure_bas": 1795233600000,
-  "ELSAUSDT|leader": 1795752000000,
-  "VVVUSDT|leader": 1795752000000,
+  "ELSAUSDT|leader": 1795766400000,
+  "VVVUSDT|leader": 1795766400000,
   "ACEUSDT|cassure_bas": 1795377600000,
-  "UNITREEUSDT|leader": 1795723200000,
+  "UNITREEUSDT|leader": 1795766400000,
   "WLFIUSDT|cassure_bas": 1795492800000,
   "PHAROSUSDT|leader": 1795665600000,
   "BIGTIMEUSDT|leader": 1795723200000,
-  "BLURUSDT|leader": 1795708800000,
-  "SSVUSDT|leader": 1795752000000
+  "BLURUSDT|leader": 1795766400000,
+  "SSVUSDT|leader": 1795766400000
  }
 }
