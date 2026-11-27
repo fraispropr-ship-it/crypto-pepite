@@ -126,31 +126,6 @@
     "volume24h": 54526249
    }
   },
-  "MUUUSDT|cassure_bas|1795608000000": {
-   "id": "MUUUSDT|cassure_bas|1795608000000",
-   "sym": "MUUUSDT",
-   "type": "cassure_bas",
-   "sens": -1,
-   "t_decl": 1795608000000.0,
-   "entree": 9.13,
-   "sl": 10.81,
-   "objectif": 4.09,
-   "objectif_r": 3.0,
-   "max_h": 168,
-   "feu": "🔴",
-   "bruit": 26.44025498308038,
-   "date_decl": "2026-11-25 13:00",
-   "info": {
-    "sens": "short",
-    "atr": 0.8408793134586058,
-    "r7": -0.3921,
-    "r30": -0.6357,
-    "force7": 0.06,
-    "force30": 0.06,
-    "bas60": 9.17,
-    "volume24h": 11311086
-   }
-  },
   "INITUSDT|leader|1795737600000": {
    "id": "INITUSDT|leader|1795737600000",
    "sym": "INITUSDT",
